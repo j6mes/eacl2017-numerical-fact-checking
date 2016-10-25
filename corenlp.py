@@ -1,4 +1,3 @@
-
 def chunk(annotations,option):
     last_ne = []
     chunked_nes = []
@@ -25,6 +24,48 @@ def chunk(annotations,option):
         chunked_nes.append(" ".join(last_ne))
 
     return chunked_nes
+
+
+
+def compound(dep_graph,tagged):
+    compound_nes = tagged
+
+    changed = 1
+    while changed > 0:
+        changed = 0
+
+        for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
+            token = annotations.get(CoreAnnotations.TokensAnnotation).get(i)
+
+            iterator = dep_graph.edgeIterable().iterator()
+
+            while(iterator.hasNext()):
+                edge = iterator.next()
+
+
+
+
+                if(edge.getGovernor().index() == edge.getDependent().index()):
+                    continue
+
+                if(edge.getGovernor().index()-1 == i and compound_nes[edge.getGovernor().index()-1]):
+                    if(edge.getRelation().getShortName() in ['compound','amod','nummod']):
+                        if not compound_nes[edge.getDependent().index()-1] == compound_nes[edge.getGovernor().index()-1]:
+                            changed +=1
+
+                        compound_nes[edge.getDependent().index()-1] = compound_nes[edge.getGovernor().index()-1]
+
+                elif (edge.getGovernor().index()-1 == i and compound_nes[edge.getDependent().index()-1]):
+                    if(edge.getRelation().getShortName() in ['compound','amod','nummod']):
+                        if not compound_nes[edge.getGovernor().index()-1] == compound_nes[edge.getDependent().index()-1]:
+                            changed +=1
+
+                        compound_nes[edge.getGovernor().index()-1] = compound_nes[edge.getDependent().index()-1]
+
+
+
+
+    return compound_nes
 
 
 
@@ -74,11 +115,8 @@ numbers = []
 
 for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
     corelabel = annotations.get(CoreAnnotations.TokensAnnotation).get(i)
-    print (corelabel.get(CoreAnnotations.TextAnnotation))
-
     numbers.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) in number_ne_types)
     nes.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) != "O" and not numbers[-1])
-
 
 
 
@@ -88,5 +126,4 @@ print chunk(annotations,nes)
 
 
 depgraph = annotations.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation)
-
-
+print chunk(annotations,compound(depgraph,nes))
