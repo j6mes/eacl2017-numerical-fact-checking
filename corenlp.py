@@ -1,5 +1,36 @@
 
-mytext = "San Diego is a place in the United States of America with a population of 200,000"
+def chunk(annotations,option):
+    last_ne = []
+    chunked_nes = []
+    for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
+        if(i>0):
+            if(option[i-1]):
+                if(option[i]):
+                    last_ne.append(annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(CoreAnnotations.TextAnnotation))
+
+                else:
+                    if (len(last_ne)>0):
+                        chunked_nes.append(" ".join(last_ne))
+                        last_ne = []
+            else:
+                if(option[i]):
+                    last_ne.append(annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(CoreAnnotations.TextAnnotation))
+
+        else:
+            if (option[i]):
+                last_ne.append(annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(CoreAnnotations.TextAnnotation))
+
+
+    if (len(last_ne) > 0):
+        chunked_nes.append(" ".join(last_ne))
+
+    return chunked_nes
+
+
+
+
+
+mytext = "The Obama administration has doubled the US national debt in eight years."
 number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
 
 from jnius import autoclass
@@ -48,9 +79,11 @@ for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
     numbers.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) in number_ne_types)
     nes.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) != "O" and not numbers[-1])
 
-print numbers
-print nes
 
+
+
+
+print chunk(annotations,nes)
 
 
 
