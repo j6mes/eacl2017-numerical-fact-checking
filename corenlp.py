@@ -1,6 +1,6 @@
 
-mytext = "San Diego is a place in the United States of America."
-
+mytext = "San Diego is a place in the United States of America with a population of 200,000"
+number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
 
 from jnius import autoclass
 
@@ -36,10 +36,21 @@ pipeline.annotate(doc)
 
 annotations = doc.get(CoreAnnotations.SentencesAnnotation).get(0)
 
+
+
+nes = []
+numbers = []
+
 for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
     corelabel = annotations.get(CoreAnnotations.TokensAnnotation).get(i)
-    print corelabel.get(CoreAnnotations.TextAnnotation)
-    print corelabel.get(CoreAnnotations.NamedEntityTagAnnotation)
+    print (corelabel.get(CoreAnnotations.TextAnnotation))
+
+    numbers.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) in number_ne_types)
+    nes.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) != "O" and not numbers[-1])
+
+print numbers
+print nes
+
 
 
 
