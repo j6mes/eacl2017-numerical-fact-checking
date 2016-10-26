@@ -7,6 +7,6 @@ cd ..
 
 source activate factchecking
 
-python data_reader.py $EXPT | tee logs/$EXPT.log
+python data_reader.py $BOW $NG | tee logs/$BOW.$NG.log
 
 source deactivate

@@ -77,5 +77,11 @@ Or try (if gradle daemon is not installed and is being run from the gitrepo)
 
     ./gradlew writeClasspath
 
-This outputs the classpath to `build/classpath.txt`
+This outputs the classpath to `build/classpath.txt`. This only needs to be done once.
 
+
+Then use
+
+    python3 corenlp.py
+
+At the moment, the input utterance must be set in the file, this is very much work in progress!

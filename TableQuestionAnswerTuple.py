@@ -86,7 +86,7 @@ class TableQuestionAnswerTuple:
         cw = bow(allngrams_words,allngrams_header)
 
         headerwords = set()
-        for word in self.header:
+        for word in header:
             headerwords.update(normalise(word).split())
 
         questionwords = set(normalise(self.question).split())
@@ -104,11 +104,20 @@ class TableQuestionAnswerTuple:
                 ]
 
         #intersection of BOWs
-        if(experiment == 1 or experiment == 3):
+        if(experiment_bow == 1 or experiment_bow == 3):
             ret.extend(np.maximum(global_bow(vocab,headerwords),global_bow(vocab,questionwords)))
 
         #union of BOWs
-        if(experiment == 2 or experiment == 3):
+        if(experiment_bow == 2 or experiment_bow == 3):
             ret.extend(np.minimum(global_bow(vocab, headerwords), global_bow(vocab, questionwords)))
 
+
+
+        #intersection of ngrams
+        if(experiment_ngrams == 1 or experiment_ngrams == 3):
+            ret.extend(np.maximum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))),global_bow(vocab_ngrams, character_ngram_nwx(normalise(self.question)))))
+
+        #union of ngrams
+        if(experiment_ngrams == 2 or experiment_ngrams == 3):
+            ret.extend(np.minimum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))), global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))))
         return ret

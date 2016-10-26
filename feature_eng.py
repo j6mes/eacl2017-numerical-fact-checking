@@ -44,3 +44,11 @@ def character_ngram(word,n=3):
         return word
     return [word[i:i+n] for i in range(len(word)-n+1)]
 
+def character_ngram_nw(word,n=3):
+    words = word.split()
+
+    ret = []
+    for word in words:
+        ret.extend(character_ngram(word,n))
+
+    return ret

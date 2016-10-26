@@ -1,17 +1,18 @@
 import csv
 import os
 
-from util import normalise,vocab,experiment
+from util import normalise,vocab,experiment_bow, experiment_ngrams, vocab_ngrams
 
+from feature_eng import character_ngram
 from TableQuestionAnswerTuple import TableQuestionAnswerTuple
 from sklearn.linear_model import LogisticRegression
 
 import sys
 
-experiment += int(sys.argv[1])
+experiment_bow += int(sys.argv[1])
+experiment_ngrams += int(sys.argv[2])
 
-
-print("Running experiment " + str(experiment))
+print("Running experiment " + str(experiment_bow)+ "-"+str(experiment_ngrams))
 
 
 
@@ -41,13 +42,15 @@ with open("WikiTableQuestions/data/training.tsv") as tsv:
     for line in reader:
         train.append(TableQuestionAnswerTuple(line[0],line[1],line[2],line[2]))
         vocab.update(normalise(line[2]).split())
+        vocab_ngrams.update(character_ngram(normalise(line[2])))
+
         print (line)
 
 for obj in train:
     obj.load()
     for words in obj.header:
         vocab.update(normalise(words).split())
-
+        vocab_ngrams.update(character_ngram(normalise(words)))
 
 test = []
 with open("WikiTableQuestions/data/pristine-unseen-tables.tsv") as tsv:
@@ -104,7 +107,7 @@ fn = 0
 done = 0
 
 
-rankFile = open("out/rank."+str(experiment),"w+")
+rankFile = open("out/rank."+str(experiment_bow)+"."+str(experiment_ngrams)+".csv","w+")
 
 id = 0
 for obj in test:
@@ -141,7 +144,6 @@ for obj in test:
         print ("found")
 
 
-
     cntWhereHigher = 0
 
     for i in range(0,len(probs[y_preds==1])):
@@ -151,7 +153,8 @@ for obj in test:
     print (str(cntWhereHigher) + " tables were higher ranked")
 
     rankFile.write(str(id)+","+str(cntWhereHigher)+"\n")
-
+    rankFile.flush()
+    os.fsync(rankFile.fileno())
 
     fp += cntWhereHigher
  #       fp += len(y_preds[y_ts<y_preds])  #true values is 0 and y_preds =1
