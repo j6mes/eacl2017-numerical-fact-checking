@@ -1,11 +1,16 @@
-from __future__ import division
 import csv
-from util import normalise,vocab
+from util import normalise,vocab,experiment
 
 from TableQuestionAnswerTuple import TableQuestionAnswerTuple
 from sklearn.linear_model import LogisticRegression
 
+import sys
 
+experiment = int(sys.argv[1])
+
+
+
+print("Running experiment " + str(experiment))
 
 
 
@@ -30,7 +35,7 @@ with open("WikiTableQuestions/data/training.tsv") as tsv:
     for line in reader:
         train.append(TableQuestionAnswerTuple(line[0],line[1],line[2],line[2]))
         vocab.update(normalise(line[2]).split())
-        print line
+        print (line)
 
 for obj in train:
     obj.load()

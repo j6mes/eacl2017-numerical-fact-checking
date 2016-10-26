@@ -105,9 +105,11 @@ class TableQuestionAnswerTuple:
                 ]
 
         #intersection of BOWs
-        #ret.extend(np.maximum(global_bow(vocab,headerwords),global_bow(vocab,questionwords)))
-
+        if(experiment == 1 or experiment == 3):
+            ret.extend(np.maximum(global_bow(vocab,headerwords),global_bow(vocab,questionwords)))
 
         #union of BOWs
-        #ret.extend(np.minimum(global_bow(vocab, headerwords), global_bow(vocab, questionwords)))
+        if(experiment == 2 or experiment == 3):
+            ret.extend(np.minimum(global_bow(vocab, headerwords), global_bow(vocab, questionwords)))
+
         return ret
