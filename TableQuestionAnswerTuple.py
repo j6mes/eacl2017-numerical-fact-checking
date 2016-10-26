@@ -22,7 +22,6 @@ class TableQuestionAnswerTuple:
         self.question = (''.join(ch for ch in question if ch not in self.exclude))
         self.table_path = table
         self.answer = answer
-        print self.question
 
 
     def read_table(self):
