@@ -1,7 +1,7 @@
 import csv
 import os
 
-from util import normalise,vocab,experiment_bow, experiment_ngrams, vocab_ngrams
+from util import normalise,vocab, vocab_ngrams
 
 from feature_eng import character_ngram
 from TableQuestionAnswerTuple import TableQuestionAnswerTuple
@@ -9,8 +9,8 @@ from sklearn.linear_model import LogisticRegression
 
 import sys
 
-experiment_bow += int(sys.argv[1])
-experiment_ngrams += int(sys.argv[2])
+experiment_bow = int(sys.argv[1])
+experiment_ngrams = int(sys.argv[2])
 
 print("Running experiment " + str(experiment_bow)+ "-"+str(experiment_ngrams))
 

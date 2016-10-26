@@ -10,5 +10,3 @@ def normalise(text):
 vocab = set()
 vocab_ngrams = set()
 
-experiment_bow = 0
-experiment_ngrams = 0

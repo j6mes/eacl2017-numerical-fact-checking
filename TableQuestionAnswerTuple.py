@@ -3,6 +3,8 @@ import random
 import itertools
 import string
 
+import sys
+
 from util import *
 
 from sklearn.metrics import jaccard_similarity_score
@@ -22,7 +24,6 @@ class TableQuestionAnswerTuple:
         self.question = (''.join(ch for ch in question if ch not in self.exclude))
         self.table_path = table
         self.answer = answer
-
 
     def read_table(self):
         rows = []
@@ -102,6 +103,10 @@ class TableQuestionAnswerTuple:
 
 
                 ]
+
+
+        experiment_bow = int(sys.argv[1])
+        experiment_ngrams = int(sys.argv[2])
 
         #intersection of BOWs
         if(experiment_bow == 1 or experiment_bow == 3):
