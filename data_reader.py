@@ -104,7 +104,7 @@ fn = 0
 done = 0
 
 
-rankFile = open("out/rank."+str(experiment))
+rankFile = open("out/rank."+str(experiment),"w+")
 
 id = 0
 for obj in test:
