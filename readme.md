@@ -7,7 +7,6 @@ Will run locally on python3 or on SGE with anaconda3-2.5.0.
  * To run the table ranking algorithm, `numpy` and `scikit-learn` are required.
  * To run the corenlp NER extensions, `gradle` and `cython` `pyjnius` are required
 
-
     brew install gradle
     pip3 install --user numpy scikit-learn cython==0.24
 
