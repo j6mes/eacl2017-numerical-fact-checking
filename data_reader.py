@@ -1,4 +1,6 @@
 import csv
+import os
+
 from util import normalise,vocab,experiment
 
 from TableQuestionAnswerTuple import TableQuestionAnswerTuple
@@ -6,8 +8,7 @@ from sklearn.linear_model import LogisticRegression
 
 import sys
 
-experiment = int(sys.argv[1])
-
+experiment += int(sys.argv[1])
 
 
 print("Running experiment " + str(experiment))
@@ -16,6 +17,11 @@ print("Running experiment " + str(experiment))
 
 train = []
 
+
+try:
+    os.mkdir("out")
+except:
+    pass
 
 
 with open("WikiTableQuestions/data/training.tsv") as tsv:
@@ -96,7 +102,14 @@ fp = 0
 fn = 0
 
 done = 0
+
+
+rankFile = open("out/rank."+str(experiment))
+
+id = 0
 for obj in test:
+    id+=1
+
     testExamples = []
     testExamples.append(obj.generateFeaturesForCorrect())
     testExamples.extend(obj.genAll(test))
@@ -137,6 +150,8 @@ for obj in test:
 
     print (str(cntWhereHigher) + " tables were higher ranked")
 
+    rankFile.write(str(id)+","+str(cntWhereHigher))
+
 
     fp += cntWhereHigher
  #       fp += len(y_preds[y_ts<y_preds])  #true values is 0 and y_preds =1
@@ -149,4 +164,4 @@ for obj in test:
     print ("")
     print ("")
 
-
+rankFile.close()

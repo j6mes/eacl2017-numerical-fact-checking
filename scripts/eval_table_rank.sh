@@ -7,6 +7,6 @@ cd ..
 
 source activate factchecking
 
-python data_reader.py $EXPT
+python data_reader.py $EXPT | tee logs/$EXPT.log
 
 source deactivate
