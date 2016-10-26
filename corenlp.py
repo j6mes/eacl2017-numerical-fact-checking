@@ -27,6 +27,7 @@ def chunk(annotations,option):
 
 
 
+
 def compound(dep_graph,tagged):
     compound_nes = tagged
 
@@ -63,18 +64,19 @@ def compound(dep_graph,tagged):
                         compound_nes[edge.getGovernor().index()-1] = compound_nes[edge.getDependent().index()-1]
 
 
-
-
     return compound_nes
 
 
 
 
 
-mytext = "The Obama administration has doubled the US national debt in eight years."
+
+
+mytext = "Texas has 37 electoral votes."
 number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
 
 from jnius import autoclass
+
 
 Properties = autoclass("java.util.Properties")
 StanfordCoreNLP = autoclass("edu.stanford.nlp.pipeline.StanfordCoreNLP")
@@ -119,11 +121,11 @@ for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
     nes.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) != "O" and not numbers[-1])
 
 
-
-
-print chunk(annotations,nes)
-
-
-
 depgraph = annotations.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation)
-print chunk(annotations,compound(depgraph,nes))
+
+entities = set(chunk(annotations,nes)).union(set(chunk(annotations,compound(depgraph,nes))))
+nums = set(chunk(annotations,numbers))
+
+print [(x,y) for x in entities for y in nums]
+
+

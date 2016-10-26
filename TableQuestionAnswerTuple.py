@@ -2,12 +2,16 @@ import csv
 import random
 import itertools
 import string
+
+from util import *
+
 from sklearn.metrics import jaccard_similarity_score
 from sklearn.metrics.pairwise import cosine_similarity
 
 from feature_eng import *
 
 
+import numpy as np
 
 class TableQuestionAnswerTuple:
 
@@ -82,14 +86,28 @@ class TableQuestionAnswerTuple:
 
         cw = bow(allngrams_words,allngrams_header)
 
+        headerwords = set()
+        for word in self.header:
+            headerwords.update(normalise(word).split())
 
+        questionwords = set(normalise(self.question).split())
 
-        return [1,
+        ret = [1,
                 cosine_similarity([w[0]],[w[1]])[0][0],
                 jaccard_similarity_score([1 if a > 0 else 0 for a in w[0]],
                                          [1 if a > 0 else 0 for a in w[1]]),
 
                 cosine_similarity([cw[0]],[cw[1]])[0][0],
                 jaccard_similarity_score([1 if a > 0 else 0 for a in cw[0]],
-                                         [1 if a > 0 else 0 for a in cw[1]])
+                                         [1 if a > 0 else 0 for a in cw[1]]),
+
+
                 ]
+
+        #intersection of BOWs
+        #ret.extend(np.maximum(global_bow(vocab,headerwords),global_bow(vocab,questionwords)))
+
+
+        #union of BOWs
+        #ret.extend(np.minimum(global_bow(vocab, headerwords), global_bow(vocab, questionwords)))
+        return ret

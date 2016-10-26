@@ -1,13 +1,18 @@
 from __future__ import division
 import csv
-import sys
-
-from sklearn.metrics import classification_report
+from util import normalise,vocab
 
 from TableQuestionAnswerTuple import TableQuestionAnswerTuple
 from sklearn.linear_model import LogisticRegression
 
+
+
+
+
 train = []
+
+
+
 with open("WikiTableQuestions/data/training.tsv") as tsv:
     #Skip first line of TSV file if there is a header
     has_header = csv.Sniffer().has_header(tsv.read(1024))
@@ -24,11 +29,13 @@ with open("WikiTableQuestions/data/training.tsv") as tsv:
 
     for line in reader:
         train.append(TableQuestionAnswerTuple(line[0],line[1],line[2],line[2]))
+        vocab.update(normalise(line[2]).split())
         print line
 
 for obj in train:
     obj.load()
-
+    for words in obj.header:
+        vocab.update(normalise(words).split())
 
 
 test = []
@@ -57,6 +64,7 @@ for obj in test:
 
 trainingExamples = []
 testExamples = []
+print "vocab size is "+str(len(vocab))
 
 done = 0
 for obj in train:
@@ -88,6 +96,7 @@ for obj in test:
     testExamples.append(obj.generateFeaturesForCorrect())
     testExamples.extend(obj.genAll(test))
 
+
     done+=1
 
     print "Load Test Example " + str(done)
@@ -104,14 +113,16 @@ for obj in test:
     probs = lr.predict_proba(X_ts)
 
 
-    print
-
+    print obj.header
+    print obj.question
 
 
 
     if(y_preds[y_ts==1] == 1):
         tp += 1
         print "found"
+
+
 
     cntWhereHigher = 0
 

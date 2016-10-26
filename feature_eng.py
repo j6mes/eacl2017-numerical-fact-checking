@@ -1,5 +1,22 @@
 from collections import defaultdict
 
+def global_bow(global_vocab,example):
+    bow_dict = defaultdict(lambda:0)
+
+    for word in global_vocab:
+        bow_dict[word] = 0
+
+    bow_dict["UNSEENWORD"] = 0
+
+
+    for word in example:
+        if word in bow_dict:
+            bow_dict[word] = 1
+        else:
+            bow_dict["UNSEENWORD"] = 1
+
+
+    return bow_dict.values()
 
 def bow(a,b):
     counts_a = defaultdict(lambda:0)
