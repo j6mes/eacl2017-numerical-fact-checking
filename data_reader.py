@@ -60,7 +60,7 @@ with open("WikiTableQuestions/data/pristine-unseen-tables.tsv") as tsv:
 
     for line in reader:
         test.append(TableQuestionAnswerTuple(line[0],line[1],line[2],line[2]))
-        print line
+        print (line)
 
 for obj in test:
     obj.load()
@@ -69,7 +69,7 @@ for obj in test:
 
 trainingExamples = []
 testExamples = []
-print "vocab size is "+str(len(vocab))
+print ("vocab size is "+str(len(vocab)))
 
 done = 0
 for obj in train:
@@ -78,7 +78,7 @@ for obj in train:
     done+=1
 
     if(done%1000 == 0):
-        print "Load Training Example " + str(done)
+        print ("Load Training Example " + str(done))
 
 
 lr = LogisticRegression()
@@ -104,7 +104,7 @@ for obj in test:
 
     done+=1
 
-    print "Load Test Example " + str(done)
+    print ("Load Test Example " + str(done))
 
     X_ts = []
     y_ts = []
@@ -118,14 +118,14 @@ for obj in test:
     probs = lr.predict_proba(X_ts)
 
 
-    print obj.header
-    print obj.question
+    print (obj.header)
+    print (obj.question)
 
 
 
     if(y_preds[y_ts==1] == 1):
         tp += 1
-        print "found"
+        print ("found")
 
 
 
@@ -135,7 +135,7 @@ for obj in test:
         if(probs[y_ts==1][1]<probs[i][1]):
             cntWhereHigher+=1
 
-    print str(cntWhereHigher) + " tables were higher ranked"
+    print (str(cntWhereHigher) + " tables were higher ranked")
 
 
     fp += cntWhereHigher
@@ -143,10 +143,10 @@ for obj in test:
     fn += len(y_preds[y_ts>y_preds])
 
 
-    print "Precision (Global): " + str(tp/(tp+fp))
-    print "Recall (Global): " + str(tp/(tp+fn))
+    print ("Precision (Global): " + str(tp/(tp+fp)))
+    print ("Recall (Global): " + str(tp/(tp+fn)))
 
-    print ""
-    print ""
+    print ("")
+    print ("")
 
 

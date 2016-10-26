@@ -126,6 +126,6 @@ depgraph = annotations.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDepe
 entities = set(chunk(annotations,nes)).union(set(chunk(annotations,compound(depgraph,nes))))
 nums = set(chunk(annotations,numbers))
 
-print [(x,y) for x in entities for y in nums]
+print ([(x,y) for x in entities for y in nums])
 
 
