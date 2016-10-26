@@ -150,7 +150,7 @@ for obj in test:
 
     print (str(cntWhereHigher) + " tables were higher ranked")
 
-    rankFile.write(str(id)+","+str(cntWhereHigher))
+    rankFile.write(str(id)+","+str(cntWhereHigher)+"\n")
 
 
     fp += cntWhereHigher
