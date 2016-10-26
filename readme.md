@@ -5,7 +5,36 @@ This repository contains a set of tools to rank a table's suitability for provid
 ## Environment
 Will run locally on python3 or on SGE with anaconda3-2.5.0.
  * To run the table ranking algorithm, `numpy` and `scikit-learn` are required.
- * To run the corenlp NER extensions, `gradle` and `pyjnius` are required
+ * To run the corenlp NER extensions, `gradle` and `cython` `pyjnius` are required
+
+
+    brew install gradle
+    pip3 install --user numpy scikit-learn cython==0.24
+
+Installing jnius for python3 is non-trival, but is possible if cython==0.24 is installed. it may fail for any other version
+
+    cd /tmp
+    git clone https://github.com/kivy/pyjnius
+    cd pyjnius
+    sudo python3 setup.py -v install
+
+Test
+
+    $ python3
+    >>> import jnius
+
+If no error, then it's ok. If you get the following error:
+
+    Traceback (most recent call last):
+       File "<stdin>", line 1, in <module>
+       File "/Users/james/anaconda/lib/python3.5/site-packages/jnius-1.1.dev0-py3.5-macosx-10.6-x86_64.egg/jnius/__init__.py", line 42, in <module>
+        if "ANDROID_ARGUMENT" in os.environ:
+    NameError: name 'os' is not defined
+
+Then edit the offending file and delete the whole block of code under the android argument.
+
+
+
 
 ## Set Up
 Data must be downloaded from Pasupat Panupong's site and extracted to the root directory. Run `setup.sh` in the scripts folder to do that on SGE or run the following commands (in the root of this git repo) if testing locally.
@@ -17,7 +46,7 @@ Data must be downloaded from Pasupat Panupong's site and extracted to the root d
 ## Run Table Ranking
 To rank the tables,
 
-    python data_reader.py [bow] [ngrams] [continuous features]
+    python3 data_reader.py [bow] [ngrams] [continuous features]
 
 BOW:
 
@@ -47,7 +76,7 @@ CoreNLP 3.6 can be installed through the `gradle` script. This will download and
 
 Or try (if gradle daemon is not installed and is being run from the gitrepo)
 
-    gradlew writeClasspath
+    ./gradlew writeClasspath
 
 This outputs the classpath to `build/classpath.txt`
 
