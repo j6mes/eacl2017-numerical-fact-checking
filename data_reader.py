@@ -17,8 +17,7 @@ print("Running experiment " + str(experiment_bow)+ "-"+str(experiment_ngrams))
 
 
 train = []
-
-
+#
 try:
     os.mkdir("out")
 except:

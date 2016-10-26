@@ -120,7 +120,7 @@ class TableQuestionAnswerTuple:
 
         #intersection of ngrams
         if(experiment_ngrams == 1 or experiment_ngrams == 3):
-            ret.extend(np.maximum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))),global_bow(vocab_ngrams, character_ngram_nwx(normalise(self.question)))))
+            ret.extend(np.maximum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))),global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))))
 
         #union of ngrams
         if(experiment_ngrams == 2 or experiment_ngrams == 3):

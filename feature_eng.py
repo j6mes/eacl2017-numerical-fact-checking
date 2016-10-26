@@ -16,7 +16,7 @@ def global_bow(global_vocab,example):
             bow_dict["UNSEENWORD"] = 1
 
 
-    return bow_dict.values()
+    return [v for v in bow_dict.values()]
 
 def bow(a,b):
     counts_a = defaultdict(lambda:0)
