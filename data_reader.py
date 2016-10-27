@@ -97,7 +97,11 @@ print ("vocab size is "+str(len(vocab)))
 
 done = 0
 for obj in train:
+    # AV: The naming is a bit odd: shouldn't all question-table pairs have the same features?
     trainingExamples.append(obj.generateFeaturesForCorrect())
+    # AV: You probably want to refactor this; why pick only one randomly, and not all?
+    # AV: Or even better, pick to generate a negative training example using a table
+    # that is more likely to be useful, e.g. one that has high overlap?
     trainingExamples.extend(obj.generateFeaturesForIncorrect(train))
     done+=1
 
@@ -142,29 +146,35 @@ for obj in test:
     id+=1
 
     testExamples = []
-    testExamples.append(obj.generateFeaturesForCorrect())
+    # AV: I see what you do mean here, but it assumes that you know the correct answer
+    # Of course, you don't actually use it, but would be better to have genAll do what it says
+    # Updated it genAll to this effect.
+    # testExamples.append(obj.generateFeaturesForCorrect())
     testExamples.extend(obj.genAll(test))
 
 
     done+=1
 
     X_ts = []
+    # AV: this now collects the table path for each the features
     y_ts = []
+    # AV: This collects the features for each question-table pair
     for ex in testExamples:
         X_ts.append(ex[0])
-        y_ts.append(ex[1])
+        y_ts.append(ex[2])
 
 
     y_preds = lr.predict(X_ts)
     probs = lr.predict_proba(X_ts)
 
-
-    print (obj.header)
-    print (obj.question)
-
-
+    print ("question:", obj.question)
+    print ("correct table:", obj.table_path)
+    print ("header", obj.header)
 
     fflag = 0
+    # AV: Not sure I get this: y_preds an array of the predctions whether each table is good
+    # for the question. y_ts is also an array which is compared to an integer? This will
+    # always return 0, thus this evaluates whether the first table considered is the correct one?
     if(y_preds[y_ts==1] == 1):
         tp += 1
         fflag = 1

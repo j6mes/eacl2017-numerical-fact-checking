@@ -66,7 +66,9 @@ class TableQuestionAnswerTuple:
 
     def generateFeaturesForIncorrect(self,objs):
         obj = random.choice(objs)
-        while(obj.id is  self.id):
+        # AV: replaced "is" with "==": see here for explanation
+        # http://stackoverflow.com/questions/22885931/when-if-ever-to-use-the-is-keyword-in-python
+        while(obj.id == self.id):
             obj = random.choice(objs)
 
         return [(self.features(obj.header,obj.hbow,obj.hngs),0)]
@@ -74,9 +76,12 @@ class TableQuestionAnswerTuple:
     def genAll(self,objs):
         ret = []
         for obj in objs:
-            if obj.id is self.id:
-                continue
-            ret.append((self.features(obj.header,obj.hbow,obj.hngs),0))
+            # AV: removed this so that it generates features for all tables including the correct one.
+            #if obj.id == self.id:
+            #    continue
+            # AV: Changed this from assuming all incorrect (0) to None
+            # AV: also made it return the table id itself
+            ret.append((self.features(obj.header,obj.hbow,obj.hngs),None, obj.table_path))
 
         return ret
 
