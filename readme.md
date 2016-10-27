@@ -7,8 +7,20 @@ Will run locally on python3 or on SGE with anaconda3-2.5.0.
  * To run the table ranking algorithm, `numpy` and `scikit-learn` are required.
  * To run the corenlp NER extensions, `gradle` and `cython` `pyjnius` are required
 
-    brew install gradle
+    ```brew install gradle
     pip3 install --user numpy scikit-learn cython==0.24
+    ```
+
+    Alternatively, one can install gradle by:
+
+    ```curl -s https://get.sdkman.io | bash
+    sdk install gradle 3.1
+    ```
+    and if cython using anaconda:
+
+    ```
+    conda install -c anaconda cython=0.24
+    ```
 
 Installing jnius for python3 is non-trival, but is possible if cython==0.24 is installed. it may fail for any other version
 
