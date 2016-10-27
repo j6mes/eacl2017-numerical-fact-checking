@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ -l mem=16G -l rmem=16G
+#$ -l mem=20G -l rmem=20G
 #$ -pe openmp 1
 
 module load apps/python/anaconda3-2.5.0

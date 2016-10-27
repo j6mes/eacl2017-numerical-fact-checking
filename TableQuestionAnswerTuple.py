@@ -48,26 +48,39 @@ class TableQuestionAnswerTuple:
         self.header = tab[0]
         self.rows = tab[1]
 
+    def load_global(self):
+        questionwords = set(normalise(self.question).split())
+        self.qbow = global_bow(vocab,questionwords)
+        self.qngs = global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))
+
+        headerwords = set()
+        for word in self.header:
+            headerwords.update(normalise(word).split())
+
+        self.hngs = global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(self.header))))
+        self.hbow = global_bow(vocab, normalise(" ".join(headerwords)))
+
+
     def generateFeaturesForCorrect(self):
-        return self.features(self.header),1
+        return self.features(self.header,self.hbow,self.hngs),1
 
     def generateFeaturesForIncorrect(self,objs):
         obj = random.choice(objs)
         while(obj.id is  self.id):
             obj = random.choice(objs)
 
-        return [(self.features(obj.header),0)]
+        return [(self.features(obj.header,obj.hbow,obj.hngs),0)]
 
     def genAll(self,objs):
         ret = []
         for obj in objs:
             if obj.id is self.id:
                 continue
-            ret.append((self.features(obj.header),0))
+            ret.append((self.features(obj.header,obj.hbow,obj.hngs),0))
 
         return ret
 
-    def features(self,header):
+    def features(self,header,hbow,hng):
         h = []
         h.extend(j.lower().split(" ") for j in header)
         h=[''.join(ch for ch in a if ch not in self.exclude) for a in list(itertools.chain.from_iterable(h))]
@@ -86,11 +99,7 @@ class TableQuestionAnswerTuple:
 
         cw = bow(allngrams_words,allngrams_header)
 
-        headerwords = set()
-        for word in header:
-            headerwords.update(normalise(word).split())
 
-        questionwords = set(normalise(self.question).split())
 
         ret = [1,
                 cosine_similarity([w[0]],[w[1]])[0][0],
@@ -105,24 +114,28 @@ class TableQuestionAnswerTuple:
                 ]
 
 
-        experiment_bow = int(sys.argv[1])
-        experiment_ngrams = int(sys.argv[2])
 
+
+
+
+        experiment_bow = int(sys.argv[1])
         #intersection of BOWs
         if(experiment_bow == 1 or experiment_bow == 3):
-            ret.extend(np.maximum(global_bow(vocab,headerwords),global_bow(vocab,questionwords)))
+            ret.extend(np.maximum(hbow,self.qbow))
 
         #union of BOWs
         if(experiment_bow == 2 or experiment_bow == 3):
-            ret.extend(np.minimum(global_bow(vocab, headerwords), global_bow(vocab, questionwords)))
+            ret.extend(np.minimum(hbow, self.qbow))
 
 
 
+        experiment_ngrams = int(sys.argv[2])
         #intersection of ngrams
         if(experiment_ngrams == 1 or experiment_ngrams == 3):
-            ret.extend(np.maximum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))),global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))))
+            ret.extend(np.maximum(hng,self.qngs))
 
         #union of ngrams
         if(experiment_ngrams == 2 or experiment_ngrams == 3):
-            ret.extend(np.minimum(global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(header)))), global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))))
+            ret.extend(np.minimum(hng, self.qngs))
+
         return ret

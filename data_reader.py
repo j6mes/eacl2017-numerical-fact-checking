@@ -51,6 +51,14 @@ for obj in train:
         vocab.update(normalise(words).split())
         vocab_ngrams.update(character_ngram(normalise(words)))
 
+done = 0
+for obj in train:
+    obj.load_global()
+
+    done+=1
+    if(done%1000 == 0):
+        print("Precomputing feature vectors - " + str(done))
+
 test = []
 with open("WikiTableQuestions/data/pristine-unseen-tables.tsv") as tsv:
     #Skip first line of TSV file if there is a header
@@ -74,6 +82,14 @@ for obj in test:
     obj.load()
 
 
+done = 0
+for obj in test:
+    obj.load_global()
+
+    done += 1
+    if (done % 1000 == 0):
+        print("Precomputing feature vectors - " + str(done))
+
 
 trainingExamples = []
 testExamples = []
@@ -96,6 +112,15 @@ ys = []
 for ex in trainingExamples:
     Xs.append(ex[0])
     ys.append(ex[1])
+
+
+print("Training log reg classifier")
+lr.fit(Xs, ys)
+print("Done")
+
+Xs = []
+ys = []
+trainingExamples = []
 
 
 
@@ -127,7 +152,6 @@ for obj in test:
         X_ts.append(ex[0])
         y_ts.append(ex[1])
 
-    lr.fit(Xs,ys)
 
     y_preds = lr.predict(X_ts)
     probs = lr.predict_proba(X_ts)
