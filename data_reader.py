@@ -135,6 +135,10 @@ rankFile = open("out/rank."+str(experiment_bow)+"."+str(experiment_ngrams)+".csv
 
 id = 0
 for obj in test:
+
+    print ("Load Test Example " + str(done))
+
+
     id+=1
 
     testExamples = []
@@ -143,8 +147,6 @@ for obj in test:
 
 
     done+=1
-
-    print ("Load Test Example " + str(done))
 
     X_ts = []
     y_ts = []
