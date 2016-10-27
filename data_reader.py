@@ -179,7 +179,7 @@ for obj in test:
 
     print (str(cntWhereHigher) + " tables were higher ranked")
 
-    rankFile.write(str(id)+","+str(cntWhereHigher)+","+ fflag+"\n")
+    rankFile.write(str(id)+","+str(cntWhereHigher)+","+ str(fflag)+"\n")
     rankFile.flush()
     os.fsync(rankFile.fileno())
 
