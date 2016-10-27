@@ -162,8 +162,10 @@ for obj in test:
 
 
 
+    fflag = 0
     if(y_preds[y_ts==1] == 1):
         tp += 1
+        fflag = 1
         print ("found")
 
 
@@ -175,7 +177,7 @@ for obj in test:
 
     print (str(cntWhereHigher) + " tables were higher ranked")
 
-    rankFile.write(str(id)+","+str(cntWhereHigher)+"\n")
+    rankFile.write(str(id)+","+str(cntWhereHigher)+","+ fflag+"\n")
     rankFile.flush()
     os.fsync(rankFile.fileno())
 
