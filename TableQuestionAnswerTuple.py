@@ -81,7 +81,7 @@ class TableQuestionAnswerTuple:
             #    continue
             # AV: Changed this from assuming all incorrect (0) to None
             # AV: also made it return the table id itself
-            ret.append((self.features(obj.header,obj.hbow,obj.hngs),None, obj.table_path))
+            ret.append((self.features(obj.header,obj.hbow,obj.hngs), 1 if obj.id == self.id else 0, obj.table_path))
 
         return ret
 

@@ -1,6 +1,6 @@
 import csv
 import os
-
+import numpy as np
 from util import normalise,vocab, vocab_ngrams
 
 from feature_eng import character_ngram
@@ -150,51 +150,61 @@ for obj in test:
     # Of course, you don't actually use it, but would be better to have genAll do what it says
     # Updated it genAll to this effect.
     # testExamples.append(obj.generateFeaturesForCorrect())
+
+    #That's fine. There was a need for the correct value to be first, that no longer exists
     testExamples.extend(obj.genAll(test))
 
 
     done+=1
 
-    X_ts = []
-    # AV: this now collects the table path for each the features
-    y_ts = []
-    # AV: This collects the features for each question-table pair
+    X_ts = []   #feature vector for all test examples
+    y_ts = []  #class for all test examples (1 - is correct, 0 - is not correct)
     for ex in testExamples:
         X_ts.append(ex[0])
-        y_ts.append(ex[2])
+        y_ts.append(ex[1])
 
+    X_ts = np.array(X_ts)
+    y_ts = np.array(y_ts)
 
+    #predict class for each example and record probabilities
     y_preds = lr.predict(X_ts)
-    probs = lr.predict_proba(X_ts)
+    y_probs = lr.predict_proba(X_ts)
 
     print ("question:", obj.question)
     print ("correct table:", obj.table_path)
     print ("header", obj.header)
 
-    fflag = 0
+    found_flag = 0
     # AV: Not sure I get this: y_preds an array of the predctions whether each table is good
     # for the question. y_ts is also an array which is compared to an integer? This will
     # always return 0, thus this evaluates whether the first table considered is the correct one?
-    if(y_preds[y_ts==1] == 1):
+
+
+    # JT: y_ts==1 will return a vector where the 'correct' table is True and all other values is false
+    # Use y_preds[y_ts==1] will return the predicted class for the entry where the true label is 1.
+    # When this value is also 1, then we can record a true positive match.
+    if(y_preds[y_ts==1][0] == 1):
         tp += 1
-        fflag = 1
+        found_flag = 1
         print ("found")
 
 
+    # JT: Again, use this y_ts==1 index to identify the number of tables which have a higher probability than the
+    # probability given by classifying the correct entry
     cntWhereHigher = 0
-
-    for i in range(0,len(probs[y_preds==1])):
-        if(probs[y_ts==1][1]<probs[i][1]):
+    for i in range(0,len(y_probs[y_preds==1])):
+        if(y_probs[y_ts==1][0][1]<y_probs[i][1]):
             cntWhereHigher+=1
-
     print (str(cntWhereHigher) + " tables were higher ranked")
-
-    rankFile.write(str(id)+","+str(cntWhereHigher)+","+ str(fflag)+"\n")
+    rankFile.write(str(id)+","+str(cntWhereHigher)+","+ str(found_flag)+"\n")
     rankFile.flush()
     os.fsync(rankFile.fileno())
 
+    # Number of false positives is number of entries that scored higher than the actual
     fp += cntWhereHigher
- #       fp += len(y_preds[y_ts<y_preds])  #true values is 0 and y_preds =1
+
+    # Number of false negatives is the number of predicted entries where an entry should be classified as 1
+    # but is instead is ranked 0. Use the > apply this behaviour the the list
     fn += len(y_preds[y_ts>y_preds])
 
 
