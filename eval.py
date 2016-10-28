@@ -32,6 +32,7 @@ for i in range(0,3+1):
             print("Number of examples: \t\t" + str(total_num))
             print("Total Found:\t\t\t\t"+str(total_found))
             print("Recall:\t\t\t\t\t\t"+ str(total_found/(total_num)))
+            print("Average Rank For Correct:\t\t\t\t" + str(avg_rank_found))
             print("Average Rank:\t\t\t\t" + str(avg_rank))
 
             print("")
