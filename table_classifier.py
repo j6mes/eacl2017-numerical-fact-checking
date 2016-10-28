@@ -161,8 +161,9 @@ def runtime_predict(question,tables,classifier):
 
     kb=np.array(kb)
 
-    print(y_pred)
-    print(kb[y_pred==1])
+    results = kb[y_pred==1]
+    print ("Found "+ str(len(results)) + " candidate matches")
+    return results[:,2]
 
 
 if __name__ == "__main__":
