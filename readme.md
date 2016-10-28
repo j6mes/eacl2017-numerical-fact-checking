@@ -57,7 +57,12 @@ Data must be downloaded from Pasupat Panupong's site and extracted to the root d
 ## Run Table Ranking
 To rank the tables,
 
-    python3 data_reader.py [bow] [ngrams] [continuous features]
+    python3 table_classifier.py [bow] [ngrams] [continuous features]
+
+To run online predictor,
+
+    python3 runtime_test.py [bow] [ngrams]
+
 
 BOW:
 

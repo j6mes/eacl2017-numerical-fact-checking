@@ -60,6 +60,10 @@ class TableQuestionAnswerTuple:
         self.hngs = global_bow(vocab_ngrams, character_ngram_nw(normalise(" ".join(self.header))))
         self.hbow = global_bow(vocab, normalise(" ".join(headerwords)))
 
+    def gen_q_features(self):
+        questionwords = set(normalise(self.question).split())
+        self.qbow = global_bow(vocab, questionwords)
+        self.qngs = global_bow(vocab_ngrams, character_ngram_nw(normalise(self.question)))
 
     def generateFeaturesForCorrect(self):
         return self.features(self.header,self.hbow,self.hngs),1
