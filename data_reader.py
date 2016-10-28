@@ -182,7 +182,8 @@ for obj in test:
 
     # JT: y_ts==1 will return a vector where the 'correct' table is True and all other values is false
     # Use y_preds[y_ts==1] will return the predicted class for the entry where the true label is 1.
-    # When this value is also 1, then we can record a true positive match.
+    # When this value is also 1, then we can record a true positive match. - this worked on python2 and has
+    # been fixed for python3 thanks to numpy
     if(y_preds[y_ts==1][0] == 1):
         tp += 1
         found_flag = 1
