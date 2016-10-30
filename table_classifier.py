@@ -163,11 +163,9 @@ def runtime_predict(question,tables,classifier):
 
     print(y_pred)
     print(kb[y_pred==1])
+    return kb[y_pred==1]
 
 
 if __name__ == "__main__":
     classifier = train("training")
     evaluate(classifier,"pristine-unseen-tables")
-
-
-

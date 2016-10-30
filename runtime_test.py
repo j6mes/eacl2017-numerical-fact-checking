@@ -5,5 +5,5 @@ if __name__ == "__main__":
     classifier = train("training",kb)
 
     while True:
-        q = input("Enter Question")
+        q = input("Enter Question\n")
         runtime_predict(q,kb,classifier)
