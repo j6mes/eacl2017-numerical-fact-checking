@@ -9,4 +9,4 @@ if __name__ == "__main__":
 
     while True:
         q = input("Enter Question\n")
-        runtime_predict(q,kb,classifier)
+        print(runtime_predict(q,kb,classifier))
