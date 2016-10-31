@@ -1,3 +1,7 @@
+import sys
+
+number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
+
 def chunk(annotations,option):
     last_ne = []
     chunked_nes = []
@@ -28,7 +32,7 @@ def chunk(annotations,option):
 
 
 
-def compound(dep_graph,tagged):
+def compound(dep_graph,annotations,tagged):
     compound_nes = tagged
 
     changed = 1
@@ -42,8 +46,6 @@ def compound(dep_graph,tagged):
 
             while(iterator.hasNext()):
                 edge = iterator.next()
-
-
 
 
                 if(edge.getGovernor().index() == edge.getDependent().index()):
@@ -68,13 +70,6 @@ def compound(dep_graph,tagged):
 
 
 
-
-
-
-
-mytext = "Texas has 37 electoral votes."
-number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
-
 from jnius import autoclass
 
 
@@ -87,6 +82,8 @@ CoreAnnotations.SentencesAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnot
 CoreAnnotations.TextAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$TextAnnotation")
 CoreAnnotations.NamedEntityTagAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation")
 
+CoreAnnotations.NumericValueAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericTypeAnnotation")
+
 CoreLabel = autoclass("edu.stanford.nlp.ling.CoreLabel")
 IndexedWord = autoclass("edu.stanford.nlp.ling.IndexedWord")
 Annotation = autoclass("edu.stanford.nlp.pipeline.Annotation")
@@ -98,34 +95,35 @@ SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation = autocl
 SemanticGraphEdge = autoclass("edu.stanford.nlp.semgraph.SemanticGraphEdge")
 CoreMap = autoclass("edu.stanford.nlp.util.CoreMap")
 
-
-
-props = Properties()
-props.setProperty("annotators","tokenize,ssplit,pos,lemma,ner,parse,depparse,dcoref")
-
-pipeline = StanfordCoreNLP(props)
-doc = Annotation(mytext)
-
-pipeline.annotate(doc)
-
-annotations = doc.get(CoreAnnotations.SentencesAnnotation).get(0)
+NumberNormalizer = autoclass("edu.stanford.nlp.ie.NumberNormalizer")
 
 
 
-nes = []
-numbers = []
+class SharedPipeline:
+    pipeline = None
 
-for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
-    corelabel = annotations.get(CoreAnnotations.TokensAnnotation).get(i)
-    numbers.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) in number_ne_types)
-    nes.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation) != "O" and not numbers[-1])
+    def __init__(self):
+        if self.pipeline is None:
+            props = Properties()
+            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,dcoref")
 
+            pipeline = StanfordCoreNLP(props)
+            self.pipeline = pipeline
 
-depgraph = annotations.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation)
-
-entities = set(chunk(annotations,nes)).union(set(chunk(annotations,compound(depgraph,nes))))
-nums = set(chunk(annotations,numbers))
-
-print ([(x,y) for x in entities for y in nums])
+    def getInstance(self):
+        return self.pipeline
 
 
+class SharedNERPipeline:
+    pipeline = None
+
+    def __init__(self):
+        if self.pipeline is None:
+            props = Properties()
+            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner")
+
+            pipeline = StanfordCoreNLP(props)
+            self.pipeline = pipeline
+
+    def getInstance(self):
+        return self.pipeline

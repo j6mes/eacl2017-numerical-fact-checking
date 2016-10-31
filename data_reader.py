@@ -5,6 +5,7 @@ from feature_eng import character_ngram
 from util import normalise, vocab_ngrams, vocab
 
 
+
 def load_instances(file,add_to_global_bow=False):
     instances = []
 
