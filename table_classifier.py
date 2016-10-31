@@ -157,11 +157,10 @@ def runtime_predict(question,tables,classifier):
     for item in kb:
         Xs.append(item[0])
 
-    y_pred = np.array(classifier.predict(Xs))
-
+    y_probs = np.array(classifier.predict_proba(Xs))
     kb=np.array(kb)
 
-    results = kb[y_pred==1]
+    results = kb[y_probs[1]>y_probs[0]]
     print ("Found "+ str(len(results)) + " candidate matches")
     return results[:,2]
 
@@ -169,6 +168,3 @@ def runtime_predict(question,tables,classifier):
 if __name__ == "__main__":
     classifier = train("training")
     evaluate(classifier,"pristine-unseen-tables")
-
-
-

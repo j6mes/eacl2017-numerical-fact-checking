@@ -8,8 +8,5 @@ if __name__ == "__main__":
 
 
     while True:
-        print("")
-        print("")
-        q = input("Input statement to check: ")
-
-        print(runtime_predict(q,kb,classifier))
+        q = input("Enter Question\n")
+        runtime_predict(q,kb,classifier)

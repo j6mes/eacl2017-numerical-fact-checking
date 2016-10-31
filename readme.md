@@ -102,3 +102,7 @@ Then use
     python3 corenlp.py
 
 At the moment, the input utterance must be set in the file, this is very much work in progress!
+
+Alternatively, you can use the jupyter notebook:
+
+```jupyter notebook HeroXInteractive.ipynb```
