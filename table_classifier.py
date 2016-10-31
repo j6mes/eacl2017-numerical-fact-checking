@@ -160,9 +160,9 @@ def runtime_predict(question,tables,classifier):
     y_probs = np.array(classifier.predict_proba(Xs))
     kb=np.array(kb)
 
-    results = kb[y_probs[1]>y_probs[0]]
+    results = kb[y_probs[:,1]>y_probs[:,0]]
     print ("Found "+ str(len(results)) + " candidate matches")
-    return results[:,2]
+    return list(zip(results[:,2],y_probs[y_probs[:,1]>y_probs[:,0]][:,1]))
 
 
 if __name__ == "__main__":
