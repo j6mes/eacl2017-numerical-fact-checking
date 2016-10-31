@@ -122,7 +122,7 @@ if __name__ == "__main__":
     instances = load_instances('training')
     print(len(instances))
 
-    if(int(sys.argv[1]>len(instances))):
+    if(int(sys.argv[1])>len(instances)):
         sys.exit()
 
 
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
     for instance in instances:
         tuples = (search(instance,None,None,None))
-        with open("tuples/"+instance.replace('/','').replace('.csv','') +".tsv",'w+') as file:
+        with open("tuples/"+instance.replace('.csv','') +".tsv",'w+') as file:
             for tuple in tuples:
                 file.write(tuple[0]+"\t"+tuple[1]+"\t"+tuple[2]+"\n")
         print("Generated " + str(len(tuples)) + " tuples")
