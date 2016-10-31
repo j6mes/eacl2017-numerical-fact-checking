@@ -11,7 +11,7 @@ cd ..
 
 source activate factchecking
 
-./gradlew buildClasspath
+./gradlew writeClasspath
 export CLASSPATH=`cat build/classpath.txt`
 
 python table_search.py $SGE_TASK_ID
