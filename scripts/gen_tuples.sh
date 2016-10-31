@@ -14,6 +14,6 @@ source activate factchecking
 ./gradlew writeClasspath
 export CLASSPATH=`cat build/classpath.txt`
 
-python table_search.py $SGE_TASK_ID
+python table_search.py
 
 source deactivate

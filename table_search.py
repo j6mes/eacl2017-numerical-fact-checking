@@ -122,12 +122,6 @@ if __name__ == "__main__":
     instances = load_instances('training')
     print(len(instances))
 
-    if(int(sys.argv[1])>len(instances)):
-        sys.exit()
-
-
-    print(instances[int(sys.argv[1]) : min(int(sys.argv[1])+100,len(instances))])
-
     for instance in instances:
         tuples = (search(instance,None,None,None))
         with open("tuples/"+instance.replace('.csv','') +".tsv",'w+') as file:
