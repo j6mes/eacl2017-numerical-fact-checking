@@ -5,7 +5,7 @@ from factchecking.quiz import Quiz
 
 
 def quiz_tsv_file(filename,root="data/herox/quiz"):
-    with open(filename, 'r') as f:
+    with open(root+ "/"+filename+".tsv", 'r') as f:
 
         questions = []
         answers = []
@@ -13,6 +13,8 @@ def quiz_tsv_file(filename,root="data/herox/quiz"):
         for line in f:
             line = line.replace("\n"," ").strip()
             bits = line.split("\t")
+
+            print(bits)
 
             question_type = bits[0]
             question = bits[1]
