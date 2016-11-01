@@ -6,4 +6,8 @@ def load_quiz(quiz_name,strategy=quiz_tsv_file):
 
 
 if __name__ == "__main__":
-    print(load_quiz("practice1"))
+    quiz = load_quiz("practice1")
+
+    for question in quiz.questions:
+        print(question.text)
+        question.parse()

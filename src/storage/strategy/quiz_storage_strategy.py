@@ -14,8 +14,6 @@ def quiz_tsv_file(filename,root="data/herox/quiz"):
             line = line.replace("\n"," ").strip()
             bits = line.split("\t")
 
-            print(bits)
-
             question_type = bits[0].strip()
             question = bits[1].strip()
 
@@ -30,4 +28,3 @@ def quiz_tsv_file(filename,root="data/herox/quiz"):
             return PracticeQuiz(questions,answers)
         else:
             return Quiz(questions)
-

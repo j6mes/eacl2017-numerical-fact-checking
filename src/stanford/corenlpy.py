@@ -2,6 +2,50 @@ import sys
 
 number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
 
+
+def nps_from_tree(tree):
+    np_trees = find_np_subtrees(tree)
+
+    chunks = []
+
+    for tree in np_trees:
+        chunks.append(flatten_tree(tree))
+
+    return chunks
+
+
+def flatten_tree(tree):
+    words = []
+
+    if type(tree) == str:
+        return tree
+
+    if tree.isLeaf():
+        return tree.nodeString()
+
+
+    for i in range(tree.numChildren()):
+        subtree = tree.getChild(i)
+        words.append(flatten_tree(subtree))
+
+    return " ".join(words)
+
+
+def find_np_subtrees(tree):
+    np_trees = []
+    for i in range(tree.numChildren()):
+        subtree = tree.getChild(i)
+
+        if subtree.label().value() == "NP":
+            np_trees.append(subtree)
+        elif not subtree.isLeaf():
+            np_trees.extend(nps_from_tree(subtree))
+
+    return np_trees
+
+
+
+
 def chunk(annotations,option):
     last_ne = []
     chunked_nes = []
@@ -100,6 +144,8 @@ CoreMap = autoclass("edu.stanford.nlp.util.CoreMap")
 
 NumberNormalizer = autoclass("edu.stanford.nlp.ie.NumberNormalizer")
 
+TreeCoreAnnotations = autoclass("edu.stanford.nlp.trees.TreeCoreAnnotations")
+TreeCoreAnnotations.TreeAnnotation = autoclass("edu.stanford.nlp.trees.TreeCoreAnnotations$TreeAnnotation")
 
 
 class SharedPipeline:
