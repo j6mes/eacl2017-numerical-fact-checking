@@ -16,12 +16,12 @@ def quiz_tsv_file(filename,root="data/herox/quiz"):
 
             print(bits)
 
-            question_type = bits[0]
-            question = bits[1]
+            question_type = bits[0].strip()
+            question = bits[1].strip()
 
             answer = None
             if len(bits) > 2:
-                answer = Answer.factory(bits[2])
+                answer = Answer.factory(bits[2].strip())
                 answers.append(answer)
 
             questions.append(Question(text=question,type=question_type,answer=answer))
