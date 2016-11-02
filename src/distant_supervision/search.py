@@ -1,3 +1,4 @@
+import json
 import pickle
 import uuid
 
@@ -29,9 +30,15 @@ class Search:
             entry = (query,str(search_uuid))
             pickle.dump(entry, open("data/distant_supervision/queries.p", "ab+"))
 
-        filename = "data/distant_supervision/raw_queries/" + self.search_log[query]
+        filename = "data/distant_supervision/raw_queries/" + self.search_log[query] + ".json"
 
+        urls = []
+        with open(filename,'r') as f:
+            contents = json.load(f)
+            for link in contents:
+                urls.append(link['Url'])
 
+        return urls
 
 
     def instance():
@@ -48,8 +55,4 @@ class Search:
 
 
 if __name__ == "__main__":
-    Search.instance().search("test")
-
-    Search.instance().search("america")
-
-    Search.instance().search("test")
+    print(Search.instance().search("america"))
