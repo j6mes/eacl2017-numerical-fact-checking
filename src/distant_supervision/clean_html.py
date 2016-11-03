@@ -1,8 +1,9 @@
+import os
 import re
 
 from bs4 import BeautifulSoup
 
-from distant_supervision.scraper import get_page_contents
+from distant_supervision.scraper import get_page_contents, url_hash, get_page
 
 
 def clean_html(html):
@@ -24,7 +25,7 @@ def haschild(elem):
     return False
 
 
-def getcontent(tag,original_html):
+def text_from_html(tag,original_html):
     soup = BeautifulSoup(original_html,"lxml")
 
     paras = soup.find('body').find_all(['p','div','article'])
@@ -83,12 +84,38 @@ def getcontent(tag,original_html):
     return "\n".join(line for line in ("\n".join(out)).split("\n") if len(line.strip())>5)
 
 
+def get_text_path():
+    return "data/distant_supervision/scraped_texts"
+
+
+def save_text_disk(url):
+    hash = url_hash(url)
+
+    pathName = get_text_path()
+
+    if not os.path.exists(pathName):
+        print("creating dir " + pathName)
+        os.makedirs(pathName)
+
+    data = get_page(url)
+    data = text_from_html("p",clean_html(data))
+
+    with open(pathName+"/"+hash+".txt","w+") as file:
+        file.write(data)
+
+def get_text(url):
+    path = get_text_path() + "/" + url_hash(url) + ".txt"
+    if not os.path.exists(path):
+        save_text_disk(url)
+
+    with open(path, 'r') as file:
+        return file.read()
+
 
 
 if __name__ == "__main__":
-    print(getcontent("p",clean_html(bytes.decode(get_page_contents("http://www.bbc.co.uk/news/election-us-2016-37854525")))))
+    #print(text_from_html("p",clean_html(bytes.decode(get_page_contents("http://www.bbc.co.uk/news/election-us-2016-37854525")))))
+    #print(text_from_html("p",clean_html(bytes.decode(get_page_contents("https://en.wikipedia.org/wiki/United_States")))))
+    #print(text_from_html("p",clean_html(bytes.decode(get_page_contents("https://en.wikipedia.org/wiki/Linear_cryptanalysis")))))
 
-
-    print(getcontent("p",clean_html(bytes.decode(get_page_contents("https://en.wikipedia.org/wiki/United_States")))))
-
-    print(getcontent("p",clean_html(bytes.decode(get_page_contents("https://en.wikipedia.org/wiki/Linear_cryptanalysis")))))
+    print(get_text("http://www.bbc.co.uk/news/election-us-2016-37854525"))

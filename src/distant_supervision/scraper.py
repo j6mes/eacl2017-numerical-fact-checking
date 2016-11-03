@@ -44,6 +44,9 @@ def get_page(url):
     with open(path,'r') as file:
         return file.read()
 
+
+
+
 if __name__ == "__main__":
     save_page_disk("http://bbc.co.uk")
     print(get_page("http://bbc.co.uk"))
