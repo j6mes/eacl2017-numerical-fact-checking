@@ -1,7 +1,15 @@
 import itertools
+import re
 
 from factchecking.question import Question
-from wikitablequestions.table_reader import read_table
+from wikitablequestions.dataset_reader import load_instances
+from wikitablequestions.table_reader import read_table, number_entity_tuples
+
+
+def normalise(text):
+    text = re.sub(r'[^\w]', ' ', text)
+    text = re.sub(r'[0-9]','D', text.lower())
+    return text
 
 
 def key_terms(text):
@@ -15,21 +23,75 @@ def key_terms(text):
     terms.extend(itertools.chain.from_iterable(ne.split() for ne in question.nes))
     terms.extend(itertools.chain.from_iterable(number.split() for number in question.numbers))
     terms.extend(itertools.chain.from_iterable(np.split() for np in question.nps))
-
     return set(terms)
 
+
 def generate_search_query_known_table(text,table):
-    terms = key_terms(text)
+    terms = set(normalise(w) for w in key_terms(text))
     table = read_table(table)
 
-    header_words = set(itertools.chain.from_iterable(h.split() for h in table.header))
+    header_words = set(itertools.chain.from_iterable(normalise(h).split() for h in table['header']))
+
+    print(header_words)
+    print(terms)
     if len(header_words.intersection(terms)) > 0:
         print ("intersect")
 
 
+    for row in table['rows']:
+        print(table['header'])
+        print(row)
+        for cell in row:
+            print(cell)
+            if set(normalise(cell).split()).intersection(terms):
+                print("MATCH")
+                print(table['header'][row.index(cell)])
+                print(cell)
+
+
+def generate_query(tuple):
+    if len(tuple[0]) < 2 or len(tuple[1]) ==0:
+        return None
+    else:
+        return "\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
+
+
+def generate_queries(tuples):
+    return set(generate_query(tuple) for tuple in tuples if generate_query(tuple) is not None)
 
 if __name__ == "__main__":
-    generate_search_query_known_table("in what year did miss pokhara last win the miss nepal award two thousand","csv/204-csv/172.csv")
+    #generate_search_query_known_table("in what year did miss pokhara last win the miss nepal award","csv/204-csv/172.csv")
+    all_instances = load_instances("training")
+    all_instances.extend(load_instances("pristine-seen-tables"))
+
+    table_files = []
+    tuples = []
+
+
+    done = 0
+    for instance in all_instances:
+        table_files.append(instance['table'])
+
+    table_files = set(table_files)
+
+    for table_file in table_files:
+        done += 1
+        print("Parsed " + str(done) +"/"+str(len(table_files)))
+        table = number_entity_tuples(read_table(table_file))
+        tuples.extend(generate_queries(table))
+
+        if(done>10):
+            break
+
+
+
+
+
+    for tuple in tuples:
+        print (tuple)
+
+    print (len(tuples))
+
 
 
 

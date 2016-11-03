@@ -1,6 +1,6 @@
 import sys
 
-number_ne_types = ['NUMBER','DURATION','MONEY','TIME','PERCENT','DATE']
+number_ne_types = ['NUMBER','MONEY','PERCENT']
 
 
 def nps_from_tree(tree):
