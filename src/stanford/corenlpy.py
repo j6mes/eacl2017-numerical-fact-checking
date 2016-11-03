@@ -37,7 +37,11 @@ def find_np_subtrees(tree):
         subtree = tree.getChild(i)
 
         if subtree.label().value() == "NP":
-            np_trees.append(subtree)
+            found = find_np_subtrees(subtree)
+            if len(found) == 0:
+                np_trees.append(subtree)
+            else:
+                np_trees.extend(found)
         elif not subtree.isLeaf():
             np_trees.extend(nps_from_tree(subtree))
 

@@ -37,6 +37,3 @@ class Question:
             self.nes.update(set(chunk(sentence,nes)).union(compoundNes))
             self.numbers.update(chunk(sentence,numbers))
 
-        print(self.nes)
-        print(self.numbers)
-        print(self.nps)
