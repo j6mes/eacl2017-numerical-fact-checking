@@ -52,8 +52,6 @@ def generate_search_query_known_table(text,table):
 
 
 def generate_query(tuple):
-    print (tuple[2])
-
     if len(tuple[1].split()) > 6:
         return None
 
