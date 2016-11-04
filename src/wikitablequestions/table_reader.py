@@ -1,3 +1,4 @@
+import numpy as np
 import csv
 import re
 
@@ -36,7 +37,7 @@ def number_entity_tuples(table):
     doc = Annotation(text)
     SharedNERPipeline().getInstance().annotate(doc)
 
-
+    ne_columns = []
     number_columns = []
     for column in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
         col = doc.get(CoreAnnotations.SentencesAnnotation).get(column)
@@ -49,9 +50,16 @@ def number_entity_tuples(table):
             tokens.append(corelabel.get(CoreAnnotations.TextAnnotation))
             col_ne_tags.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation))
 
+        tags = col_ne_tags
 
 
-        if len(set(col_ne_tags).intersection(set(number_ne_types)))>0:
+        for tag in tags:
+            if len(set(col_ne_tags).intersection(set(number_ne_types))) == 0 and tag not in ['NUMBER','NUMERIC','YEAR','DATE','DURATION','TIME','NUMBER','ORDINAL'] and tag != "O":
+                ne_columns.append(column)
+                break
+
+
+        if len(set(col_ne_tags).intersection(set(number_ne_types)))>0 and column not in ne_columns:
             number_columns.append(column)
 
     numbers = []
@@ -60,7 +68,7 @@ def number_entity_tuples(table):
     tuples = []
     transposed = transpose(rows)
     for column in range(len(transposed)):
-        if column not in number_columns:
+        if column in ne_columns:
             for ncolumn in range(len(transposed)):
                 if ncolumn in number_columns:
                     #print("next col")

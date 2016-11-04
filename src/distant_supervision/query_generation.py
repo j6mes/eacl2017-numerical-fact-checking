@@ -1,6 +1,8 @@
 import itertools
 import re
 
+import sys
+
 from factchecking.question import Question
 from wikitablequestions.dataset_reader import load_instances
 from wikitablequestions.table_reader import read_table, number_entity_tuples
@@ -50,7 +52,15 @@ def generate_search_query_known_table(text,table):
 
 
 def generate_query(tuple):
-    if len(tuple[0]) < 2 or len(tuple[1]) ==0:
+    print (tuple[2])
+
+    if len(tuple[1].split()) > 6:
+        return None
+
+    if len(re.sub(r"[0-9]","",tuple[1])) < len(tuple[1])/2:
+        return None
+
+    if len(tuple[0]) < 2 or len(tuple[1]) <2:
         return None
     else:
         return "\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
@@ -80,9 +90,9 @@ if __name__ == "__main__":
         table = number_entity_tuples(read_table(table_file))
         tuples.extend(generate_queries(table))
 
-        if(done>10):
-            break
 
+        if done > 100:
+            break
 
 
 
