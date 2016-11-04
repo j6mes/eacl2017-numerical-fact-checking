@@ -5,9 +5,11 @@ from wikitablequestions.dataset_reader import load_instances
 from wikitablequestions.table_reader import number_entity_tuples, read_table
 
 if __name__=="__main__":
-    all_instances = load_instances("training")
+    all_instances = []
+
     all_instances.extend(load_instances("pristine-seen-tables"))
     all_instances.extend(load_instances("pristine-unseen-tables"))
+    all_instances.extend(load_instances("training"))
 
     table_files = []
 
