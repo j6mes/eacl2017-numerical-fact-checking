@@ -59,8 +59,14 @@ def number_entity_tuples(table):
                 break
 
 
-        if len(set(col_ne_tags).intersection(set(number_ne_types)))>0 and column not in ne_columns:
-            number_columns.append(column)
+        count_in = 0
+        if column not in ne_columns:
+            for tag in tags:
+                if tag in number_ne_types:
+                    count_in += 1
+
+            if count_in >= len(tags)/2:
+                number_columns.append(column)
 
     numbers = []
 
@@ -71,8 +77,6 @@ def number_entity_tuples(table):
         if column in ne_columns:
             for ncolumn in range(len(transposed)):
                 if ncolumn in number_columns:
-                    #print("next col")
-
                     tuples.extend(list(zip([header[ncolumn]] * len(rows),transposed[column],transposed[ncolumn])))
 
     return tuples
