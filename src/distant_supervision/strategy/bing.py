@@ -9,7 +9,7 @@ import urllib
 def bing_query(id,query):
     bingUrl = 'https://api.datamarket.azure.com/Bing/SearchWeb/v1/Web'  # ?Query=%27gates%27&$top=10&$format=json'
 
-    accountKey = 'Za3DcaKVzmNfucTGZWq+sfM8G93sWPjS3sgeKUg7z7Y'
+    accountKey = "ZAk6G5VxGSD+K/mx3QH+PX24x85Cx9lEVnQzXA5H+P0" #'Za3DcaKVzmNfucTGZWq+sfM8G93sWPjS3sgeKUg7z7Y'
     accountKeyEnc = bytes.decode(base64.b64encode(str.encode(accountKey + ":" + accountKey)))# + ':' + bytes.decode(base64.b64encode(str.encode(accountKey)))
 
     headers = {'Authorization': 'Basic '+accountKeyEnc}

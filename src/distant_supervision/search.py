@@ -25,6 +25,7 @@ class Search:
 
 
     def search(self,query,search_strategy=bing_query):
+        print("Search for "+ query)
         if normalisequery(query) not in self.search_log:
             print("New Query")
             search_uuid = uuid.uuid1()
@@ -48,7 +49,6 @@ class Search:
         else:
             for item in self.search_log.keys():
                 if self.search_log[item] == self.search_log[normalisequery(query)]:
-
                     continue
 
                 pickle.dump((item,self.search_log[item]), open("data/distant_supervision/new_queries.p", "ab+"))

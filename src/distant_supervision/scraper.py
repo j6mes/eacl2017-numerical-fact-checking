@@ -33,6 +33,7 @@ def save_page_disk(url):
 
     data = get_page_contents(url)
 
+
     with open(pathName+"/"+hash+".html","wb+") as file:
         file.write(data)
 
@@ -41,8 +42,9 @@ def get_page(url):
     if not os.path.exists(path):
         save_page_disk(url)
 
-    with open(path,'r') as file:
-        return file.read()
+    with open(path,'rb') as file:
+        return "\n".join([bytes.decode(line.strip(),errors="replace") for line in file.readlines()])
+
 
 
 
