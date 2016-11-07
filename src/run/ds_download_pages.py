@@ -12,7 +12,7 @@ with open("data/distant_supervision/queries.txt", "r") as file:
         table = query[0]
         search = query[1]
 
-        if search.split("\" \"")[1].replace("\"","").isnumeric():
+        if search.split("\" \"")[2].replace("\"","").isnumeric():
             print("skipped")
             print (query)
         else:
