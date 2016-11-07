@@ -9,6 +9,8 @@ from distant_supervision.scraper import get_page_contents, url_hash, get_page
 def clean_html(html):
     replaceBrs = re.compile(r"<br */? *>[ \r\n]*<br */? *>")
 
+    html = re.sub(r'<style.*>.*</style>',r"",html)
+    html = re.sub(r'<script.*>.*</script>', r"", html)
     html = re.sub(r'<div class="[^"]*?paragraph[^"]*?">(.*?)</div>', r"<p>\1</p>", html)
     html = re.sub(r"<div class='[^']*?paragraph[^']*?'>(.*?)</div>", r"<p>\1</p>", html)
     html = re.sub(r'<div class="[^"]*?para[^"]*?">(.*?)</div>', r"<p>\1</p>", html)
@@ -28,7 +30,10 @@ def haschild(elem):
 def text_from_html(tag,original_html):
     soup = BeautifulSoup(original_html,"lxml")
 
-    paras = soup.find('body').find_all(['p','div','article'])
+    if soup.find('body') is not None:
+        paras = soup.find('body').find_all(['p','div','article'])
+    else:
+        return ""
 
     counts = dict()
     pobjs = dict()

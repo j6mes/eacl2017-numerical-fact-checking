@@ -63,10 +63,10 @@ def generate_query(tuple):
     if len(re.sub(r"[0-9]","",tuple[1])) < len(tuple[1])/2:
         return None
 
-    if len(tuple[0]) < 2 or len(tuple[1]) <2:
+    if len(tuple[0]) < 2 or len(tuple[1]) <2 or len(tuple[2]) == 0:
         return None
     else:
-        return "\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
+        return tuple[2] + "\t\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
 
 
 def generate_queries(tuples):
