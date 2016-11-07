@@ -13,6 +13,11 @@ def normalise(text):
     text = re.sub(r'[0-9]','D', text.lower())
     return text
 
+def normalisequery(text):
+    text = re.sub(r'[^\w]', ' ', text)
+    return text.lower()
+
+
 
 def key_terms(text):
     if type(text) != Question:

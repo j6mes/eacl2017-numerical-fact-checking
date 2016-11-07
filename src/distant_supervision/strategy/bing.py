@@ -31,11 +31,13 @@ def bing_query(id,query):
 
     r = http.request('GET', url,headers=headers)
 
-    filename = pathName + "/" + str(id) + ".json"
-    content = json.loads(bytes.decode(r.data))
-    with open(filename, 'w') as outfile:
-        json.dump(content["d"]["results"], outfile)
-
+    if r.status == 200:
+        filename = pathName + "/" + str(id) + ".json"
+        content = json.loads(bytes.decode(r.data))
+        with open(filename, 'w') as outfile:
+            json.dump(content["d"]["results"], outfile)
+    else:
+        raise RuntimeError("Error using bing api")
 
 
 if __name__ == "__main__":
