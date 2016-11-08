@@ -4,6 +4,8 @@ from stanford.corenlpy import SharedPipeline, Annotation, CoreAnnotations, Coref
 
 
 def find_utterances_for_tuple(lines, obj, numeric_only=True):
+    tokens = []
+
     doc = Annotation("\n".join(lines))
     SharedPipeline().getInstance().annotate(doc)
 
@@ -37,14 +39,19 @@ def find_utterances_for_tuple(lines, obj, numeric_only=True):
         sentence = doc.get(CoreAnnotations.SentencesAnnotation).get(sentence_id)
 
         incoref = False
+
         tokens = []
+
         for i in range(sentence.get(CoreAnnotations.TokensAnnotation).size()):
             corelabel = sentence.get(CoreAnnotations.TokensAnnotation).get(i)
+            #print(corelabel.get(CoreAnnotations.TextAnnotation))
+
+
 
             coref = False
             mention = None
             for ref in entity_chain.getMentionsInTextualOrder().toArray():
-                if sentence_id + 1 == ref.sentNum and ref.startIndex >= i+1 and i+1 <= ref.endIndex:
+                if sentence_id + 1 == ref.sentNum and i+1 >= ref.startIndex and i+1 < ref.endIndex:
                     coref = True
                     mention = ref
                     break
