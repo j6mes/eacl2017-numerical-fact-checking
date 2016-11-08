@@ -135,6 +135,10 @@ CoreAnnotations.LineNumberAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnno
 CoreAnnotations.NumericValueAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericValueAnnotation")
 CoreAnnotations.NumericTypeAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericTypeAnnotation")
 
+
+CorefChainAnnotation = autoclass("edu.stanford.nlp.hcoref.CorefCoreAnnotations$CorefChainAnnotation")
+
+
 CoreLabel = autoclass("edu.stanford.nlp.ling.CoreLabel")
 IndexedWord = autoclass("edu.stanford.nlp.ling.IndexedWord")
 Annotation = autoclass("edu.stanford.nlp.pipeline.Annotation")
@@ -142,6 +146,9 @@ SemanticGraph = autoclass("edu.stanford.nlp.semgraph.SemanticGraph")
 
 SemanticGraphCoreAnnotations = autoclass("edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations")
 SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation = autoclass("edu.stanford.nlp.semgraph.SemanticGraphCoreAnnotations$CollapsedCCProcessedDependenciesAnnotation")
+
+
+Integer = autoclass("java.lang.Integer")
 
 SemanticGraphEdge = autoclass("edu.stanford.nlp.semgraph.SemanticGraphEdge")
 CoreMap = autoclass("edu.stanford.nlp.util.CoreMap")
@@ -159,7 +166,6 @@ class SharedPipeline:
         if self.pipeline is None:
             props = Properties()
             props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,dcoref")
-
             pipeline = StanfordCoreNLP(props)
             self.pipeline = pipeline
 
