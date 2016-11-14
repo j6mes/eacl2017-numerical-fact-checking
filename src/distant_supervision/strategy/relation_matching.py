@@ -6,34 +6,16 @@ from stanford.corenlpy import CoreAnnotations, NumberNormalizer
 
 
 def exact_or_fuzzy_match(tokens,sentence,target):
+    match = False
 
-    pos = 0
-    for token in tokens:
-        coreLabel = sentence.get(CoreAnnotations.TokensAnnotation).get(pos)
-
-        while sentence.get(CoreAnnotations.TokensAnnotation).get(pos).get(CoreAnnotations.TextAnnotation) in StopWords.instance().words:
-            print("stop word - " + sentence.get(CoreAnnotations.TokensAnnotation).get(pos).get(CoreAnnotations.TextAnnotation))
-
-            if pos+1 < sentence.get(CoreAnnotations.TokensAnnotation).size():
-                pos+=1
-            else:
-                break
-            coreLabel = sentence.get(CoreAnnotations.TokensAnnotation).get(pos)
-
-        print((token,coreLabel.get(CoreAnnotations.TextAnnotation)))
-        pos +=1
-
-
-
-    possible_matches = []
     if len(set(tokens).intersection(set(target.split()))) > 0:
-        possible_matches.append(sentence)
+        match = True
 
     for fuzzy_match in process.extract(target, tokens, scorer=fuzz.token_sort_ratio):
         if fuzzy_match[1] > 85:
-            possible_matches.append(sentence)
+            match = True
 
-    return set(possible_matches)
+    return match
 
 
 def exact_or_fuzzy_match_no_stopwords(tokens,sentence,target):
