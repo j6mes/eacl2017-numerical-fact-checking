@@ -9,8 +9,11 @@ def get_page_contents(url):
     headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36"}
     http = urllib3.PoolManager()
 
-    r = http.request('GET', url,headers=headers)
-
+    try:
+        r = http.request('GET', url,headers=headers,timeout=5.0)
+    except:
+        return "".encode()
+    print("Got data")
     return r.data
 
 

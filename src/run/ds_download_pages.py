@@ -10,9 +10,10 @@ with open("data/distant_supervision/queries.txt", "r") as file:
         query = line.replace("\n"," ").strip().split("\t")
 
         table = query[0]
-        search = query[1]
+        search = query[2]
 
-        if search.split("\" \"")[2].replace("\"","").isnumeric():
+
+        if search.split("\" \"")[1].replace("\"","").isnumeric():
             print("skipped")
             print (query)
         else:

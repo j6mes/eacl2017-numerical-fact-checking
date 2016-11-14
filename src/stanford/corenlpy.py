@@ -134,7 +134,7 @@ CoreAnnotations.LineNumberAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnno
 
 CoreAnnotations.NumericValueAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericValueAnnotation")
 CoreAnnotations.NumericTypeAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericTypeAnnotation")
-
+CoreAnnotations.NumericCompositeValueAnnotation = autoclass("edu.stanford.nlp.ling.CoreAnnotations$NumericCompositeValueAnnotation")
 
 CorefChainAnnotation = autoclass("edu.stanford.nlp.hcoref.CorefCoreAnnotations$CorefChainAnnotation")
 
@@ -154,6 +154,9 @@ SemanticGraphEdge = autoclass("edu.stanford.nlp.semgraph.SemanticGraphEdge")
 CoreMap = autoclass("edu.stanford.nlp.util.CoreMap")
 
 NumberNormalizer = autoclass("edu.stanford.nlp.ie.NumberNormalizer")
+
+
+
 
 TreeCoreAnnotations = autoclass("edu.stanford.nlp.trees.TreeCoreAnnotations")
 TreeCoreAnnotations.TreeAnnotation = autoclass("edu.stanford.nlp.trees.TreeCoreAnnotations$TreeAnnotation")
