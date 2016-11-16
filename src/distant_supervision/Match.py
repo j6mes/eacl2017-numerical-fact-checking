@@ -6,7 +6,7 @@ from stanford.corenlpy import CoreAnnotations, SemanticGraphCoreAnnotations
 
 class Match():
 
-    def __init__(self,entity_name,sentence, number_pos, date_pos, coref_pos, entity_pos):
+    def __init__(self,sentence, entity_name, number_pos, date_pos, coref_pos, entity_pos):
         self.sentence = sentence
         self.entity_name = entity_name
 
@@ -65,7 +65,7 @@ class Match():
             self.entity_coref.append(coref_utterance)
 
     def complete_bow(self,pair):
-        r = self.get_complete_index_span(pair[0], pair[1])
+        r = self.get_internal_index_span(pair[0], pair[1])
 
         words = self.get_span_bow(r)
         return words
@@ -93,9 +93,8 @@ class Match():
             except:
                 continue
 
-            print(features)
             all_features.append(features)
-
+        return all_features
 
 
 
@@ -130,10 +129,10 @@ class Match():
 
     def get_internal_index_span(self,entity1,entity2):
         if max(entity1) < min(entity2):
-            return range(max(entity1),min(entity2))
+            return range(max(entity1)+1,min(entity2))
 
         if min(entity1) > max(entity2):
-            return range(max(entity2)+1,min(entity1)+1)
+            return range(max(entity2)+1,min(entity1))
 
         if not set(entity1).isdisjoint(set(entity2)):
             raise AssertionError("Entity sets are not disjoint")

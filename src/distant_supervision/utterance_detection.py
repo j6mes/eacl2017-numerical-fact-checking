@@ -32,8 +32,6 @@ def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy
                 break
 
     possible_matches = []
-    new_lines = []
-
 
     for sentence_id in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
         sentence = doc.get(CoreAnnotations.SentencesAnnotation).get(sentence_id)
@@ -84,19 +82,13 @@ def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy
                 elif ne_tag in number_ne_types and number_val is not None:
                     number_positions.append(i)
 
+            match = Match(sentence,obj['entity'],number_positions,date_positions,coref_entity_positions,entity_positions)
+            possible_matches.append(match)
 
-            match = Match(sentence,number_positions,date_positions,coref_entity_positions,entity_positions)
-            match.get_features()
-
-
-
-
-    possible_matches = set(possible_matches)
-    return possible_matches
+    return set(possible_matches)
 
 
 def extract_from_match(matches,number_matching_strategy=stanford_normaliser, numeric_only=True):
-
 
 
     for match in matches:
@@ -105,6 +97,15 @@ def extract_from_match(matches,number_matching_strategy=stanford_normaliser, num
             corelabel = match.get(CoreAnnotations.TokensAnnotation).get(i)
 
 
+def matches_to_features(matches,target):
+    features = []
+    for match in matches:
+        f = match.get_features()
+
+        for feature in f:
+            print(float(feature['value']))
+
+    return features
 
 if __name__ == "__main__":
     passage = []
@@ -115,5 +116,7 @@ if __name__ == "__main__":
     passage.append("Mečíř received three thousand dollars and there were 2,000,000.53 dollars in the 19th prize fund")
 
 
-    matches = find_utterances_for_tuple(passage, {"entity":"Mečíř","relation":"improved further in","target_":1985})
-    extract_from_match(matches)
+    matches = find_utterances_for_tuple(passage, {"entity":"Mečíř","relation":"improved further in"})
+
+    features = matches_to_features(matches,1985)
+    print(features)
