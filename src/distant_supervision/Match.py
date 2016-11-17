@@ -85,7 +85,7 @@ class Match():
 
             features["entity"] = self.entity_name
             features["entity_utterance"] = " ".join(self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.TextAnnotation) for e in pair[0])
-            features["value"] = self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.NumericCompositeValueAnnotation) for e in pair[1] 2,o
+            features["value"] = [self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.NumericCompositeValueAnnotation) for e in pair[1]]
 
             print(features['value'])
 

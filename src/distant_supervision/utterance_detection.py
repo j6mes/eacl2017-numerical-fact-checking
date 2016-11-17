@@ -97,13 +97,26 @@ def extract_from_match(matches,number_matching_strategy=stanford_normaliser, num
             corelabel = match.get(CoreAnnotations.TokensAnnotation).get(i)
 
 
-def matches_to_features(matches,target):
+def threshold_match(a,b,t):
+    m = max([a,b])
+    return (a-b)/m < t
+
+
+def matches_to_features(matches,target,thresh=0.05):
     features = []
     for match in matches:
         f = match.get_features()
 
         for feature in f:
-            print(float(str(feature['value'])))
+            for value in feature['values']:
+                if feature['type'] == "date":
+                    new_feature = feature
+                    new_feature['value'] = value
+                    new_feature['class'] = 1 if value == target else 0
+                else:
+                    new_feature = feature
+                    new_feature['value'] = value
+                    new_feature['class'] = 1 if threshold_match(value,target,thresh) else 0
 
     return features
 
