@@ -138,6 +138,8 @@ CoreAnnotations.NumericCompositeValueAnnotation = autoclass("edu.stanford.nlp.li
 
 CorefChainAnnotation = autoclass("edu.stanford.nlp.hcoref.CorefCoreAnnotations$CorefChainAnnotation")
 
+Double = autoclass("java.lang.Double")
+BigDecimal = autoclass("java.math.BigDecimal")
 
 CoreLabel = autoclass("edu.stanford.nlp.ling.CoreLabel")
 IndexedWord = autoclass("edu.stanford.nlp.ling.IndexedWord")

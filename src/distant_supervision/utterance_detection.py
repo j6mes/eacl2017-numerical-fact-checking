@@ -3,12 +3,13 @@ from itertools import groupby
 from operator import itemgetter
 
 from fuzzywuzzy import fuzz, process
+from jnius import autoclass
 
 from distant_supervision.Match import Match
 from distant_supervision.stop_words import StopWords
 from distant_supervision.strategy.relation_matching import exact_or_fuzzy_match_no_stopwords, stanford_normaliser
 from stanford.corenlpy import SharedPipeline, Annotation, CoreAnnotations, CorefChainAnnotation, Integer, \
-    number_ne_types
+    number_ne_types, BigDecimal, Double
 
 
 def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy_match_no_stopwords):
@@ -71,7 +72,6 @@ def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy
             date_positions = []
             number_positions = []
 
-            print(tokens)
             for i in range(sentence.get(CoreAnnotations.TokensAnnotation).size()):
                 corelabel = sentence.get(CoreAnnotations.TokensAnnotation).get(i)
 
@@ -98,8 +98,11 @@ def extract_from_match(matches,number_matching_strategy=stanford_normaliser, num
 
 
 def threshold_match(a,b,t):
-    m = max([a,b])
-    return (a-b)/m < t
+    m = (a+b)/2
+
+    if a == b: return True
+
+    return abs(a-b)/m < t
 
 
 def matches_to_features(matches,target,thresh=0.05):
@@ -108,7 +111,19 @@ def matches_to_features(matches,target,thresh=0.05):
         f = match.get_features()
 
         for feature in f:
-            for value in feature['values']:
+            if 'value' not in feature:
+                continue
+
+            if feature['value'] is None:
+                continue
+
+
+
+            for value in feature['value']:
+                if type(value) == BigDecimal:
+                    value = Double.valueOf(value.toString())
+
+
                 if feature['type'] == "date":
                     new_feature = feature
                     new_feature['value'] = value
@@ -117,6 +132,7 @@ def matches_to_features(matches,target,thresh=0.05):
                     new_feature = feature
                     new_feature['value'] = value
                     new_feature['class'] = 1 if threshold_match(value,target,thresh) else 0
+                features.append(new_feature)
 
     return features
 
@@ -132,4 +148,7 @@ if __name__ == "__main__":
     matches = find_utterances_for_tuple(passage, {"entity":"Mečíř","relation":"improved further in"})
 
     features = matches_to_features(matches,1985)
+
+    for feature in features:
+        print("Target 1985\t\tActual " + str(feature['value']) + "\t\tClass\t\t" + str(feature["class"]))
     print(features)
