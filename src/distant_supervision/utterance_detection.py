@@ -103,7 +103,7 @@ def matches_to_features(matches,target):
         f = match.get_features()
 
         for feature in f:
-            print(float(feature['value']))
+            print(float(str(feature['value'])))
 
     return features
 

@@ -77,7 +77,7 @@ class Match():
 
         for pair in pairs:
             features= dict()
-
+            print("gen pair")
             if pair[2]:
                 features["type"] = "number"
             else:
@@ -85,7 +85,9 @@ class Match():
 
             features["entity"] = self.entity_name
             features["entity_utterance"] = " ".join(self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.TextAnnotation) for e in pair[0])
-            features["value"] = " ".join(self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.TextAnnotation) for e in pair[1])
+            features["value"] = self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.NumericCompositeValueAnnotation) for e in pair[1] 2,o
+
+            print(features['value'])
 
             try:
                 for feature_function in ffun:
