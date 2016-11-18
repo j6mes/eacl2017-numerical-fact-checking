@@ -1,10 +1,14 @@
 import os
 
+import sys
+
 from distant_supervision.query_generation import generate_queries
 from wikitablequestions.dataset_reader import load_instances
 from wikitablequestions.table_reader import number_entity_tuples, read_table
 
 if __name__=="__main__":
+    world = sys.argv[1]
+
     all_instances = []
 
     all_instances.extend(load_instances("pristine-seen-tables"))
@@ -19,7 +23,7 @@ if __name__=="__main__":
 
     table_files = set(table_files)
 
-    with open("data/distant_supervision/queries.txt", "w+") as file:
+    with open("data/distant_supervision/queries_"+world +".txt", "w+") as file:
         for table_file in table_files:
             done += 1
             print("Parsing " + str(done) +"/"+str(len(table_files)) + "\t\t\t" + table_file)
