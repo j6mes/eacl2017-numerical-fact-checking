@@ -1,11 +1,9 @@
 import itertools
 import re
 
-import sys
-
 from factchecking.question import Question
+from tabular.table_reader import read_table, number_entity_tuples
 from wikitablequestions.dataset_reader import load_instances
-from wikitablequestions.table_reader import read_table, number_entity_tuples
 
 
 def normalise(text):

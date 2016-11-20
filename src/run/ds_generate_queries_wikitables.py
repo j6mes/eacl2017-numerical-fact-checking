@@ -1,10 +1,9 @@
 import os
-
 import sys
 
 from distant_supervision.query_generation import generate_queries
+from tabular.table_reader import number_entity_tuples, read_table
 from wikitablequestions.dataset_reader import load_instances
-from wikitablequestions.table_reader import number_entity_tuples, read_table
 
 if __name__=="__main__":
     world = sys.argv[1]

@@ -1,8 +1,8 @@
 from collections import defaultdict
 
 from distant_supervision.query_generation import normalise
+from tabular.table_reader import read_table
 from wikitablequestions.dataset_reader import load_instances
-from wikitablequestions.table_reader import read_table
 
 class Filtering():
     def __init__(self):
