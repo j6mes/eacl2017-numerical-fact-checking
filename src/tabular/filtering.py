@@ -17,16 +17,30 @@ class Filtering():
             self.words_to_table_partial[normalise(w)].add(table)
 
     def get_tables_for_word(self,word):
-        return {"exact":self.words_to_table_exact[normalise(word)],
-            "partial": [self.words_to_table_partial[normalise(w)] for w in word.split()]}
+        r = [self.words_to_table_partial[normalise(w)] for w in word.split()]
 
-def filter():
-    pass
+        partial = set()
+        for result in r:
+            partial.update(result)
+
+        return {"exact":self.words_to_table_exact[normalise(word)],
+            "partial": partial}
+
+
+def load_collection(name):
+    instances = load_instances(name)
+    filtering = Filtering()
+
+    for instance in instances:
+        table = TableCollection.instance().load(instance['table'])
+
+        for row in table['rows']:
+            for col in row:
+                filtering.register_word(col,instance['table'])
+    return filtering
 
 if __name__ == "__main__":
     instances = load_instances("training")
-
-
     filtering = Filtering()
 
     for instance in instances:

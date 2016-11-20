@@ -1,6 +1,5 @@
 from tabular.table_reader import read_table
 
-
 class TableCollection():
     def __init__(self):
         self.tables = dict()
@@ -17,6 +16,7 @@ class TableCollection():
         return TableCollection.tc
 
     instance = staticmethod(instance)
+
 
 
 if __name__ == "__main__":
