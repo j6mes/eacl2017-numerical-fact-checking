@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 from distant_supervision.query_generation import normalise
+from tabular.table_collection import TableCollection
 from tabular.table_reader import read_table
 from wikitablequestions.dataset_reader import load_instances
 
@@ -29,7 +30,7 @@ if __name__ == "__main__":
     filtering = Filtering()
 
     for instance in instances:
-        table = read_table(instance['table'])
+        table = TableCollection.instance().load(instance['table'])
 
         for row in table['rows']:
             for col in row:
