@@ -10,7 +10,15 @@ class TableCollection():
             self.tables[table] = read_table(table)
         return self.tables[table]
 
+    tc = None
+    def instance():
+        if TableCollection.tc is None:
+            TableCollection.tc = TableCollection()
+        return TableCollection.tc
 
-tc = TableCollection()
+    instance = staticmethod(instance)
 
-print(tc.load('csv/202-csv/281.csv'))
+
+if __name__ == "__main__":
+    tc = TableCollection.instance()
+    print(tc.load('csv/202-csv/281.csv'))
