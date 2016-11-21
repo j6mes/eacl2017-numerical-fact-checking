@@ -58,6 +58,11 @@ if __name__ == "__main__":
                         if has_text(url) and os.path.exists(base+filename):
                             with open(base+filename, 'rb') as f:
                                 features = pickle.load(f)
+
+                                for feature in features:
+                                    feature['table'] = table
+                                    feature['relation'] = relation
+
                                 found_features.extend(features)
                         else:
                             pass
@@ -76,14 +81,16 @@ if __name__ == "__main__":
             bow.register(word)
 
 
+    headers = BOW()
+    for feature in found_features:
+        headers.register(feature['relation'])
 
 
     Xs = []
     ys = []
     for feature in found_features:
-
         words = (flatten_without_labels({"bow": feature['complete_bow']}))
-        X = np.hstack((1, feature['header_match_intersection'], bow.convert_one_hot(words)))
+        X = np.hstack((1, headers.convert_one_hot([feature['relation']]), feature['header_match_intersection'], bow.convert_one_hot(words)))
         y = feature['class']
 
         Xs.append(X)
