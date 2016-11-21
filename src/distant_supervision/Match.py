@@ -1,14 +1,17 @@
 from itertools import groupby
 from operator import itemgetter
 
-from stanford.corenlpy import CoreAnnotations, SemanticGraphCoreAnnotations
+from distant_supervision.query_generation import normalise
+from stanford.corenlpy import CoreAnnotations, SemanticGraphCoreAnnotations, Annotation, SharedPipeline, \
+    CorefChainAnnotation, Integer
 
 
 class Match():
 
-    def __init__(self,sentence, entity_name, number_pos, date_pos, coref_pos, entity_pos):
+    def __init__(self,sentence,entity_name,target, number_pos, date_pos, coref_pos, entity_pos):
         self.sentence = sentence
         self.entity_name = entity_name
+        self.target = target
 
         self.numbers = []
         self.number_pos = []
@@ -70,7 +73,16 @@ class Match():
         words = self.get_span_bow(r)
         return words
 
-    def get_features(self, ffun = {complete_bow}):
+
+    def header_match_intersection(self,pair):
+        tokens = []
+        for i in range(self.sentence.get(CoreAnnotations.TokensAnnotation).size()):
+            corelabel = self.sentence.get(CoreAnnotations.TokensAnnotation).get(i)
+            tokens.append(corelabel.get(CoreAnnotations.TextAnnotation))
+
+        return 1 if len(set(normalise(" ".join(tokens)).split()).intersection(set(normalise(self.target).split()))) > 0 else 0
+
+    def get_features(self, ffun = {complete_bow,header_match_intersection}):
         pairs = self.get_feature_pairs()
 
         all_features = []
@@ -150,3 +162,19 @@ class Match():
 
     def get_words_between_indices(self,start,end):
         pass
+
+
+if __name__ == "__main__":
+    doc = Annotation("\n".join(["the cat sat on the mat"]))
+    SharedPipeline().getInstance().annotate(doc)
+
+    coref_map = doc.get(CorefChainAnnotation)
+
+
+    possible_matches = []
+
+    for sentence_id in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
+        sentence = doc.get(CoreAnnotations.SentencesAnnotation).get(sentence_id)
+
+        m = Match(sentence,"the cat sat on the mat","i'm selling a mat",[],[],[],[])
+        print(m.header_match_intersection(None))

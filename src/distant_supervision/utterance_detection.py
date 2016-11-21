@@ -82,7 +82,7 @@ def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy
                 elif ne_tag in number_ne_types and number_val is not None:
                     number_positions.append(i)
 
-            match = Match(sentence,obj['entity'],number_positions,date_positions,coref_entity_positions,entity_positions)
+            match = Match(sentence,obj['entity'], obj['relation'],number_positions,date_positions,coref_entity_positions,entity_positions)
             possible_matches.append(match)
 
     return set(possible_matches)

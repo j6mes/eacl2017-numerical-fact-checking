@@ -56,6 +56,9 @@ if __name__ == "__main__":
                             text = get_text(url)
 
 
+                            if len(text) == 0:
+                                continue
+
                             matches = find_utterances_for_tuple(text.split("\n"),
                                                                     {"entity": entity, "relation": relation})
 
@@ -63,7 +66,7 @@ if __name__ == "__main__":
                             for feature in features:
                                 print("Target "+str(num(target))+"\t\tActual " + str(feature['value']) + "\t\tClass\t\t" + str(
                                     feature["class"]))
-
+                            print (features)
                             with open(base+filename, 'wb+') as f:
                                 pickle.dump(features, f)
 

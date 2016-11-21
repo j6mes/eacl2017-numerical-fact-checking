@@ -2,6 +2,8 @@ import os
 import pickle
 import sys
 
+from sklearn.linear_model import LogisticRegression
+
 from classifier.features.bow import BOW
 from classifier.features.linearise import flatten_with_labels, flatten_without_labels
 from distant_supervision.clean_html import get_text, has_text
@@ -73,12 +75,22 @@ if __name__ == "__main__":
         for word in words:
             bow.register(word)
 
+
+
+
+    Xs = []
+    ys = []
     for feature in found_features:
 
         words = (flatten_without_labels({"bow": feature['complete_bow']}))
-        X = np.hstack((1,bow.convert_one_hot(words)))
+        X = np.hstack((1, feature['header_match_intersection'], bow.convert_one_hot(words)))
         y = feature['class']
 
-        print(X)
-        print(y)
-        
+        Xs.append(X)
+        ys.append(y)
+
+
+
+    lr = LogisticRegression()
+    lr.fit(Xs,ys)
+
