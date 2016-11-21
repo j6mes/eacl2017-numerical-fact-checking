@@ -108,6 +108,12 @@ def save_text_disk(url):
     with open(pathName+"/"+hash+".txt","w+") as file:
         file.write(data)
 
+
+def has_text(url):
+    path = get_text_path() + "/" + url_hash(url) + ".txt"
+    return os.path.exists(path)
+
+
 def get_text(url):
     path = get_text_path() + "/" + url_hash(url) + ".txt"
     if not os.path.exists(path):

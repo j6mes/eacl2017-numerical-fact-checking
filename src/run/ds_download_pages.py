@@ -18,15 +18,16 @@ if __name__ == "__main__":
             table = query[0]
             search = query[2]
 
-
             if search.split("\" \"")[1].replace("\"","").isnumeric():
                 print("skipped")
                 print (query)
             else:
-                urls = Search.instance().search(search)
+                try:
+                    urls = Search.instance().search(search)
 
-                for url in urls:
-                    print(url)
-                    print(get_text(url))
-
+                    for url in urls:
+                        print(url)
+                        print(get_text(url))
+                except:
+                    pass
                 print(str(100*done/num_qs) + "%")
