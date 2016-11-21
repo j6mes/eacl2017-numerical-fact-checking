@@ -27,6 +27,8 @@ class Filtering():
             "partial": partial}
 
 
+
+
 def load_collection(name):
     instances = load_instances(name)
     filtering = Filtering()

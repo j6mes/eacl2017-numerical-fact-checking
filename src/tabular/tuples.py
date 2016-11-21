@@ -1,6 +1,7 @@
 from distant_supervision.query_generation import normalise
 from tabular.table_collection import TableCollection
-from tabular.table_reader import number_entity_tuples
+from tabular.table_reader import number_entity_tuples, number_tuples
+
 
 def get_all_tuples(tables,query):
     a = tables.get_tables_for_word(query)
@@ -32,7 +33,16 @@ def get_all_tuples(tables,query):
                 new_result['rows'].append(row)
 
         if matched:
-            tuples = number_entity_tuples(new_result)
+            tuples = number_tuples(new_result)
             if len(tuples) > 0:
                 all_tuples.extend(tuples)
-    return all_tuples
+    return filter_tuples_for_entity(all_tuples,query)
+
+
+
+def filter_tuples_for_entity(tuples,query):
+    ret = []
+    for tuple in tuples:
+        if set(normalise(tuple[1]).split()).intersection(set(normalise(query).split())):
+            ret.append(tuple)
+    return ret
