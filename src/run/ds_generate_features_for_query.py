@@ -74,5 +74,5 @@ if __name__ == "__main__":
                         else:
                             print("Url is missing from file system and not downloaded")
 
-                except:
-                    pass
+                except Exception as e:
+                    print("ERROR Generating query " + e)
