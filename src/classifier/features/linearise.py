@@ -18,7 +18,7 @@ def flatten_with_labels(array):
             for item in array[key]:
                 ret.append(key+"$$$"+item)
         else:
-            ret.append(key+"$$$"+array[key])
+            ret.append(str(key)+"$$$"+array[key])
 
     return ret
 
