@@ -14,6 +14,7 @@ def get_all_tuples(tables,query):
     all_tuples = []
     for result in results:
         new_result = dict()
+        table_name = result
         result = TableCollection.instance().load(result)
 
         new_result['header'] = result['header']
@@ -35,7 +36,8 @@ def get_all_tuples(tables,query):
         if matched:
             tuples = number_tuples(new_result)
             if len(tuples) > 0:
-                all_tuples.extend(tuples)
+                for tuple in tuples:
+                    all_tuples.append((table_name,tuple))
     return filter_tuples_for_entity(all_tuples,query)
 
 
@@ -43,6 +45,6 @@ def get_all_tuples(tables,query):
 def filter_tuples_for_entity(tuples,query):
     ret = []
     for tuple in tuples:
-        if set(normalise(tuple[1]).split()).intersection(set(normalise(query).split())):
+        if set(normalise(tuple[1][1]).split()).intersection(set(normalise(query).split())):
             ret.append(tuple)
     return ret
