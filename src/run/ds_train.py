@@ -6,6 +6,7 @@ from sklearn.linear_model import LogisticRegression
 
 from classifier.features.bow import BOW
 from classifier.features.linearise import flatten_with_labels, flatten_without_labels
+from classifier.features.pseudo_multiclass import IDPerColumnMultiClass
 from distant_supervision.clean_html import get_text, has_text
 from distant_supervision.scraper import url_hash
 from distant_supervision.search import Search
@@ -71,7 +72,7 @@ if __name__ == "__main__":
                 except SystemExit:
                     sys.exit(0)
                 except:
-                    break
+                    pass
 
 
     bow = BOW()
@@ -81,21 +82,20 @@ if __name__ == "__main__":
             bow.register(word)
 
 
-    headers = BOW()
+    mc = IDPerColumnMultiClass()
     for feature in found_features:
-        headers.register(feature['relation'])
+        mc.register(feature['table'],feature['relation'])
 
 
     Xs = []
     ys = []
     for feature in found_features:
         words = (flatten_without_labels({"bow": feature['complete_bow']}))
-        X = np.hstack((1, headers.convert_one_hot([feature['relation']]), feature['header_match_intersection'], bow.convert_one_hot(words)))
+        X = np.hstack((1, mc.get(feature['table'],feature['relation']), feature['header_match_intersection'], bow.convert_one_hot(words)))
         y = feature['class']
 
         Xs.append(X)
         ys.append(y)
-
 
 
     lr = LogisticRegression()
