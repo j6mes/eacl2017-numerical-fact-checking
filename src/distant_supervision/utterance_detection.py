@@ -15,22 +15,27 @@ from stanford.corenlpy import SharedPipeline, Annotation, CoreAnnotations, Coref
 def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy_match_no_stopwords):
     tokens = []
 
+    print("About to parse")
     doc = Annotation("\n".join(lines))
     SharedPipeline().getInstance().annotate(doc)
+    print("Annotated")
+
 
     coref_map = doc.get(CorefChainAnnotation)
 
     entity_chain = None
     relation_chain = None
-    for chain in range(coref_map.size()):
-        ch = coref_map.get(Integer(chain + 1))
 
-        if ch is not None:
-            word = ch.getRepresentativeMention().mentionSpan
+    if coref_map is not None:
+        for chain in range(coref_map.size()):
+            ch = coref_map.get(Integer(chain + 1))
 
-            if fuzz.partial_ratio(word, obj['entity']) > 85:
-                entity_chain = ch
-                break
+            if ch is not None:
+                word = ch.getRepresentativeMention().mentionSpan
+
+                if fuzz.partial_ratio(word, obj['entity']) > 85:
+                    entity_chain = ch
+                    break
 
     possible_matches = []
 
@@ -47,11 +52,12 @@ def find_utterances_for_tuple(lines, obj, relation_match_strategy=exact_or_fuzzy
 
             coref = False
             mention = None
-            for ref in entity_chain.getMentionsInTextualOrder().toArray():
-                if sentence_id + 1 == ref.sentNum and i+1 >= ref.startIndex and i+1 < ref.endIndex:
-                    coref = True
-                    mention = ref
-                    break
+            if entity_chain is not None:
+                for ref in entity_chain.getMentionsInTextualOrder().toArray():
+                    if sentence_id + 1 == ref.sentNum and i+1 >= ref.startIndex and i+1 < ref.endIndex:
+                        coref = True
+                        mention = ref
+                        break
 
             if coref:
                 coref_entity_positions.append(i)
@@ -105,7 +111,7 @@ def threshold_match(a,b,t):
     return abs(a-b)/m < t
 
 
-def matches_to_features(matches,target,thresh=0.05):
+def matches_to_features(matches,target,thresh=0.15):
     features = []
     for match in matches:
         f = match.get_features()

@@ -81,22 +81,18 @@ class Match():
             corelabel = self.sentence.get(CoreAnnotations.TokensAnnotation).get(i)
             tokens.append(corelabel.get(CoreAnnotations.TextAnnotation))
 
-        print(tokens)
         return 1 if len(set(normalise(" ".join(tokens)).split()).intersection(set(normalise(self.target).split()))) > 0 else 0
 
 
     def dep_path_bow(self,pair):
-        print("Generate dependency path")
         depgraph = self.sentence.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation)
 
         deps = []
-        print(pair)
         for index_i in pair[0]:
             for index_j in pair[1]:
                 path = (depgraph.getShortestUndirectedPathNodes(depgraph.getNodeByIndex(index_i+1),depgraph.getNodeByIndex(index_j+1)))
-
-                if word.index()-1 not in pair[0] and not word.index()-1 not in pair[1]:
-                    for word in range(path.size()):
+                for word in range(path.size()):
+                    if word-1 not in pair[0] and not word-1 not in pair[1]:
                         deps.append(path.get(word).value())
 
         return deps
@@ -118,12 +114,12 @@ class Match():
             features["entity_utterance"] = " ".join(self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.TextAnnotation) for e in pair[0])
             features["value"] = [self.sentence.get(CoreAnnotations.TokensAnnotation).get(e).get(CoreAnnotations.NumericCompositeValueAnnotation) for e in pair[1]]
 
-#            try:
-            for feature_function in ffun:
-                features[feature_function.__name__] = feature_function(self,pair)
-            #except:
-            #    print("Error processing feature function")
-            #    continue
+            try:
+                for feature_function in ffun:
+                    features[feature_function.__name__] = feature_function(self,pair)
+            except:
+                print("Error processing feature function")
+                continue
 
             all_features.append(features)
         return all_features

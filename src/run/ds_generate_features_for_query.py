@@ -1,6 +1,7 @@
 import os
 import pickle
 import sys
+import re
 
 from distant_supervision.clean_html import get_text, has_text
 from distant_supervision.scraper import url_hash
@@ -9,9 +10,9 @@ from distant_supervision.utterance_detection import find_utterances_for_tuple, m
 
 def num(s):
     try:
-        return int(s)
+        return int(s.replace(",",""))
     except ValueError:
-        return float(s)
+        return float(s.replace(",",""))
 
 if __name__ == "__main__":
     world = sys.argv[1]
@@ -51,18 +52,22 @@ if __name__ == "__main__":
                     for url in urls:
                         filename = url_hash(url + "__"+ search + "__" + target + "__" + table) + ".p"
 
-                        print(filename)
                         if has_text(url):
+                            print(url)
+                            print(url_hash(url))
                             text = get_text(url)
 
+                            text = re.sub(r"\[0-9+\]","",text)
 
                             if len(text) == 0:
+
                                 continue
 
                             matches = find_utterances_for_tuple(text.split("\n"),
                                                                     {"entity": entity, "relation": relation})
 
                             features = matches_to_features(matches, num(target))
+
                             for feature in features:
                                 print("Target "+str(num(target))+"\t\tActual " + str(feature['value']) + "\t\tClass\t\t" + str(
                                     feature["class"]))
@@ -70,7 +75,7 @@ if __name__ == "__main__":
                             with open(base+filename, 'wb+') as f:
                                 pickle.dump(features, f)
 
-                            print(str(100 * done / num_qs) + "%")
+
                         else:
                             print("Url is missing from file system and not downloaded")
 

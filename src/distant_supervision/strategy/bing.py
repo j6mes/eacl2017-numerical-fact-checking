@@ -7,12 +7,12 @@ import urllib3
 import urllib
 
 def bing_query(id,query):
-    bingUrl = 'https://api.datamarket.azure.com/Bing/SearchWeb/v1/Web'  # ?Query=%27gates%27&$top=10&$format=json'
+    bingUrl = 'https://api.cognitive.microsoft.com/bing/v5.0/search' #'https://api.datamarket.azure.com/Bing/SearchWeb/v1/Web'  # ?Query=%27gates%27&$top=10&$format=json'
 
-    accountKey = "ZAk6G5VxGSD+K/mx3QH+PX24x85Cx9lEVnQzXA5H+P0" #'Za3DcaKVzmNfucTGZWq+sfM8G93sWPjS3sgeKUg7z7Y'
+    accountKey = "e3e25c820a9c43a6adccc0a56c553150" # 'Za3DcaKVzmNfucTGZWq+sfM8G93sWPjS3sgeKUg7z7Y'#"ZAk6G5VxGSD+K/mx3QH+PX24x85Cx9lEVnQzXA5H+P0" #
     accountKeyEnc = bytes.decode(base64.b64encode(str.encode(accountKey + ":" + accountKey)))# + ':' + bytes.decode(base64.b64encode(str.encode(accountKey)))
 
-    headers = {'Authorization': 'Basic '+accountKeyEnc}
+    headers = {'Authorization': 'Basic '+accountKeyEnc,'Ocp-Apim-Subscription-Key':accountKey}
     pathName = "data/distant_supervision/raw_queries"
 
     if not os.path.exists(pathName):
@@ -20,9 +20,9 @@ def bing_query(id,query):
         os.makedirs(pathName)
 
     params = {
-        'Query':"\'"+query+"\'",
-        'Adult': "\'Strict\'",
-        'WebFileType': "\'HTML\'",
+        'q':query,
+        'count':500,
+        'safesearch': "Moderate"
     }
 
 
@@ -35,7 +35,7 @@ def bing_query(id,query):
         filename = pathName + "/" + str(id) + ".json"
         content = json.loads(bytes.decode(r.data))
         with open(filename, 'w') as outfile:
-            json.dump(content["d"]["results"], outfile)
+            json.dump(content["webPages"]['value'], outfile)
     else:
         raise RuntimeError("Error using bing api")
 

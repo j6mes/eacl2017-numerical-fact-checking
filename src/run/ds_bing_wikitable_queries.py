@@ -10,10 +10,11 @@ if __name__ == "__main__":
         for line in file:
             query = line.replace("\n"," ").strip().split("\t")
 
+            print(query)
             table = query[0]
-            search = query[1]
+            search = query[2]
 
-            if search.split("\" \"")[2].replace("\"","").isnumeric():
+            if search.split("\" \"")[1].replace("\"","").isnumeric():
                 print("skipped")
                 print (query)
             else:

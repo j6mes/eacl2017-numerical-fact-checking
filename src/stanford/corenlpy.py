@@ -170,7 +170,7 @@ class SharedPipeline:
     def __init__(self):
         if self.pipeline is None:
             props = Properties()
-            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,dcoref")
+            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse")
             pipeline = StanfordCoreNLP(props)
             self.pipeline = pipeline
 
