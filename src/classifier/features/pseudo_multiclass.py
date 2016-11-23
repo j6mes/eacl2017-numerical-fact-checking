@@ -13,7 +13,7 @@ class PseudoMultiClass():
         self.headers.register(self.join(table,header))
 
     def get(self,table,header):
-        return self.headers.convert_one_hot([self.join(table,header)])
+        return self.headers.convert_one_hot([self.join(table,header)])[1:]
 
 
 class IDPerTableMultiClass(PseudoMultiClass):

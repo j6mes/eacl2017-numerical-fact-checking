@@ -1,5 +1,7 @@
+
+from distant_supervision.numbers_in_text import numbers_in_text
 from stanford.corenlpy import Annotation, SharedPipeline, CoreAnnotations, chunk, number_ne_types, compound, \
-    SemanticGraphCoreAnnotations, TreeCoreAnnotations, nps_from_tree
+    SemanticGraphCoreAnnotations, TreeCoreAnnotations, nps_from_tree, NumberNormalizer, chunk_num
 
 
 class Question:
@@ -29,11 +31,13 @@ class Question:
             dep_graph = sentence.get(SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation)
             parse_tree = sentence.get(TreeCoreAnnotations.TreeAnnotation)
 
-            self.nps.update(set(nps_from_tree(parse_tree)))
+            self.nps.update(set(nps_from_tree(parse_tree)).difference(set(numbers)))
 
 
             compoundNes = set(chunk(sentence,compound(dep_graph,sentence,nes)))
 
             self.nes.update(set(chunk(sentence,nes)).union(compoundNes))
-            self.numbers.update(chunk(sentence,numbers))
+
+            self.numbers.update(numbers_in_text(self.text))
+
 

@@ -50,52 +50,53 @@ if __name__ == "__main__":
                 entity = query[2].split("\" \"")[0][1:]
                 relation = query[2].split("\" \"")[1][:-1]
 
-                try:
-                    urls = Search.instance().search(search)
+                urls = Search.instance().search(search)
 
-                    for url in urls:
-                        filename = url_hash(url + "__"+ search + "__" + target + "__" + table) + ".p"
-
-                        if has_text(url):
-                            print(" ")
-                            print("Looking in document for values similar to " + target)
-                            print(url)
-                            text = get_text(url)
-
-                            if len(text) == 0:
-                                print("No meaningful text in this document")
-                                continue
-
-                            text = re.sub(r"\[[0-9]+\]", r"", text)
+                for url in urls:
+                    filename = url_hash(url + "__"+ search + "__" + target + "__" + table) + ".p"
 
 
-                            if contains_entity(text,entity):
-                                #print(numbers_in_text(text))
-                                sentences = sentences_with_numbers(text,num(target),0.15)
-                                if len(sentences) == 0:
-                                    continue
+                    print(" ")
+                    print("Looking in document for values similar to " + target)
+                    print(url)
+                    text = get_text(url)
+
+                    if len(text) == 0:
+                        print("No meaningful text in this document")
+                        continue
+
+                    text = re.sub(r"\[[0-9]+\]", r"", text)
 
 
-                                print(str(len(sentences))+" candidate matches")
-                                print(sentences)
-
-                                matches = find_utterances_for_tuple(sentences,
-                                                                    {"entity": entity, "relation": relation})
-
-                                features = matches_to_features(matches, num(target))
-
-                                for feature in features:
-                                    print("Target " + str(num(target)) + "\t\tActual " + str(
-                                        feature['value']) + "\t\tClass\t\t" + str(
-                                        feature["class"]))
-                                print(features)
-                                with open(base + filename, 'wb+') as f:
-                                    pickle.dump(features, f)
+                    if contains_entity(text,entity):
+                        #print(numbers_in_text(text))
+                        sentences = sentences_with_numbers(text,num(target),0.15)
+                        if len(sentences) == 0:
+                            continue
 
 
+                        print(str(len(sentences))+" candidate matches")
+                        print(sentences)
 
-                except:
-                    pass
+                        try:
+                            matches = find_utterances_for_tuple(sentences,
+                                                                {"entity": entity, "relation": relation})
+
+                            features = matches_to_features(matches, num(target))
+
+                            for feature in features:
+                                print("Target " + str(num(target)) + "\t\tActual " + str(
+                                    feature['value']) + "\t\tClass\t\t" + str(
+                                    feature["class"]))
+                            print(features)
+                            with open(base + filename, 'wb+') as f:
+                                pickle.dump(features, f)
+                        except:
+                            print(sys.exc_info()[0])
+                            raise
+
+
+
 
 
 

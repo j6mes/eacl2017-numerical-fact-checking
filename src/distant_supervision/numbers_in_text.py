@@ -1,4 +1,3 @@
-from distant_supervision.utterance_detection import threshold_match
 from stanford.corenlpy import SharedNERPipeline, Annotation, CoreAnnotations, NumberNormalizer, BigDecimal, Double
 
 

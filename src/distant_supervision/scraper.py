@@ -14,8 +14,12 @@ def get_page_contents(url):
     except:
         return "".encode()
     print("Got data")
-    return r.data
 
+    content_type = r.headers['Content-Type']
+    if "html" in content_type.lower():
+        return r.data
+
+    return b""
 
 def url_hash(url):
     return hashlib.sha256(str.encode(url)).hexdigest()

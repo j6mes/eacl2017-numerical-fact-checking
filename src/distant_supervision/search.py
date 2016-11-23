@@ -45,7 +45,7 @@ class Search:
             with open(filename,'r') as f:
                 contents = json.load(f)
                 for link in contents:
-                    urls.append(link['displayUrl'])
+                    urls.append(link['url'])
         else:
             for item in self.search_log.keys():
                 if self.search_log[item] == self.search_log[normalisequery(query)]:

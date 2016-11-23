@@ -1,6 +1,26 @@
 import sys
 
+
 number_ne_types = ['NUMBER','MONEY','PERCENT']
+
+def num(s):
+    if type(s) == BigDecimal:
+        s = Double.valueOf(s.toString())
+
+    try:
+        return int(s.replace(",",""))
+    except ValueError:
+        return float(s.replace(",",""))
+
+
+def strnum(s):
+    if type(s) == BigDecimal:
+        s = str(Double.valueOf(s.toString()))
+
+    try:
+        return str(int(s.replace(",","")))
+    except ValueError:
+        return str(float(s.replace(",","")))
 
 
 def nps_from_tree(tree):
@@ -71,6 +91,40 @@ def chunk(annotations,option):
             if (option[i]):
                 last_ne.append(annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(CoreAnnotations.TextAnnotation))
 
+
+    if (len(last_ne) > 0):
+        chunked_nes.append(" ".join(last_ne))
+
+    return chunked_nes
+
+
+def chunk_num(annotations,option):
+    last_ne = []
+    chunked_nes = []
+    for i in range(annotations.get(CoreAnnotations.TokensAnnotation).size()):
+        if(i>0):
+            if(option[i-1]):
+                if(option[i]):
+                    v=annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(CoreAnnotations.NumericCompositeValueAnnotation)
+                    if v is not None:
+                        last_ne.append(strnum(v))
+
+                else:
+                    if (len(last_ne)>0):
+                        chunked_nes.append(" ".join(last_ne))
+                        last_ne = []
+            else:
+                if(option[i]):
+                    v = annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(
+                        CoreAnnotations.NumericCompositeValueAnnotation)
+                    if v is not None:
+                        last_ne.append(strnum(v))
+        else:
+            if (option[i]):
+                v = annotations.get(CoreAnnotations.TokensAnnotation).get(i).get(
+                    CoreAnnotations.NumericCompositeValueAnnotation)
+                if v is not None:
+                    last_ne.append(strnum(v))
 
     if (len(last_ne) > 0):
         chunked_nes.append(" ".join(last_ne))

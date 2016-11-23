@@ -57,7 +57,7 @@ if __name__ == "__main__":
                             print(url_hash(url))
                             text = get_text(url)
 
-                            text = re.sub(r"\[0-9+\]","",text)
+                            text = re.sub(r"\[[0-9]+\]","",text)
 
                             if len(text) == 0:
 

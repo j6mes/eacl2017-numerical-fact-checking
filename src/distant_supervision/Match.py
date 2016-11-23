@@ -3,7 +3,7 @@ from operator import itemgetter
 
 from distant_supervision.query_generation import normalise
 from stanford.corenlpy import CoreAnnotations, SemanticGraphCoreAnnotations, Annotation, SharedPipeline, \
-    CorefChainAnnotation, Integer
+    CorefChainAnnotation
 
 
 class Match():

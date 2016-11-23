@@ -1,3 +1,5 @@
+import re
+
 from distant_supervision.query_generation import normalise
 from tabular.table_collection import TableCollection
 from tabular.table_reader import number_entity_tuples, number_tuples
@@ -25,7 +27,7 @@ def get_all_tuples(tables,query):
             match = False
 
             for cell in row:
-                if normalise(cell) in normalise(query).split():
+                if not set(normalise(cell).split()).isdisjoint(normalise(query).split()):
                     match = True
                     break
 
@@ -45,6 +47,6 @@ def get_all_tuples(tables,query):
 def filter_tuples_for_entity(tuples,query):
     ret = []
     for tuple in tuples:
-        if set(normalise(tuple[1][1]).split()).intersection(set(normalise(query).split())):
+        if set(normalise(tuple[1][1]).split()).intersection(set(normalise(re.sub(r"[^A-Za-z\s]+","",query)).split())):
             ret.append(tuple)
     return ret
