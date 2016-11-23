@@ -2,6 +2,7 @@ import os
 import pickle
 import re
 import sys
+from collections import defaultdict
 
 from sklearn.linear_model import LogisticRegression
 
@@ -28,7 +29,6 @@ def num(s):
         return float(s)
 
 def hmi(sentence, sentence1):
-    print(len(set(normalise(sentence).split()).intersection(set(normalise(sentence1).split()))))
     return 1 if len(
         set(normalise(sentence).split()).intersection(set(normalise(sentence1).split()))) > 0 else 0
 
@@ -104,12 +104,12 @@ if __name__ == "__main__":
     Xs = []
     ys = []
 
-    num_correct = 0
+    num_correct = defaultdict(int)
     for feature in found_features:
         y = feature['class']
 
         if y == 1:
-            num_correct += 1
+            num_correct[feature['relation']] += 1
             words = (flatten_without_labels({"bow": feature['complete_bow']}))
             X = np.hstack((1, mc.get(feature['table'],feature['relation']), feature['header_match_intersection'], bow.convert_one_hot(words)))
 
@@ -118,12 +118,12 @@ if __name__ == "__main__":
             ys.append(y)
 
 
-    num_incorrect = 0
+    num_incorrect = defaultdict(int)
     for feature in found_features:
         y = feature['class']
 
-        if y == 0 and num_incorrect < 2*num_correct:
-            num_incorrect += 1
+        if y == 0 and num_incorrect[feature['relation']] < num_correct[feature['relation']]:
+            num_incorrect[feature['relation']] += 1
             words = (flatten_without_labels({"bow": feature['complete_bow']}))
             X = np.hstack((1, mc.get(feature['table'],feature['relation']), feature['header_match_intersection'], bow.convert_one_hot(words)))
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
             Xs.append(X)
             ys.append(y)
 
-    lr = LogisticRegression()
+    lr = LogisticRegression(penalty='l1',C=0.9)
     lr.fit(Xs,ys)
 
     queries = ["Exxon Mobil reached a total value of $772 million in 2007.",
@@ -160,6 +160,7 @@ if __name__ == "__main__":
 
             X = np.hstack((1, mc.get(table_name,rel_name), hmi(question,rel_name), bow.convert_one_hot(q_bow)))
             prediction = (lr.predict([X]))
+            print(lr.predict_proba([X]))
             print(prediction)
             if prediction[0] == 1:
                 value = num(re.sub(r"[^0-9\.]+","",tuple[1][2].replace(",","")))
