@@ -22,6 +22,11 @@ def contains_entity(text, entity):
 
 if __name__ == "__main__":
     world = sys.argv[1]
+    block = int(sys.argv[2])-1
+
+
+
+
     base = "data/distant_supervision/features/"
 
     if not os.path.exists(base):
@@ -32,6 +37,18 @@ if __name__ == "__main__":
     with open("data/distant_supervision/queries_"+world+".txt", "r") as file:
         lines = file.readlines()
         num_qs = len(lines)
+
+        print(num_qs/100)
+
+        lines = lines[block*100:min((block+1)*100,num_qs-1)]
+        print(len(lines))
+
+        print(lines)
+
+        if True:
+            sys.exit(0)
+
+
         done = 0
         for line in lines:
             done += 1
