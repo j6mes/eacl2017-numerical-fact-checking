@@ -53,7 +53,7 @@ if __name__ == "__main__":
                 urls = Search.instance().search(search)
 
                 for url in urls:
-                    filename = url_hash(url + "__"+ search + "__" + target + "__" + table) + ".p"
+
 
 
                     print(" ")
@@ -67,33 +67,37 @@ if __name__ == "__main__":
 
                     text = re.sub(r"\[[0-9]+\]", r"", text)
 
-
-                    if contains_entity(text,entity):
-                        #print(numbers_in_text(text))
-                        sentences = sentences_with_numbers(text,num(target),0.15)
-                        if len(sentences) == 0:
+                    for number in target.strip().split("–"):
+                        if number is None or len(number) == 0:
                             continue
 
+                        filename = url_hash(url + "__" + search + "__" + number + "__" + table) + ".p"
+                        if contains_entity(text,entity):
+                            #print(numbers_in_text(text))
+                            sentences = sentences_with_numbers(text,num(number),0.15)
+                            if len(sentences) == 0:
+                                continue
 
-                        print(str(len(sentences))+" candidate matches")
-                        print(sentences)
 
-                        try:
-                            matches = find_utterances_for_tuple(sentences,
-                                                                {"entity": entity, "relation": relation})
+                            print(str(len(sentences))+" candidate matches")
+                            print(sentences)
 
-                            features = matches_to_features(matches, num(target))
+                            try:
+                                matches = find_utterances_for_tuple(sentences,
+                                                                    {"entity": entity, "relation": relation})
 
-                            for feature in features:
-                                print("Target " + str(num(target)) + "\t\tActual " + str(
-                                    feature['value']) + "\t\tClass\t\t" + str(
-                                    feature["class"]))
-                            print(features)
-                            with open(base + filename, 'wb+') as f:
-                                pickle.dump(features, f)
-                        except:
-                            print(sys.exc_info()[0])
-                            raise
+                                features = matches_to_features(matches, num(number))
+
+                                for feature in features:
+                                    print("Target " + str(num(number)) + "\t\tActual " + str(
+                                        feature['value']) + "\t\tClass\t\t" + str(
+                                        feature["class"]))
+                                print(features)
+                                with open(base + filename, 'wb+') as f:
+                                    pickle.dump(features, f)
+                            except:
+                                print(sys.exc_info()[0])
+                                raise
 
 
 

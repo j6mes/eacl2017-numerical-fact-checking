@@ -41,6 +41,18 @@ def load_collection(name):
                 filtering.register_word(col,instance['table'])
     return filtering
 
+
+def write_collection(name,tables,base="data/WikiTableQuestions/data/"):
+    with open(base+name+".tsv","w+") as f:
+        f.write("id\tutterance\ttable\tvalue\n")
+        id = 0
+
+        for table in tables:
+            f.write("f-"+str(id)+"\tNone\t"+table+"\tNone\n")
+            id += 1
+
+
+
 if __name__ == "__main__":
     instances = load_instances("training")
     filtering = Filtering()

@@ -2,6 +2,7 @@ import os
 import sys
 
 from distant_supervision.query_generation import generate_queries
+from tabular.filter_collection import read_filters_collection
 from tabular.table_reader import number_entity_tuples, read_table
 from wikitablequestions.dataset_reader import load_instances
 
@@ -10,9 +11,11 @@ if __name__=="__main__":
 
     all_instances = []
 
-    all_instances.extend(load_instances("pristine-seen-tables"))
-    all_instances.extend(load_instances("pristine-unseen-tables"))
-    all_instances.extend(load_instances("training"))
+    #all_instances.extend(load_instances("pristine-seen-tables"))
+    #all_instances.extend(load_instances("pristine-unseen-tables"))
+    #all_instances.extend(load_instances("training"))
+
+    all_instances.extend(load_instances("countries"))
 
     table_files = []
 
@@ -22,12 +25,14 @@ if __name__=="__main__":
 
     table_files = set(table_files)
 
+    country_filters = read_filters_collection("countries")
+
     with open("data/distant_supervision/queries_"+world +".txt", "w+") as file:
         for table_file in table_files:
             done += 1
             print("Parsing " + str(done) +"/"+str(len(table_files)) + "\t\t\t" + table_file)
             table = number_entity_tuples(read_table(table_file))
-            tuples = generate_queries(table)
+            tuples = generate_queries(table,country_filters)
 
 
             for tuple in tuples:

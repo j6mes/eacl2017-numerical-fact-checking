@@ -54,7 +54,10 @@ def generate_search_query_known_table(text,table):
                 print(cell)
 
 
-def generate_query(tuple):
+def generate_query(tuple,filters=list()):
+    if len(filters)>0 and tuple[1] not in filters:
+        return None
+
     if len(tuple[1].split()) > 6:
         return None
 
@@ -67,8 +70,8 @@ def generate_query(tuple):
         return tuple[2] + "\t\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
 
 
-def generate_queries(tuples):
-    return set(generate_query(tuple) for tuple in tuples if generate_query(tuple) is not None)
+def generate_queries(tuples,filters=list()):
+    return set(generate_query(tuple) for tuple in tuples if generate_query(tuple,filters) is not None)
 
 if __name__ == "__main__":
     #generate_search_query_known_table("in what year did miss pokhara last win the miss nepal award","csv/204-csv/172.csv")
