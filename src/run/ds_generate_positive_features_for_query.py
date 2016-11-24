@@ -42,13 +42,7 @@ if __name__ == "__main__":
 
         lines = lines[block*100:min((block+1)*100,num_qs-1)]
         print(len(lines))
-
-        print(lines)
-
-        if True:
-            sys.exit(0)
-
-
+        num_qs = len(lines)
         done = 0
         for line in lines:
             done += 1

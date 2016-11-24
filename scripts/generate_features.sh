@@ -1,6 +1,5 @@
 #!/bin/bash
 #$ -l mem=10G -l rmem=10G
-#$ -t 0-55
 #$ -o /dev/null
 #$ -e /dev/null
 
@@ -14,6 +13,6 @@ source activate factchecking
 #./gradlew writeClasspath
 export CLASSPATH=`cat build/classpath.txt`
 
-python src/run/ $SGE_TASK_ID
+PYTHONPATH=./src python ./src/run/ds_generate_positive_features_for_query.py countries $SGE_TASK_ID
 
 source deactivate
