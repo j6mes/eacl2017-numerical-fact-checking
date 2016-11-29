@@ -2,13 +2,19 @@ import numpy as np
 
 class BOW():
     def __init__(self):
-        self.words = []
+        self.words = set()
 
     def register(self,word):
-        if word not in self.words:
-            self.words.append(word)
+        if type(self.words) == list:
+            if word in self.words:
+                return
+
+        self.words.add(word)
 
     def id(self,word):
+        if type(self.words) == set:
+            self.words = list(self.words)
+
         if word in self.words:
             return self.words.index(word)
         else:

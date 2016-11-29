@@ -22,7 +22,10 @@ def contains_entity(text, entity):
 
 if __name__ == "__main__":
     world = sys.argv[1]
-    block = int(sys.argv[2])-1
+
+    block = None
+    if len(sys.argv) == 3:
+        block = int(sys.argv[2])-1
 
 
 
@@ -38,10 +41,9 @@ if __name__ == "__main__":
         lines = file.readlines()
         num_qs = len(lines)
 
-        print(num_qs/100)
+        if block is not None:
+            lines = lines[block*100:min((block+1)*100,num_qs-1)]
 
-        lines = lines[block*100:min((block+1)*100,num_qs-1)]
-        print(len(lines))
         num_qs = len(lines)
         done = 0
         for line in lines:
@@ -64,9 +66,6 @@ if __name__ == "__main__":
                 urls = Search.instance().search(search)
 
                 for url in urls:
-
-
-
                     print(" ")
                     print("Looking in document for values similar to " + target)
                     print(url)
@@ -83,6 +82,10 @@ if __name__ == "__main__":
                             continue
 
                         filename = url_hash(url + "__" + search + "__" + number + "__" + table) + ".p"
+
+                        if os.path.exists(base+filename):
+                            continue
+
                         if contains_entity(text,entity):
                             #print(numbers_in_text(text))
                             sentences = sentences_with_numbers(text,num(number),0.15)

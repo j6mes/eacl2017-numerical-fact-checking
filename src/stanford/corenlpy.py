@@ -2,10 +2,22 @@ import sys
 
 
 number_ne_types = ['NUMBER','MONEY','PERCENT']
+number_ne_types_for_match = ['NUMBER','MONEY','PERCENT','DATE']
+
+months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 
 def num(s):
     if type(s) == BigDecimal:
         s = Double.valueOf(s.toString())
+
+    if type(s) == int:
+        return s
+
+    if type(s) == float:
+        return s
+
+    if s in months:
+        return months.index(s)+1
 
     try:
         return int(s.replace(",",""))

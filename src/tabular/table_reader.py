@@ -2,7 +2,8 @@ import numpy as np
 import csv
 import re
 
-from stanford.corenlpy import Annotation, SharedNERPipeline, CoreAnnotations, number_ne_types, NumberNormalizer
+from stanford.corenlpy import Annotation, SharedNERPipeline, CoreAnnotations, number_ne_types, NumberNormalizer, \
+    number_ne_types_for_match
 
 
 def transpose(l):
@@ -55,14 +56,14 @@ def number_tuples(table):
         count_in = 0
         if column not in ne_columns:
             for tag in tags:
-                if tag in number_ne_types:
-                    count_in += 1
+                if tag in number_ne_types_for_match:
+                   count_in += 1
 
-            if count_in >= len(tags)/2:
+            if count_in == len(tags)-1 or count_in >= len(tags)/2:
                 number_columns.append(column)
 
-    numbers = []
 
+    numbers = []
 
     tuples = []
     transposed = transpose(rows)

@@ -14,6 +14,22 @@ def numbers_in_text(text):
     return numbers
 
 
+def numbers_in_text(text):
+    doc = Annotation(text)
+    SharedNERPipeline().getInstance().annotate(doc)
+    numbers = []
+    for sentence in doc.get(CoreAnnotations.SentencesAnnotation).toArray():
+        NumberNormalizer.findNumbers(sentence)
+        for corelabel in sentence.get(CoreAnnotations.TokensAnnotation).toArray():
+            num = corelabel.get(CoreAnnotations.NumericCompositeValueAnnotation)
+            if num is not None:
+                numbers.append(num)
+    return numbers
+
+
+
+
+
 def sentences_with_numbers(text,target,thresh):
     doc = Annotation(text)
     SharedNERPipeline().getInstance().annotate(doc)

@@ -13,6 +13,7 @@ def get_all_tuples(tables,query):
 
     print("Found "+ str(len(results)) + " possible candidate tables")
 
+    print(results)
     all_tuples = []
     for result in results:
         new_result = dict()
@@ -40,6 +41,7 @@ def get_all_tuples(tables,query):
             if len(tuples) > 0:
                 for tuple in tuples:
                     all_tuples.append((table_name,tuple))
+
     return filter_tuples_for_entity(all_tuples,query)
 
 
