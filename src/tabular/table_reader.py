@@ -27,6 +27,44 @@ def read_table(filename,base="data/WikiTableQuestions"):
                 rows.append(line)
     return {"header": header, "rows":rows}
 
+def table_nes(table):
+    header = table['header']
+    rows = table['rows']
+
+    ret_tokens = []
+    for col in transpose(rows):
+        text = ". ".join(col)
+        doc = Annotation(text)
+        SharedNERPipeline().getInstance().annotate(doc)
+
+
+        num_ne_cell = 0
+        tokens = []
+        for cell in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
+            col = doc.get(CoreAnnotations.SentencesAnnotation).get(cell)
+
+            words = []
+            col_ne_tags = []
+            has_ne = False
+            for i in range(col.get(CoreAnnotations.TokensAnnotation).size()):
+                corelabel = col.get(CoreAnnotations.TokensAnnotation).get(i)
+                ne =corelabel.get(CoreAnnotations.NamedEntityTagAnnotation)
+
+                words.append(corelabel.get(CoreAnnotations.TextAnnotation))
+                if ne not in ['O','NUMBER','NUMERIC']:
+                    has_ne = True
+
+            if len(words) > 1:
+                tokens.append(" ".join(words[:-1]))
+
+            if has_ne:
+                num_ne_cell += 1
+
+        if num_ne_cell >= len(tokens)/2 and len(tokens) > 0:
+            ret_tokens.extend(tokens)
+
+    return ret_tokens
+
 
 def number_tuples(table):
     header = table['header']
@@ -126,5 +164,6 @@ def number_entity_tuples(table):
             for ncolumn in range(len(transposed)):
                 if ncolumn in number_columns:
                     tuples.extend(list(zip([header[ncolumn]] * len(rows),transposed[column],transposed[ncolumn])))
+
 
     return tuples

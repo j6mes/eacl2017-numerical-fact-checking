@@ -1,12 +1,12 @@
 import re
 
-from distant_supervision.query_generation import normalise
+from distant_supervision.query_generation import normalise_keep_nos
 from tabular.table_collection import TableCollection
 from tabular.table_reader import number_entity_tuples, number_tuples
 
 
 def get_all_tuples(tables,query):
-    a = tables.get_tables_for_word(query)
+    a = tables.get_tables(query)
     results = set()
     results.update(a["exact"])
     results.update(a["partial"])
@@ -28,7 +28,7 @@ def get_all_tuples(tables,query):
             match = False
 
             for cell in row:
-                if not set(normalise(cell).split()).isdisjoint(normalise(query).split()):
+                if not set(normalise_keep_nos(cell).split()).isdisjoint(normalise_keep_nos(query).split()):
                     match = True
                     break
 
@@ -49,6 +49,6 @@ def get_all_tuples(tables,query):
 def filter_tuples_for_entity(tuples,query):
     ret = []
     for tuple in tuples:
-        if set(normalise(tuple[1][1]).split()).intersection(set(normalise(re.sub(r"[^A-Za-z\s]+","",query)).split())):
+        if set(normalise_keep_nos(tuple[1][1]).split()).intersection(set(normalise_keep_nos(re.sub(r"[^A-Za-z\s]+","",query)).split())):
             ret.append(tuple)
     return ret

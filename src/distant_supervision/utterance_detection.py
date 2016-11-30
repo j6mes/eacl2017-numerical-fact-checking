@@ -104,11 +104,21 @@ def extract_from_match(matches,number_matching_strategy=stanford_normaliser, num
 
 
 def threshold_match(a,b,t):
-    m = (a+b)/2
+    m = abs((a+b)/2)
 
     if a == b: return True
 
     return abs(a-b)/m < t
+
+def f_threshold_match(a,b,t):
+    m = abs(a)
+
+    if a == b: return True
+
+    return abs(a-b)/m < t
+
+
+
 
 
 def matches_to_features(matches,target,thresh=0.15):

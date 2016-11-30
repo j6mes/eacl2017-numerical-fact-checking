@@ -10,10 +10,11 @@ from classifier.features.bow import BOW
 from classifier.features.linearise import flatten_with_labels, flatten_without_labels
 from classifier.features.pseudo_multiclass import IDPerColumnMultiClass
 from distant_supervision.clean_html import get_text, has_text
-from distant_supervision.query_generation import normalise
+from distant_supervision.query_generation import normalise_keep_nos
 from distant_supervision.scraper import url_hash
 from distant_supervision.search import Search
-from distant_supervision.utterance_detection import find_utterances_for_tuple, matches_to_features, threshold_match
+from distant_supervision.utterance_detection import find_utterances_for_tuple, matches_to_features, threshold_match, \
+    f_threshold_match
 
 import numpy as np
 
@@ -34,7 +35,7 @@ def num(s):
 
 def hmi(sentence, sentence1):
     return 1 if len(
-        set(normalise(sentence).split()).intersection(set(normalise(sentence1).split()))) > 0 else 0
+        set(normalise_keep_nos(sentence).split()).intersection(set(normalise_keep_nos(sentence1).split()))) > 0 else 0
 
 if __name__ == "__main__":
     world = sys.argv[1]
@@ -194,28 +195,24 @@ if __name__ == "__main__":
         q.parse()
 
         q_match = False
-
-        print(q.nps)
-        print(q.nes)
-
         tuples = []
         for obj in q.nps.union(q.nes):
             tuples.extend(get_all_tuples(tables, obj))
 
         done_tuple = False
+
         for tuple in tuples:
-            print(tuple)
+
             done_tuple = True
             table_name = tuple[0]
             rel_name = tuple[1][0]
-            words = normalise(question).split()
+            words = normalise_keep_nos(question).split()
 
             q_bow = flatten_without_labels({"bow": bow})
 
             X = np.hstack((1, mc.get(table_name,rel_name), hmi(question,rel_name), bow.convert_one_hot(q_bow)))
             prediction = (lr.predict([X]))
-            print(lr.predict_proba([X]))
-            print(prediction)
+
             if prediction[0] == 1:
                 value = num(re.sub(r"[^0-9\.]+","",tuple[1][2].replace(",","")))
 
@@ -224,7 +221,7 @@ if __name__ == "__main__":
 
                 match = False
                 for number in q.numbers:
-                    if threshold_match(number,value,0.15):
+                    if f_threshold_match(number,value,0.05):
                         match = True
                         q_match = True
 
@@ -233,16 +230,21 @@ if __name__ == "__main__":
                         match = True
                         q_match = True
 
-
                 if match:
+                    print(tuple)
+                    print(lr.predict_proba([X]))
+                    print(prediction)
                     print("Match")
-                    break
+
 
         if done_tuple:
             print(question + " - we predict: " + str(q_match))
         else:
             print("No data to answer questions")
-
+        print("")
+        print("")
+        print("")
+        print("")
 
 
 

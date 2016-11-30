@@ -15,7 +15,18 @@ def normalisequery(text):
     text = re.sub(r'[^\w]', ' ', text)
     return text.lower()
 
+def normalise_keep_nos(text):
+    text = text.replace("-LRB-","")
+    text = text.replace("-LSB-", "")
+    text = text.replace("-RRB-", "")
+    text = text.replace("-LSB-", "")
 
+    text = text.replace(",","")
+    text = text.replace(".", "")
+    text = text.replace("-", " ")
+
+    text = " ".join(text.lower().strip().split())
+    return text
 
 def key_terms(text):
     if type(text) != Question:
