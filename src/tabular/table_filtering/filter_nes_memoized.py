@@ -25,7 +25,7 @@ class FilterTableNEsMemoized(FilterTableNEs):
     def register(self,file):
         if file not in self.files:
             super().register(file)
-
+            self.files.add(file)
             with open(self.base+"filters.p","wb+") as f:
                 data = dict()
                 data['partial'] = self.words_to_table_partial
