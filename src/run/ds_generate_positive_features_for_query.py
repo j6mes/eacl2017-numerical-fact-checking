@@ -71,7 +71,7 @@ if __name__ == "__main__":
                     print(url)
                     text = get_text(url)
 
-                    if len(text) == 0:
+                    if text is None or len(text) == 0:
                         print("No meaningful text in this document")
                         continue
 

@@ -120,7 +120,10 @@ def get_text(url):
         save_text_disk(url)
 
     with open(path, 'r') as file:
-        return file.read()
+        data = file.read()
+        if "<script" in data.lower():
+            return ""
+        return data
 
 
 
