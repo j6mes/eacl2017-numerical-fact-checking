@@ -1,4 +1,5 @@
 from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.stop_words import StopWords
 from tabular.table_collection import TableCollection
 from tabular.table_filtering.filter import Filter
 from tabular.table_reader import table_nes
@@ -16,4 +17,5 @@ class FilterTableNEs(Filter):
                 self.words_to_table_exact[nen].add(file)
 
                 for word in nen.split(" "):
-                    self.words_to_table_partial[word].add(file)
+                    if word not in StopWords.instance().words:
+                        self.words_to_table_partial[word].add(file)
