@@ -187,7 +187,8 @@ if __name__ == "__main__":
     print("Trained")
 
 
-    queries = ["Hamas was founded in 1985","In America, in June 1901, the average temperature was 16.6C","The World life expectancy was 52 in 1960", "world life expectancy rose sharply to 80 in 2014"]
+    queries = ["Hamas was founded in 1985","In America, in June 1901, the average temperature was 16.6C","The World life expectancy was 52 in 1960", "world life expectancy rose sharply to 80 in 2014",
+               "In 2012 there were 3,282,570 bee colonies in America","In 2016, the USA contributed $550bn to the financial intermediary funds"]
 
     tables = load_collection("herox")
     for question in queries:
@@ -230,11 +231,12 @@ if __name__ == "__main__":
                         match = True
                         q_match = True
 
-                if match:
-                    print(tuple)
-                    print(lr.predict_proba([X]))
-                    print(prediction)
-                    print("Match")
+
+                print(tuple)
+                print(lr.predict_proba([X]))
+                print(prediction)
+                print("Match")
+
 
 
         if done_tuple:

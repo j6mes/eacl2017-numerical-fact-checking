@@ -23,7 +23,9 @@ class FilterTableNEsMemoized(FilterTableNEs):
                 self.files = data['files']
 
     def register(self,file):
+        print("register table "+ file)
         if file not in self.files:
+            print("loading from file")
             super().register(file)
             self.files.add(file)
             with open(self.base+"filters.p","wb+") as f:

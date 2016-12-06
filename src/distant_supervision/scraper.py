@@ -5,21 +5,24 @@ import urllib3
 
 
 def get_page_contents(url):
-
-    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36"}
-    http = urllib3.PoolManager()
+    print(url)
 
     try:
-        r = http.request('GET', url,headers=headers,timeout=5.0)
+        r = raw_req(url)
     except:
         return "".encode()
-    print("Got data")
-
     content_type = r.headers['Content-Type']
     if "html" in content_type.lower():
         return r.data
 
     return b""
+
+
+def raw_req(url):
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.87 Safari/537.36"}
+    http = urllib3.PoolManager()
+    return http.request('GET', url,headers=headers,timeout=5.0)
+
 
 def url_hash(url):
     return hashlib.sha256(str.encode(url)).hexdigest()
