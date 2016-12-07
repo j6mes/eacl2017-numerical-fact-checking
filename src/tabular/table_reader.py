@@ -15,7 +15,7 @@ def read_table(filename,base="data/WikiTableQuestions"):
 
     header_read = False
     filename = filename.replace(".csv",".tsv")
-    with open(base+"/"+filename,"r") as table:
+    with open(base+"/"+filename,"r",encoding='utf-8') as table:
         has_header = csv.Sniffer().has_header(table.readline())
         table.seek(0)
 
