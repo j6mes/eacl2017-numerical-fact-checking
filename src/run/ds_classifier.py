@@ -31,26 +31,26 @@ if __name__ == "__main__":
 
             for i in range(len(tuples)):
                 tuple = tuples[i]
-                prediction = q_predicted[i]
-                features = q_features[i]
+                if len(tuple[1][2]) > 0:
+                    prediction = q_predicted[i]
+                    features = q_features[i]
 
 
-                if prediction == 1:
-                    print(str(tuple) + "\t\t" + ("Match" if prediction else "No match"))
-                    for number in question.numbers:
-                        value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
+                    if prediction == 1:
+                        print(str(tuple) + "\t\t" + ("Match" if prediction else "No match"))
+                        for number in question.numbers:
+                            value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
 
-                        if value is None:
-                            continue
+                            if value is None:
+                                continue
 
-                        if f_threshold_match(number, value, 0.05):
-                            q_match = True
+                            if f_threshold_match(number, value, 0.05):
+                                q_match = True
 
-                    for number in question.dates:
-                        value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
-                        if number == value:
-                            q_match = True
-
+                        for number in question.dates:
+                            value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
+                            if number == value:
+                                q_match = True
 
             print(question.text)
             print(q_match)
