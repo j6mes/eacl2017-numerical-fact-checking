@@ -46,7 +46,6 @@ class Question:
                 if dates[i]:
                     self.dates.add(num(tokens[i]))
 
-            print(self.dates)
             self.numbers.update(numbers_in_text(self.text))
             self.numbers = self.numbers.difference(self.dates)
 

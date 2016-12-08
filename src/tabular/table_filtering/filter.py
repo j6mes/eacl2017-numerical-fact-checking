@@ -14,11 +14,11 @@ class Filter():
 
 
     def get_tables(self,word):
-        r = [self.words_to_table_partial[normalise_keep_nos(w)] for w in word.split()]
+        r = [self.words_to_table_exact[normalise_keep_nos(w)] for w in word.split()]
 
         partial = set()
         for result in r:
-            partial.update(result)
+            partial.update(list(result))
 
         return {"exact":self.words_to_table_exact[normalise_keep_nos(word)],
             "partial": partial}

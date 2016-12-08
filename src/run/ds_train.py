@@ -179,9 +179,6 @@ if __name__ == "__main__":
     lr = LogisticRegression(penalty='l1',C=0.9)
     lr.fit(Xs,ys)
 
-
-    print(ys)
-
     import pickle
     s = pickle.dumps(lr)
 
@@ -191,9 +188,7 @@ if __name__ == "__main__":
 
 
     queries = ["Hamas was founded in 1985","In America, in June 1901, the average temperature was 16.6C","The World life expectancy was 52 in 1960", "world life expectancy rose sharply to 80 in 2014",
-               "In 2012 there were 3,282,570 bee colonies in America","In 2016, the USA contributed $550bn to the financial intermediary funds","In the USA in 2010, the number of homicides by firearm was almost 10,000",
-               "12.9% of the total population of the USA were daily smokers in 2014","97% of children in USA were vaccinated against Measles in 2014","In the United States there were 2.4 practicing physicians for every 1000 people in 2010"]
-
+               "In 2012 there were 3,282,570 bee colonies in America","In 2016, the USA contributed $550bn to the financial intermediary funds"]
 
     tables = load_collection("herox")
     for question in queries:
@@ -252,12 +247,3 @@ if __name__ == "__main__":
         print("")
         print("")
         print("")
-
-
-
-
-
-
-
-
-

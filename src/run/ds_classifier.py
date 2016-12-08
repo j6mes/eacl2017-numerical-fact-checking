@@ -14,13 +14,13 @@ if __name__ == "__main__":
     classifier = LogisticRegressionClassifier()
     classifier.train(Xs,ys)
 
-    queries = ["Hamas was founded in 1985","In America, in June 1901, the average temperature was 16.6C","The World life expectancy was 52 in 1960", "world life expectancy rose sharply to 80 in 2014",
-               "In 2012 there were 3,282,570 bee colonies in America","In 2016, the USA contributed $550bn to the financial intermediary funds","In the USA in 2010, the number of homicides by firearm was almost 10,000",
+    queries = ["Hamas was founded in 1985",
                "12.9% of the total population of the USA were daily smokers in 2014","97% of children in America were vaccinated against measles in 2014","In the USA there were 2.4 practicing doctors for every 1000 people in 2010"]
 
     tables = load_collection("herox")
 
     for q in queries:
+        print(q)
         question = Question(text=q, type="NUM")
         tuples,q_features = fg.generate_test(tables,question)
 
@@ -34,7 +34,9 @@ if __name__ == "__main__":
                 prediction = q_predicted[i]
                 features = q_features[i]
 
+
                 if prediction == 1:
+                    print(str(tuple) + "\t\t" + ("Match" if prediction else "No match"))
                     for number in question.numbers:
                         value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
 
@@ -42,13 +44,16 @@ if __name__ == "__main__":
                             continue
 
                         if f_threshold_match(number, value, 0.05):
-                            print(tuple)
                             q_match = True
 
-            if q_match:
-                print(question.text)
-                print(q_match)
+                    for number in question.dates:
+                        value = num(re.sub(r"[^0-9\.]+", "", tuple[1][2].replace(",", "")))
+                        if number == value:
+                            q_match = True
 
+
+            print(question.text)
+            print(q_match)
 
         else:
             print(question.text)

@@ -12,6 +12,7 @@ from distant_supervision.clean_html import has_text
 from distant_supervision.query_generation import normalise_keep_nos
 from distant_supervision.scraper import url_hash
 from distant_supervision.search import Search
+from distant_supervision.synonyms import SynonymRegistry
 from factchecking.question import Question
 from tabular.tuples import get_all_tuples
 
@@ -28,6 +29,12 @@ def num(s):
 def hmi(sentence, sentence1):
     return 1 if len(
         set(normalise_keep_nos(sentence).split()).intersection(set(normalise_keep_nos(sentence1).split()))) > 0 else 0
+
+
+def get_synonyms(word):
+    return SynonymRegistry.instance().get(word)
+
+
 
 class FeatureGenerator():
     def generate_training(self, world = "herox"):
@@ -61,22 +68,22 @@ class FeatureGenerator():
                         entity = query[2].split("\" \"")[0][1:]
                         relation = query[2].split("\" \"")[1][:-1]
 
-                urls = Search.instance().search(search)
+                        urls = Search.instance().search(search)
 
-                for url in urls:
-                    filename = url_hash(url + "__" + search + "__" + target + "__" + table) + ".p"
+                        for url in urls:
+                            filename = url_hash(url + "__" + search + "__" + target + "__" + table) + ".p"
 
-                    if has_text(url) and os.path.exists(base + filename):
-                        with open(base + filename, 'rb') as f:
-                            features = pickle.load(f)
+                            if has_text(url) and os.path.exists(base + filename):
+                                with open(base + filename, 'rb') as f:
+                                    features = pickle.load(f)
 
-                            for feature in features:
-                                feature['table'] = table
-                                feature['relation'] = relation
+                                    for feature in features:
+                                        feature['table'] = table
+                                        feature['relation'] = relation
 
-                            found_features.extend(features)
-                    else:
-                        pass
+                                    found_features.extend(features)
+                            else:
+                                pass
 
         print("Registering words in BOW")
         n_feats = len(found_features)
@@ -171,6 +178,10 @@ class FeatureGenerator():
         tuples = []
         for obj in q.nps.union(q.nes):
             tuples.extend(get_all_tuples(tables, obj))
+            for synonym in get_synonyms(obj):
+                tuples.extend(get_all_tuples(tables, synonym))
+
+
 
         Xs = []
 

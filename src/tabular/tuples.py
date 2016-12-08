@@ -1,6 +1,7 @@
 import re
 
 from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.stop_words import StopWords
 from tabular.table_collection import TableCollection
 from tabular.table_reader import number_entity_tuples, number_tuples
 
@@ -11,9 +12,10 @@ def get_all_tuples(tables,query):
     results.update(a["exact"])
     results.update(a["partial"])
 
-    print("Found "+ str(len(results)) + " possible candidate tables")
+    #print("Found "+ str(len(results)) + " possible candidate tables")
+    #print(results)
 
-    print(results)
+
     all_tuples = []
     for result in results:
         new_result = dict()
