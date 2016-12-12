@@ -22,8 +22,10 @@ def get_all_tuples(tables,query):
         table_name = result
         result = TableCollection.instance().load(result)
 
+
         new_result['header'] = result['header']
         new_result['rows'] = []
+
 
         matched = False
         for row in result['rows']:
@@ -37,9 +39,12 @@ def get_all_tuples(tables,query):
             if match:
                 matched = True
                 new_result['rows'].append(row)
+                new_result['rows'].append(row)
+
 
         if matched:
             tuples = number_tuples(new_result)
+
             if len(tuples) > 0:
                 for tuple in tuples:
                     all_tuples.append((table_name,tuple))

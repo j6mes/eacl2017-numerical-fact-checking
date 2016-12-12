@@ -20,6 +20,7 @@ class FilterTableNEsMemoized(FilterTableNEs):
                 data = pickle.load(file)
                 self.words_to_table_partial = data['partial']
                 self.words_to_table_exact = data['exact']
+
                 self.files = data['files']
 
     def register(self,file):

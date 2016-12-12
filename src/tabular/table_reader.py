@@ -1,6 +1,11 @@
 import csv
 import numpy as np
 import re
+from stanford.corenlpy import *
+
+
+def transpose(l):
+    return list(map(list, zip(*l)))
 
 
 def read_table(filename, base="data/WikiTableQuestions"):
@@ -64,44 +69,77 @@ def number_tuples(table):
     header = table['header']
     rows = table['rows']
 
-    text = ". ".join(" ".join(cell for cell in row) for row in transpose(rows))
+    ret_tokens = []
+    entity_col = []
+    date_col = []
+    number_col = []
 
-    doc = Annotation(text)
-    SharedNERPipeline().getInstance().annotate(doc)
+    col_id = 0
 
-    ne_columns = []
-    number_columns = []
-    for column in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
-        col = doc.get(CoreAnnotations.SentencesAnnotation).get(column)
+    table_trans = transpose(rows)
+    for col in table_trans:
+
+        text = ". ".join(col)
+        doc = Annotation(text)
+        SharedNERPipeline().getInstance().annotate(doc)
+
+        num_ne_cell = 0
+        num_date_cell = 0
+        num_number_cell = 0
 
         tokens = []
-        col_ne_tags = []
-        for i in range(col.get(CoreAnnotations.TokensAnnotation).size()):
-            corelabel = col.get(CoreAnnotations.TokensAnnotation).get(i)
-            tokens.append(corelabel.get(CoreAnnotations.TextAnnotation))
-            col_ne_tags.append(corelabel.get(CoreAnnotations.NamedEntityTagAnnotation))
+        for cell in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
+            col = doc.get(CoreAnnotations.SentencesAnnotation).get(cell)
 
-        tags = col_ne_tags
+            words = []
+            col_ne_tags = []
+            has_ne = False
+            has_date = False
+            has_number = False
+            for i in range(col.get(CoreAnnotations.TokensAnnotation).size()):
+                corelabel = col.get(CoreAnnotations.TokensAnnotation).get(i)
+                ne = corelabel.get(CoreAnnotations.NamedEntityTagAnnotation)
 
-        count_in = 0
-        if column not in ne_columns:
-            for tag in tags:
-                if tag in number_ne_types_for_match:
-                    count_in += 1
+                words.append(corelabel.get(CoreAnnotations.TextAnnotation))
+                if ne not in ['O', 'NUMBER', 'NUMERIC', 'DATE', 'YEAR']:
+                    has_ne = True
 
-            if count_in == len(tags) - 1 or count_in >= len(tags) / 2:
-                number_columns.append(column)
+                if ne in ['YEAR', 'DATE']:
+                    has_date = True
 
-    numbers = []
+                if ne in ['NUMBER', 'NUMERIC', 'PERCENTAGE', 'ORDINAL']:
+                    has_number = True
+
+            if len(words) > 1:
+                tokens.append(" ".join(words[:-1]))
+
+            if has_ne:
+                num_ne_cell += 1
+
+            if has_date:
+                num_date_cell += 1
+
+            if has_number:
+                num_number_cell += 1
+
+        if num_ne_cell >= len(tokens) / 2 and len(tokens) > 0:
+            entity_col.append(col_id)
+
+        if num_date_cell >= len(tokens) / 2 and len(tokens) > 0:
+            number_col.append(col_id)
+
+        if num_number_cell >= len(tokens) / 2 and len(tokens) > 0:
+            number_col.append(col_id)
+
+        col_id += 1
 
     tuples = []
-    transposed = transpose(rows)
-    for column in range(len(transposed)):
-        for ncolumn in range(len(transposed)):
-            if ncolumn in number_columns:
-                tuples.extend(list(zip([header[ncolumn]] * len(rows), transposed[column], transposed[ncolumn])))
+    for col in entity_col:
+        for col1 in number_col:
+            tuples.extend(list(zip([header[col1]] * len(rows), table_trans[col], table_trans[col1])))
 
     return tuples
+
 
 
 def number_entity_tuples(table):
@@ -118,6 +156,7 @@ def number_entity_tuples(table):
     for column in range(doc.get(CoreAnnotations.SentencesAnnotation).size()):
         col = doc.get(CoreAnnotations.SentencesAnnotation).get(column)
 
+
         tokens = []
         col_ne_tags = []
         for i in range(col.get(CoreAnnotations.TokensAnnotation).size()):
@@ -127,13 +166,12 @@ def number_entity_tuples(table):
 
         tags = col_ne_tags
 
+
         for tag in tags:
-            if len(set(col_ne_tags).intersection(set(number_ne_types))) == 0 and tag not in ['NUMBER', 'NUMERIC',
-                                                                                             'YEAR', 'DATE', 'DURATION',
-                                                                                             'TIME', 'NUMBER',
-                                                                                             'ORDINAL'] and tag != "O":
+            if len(set(col_ne_tags).intersection(set(number_ne_types))) == 0 and tag not in ['NUMBER','NUMERIC','YEAR','DATE','DURATION','TIME','NUMBER','ORDINAL'] and tag != "O":
                 ne_columns.append(column)
                 break
+
 
         count_in = 0
         if column not in ne_columns:
@@ -141,10 +179,11 @@ def number_entity_tuples(table):
                 if tag in number_ne_types:
                     count_in += 1
 
-            if count_in >= len(tags) / 2:
+            if count_in >= len(tags)/2:
                 number_columns.append(column)
 
     numbers = []
+
 
     tuples = []
     transposed = transpose(rows)
@@ -152,7 +191,8 @@ def number_entity_tuples(table):
         if column in ne_columns:
             for ncolumn in range(len(transposed)):
                 if ncolumn in number_columns:
-                    tuples.extend(list(zip([header[ncolumn]] * len(rows), transposed[column], transposed[ncolumn])))
+                    tuples.extend(list(zip([header[ncolumn]] * len(rows),transposed[column],transposed[ncolumn])))
+
 
     return tuples
 
@@ -240,10 +280,8 @@ def number_entity_date_tuples(table):
     return tuples
 
 
-def transpose(l):
-    return list(map(list, zip(*l)))
 
 
 if __name__ == "__main__":
-    t = read_table("herox/4.csv")
+    t = read_table("herox/5.csv")
     print(number_entity_tuples(t))
