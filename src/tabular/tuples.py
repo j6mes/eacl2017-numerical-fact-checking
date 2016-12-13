@@ -22,7 +22,6 @@ def get_all_tuples(tables,query):
         table_name = result
         result = TableCollection.instance().load(result)
 
-
         new_result['header'] = result['header']
         new_result['rows'] = []
 
@@ -56,6 +55,9 @@ def get_all_tuples(tables,query):
 def filter_tuples_for_entity(tuples,query):
     ret = []
     for tuple in tuples:
-        if set(normalise_keep_nos(tuple[1][1]).split()).intersection(set(normalise_keep_nos(re.sub(r"[^A-Za-z\s]+","",query)).split())):
+        if set(normalise_keep_nos(tuple[1]['entity']).split()).intersection(set(normalise_keep_nos(re.sub(r"[^A-Za-z\s]+","",query)).split())):
+            ret.append(tuple)
+
+        if set(normalise_keep_nos(tuple[1]['entity']).split()).intersection(set(normalise_keep_nos(re.sub(r"[^A-Za-z\s]+","",query)).split())):
             ret.append(tuple)
     return ret

@@ -1,5 +1,6 @@
 import os
 import pickle
+import re
 from collections import defaultdict
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -18,6 +19,7 @@ from tabular.tuples import get_all_tuples
 
 
 def num(s):
+    s = re.sub(r"[^0-9\.]+", "", s.replace(",", ""))
     try:
         return int(s)
     except ValueError:
@@ -25,6 +27,9 @@ def num(s):
             return float(s)
         except ValueError:
             return None
+
+def is_num(s):
+    return num(s) is not None
 
 def hmi(sentence, sentence1):
     return 1 if len(
@@ -187,7 +192,7 @@ class FeatureGenerator():
 
         for tuple in tuples:
             table_name = tuple[0]
-            rel_name = tuple[1][0]
+            rel_name = tuple[1]['relation']
             words = normalise_keep_nos(question.text).split()
 
             q_bow = flatten_without_labels({"bow": self.bow})
