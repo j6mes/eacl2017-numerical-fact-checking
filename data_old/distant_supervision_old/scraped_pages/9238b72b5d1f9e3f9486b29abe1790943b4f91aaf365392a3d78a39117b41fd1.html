@@ -1,0 +1,888 @@
+
+<!DOCTYPE HTML>
+<html >
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script>
+        ;(function (window) {
+            var hostname = window.document.location.hostname;
+            var isProd = (hostname === 'www.usga.org' || hostname === 'new.usga.org');
+            window.usga = window.usga || {};
+            window.usga.isProd = function () {
+                return isProd;
+            };
+        })(window);
+    </script>
+
+    <script>
+        ;(function (window) {
+            var dtmSrc = '//assets.adobedtm.com/be647daa0868f11f8113c7fb433bafc636024ba2/satelliteLib-83349796437417787abc21e3f4ac547f4e6c55e0' +
+                    ((window.usga && window.usga.isProd()) ? '' : '-staging') + '.js';
+            window.document.write('<scr' + 'ipt type="text/javascript" src="' + dtmSrc + '"></scr' + 'ipt>')
+        })(window);
+    </script>
+
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="keywords" content="History,&#x20;Museum">
+<meta name="description" content="">
+<!-- google plus-->
+<meta itemprop="name" content="about-museum"/>
+<meta itemprop="description" content=""/>
+<meta itemprop="image" content=""/>
+<!-- twitter-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@USGA">
+<meta name="twitter:title" content="about-museum">
+<meta name="twitter:description" content="">
+<meta name="twitter:image:src" content="">
+<!-- facebook, linkedin and other-->
+<meta property="og:title" content="about-museum"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content=""/>
+
+<meta property="og:description" content="about-museum"/>
+<meta property="og:site_name" content="USGA"/>
+
+<!--<meta property="fb:admins" content="Facebook numberic ID" />-->
+<script type="text/javascript" src="/etc/clientlibs/granite/jquery.min.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/utils.min.js"></script>
+<script type="text/javascript" src="/etc/designs/usga/clientlibs/cqembedded.min.js"></script>
+<!--config-->
+    <title>about-museum</title>
+
+    <link rel="stylesheet" href="/etc/designs/usga/styles/modules.min.css?version=USGA_CI_environment-release-443"/>
+
+<link rel="shortcut icon" type="image/ico" href="/content/dam/usga/images/favicon.ico"/>
+
+<script src="http://www.google.com/jsapi" type='text/javascript'></script>
+<script>
+    ;(function (window) {
+        var ssoSrc = '//' + ((window.usga && window.usga.isProd()) ? '' : 'staging.') + 'account.usga.org/js/ua.embed.js';
+        document.write('<scr' + 'ipt type="text/javascript" src="' + ssoSrc + '" id="usgaEmbedScript"></scr' + 'ipt>');
+    })(window);
+</script>
+
+<style>
+    #usgaOverlayWindow {
+        position: fixed;
+        z-index: 1000;
+    } 
+</style><script type="text/javascript" src="/etc/designs/usga/js/modules.min.js?version=USGA_CI_environment-release-443"></script>
+
+<script>
+    $.cloudinary.config({"cloud_name": "usga"});
+    usga.Gigya.init({gigyaApiKey: "3_2XjOryTsvLPQvhvmmwB8TY-OB_6VT05LD5NVNZjYl1TTvIhq_2kEmKcC9MG1LbVw"});
+
+    usga.config.galleryScriptUrl = '/etc/designs/usga/js/juicebox.min.js';
+</script>
+
+<script>
+    // set source and token global cookies for clubhouse campaign
+    if (usga) {
+        var expires = 90;
+        if(usga.url.query.source){
+            $.cookie('source', usga.url.query.source, { 'path': '/', 'expires': expires});
+        }
+        if(usga.url.query.token){
+            $.cookie('token', usga.url.query.token, { 'path': '/', 'expires': expires});
+        }
+    }
+</script>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var digitalData = (typeof digitalData !== 'undefined') ? digitalData : {};
+    //Page level analytics.
+    digitalData.page = {
+        "pageInfo": {
+            "pageName": "about-museum"
+        },
+        "category": {
+            "primaryCategory": "history",
+            "secondaryCategory": "museum",
+            "pageType": "Generic Content Page"
+        }
+    };
+
+    
+
+    _satellite.track("page-view");
+</script><div class="parsys iparsys headerPar"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys iparsys headerPar"><div class="ticker section"><div id="leaderBoardTicker" class="leader-board liveLeaderBoard_fixed"></div>
+
+<script type="text/stache" id="leaderBoardTickerTabs">
+      <div class="leader-board__side">
+      	<div class="dropdown-white">
+      		<select class="ticker-dropdown">
+      			{{#each tabs}}
+      				<option {{data 'tab'}} value="{{@index}}">{{{name}}}</option>
+      			{{/each}}
+      		</select>
+      	</div>
+      </div>
+      <div class="leader-board__side leader-board__side_right">
+      	<a href="{{buttonLink}}" class="leader-board__side__button button button_color1" data-score-location="Ticker">
+      		<span class="leader-board__side__button__text">{{#if isMobileScreen}}Scoring{{else}}Full Scoring{{/if}}</span>
+      	</a>
+      </div>
+      <div id="tickerContent" class="leader-board__content {{#if suspended}}leader-board__content_alert{{/if}}"></div>
+    </script>
+<script type="text/stache" id="leaderBoardTickerTables">
+      <div class="{{^isCup}}swiper-container{{/isCup}}">
+      	<div class="leader-board__content__inner {{^isCup}}swiper-wrapper{{/isCup}}">
+      		{{#if suspended}}
+      			<div class="leader-board__content__title">Course alert:</div>
+      			<div class="leader-board__content__text">
+      				{{suspended}}
+      			</div>
+      		{{else}}
+      			{{#if isCup}}
+      				{{#each items}}
+      					<div class="lb-match__head">
+      						<div class="lb-match__head__team">
+      							<div class="lb-match__head__team__names">
+      								<div class="lb-match__head__team__names__cont">{{teamOneName}}</div>
+      							</div>
+      							<div class="lb-match__head__team__flags">
+      								<div class="lb-match__head__team__flags__cont dual">
+      									<img src="{{teamOneFlag}}" alt="{{teamOneName}}"/>
+      								</div>
+      							</div>
+      						</div>
+      						<div class="lb-match__head__score">
+      							<div class="lb-match__head__score__cont">
+      								{{teamOnePoints}}-{{teamTwoPoints}}
+      							</div>
+      						</div>
+      						<div class="lb-match__head__team">
+      							<div class="lb-match__head__team__flags">
+      								<div class="lb-match__head__team__flags__cont">
+      									<img src="{{teamTwoFlag}}" alt="{{teamTwoName}}"/>
+      								</div>
+      							</div>
+      							<div class="lb-match__head__team__names">
+      								<div class="lb-match__head__team__names__cont">{{teamTwoName}}</div>
+      							</div>
+      						</div>
+      					</div>
+      				{{/each}}
+      			{{/if}}
+      			{{#if isStroke}}
+      				{{#each items}}
+      					<div class="leader-board__content__item swiper-slide">
+      						{{#if position}}
+								{{position}}.
+							{{/if}}
+      						{{#if isFourballChampionship}}{{team}}{{else}}{{shortName}}{{/if}}
+      						<span class="{{parColor strokes}} {{parColor totaltopar}}">{{#if strokes}}{{strokes}}{{else}}{{totaltopar}}{{/if}}</span>
+      						<strong>{{#if holesplayed}}{{holesplayed}}{{else}}{{thru}}{{/if}}</strong>
+      					</div>
+      				{{/each}}
+      			{{/if}}
+      			{{#if isMatch}}
+      				{{#each items}}
+      					<div class="leader-board__content__item swiper-slide">
+      						{{#if isFourballChampionship}}
+      							{{teamPlayerName team1}}
+      						{{else}}
+      							{{matchPlayerName playerOne}}
+      						{{/if}}
+      						<span class="leader-board__content__item__center leader-board__content__item__center_{{renderArrow .}}">
+      							{{getMiniLbStanding}} {{#if getStatus}}({{getStatus}}){{/if}}
+      						</span>
+      						{{#if isFourballChampionship}}
+      							{{teamPlayerName team2}}
+      						{{else}}
+      							{{matchPlayerName playerTwo}}
+      						{{/if}}
+      					</div>
+      				{{/each}}
+      			{{/if}}
+      		{{/if}}
+      	</div>
+      </div>
+    </script>
+
+<script>
+    var lbTicker = new usga.LeaderboardTickerControl('#leaderBoardTicker', {
+        tickerUrl: '/bin/data/feeds/ticker.json'
+    });
+</script></div>
+<header id="navigation" class="navigation section"><div class="inner">
+    <a href="/" class="logo"><img data-crop="fit" linkchecker="skip" data-src="usga/cutups/logo/usga-no-seal.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></a><a href="/" class="logo-2"><img data-crop="fit" linkchecker="skip" data-src="usga/cutups/logo/usga-no-seal.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></a><a href="javascript:void( 0 );" class="navigation__search"></a>
+    <a href="javascript:void( 0 );" class="navigation__toggle"></a>
+
+    <div class="nav-search">
+  <div class="nav-search__form clearfix">
+    <input type="submit" value="" class="nav-search__form__btn">
+    <div class="nav-search__form__field">
+      <div id="cse-nav-search-form">
+        <input type="text" id="non-google-search-input" placeholder="Search">
+      </div>
+    </div>
+  </div>
+  <div class="nav-search-close-btn">close</div>
+  <!--.nav-search__result-->
+</div>
+
+<script id="nav-search-results-template" type="text/stache">
+    <div class="nav-search__suggest {{#unless suggestion}}no-title{{/unless}}">
+        <a href="{{resultLinks.all}}" class="nav-search__more all">See All</a>
+        {{#if suggestion}}
+            <div class="nav-search__suggest__title">
+                DID YOU MEAN:<a href="javascript:void(0);" class="nav-search__suggest__text" data-words="{{suggestion}}"> {{suggestion}}</a>?
+            </div>
+        {{/if}}
+    </div>
+    {{#if results.all.length}}
+        <a href="{{resultLinks.all}}" class="nav-search__category-title clearfix" data-type="all">
+            <span class="nav-search__category-title__name">All</span> <span class="nav-search__more">All Results</span>
+        </a>
+        <div class="nav-search__category-result">
+            {{#each results.all}}
+            <a href="{{uri}}" class="nav-search__category-result__item" {{protected}}>
+                <div class="nav-search__category-result__item__title">{{title}}</div>
+            </a>
+            {{/each}}
+        </div>
+    {{/if}}
+    {{#if results.news.length}}
+        <a href="{{resultLinks.news}}" class="nav-search__category-title clearfix" data-type="news">
+            <span class="nav-search__category-title__name">News</span> <span class="nav-search__more">All Results</span>
+        </a>
+        <div class="nav-search__category-result">
+            {{#each results.news}}
+            <a href="{{uri}}" class="nav-search__category-result__item" {{protected}}>
+                <div class="nav-search__category-result__item__title">{{title}}</div>
+            </a>
+            {{/each}}
+        </div>
+    {{/if}}
+    {{#if results.photos.length}}
+        <a href="{{resultLinks.photos}}" class="nav-search__category-title clearfix" data-type="photos">
+            <span class="nav-search__category-title__name">Photos</span> <span class="nav-search__more">All Results</span>
+        </a>
+        <div class="nav-search__category-result_media clearfix">
+            {{#each results.photos}}
+            <a href="{{uri}}" class="nav-search__category-result_media__item" {{protected}}>
+                <img data-src="{{imageUrl}}" src="" alt="" data-crop="fill"/>
+            </a>
+            {{/each}}
+        </div>
+    {{/if}}
+    {{#if results.videos.length}}
+        <a href="{{resultLinks.videos}}" class="nav-search__category-title clearfix" data-type="videos">
+            <span class="nav-search__category-title__name">Videos</span> <span class="nav-search__more">All Results</span>
+        </a>
+        <div class="nav-search__category-result_media clearfix">
+            {{#each results.videos}}
+                <a href="{{uri}}" class="nav-search__category-result_media__item" {{protected}}>
+                    <img data-src="{{imageUrl}}" src="" alt="" data-crop="fill"/>
+                </a>
+            {{/each}}
+        </div>
+    {{/if}}
+    {{#if results.rules.length}}
+        <a href="{{resultLinks.rules}}" class="nav-search__category-title clearfix" data-type="rules">
+            <span class="nav-search__category-title__name">Rules of Golf</span> <span class="nav-search__more">All Results</span>
+        </a>
+        <div class="nav-search__category-result">
+            {{#each results.rules}}
+                <a href="{{uri}}" class="nav-search__category-result__item" {{protected}}>
+                    <div class="nav-search__category-result__item__title">{{title}}</div>
+                </a>
+            {{/each}}
+        </div>
+    {{/if}}
+    <a href="{{resultLinks.all}}" class="nav-search__all-results clearfix">
+        <span class="nav-search__more">See All Results</span>
+    </a>
+</script><div class="navigation__box">
+        <div class="main-menu">
+            <div class="main-menu__envelope">
+                <ul class="main-menu__inner">
+
+                    <li class="main-menu__item item_hamburger">
+                      <div class="btn_menu"><span class="btn_line"></span><span class="btn_line"></span><span class="btn_line"></span></div>
+                    </li>
+
+                    <li class="main-menu__item main-menu__item_sub  not-current  ">
+                            <span path="/content/usga/home-page/championships-hub" class="main-menu__item__link">
+                                CHAMPIONSHIPS</span>
+                            <div class="subNavigation parbase sub-main-menu subNav_0"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/championships-hub.html" class="sub-main-menu__item__link" target="_self">Championships Home</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/schedule.html" class="sub-main-menu__item__link" target="_self">Schedule &amp; Tickets</a></li>
+    <li class="sub-main-menu__item  sub-main-menu__item_sub">
+            <a href="https://champs.usga.org/index.html" class="sub-main-menu__item__link" target="_self">Apply to Play</a><div class="parbase thirdLvlNav_2 thirdLevelNavigation"><ul class="sub-main-menu__item__submenu">
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="https://champs.usga.org/index.html" class="sub-main-menu__item__submenu__item__link" target="_self">Apply Now</a></li>
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/rules-hub/amateur-status.html" class="sub-main-menu__item__submenu__item__link" target="_self">Amateur Status</a></li>
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/championships-hub/additional-entry-resources.html" class="sub-main-menu__item__submenu__item__link" target="_self">Additional Entry Resources</a></li>
+    </ul>
+
+</div>
+</li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/EntrantLookup/index.html" class="sub-main-menu__item__link" target="_self">Entrant Lookup</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/articles/championship-archives.html" class="sub-main-menu__item__link" target="_self">Championship Archives</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.wagr.com/" class="sub-main-menu__item__link" target="_blank">World Amateur Golf Rankings</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__item_sub  not-current  ">
+                            <span path="/content/usga/home-page/rules" class="main-menu__item__link">
+                                RULES</span>
+                            <div class="subNavigation parbase sub-main-menu subNav_1"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/rules-hub.html" class="sub-main-menu__item__link" target="_self">Rules Home</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/rules/rules-and-decisions.html" class="sub-main-menu__item__link" target="_self">Rules & Decisions</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/rules-hub/education.html" class="sub-main-menu__item__link" target="_self">Education</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/equipment-standards.html" class="sub-main-menu__item__link" target="_self">Equipment </a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/rules-hub/amateur-status.html" class="sub-main-menu__item__link" target="_self">Amateur Status</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__item_sub  not-current  ">
+                            <span path="/content/usga/home-page/Handicapping" class="main-menu__item__link">
+                                HANDICAPPING</span>
+                            <div class="subNavigation parbase sub-main-menu subNav_2"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/Handicapping.html" class="sub-main-menu__item__link" target="_self">Handicapping Home</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/Handicapping/handicap-manual.html" class="sub-main-menu__item__link" target="_self">USGA Handicap System Manual</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="https://ncrdb.usga.org/NCRDB/" class="sub-main-menu__item__link" target="_self">National Course Rating and Slope Database™</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/course-handicap-calculator.html" class="sub-main-menu__item__link" target="_self">Course Handicap™ Calculator</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__item_sub  current  ">
+                            <span path="/content/usga/home-page/GolfResources" class="main-menu__item__link">
+                                SERVING THE GAME</span>
+                            <div class="subNavigation parbase subNav_3 sub-main-menu"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item  sub-main-menu__item_sub">
+            <a href="http://www.usga.org/content/usga/home-page/course-care.html" class="sub-main-menu__item__link" target="_self">Course Care</a><div class="parbase thirdLvlNav_0 thirdLevelNavigation"><ul class="sub-main-menu__item__submenu">
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/course-care/water-resource-center.html" class="sub-main-menu__item__submenu__item__link" target="_self">Water Resource Center</a></li>
+    </ul>
+
+</div>
+</li>
+    <li class="sub-main-menu__item  sub-main-menu__item_sub">
+            <a href="http://www.usga.org/content/usga/home-page/serving-the-game/health-of-the-game.html" class="sub-main-menu__item__link" target="_self">Health of the Game</a><div class="parbase thirdLvlNav_1 thirdLevelNavigation"><ul class="sub-main-menu__item__submenu">
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/play-9.html" class="sub-main-menu__item__submenu__item__link" target="_self">PLAY9</a></li>
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/pace-of-play-resource-center.html" class="sub-main-menu__item__submenu__item__link" target="_self">Pace of Play</a></li>
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/stem-resource-center.html" class="sub-main-menu__item__submenu__item__link" target="_self">STEM Resource Center</a></li>
+    <li class="sub-main-menu__item__submenu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/serving-the-game/health-of-the-game/community.html" class="sub-main-menu__item__submenu__item__link" target="_self">Community</a></li>
+    </ul>
+
+</div>
+</li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/member-clubs/club-membership-overview.html" class="sub-main-menu__item__link" target="_self">Member Clubs</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/history/about-museum.html" class="sub-main-menu__item__link" target="_self">History & Museum</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/GolfResources.html" class="sub-main-menu__item__link" target="_self">Golf Association Resources</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__item_sub  not-current  ">
+                            <span path="/content/usga/home-page/clubhouse" class="main-menu__item__link">
+                                MEMBERSHIP</span>
+                            <div class="subNavigation parbase subNav_4 sub-main-menu"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/clubhouse.html?utm_source=GlobalNav&utm_content=CH_Home" class="sub-main-menu__item__link" target="_self">Member Clubhouse Home</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/clubhouse/default/members-join.html?utm_source=GlobalNav&utm_content=Join" class="sub-main-menu__item__link" target="_self" data-role='default'>Join the USGA</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/clubhouse/default/members-renew.html?utm_source=GlobalNav&utm_content=Renew" class="sub-main-menu__item__link" target="_self" data-role='default expired-federated expiring-federated-within-renewal-window'>Renew Your Membership</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/clubhouse/campaigns/members-renew-offer.html?utm_source=GlobalNav&utm_content=Reacquisition" class="sub-main-menu__item__link" target="_self" data-role='lapsed-federated'>Renew Your Membership</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://members.usga.org/enroll_membership/?tt=gift&utm_source=GlobalNav&utm_content=Gift" class="sub-main-menu__item__link" target="_blank" data-role='default expired-federated expiring-federated-within-renewal-window lapsed-federated federated-outside-renewal-window user-has-autorenew'>Give a Gift Membership</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/member-clubs/club-membership-overview.html?utm_source=GlobalNav&utm_content=MEM%20Clubs" class="sub-main-menu__item__link" target="_self">Member Clubs</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__item_sub  not-current  ">
+                            <span path="/content/usga/home-page/about" class="main-menu__item__link">
+                                ABOUT</span>
+                            <div class="subNavigation parbase subNav_5 sub-main-menu"><ul class="sub-main-menu__inner">
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/about.html" class="sub-main-menu__item__link" target="_self">About the USGA</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/about/current-opportunities.html" class="sub-main-menu__item__link" target="_self">Careers</a></li>
+    <li class="sub-main-menu__item ">
+            <a href="http://www.usga.org/content/usga/home-page/contact-us.html" class="sub-main-menu__item__link" target="_self">Contact Us</a></li>
+    </ul>
+
+
+</div>
+</li>
+                    <li class="main-menu__item main-menu__dropdown hide">
+                        <a href="javascript:void(0);" class="main-menu__dropdown-toggle">
+                            <span>More&nbsp;</span>
+                        </a>
+                        <div class="dropdown_menu-wrapper">
+                            <ul class="main-menu__dropdown_menu"></ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="nav-swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <ul class="parbase secondaryNavigation secondary_main-menu secondaryNav"><li class="secondary_main-menu__item ">
+     <a href="/tickets.html" class="secondary_main-menu__item__link" target="_self"><span class=" secondary_main-menu__item__link__img">
+                  <span class="small-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/Tickets.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+        <span class="big-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/Tickets.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span></span>
+              <span class="secondary_main-menu__item__link__text">Tickets</span>
+            </a></li>
+<li class="secondary_main-menu__item ">
+     <a href="http://www.usgashop.com/source/BM-USGAorg-shop-TopNav-9.15.16" class="secondary_main-menu__item__link" target="_blank"><span class=" secondary_main-menu__item__link__img">
+                  <span class="small-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/Shop.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+        <span class="big-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/Shop.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span></span>
+              <span class="secondary_main-menu__item__link__text">Shop</span>
+            </a></li>
+<li class="secondary_main-menu__item secondary_main-menu__item_sub login-item">
+     <a href="javascript:void(0);" class="secondary_main-menu__item__link" data-action="campaignLogin">
+                <span class="secondary_main-menu__item__link__img">
+                   <span class="small-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/SignIn.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+        <span class="big-icon">
+            <img data-src="usga/images/navigation/secondaryNavigationIcons/SignIn.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span></span>
+                <span class="secondary_main-menu__item__link__text sleshdot">Sign In</span>
+             </a>
+          <a href="javascript:void(0);" class="secondary_main-menu__item__link" target="_blank" data-action='campaignRegister'><span class="secondary_main-menu__item__link__text">Register</span>
+            </a></li>
+<li class="secondary_main-menu__item ">
+     <a href="javascript:void(0);" class="secondary_main-menu__item__link search search-inactive" target="_self"><span class="secondary_main-menu__item__link__img search-closed">
+                <span class="small-icon">
+                    <img alt="Search" data-src="usga/cutups/icons/service-search.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                <span class="big-icon">
+                    <img alt="Search" data-src="usga/cutups/icons/service-search.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+              </span>
+              <span class="secondary_main-menu__item__link__img search-open"><img alt="Close search" data-src="usga/cutups/icons/service-close.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+              <span class="secondary_main-menu__item__link__text">Search</span>
+            </a></li>
+</ul>
+<div class="accounting">
+  <div class="login-register-item">
+    <a href="javascript:void(0);" data-action="campaignLogin" class="secondary_main-menu__item__link">
+      <span class="secondary_main-menu__item__link__text sleshdot">Sign In</span>
+      <span class="secondary_main-menu__item__link__img">
+        <img data-src="usga/cutups/icons/service-login.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" alt="some discription">
+      </span>
+    </a>
+    <a href="javascript:void(0);" data-action="campaignRegister" class="secondary_main-menu__item__link">
+       <span class="secondary_main-menu__item__link__text">Register</span>
+    </a>
+  </div>
+  <div class="profile-item"><a href="javascript:void(0);" class="secondary_main-menu__item__link"><span class="secondary_main-menu__item__link__img"><img data-src="usga/cutups/icons/service-user.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" alt="some discription"><img data-src="usga/cutups/icons/service-close.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" alt="some discription" class="hide-icon"></span><span class="secondary_main-menu__item__link__text">My Account</span></a>
+    <ul class="secondary_main-menu__item__submenu">
+      <li class="secondary_main-menu__item__submenu__item">
+        <a href="javascript:void(0);" data-action="profile" class="secondary_main-menu__item__submenu__item__link">My Profile</a>
+      </li>
+      <li class="secondary_main-menu__item__submenu__item">
+        <a href="javascript:void(0);" data-action="logout" class="secondary_main-menu__item__submenu__item__link">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+</div>
+
+
+<div id="protectedContentModal" style="display: none" class="modal">
+  <div class="modal__body">
+    <div class="modal__body__close"></div>
+    <div class="modal__body__header">Exclusive Content</div>
+    <div class="modal__body__content sign-in">
+      <p>Please sign in or create an account to access the exclusive member content</p><a class="button button_color1 sign-in-button">Sign In</a><a class="button button_color1 register-button">Create an account</a><a href="/clubhouse/campaigns/members-join.html" class="button button_color1">View Membership Benefits</a>
+    </div>
+    <div class="modal__body__content non-member">
+      <p>This content is exclusive to USGA Members. If you are not a USGA Member but would like to learn more about how you can support the USGA, click below:</p><a href="/clubhouse/campaigns/members-join.html" class="button button_color1">View Membership Benefits</a><a class="button button_color1 connect-button">Verify Your Membership</a>
+    </div>
+    <div class="modal__body__content expired">
+      <p>Your Membership has expired! Renew your Membership today to restore your access to the Member Clubhouse - your source for exclusive content, special offers and invitations</p><a href="/clubhouse/campaigns/members-renew-offer.html" class="button button_color1">Renew your Membership</a>
+    </div>
+  </div>
+</div>
+<script>
+            
+            var navigation = new usga.Navigation('#navigation', {fixed: true, highlightActiveItem:true, stickySmall:false});
+        </script>
+    </header>
+</div>
+</div>
+</div>
+
+
+<div class="wrapper">
+    <!-- content part-->
+    <div class="content">
+        <div class="parsys contentPar"><div class="section"><div class="inner">
+    <h1 id="title22" class="title title_top">
+        Golf History and the USGA Museum</h1>
+    <div class="links" id="links">
+        <div class="links__container">
+            <div class="links__container__rules">
+                The Museum is dedicated to celebrating and preserving the true spirit of the game as embodied in the history of the USGA and, more broadly, the history of the game in the United States. By collecting content and developing programming, the Museum reinforces the relevance of the game and highlights the important role of the USGA in golf history. In so doing, we foster an appreciation of golf’s cultural significance to a worldwide audience.</div>
+            <div class="parsys linksPar restrictedParsys"><div class="parbase linkBox section"><div class="links__container__item">
+            <a href="/history/visit-the-museum.html" class="links__container__item__title" target="_self">Visit the USGA Museum</a><div class="links__container__item__description clearfix">
+                <p>The United States Golf Association is home to the world’s premier collection of golf artifacts and memorabilia. The Museum is open to visitors from Tuesday to Sunday, 10 a.m. to 5 p.m., and is closed on Mondays and major holidays.&nbsp;<b><u><a href="/content/usga/home-page/history/visit-the-museum.html">CLICK HERE FOR HOURS DURING THANKSGIVING WEEK.</a></u></b></p>
+</div>
+        </div>
+    </div>
+<div class="parbase linkBox section"><div class="links__container__item">
+            <a href="/content/usga/home-page/history/programming-and-content.html" class="links__container__item__title" target="_self">Programming and Content</a><div class="links__container__item__description clearfix">
+                The United States Golf Association has the nation’s largest and most significant collection of golf artifacts and documents. In addition, through books, videos and broadcast documentaries, the USGA tells the story of the game’s development in the United States, highlighting the greatest moments in the game's history, with a particular focus on USGA champions and championships.</div>
+        </div>
+    </div>
+<div class="parbase linkBox section"><div class="links__container__item">
+            <a href="/history/research-tools.html" class="links__container__item__title" target="_self">Research Tools</a><div class="links__container__item__description clearfix">
+                The Research Center of the United States Golf Association is the world’s foremost repository for the game’s history. As stewards of golf history, the Research Center seeks to be a resource to all those who might have a question or need assistance with a research project.</div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+
+<script>
+var links = new usga.BaseCloudinaryModule('#links');
+</script></div>
+
+</div>
+
+        <div class="inner">
+            <div class="innerPar1 parsys">
+</div>
+
+            <div class="parsys iparsys innerIPar1"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys iparsys innerIPar1"></div>
+</div>
+</div>
+
+        </div>
+        <div class="parsys contentPar2">
+</div>
+
+        <div class="inner">
+            <div class="innerPar2 parsys">
+</div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="parsys iparsys topFooter"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys iparsys topFooter"><div class="parbase moreFromTheUsga section"><div class="inner">
+    <h1 id="title20" class="title">
+        More from the USGA<span class="title__under"><span class="title__under__by"></span></span>
+    </h1>
+
+    <!-- banner-->
+    <div id="banner0" class="simple-list simple-list_mod1 banner">
+        <a href="https://ad.doubleclick.net/ddm/clk/302284503;129353340;s" class="simple-list__item simple-list__item_mod1" target="_self" data-analytics-usgamore="Members"><img alt="" data-quality="90" data-src="usga/images/more-from-the-usga/memb.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="simple-list__item__img" style=""></a><a href="http://www.usga.org/tickets.html" class="simple-list__item simple-list__item_mod1" target="_self" data-analytics-usgamore="Tickets"><img alt="" data-quality="90" data-src="usga/images/more-from-the-usga/tixhol.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="simple-list__item__img" style=""></a><a href="http://www.usgashop.com/Outerwear/source/BM-USGAorg-370x208-11.15.16" class="simple-list__item simple-list__item_mod1" target="_blank" data-analytics-usgamore="Shop"><img alt="" data-quality="90" data-src="usga/images/more-from-the-usga/USGA_161101_Outerwear_370x208_111516.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="simple-list__item__img" style=""></a></div>
+    <!-- end banner-->
+    <script>var banner = new usga.BaseCloudinaryModule('#banner0');</script>
+</div></div>
+</div>
+</div>
+</div>
+
+<div class="parsys footerPar iparsys"><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="parsys footerPar iparsys"><footer id="footer" class="footer section"><div class="inner">
+    <div class="footer__list table__row">
+        <div class="footer__list__item table__row__cell footer__list__item_partners">
+            <div class="parbase partners sponsorPartners"><div class="footer__list__item__title">USGA PARTNERS</div>
+<div class="row">
+    <div class="footer__list__item__item">
+            <a class="footer__list__item__item__link" data-partner-modal="partnerModal_0" data-analytics-partner="American Express">
+
+                <span class="footer__list__item__item__link__img">
+                        <img alt="" data-crop="pad" data-src="usga/images/sponsorLogos/amex_189x165.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a>
+            <div class="modal modal_partner footer__partner__modal" data-partner="partnerModal_0" style="display:none;">
+                <div class="modal__body">
+                    <div class="modal__body__close"></div>
+                    <div class="modal__body__header">American Express</div>
+                    <div class="modal__body__content">
+                        <p>Together, American Express and the USGA have been providing world-class service to golf fans since 2006. By creating interactive U.S. Open experiences both onsite and online, American Express enhances the USGA’s effort to make the game more accessible and enjoyable for fans.</p>
+<p>For more information on American Express visit&nbsp;www.americanexpress.com/entertainment<br>
+</p>
+</div>
+                    </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <a class="footer__list__item__item__link" data-partner-modal="partnerModal_1" data-analytics-partner="Deloitte">
+
+                <span class="footer__list__item__item__link__img">
+                        <img alt="" data-crop="pad" data-src="usga/images/sponsorLogos/DEL_COL.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a>
+            <div class="modal modal_partner footer__partner__modal" data-partner="partnerModal_1" style="display:none;">
+                <div class="modal__body">
+                    <div class="modal__body__close"></div>
+                    <div class="modal__body__header">Deloitte</div>
+                    <div class="modal__body__content">
+                        <p>As a strategic partner, Deloitte delivers thought leadership, business knowledge and innovation concepts to help the organization better serve the game and its constituents. Together, Deloitte and the USGA created a transformative strategy that responds to the needs of today’s game, deepens engagement in the golf community, and empowers people to connect in new ways.&nbsp;</p>
+<p>In addition to its professional services work with the USGA, Deloitte supports USGA initiatives and championships, including programs that celebrate volunteerism, and promote inclusion and innovation in and beyond the golf community.&nbsp;</p>
+<p>For more information on Deloitte and their work with the USGA, visit&nbsp;<a href="http://www.deloitte.com/us/usga" target="_blank">www.deloitte.com/us/usga</a>.</p>
+</div>
+                    </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <a class="footer__list__item__item__link" data-partner-modal="partnerModal_2" data-analytics-partner="IBM">
+
+                <span class="footer__list__item__item__link__img">
+                        <img alt="" data-crop="pad" data-src="usga/images/sponsorLogos/IBM_189x165.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a>
+            <div class="modal modal_partner footer__partner__modal" data-partner="partnerModal_2" style="display:none;">
+                <div class="modal__body">
+                    <div class="modal__body__close"></div>
+                    <div class="modal__body__header">IBM</div>
+                    <div class="modal__body__content">
+                        <p>IBM has partnered with the USGA to bring the same technology, expertise, and innovation it provides to businesses all over the world to&nbsp;the USGA and golf's national championship.</p>
+<p>IBM provides the information technology to develop and host the U.S. Open’s official website, www.usopen.com, as well as the mobile apps and scoring systems for the three U.S. Open championships. These real-time technology solutions provide an enhanced experience for fans following the championship onsite and online.</p>
+<p>For more information on IBM and the technology that powers the U.S. Open and businesses worldwide, visit&nbsp;http://www.usopen.com/IBM<br>
+</p>
+</div>
+                    </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <a class="footer__list__item__item__link" data-partner-modal="partnerModal_3" data-analytics-partner="Lexus">
+
+                <span class="footer__list__item__item__link__img">
+                        <img alt="" data-crop="pad" data-src="usga/images/sponsorLogos/Lexus_189x165.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a>
+            <div class="modal modal_partner footer__partner__modal" data-partner="partnerModal_3" style="display:none;">
+                <div class="modal__body">
+                    <div class="modal__body__close"></div>
+                    <div class="modal__body__header">Lexus</div>
+                    <div class="modal__body__content">
+                        <p>Lexus is committed to partnering with the USGA to deliver a best-in-class experience for the world’s best golfers by providing a fleet of courtesy luxury vehicles for all USGA Championships.</p>
+<p>At each U.S. Open, Women’s Open and Senior Open, Lexus provides spectators with access to unique experiences ranging from the opportunity to have a picture taken with both the U.S. Open and U.S. Women’s Open trophies to autograph signings with legendary Lexus Golf Ambassadors in the Lexus Performance Drive Pavilion.</p>
+<p>For more information on Lexus, visit&nbsp;<a href="http://www.lexus.com/" target="_blank">http://www.lexus.com/</a><br>
+</p>
+</div>
+                    </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <a class="footer__list__item__item__link" data-partner-modal="partnerModal_4" data-analytics-partner="Rolex">
+
+                <span class="footer__list__item__item__link__img">
+                        <img alt="" data-crop="pad" data-src="usga/images/sponsorLogos/ROLEX_2012_CMYKfinal.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a>
+            <div class="modal modal_partner footer__partner__modal" data-partner="partnerModal_4" style="display:none;">
+                <div class="modal__body">
+                    <div class="modal__body__close"></div>
+                    <div class="modal__body__header">Rolex</div>
+                    <div class="modal__body__content">
+                        <p>Rolex has been a longtime supporter of the USGA and salutes the sportsmanship and great traditions unique to the game.</p>
+<p>This support includes the&nbsp;Rules of Golf&nbsp;where Rolex has partnered with the USGA to ensure golfers understand and appreciate the game.As the official timekeeper of the USGA and its championships, they also provide clocks throughout host sites for spectator convenience.</p>
+<p>For more information on Rolex and their celebration of the game, visit the&nbsp;Rolex and Golf homepage.</p>
+</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var partnerModal = new usga.PartnerModal(".footer__partner__modal");
+</script>
+</div>
+</div>
+        <div class="footer__list__item table__row__cell">
+            <div class="parbase socialChannels"><div class="footer__list__item__title">JOIN THE CONVERSATION</div>
+<div class="row">
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://twitter.com/usga" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/Twitter.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://www.facebook.com/USGA" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/Facebook.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://instagram.com/usga/" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/Instagram.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://www.youtube.com/user/TheUSGA" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/YouTube.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://www.linkedin.com/company/united-states-golf-association" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/social-linkedin.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <div class="footer__list__item__item footer__list__item__item__social">
+            <a href="https://plus.google.com/101025757252712922342/about" class="footer__list__item__item__link footer__list__item__item__link__social" target="_blank"><span class="footer__list__item__item__link__img">
+                        <img alt="" data-src="usga/images/social/Google%2B.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></span>
+                </a></div>
+    <script>
+        window.fbInitCallbacks = [];
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1531450863841164',
+                xfbml: true,
+                version: 'v2.5'
+            });
+            window.fbInitialized = true;
+            window.fbInitCallbacks.forEach(function (cb) {
+                cb();
+            });
+        };
+        $(window).bind("load", function () {
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');
+        })
+    </script>
+</div>
+</div>
+</div>
+        <div class="footer__list__item footer__list__item_gmod1 table__row__cell">
+            <div class="parbase mobileApps"><div class="footer__list__item__title">
+    USGA MOBILE APPS</div>
+<div class="row">
+    <div class="footer__list__item__item">
+            <div class="footer__list__item__item__link">
+
+                <a href="javascript:void(0);" class="footer__list__item__item__link__img" data-href-android='' data-href-ios=''><img alt="" data-src="usga/images/mobileApps/PhoneIcon.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></a><div class="footer__list__item__item__link__apps">
+                    <div class="footer__list__item__item__link__apps__title">U.S. Open Smartphone App</div>
+                    <div class="footer__list__item__item__link__apps__text">
+                        Download the free, official U.S. Open app for <a href="https://itunes.apple.com/app/id319204550" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.ibm.events.android.usga" target="_blank">Android</a>. </div>
+                </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <div class="footer__list__item__item__link">
+
+                <a href="https://itunes.apple.com/us/app/id653146633" class="footer__list__item__item__link__img" target="_blank" data-href-android='' data-href-ios=''><img alt="" data-src="usga/images/mobileApps/iPadIcon.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></a><div class="footer__list__item__item__link__apps">
+                    <div class="footer__list__item__item__link__apps__title">U.S. Open iPad App</div>
+                    <div class="footer__list__item__item__link__apps__text">
+                        Download the free, official U.S. Open iPad app for a true second-screen experience. App for <a href="https://itunes.apple.com/us/app/id653146633" target="_blank">iOS</a></div>
+                </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item">
+            <div class="footer__list__item__item__link">
+
+                <a href="javascript:void(0);" class="footer__list__item__item__link__img" data-href-android='' data-href-ios=''><img alt="" data-src="usga/images/icons/ROG-new-app-icon.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=" class="" style=""></a><div class="footer__list__item__item__link__apps">
+                    <div class="footer__list__item__item__link__apps__title">Rules of Golf App</div>
+                    <div class="footer__list__item__item__link__apps__text">
+                        Download the free USGA Rules of Golf  app for <a href="https://itunes.apple.com/us/app/the-rules-of-golf/id347349889" style="text-decoration:underline;" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.usga.rulesofgolf" style="text-decoration:underline;" target="_blank">Android</a>.</div>
+                </div>
+            </div>
+        </div>
+    <div class="footer__list__item__item footer__list__item__item_common">
+        <a href="javascript:void(0);" class="footer__list__item__item__link"></a></div>
+</div></div>
+</div>
+    </div>
+    <div class="parbase subFooter"><ul class="footer__menu">
+    <li class="footer__menu__item">
+            <a href="/about/current-opportunities.html" class="footer__menu__item__link" target="_blank">CAREERS</a></li>
+
+    <li class="footer__menu__item">
+            <a href="/contact-us.html" class="footer__menu__item__link" target="_blank">CONTACT US</a></li>
+
+    <li class="footer__menu__item">
+            <a href="/media.html" class="footer__menu__item__link" target="_blank">MEDIA</a></li>
+
+    <li class="footer__menu__item">
+            <a href="/privacy-policy.html" class="footer__menu__item__link" target="_blank">PRIVACY POLICY</a></li>
+
+    <li class="footer__menu__item">
+            <a href="/terms-and-conditions.html" class="footer__menu__item__link" target="_blank">TERMS & CONDITIONS</a></li>
+
+    </ul></div>
+<div class="parsys subFooterPar">
+</div>
+<div class="parbase copyright copyrightComponent">
+
+&copy; 2016 United States Golf Association. All Rights Reserved.</div>
+</div>
+
+<script>
+    var footer = new usga.Footer('#footer');
+</script>
+</footer>
+</div>
+</div>
+</div>
+
+<!-- Modal module-->
+<div id="modalIE9" style="display: none" class="modal modal_dark">
+    <div class="modal__body">
+        <div class="modal__body__content">
+            <p>It appears your browser (Internet Explorer&nbsp;<span class="modal__body__content__version">9</span>) is outdated. For the best website experience, we recommend updating your browser</p>
+            <a href="http://windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages" target="_blank" class="button button_color1 modal__body__download">Download Latest Version</a>
+            <a class="button button_color1 modal__body__dismiss">Dismiss</a>
+        </div>
+    </div>
+</div>
+<script>var modalIE9 = new usga.IE9Modal('#modalIE9');</script>
+<!-- end Modal module-->
+
+<script type="text/javascript">_satellite.pageBottom();</script></body>
+
+</html>

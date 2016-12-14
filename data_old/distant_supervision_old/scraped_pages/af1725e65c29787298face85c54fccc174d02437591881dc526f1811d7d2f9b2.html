@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rumour Mill | The Shed | Chelsea Football Club</title>
+<meta name="description" content="Rumour Mill is a scan of the most popular sports websites for any Chelsea related stories">
+<meta name="keywords" content="The Shed,Rumour Mill,Rumour,Gossip,Transfers">
+<link rel="stylesheet" type="text/css" href="/includes/css/theshed.css" />
+<link rel="stylesheet" type="text/css" href="/includes/css/modal-window.css" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="/includes/css/modal-window-ie6.css" /><![endif]-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="/includes/scripts/modal-window.min.js"></script>
+<script type="text/javascript" src="/includes/scripts/theshed.js"></script>
+
+<style>
+body {
+  background: url('/images/backgrounds/bgShedRumour.jpg') repeat 50% 0;;
+}
+#maincontent{
+  background: url('/images/backgrounds/bgWhitePaper.jpg');
+}
+#inner, #all {
+	max-width:980px;
+	width:100%;
+}
+</style>
+
+</head>
+
+
+<body id="bodyid">
+
+  <div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '268246916577912',                        // App ID from the app dashboard
+      channelUrl : '//shed.chelseafc.com/channel.html', // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+  address=document.location.href; 
+  fblikelink='<div class="fb-like" data-href="'+address+'" data-width="100" data-layout="button_count" data-show-faces="true" data-send="true"></div>';
+
+  
+</script>
+
+
+
+
+<center>
+<DIV id="all">
+  <div id="header"> 
+    <div id="header_logo"><a href="http://shed.chelseafc.com"><img src="images/crest1.gif"   alt="go to the Shed homepage"></a></div>
+	<div id="header_title"><a href="http://shed.chelseafc.com"><img src="images/title_theshed.gif"   alt="go to the Shed homepage"></a></div>
+	<div id="header_loggedin">
+	
+    <br><br>
+<form method=POST action="/cgi-bin/chat2010_login.pl"> 
+<center>
+<table width="100%" cellpadding=0 border=0>
+<tr>
+<td align=center>
+<input type="hidden" name="category" value="chelsea"> 
+
+<input type=text size=6 value="id" name="id" id="id" class="inputbox1" style="width:70px; margin-right:5px;" onclick="clearfield('id');">
+<input type=password size=10 maxlength=25 value="password" name="passcode" id="pass" class="inputbox1"  autocomplete="off" style="width:70px;" onclick="clearfield('pass');">
+<br>
+<input type=submit value="sign in" class="submit1" style="width:162px;">
+<br>
+<a href="/shed_register.shtml" target="_top" class="nounder" style="color:#000080;">register</a>
+&nbsp;-&nbsp;
+<a href="/page_forgotten.shtml" target="_top" class="nounder" style="color:#000080;">forgotten details?</a>
+</td>
+</tr>
+</table>
+</center>
+</form>
+
+</div>
+</div>
+
+	<div id="header_myaccount">
+	  <span style="float:left;"><iframe src="/includes/dropdown_social.html" width="500" height="25" frameborder="0" scrolling="no" allowtransparency="true" style="margin-top:0px; padding:0px;"></iframe></span> 
+	  <span style="float:right;">
+	  <a href="/page_login.shtml" class="nounder">Login</a> &nbsp;|&nbsp;
+	  <a href="/shed_register.shtml" class="nounder">Create a profile</a> &nbsp;|&nbsp; 
+	  </span>
+	</div>
+	
+	
+
+  
+    
+    <div id="menu">
+        <table border=0 cellspacing=0 cellpadding=0  width=100%>
+          <tr height=20>
+            <TD class=menuitem><a href="http://shed.chelseafc.com" target="_top" class=menulink onmouseover="hidemenus();">HOME</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/chat/forum_index.shtml" target="_top" class=menulink onmouseover="hidemenus();">CHAT</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/shed_rumour.shtml" target="_top" class=menulink onmouseover="hidemenus();">RUMOUR MILL</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/shed_sotd.shtml" target="_top" class=menulink onmouseover="hidemenus();">SHOT OF THE DAY</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/shed_polls.shtml" target="_top" class=menulink onmouseover="hidemenus();">POLLS</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/shed_fanblogs.shtml" target="_top" class=menulink onmouseover="hidemenus();">FAN BLOGS</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="/shed_fanphotos.shtml" target="_top" class=menulink onmouseover="hidemenus();">FAN PHOTOS</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="javascript:void(0);" target="_top" class=menulink onmouseover="hidemenus(); showmenu('menu_extras');">EXTRAS</a></TD>
+            <TD width=5 class=menuitem>|</TD>
+            <TD class=menuitem><a href="http://www.chelseafc.com" target="_blank" class=menulink onmouseover="hidemenus();">CHELSEAFC.COM</a>
+ <!--       <TD class=menuitem><a href="/shed_predictor.shtml" target="_top" class=menulink onmouseover="hidemenus();">TOP 4 PREDICTOR</a></TD> -->
+          </tr>
+
+          </tr>
+        </table>
+
+
+    <div id="menu_extras">
+      <li> <a href="/shed_profiles.shtml" target="_top" class=menulink>SHED PROFILES</a><br>
+      <li> <a href="/shed_celebs.shtml" target="_top" class=menulink>CELEBRITY FANS</a><br>
+      <li> <a href="/shed_songs.shtml" target="_top" class=menulink>SONGS</a><br>
+      <li> <a href="/shed_clubshed.shtml" target="_top" class=menulink>CLUB SHED</a><br>
+    </div>
+
+	
+    <div id="menu_main">
+      <li> <a href="http://www.chelseafc.com" target="mainsite" class=menulink>HOME PAGE</a><br>
+      <li> <a href="http://www.chelseafc.com/ticket-news" target="mainsite" class=menulink>TICKET NEWS</a><br>
+      <li> <a href="http://tv.chelseafc.com" target="mainsite" class=menulink>CHELSEA TV</a><br>
+      <li> <a href="http://www.chelseafc.com/fixtures-results" target="mainsite" class=menulink>FIXTURES</a><br>
+      <li> <a href="http://www.chelseafc.com/league-tables" target="mainsite" class=menulink>LEAGUE TABLE</a><br>
+      <li> <a href="http://www.chelseafc.com/match-reports-index" target="mainsite" class=menulink>MATCH REPORTS</a><br>
+      <li> <a href="http://blogs.chelseafc.com/" target="mainsite" class=menulink>BLOGS</a><br>
+      <li> <a href="http://www.chelseafc.com/first-team" target="mainsite" class=menulink>PLAYER PROFILES</a><br>
+      <li> <a href="http://www.chelseafc.com/player-database" target="mainsite" class=menulink>PLAYER DATABASE</a><br>
+      <li> <a href="http://www.chelseafc.com/match-database" target="mainsite" class=menulink>MATCH DATABASE</a><br>
+      <li> <a href="http://www.chelseafc.com/live-press-conferences" target="mainsite" class=menulink>PRESS CONFERENCES</a><br>
+      <li> <a href="http://www.chelseafc.com/team-history" target="mainsite" class=menulink>HISTORY</a><br>
+	 <li> <a href="http://bridgekids.chelseafc.com" target="mainsite" class=menulink>BRIDGE KIDS</a><br>
+      <li> <a href="http://theblues.chelseafc.com/megastore/megastore_map.shtml?portal=X7KDO81A" target="mainsite" class=menulink>ONLINE MEGASTORE</a><br>
+	 <li> <a href="http://www.chelseafc.com/club-contact-us" target="mainsite" class=menulink>CONTACT US</a><br>
+    </div>
+
+  </div>
+
+
+  <div id="inner" onmouseover="hidemenus();">
+  
+    <div class="tabs1" style="display:none;">
+      <ul>
+        <li class="tab_selected"><a href="/shed_rumour.shtml" target="_top">RUMOUR MILL</a></li>
+        <li class="tab_unselected"><a href="/shed_window.shtml" target="_top">TRANSFER WINDOW</a></li>
+      </ul>
+    </div>
+	
+	<div id="maincontent" class="whitebg">
+      <img src="/images/rumour_title.gif">
+      <div id="box_rumour">
+	  <br><br>
+      The Rumour Mill is  a scan of the most popular newspaper and sports websites for the stories and rumours they are carrying about Chelsea today.  Note that none of these stories are official and should always be treated as speculation, Chelsea FC is not responsible for this content and will not  comment on the stories shown here. The only place for the officially confirmed news is the Latest News page on chelseafc.com         
+      <br>
+      <hr>
+      
+        <div style="text-align:left;">
+          <br><b>Last Update : Wed 09 Nov 2016 at 14:00</b>
+<br><br><br>
+
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560270/-" target=rumourpage class=rumour>Offers received: World Cup winner wants to be at Chelsea when January window closes</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560387/-" target=rumourpage class=rumour>Chelsea defender Kurt Zouma sends message to Stamford Bridge boss Antonio Conte</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.express.co.uk/sport/football/730405/-" target=rumourpage class=rumour>Ronald Koeman tells Romelu Lukaku to leave Everton: Chelsea and Man Utd put on red alert</a> - <b><i>Daily and Sunday Express</i></b></div>
+<hr>
+ <div class="storybox"><a href="https://www.premierleague.com/news/137765" target=rumourpage class=rumour>Sanchez scare fuels Hazard rush</a> - <b><i>Premier League - Official Site</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560533/-" target=rumourpage class=rumour>Chelsea star approached by European giants over January switch - report</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.express.co.uk/sport/football/730489/-" target=rumourpage class=rumour>Premier League stats uncovered: Which star man is top of the interceptions chart?</a> - <b><i>Daily and Sunday Express</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://metro.co.uk/2016/11/09/chelsea-set-date-for-kurt-zoumas-first-team-return-6246583/" target=rumourpage class=rumour>Chelsea set date for Kurt Zouma's first-team return</a> - <b><i>Metro.co.uk</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.standard.co.uk/sport/football/chelsea-target-kalidou-koulibaly-happy-and-focused-on-napoli-says-agent-a3391471.html" target=rumourpage class=rumour>Chelsea target Koulibaly happy and 'focused' on Napoli - agent</a> - <b><i>London Evening Standard</i></b></div>
+<hr>
+ <div class="storybox"><a href="https://www.premierleague.com/news/137765" target=rumourpage class=rumour>Sanchez scare fuels Hazard rush</a> - <b><i>Premier League - Official Site</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560514/-" target=rumourpage class=rumour>Chelsea injury concern: Blues warn international boss over star man's fitness</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.standard.co.uk/sport/football/middlesbrough-vs-chelsea-kurt-zouma-to-return-to-blues-squad-at-riverside-stadium-after-nine-months-a3391381.html" target=rumourpage class=rumour>Kurt Zouma to return to Chelsea squad at Boro after nine months out</a> - <b><i>London Evening Standard</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.telegraph.co.uk/football/2016/11/09/which-premier-league-team-has-provided-the-most-england-players/" target=rumourpage class=rumour>Gallery: Which Premier League team has provided the most England players?</a> - <b><i>The Telegraph</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.mirror.co.uk/sport/football/news/chelsea-skipper-john-terry-continues-9225875" target=rumourpage class=rumour>Chelsea skipper John Terry continues mid-season Dubai break as Kurt Zouma returns to threaten&#133;</a> - <b><i>Mirror.co.uk</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560505/-" target=rumourpage class=rumour>Phil Jones? Jack Wilshere on the right? Legend Gazza names his barmy England line-up</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.express.co.uk/sport/football/730452/-" target=rumourpage class=rumour>Football Manager 2017 wonderkids: Top 25 young wingers you must sign</a> - <b><i>Daily and Sunday Express</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560499/-" target=rumourpage class=rumour>John Terry: This Chelsea legend had a massive influence on my career</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.dailystar.co.uk/sport/football/560497/-" target=rumourpage class=rumour>Stalwarts: Every Premier League club's longest serving player - who is your team's?</a> - <b><i>Daily Star</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://metro.co.uk/2016/11/09/manchester-united-and-chelsea-on-red-alert-as-ronald-koeman-tells-romelu-lukaku-he-should-play-for-a-bigger-club-than-everton-6246121/" target=rumourpage class=rumour>Man Utd &#38; Chelsea on red alert as Koeman tells Lukaku he's better than Everton</a> - <b><i>Metro.co.uk</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.standard.co.uk/sport/football/thibaut-courtois-there-is-no-reason-not-to-be-happy-at-chelsea-a3391051.html" target=rumourpage class=rumour>Courtois: 'There is no reason not to be happy at Chelsea'</a> - <b><i>London Evening Standard</i></b></div>
+<hr>
+ <div class="storybox"><a href="http://www.express.co.uk/sport/football/730405/-" target=rumourpage class=rumour>Ronald Koeman tells Romelu Lukaku to leave Everton: Chelsea and Man Utd put on red alert</a> - <b><i>Daily and Sunday Express</i></b></div>
+<hr>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="share_buttons">
+              <div class="share_fb_like">
+          <script language="javascript">document.write(fblikelink)</script>
+        </div>
+
+        <div class="share_twitter">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="chelseafc">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </div>
+		
+       <div class="share_plusone">
+         <g:plusone size="medium"></g:plusone>
+       </div>
+	   
+		<!--
+        <div class="share_myspace">
+          <a href="javascript:void(window.open('http://www.myspace.com/Modules/PostTo/Pages/?u='+encodeURIComponent(document.location.toString()),'ptm','height=450,width=440').focus())">
+          <img src="http://cms.myspacecdn.com/cms/ShareOnMySpace/small.png" border="0" alt="Share on MySpace" /></a>
+		</div>
+		-->
+						  
+       <div class="share_email">
+	     <a href="javascript:mailpage()"><img alt="Email this page" src="/images/icon-email.png" border="0" height="20"></a>
+       </div>
+    </div>
+	  
+
+    </div>  
+  </div>           
+
+
+  <div id="footer">
+  
+<TABLE width=100% style="padding-top:6px;"> 
+<TR> 
+<td align=middle class="menu_item"><a href="/page_myaccount.shtml" class="footer_links">My Account</a></td> 
+<td align=middle class="menu_item"> | </td> 
+<td align=middle class="menu_item"><a href="/page_customise.shtml" class="footer_links">Customise</a></td> 
+<td align=middle class="menu_item"> | </td> 
+<td align=middle class="menu_item"><a href="/shed_register.shtml" class="footer_links">Register a Shed Profile</a></td> 
+<td align=middle class="menu_item"> | </td> 
+<td align=middle class="menu_item"><a href="/page_forgotten.shtml" class="footer_links">Forgotten Details</a></td> 
+<td align=middle class="menu_item"> | </td> 
+<td align=middle class="menu_item"><a href="/page_changedetails.shtml" class="footer_links">Change My Details</a></td> 
+<td align=middle class="menu_item"> | </td> 
+<td align=middle class="menu_item"><a href="/page_contact.shtml" target=link class="footer_links">Contact</a></td> 
+</TABLE> 
+<br><br>
+
+
+   
+  <!---- START OMNITURE SiteCatalyst code version: H.2.  Copyright 1997-2005 Omniture, Inc. More info available at  http://www.omniture.com ---->
+  <script language="JavaScript" type="text/javascript">
+
+   var s_account="premiumtvchelseafcnew";
+
+  </script>
+  <script language="JavaScript" type="text/javascript" src="/includes/scripts/omniture2008.js"></script>
+  <script language="JavaScript" type="text/javascript"><!--
+    
+  s.pageName=document.title;
+  s.channel="The Shed"
+  s.server="shed.chelseafc.com";
+  s.pageType=""
+  s.prop1=""
+  s.prop2=""
+  s.prop3=""
+  s.prop4=""
+  s.prop5=""
+  s.prop6=""
+  s.prop7=""
+  s.prop8=""
+  s.prop9=""
+  s.prop10=""
+  /* E-commerce Variables */
+  s.campaign=""
+  s.state=""
+  s.zip=""
+  s.events=""
+  s.products=""
+  s.purchaseID=""
+  s.eVar1=""
+  s.eVar2=""
+  s.eVar3=""
+  s.eVar4=""
+  s.eVar5=""
+  s.eVar6=""
+  s.eVar7=""
+  s.eVar8=""
+  s.eVar9=""
+  s.eVar10=""
+
+ 	  
+  /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+  var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+  <script language="JavaScript" type="text/javascript"><!--
+  if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+  //--></script><!--/DO NOT REMOVE/-->
+
+
+  <!-- END OMNITURE  SiteCatalyst code version:  -->
+ 
+ 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18716104-19']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+  </div>
+	  
+
+</center>
+</body>
+</html>
+
+

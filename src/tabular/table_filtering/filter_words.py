@@ -1,4 +1,4 @@
-from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.normalisation import normalise_keep_nos
 from tabular.table_collection import TableCollection
 from tabular.table_filtering.filter import Filter
 

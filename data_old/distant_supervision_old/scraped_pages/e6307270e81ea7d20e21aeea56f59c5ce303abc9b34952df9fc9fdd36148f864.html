@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<head>
+    <meta name="google-site-verification" content="No0OTJaDDC6uPn9OPgHAM3epFWJw9JBZlc_QBodl_lw"/>
+    <meta name="google-site-verification" content="GxHRKzZSJMY_r1jxuIbKaFOt6jQOm3a0gsFs42c6yJI"/>
+    <meta name="msvalidate.01" content="79D07E51C440BFE1E32248924A5F9994"/>
+    <meta name="bitly-verification" content="7d04116aeff0"/>
+    <META name="y_key" content="b012cad4b6beaff2">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <meta name="keywords" content="soccer, football, futbol, MLS, World Cup, Beckham, youth soccer, college soccer, manchester united">
+    <meta name="description"
+          content="Soccer America is the number one source for soccer fans with interviews, opinions, news, analysis, previews and information you can use. Soccer America's quality coverage is brought to you by the largest soccer-dedicated editorial staff in the U.S.">
+
+    
+    <link rel="shortcut icon" href="http://s3.amazonaws.com/static.socceramerica.com/images/favicon.ico">
+    
+	<title>SoccerAmerica - Tournament Calendar</title>	
+
+
+    <link rel="stylesheet" href="http://s3.amazonaws.com/static.socceramerica.com/css/topnav.css" type="text/css">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/static.socceramerica.com/css/base.css" type="text/css">
+    <link type="text/css" rel="stylesheet" href="http://s3.amazonaws.com/static.socceramerica.com/css/colorbox/colorbox.css"/>
+    <link type="text/css" rel="stylesheet" href="http://s3.amazonaws.com/static.socceramerica.com/js/jquery-utils/ui.core.css" media="all"/>
+
+    <style type="text/css" media="all">
+        
+            .ui-datepicker {
+                font-size: 80%; /*the size you want*/
+            }
+        
+    </style>
+
+    
+	<link href="http://s3.amazonaws.com/static.socceramerica.com/css/article.css" rel="stylesheet" type="text/css">
+	<link href="http://s3.amazonaws.com/static.socceramerica.com/css/event.css" rel="stylesheet" type="text/css">
+	
+
+
+    <script src="http://s3.amazonaws.com/static.socceramerica.com/js/topnav.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+        document.write(unescape("%3Cscript src='/static/js/jquery.min-1.8.3.js' type='text/javascript'%3E%3C/script%3E")); }
+</script>
+    <script type="text/javascript" src="http://s3.amazonaws.com/static.socceramerica.com/js/jquery.colorbox-min-1.4.27.js"></script> <!-- for iframes -->
+    <script src="http://s3.amazonaws.com/static.socceramerica.com/js/jquery.infieldlabel.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("label[name=inField]").inFieldLabels();
+            $("input[name=inField]").attr("autocomplete", "off");
+        });
+    </script>
+
+    <script type="application/javascript">
+        function jload(url, id) {
+            // AJAX acquire json from the specified url. data is a json sorted list of tuple pairs.
+            $.getJSON(url, function (data) {
+                // fetches what is disabled and selected on the widget
+                selected = $(id + " option:selected").val();
+                disabled = $(id + " :disabled").val();
+                var options = '<option value="">---</option>';
+                // for index in data list data[i] is the tuple position, data[i][0] is the value, data[i][1] is the name
+                for (var i in data) {
+                    // my feeble attempt at disabling future elements. dear god.
+                    options += "<option value=\"" + data[i][0] + "\">" + data[i][1] + "</option>";
+                }
+                $(id).html(options);
+                if (selected != '') {
+                    try {
+                        $(id).val(selected).attr("selected", "selected");
+                    } catch (err) {
+                    }
+                }
+            });
+        }
+    </script>
+
+    
+
+<script type='text/javascript'>
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+</script>
+
+    <script type='text/javascript'>
+        /* Function that re-calls ads based on window resizing, waits .5s before running */
+        $(document).ready(function() {
+            $(window).resize(function() {
+                if(this.resizeTO) clearTimeout(this.resizeTO);
+                this.resizeTO = setTimeout(function() {
+                    $(this).trigger('resizeEnd');
+                }, 500);
+            });
+            $(window).bind('resizeEnd', function() {
+                googletag.pubads().refresh();
+                return false;
+            });
+        });
+
+        googletag.cmd.push(function() {
+            /* these are limiting, any ad sizes that do not appear in these mappings will not display
+            no matter what, sizings should be ordered from highest to lowest priority */
+
+            var leaderboard_mapping = googletag.sizeMapping().
+
+                /* iPhone 4 */
+                addSize([320, 480], [[320, 50], [300, 50]]).
+                addSize([480, 320], [[320, 50], [300, 50]]).
+
+                /* iPhone 5 */
+                addSize([320, 568], [[320, 50], [300, 50]]).
+                addSize([568, 320], [[320, 50], [300, 50]]).
+
+                /* iPhone 6 */
+                addSize([375, 627], [[320, 50], [300, 50]]).
+                addSize([627, 375], [[320, 50], [300, 50]]).
+
+                /* iPhone 6+ */
+                addSize([414, 736], [[320, 50], [300, 50]]).
+                addSize([736, 414], [[728, 90], [320, 50], [300, 50]]).
+
+                /* iPad + iPad mini */
+                addSize([768, 1024], [[728, 90], [320, 50], [300, 50]]).
+                addSize([1024, 768], [[970, 250], [970, 90], [728, 90], [320, 50], [300, 50]]).
+
+                // Desktop
+                addSize([1025, 1], [[970, 250], [970, 90], [728, 90]]).build();
+
+
+            var speedbump_mapping = googletag.sizeMapping().
+
+                /* iPhone 4 */
+                addSize([320, 480], [[300, 50], [300, 50]]).
+                addSize([480, 320], [[320, 50], [300, 50]]).
+
+                /* iPhone 5 */
+                addSize([320, 568], [[320, 50], [300, 50]]).
+                addSize([568, 320], [[320, 50], [300, 50]]).
+
+                /* iPhone 6 */
+                addSize([375, 627], [[320, 50], [300, 50]]).
+                addSize([627, 375], [[320, 50], [300, 50]]).
+
+                /* iPhone 6+ */
+                addSize([414, 736], [[320, 50], [300, 50]]).
+                addSize([736, 414], [[728, 90], [320, 50], [300, 50]]).
+
+                /* iPad + iPad mini */
+                addSize([768, 1024], [[728, 90], [320, 50]]).
+                addSize([1024, 768], [[970, 90], [728, 90], [320, 50], [300, 50]]).
+
+                // Desktop
+                addSize([1025, 1], [[970, 90], [728, 90]]).build();
+
+
+            var tower_top_mapping = googletag.sizeMapping().
+                /* iPhone 4 */
+                addSize([320, 480], [300, 250]).
+                addSize([480, 320], [300, 250]).
+
+                /* iPhone 5 */
+                addSize([320, 568], [300, 250]).
+                addSize([568, 320], [300, 250]).
+
+                /* iPhone 6 */
+                addSize([375, 627], [300, 250]).
+                addSize([627, 375], [300, 250]).
+
+                /* iPhone 6+ */
+                addSize([414, 736], [300, 250]).
+                addSize([736, 414], [300, 250]).
+
+                /* iPad + iPad mini */
+                addSize([768, 1024], [[300, 600], [300, 250]]).
+                addSize([1024, 768], [[300, 600], [300, 250]]).
+
+                // Desktop
+                addSize([1025, 1], [[300, 600], [300, 250]]).build();
+
+
+            var tower_bottom_mapping = googletag.sizeMapping().
+               /* iPhone 4 */
+                addSize([320, 480], [300, 100]).
+                addSize([480, 320], [300, 100]).
+
+                /* iPhone 5 */
+                addSize([320, 568], [300, 100]).
+                addSize([568, 320], [300, 100]).
+
+                /* iPhone 6 */
+                addSize([375, 627], [300, 100]).
+                addSize([627, 375], [300, 100]).
+
+                /* iPhone 6+ */
+                addSize([414, 736], [300, 100]).
+                addSize([736, 414], [300, 100]).
+
+                /* iPad + iPad mini */
+                addSize([768, 1024], [300, 100]).
+                addSize([1024, 768], [300, 100]).
+
+                // Desktop
+                addSize([1025, 1], [300, 100]).build();
+
+            var tower3_mapping = googletag.sizeMapping().
+               /* iPhone 4 */
+                addSize([320, 480], [300, 250]).
+                addSize([480, 320], [300, 250]).
+
+                /* iPhone 5 */
+                addSize([320, 568], [300, 250]).
+                addSize([568, 320], [300, 250]).
+
+                /* iPhone 6 */
+                addSize([375, 627], [300, 250]).
+                addSize([627, 375], [300, 250]).
+
+                /* iPhone 6+ */
+                addSize([414, 736], [300, 250]).
+                addSize([736, 414], [300, 250]).
+
+                /* iPad + iPad mini */
+                addSize([768, 1024], [300, 250]).
+                addSize([1024, 768], [300, 250]).
+
+                /* Desktop */
+                addSize([1025, 1], [[300, 250]]).build();
+
+            
+    googletag.defineSlot('/85688167/SoccerAmerica/tournament/site_leaderboard', [[728, 90],[970, 90]],'div-gpt-ad-1418165939019-5').addService(googletag.pubads());
+
+
+
+
+    googletag.defineSlot('/85688167/SoccerAmerica/tournament/site_tower_top', [[300, 250],[300, 600]],'div-gpt-ad-1418165939019-7').addService(googletag.pubads());
+
+
+
+
+    googletag.defineSlot('/85688167/SoccerAmerica/tournament/site_tower_mid', [[300, 250],[300, 600]],'div-gpt-ad-1418165939019-6').addService(googletag.pubads());
+
+
+
+
+            googletag.pubads().enableAsyncRendering();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    </script>
+
+
+<script src='http://www5.smartadserver.com/config.js?nwid=1909' type="text/javascript"></script>
+<script type="text/javascript">
+    sas.setup({ domain: 'http://www5.smartadserver.com'});
+</script>
+
+    
+
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script></head>
+
+<body>
+
+
+    <div id="topNav"><div style="float:right; font-family:Trebuchet MS; font-size:12px; padding-right:16px; padding-top:6px;">
+
+
+<a href="/join/" style="text-decoration:underline;" class="manageMenu"><strong>Join Now</strong></a> <strong>&nbsp;|&nbsp;</strong>
+        
+  <a class="signin" id="signin" name='signin' href='/login/' ><span>Sign in</span></a>
+  <div style="top: 24.5px; left: 780px; display: none;" id="signin_menu" class="common-form standard-form">
+    <form name='popSigninForm' id="popSigninForm" action="/login/?next=/tournament/" method="POST"><div style='display:none'><input type='hidden' name='csrfmiddlewaretoken' value='ItvhjY4LOuEfis3AMiCEkO81zirdPZLX' /></div>
+      <p>
+        <b >Username</b>
+        <input id="username" name="username" title="username" tabindex="4" type="text">
+      </p>
+      <p>
+        <b>Password</b>
+        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+      </p>
+      <p class="remember">
+        <input value="Sign in" tabindex="7" type="submit">
+        <input id="remember" name="remember_me" value="1" tabindex="6" type="checkbox" checked="checked">
+        <label for="remember">Remember me</label>
+      </p>
+      <p class="forgot"> <a href="/password-reset/" id="resend_password_link">Forgot your password?</a> </p>
+    </form>
+  </div>
+  
+<script>
+$(document).ready(function() {
+    $('#signin').click(function(e) {
+        //Cancel the link behavior
+	e.preventDefault();
+        var A=$(this);
+        var B=$('#signin_menu');
+        var C=A.offset();
+        B.css({top:C.top+A.height(),left:C.left-B.width()+A.width()});
+        if(A.hasClass("menu-open")){
+            A.removeClass('menu-open');
+            B.hide();
+	}
+	else{
+	    A.addClass("menu-open");
+            B.show('fast');
+	}
+    });
+});
+
+</script>
+
+</div>
+
+<div style="background-color:#FFFFFF; padding-top:6px; padding-bottom:2px; z-index:100000;">
+<div id="bluemenu" class="bluetabs" style="z-index:100000;">
+<ul style="z-index:100000;">
+<li><a href="/" rel="dropmenu_socceramerica"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavsaicon14.gif" border="0" width="14" height="14" align="absbottom" /> <img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavtri.gif" border="0" width="7" height="8" /></a></li>
+<li><a href="/join/" rel="dropmenu_publications">Newsletters <img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavtri.gif" border="0" width="7" height="8" /></a></li>
+<li><a href="/buy/" rel="dropmenu_magazine">Magazines <img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavtri.gif" border="0" width="7" height="8" /></a> </li>
+<li><a href="/account/" rel="dropmenu_membership">Membership <img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavtri.gif" border="0" width="7" height="8" /></a> </li>
+<li><a href="/publications/soccer-america-classifieds/edition/" rel="dropmenu_community">Community <img src="http://s3.amazonaws.com/static.socceramerica.com/images/topnavtri.gif" border="0" width="7" height="8" /></a> </li>
+</ul>
+</div>  
+</div>
+
+<!--SoccerAmerica drop down menu -->                                                
+<div id="dropmenu_socceramerica" class="dropmenudiv_b" style="width: 120px; text-align:left; z-index:100000;">
+<a href="/">Home</a>
+<a href="/about/">About</a>
+<a href="/contact/">Contact Us</a>
+<a href="/privacy/">Privacy & Security</a>
+<a href="/advertise/">Advertise</a></div>
+
+<!--newsletters drop down menu -->                                                   
+<div id="dropmenu_publications" class="dropmenudiv_b" style="width: 155px; text-align:left; z-index:100000;">
+<a href="/publications/soccer-america-daily/edition/">Soccer America Daily</a>
+<a href="/publications/soccer-world-daily/edition/">Soccer World Daily</a>
+<a href="/publications/special-edition/edition/">Special Edition</a>
+<a href="/publications/section-2-around-the-net/edition/">Around The Net</a>
+<a href="/publications/soccer-business-insider/">Soccer Business Insider</a>
+<a href="/publications/college-soccer-reporter/edition/">College Soccer Reporter</a>
+<a href="/publications/youth-soccer-reporter/edition/">Youth Soccer Reporter</a>
+<a href="/publications/soccer-on-tv/">Soccer on TV</a>
+<a href="/publications/soccer-america-classifieds/">Soccer America Classifieds</a>
+<a href="/publications/game-report/">Game Report</a>
+<div class="anylinkseparator"><!-- --></div>
+<a href="/publications/soccertalk-with-paul-gardner/">Paul Gardner: SoccerTalk</a>
+<a href="/publications/soccer-america-confidential/">Soccer America Confidential</a>
+<a href="/publications/youth-soccer-insider/">Youth Soccer Insider</a>
+<a href="/publications/world-cup-watch/">World Cup Watch</a>
+<div class="anylinkseparator"><!-- --></div>
+<a href="/feeds/articles/">RSS Feeds</a>
+<a href="/archive/">Archives</a>
+<a href="/account/">Manage Subscriptions</a>
+<a href="/join/">Subscribe</a></div>
+
+<!--magazine down menu -->                                                
+<div id="dropmenu_magazine" class="dropmenudiv_b"  style="width: 170px; text-align:left; z-index:100000;">
+<a href="/buy/">Order Current Issue</a>
+<a href="/buy/">Subscribe</a>
+<a href="/account/">Manage My Subscription</a>
+<a href="/renew/">Renew My Subscription</a>
+<a href="/buy/">Gift Subscription</a></div>
+
+<!--membership down menu -->                                                
+<div id="dropmenu_membership" class="dropmenudiv_b"  style="width: 140px; text-align:left; z-index:100000;">
+<a href="/account/">My Account</a>
+<a href="/join/">Join Now</a></div>
+
+<!--Community down menu -->                                                
+<div id="dropmenu_community" class="dropmenudiv_b"  style="width: 140px; text-align:left; z-index:100000;">
+<a href="/tournament/">Tournament Calendar</a>
+<a href="/camp/">Camps &amp; Academies</a>
+<a href="/glossary/">Soccer Glossary</a>
+<a href="/publications/soccer-america-classifieds/edition/">Classifieds</a></div>
+
+<script type="text/javascript">
+//SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+//tabdropdown.init("bluemenu",<cfoutput>#menu_id#)
+tabdropdown.init("bluemenu",1)
+</script>
+
+
+</div>
+
+
+<div id="topAd" style="padding: 5px 0px 5px 0px; width: 975px; text-align: left; border: 0px solid black;">
+<div id="div-gpt-ad-1418165939019-5"  class="ads_leaderboard"  None>
+    
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418165939019-5'); });
+</script>
+</div>
+</div>
+
+
+
+    <div class="headerbar"></div>
+
+
+
+    <table id="articleHeader" width="975" cellpadding="0" cellspacing="0" class="blackBorder"
+           style=" border-bottom-width: 0px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;">
+        <tr>
+            
+	<td width="655" nowrap="nowrap" valign="top"><a href="/"><img src="http://s3.amazonaws.com/static.socceramerica.com/tournament/images/SATournamentCalendar.gif" width="655" height="72"></a></td>
+
+
+
+            <td id="articleSearch" valign="top" rowspan="2" bgcolor="#DDDDDD">
+                <div style="border-width: 0px 0px 0px 1px; padding: 0px 0px 0px 35px; width: 282px; _width: 297px; height: 93px; background-color: CCCCCC;" class="">
+                    <form id="searchform" method="get" action="/search/" onsubmit="this.submit();return false;">
+                        <input type="text" value="" style="margin-top:20px;width:190px;border:1px solid #cccccc;" class="manageMenu" name="q" id="q">
+                        <input type="submit" value="Search">
+
+                        <div style="padding-top:8px;">
+                            <a href="/advanced-search/" style="text-decoration:underline;" class="manageMenu">Advanced Search</a>&nbsp;&nbsp;
+                            <a href="/archive/" style="text-decoration:underline;" class="manageMenu">Archives</a>
+                        </div>
+                        
+                    </form>
+                </div>
+            </td>
+        </tr>
+        
+	<tr>
+		<td width="655" valign="baseline" style="border-width: 0px 0px 0px 0px;" class="blackBorder">
+	  		<div style="padding: 0px 0px 2px 9px; float: left;" class="manageMenu">
+				<a class="manageMenu" style="text-decoration: underline;" href="/">Home</a> >
+				<a class="manageMenu" style="text-decoration: underline;" href="/tournament/">Tournaments</a>
+			</div>
+	  	</td>
+	</tr>
+
+    </table>
+
+
+
+<table width="975" bgcolor="#ffffff" cellpadding="0" cellspacing="0" class="blackBorder" style="border-width:1px 1px 0px 1px;">
+	<tr>
+		<td valign="top" class="blackBorder" style="padding:5px 5px 10px 5px; border-width:0px 1px 0px 0px;">			
+			<table width="100%">
+				<tr>
+					<td style="padding: 0px 0px 5px 5px;">
+						
+    
+        <div class="tournamentsection">Filtered results for: December</div>
+        <div class="tournamentcontent">
+
+            
+                <div class="tournament">
+                    <a href="1243/the-sport-source-26th-annual-showcase-college-style-clinic/">The Sport Source 26th Annual Showcase &amp; College Style Clinic</a>
+                    <div style="margin-bottom:10px;">Dallas area Texas (South-West Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 2, 2016 through Sunday, Dec. 4, 2016</b></div>
+                        Un-restricted open to all competitive U16-U19 boys/girls teams. Approximately 300 college coaches representing NCAA - NAIA - NCCAA - USCAA &amp; NJCAA. Beautiful natural grass lights &amp; stadium. Experience Texas best Showcase &amp; get the attention your players deserve. 
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1206/challenger-season-finale-showcase/">Challenger Season Finale &amp; Showcase</a>
+                    <div style="margin-bottom:10px;">Overland Park Kansas (Mid-West Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 2, 2016 through Sunday, Dec. 4, 2016</b></div>
+                        To provide an event to connect college coaches and prospective players, Challenger Sports hosts the Season Finale &amp; Showcase event at the Overland Park Soccer Complex. This event offers the High School aged player a chance of showcasing their talents in front of college coaches from all over the Midwest, as well as giving the younger players an end of year tournament to display the skills learned throughout the season.
+
+Early December is the perfect time of year for soccer players to showcase in front of collegiate coaches. All High School programs will be completed by this date, and the majority of college programs will be looking to scout future players for their programs at this time.
+
+With 140+ teams and 100+ college coaches in attendance from Divisions I, II, III, NAIA and NJCAA, the Showcase proves to be a great opportunity for players of all skill levels to put their talents on display in front of the college coaches looking to recruit them.  Don&#39;t miss out on this year&#39;s event!  
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1227/florida-winter-cup-showcase/">Florida Winter Cup &amp; Showcase</a>
+                    <div style="margin-bottom:10px;">Palm Coast Florida (South Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 2, 2016 through Sunday, Dec. 4, 2016</b></div>
+                        Youth soccer tournament in Palm Coast, Florida on December 2-4. 
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1249/2nd-annual-tallahassee-soccer-cup-coed-6v6-adult-tournament/">2nd Annual Tallahassee Soccer Cup (coed 6v6 Adult tournament)</a>
+                    <div style="margin-bottom:10px;">Tallahassee Florida (South Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 2, 2016 through Sunday, Dec. 4, 2016</b></div>
+                        The 2nd addition of the Tallahassee Soccer Cup will feature a 16 team format. 4 groups of 4 teams will compete in group play with the top 2 from each group advancing to the quarterfinals, semis, and finals.
+
+1st Prize $2,000
+Runner up $500
+
+The tournament is a coed 6v6 format (2 girls on the field).  All games will be played on turf fields at the beautiful Meadows Soccer Park in Tallahassee, FL.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1240/apc-girls-winter-showcase/">APC Girls Winter Showcase</a>
+                    <div style="margin-bottom:10px;">Fairfax Virginia (Mid-Atlantic Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 3, 2016 through Sunday, Dec. 4, 2016</b></div>
+                        Youth soccer tournament in Fairfax, Virginia on December 3-4.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="864/bay-area-classic/">Bay Area Classic</a>
+                    <div style="margin-bottom:10px;">San Francisco California (West Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 10, 2016 through Saturday, Dec. 10, 2016</b></div>
+                        Play the Soccer Resort 7v7 Bay Area Classic @ Crocker Amazon Park on December 10!
+
+What&#39;s included:
+* 7 v 7 play
+* Four, 30 minute games guaranteed
+* Coed, Men&#39;s, Women&#39;s and Over 30/40 divisions
+* Complimentary souvenir jerseys for travel teams
+* Soccer prizes galore
+* Cups and champagne for winners and Trophies  for the runner-ups
+
+* $485 per team early bird (ends November 9), price increases afterward
+
+Visit www.soccerresort.com, call 718-433-2452 or email travel@soccerresort.com for more info
+
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="865/la-winter-classic/">LA Winter Classic</a>
+                    <div style="margin-bottom:10px;">Los Angeles California (West Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 10, 2016 through Saturday, Dec. 10, 2016</b></div>
+                        Play the Soccer Resort 7v7 LA Winter Classic @ the StubHub Center on December 10!
+
+What&#39;s included:
+* 7 v 7 play
+* Four, 30 minute games guaranteed
+* Coed, Men&#39;s, Women&#39;s and Over 30/40 divisions
+* Complimentary souvenir jerseys for travel teams
+* Soccer prizes galore
+* Cups and champagne for winners and Trophies  for the runner-ups
+
+* $449 per team early bird (ends November 9), price increases afterward
+
+Visit www.soccerresort.com, call 718-433-2452 or email travel@soccerresort.com for more info
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1261/rock-n-roll-indoor-soccer-challenge-youth/">Rock N Roll Indoor Soccer Challenge (Youth)</a>
+                    <div style="margin-bottom:10px;">N. Olmsted/Cleveland Ohio (Mid-West Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 16, 2016 through Sunday, Dec. 18, 2016</b></div>
+                        Rock N Roll Indoor Soccer Challenge
+ December 16-18, 2016
+	
+Minimum of Three Games
+Awards for division 
+champions and finalists
+
+Age Brackets
+Boy’s*  U8/2009, U9/2008, U10/2007, U11/2006, U12/2005, U13/2004, U14/2003,
+U15/2002, U16/2001, U17/2000 &amp; U18/1999
+Girl’s*  U8/2009, U9/2008, U10/2007, U11/2006, U12/2005, U13/2004, U14/2003, 
+U15/2002, U16/2001, U17/2000 &amp; U18/1999
+
+*Note: Tournament reserves the right to combine age brackets based upon registrations. If we receive 4 or more teams in a age group we will make a division
+
+Cost: $275 per team
+
+Location: 
+Soccer Sportsplex			
+31515 Lorain Road	
+N. Olmsted, OH 44070
+
+Application Deadline
+December 1, 2016 Or until Full
+Space Is Limited, So Register EARLY!
+
+For more information contact 
+Arnold Zirkes  - Tournament Director
+Cell: (419) 806-6450 azirkes@NetResultsSoccer.net 
+Or visit our tournament web-site www.NetResultsTournaments.com 
+
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1262/rock-n-roll-indoor-soccer-challenge-adult/">Rock N Roll Indoor Soccer Challenge (Adult)</a>
+                    <div style="margin-bottom:10px;">N. Olmsted/Cleveland Ohio (Mid-West Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 16, 2016 through Sunday, Dec. 18, 2016</b></div>
+                        Rock N Roll Indoor Soccer Challenge
+ December 16-18, 2016
+	
+Minimum of Three Games
+Awards for division 
+champions and finalists
+
+Age Brackets
+ Men’s*	Open, Division 2, Recreation, Over 30, Over 40
+Women’s* Open, Division 2, Recreation, Over 30, Over 40
+Adult Co-Ed*	Open, Recreation, Over 30
+
+*Note: Tournament reserves the right to combine age brackets based upon registrations. If we receive 4 or more teams in a age group we will make a division
+
+Cost: $275 per team
+
+Location: 
+Soccer Sportsplex			
+31515 Lorain Road	
+N. Olmsted, OH 44070
+
+Application Deadline
+December 1, 2016 Or until Full
+Space Is Limited, So Register EARLY!
+
+For more information contact 
+Arnold Zirkes  - Tournament Director
+Cell: (419) 806-6450 azirkes@NetResultsSoccer.net 
+Or visit our tournament web-site www.NetResultsTournaments.com 
+
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1273/copa-usa-national-fives-5v5/">Copa USA National Fives 5v5</a>
+                    <div style="margin-bottom:10px;">Goals- Los Angeles California (West Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 17, 2016 through Saturday, Dec. 17, 2016</b></div>
+                        The largest amateur 5v5 tournament in the world. 40 countries, 6 continents, 100,000 teams. 3 games minimum, free uniform for every team, 7 players allowed, free entry to USA National Finals for each tournament group winners. All expenses paid trip for men group winners to represent USA in World Cup at Bird&#39;s Nest Stadium, Beijing, China
+
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1274/copa-usa-national-juniors/">Copa USA National 5v5 Juniors</a>
+                    <div style="margin-bottom:10px;">Los Angeles California (West Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 17, 2016 through Saturday, Dec. 17, 2016</b></div>
+                        Both Boys and Girls heats for U10,U11,U12,U13,U14,U16. 3 games minimum in qualification tournament. Free uniforms for every team. 7 Players allowed per team. Free entry to USA National Finals for each Tournament winner. Winners of U16 Boys at National Finals win all expense trip to Bejing, China to represent USA in World Cup 5&#39;s 2017. 
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="133/holiday-classic-indoor/">Holiday Classic Indoor Youth</a>
+                    <div style="margin-bottom:10px;">Blaine Minnesota (Mid-West Region)
+                        <div class="tournamentdates"><b>Tuesday, Dec. 27, 2016 through Sunday, Jan. 1, 2017</b></div>
+                        Join us this holiday season for fun and exciting competition in the NSC&#39;s annual 5v5 Holiday Classic Indoor Soccer Tournament. Preliminary&#39;s played on the same day, finals on January 1st.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="134/holiday-classic-indoor-adult/">Holiday Classic Indoor Adult</a>
+                    <div style="margin-bottom:10px;">Blaine Minnesota (Mid-West Region)
+                        <div class="tournamentdates"><b>Tuesday, Dec. 27, 2016 through Sunday, Jan. 1, 2017</b></div>
+                        Join us this holiday season for fun and exciting competition in the NSC&#39;s annual 5v5 Holiday Classic Indoor Soccer Tournament Adult Version. Preliminary&#39;s played on the same day, finals on January 1st.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1015/2015-psc-girls-holiday-showcase/">2016 PSC Girls Holiday Showcase</a>
+                    <div style="margin-bottom:10px;">Lakewood Ranch Florida (South Region)
+                        <div class="tournamentdates"><b>Tuesday, Dec. 27, 2016 through Friday, Dec. 30, 2016</b></div>
+                        The Chargers Soccer Club is excited to announce a partnership with the Premier Sports Campus for its 2015 Premier Sports Campus Girls Holiday Showcase Dec. 27 - 30, 2015.
+
+The 2015 PSC Girls Showcase will give girls teams U9 - U18/19 the opportunity to play competitive soccer against other top teams under perfect fields conditions. 
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1175/penn-west-futsal-christmas-cup/">Penn West Futsal Christmas Cup</a>
+                    <div style="margin-bottom:10px;">Monroeville Sports Center Pennsylvania (Mid-Atlantic Region)
+                        <div class="tournamentdates"><b>Tuesday, Dec. 27, 2016 through Saturday, Dec. 31, 2016</b></div>
+                        The 4th Annual Penn West Futsal Christmas Cup Indoor Tournament.  Indoor 5v5 Futsal played on sport courts at Monroeville Sports Center.  Visit www.PennWestFutsal.com for more information and online team registration.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1176/penn-west-futsal-high-school-shootout-tournament/">Penn West Futsal High School Shootout Tournament</a>
+                    <div style="margin-bottom:10px;">Monroeville Sports Center Pennsylvania (Mid-Atlantic Region)
+                        <div class="tournamentdates"><b>Friday, Dec. 30, 2016 through Friday, Dec. 30, 2016</b></div>
+                        The 4th Annual Penn West Futsal High School Shootout Indoor Tournament.  Indoor 5v5 Futsal played on sport courts at Monroeville Sports Center.  Visit www.PennWestFutsal.com for more information and online team registration.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1177/penn-west-futsal-new-years-adult-tournament/">Penn West Futsal New Years&#39; Adult Tournament</a>
+                    <div style="margin-bottom:10px;">Monroeville Sports Center Pennsylvania (Mid-Atlantic Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 31, 2016 through Saturday, Dec. 31, 2016</b></div>
+                        The 4th Annual Penn West Futsal New Years&#39;Adult Indoor Tournament.  Indoor 5v5 Futsal played on sport courts at Monroeville Sports Center.  Visit www.PennWestFutsal.com for more information and online team registration.
+                    </div>
+                </div><br>
+            
+                <div class="tournament">
+                    <a href="1252/new-years-soccer-tournament/">NEW YEAR&#39;S SOCCER TOURNAMENT</a>
+                    <div style="margin-bottom:10px;">irvine California (West Region)
+                        <div class="tournamentdates"><b>Saturday, Dec. 31, 2016 through Saturday, Dec. 31, 2016</b></div>
+                        This is a good option to finish your soccer year and to celebrate New Year Day!
+
+This tournament will be held on Saturday, December 31, 2016 at the OC Great Park in the city of Irvine, California.
+
+This is a one day tournament. Game schedule times will depend on the final number of teams confirmed. We have the fields available from 9:00am to 2:00pm.
+
+                    </div>
+                </div><br>
+            
+        </div>
+    
+    To submit your free listing (maximum of 15 listings per organization) to Soccer America Tournament Calendar, go to Soccer America.<br><br>
+    For information on advertising in Soccer America Tournament Calendar, contact <a href="mailto:doug@socceramerica.com">Doug Murdock</a> or call 1-510-374-2967.
+
+					</td>
+				</tr>
+			</table>	
+		</td>
+		<td width="317" valign="top" bgcolor="#dddddd">     
+			<table style="padding:0px 0px 0px 0px;">
+				<tr><td width="317" valign="top" style="padding:20px 0px 20px 0px;">
+					<a href="/tournament/" class="sidebar_links">View All Tournaments</a>
+					<div id="filter-menu">
+						<strong>Filter Tournaments</strong>
+						<form method="GET" action="/tournament/">
+							
+							    <div class="filter-field" id="Type">Type: <select id="id_type" name="type">
+<option value="" selected="selected">All</option>
+<option value="2">Adult Tournament</option>
+<option value="1">Youth Tournament</option>
+</select></div>
+							
+							    <div class="filter-field" id="State">State: <select id="id_state" name="state">
+<option value="" selected="selected">All</option>
+<option value="214">Alabama</option>
+<option value="218">California</option>
+<option value="221">Delaware</option>
+<option value="222">Florida</option>
+<option value="224">Hawaii</option>
+<option value="273">International</option>
+<option value="229">Kansas</option>
+<option value="234">Massachusetts</option>
+<option value="236">Minnesota</option>
+<option value="241">Nevada</option>
+<option value="245">New York</option>
+<option value="246">North Carolina</option>
+<option value="248">Ohio</option>
+<option value="251">Pennsylvania</option>
+<option value="257">Texas</option>
+<option value="260">Virginia</option>
+</select></div>
+							
+							    <div class="filter-field" id="Region">Region: <select id="id_region" name="region">
+<option value="11">International</option>
+<option value="4">Mid-Atlantic</option>
+<option value="6">Mid-West</option>
+<option value="3">New England</option>
+<option value="5">South</option>
+<option value="7">South-West</option>
+<option value="8">West</option>
+</select></div>
+							
+							    <div class="filter-field" id="Month">Month: <select id="id_month" name="month">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="11">November</option>
+<option value="12" selected="selected">December</option>
+</select></div>
+							
+							<span id="filter-submit">
+							    <input type="submit" value="Filter" style="padding:5px;"/>
+							</span>
+						</form>
+					</div>
+						<!-- the plan: if not authenticated href to login-popup (not yet created) .:rl -->
+						
+						    <a href="/tournament/add/" class="sidebar_links">Post to Tournament Calendar</a>
+						
+
+						
+				</td></tr>
+
+				<tr>
+			<td width="317" valign="top" align="center" style="padding:20px 0px 20px 0px;">
+			<div id="div-gpt-ad-1418165939019-7"  None>
+    
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418165939019-7'); });
+</script>
+</div>
+			
+			<div id="div-gpt-ad-1418165939019-6"  None>
+    
+    <script type='text/javascript'>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418165939019-6'); });
+</script>
+</div>
+			</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+
+
+
+    <table id="footertable" cellpadding="0" cellspacing="0" border="0" width="975">
+        <tr>
+            <td>
+                
+                    <div id="footer">
+                
+                <div id="footerlogo">
+                    <img id="footerSAlogo" src="http://s3.amazonaws.com/static.socceramerica.com/images/samini.gif" border="0"><br>
+                    &copy; 2014 Soccer America. All rights reserved. <br>
+                    145 Pipers Hill Road<br>Wilton, CT 06897 USA<br>
+                    tel. 347-762-2640, fax 917-591-3261<br><a href="mailto:feedback@socceramerica.com" class="footerMenu">feedback@socceramerica.com</a>
+                </div>
+                <div id="footerlinks1">
+                    <br>
+                    <a href="/about/" class="manageMenu" style="text-decoration:underline;">About</a><br>
+                    <a href="/contact/" class="footerMenu">Contact Us</a><br>
+                    <a href="/advertise/" class="footerMenu">Advertise</a><br>
+                    <a href="/privacy/" class="footerMenu">Terms &amp; Conditions</a><br>
+                    <a href="/shipping/" class="footerMenu">Shipping</a><br>
+                </div>
+                <div id="footerlinks2">
+                    <div id="footermag"><a href="/buy/" class="footerMenu" style="text-decoration:none;"><img align="right" src="http://s3.amazonaws.com/media.socceramerica.com/images/magazine_covers/SA_FALL16cover.jpg" width="90" height="117"></a></div>
+                    <br>
+                    <a href="/buy/" class="footerMenu"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/coming_inprint.gif" border="0"></a><br>
+                    <a href="/join/" class="footerMenu">Join Soccer America</a><br>
+                    <a href="/renew/" class="footerMenu">Renew Subscription</a><br>
+                    <a href="/tournament/" class="footerMenu">Tournament Calendar</a><br>
+                    <a href="/glossary/" class="footerMenu">Soccer Glossary</a>
+                </div>
+                <div id="footerfollow">
+                    <h1>Follow Us On</h1><br/>
+
+                    <div id="footerfollowicon" style="float:left;"><a href="http://twitter.com/socceramerica/" class="footerMenu"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/twitter_circle_icon.png" border="0" alt="twitter" title="twitter"><br>Twitter</a>
+                    </div>
+                    <div id="footerfollowicon"><a href="http://www.facebook.com/pages/Soccer-America/46755440132" class="footerMenu"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/facebook_circle_icon.png" border="0" alt="Facebook" title="Facebook"><br>Facebook</a>
+                    </div>
+                    <div id="footerfollowicon" style="float:left;"><a href="/join/" class="footerMenu"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/email_circle_icon.png" border="0" alt="email" title="email newsletters"><br>Email</a></div>
+                    <div id="footerfollowicon"><a href="/feeds/articles/" class="footerMenu"><img src="http://s3.amazonaws.com/static.socceramerica.com/images/rss_circle_icon.png" border="0" alt="RSS feeds" title="RSS feed"><br>RSS</a></div>
+                </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-332663-3");
+                pageTracker._trackPageview();
+            } catch (err) {
+            }</script>
+    
+
+
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"1337ba3bce","agent":"","transactionName":"MQFXMBAACxdSUUxdDQhLcxEMAhENXFwXQA0TFlsFDwQLEB1EUVEVFV5BCxcTCwVeV1ZA","applicationID":"1190068","errorBeacon":"bam.nr-data.net","applicationTime":101}</script></body>
+
+</html>

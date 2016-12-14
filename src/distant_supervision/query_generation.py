@@ -1,32 +1,12 @@
 import itertools
 import re
 
+from classifier.features.generate_features import is_num
 from factchecking.question import Question
 from tabular.table_reader import read_table, number_entity_tuples
 from wikitablequestions.dataset_reader import load_instances
+from distant_supervision.normalisation import normalise
 
-
-def normalise(text):
-    text = re.sub(r'[^\w]', ' ', text)
-    text = re.sub(r'[0-9]','D', text.lower())
-    return text
-
-def normalisequery(text):
-    text = re.sub(r'[^\w]', ' ', text)
-    return text.lower()
-
-def normalise_keep_nos(text):
-    text = text.replace("-LRB-","")
-    text = text.replace("-LSB-", "")
-    text = text.replace("-RRB-", "")
-    text = text.replace("-LSB-", "")
-
-    text = text.replace(",","")
-    text = text.replace(".", "")
-    text = text.replace("-", " ")
-
-    text = " ".join(text.lower().strip().split())
-    return text
 
 def key_terms(text):
     if type(text) != Question:
@@ -66,19 +46,17 @@ def generate_search_query_known_table(text,table):
 
 
 def generate_query(tuple,filters=list()):
-    if len(filters)>0 and tuple[1] not in filters:
+
+    datebit = ""
+    if 'date' in tuple.keys():
+        datebit = " " + " " .join(tuple['date'])
+
+    if not is_num(tuple['value']):
         return None
 
-    if len(tuple[1].split()) > 6:
-        return None
+    qry = tuple['value'] + "\t\""+tuple['entity'].replace("\\n", " ") + "\" \"" + tuple['relation'].replace("\\n", " ") + "\"" + datebit
 
-    if len(re.sub(r"[0-9]","",tuple[1])) < len(tuple[1])/2:
-        return None
-
-    if len(tuple[0]) < 2 or len(tuple[1]) <2 or len(tuple[2]) == 0:
-        return None
-    else:
-        return tuple[2] + "\t\""+tuple[1].replace("\\n", " ") + "\" \"" + tuple[0].replace("\\n", " ") + "\""
+    return qry
 
 
 def generate_queries(tuples,filters=list()):

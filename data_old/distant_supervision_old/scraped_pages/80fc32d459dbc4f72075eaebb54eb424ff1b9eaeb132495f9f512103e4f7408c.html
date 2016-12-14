@@ -1,0 +1,2866 @@
+<!DOCTYPE html>
+<html class="no-js" itemscope itemtype="http://schema.org/WebPage" lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"applicationID":"11018608","errorBeacon":"bam.nr-data.net","applicationTime":2475,"beacon":"bam.nr-data.net","queueTime":0,"transactionName":"dAwPFRELDlhUFBpcXVoGThILCxVrUBRBXVFbBg==","licenseKey":"30b3ffac80","agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="HandheldFriendly" content="True"/>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+<meta name="google-site-verification" content="w0yfDtmtJUxS4EcGFRjxi89tyJ_8gzywxym4JmF5AF8" />
+
+
+
+
+
+	
+	<title>Windows 10 Mobile release date, price, devices and features | V3</title>
+
+	<meta name="description" content="All the details on Microsoft's upcoming smartphone OS" />
+
+	<meta name="keywords" content="Mobile Software ,Windows 10,Microsoft,Windows Phone " />
+
+	
+
+
+<!--Dont change the position of this file -->
+
+<meta name="DCSext.topics" content="windows-10;microsoft;windows-phone"/>
+<link href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features" rel="canonical" />
+<link href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features" rel="syndication-source" />
+<link href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features" rel="original-source" />
+<meta property="article:modified_time" content="2016-04-07T11:16:40+01:00" />
+<meta property="article:published_time" content="2016-03-18T16:19:00+00:00" />
+<meta name="news_keywords" content="Mobile Software ,Windows 10,Microsoft,Windows Phone "/>
+
+
+
+<meta name="apple-itunes-app" content="app-id=1033559990">
+
+
+
+	
+		<meta http-equiv="Set-Cookie" content="last_visited_page=/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features;path=/;expires=Mon Nov 07 15:00:51 UTC 2016;domain=.v3.co.uk;"/>
+	
+
+
+<link href="http://www.v3.co.uk/images/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="57x57">
+<link href="http://www.v3.co.uk/images/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+<link href="http://www.v3.co.uk/images/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+<link href="http://www.v3.co.uk/images/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+<link href="http://www.v3.co.uk/images/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+<link href="http://www.v3.co.uk/images/favicons/icon-hires.png" rel="icon" sizes="192x192">
+<link href="http://www.v3.co.uk/images/favicons/icon-normal.png" rel="icon" sizes="128x128">
+<link href="http://www.v3.co.uk/images/favicons/32x32.ico" rel="shortcut icon" type="image/png">
+<meta name="msapplication-TileImage" content="http://www.v3.co.uk/images/favicons/mstile-144x144.png">
+
+	<meta name="msapplication-TileColor" content="#0066cc">
+
+
+
+<meta property="og:title" content="Windows 10 Mobile release date, price, devices and features "/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features"/>
+<meta property="og:image" content="http://www.v3.co.uk/IMG/754/329754/lumia-950-and-950-xl-370x229.jpeg"/>
+<meta property="og:site_name" content="http://www.v3.co.uk"/>
+<meta property="og:description" content="All the details on Microsoft&#39;s upcoming smartphone OS,Mobile Software ,Windows 10,Microsoft,Windows Phone "/>
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta property="twitter:site" content="V3_co_uk"/>
+
+
+<meta name="twitter:domain" content="http://www.v3.co.uk/">
+
+
+
+<meta property="twitter:creator" content="JamesAndStuff"/>
+
+<meta property="twitter:url" content="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features"/>
+<meta property="twitter:image" content="http://www.v3.co.uk/IMG/754/329754/lumia-950-and-950-xl-370x229.jpeg"/>
+<meta property="twitter:description" content="All the details on Microsoft&#39;s upcoming smartphone OS"/>
+
+
+<link href="https://plus.google.com/+V3CoUk" rel="publisher"/>
+
+
+<meta itemprop="name" content="Windows 10 Mobile release date, price, devices and features"/>
+
+<meta itemprop="description" content="All the details on Microsoft&#39;s upcoming smartphone OS,Mobile Software ,Windows 10,Microsoft,Windows Phone "/>
+
+<meta itemprop="image" content="http://www.v3.co.uk/IMG/754/329754/lumia-950-and-950-xl-370x229.jpeg"/>
+
+
+		
+		<link href="http://assets.v3.co.uk/cdn/v3/styles/styles.css" media="all" rel="stylesheet" type="text/css">
+
+		<!--[if lt IE 9]>
+		<script src="http://assets.v3.co.uk/cdn/global/scripts/html5shiv.js"></script>
+		<link href="http://assets.v3.co.uk/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+		<link href="/images/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+		<![endif]-->
+		
+		<!--[if lt IE 9]>
+        	<script src="http://assets.v3.co.uk/cdn/global/scripts/respond.js"></script>
+           	<script src="/javascripts/respond.proxy.js"></script>
+		<![endif]-->
+
+
+<script src="http://assets.v3.co.uk/cdn/global/scripts/jquery_1-11-2.min.js"></script>
+		
+		<script type="text/javascript">
+(function(){window._r3z=window._r3z||{};_r3z.cid="AAB/www.v3.co.uk";_r3z.jq=window.jQuery?jQuery:0;if(!_r3z.jq)return;ldJS=function(e,r){var t=document.head||document.getElementsByTagName("head")[0],n=document.createElement("script"),i=0;if(n.addEventListener){n.addEventListener("load",function(){if(!i){i=1;if(r)r()}},false)}else if(n.readyState){n.onreadystatechange=function(){if(!i&&(n.readyState=="loaded"||n.readyState=="complete")){i=1;if(r)r()}}}n.src=e;t.insertBefore(n,t.firstChild)};function e(e,r,t,n){var i,a;a=t?"; expires="+t.toUTCString():"";i="; path="+(n||"/");document.cookie=e+"="+r+a+i}function r(e){var r=e+"=";var t=document.cookie.split(";");for(var n=0;n<t.length;n++){var i=t[n];while(i.charAt(0)==" ")i=i.substring(1);if(i.indexOf(r)==0)return i.substring(r.length,i.length)}return""}function t(e){e=e||_r3z.pub.pix.gnc;var r=e;for(var t=0;t<r.length;t++){_r3z.pub.pxi.push(new Image);try{_r3z.pub.pxi[_r3z.pub.pxi.length-1].src=decodeURIComponent(r[t])}catch(n){console.log("Bad URL: "+src)}}}function n(e){return _r3z.jq.trim(e.replace(/[^\w']/gi," ")).split(/\s+/).length}function i(e){_r3z.jq(e).contents().filter(function(){return this.nodeType==3}).wrap("<p></p>").end().filter("br").remove()}function a(e){for(var r=0;r<e.length;r++){if(_r3z.jq(e[r]).html().search(/<br>\s*<br>/)==-1)continue;_r3z.jq(e[r]).after("<p>"+_r3z.jq(e[r]).html().replace(/<br>\s*<br>/g,"</p><p>")+"</p>");_r3z.jq(e[r]).remove()}}function s(e){var r=document.head||document.getElementsByTagName("head")[0],t=document.createElement("style"),n;t.type="text/css";n=e.replace(/}/g,"}\n");n=n.replace(/\[CDN\]/g,_r3z.cdn);if(t.styleSheet)t.styleSheet.cssText=n;else t.appendChild(document.createTextNode(n));r.appendChild(t)}function o(e,r){function t(e,r){var t=[function(e,r){var t=r%2==0?2:1;return e<r/2?r-2*e-t:2*e+(t-1)-r},function(e,r){var t=r%2==0?1:0;return e%2==0?(r-t-1-e)/2:(r-t+e)/2}];var n,i=e.length;var a=new Array(i);for(n=0;n<i;n++)a[t[r](n,i)]=e[n];return a.join("")}if(e.nodeType==3){var n=e.nodeValue;if(r){if(n.substring(0,2)==""&&n.substring(n.length-2)=="")e.nodeValue=t(n.substring(2,n.length-2),r)}else e.nodeValue=""+t(n,r)+""}else{for(var i=0;i<e.childNodes.length;i++)o(e.childNodes[i],r)}}function d(){var e=_r3z.jq("#r3z-inst-bot"),r=_r3z.jq("#r3z-ifrm"),t=_r3z.jq("#r3z-quest"),n=_r3z.jq("#r3z-addoor");if(!(_r3z.prg&&_r3z.prg.flg.vis))return;e.outerWidth(n.outerWidth());var i=r.offset().top+r.outerHeight();var a=_r3z.jq(window).scrollTop();var s=t.offset().top;if(a>=i&&!_r3z.jq(".r3z-stick").length){e.width(e.width());e.addClass("r3z-stick")}else if(a<=s&&_r3z.jq(".r3z-stick").length)e.removeClass("r3z-stick")}_r3z.pub={pid:location.hostname,abm:1,rzl:1,cke:1,pre:0,dom:1,stk:1,pix:{gnc:["http://ib.adnxs.com/seg?add=4878442&t=1"],abp:["http://ib.adnxs.com/seg?add=4878592&t=1"],wld:["http://ib.adnxs.com/seg?add=4878598&t=1"]},pxi:[],fns:{sho:0,ins:0,rev:0,abt:0,pbk:0,evt:{imp:0,ivw:0,ulk:0,clk:0,vst:0,v25:0,v50:0,v75:0,ven:0}},cap:{pmx:1,prs:3600*24*30,oix:0,ifm:0,frs:3600*24},htm:{pre:"",pst:"",ins:""},blk:{tmo:5,rev:0,msg:""},ero:{mvs:100,mer:.1}};_r3z.pub.htm.ins='<div id="r3z-inst-top" class="r3z-inst"><span>&#9660;</span><p id="r3z-inst">[r3z-ad-inst] to reveal the rest of the article. You\'ll only have to answer one question a month.</p><span>&#9660;</span></div>';_r3z.pub.blk.msg='<p id="r3z-blkmsg">It looks like we can’t show you adverts on this page, which may be caused by ad blocker software on your device.<br><br>Because we rely on advertising to fund our journalism, please disable any ad blockers from running on V3, then reload the page to see the rest of this content. You can find more information about this <a href="http://www.v3.co.uk/static/using-ad-blocker-on-v3couk" target="_blank">here</a>.</p><p></p>';ldJS("https://d3vuqzsqy1r5zj.cloudfront.net/"+"Pub/"+_r3z.cid+"/ad.js");ldJS("https://e43e8e18e725ae6b22e0-f0fde0bbc5469096ab6f7c4eba4934a9.ssl.cf3.rackcdn.com/"+"Pub/"+_r3z.cid+"/ad.js");_r3z.pub.fns.ins=function(){var i='<div id="r3z-wait">'+'<img id="r3z-wait-img" src="https://assets.incisivemedia.com/rezonance_fonts/WaitAnim800.gif">'+"</div>"+'<div id="r3z-addoor" style="display:none"></div>'+'<div id="r3z-response" style="display:none"></div>';var a='<div id="r3z-kicker" style="display:none"></div>';var l="@font-face{font-family:'redacted_scriptbold';src:url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.eot');src:url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.eot?#iefix') format('embedded-opentype'),url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.woff2') format('woff2'),url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.woff') format('woff'),url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.ttf') format('truetype'),url('https://assets.incisivemedia.com/rezonance_fonts/redacted-script-bold.svg#redacted_scriptbold') format('svg');font-weight:normal;font-style:normal}.r3z-inst{display:table;color:white!important;background:#246FD4;margin:10px 0;padding:10px 5px;box-sizing:border-box;width:100%}.r3z-inst span{display:table-cell;width:5%;color:white!important;font-size:20px;text-align:center;vertical-align:middle}.r3z-inst p{display:table-cell;width:90%;color:white!important;text-align:center;vertical-align:middle}#r3z-inst-bot{z-index:1000}#r3z-blkmsg{display:block;font-weight:bold;color:black;text-align:center;border:3px solid #246FD4;margin:10px 0;padding:10px 5px}#r3z-wait{display:block;width:100%;margin:0;padding:0;border:0;outline:0}#r3z-wait-img{width:100%;height:auto;margin:0;padding:0;border:0;outline:0}.r3z-hide,.r3z-hide *{color:lightgrey!important;text-decoration:none!important;font-family:redacted_scriptbold!important}iframe.r3z-hide,.r3z-hide iframe{opacity:0.1!important}img.r3z-hide,.r3z-hide img{opacity:0.1!important}#r3z-response iframe,#r3z-kicker iframe{margin-left:0}.r3z-stick{position:fixed;top:33%}#r3z-img,#r3z-rimg,#r3z-kimg{display:block!important}";var c=200;var p=2;var u=50;var z=".article-page-body-content p";if(_r3z.jq("#r3z-addoor").length||_r3z.prg&&_r3z.prg.flg.rev)return;var f=_r3z.jq(z);if(f.length<=p||n(f.text())<=c)return;while(n(_r3z.jq(f.slice(0,p)).text())<u)p++;if(_r3z.pub.abm){var h;setTimeout(function(){document.getElementById("r3z-wait").innerHTML=_r3z.pub.blk.msg;_r3z.pub.blk.rev=1;if(_r3z.pub.fns.abt&&_r3z.pub.fns.abt()){h=new Date;h.setTime(h.getTime()+10*60*1e3);e("r3z.abd",1,h);t(_r3z.pub.pix.abp)}},_r3z.pub.blk.tmo*1e3)}s(l);_r3z.jq(f[p-1]).after(i);_r3z.jq("#r3z-response").nextAll().addClass("r3z-hide");_r3z.jq(".r3z-hide").last().after(a);var v=_r3z.jq(".r3z-hide");for(var b=0;b<v.length;b++)o(v[b],0);_r3z.pub.fns.rev=function(){var n=_r3z.jq(".r3z-hide");for(var i=0;i<n.length;i++)o(n[i],1);_r3z.jq(".r3z-hide").removeClass("r3z-hide");var a=r("r3z.abd");if(a){t(_r3z.pub.pix.wld);e("r3z.abd","",new Date(0))}};if(_r3z.pub.stk){_r3z.pub.htm.pst='<a href="#r3z-addoor"><div id="r3z-inst-bot" class="r3z-inst"><span>&#9650;</span><p>Please answer the question above to reveal the rest of the article.</p><span>&#9650;</span></div></a>';_r3z.jq(window).scroll(d);_r3z.jq(window).resize(d)}};if(_r3z.pub.abm){if(_r3z.pub.dom)_r3z.jq(document).ready(_r3z.pub.fns.ins);else _r3z.pub.fns.ins()}t();(function(){_r3z.jq.get("http://assets.incisivemedia.com/rezonance_fonts/kill_switch/v3/TestKillSwitch.json",function(e){}).done(function(e){if(e.blockContent=="false"){var r=setInterval(function(){try{if(_r3z.jq(".r3z-hide").length){_r3z.jq("#r3z-wait").hide();_r3z.pub.fns.rev();clearInterval(r)}}catch(e){}},100)}})})()})();
+</script>
+		
+		
+              		
+	
+							    
+    <script type="text/javascript" language="Javascript">
+universal_variable_string = '{ "content": { "article":"feature", "source":"V3", "author":"james-archer", "medium":"text", "published":"2016-03-18T16:19:00+00:00", "tag":["windows-10","microsoft","windows-phone"], "image":"/IMG/754/329754/lumia-950-and-950-xl-185x114.jpeg", "restriction":"default", "barrier":"free"}, "page": { "url": "http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features", "title": "Windows 10 Mobile release date, price, devices and features", "description": "All the details on Microsoft&amp;#39;s upcoming smartphone OS", "type": "article", "category": "mobile-software", "parentcategory": "software", "id": "2421044", "environment": "live", "site":"v3.co.uk", "platform":"desktop"} }';
+</script>
+
+
+
+
+
+          
+		<!-- Start: GIT head script -->
+               
+               
+                 
+                       <script type="text/javascript" src='//assets.v3.co.uk/javascript/live/v3/javascript-v3.head.min.js'></script>
+                 
+               
+               <!-- End: GIT head script -->
+		<!-- QUBIT OpenTag Start -->
+		<!-- (1:V9:IW: investmentweek.co.uk (Investment Week)) , loads V9:All and 0:Global as dependancies -->
+		
+		<script src='//d3c3cq33003psk.cloudfront.net/opentag-53775-238465.js' async defer></script>
+		<!-- QUBIT OpenTag End -->
+		<script>
+		(function(H){H.className=H.className.replace(/\bno-js\b/,'')})(document.documentElement);
+		 !function(){"use strict";function e(e,t,s){e.addEventListener?e.addEventListener(t,s,!1):e.attachEvent&&e.attachEvent("on"+t,s)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function s(){if(window.localStorage&&window.XMLHttpRequest)if(t(n))c(localStorage.font_css_cache);else{var e=new XMLHttpRequest;e.open("GET",n,!0),e.onreadystatechange=function(){4===e.readyState&&200===e.status&&(c(e.responseText),localStorage.font_css_cache=e.responseText,localStorage.font_css_cache_file=n)},e.send()}else{var s=document.createElement("link");s.href=n,s.rel="stylesheet",s.type="text/css",document.getElementsByTagName("head")[0].appendChild(s),document.cookie="font_css_cache"}}function c(e){var t=document.createElement("style");t.setAttribute("type","text/css"),document.getElementsByTagName("head")[0].appendChild(t),t.styleSheet?t.styleSheet.cssText=e:t.innerHTML=e}var n="http://assets.v3.co.uk/cdn/v3/styles/fonts/sourcesanspro.css?ver=1";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?s():e(window,"load",s)}();
+		</script>
+        
+         
+		 <script type="text/javascript">
+			  window._taboola = window._taboola || [];
+			  _taboola.push({article:'auto'});
+			  !function (e, f, u) {
+			    e.async = 1;
+			    e.src = u;
+			    f.parentNode.insertBefore(e, f);
+			  }(document.createElement('script'),
+			  document.getElementsByTagName('script')[0],
+			  '//cdn.taboola.com/libtrc/incisivemedia-v3/loader.js');
+		</script>
+        
+
+	</head>
+	
+	 	
+			<body class="article v3-uk">
+		
+	
+	<div id="rdm-overlay" class="ad-slot-overlay"></div>
+	<div id="rdm-wallpaper" class="ad-slot-wallpaper"></div>
+	    
+			<div class="container">
+				<aside class="content">
+	<div class="content-inner content-full-width">
+		<div class="main-content">
+			
+				<div id="rdm-above-header" class="ad-slot-full"></div>
+			
+		</div>
+	</div>
+</aside>
+
+				
+
+
+<div class="menu-sidebar">
+	<div class="menu-sidebar-inner">
+		<div class="search-3 header-search-holder blur">
+			<form action="/search" id="search_form" method="get">
+				<input aria-labelledby="Search" class="submit_style" type="submit" value="" />
+				<span>
+					 <input id="search_header" type="search" name="query" value="" required="" placeholder="Search here..." aria-labelledby="Search here">
+				</span>
+				<input class="hidden_style" id="per_page" name="per_page" type="hidden" value="24" />
+				<input class="hidden_style" id="sort" name="sort" type="hidden" value="relevance1" />
+				<input class="hidden_style" id="date" name="date" type="hidden" value="this_year" />
+			</form>
+		</div>
+	</div>
+	
+<nav class="mobile-nav">
+	<ul class="mobile-nav-ul">
+      
+		<li class="active">
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/" class="active" title="Home">Home</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/type/news" title="News">News</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/type/review" title="Reviews">Reviews</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/tag/digital-technology" title="Digital technology">Digital technology</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/category/cloud-computing" title="Cloud">Cloud</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/tag/big-data" title="Data analytics">Data analytics</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/tag/digital-leaders" title="Digital leaders">Digital leaders</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/tag/internet-of-things" title="IoT">IoT</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+		<li >
+		    
+		    
+		    <div class="mobile-menu-title">
+		        <a href="/type/opinion" title="Opinion">Opinion</a>
+		    </div>
+		    
+		   
+		</li>
+	 
+  </ul>
+</nav>
+<div class="menu-sidebar-inner">
+    <ul class="sidebar-list">
+	        
+	        
+		        <li>
+		        	<a href="/events" target="_blank">Events</a>
+		        </li>
+	        
+                
+                
+                
+               
+              			
+                
+				 
+	        
+			    
+			        <li>
+			        	<a href="http://www.computing.co.uk/static/resources" target="_blank">Resources</a>
+			        </li>
+		        
+	        
+	        
+		        <li>
+		        	<a href="http://www.v3.co.uk/v3-uk/special/2430132/smb-spotlight">SMB Spotlight</a>
+		        </li>
+	        
+	        
+	        
+        	
+        	
+            
+		    
+	      
+        
+
+         	
+
+        
+			<li class="nav-tools newsletters">
+				<a href="http://email.v3.co.uk/k/Incisive-Media/v3_sign_up_form" target="_blank">Newsletters</a>
+			</li>
+		
+		
+        <li class="nav-tools login-icon menu-login-trigger"><a href="">Sign in</a></li>
+        
+    </ul>
+</div>
+
+</div>
+
+<nav class="main-top-nav">  
+	<ul class="main-top-content main-top-menu content-width">
+		
+					
+				
+		
+		
+			<li class="main-top-title main-top-tab-panel main-top-events" id="events">
+				<a href="/events" target="_blank">Events</a>
+				<ul class="menu-top-panel">
+					<li>
+						<!-- ::::::::::::::::::::: events panel content start  ::::::::::::::::::::: -->
+						<div class="section group content">
+							
+<div class="col-lrg span-lrg_4_of_5 latest-events">
+	
+		<header>
+			<div class="menu-top-panel-heading">
+				Upcoming events
+			</div>
+		</header>
+	
+	
+		<div class="latest-events-holder" id="featured-event">
+			
+				<article>
+					
+				    <div class="image-text-group-a">
+				        <a  href="http://events.v3.co.uk/technologyawards" target="_blank"><img alt="event logo" src="http://www.incisive-events.com/IMG/571/54571/v3ta16-logo-pos-130x80.jpg" title="V3 Technology Awards" /></a>
+				    </div>
+				    
+				    
+				    
+				    <div class="image-text-group-b">
+				        <h5 class="listings-article-title">
+				        	<a  href="http://events.v3.co.uk/technologyawards" target="_blank" title="V3 Technology Awards">V3 Technology Awards</a>
+				        </h5>
+				        
+							<p class="truncate-listing">
+								2016 V3 Awards
+							</p>
+						
+				        <ul class="article-meta-details">
+							<li>
+								<time itemprop="datePublished" datetime="25-11-2016">
+									<strong>Date:</strong> 25 Nov 2016
+								</time>
+							</li>
+							
+							<li>
+								 London
+							</li>
+							
+						</ul> 
+				    </div>
+				</article>
+			
+		</div>
+	
+	
+	<div class="panel-section-footer">
+		<div class="more-holder">
+			<a class="more-link" href="/events" target="_blank">
+				<svg class="more-icon arrow-right" x="0" y="0" width="0.438em" height="0.938em">
+					<polygon points="0,3.553 3.947,7.5 0,11.447 0,14.5 7,7.5 0,0.5 "></polygon>
+				</svg> 
+				View all events
+			</a>
+		</div>
+	</div>
+</div>
+				
+							
+<div class="col-lrg span-lrg_1_of_5">
+	
+		<header>
+			<div class="menu-top-panel-heading">
+				Follow V3 Events
+			</div>
+		</header>
+	
+	
+		<article>
+			<div class="newsletter-box">
+				<div class="newsletter-box-inner">
+					<p>Sign up to receive email alerts about our events</p><a class="btn event-newsletter" href="http://newsletters.incisivemedia.com/incisive_newsletters/v3/newsletter_signup.html" target="_blank">Sign up</a>
+				</div>
+			</div>
+		</article>
+	
+</div>
+						</div>
+						<!-- ::::::::::::::::::::: events panel content end  ::::::::::::::::::::: -->
+					</li>
+				</ul>
+			</li>
+		
+		
+        
+			
+		
+
+		
+			<li class="main-top-title main-top-tab-panel main-top-hound" id="hound">
+				   <a href="http://www.computing.co.uk/static/resources" target="_blank">Resources</a>
+				<ul class="menu-top-panel">
+					<li>
+						<!-- ::::::::::::::::::::: hound panel content start  ::::::::::::::::::::: -->
+						<div class="section group content">
+							<div class="col span-lrg_4_of_5">
+								
+								
+<section class="top-panel-paper">
+	<div class="image-text-group-a">
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=223&amp;msgid=" target="_blank"><img alt="V3-resources-120x194" height="194" src="/IMG/716/346716/v3-resources-120x194.jpeg?1466112153" width="120" /></a>
+	</div>
+	<div class="image-text-group-b">
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=223&amp;msgid=" target="_blank">Leveraging data for small businesses</a>
+		<p>The most successful businesses are those with confidence in their ability to store, access and use data effectively. &nbsp;Rather than focusing on the nuts and bolts of storage, this view point looks at the data it holds and more importantly, what can be done with it.</p>
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=223&amp;msgid=" class="btn download" target="_blank">Download</a>
+	</div>
+</section>
+	                            
+<section class="top-panel-paper">
+	<div class="image-text-group-a">
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=225&amp;msgid=" target="_blank"><img alt="V3-resources-120x194" height="194" src="/IMG/716/346716/v3-resources-120x194.jpeg?1466112153" width="120" /></a>
+	</div>
+	<div class="image-text-group-b">
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=225&amp;msgid=" target="_blank">Getting the SMB network just right</a>
+		<p>This review looks at why small businesses need to stop being complacent about their networks and at what they can do to maintain their competitive edge as they follow the big boys down the route of increasing collaboration and other bandwidth-hungry applications likely to impact on network performance and availability.</p>
+		<a href="https://incisive.cvtr.io/lp/hpintelsmb-v3?wp=225&amp;msgid=" class="btn download" target="_blank">Download</a>
+	</div>
+</section>
+							</div>
+							
+
+
+						</div>
+						<!-- ::::::::::::::::::::: hound panel content end  ::::::::::::::::::::::: -->
+					</li>
+				</ul>
+			</li>
+		
+		
+
+		
+			
+					<li class="main-top-title main-top-tab-link main-top-industry-voice" id="industryvoice">
+					    <a href="http://www.v3.co.uk/v3-uk/special/2430132/smb-spotlight">SMB Spotlight</a>
+					</li>
+			
+		
+
+		
+       
+
+
+		
+            
+            
+		
+		
+		
+<li class="main-top-title main-top-align-right main-top-tab-infobox main-top-login" id="login" style="display:none;">	
+	<a href="/userlogin">Sign in</a>
+</li>
+<li class="main-top-title main-top-align-right main-top-tab-infobox main-top-user" id="user" style="display: none;">
+	<a href="/home/manage_account" class="user-info"></a>
+	
+
+<div id="rdm-above-corp-menu">&nbsp;</div>
+<ul class="header-tools-content institutional" style="display: none;">
+<li><aside>
+<div class="error login_error_message" id="login_error_message_header">&nbsp;</div>
+<div class="user-menu">
+<p>Personalise your on site experience</p>
+<p>Download and use the apps</p>
+<p>Access your subscription from outside of the office</p>
+<p>Get relevant news and insight straight to your inbox</p>
+<p><button class="register">Request account</button></p>
+</div>
+<form id="userloginpop" class="userloginpop" action="/home/verify_subscription_login" method="post"><input id="redirect_url" class="hidden_style" name="redirect_url" value="/" type="hidden" /><input id="subscriber_with_institution_loggedin_as_individual" class="hidden_style" name="subscriber_with_institution_loggedin_as_individual" value="true" type="hidden" /><fieldset id="inputs"><input id="Username" class="text_style" tabindex="1" name="subscriber[email_id]" size="30" type="text" /> <input id="subscriber_password" class="password_style" tabindex="2" name="subscriber[password]" size="30" type="password" /></fieldset><fieldset id="actions">
+<div class="actions-holder"><label> <input id="remember_checkbox" name="myTime" value="Yes" checked="checked" type="checkbox" /> Remember me </label> <a href="../../home/forgot_password">Forgot your password?</a></div>
+<input id="submit" class="login_form_submit login_submit" name="commit" value="Sign in" type="submit" /> <button class="register"> Not subscribed? </button></fieldset></form></aside></li>
+</ul>
+<div id="rdm-below-corp-menu">&nbsp;</div>
+	
+
+<div id="rdm-above-user-menu">&nbsp;</div>
+<ul class="header-tools-content individual" style="display: none;">
+<li>
+<ul class="user-menu">
+<li><a href="http://www.v3.co.uk/home/manage_account" title="Saved articles" class="saved-articles-user-link">Saved articles</a></li>
+<li><a href="http://newsletters.incisivemedia.com/incisive_newsletters/v3/newsletter_signup.html" title="Newsletters" class="newsletters-user-link">Newsletters</a></li>
+<li><a href="http://www.v3.co.uk/static/apps" title="Apps" class="apps-user-link">Apps</a></li>
+<li><a href="http://www.v3.co.uk/home/manage_account#myaccount" title="Account details" class="account-user-link">Account details</a></li>
+<li><a href="http://www.v3.co.uk/home/manage_account#contact" title="Contact support" class="contact-user-link">Contact support</a></li>
+<li><a href="http://www.v3.co.uk/home/logout" title="Sign out" class="sign-out-user-link">Sign out</a></li>
+</ul>
+</li>
+</ul>
+<div id="rdm-below-user-menu">&nbsp;</div>
+</li>
+		
+		<li class="main-top-title main-top-align-right main-top-tab-infobox main-top-sociallinks" id="follow" style="display:none;">
+			<a href="#">Follow us</a>
+			<ul class="header-tools-content">
+				
+				
+<li>
+	<div class="nav-tools rss-icon">
+		<a href="http://www.v3.co.uk/static/rss" target="_blank">RSS</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools twitter-icon">
+		<a href="https://twitter.com/V3_co_uk" target="_blank">Twitter</a>
+	</div>
+</li>
+
+
+
+<li>
+	<div class="nav-tools newsletters">
+		<a href="http://email.v3.co.uk/k/Incisive-Media/v3_sign_up_form" target="_blank">Newsletters</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools facebook-icon">
+		<a href="https://www.facebook.com/pages/V3couk/117466641415?ref=ts" target="_blank">Facebook</a>
+	</div>
+</li>
+
+
+
+<li>
+	<div class="nav-tools youtube">
+		<a href="https://www.youtube.com/v3" target="_blank">YouTube</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools apps">
+		<a href="http://www.v3.co.uk/static/apps" target="_blank">Apps</a>
+	</div>
+</li>
+
+				
+			</ul>
+		</li>
+		
+	<li class="main-top-title main-top-align-right main-top-tab-link main-top-register" id="register" style="display:none;">
+		<a href="http://reg.incisive.managemyaccount.co.uk/V3/page0.php" target="_blank">Register</a>
+	</li>
+
+
+
+<li class="main-top-title main-top-align-right main-top-user-status" id="rdm_header_user_status_link"></li>
+		
+		
+		
+        
+        
+        
+            
+		
+		
+
+		
+			
+		
+
+				
+	</ul>
+</nav>
+
+
+
+<nav class="nav">
+	<div class="holder">
+		<div class="hamburger-style" id="nav-toggle" aria-label="Menu">
+			<span></span>
+		</div>
+		
+		<div class="clicker4" aria-label="Login"></div>
+		
+		<script type="text/conditional-html" id="tablet-conditional-navigation">
+			
+	<nav class="article-nav nav-colour02">
+		<div class="main-menu content-width">
+		
+			<div class="home-icon"><a href="/" title="Return to homepage"></a></div>
+			
+<ul class="tools-container">
+	<li>
+		<div title="Tweet" class="article-tools twitter-icon icons pos1">
+			<span title="Tweet" class="screen-reader-text">Tweet</span>
+			
+			<a href="http://twitter.com/share?text=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+			
+		</div>
+	</li>
+	<li>
+		<div title="Facebook" class="article-tools facebook-icon icons pos2">
+			<span class="screen-reader-text">Facebook</span>
+			
+			<a href="http://www.facebook.com/sharer.php?u=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+			
+		</div>
+	</li>
+
+	
+
+		
+	<li>
+	   <div data-social-tracking="added" title="Reddit" class="article-tools reddit-icon icons pos4">
+			
+				<a href="http://reddit.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+						
+	   </div>
+	</li>
+	
+		
+	<li>	
+	  <div data-social-tracking="added" title="Stumbleupon" class="article-tools stumbleupon-icon icons pos5">	  
+		
+			<a href="http://www.stumbleupon.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+		
+	  </div>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li>
+		<div title="Save article" class="article-sticky-tools save-icon icons pos5">
+			<span class="screen-reader-text">Save this article</span>
+			<a onclick="savedArticleStatus(); return false;" href="#">&nbsp;</a>
+		</div>
+	</li>
+	
+	
+	<li>
+		<div title="Send to" class="article-tools email-icon icons pos6">
+			<span class="screen-reader-text">Send to</span>
+			
+			<a target="_blank" rel="nofollow" href="mailto:?subject=Windows 10 Mobile release date, price, devices and features&amp;body=%0D%0A%0D%0Ahttp%3A%2F%2Fwww.v3.co.uk%2F2421044">&nbsp;</a>		
+			
+		</div>
+	</li>
+</ul>
+		
+			<!-- tools end -->
+			<div class="search-3 header-search-holder blur">
+				
+				
+				
+				<form action="/search" id="search_form" method="get">
+					<input aria-labelledby="Search" class="submit_style" type="submit" value="" />
+					<span>
+						<input id="search_header" type="search" name="query" value="" required="" placeholder="Search here..." aria-labelledby="Search here">
+					</span>
+					<input class="hidden_style" id="per_page" name="per_page" type="hidden" value="24" />
+					<input class="hidden_style" id="sort" name="sort" type="hidden" value="relevance1" />
+					<input class="hidden_style" id="date" name="date" type="hidden" value="this_year" />
+				</form>
+			</div>
+			<ul class="tools-container tools-container-2">
+			   <li>
+				<div class="article-sticky-tools print-icon icons pos7" title="Print">
+					<span class="screen-reader-text">Print this page</span>
+					<a onclick="window.print();return false" href="#">&nbsp;</a>
+				</div>
+			   </li>
+			   <li>
+			   	
+				  <div class="article-sticky-tools comments-icon icons pos9" title="Comment">
+					 <span class="screen-reader-text">Comment</span>
+					 <a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features#disqus_thread" rel="nofollow">&nbsp;</a>
+				  </div>
+				  
+			   </li>
+			   <li class="article-meta-numbers">
+					
+					 <div class="comment-count">
+					 	<a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features#disqus_thread"><span class="comment-total">0</span> comments</a>
+			         </div>
+					
+				 	<div class="social-count">
+				 		<a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features"><span class="share-total"></span></a>
+				 	</div>
+			   	</li>
+			</ul>
+		</div><!-- main-top-content end -->
+	</nav>	
+
+			<nav class="primary-nav nav-colour01" role="navigation" aria-label="Primary">
+				<div class="nav-branding"></div>
+				<ul class="main-menu main-top-content content-width">
+					<li class="menu-title site-logo" itemscope="" itemtype="http://schema.org/Organization">
+   <div itemprop="name" class="screen-reader-text">
+      V3.co.uk
+   </div>
+   <a href="/" title="Return to homepage" alt="V3.co.uk"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="V3.co.uk">
+   </a>
+</li>  
+					
+					
+					
+					
+						<li class="menu-title">
+						   <a href="/type/news" title="News">News</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams"><img alt="radar" height="142" src="/IMG/457/254457/radar-silhouette-230x142.gif?1435045963" title="radar" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams" title="ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams">ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise"><img alt="mike-mason-new" height="142" src="/IMG/610/357610/mike-mason-new-230x142.jpeg?1478518589" title="mike-mason-new" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise" title="Agile, DevOps and the algorithmic enterprise">Agile, DevOps and the algorithmic enterprise</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios"><img alt="WhatsApp logo" height="142" src="/IMG/779/354779/whatsapp-official-230x142.png?1474630598" title="WhatsApp logo" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios" title="WhatsApp finally rolls out GIF support on iOS  ">WhatsApp finally rolls out GIF support on iOS  </a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem"><img alt="elon-musk" height="142" src="/IMG/721/268721/elon-musk-230x142.jpeg?1434690181" title="elon-musk" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem" title="Elon Musk says universal income will solve automation job loss problem">Elon Musk says universal income will solve automation job loss problem</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476532/tesco-bank-breach-sees-money-stolen-from-20-000-accounts"><img alt="tesco bank" height="142" src="/IMG/606/349606/tesco-bank-230x142.jpeg?1466593160" title="tesco bank" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476532/tesco-bank-breach-sees-money-stolen-from-20-000-accounts" title="Tesco Bank breach sees money stolen from 20,000 accounts">Tesco Bank breach sees money stolen from 20,000 accounts</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/type/review" title="Reviews">Reviews</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/review/2476506/pixel-xl-vs-oneplus-3-review"><img alt="pixel-xl-vs-op3" height="142" src="/IMG/630/357630/pixel-xl-vs-op3-230x142.jpg?1478279481" title="pixel-xl-vs-op3" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/review/2476506/pixel-xl-vs-oneplus-3-review" title="Pixel XL vs OnePlus 3 review">Pixel XL vs OnePlus 3 review</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/review/2475890/blackberry-dtek60-vs-dtek50-specs-comparison"><img alt="BlackBerry DTEK50 and DTEK60" height="142" src="/IMG/242/357242/blackberry-dtek60-vs-dtek50-230x142.jpeg?1478011085" title="BlackBerry DTEK50 and DTEK60" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/review/2475890/blackberry-dtek60-vs-dtek50-specs-comparison" title="BlackBerry DTEK60 vs DTEK50 specs comparison">BlackBerry DTEK60 vs DTEK50 specs comparison</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/review/2475766/top-8-rugged-gadgets-and-accessories"><img alt="panasonic-toughpad-fz-g1" height="142" src="/IMG/104/357104/panasonic-toughpad-230x142.png?1477903219" title="panasonic-toughpad-fz-g1" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/review/2475766/top-8-rugged-gadgets-and-accessories" title="Top 8 rugged gadgets and accessories">Top 8 rugged gadgets and accessories</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/review/2475508/google-pixel-xl-vs-iphone-7-review"><img alt="Pixel XL vs iPhone 7" height="142" src="/IMG/956/356956/pixel-xl-vs-iphone-7-230x142.jpeg?1477567893" title="Pixel XL vs iPhone 7" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/review/2475508/google-pixel-xl-vs-iphone-7-review" title="Google Pixel XL vs iPhone 7 review">Google Pixel XL vs iPhone 7 review</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/review/2475301/blackberry-dtek60-hands-on-review"><img alt="BlackBerry DTEK60 hands-on review - build" height="142" src="/IMG/793/356793/blackberry-dtek60-build-230x142.jpg?1477411997" title="BlackBerry DTEK60 hands-on review - build" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/review/2475301/blackberry-dtek60-hands-on-review" title="BlackBerry DTEK60 hands-on review">BlackBerry DTEK60 hands-on review</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/tag/digital-technology" title="Digital technology">Digital technology</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2473652/former-zurich-cdo-appointed-as-group-cdo-at-rsa"><img alt="rsa-building-580x358" height="142" src="/IMG/687/349687/rsa-building-580x358-230x142.png?1466606803" title="rsa-building-580x358" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2473652/former-zurich-cdo-appointed-as-group-cdo-at-rsa" title="Former Zurich CDO appointed as group CDO at RSA">Former Zurich CDO appointed as group CDO at RSA</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/interview/2473142/digital-transformation-an-interview-with-pearson-cto-coo-albert-hitchcock"><img alt="Pearson CIO Albert Hitchcock" height="142" src="/IMG/598/353598/albert-hitchcock-pearson-2-2-230x142.jpeg?1476180680" title="Pearson CIO Albert Hitchcock" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/interview/2473142/digital-transformation-an-interview-with-pearson-cto-coo-albert-hitchcock" title="Digital transformation: an interview with Pearson CTO/COO Albert Hitchcock">Digital transformation: an interview with Pearson CTO/COO Albert Hitchcock</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/interview/2472669/gumtree-cto-explains-why-giving-digital-teams-freedom-is-reaping-rewards"><img alt="Staff working together at Gumtree" height="142" src="/IMG/250/355250/gumtree-office-collaboration-it-staff-board-230x142.png?1475294438" title="Staff working together at Gumtree" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/interview/2472669/gumtree-cto-explains-why-giving-digital-teams-freedom-is-reaping-rewards" title="Gumtree CTO explains why giving digital teams freedom is reaping rewards">Gumtree CTO explains why giving digital teams freedom is reaping rewards</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2471309/two-thirds-of-smes-believe-in-need-to-go-digital-but-only-half-have-even-started"><img alt="Digital marketing and finance" height="142" src="/IMG/574/314574/digital-mall-social-marketing-performance-230x142.jpg?1475294439" title="Digital marketing and finance" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2471309/two-thirds-of-smes-believe-in-need-to-go-digital-but-only-half-have-even-started" title="Two thirds of SMEs believe in need to go digital, but only half have even started">Two thirds of SMEs believe in need to go digital, but only half have even started</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/feature/2470669/cdo-interview-how-philips-blake-cahill-drove-digital-worldwide"><img alt="blake-cahill-philips-02" height="142" src="/IMG/110/354110/blake-cahill-philips-02-230x142.jpeg?1473783048" title="blake-cahill-philips-02" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/feature/2470669/cdo-interview-how-philips-blake-cahill-drove-digital-worldwide" title="CDO interview: How Philips' Blake Cahill drove digital worldwide">CDO interview: How Philips' Blake Cahill drove digital worldwide</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/category/cloud-computing" title="Cloud">Cloud</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+	
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams"><img alt="radar" height="142" src="/IMG/457/254457/radar-silhouette-230x142.gif?1435045963" title="radar" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams" title="ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams">ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise"><img alt="mike-mason-new" height="142" src="/IMG/610/357610/mike-mason-new-230x142.jpeg?1478518589" title="mike-mason-new" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise" title="Agile, DevOps and the algorithmic enterprise">Agile, DevOps and the algorithmic enterprise</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios"><img alt="WhatsApp logo" height="142" src="/IMG/779/354779/whatsapp-official-230x142.png?1474630598" title="WhatsApp logo" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios" title="WhatsApp finally rolls out GIF support on iOS  ">WhatsApp finally rolls out GIF support on iOS  </a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem"><img alt="elon-musk" height="142" src="/IMG/721/268721/elon-musk-230x142.jpeg?1434690181" title="elon-musk" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem" title="Elon Musk says universal income will solve automation job loss problem">Elon Musk says universal income will solve automation job loss problem</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476487/ddos-attack-takes-out-liberia-web-access"><img alt="DDoS graphic" height="142" src="/IMG/319/355319/ddos-graphic-2-230x142.jpeg?1475500181" title="DDoS graphic" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476487/ddos-attack-takes-out-liberia-web-access" title="DDoS attack takes out Liberia web access">DDoS attack takes out Liberia web access</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/tag/big-data" title="Data analytics">Data analytics</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/feature/2475338/raspberry-pi-and-bbc-micro-bit-are-helping-rekindle-kids-interest-in-maths-says-hannah-fry"><img alt="Raspberry Pi 3" height="142" src="/IMG/191/342191/raspberry-pi-3-box-230x142.jpeg?1456747691" title="Raspberry Pi 3" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/feature/2475338/raspberry-pi-and-bbc-micro-bit-are-helping-rekindle-kids-interest-in-maths-says-hannah-fry" title="Raspberry Pi and BBC micro:bit are helping rekindle kids' interest in maths says Hannah Fry">Raspberry Pi and BBC micro:bit are helping rekindle kids' interest in maths says Hannah Fry</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/interview/2475024/channel-4-data-scientist-talks-tactics-for-project-success"><img alt="The Channel 4 building" height="142" src="/IMG/400/201400/channel4-230x142.jpg?1429981861" title="The Channel 4 building" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/interview/2475024/channel-4-data-scientist-talks-tactics-for-project-success" title="Channel 4 data scientist talks tactics for project success">Channel 4 data scientist talks tactics for project success</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2472283/splunk-brings-machine-learning-to-core-products-to-boost-data-insights"><img alt="splunk" height="142" src="/IMG/010/355010/splunk-230x142.png?1475014558" title="splunk" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2472283/splunk-brings-machine-learning-to-core-products-to-boost-data-insights" title="Splunk brings machine learning to core products to boost data insights">Splunk brings machine learning to core products to boost data insights</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2472177/pro-cycling-team-trek-segafredo-turns-to-data-and-social-media-to-win-races-and-fans"><img alt="man-cycling" height="142" src="/IMG/617/348617/man-cycling-230x142.jpeg?1465884338" title="man-cycling" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2472177/pro-cycling-team-trek-segafredo-turns-to-data-and-social-media-to-win-races-and-fans" title="Pro cycling team Trek Segafredo turns to data and social media to win races and fans">Pro cycling team Trek Segafredo turns to data and social media to win races and fans</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2470243/big-data-and-mobile-help-littlewoods-owner-shop-direct-grow-profits-43-per-cent"><img alt="Mobile focus has big impact for Shop Direct" height="142" src="/IMG/889/353889/shop-direct-mobile-big-data-machine-learning-ios-android-230x142.png?1473346636" title="Mobile focus has big impact for Shop Direct" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2470243/big-data-and-mobile-help-littlewoods-owner-shop-direct-grow-profits-43-per-cent" title="Big data and mobile help Littlewoods owner Shop Direct grow profits 43 per cent">Big data and mobile help Littlewoods owner Shop Direct grow profits 43 per cent</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/tag/digital-leaders" title="Digital leaders">Digital leaders</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/interview/2472986/barnardos-regains-control-of-it-estate-preps-for-windows-10-and-considers-the-cloud"><img alt="Barnardos is a UK-based charity for children and families in need" height="142" src="/IMG/714/280714/barnardos-charity-logo-230x142.jpg?1434607666" title="Barnardos is a UK-based charity for children and families in need" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/interview/2472986/barnardos-regains-control-of-it-estate-preps-for-windows-10-and-considers-the-cloud" title="Barnardo's tackles IT estate sprawl, preps for Windows 10 and considers the cloud">Barnardo's tackles IT estate sprawl, preps for Windows 10 and considers the cloud</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/interview/2472669/gumtree-cto-explains-why-giving-digital-teams-freedom-is-reaping-rewards"><img alt="Staff working together at Gumtree" height="142" src="/IMG/250/355250/gumtree-office-collaboration-it-staff-board-230x142.png?1475294438" title="Staff working together at Gumtree" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/interview/2472669/gumtree-cto-explains-why-giving-digital-teams-freedom-is-reaping-rewards" title="Gumtree CTO explains why giving digital teams freedom is reaping rewards">Gumtree CTO explains why giving digital teams freedom is reaping rewards</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/feature/2470669/cdo-interview-how-philips-blake-cahill-drove-digital-worldwide"><img alt="blake-cahill-philips-02" height="142" src="/IMG/110/354110/blake-cahill-philips-02-230x142.jpeg?1473783048" title="blake-cahill-philips-02" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/feature/2470669/cdo-interview-how-philips-blake-cahill-drove-digital-worldwide" title="CDO interview: How Philips' Blake Cahill drove digital worldwide">CDO interview: How Philips' Blake Cahill drove digital worldwide</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2467307/government-digital-service-head-promises-department-will-not-be-broken-up"><img alt="Kevin Cunnington" height="142" src="/IMG/018/352018/kevin-cunnington-1-230x142.jpeg?1470130015" title="Kevin Cunnington" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2467307/government-digital-service-head-promises-department-will-not-be-broken-up" title="Government Digital Service head promises department will not be broken up">Government Digital Service head promises department will not be broken up</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2467199/brexit-cios-should-consider-shelving-projects-amid-uncertainty"><img alt="brexit-shutterstock-417868516" height="142" src="/IMG/934/349934/brexit-shutterstock-417868516-230x142.jpeg?1467046211" title="brexit-shutterstock-417868516" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2467199/brexit-cios-should-consider-shelving-projects-amid-uncertainty" title="Brexit: CIOs should consider shelving projects amid uncertainty">Brexit: CIOs should consider shelving projects amid uncertainty</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/tag/internet-of-things" title="IoT">IoT</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2476348/canonical-looks-to-consolidate-grip-on-iots-edge-with-ubuntu-core-16"><img alt="Snappy Ubuntu Core logo" height="142" src="/IMG/546/357546/snappy-ubuntu-core-logo-01-230x142.png?1478189371" title="Snappy Ubuntu Core logo" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2476348/canonical-looks-to-consolidate-grip-on-iots-edge-with-ubuntu-core-16" title="Canonical looks to consolidate grip on IoT's edge with Ubuntu Core 16">Canonical looks to consolidate grip on IoT's edge with Ubuntu Core 16</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2475527/qualcomm-to-buy-nxp-in-usd47bn-deal-to-drive-into-automotive-and-iot-markets"><img alt="Qualcomm Snapdragon" height="142" src="/IMG/459/355459/qualcomm-snapdragon-830-230x142.png?1475666572" title="Qualcomm Snapdragon" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2475527/qualcomm-to-buy-nxp-in-usd47bn-deal-to-drive-into-automotive-and-iot-markets" title="Qualcomm to buy NXP in $47bn deal to drive into automotive and IoT markets">Qualcomm to buy NXP in $47bn deal to drive into automotive and IoT markets</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2475325/intel-shows-off-14-nanometre-atom-chip-for-iot-use"><img alt="Intel Atom E3900" height="142" src="/IMG/816/356816/intel-atom-e3900-230x142.jpeg?1477476246" title="Intel Atom E3900" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2475325/intel-shows-off-14-nanometre-atom-chip-for-iot-use" title="Intel shows off 14-nanometre Atom chip for IoT use">Intel shows off 14-nanometre Atom chip for IoT use</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2474152/wave-glider-what-father-of-java-james-gosling-did-next"><img alt="wave-glider2" height="142" src="/IMG/139/356139/wave-glider2-230x142.jpeg?1476440708" title="wave-glider2" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2474152/wave-glider-what-father-of-java-james-gosling-did-next" title="Wave Glider: What 'Father of Java' James Gosling did next">Wave Glider: What 'Father of Java' James Gosling did next</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/news/2473541/the-iot-raises-serious-privacy-concerns-experts-warn"><img alt="Surveillance CCTV camera" height="142" src="/IMG/843/60843/surveillance-camera-230x142.jpg?1430195894" title="Surveillance CCTV camera" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/news/2473541/the-iot-raises-serious-privacy-concerns-experts-warn" title="The IoT raises serious privacy concerns, experts warn">The IoT raises serious privacy concerns, experts warn</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					
+						<li class="menu-title">
+						   <a href="/type/opinion" title="Opinion">Opinion</a>
+							<ul class="menu-content">
+								<li>
+																			
+								    
+    
+
+<div class="section group content">
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/opinion/2475801/googles-daydream-view-as-good-as-mobile-vr-headsets-get-for-now"><img alt="Google Daydream View VR headset" height="142" src="/IMG/583/357583/google-daydream-view-vr-headset-2-230x142.jpeg?1478257080" title="Google Daydream View VR headset" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/opinion/2475801/googles-daydream-view-as-good-as-mobile-vr-headsets-get-for-now" title="Google's Daydream View: as good as mobile VR headsets get, for now">Google's Daydream View: as good as mobile VR headsets get, for now</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/opinion/2475481/legal-view-why-tech-firms-should-make-t-cs-clear-to-customers"><img alt="sign-deal-contract-agreement" height="142" src="/IMG/534/340534/sign-deal-contract-agreement-230x142.jpeg?1455704990" title="sign-deal-contract-agreement" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/opinion/2475481/legal-view-why-tech-firms-should-make-t-cs-clear-to-customers" title="Legal view: why tech firms should make T&amp;Cs clear to customers">Legal view: why tech firms should make T&amp;Cs clear to customers</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/opinion/2475690/why-apples-new-macbook-pros-might-force-me-away-from-macos-for-good"><img alt="MacBook Pro with Touch Bar" height="142" src="/IMG/008/357008/macbook-pro-touch-bar-230x142.png?1477593302" title="MacBook Pro with Touch Bar" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/opinion/2475690/why-apples-new-macbook-pros-might-force-me-away-from-macos-for-good" title="Why Apple's new MacBook Pros might force me away from macOS for good">Why Apple's new MacBook Pros might force me away from macOS for good</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/opinion/2474821/government-finally-gets-the-message-that-fibre-is-key-to-uks-future"><img alt="Broadband fibre optics" height="142" src="/IMG/135/354135/broadband-fibre-optics-230x142.jpeg?1473845194" title="Broadband fibre optics" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/opinion/2474821/government-finally-gets-the-message-that-fibre-is-key-to-uks-future" title="Government finally gets the message that fibre is key to UK's future">Government finally gets the message that fibre is key to UK's future</a>
+			</div>
+			
+
+		
+	</article>
+</article>
+<article class="col-lrg span-lrg_1_of_5 menu-contents">
+	<article>
+		
+<a href="/v3-uk/opinion/2473480/governments-digital-boasts-ring-hollow-amid-anti-foreigner-policy-plans"><img alt="british flag" height="142" src="/IMG/579/91579/britishflag-230x142.jpg?1447305934" title="british flag" width="230" /></a>
+
+
+
+
+		
+			<div class="listings-article-title">
+			    <a href="/v3-uk/opinion/2473480/governments-digital-boasts-ring-hollow-amid-anti-foreigner-policy-plans" title="Government's digital boasts ring hollow amid emerging anti-foreign rhetoric">Government's digital boasts ring hollow amid emerging anti-foreign rhetoric</a>
+			</div>
+			
+
+		
+	</article>
+</article></div>
+	
+								</li>
+							</ul>
+						</li>
+						
+					
+					<li class="menu-title">
+	<a href="#" class="more-panel"><span></span>All sections</a>
+	<ul class="menu-content more-panel navigation-all-sections">
+		<li>
+			<div class="section group content">
+				
+					<div class="col span_1_of_5 menu-contents navigation-all-sections-1">
+						
+
+<section>
+<div class="navigation-all-sections-subheading">Register</div>
+<ul>
+<li><a href="http://reg.incisive.managemyaccount.co.uk/V3/page0.php" target="_blank">Register for free access</a></li>
+<li><a href="http://email.v3.co.uk/k/Incisive-Media/v3_sign_up_form" target="_blank">Sign-up for email alerts</a></li>
+<li><a href="http://www.v3.co.uk/static/apps" target="_blank">Download our app</a></li>
+</ul>
+</section><section>
+<div class="navigation-all-sections-subheading">Connect with us</div>
+<ul>
+<li><a href="http://www.v3.co.uk/static/about-us">Contact us</a></li>
+<li><a href="https://twitter.com/V3_co_uk">Twitter</a></li>
+<li><a href="https://www.facebook.com/V3.co.uk/">Facebook</a></li>
+<li><a href="https://www.youtube.com/user/V3">Youtube</a></li>
+</ul>
+</section>
+					</div>
+				
+					<div class="col span_1_of_5 menu-contents navigation-all-sections-2">
+						
+
+<section>
+<div class="navigation-all-sections-subheading">Authors</div>
+<ul>
+<li><a href="http://www.v3.co.uk/author/1523/dan-worth">Dan Worth</a></li>
+<li><a href="http://www.v3.co.uk/author/3968/matt-farrington-smith">Matt Farrington-Smith</a></li>
+<li><a href="http://www.v3.co.uk/author/1484/stuart-sumner">Stuart Sumner</a></li>
+<li><a href="http://www.v3.co.uk/author/170/john-leonard">John Leonard</a></li>
+<li><a href="http://www.v3.co.uk/author/2354/graeme-burton">Graeme Burton</a></li>
+<li><a href="http://www.v3.co.uk/author/2384/peter-gothard">Peter Gothard</a></li>
+<li><a href="http://www.v3.co.uk/author/2353/carly-page">Carly Page</a></li>
+</ul>
+</section>
+					</div>
+				
+					<div class="col span_1_of_5 menu-contents navigation-all-sections-3">
+						
+
+<section>
+<div class="navigation-all-sections-subheading">Most popular content</div>
+<ul>
+<li><a href="http://www.v3.co.uk/type/analysis">Analysis</a></li>
+<li><a href="http://www.v3.co.uk/type/download-review">Downloads</a></li>
+<li><a href="http://www.v3.co.uk/type/feature">Features</a></li>
+<li><a href="http://www.v3.co.uk/type/interview">Interviews</a></li>
+<li><a href="http://www.v3.co.uk/category/security">Security</a></li>
+<li><a href="http://www.v3.co.uk/tag/apple">Apple</a></li>
+<li><a href="http://www.v3.co.uk/tag/google">Google</a></li>
+<li><a href="http://www.v3.co.uk/tag/internet-of-things">IoT</a></li>
+<li><a href="http://www.v3.co.uk/tag/big-data">Big data</a></li>
+<li><a href="http://www.v3.co.uk/tag/top-10">Top 10s</a></li>
+</ul>
+</section>
+					</div>
+				
+					<div class="col span_1_of_5 menu-contents navigation-all-sections-4">
+						
+
+<section>
+<div class="navigation-all-sections-subheading">Events</div>
+<p><a href="http://www.enterpriseitevents.com/">Our portfolio of enterprise IT brands produce high-calibre conferences, web-seminars, awards and events for IT professionals</a></p>
+</section><section>
+<div class="navigation-all-sections-subheading">RSS</div>
+<p><a href="http://www.v3.co.uk/static/rss">These RSS feeds are provided for personal use. Re-publication of V3 articles via RSS on another website is a breach of copyright and is prohibited.&nbsp;If in doubt please </a><a href="mailto:tom.wright@incisivemedia.com">contact us</a><a href="http://www.v3.co.uk/static/rss">.</a></p>
+</section>
+					</div>
+				
+					<div class="col span_1_of_5 menu-contents navigation-all-sections-5">
+						
+
+<section>
+<div class="navigation-all-sections-subheading">Related websites</div>
+<ul>
+<li><a href="http://www.computing.co.uk">Computing</a></li>
+<li><a href="http://www.theinquirer.net">The Inquirer</a></li>
+<li><a href="http://www.enterpriseitevents.com/">Enterprise IT events</a></li>
+<li><a href="http://www.incisivemedia.com/our-story/">About Incisive Media</a></li>
+<li><a href="http://www.incisivemedia.com/terms-and-conditions/">Terms and Conditions</a></li>
+<li><a href="http://www.incisivemedia.com/privacy-policy/">Privacy and cookie policy</a></li>
+<li><a href="http://www.v3.co.uk/static/using-ad-blocker-on-v3couk">FAQs on our anti-ad blocker</a></li>
+</ul>
+</section>
+					</div>
+				
+			</div>
+		</li>
+	</ul>
+</li>
+					<!-- !PRODUCTION : Ommitted div.search-2 header-search-holder --->
+
+					<li class="search-panel">
+					   <div class="header-search-holder search-1 blur">
+							<form action="/search" id="search_form_bottom" method="get">
+							   <input aria-labelledby="Search" class="submit_style" type="submit" value="" />
+							   <span>
+							   <input id="search_header" type="search" name="query" value="" required="" placeholder="Search" aria-labelledby="Search">
+							   </span>
+							   <input class="hidden_style" id="per_page" name="per_page" type="hidden" value="24" />
+							   <input class="hidden_style" id="sort" name="sort" type="hidden" value="relevance1" />
+							   <input class="hidden_style" id="date" name="date" type="hidden" value="this_year" />
+							   <input class="hidden_style" name="home_search" type="hidden" value="homepage" />
+							</form>
+					   </div>
+					</li>
+					
+				</ul>
+			</nav>
+		</script>
+		<div id="conditional-navigation" class="" >
+			<!-- no script default fall back -->
+			<nav class="primary-nav nav-colour01" role="navigation" aria-label="Primary">
+				<ul class="main-menu main-top-content content-width">
+					
+						<li class="menu-title">
+							
+						</li>
+					
+						<li class="menu-title">
+							<a href="/type/news" title="News">News</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/type/review" title="Reviews">Reviews</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/tag/digital-technology" title="Digital technology">Digital technology</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/category/cloud-computing" title="Cloud">Cloud</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/tag/big-data" title="Data analytics">Data analytics</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/tag/digital-leaders" title="Digital leaders">Digital leaders</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/tag/internet-of-things" title="IoT">IoT</a>
+						</li>
+					
+						<li class="menu-title">
+							<a href="/type/opinion" title="Opinion">Opinion</a>
+						</li>
+					
+				</ul>
+			</nav>
+		</div>
+		<div class="mobile-branding"><a href="/" class="mobile-branding-link" alt="V3.co.uk" ></a></div> 
+	</div>
+	
+	
+<div class="mask">
+	<div class="menu4">
+		<div>
+			<a href="/home/manage_account" class="user-info"></a>
+			
+
+<div id="rdm-above-corp-menu">&nbsp;</div>
+<ul class="header-tools-content institutional" style="display: none;">
+<li><aside>
+<div class="error login_error_message" id="login_error_message_header">&nbsp;</div>
+<div class="user-menu">
+<p>Personalise your on site experience</p>
+<p>Download and use the apps</p>
+<p>Access your subscription from outside of the office</p>
+<p>Get relevant news and insight straight to your inbox</p>
+<p><button class="register">Request account</button></p>
+</div>
+<form id="userloginpop" class="userloginpop" action="/home/verify_subscription_login" method="post"><input id="redirect_url" class="hidden_style" name="redirect_url" value="/" type="hidden" /><input id="subscriber_with_institution_loggedin_as_individual" class="hidden_style" name="subscriber_with_institution_loggedin_as_individual" value="true" type="hidden" /><fieldset id="inputs"><input id="Username" class="text_style" tabindex="1" name="subscriber[email_id]" size="30" type="text" /> <input id="subscriber_password" class="password_style" tabindex="2" name="subscriber[password]" size="30" type="password" /></fieldset><fieldset id="actions">
+<div class="actions-holder"><label> <input id="remember_checkbox" name="myTime" value="Yes" checked="checked" type="checkbox" /> Remember me </label> <a href="../../home/forgot_password">Forgot your password?</a></div>
+<input id="submit" class="login_form_submit login_submit" name="commit" value="Sign in" type="submit" /> <button class="register"> Not subscribed? </button></fieldset></form></aside></li>
+</ul>
+<div id="rdm-below-corp-menu">&nbsp;</div>
+			
+
+<div id="rdm-above-user-menu">&nbsp;</div>
+<ul class="header-tools-content individual" style="display: none;">
+<li>
+<ul class="user-menu">
+<li><a href="http://www.v3.co.uk/home/manage_account" title="Saved articles" class="saved-articles-user-link">Saved articles</a></li>
+<li><a href="http://newsletters.incisivemedia.com/incisive_newsletters/v3/newsletter_signup.html" title="Newsletters" class="newsletters-user-link">Newsletters</a></li>
+<li><a href="http://www.v3.co.uk/static/apps" title="Apps" class="apps-user-link">Apps</a></li>
+<li><a href="http://www.v3.co.uk/home/manage_account#myaccount" title="Account details" class="account-user-link">Account details</a></li>
+<li><a href="http://www.v3.co.uk/home/manage_account#contact" title="Contact support" class="contact-user-link">Contact support</a></li>
+<li><a href="http://www.v3.co.uk/home/logout" title="Sign out" class="sign-out-user-link">Sign out</a></li>
+</ul>
+</li>
+</ul>
+<div id="rdm-below-user-menu">&nbsp;</div>
+		</div>
+	</div>
+</div>
+	
+</nav>
+
+<aside class="content">
+	<div class="content-inner content-full-width">
+		<div class="main-content">
+			
+				<div id="rdm-below-header" class="ad-slot-full"></div>
+			
+		</div>
+	</div>
+</aside>
+
+
+				<div class="page-content ajax_search">
+					
+
+
+		<header class="article-header">
+			
+			<div class="content">
+				<div class="content-inner">
+					<div class="main-content">
+						<div class="section group">
+							<div class="col span_1_of_5">
+								<img class="print-branding" src="http://assets.incisivemedia.com/cdn/iw/images/site-logo.png" alt="V3.co.uk">
+								<nav>
+									<ul class="meta-taxonomy-list breadcrumb">
+										
+										<li>
+											<a href="/category/software/mobile-software">Mobile Software</a>
+										</li>
+										
+									</ul>
+								</nav>
+							</div>
+							<div class="col span_4_of_5">
+								<h1 itemprop="name" class="article-title">Windows 10 Mobile release date, price, devices and features</h1>
+								
+									<h2 class="article-sub-title">All the details on Microsoft's upcoming smartphone OS</h2>
+								
+							</div>
+						</div>
+					</div><!--  end main-content -->
+				</div><!-- content-inner end  -->
+			</div><!-- content end -->
+		</header>
+		
+
+<div class="content">
+	<main role="main" class="content-inner">
+		<div class="main-content">
+			
+	<article class="section group article">
+		<div class="col span_1_of_5"></div>
+		<div class="col span_4_of_5 article-col">
+			
+			
+	
+		
+			
+				
+					<figure class="main">
+						<img alt="Microsoft Lumia 950 and 950 XL" height="358" src="/IMG/754/329754/lumia-950-and-950-xl-580x358.jpeg?1447284978" title="Microsoft Lumia 950 and 950 XL" width="580" />
+						<figcaption><div class="caption-text">Windows 10 Mobile release date, price, supported devices and features</div></figcaption>
+					</figure>
+				
+		
+	
+
+
+			
+			<div class="article-meta-container group">
+				
+				
+	
+	
+	
+	<ul class="meta-taxonomy-list author-dateline ">
+		
+			
+				<li class="author-dateline-image">
+					<a title="James Archer" href="/author/3451/james-archer"> <img alt="James Archer" class="author-pic" height="100" src="/IMG/980/323980/james-archer-bio-image-100x100.jpg?1447305890" width="100" /> </a>
+				</li>
+			
+			<li class="author-dateline-name">
+				<a href="/author/3451/james-archer">James Archer</a>
+			</li>
+		
+		
+			<li class="author-dateline-social">
+				<div class="meta-twitter">
+					<a class="twitter-follow" target="_blank" data-component="meta-twitter-handle" data-link-name="twitter-handle" href="https://twitter.com/JamesAndStuff">
+						<svg viewBox="0 0 15 12" height="0.813em" width="0.938em" y="0" x="0" class="twitter-icon">
+							<path d="M15,1.422c-0.541,0.241-1.128,0.404-1.74,0.477c0.625-0.376,1.106-0.969,1.331-1.678
+							c-0.584,0.347-1.235,0.602-1.924,0.737c-0.555-0.59-1.342-0.956-2.21-0.956c-1.675,0-3.03,1.354-3.03,3.028
+							c0,0.236,0.027,0.468,0.077,0.692C4.986,3.594,2.756,2.39,1.262,0.556C1.001,1.002,0.851,1.522,0.851,2.078
+							c0,1.051,0.536,1.977,1.348,2.521C1.702,4.582,1.237,4.446,0.828,4.222c0,0.013,0,0.025,0,0.037c0,1.467,1.043,2.691,2.429,2.971
+							C3.003,7.297,2.735,7.334,2.459,7.334c-0.196,0-0.387-0.018-0.57-0.052c0.384,1.204,1.502,2.078,2.83,2.102
+							c-1.035,0.813-2.343,1.299-3.76,1.299c-0.247,0-0.487-0.015-0.726-0.044C1.574,11.498,3.167,12,4.879,12
+							c5.571,0,8.616-4.616,8.616-8.618c0-0.13,0-0.263-0.006-0.393C14.08,2.562,14.592,2.031,15,1.422z"/>
+						</svg> 
+						
+							<div class="contact">
+								@JamesAndStuff
+							</div> 
+						 
+				    </a>
+				</div>
+			</li>
+		
+		
+			<li class="author-dateline-time">
+				<time datetime="2016-03-18" itemprop="datePublished">
+					18 March 2016
+				</time>
+			</li>
+		
+	</ul>
+
+
+				
+<div class="tools-meta-outer">
+	<ul class="tools-container">
+		<li>
+			<div title="Tweet" class="article-tools twitter-icon icons pos1">
+				<span title="Tweet" class="screen-reader-text">Tweet</span>
+				
+				<a href="https://twitter.com/share?text=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+				
+			</div>
+		</li>
+		<li>
+			<div title="Facebook" class="article-tools facebook-icon icons pos2">
+				<span class="screen-reader-text">Facebook</span>
+				
+				<a href="https://www.facebook.com/sharer.php?u=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+				
+			</div>
+		</li>
+
+		
+
+			
+			<li>
+			   <div data-social-tracking="added" title="Reddit" class="article-tools reddit-icon icons pos4">
+					
+						<a href="https://reddit.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+								
+			   </div>
+			</li>
+		
+
+			
+			<li>	
+			  <div data-social-tracking="added" title="Stumbleupon" class="article-tools stumbleupon-icon icons pos5">	  
+				
+					<a href="http://www.stumbleupon.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+				
+			  </div>
+			</li>
+		
+
+		
+		
+		
+
+		
+		
+		
+		
+		<li>
+			<div title="Save article" class="article-sticky-tools save-icon icons pos5">
+				<span class="screen-reader-text">Save this article</span>
+				<a onclick="savedArticleStatus(); return false;" href="#">&nbsp;</a>
+			</div>
+		</li>
+		
+		
+		<li>
+			<div title="Send to" class="article-tools email-icon icons pos6">
+				<span class="screen-reader-text">Send to</span>
+				
+				<a target="_blank" rel="nofollow" href="/cdn-cgi/l/email-protection#17286462757d7274632a407e7973786064372627375a78757e7b723765727b7276647237737663723b3767657e74723b377372617e74726437767973377172766362Xres&amp;body=%0D%0A%0D%0Ahttp%3A%2F%2Fwww.v3.co.uk%2F2421044">&nbsp;</a>
+				
+			</div>
+		</li>
+	</ul>
+	<!-- tools end -->
+	<div class="article-meta-numbers">      
+		      
+	    <div class="comment-count">
+	    	<a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features#disqus_thread">0 Comments</a>
+	    </div>
+	    
+	    <div class="social-count">
+	    	 <a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features"><span class="share-total"></span></a>
+	    </div>
+	</div>
+</div><!-- tools-meta-outer end -->
+			</div>
+			
+			
+			<div id="rdm-below-summary"></div>
+			<div class="article-page-body-content">
+				
+				 
+
+
+
+
+	
+	   
+	
+	
+	
+	
+	<p>The <a href="http://www.v3.co.uk/v3-uk/news/2417405/microsoft-updates-windows-10-mobile-amid-doubts-over-firms-phone-plans" title="V3 -Microsoft updates Windows 10 Mobile amid doubts over firm's phone plans">Windows Phone platform has struggled to find the same success</a> as its Android and iOS rivals. Microsoft is attempting to change this with Windows 10 Mobile, a new smartphone operating system designed to synchronise with the <a href="http://www.v3.co.uk/v3-uk/review/2419362/microsoft-windows-10-review" target="_blank" title="V3 - Windows 10 review">well-received Windows 10</a> desktop and tablet OS.</p>
+<p>Windows 10 Mobile has already launched in the US, via the Microsoft Lumia 950 and Lumia 950 XL smartphones, and is due to arrive in the UK the same way. Read on for more details on the new OS, and don't forget to check our <a href="http://www.v3.co.uk/v3-uk/v3-co-uk-labs-blog/2436649/windows-10-mobile-review-hands-on" target="_blank" title="V3 - Windows 10 Mobile review: Hands-on">Windows 10 Mobile hands-on&nbsp;review</a> - using the Lumia 950 XL - to see what we think.</p>
+	
+	<div id="rdm-above-article-related"></div>
+	
+	
+	<p><strong>Release date<br /></strong>Microsoft has now confirmed that <a href="http://www.v3.co.uk/v3-uk/news/2451566/windows-10-mobile-is-finally-available-for-existing-lumia-devices" target="_blank" title="V3: Windows 10 Mobile is finally available for existing Lumia devices">Windows 10 Mobile will be available as an update to existing Windows Lumia Phone devices</a> alongside the two new Lumia handsets - the Lumia 950 and Lumia 950 XL - which shipped on 3 December 2015. It also runs on the Lumia 550, which released in Januray 2016.</p>
+	
+	
+	
+	<p><a href="https://blogs.windows.com/windowsexperience/2016/03/17/upgrading-existing-windows-phone-8-1-devices-to-windows-10-mobile/" target="_blank" title="Windows 10 blog">On its official blog</a> Microsoft has listed the devices that should now be able to upgrade to Windows 10 Mobile as follows: Lumia 1520, 930, 640, 640XL, 730, 735, 830, 532, 535, 540, 635 1GB, 636 1GB, 638 1GB, 430, 435, BLU Win HD w510u, BLU Win HD LTE x150q, and the MCJ Madosma Q501.</p>
+<p>Like Windows 10 prior to its launch, test builds of Windows 10 Mobile were available to members of the Windows Insider programme. However, as we found in our <a href="http://www.v3.co.uk/v3-uk/v3-co-uk-labs-blog/2422591/windows-10-mobile-insider-preview-hands-on-with-the-upcoming-smartphone-os" title="V3 - Windows 10 Mobile Insider Preview: Hands-on with the upcoming smartphone OS">Windows 10 Mobile Insider Preview hands-on</a>, these preview builds weren't quite ready for everyday use; features were missing, certain apps wouldn't open and performance was generally sluggish. We've found the launch build to be much more stable and feature-rich, although it still feels like a work-in progress compared with the most recent iOS and Android versions.</p>
+<p><img alt="Windows 10 Mobile home screen" border="0" height="334" src="/IMG/823/323823/windows-10-mobile-home-screen-540x334.jpg?1447306023" width="540"  class="center"   style="display: block;" title="Windows 10 Mobile home screen"  width="540" height="334" /></p>
+<p>&nbsp;</p>
+<p><strong>Price</strong><br />Windows 10 Mobile will be a free upgrade to certain Windows Phone 8.1 handsets, so like its predecessor, as well as Android and iOS, it won't be a paid-for product. The only requirement, besides owning a suitable phone, is to install the Lumia Denim software update beforehand.</p>
+<p>The downside is that control over when each phone will receive the upgrade lies entirely with Microsoft. Furthermore, not all eligible users will see their phones upgraded on launch day. It could be released in waves, with some handsets receiving the update days or even weeks before others.</p>
+<p><strong>Supported devices</strong><br />Microsoft announced at the 2015 Mobile World Congress in March that devices currently running Windows Phone 8.1 will be upgradeable to Windows 10 Mobile.</p>
+<p>However, the company has confirmed only a limited list of Microsoft/Nokia Windows Phones due to upgrade to Windows 10 Mobile: the Lumia 430, 435, 532, 535, 540, 640, 640 XL, 735, 830 and 930.</p>
+<p>This excludes the Lumia 520, 530, 625, 630, 635, 925, 1020, 1320 and 1520, all of which are still being sold on Microsoft's website. That isn't to say these devices will never be upgradeable to Windows 10 Mobile - indeed, <a href="http://windows.microsoft.com/en-gb/windows/preview-supported-phones" target="_blank" title="Microsoft - Supported phones for Windows Mobile Insider Preview">all of them are compatible with the Windows 10 Mobile Insider Preview</a> - but Microsoft may stagger the rollout by temporarily limiting it to certain devices.</p>
+<p><img alt="Windows 10 Mobile Universal Apps" border="0" height="334" src="/IMG/824/323824/windows-10-mobile-universal-apps-540x334.jpg?1447305708" width="540"  class="center"   style="display: block;" title="Windows 10 Mobile Universal Apps"  width="540" height="334" /></p>
+<p>In any case, hope remains even for non-Nokia smartphones. The HTC One M8 For Windows isn't included on Microsoft's list, but received its first compatible Windows 10 Mobile Insider build earlier this year.</p>
+<p>Indeed, the 'Recommended components' listed on Microsoft's own site do not specify the need for a Lumia handset. These recommended specs suggest that at least 1GB of RAM, a 3.5in display or larger and at least a 1,400mAh battery should be included on all Windows 10 Mobile devices. Even though these aren't the absolute minimum specs, they're still quite low by modern smartphone standards, so the range of compatible models should be quite broad.</p>
+<p>Microsoft has, of course, released two phones for Windows 10 Mobile, the Lumia 950 and Lumia 950 XL.</p>
+<p><strong>Features</strong><br />Even prior to launch,&nbsp;<a href="http://www.v3.co.uk/v3-uk/news/2409938/windows-10-mobile-five-of-the-best-features-coming-to-your-smartphone" target="_blank" title="V3 - Windows 10 Mobile: Five of the best features coming to your smartphone">Windows 10 Mobile was equipped with a range of interesting features</a>.</p>
+<p>For instance, data and settings, as well as things like alarms and notifications, will automatically sync between a Windows 10 Mobile handset and a Windows 10 machine logged in under the same Microsoft account.</p>
+<p>This is part of an attempt by Microsoft to ensure that Windows 10 Mobile mirrors the full Windows 10 as closely as possible. Windows 10 Mobile also includes OneDrive, so documents and photos can be synced with Windows 10 desktops, laptops and tablets via the cloud.</p>
+<p>Universal Apps are another key tool in Microsoft's plan to homogenise the mobile and desktop experiences. Comprising first-party and third-party apps vetted by Microsoft, Universal Apps will work on Windows 10 and Windows 10 Mobile, and share feature parity across the two platforms, right down to similar or identical UIs.</p>
+<p>Currently confirmed Universal Apps include Microsoft Office Mobile and <a href="http://www.v3.co.uk/v3-uk/review/2420393/microsoft-edge-review" target="_blank" title="V3 - Microsoft Edge review">Microsoft Edge, a new and much-improved replacement browser for Internet Explorer</a>. Third-party Universal Apps from <em>The Guardian</em> and Audible have also since been added.</p>
+<p>Universal Apps play a key role in Continuum, a feature which allows Windows 10 Mobile-powered smartphones to act as a pseudo-PC by connecting to a display, mouse and keyboatd via a separate Microsoft Display Dock. This produces a desktop-style UI on the screen, and allows Universal Apps to run on the display while the handset can continue to be used for other things.</p>
+<p>Cortana, Microsoft's digital assistant, reappears in Windows 10 Mobile after being introduced in Windows Phone 8.1. Cortana can still be used to set up reminders and search the web, but has received a few upgrades.</p>
+<p>It's possible to send emails via voice commands in Windows 10 Mobile, for instance, and Cortana will tailor search results according to the user's tastes and preferences.</p>
+<p>These preferences - for certain music, films, food and the like - can be added directly, or Cortana can 'learn' them over time. The digital assistant is also integrated into the Edge browser, and can search for highlighted words, names and locations without navigating away from the page.</p>
+<p><img alt="Windows 10 Mobile comparison" border="0" height="334" src="/IMG/825/323825/windows-10-mobile-comparison-540x334.PNG?1447305180" width="540"  class="center"   style="display: block;" title="Windows 10 Mobile comparison"  width="540" height="334" /></p>
+<p>A redesigned Action Centre is also present. Similar to its excellent Windows 10 counterpart, the Windows 10 Mobile Action Centre is a highly versatile menu that, in addition to listing notifications, provides quick access to and/or toggle buttons for the Camera app, Airplane Mode, WiFi settings, brightness settings, Bluetooth, torch, VPN setup tool, rotation lock, general Settings menu and more.</p>
+<p>The Windows 10 Mobile interface isn't too far off that of Windows Phone 8.1, although it has been updated to look a bit more modern. Live Tiles are translucent, so they don't completely block out custom backgrounds, and a new list of recently installed apps is now instantly accessible by swiping to the right on the home screen.</p>
+<p>One of the most attractive features of Windows 10 Mobile is its <a href="http://www.v3.co.uk/v3-uk/news/2406405/microsoft-puts-apple-and-android-apps-on-windows-10" target="_blank" title="Microsoft puts Apple and Android apps on Windows 10">new-found compatibility with Android and iOS apps</a>. Microsoft has announced various toolkits aimed at getting app developers to port their creations to the new Windows OS.</p>
+<p>These include one that will enable Android Java and C++ code to run on Windows 10 Mobile, and one that allows developers to compile iOS objective C, used for iPhone and iPad apps, in Visual Studio to create a Windows version.</p>
+<p>In theory, this should result in a much greater selection of Windows 10 Mobile apps compared with Windows Phone 8.1.</p>
+<p>New features continue to be added in the ongoing preview builds. Windows 10 Mobile Insider Preview Build 10572, for instance, enabled missed call notifications to be sent to a PC running Windows 10, allowing users to respond with text messages sent straight from this PC instead of their smartphone. Universal apps for Skype calls, messaging and video were also been added in this build, as was the ability to book Uber cabs through Cortana and save offline maps to an SD card.</p>
+<p><strong>Security and privacy</strong><br />Universal Apps sees Microsoft taking the Apple-like position of requiring the app to run in its own sandbox. In the event that the app is infected with malware, this should stop the infection spreading, as the app's processes are run separately from the rest of the system.</p>
+<p>Developers needn't worry too much about Windows 10 Mobile becoming a closed-off ecosystem entirely under Microsoft's control, as only apps with Universal App functionality will need to meet the sandbox requirement.</p>
+<p>A recent Windows Insider build update also added a Device Encryption function for securing the handset's internal storage, similar to a feature offered in Android. It's entirely optional, but should be a welcome layer of additional protection.</p>
+<p>Lastly, Windows 10 Mobile will add the ability to set individual app permissions for location, something that was missing in Windows Phone 8 and 8.1.</p>
+<script src="https://content.jwplatform.com/players/DsXtVRpz-PqnZTdIO.js" type="text/javascript"></script></p>
+	
+
+				
+
+				<div class="pagination pagination-holder">
+	
+</div>
+
+				
+				
+				
+				<!-- <footer> -->
+				<div id="rdm-below-article-body"></div>
+
+<ul class="tools-container">
+	<li>
+		<div title="Tweet" class="article-tools twitter-icon icons pos1">
+			<span title="Tweet" class="screen-reader-text">Tweet</span>
+			
+			<a href="https://twitter.com/share?text=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+			
+		</div>
+	</li>
+	<li>
+		<div title="Facebook" class="article-tools facebook-icon icons pos2">
+			<span class="screen-reader-text">Facebook</span>
+			
+			<a href="https://www.facebook.com/sharer.php?u=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+			
+		</div>
+	</li>
+
+	
+
+		
+	<li>
+	   <div data-social-tracking="added" title="Reddit" class="article-tools reddit-icon icons pos4">
+			
+				<a href="https://reddit.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+						
+	   </div>
+	</li>
+	
+
+	
+	<li>	
+	  <div data-social-tracking="added" title="Stumbleupon" class="article-tools stumbleupon-icon icons pos5">	  
+		
+			<a href="http://www.stumbleupon.com/submit?url=Windows+10+Mobile+release+date%2C+price%2C+devices+and+features&amp;url=http://www.v3.co.uk/2421044" rel="nofollow" target="_blank">&nbsp;</a>
+		
+	  </div>
+	</li>
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+	
+	<li>
+		<div title="Save article" class="article-sticky-tools save-icon icons pos5">
+			<span class="screen-reader-text">Save this article</span>
+			<a onclick="savedArticleStatus(); return false;" href="#">&nbsp;</a>
+		</div>
+	</li>
+	
+	
+	<li>
+		<div title="Send to" class="article-tools email-icon icons pos6">
+			<span class="screen-reader-text">Send to</span>
+			
+			<a target="_blank" rel="nofollow" href="/cdn-cgi/l/email-protection#39064a4c5b535c5a4d046e50575d564e4a1908091974565b50555c194b5c555c584a5c195d584d5c1519494b505a5c15195d5c4f505a5c4a1958575d195f5c584d4cXres&amp;body=%0D%0A%0D%0Ahttp%3A%2F%2Fwww.v3.co.uk%2F2421044">&nbsp;</a>
+			
+		</div>
+	</li>
+</ul>
+				<!-- tools end -->
+				
+<ul class="meta-taxonomy-list related-links">
+	<li>
+		Topics
+	</li>
+	
+	
+	<li>
+		<a href="/category/software/mobile-software">Mobile Software</a>
+	</li>
+	
+	
+	
+	
+	<li>
+		<a href="http://www.v3.co.uk/tag/windows-10">Windows 10</a>
+	</li>
+	
+	<li>
+		<a href="http://www.v3.co.uk/tag/microsoft">Microsoft</a>
+	</li>
+	
+	<li>
+		<a href="http://www.v3.co.uk/tag/windows-phone">Windows Phone </a>
+	</li>
+	
+	
+</ul>
+
+
+				<!-- about author start -->
+				
+
+	
+	
+	
+
+				<!-- about author end -->
+			</div>
+		</div>
+	</article>
+	<!-- article chunk end  -->
+	<div id="rdm-above-series-blog"></div>
+		
+	
+		<section class="taboola-content" id="taboola-below-article-thumbnails">
+		    <div id="taboola-below-article-thumbnails"></div>
+		    <script type="text/javascript">
+		        window._taboola = window._taboola || [];
+		        _taboola.push({
+		        mode: 'thumbnails-rd-a',
+		        container: 'taboola-below-article-thumbnails',
+		        placement: 'Below Article Thumbnails',
+		        target_type: 'mix'
+		        });
+		    </script>
+		</section>
+	
+	
+	
+	<div id="rdm-above-more-news"></div>
+	
+<section class="news-articles">
+	<header class="related-listings-header">
+		<h4 itemprop="name">V3 Latest</h4>
+	</header>
+	<div class="section group">
+		
+		<article class="col span_2_of_4 first-element">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams"><img alt="radar" height="142" src="/IMG/457/254457/radar-silhouette-230x142.gif?1435045963" title="radar" width="230" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				
+				
+     <h5 class="listings-article-title"><a href="/v3-uk/news/2476572/thoughtworks-bi-annual-technology-radar-highlights-emerging-trends-in-augmented-reality-and-changing-structure-of-software-teams" title="ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams">ThoughtWorks’ bi-annual Technology Radar highlights emerging trends in augmented reality and changing structure of software teams</a></h5>
+
+				<p class="section-story">
+					
+	Leading technologists issue trends report alongside visualization tool for companies to develop their own tech strategies
+
+
+				</p>
+				
+				<ul class="article-meta-details" >
+	
+	<li>
+		
+		<a href="/category/cloud-computing" class="v3-uk-link">Cloud Computing</a>
+	</li>
+	
+	
+	<li>
+		<time datetime="2016-11-07" itemprop="datePublished">
+			07 November 2016
+		</time>
+	</li>
+	
+	
+</ul>
+				
+			</div>
+		</article>
+		
+		<article class="col span_2_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise"><img alt="mike-mason-new" height="142" src="/IMG/610/357610/mike-mason-new-230x142.jpeg?1478518589" title="mike-mason-new" width="230" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				
+				
+     <h5 class="listings-article-title"><a href="/v3-uk/news/2476563/agile-devops-and-the-algorithmic-enterprise" title="Agile, DevOps and the algorithmic enterprise">Agile, DevOps and the algorithmic enterprise</a></h5>
+
+				<p class="section-story">
+					
+	Mike Mason, technology activist and adviser to the CTO at ThoughtWorks, discusses the next big thing in technology, and how business and tech leaders should prepare
+
+
+				</p>
+				
+				<ul class="article-meta-details" >
+	
+	<li>
+		
+		<a href="/category/cloud-computing" class="v3-uk-link">Cloud Computing</a>
+	</li>
+	
+	
+	<li>
+		<time datetime="2016-11-07" itemprop="datePublished">
+			07 November 2016
+		</time>
+	</li>
+	
+	
+</ul>
+				
+			</div>
+		</article>
+		
+		<article class="col span_2_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios"><img alt="WhatsApp logo" height="142" src="/IMG/779/354779/whatsapp-official-230x142.png?1474630598" title="WhatsApp logo" width="230" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				
+				
+     <h5 class="listings-article-title"><a href="/v3-uk/news/2476541/whatsapp-finally-rolls-out-gif-support-on-ios" title="WhatsApp finally rolls out GIF support on iOS  ">WhatsApp finally rolls out GIF support on iOS  </a></h5>
+
+				<p class="section-story">
+					
+	Update also brings GIF editor and Live Photos support
+
+
+				</p>
+				
+				<ul class="article-meta-details" >
+	
+	<li>
+		
+		<a href="/category/software/operating-systems" class="v3-uk-link">Operating Systems</a>
+	</li>
+	
+	
+	<li>
+		<time datetime="2016-11-07" itemprop="datePublished">
+			07 November 2016
+		</time>
+	</li>
+	
+	
+</ul>
+				
+			</div>
+		</article>
+		
+		<article class="col span_2_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem"><img alt="elon-musk" height="142" src="/IMG/721/268721/elon-musk-230x142.jpeg?1434690181" title="elon-musk" width="230" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				
+				
+     <h5 class="listings-article-title"><a href="/v3-uk/news/2476531/elon-musk-says-universal-income-will-solve-automation-job-loss-problem" title="Elon Musk says universal income will solve automation job loss problem">Elon Musk says universal income will solve automation job loss problem</a></h5>
+
+				<p class="section-story">
+					
+	Many tech roles will be automated out of existence, and universal income could be the answer
+
+
+				</p>
+				
+				<ul class="article-meta-details" >
+	
+	<li>
+		
+		<a href="/category/cloud-computing" class="v3-uk-link">Cloud Computing</a>
+	</li>
+	
+	
+	<li>
+		<time datetime="2016-11-07" itemprop="datePublished">
+			07 November 2016
+		</time>
+	</li>
+	
+	
+</ul>
+				
+			</div>
+		</article>
+		
+	</div>
+</section>
+<!-- end more news -->
+
+	<!-- end more news articles  -->
+	
+		<div id="rdm-above-comments"></div>
+		
+			
+<section class="comment">
+	<div>
+		<button style="" class="btn comments centerize">
+			<span class="font-nada" style="float:right; text-align:left; margin-right:30px;">Add a comment</span>
+			<div>
+				<a href="http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features">Add a comment</a>
+			</div>
+		</button>
+		<div class="list-holder">
+			<div class="list-inner">
+				<div id="disqus_thread"></div>
+				<script type="text/javascript">
+					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					var disqus_shortname = 'v3-live';
+					// required: replace example with your forum short name
+					var disqus_developer = 0;
+					var disqus_identifier = '/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features';
+					var disqus_title = "Windows 10 Mobile release date, price, devices and features";
+					var disqus_url = "http://www.v3.co.uk/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features";
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+					 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+					 dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+					 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					 })();
+				</script>
+				<noscript>
+					Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+				</noscript>
+				<a href="https://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+			</div>
+		</div>
+		<!-- comment holder end -->
+	</div>
+</section>
+
+		
+	
+	<div class="scrollup">
+		Back to Top
+	</div>
+
+
+		</div><!--  end main-content -->
+		<div role="complementary" class="sidebar">
+			<div id="rdm-rhc-top" class="ad-slot"></div>
+
+ 	<!-- popular-articles - start -->
+
+<section class="popular-articles">
+	<header class="related-listings-header">
+		<h4 itemprop="name">Most read</h4>
+	</header>
+	<div class="section group">
+		
+		<article class="col span_1_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/review/2476506/pixel-xl-vs-oneplus-3-review"><img alt="pixel-xl-vs-op3" height="87" src="/IMG/630/357630/pixel-xl-vs-op3-140x87.jpg?1478279480" title="pixel-xl-vs-op3" width="140" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				<h5>
+     <a href="/v3-uk/review/2476506/pixel-xl-vs-oneplus-3-review" title="Pixel XL vs OnePlus 3 review">Pixel XL vs OnePlus 3 review</a>
+</h5>
+			</div>
+		</article>
+		
+		<article class="col span_1_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476416/uk-arrests-14-for-gbp11m-malware-money-laundering-racket"><img alt="Malware cyber criminal" height="87" src="/IMG/028/282028/malware-security-hooded-data-cyber-crime-criminal-crook-140x87.jpg?1446541583" title="Malware cyber criminal" width="140" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				<h5>
+     <a href="/v3-uk/news/2476416/uk-arrests-14-for-gbp11m-malware-money-laundering-racket" title="UK arrests 14 for £11m malware money laundering racket">UK arrests 14 for £11m malware money laundering racket</a>
+</h5>
+			</div>
+		</article>
+		
+		<article class="col span_1_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2475831/blackberry-dtek70-mercury-rumours-release-date-and-keyboard"><img alt="blackberry-mercury-rumours" height="87" src="/IMG/134/357134/blackberry-mercury-rumours-140x87.jpeg?1477918016" title="blackberry-mercury-rumours" width="140" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				<h5>
+     <a href="/v3-uk/news/2475831/blackberry-dtek70-mercury-rumours-release-date-and-keyboard" title="BlackBerry DTEK70 Mercury rumours, release date and keyboard">BlackBerry DTEK70 Mercury rumours, release date and keyboard</a>
+</h5>
+			</div>
+		</article>
+		
+		<article class="col span_1_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2476532/tesco-bank-breach-sees-money-stolen-from-20-000-accounts"><img alt="tesco bank" height="87" src="/IMG/606/349606/tesco-bank-140x87.jpeg?1466593159" title="tesco bank" width="140" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				<h5>
+     <a href="/v3-uk/news/2476532/tesco-bank-breach-sees-money-stolen-from-20-000-accounts" title="Tesco Bank breach sees money stolen from 20,000 accounts">Tesco Bank breach sees money stolen from 20,000 accounts</a>
+</h5>
+			</div>
+		</article>
+		
+		<article class="col span_1_of_4">
+			
+			<div class="image-text-group-a">
+				
+<a href="/v3-uk/news/2474003/huawei-mate-9-leaks-release-date-and-price"><img alt="huawei-mate-9-lineup" height="87" src="/IMG/514/357514/huawei-mate-9-lineup-140x87.jpeg?1478184104" title="huawei-mate-9-lineup" width="140" /></a>
+
+
+
+
+			</div>
+			
+			<div class="image-text-group-b">
+				<h5>
+     <a href="/v3-uk/news/2474003/huawei-mate-9-leaks-release-date-and-price" title="Huawei Mate 9 release date, specs and price">Huawei Mate 9 release date, specs and price</a>
+</h5>
+			</div>
+		</article>
+		
+	</div><!-- end first section group -->
+</section>
+
+<!-- popular-articles - end -->
+
+
+ 
+<div id="rdm-rhc-bottom" class="ad-slot"></div>
+		</div><!--  end sidebar -->
+	</main>
+</div>
+
+				</div>
+				
+
+<aside class="content">
+	<div class="content-inner content-full-width">
+		<div class="main-content">
+			
+				<div id="rdm-above-footer" class="ad-slot-full"></div>
+			
+		</div>
+	</div>
+</aside>
+				<footer class="main-footer">
+	<div class="main-footer-content main-footer-links">
+		<div class="main-footer-content-inner content-width">
+               
+
+<ul class="main-footer-nav">
+<li class="menu-title"><a href="http://www.v3.co.uk/static/about-us" title="">Contact</a></li>
+<li class="menu-title"><a href="http://btgmarketingsolutions.incisivemedia.com" title="">Marketing solutions</a></li>
+<li class="menu-title"><a href="http://www.enterpriseitevents.com/" title="">Enterprise IT Events</a></li>
+<li class="menu-title"><a href="http://www.incisivemedia.com/our-story/" target="_blank" title="">About Incisive Media</a></li>
+<li class="menu-title"><a href="http://www.incisivemedia.com/terms-and-conditions/" target="_blank" title="">Terms &amp; conditions</a></li>
+<li class="menu-title"><a href="http://www.incisivemedia.com/privacy-policy/" target="_blank" title="">Privacy policy</a></li>
+</ul>
+			<ul class="footer-tools-content main-footer-align-right">
+				
+<li>
+	<div class="nav-tools rss-icon">
+		<a href="http://www.v3.co.uk/static/rss" target="_blank">RSS</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools twitter-icon">
+		<a href="https://twitter.com/V3_co_uk" target="_blank">Twitter</a>
+	</div>
+</li>
+
+
+
+<li>
+	<div class="nav-tools newsletters">
+		<a href="http://email.v3.co.uk/k/Incisive-Media/v3_sign_up_form" target="_blank">Newsletters</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools facebook-icon">
+		<a href="https://www.facebook.com/pages/V3couk/117466641415?ref=ts" target="_blank">Facebook</a>
+	</div>
+</li>
+
+
+
+<li>
+	<div class="nav-tools youtube">
+		<a href="https://www.youtube.com/v3" target="_blank">YouTube</a>
+	</div>
+</li>
+
+
+<li>
+	<div class="nav-tools apps">
+		<a href="http://www.v3.co.uk/static/apps" target="_blank">Apps</a>
+	</div>
+</li>
+
+			</ul>
+
+		</div>
+	</div>
+	<div class="main-footer-content main-footer-copyright">
+		<div class="main-footer-content-inner content-width">
+			<div class="incisivemedia-footer">
+				
+
+<p style="float: left;"><a href="http://www.incisivemedia.com/" target="_blank" title="Incisive Media 2015"> <span class="logo"> <span class="screen-reader-text">&copy; Incisive Business Media Limited</span> </span> </a></p>
+<p class="copyright-full">&copy; Incisive Business Media (IP) Limited, Published by Incisive Business Media Limited, Haymarket House, 28-29 Haymarket, London SW1Y 4RX, are companies registered in England and Wales with company registration numbers 9177174 &amp; 9178013</p>
+			</div>
+			<div class="incisivemedia-accreditation">
+				
+
+<div class="accreditation-logos"><span class="screen-reader-text">Digital publisher of the year 2010, 2013 &amp; 2016</span></div>
+<p class="accredit-text"><a href="http://www.incisivemedia.com/our-news/incisive-voted-best-digital-publisher-uk-peers-record-third-time/" target="_blank">Digital publisher of the year 2010, 2013 &amp; 2016</a></p>
+			</div>
+
+		</div>
+	</div>
+</footer>
+			</div>
+		
+		
+		<script src="/javascripts/cookie.js?1461068937" type="text/javascript"></script>
+
+		<script type="text/javascript">
+		  jQuery(document).ready(function() {
+		    if(getCookie("series_token_error_message")!=null && getCookie("series_token_error_message") !=""){
+			var userlogin_path=location.pathname;
+			if(userlogin_path == "/userlogin"){
+			$("span#login_error_message_header").html(getCookie("series_token_error_message").replace(/\+/g, " ")).show();
+			deleteCookie("series_token_error_message");
+			}}});
+			 jQuery(document).ready(function() {
+			$("#userlogin .btn.login").on("click",function(){
+			$("span#login_error_message_header").html("").hide();
+			})});
+		</script>
+		
+		<script type="text/javascript">
+		  jQuery(document).ready(function() {
+		      if(getCookie("series_token_error_message")!=null && getCookie("series_token_error_message") !=""){
+		      if(getCookie("series_token_error_message").match("articles$") !=null){
+		   $("span#login_error_message_teaser").html(getCookie("series_token_error_message").replace(/\+/g, " ").replace(/\w+$/,'')).show();
+		   deleteCookie("series_token_error_message");
+		   }
+		   }
+		   });
+		    jQuery(document).ready(function() {
+		   $("#login_barrier .login_submit").on("click",function(){
+		   $("span#login_error_message_teaser").html("").hide();
+		   });});
+		</script>
+
+         <script src="http://assets.v3.co.uk/cdn/v3/scripts/scripts.js"></script>
+         
+            <script src="/javascripts/KRESearch.js?1461068937" type="text/javascript"></script>
+        
+		<script type="text/javascript">
+		    jQuery(document).ready(function() {
+		    	$("#login").hover(function(){
+			       $(".login-offset").hide();
+				});
+		    	 setTimeout(function(){ 
+		    	 	jQuery("#register,#login,#follow,#free-trial").show();
+					if(getCookie("logged_in") == "false"){
+							jQuery("#register,#login,#follow,#free-trial").show();
+						    jQuery("#user").hide();
+					}else if(getCookie("logged_in") == "true"  || getCookie("logged_in") == "expired"|| getCookie("logged_in") == null){
+							if(getCookie("first_name")!= null && getCookie("subc")!= null && getCookie("first_name")!="" && getCookie("subc")!=""){
+								$("#user,#follow").show();
+						        $("#register,#login,#free-trial").hide();
+						        jQuery(".user-info").html('My account');
+								if(getCookie("institutional_login") == "true"){
+									if(getCookie("individual_login") == "true"){
+										$(".individual").show();
+										$('.institutional').hide();
+										$(".user-info").html('My account');
+										$("#user").removeClass("main-top-institution");
+									}else{
+										$(".individual").hide();
+										$(".user-info").html('Welcome');
+										$("#user").addClass("main-top-institution");
+									}
+								}else{
+										$(".individual").show();
+										$("#user").removeClass("main-top-institution");
+								}
+							}else{
+									jQuery.ajax({
+			                        type : 'GET',
+			                        dataType : 'html',
+			                        beforeSend : function(xhr) {
+			                            xhr.setRequestHeader('X-CSRF-Token', jQuery('meta[name="csrf-token"]').attr('content'))
+			                        },
+			                        url : '/home/user_info',
+			                        success : function(data) {
+			                            if(getCookie("logged_in") == "true" || getCookie("logged_in") == "expired" ){
+			                                if(getCookie("first_name")!= null && getCookie("subc")!= null && getCookie("first_name")!="" && getCookie("subc")!=""){
+												$("#user,#follow").show();
+						        				$("#register,#login,#free-trial").hide();
+						        				jQuery(".user-info").html('My account');
+												if(getCookie("institutional_login") == "true"){
+													if(getCookie("individual_login") == "true"){
+														$(".individual").show();
+														$('.institutional').hide();
+														$(".user-info").html('My account');
+														$("#user").removeClass("main-top-institution");
+													}else{
+														$(".individual").hide();
+														$('.institutional').show();
+														$(".user-info").html('Welcome');
+														$("#user").addClass("main-top-institution");
+													}
+												}else{
+														$(".individual").show();
+														$("#user").removeClass("main-top-institution");
+												}
+			                                }
+			                            }
+			                           else{
+										   $("#register,#login,#follow,#free-trial").show();
+									 if(getCookie("series_token_error_message")!=null && getCookie("series_token_error_message") !=""){
+										   var userlogin_path=location.pathname;
+										   if(userlogin_path != "/userlogin" &&  (getCookie("series_token_error_message").match("articles$") == null)){
+										   location.pathname="/userlogin";
+						                 }}
+										}
+			                        }
+			                    });
+							}
+					}
+						}, 2000);
+				$("#user").hover(function(event){
+				   event.preventDefault();
+				   if(getCookie("institutional_login") == "true"){
+						if(getCookie("individual_login") == "true"){
+							$(".individual").show();
+							$('.institutional').hide();
+						}else{
+							$(".individual").hide();
+							$('.institutional').show();
+						}
+					}
+				});
+			});
+		</script>
+		 <script type="text/javascript">
+/*script for login */
+
+    jQuery(document).on('click', '.login_form_submit.login_submit', function(event) {
+    	event.preventDefault();
+        jQuery.ajax({
+            url : '/home/verify_subscription_login',
+            type : 'POST',
+            data : jQuery("#userloginpop").serialize(),
+            dataType : 'json',
+            beforeSend : function(xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', jQuery('meta[name="csrf-token"]').attr('content'));
+                 $("#follow,#register,#login,#free-trial").hide();
+                  $( "#export_loaders" ).show();
+            },
+            success : function(data) {
+                if (data.status == "true") {
+                	$( "#export_loaders" ).hide();
+                	$("#follow,#user").show();
+                    location.reload();
+                } else {
+                	jQuery("#register,#login,#follow,#free-trial").show();
+                	$( "#export_loaders" ).hide();
+                    jQuery('#login_error_message_header,#login_error_message_teaser').show();
+                    jQuery('#login_error_message_header,#login_error_message_teaser').text(data.message);
+                }
+            }
+        });
+
+    });
+    jQuery(document).on('click', '.btn.login', function(event) {
+    	event.preventDefault();
+        jQuery.ajax({
+            url : '/home/verify_subscription_login',
+            type : 'POST',
+            data : jQuery("#userlogin").serialize(),
+            dataType : 'json',
+            beforeSend : function(xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', jQuery('meta[name="csrf-token"]').attr('content'));
+                  $( "#export_loaders" ).show();
+            },
+            success : function(data) {
+                if (data.status == "true") {
+                	$( "#export_loaders" ).hide();
+                	var a=$(".cls_redirect").attr("value");
+                	location.href=a;
+                } else {
+                	jQuery("#register,#login,#follow,#free-trial").show();
+                	$( "#export_loaders" ).hide();
+                    jQuery('#login_error_message_header,#login_error_message_teaser').show();
+                    jQuery('#login_error_message_header,#login_error_message_teaser').text(data.message);
+                }
+            }
+        });
+
+    });
+    jQuery(document).on('click', '.submit_style.login_submit', function(event) {
+        event.preventDefault();
+
+        jQuery.ajax({
+            url : '/home/verify_subscription_login',
+            type : 'POST',
+            data : jQuery('#login_barrier').serialize(),
+            dataType : 'json',
+            beforeSend : function(xhr) {
+                xhr.setRequestHeader('X-CSRF-Token', jQuery('meta[name="csrf-token"]').attr('content'));
+                 setTimeout(function(){ 
+                  $( "#export_loaders" ).show();
+                 }, 1000);
+            },
+            success : function(data) {
+                if (data.status == "true") {
+                	$( "#export_loaders" ).hide();
+                    location.reload()
+                } else {
+                   jQuery("#register,#login,#follow,#free-trial").show();
+                   $( "#export_loaders" ).hide();
+                   jQuery('#login_error_message_header,#login_error_message_teaser').show();
+                   jQuery('#login_error_message_header,#login_error_message_teaser').text(data.message);
+                }
+            }
+        });
+    });
+    </script>
+    
+	<script type="text/javascript">
+		    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		    var disqus_shortname = 'v3-live'; // required: replace example with your forum shortname
+		 var disqus_identifier = "/v3-uk/feature/2421044/windows-10-mobile-release-date-price-devices-and-features";
+		    /* * * DON'T EDIT BELOW THIS LINE * * */
+		    (function () {
+		        var s = document.createElement('script'); 
+		        s.async = true;
+		        s.type = 'text/javascript';
+		        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+		    }());
+	</script>
+	
+	<!-- Start: GIT body script -->
+
+		 
+             
+				   <script type="text/javascript" src='//assets.v3.co.uk/javascript/live/v3/javascript-v3.body.min.js'></script>
+		
+		
+		<!-- End: GIT body script -->
+		
+		
+			<script type="text/javascript">
+				  window._taboola = window._taboola || [];
+				  _taboola.push({flush: true});
+			</script>
+		
+	<script type="text/javascript">/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script></body>
+</html>

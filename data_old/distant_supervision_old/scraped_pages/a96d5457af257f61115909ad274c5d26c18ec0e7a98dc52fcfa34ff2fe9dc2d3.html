@@ -1,0 +1,3202 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-gb" dir="ltr"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-gb">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg8AVFJTGwcFVlhQDwQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+<meta name="google-site-verification" content="XbHDFDo9cDSfBkKb6vVXSEJq8eSKgKuYBgWbA7YLI5A" >
+<meta property="wb: webmaster" content="a0659333f7c4b1fb" />
+<meta name="msvalidate.01" content="7943642544D92DAFD05F9E185EC93924" />
+<meta property="fb:pages" content="141300252852" />
+<meta name="context" content="match" />
+<meta name="context:matchId" content='2043586' />
+<meta name="context:tab" content='preview' />
+<meta name="context:articleId" content='23198112' />
+<meta name="context:sectionId" content='2896' />
+<link rel="publisher" href="https://plus.google.com/103293707757222394794/"/>
+<title>Aston Villa 0 - 0 Newcastle United Match preview - 07/05/2016 Premier League - Goal.com</title><meta name="page" content="match" >
+<meta name="description" content="Get all of the latest Aston Villa v Newcastle United match preview information from Goal.com, including the editors prediction." ><link rel="alternate" href="http://m.goal.com/s/en-gb/match/aston-villa-vs-newcastle-united/2043586/preview" media="only screen and (max-device-width: 660px)"/>
+<link rel="amphtml" href="http://www.goal.com/en-gb/amp/match/aston-villa-vs-newcastle-united/2043586/preview">
+<link rel="canonical" href="http://www.goal.com/en-gb/match/aston-villa-vs-newcastle-united/2043586/preview" />
+
+<script src="/static/js?files=%2Fjs%2Fredirects.js&version=2016.11.08-v1"></script><meta name="viewport" content="width=device-width, minimum-scale=0.1, initial-scale=1.0">
+
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbase.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fmodule.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fpage.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fsnippets.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbranding.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fmodule%2Fsmartbanner%2Fdesktop.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fdefault%2Flayout%2Fmodal.css%2C%2Fcss%2Fdefault%2Flayout%2Flogin.css%2C%2Fcss%2Fdefault%2Flayout%2Fgigyalogin.css%2C%2Fcss%2Fdefault%2Flayout%2Falert_message.css%2C%2Fcss%2Fdefault%2Frebrand-registration.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbase%2Fcompetitions.css&version=2016.11.08-v1" type="text/css"><link rel="stylesheet" href="http://widget.cloud.opta.net/2.0/css/widgets.opta.css" type="text/css">
+
+
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="http://widget.cloud.opta.net/2.0/css/ie9.widgets.opta.css" media="screen" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="http://widget.cloud.opta.net/2.0/css/ie8.widgets.opta.css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://widget.cloud.opta.net/2.0/css/ie7.widgets.opta.css" media="screen" />
+<![endif]-->
+<script type='text/javascript' src='http://c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+try {
+amznads.getAds('3117');
+} catch(e) {
+
+}
+</script>
+<script type='text/javascript'>
+var key='amznslots';
+window.amzValues="" + amznads.getTokens().join(':');
+</script>
+<script>
+var s_account="goalglobal";</script>
+
+<script src="/static/js?files=%2Fjs%2Fnormalize.js%2C%2Fjs%2Fexternal%2Fmodernizr.min.js%2C%2Fjs%2Fexternal%2Fjquery.min.js%2C%2Fjs%2Fjquery%2Fheader%2C%2Fjs%2Fomniture-icid.js%2C%2Fjs%2Fuser-country-code.js%2C%2Fjs%2Fs_code.js&version=2016.11.08-v1"></script><script type="text/javascript" src="http://cdns.gigya.com/JS/socialize.js?apikey=3_wCLJT75ffirrzBqqAJaHe1zYGgdpb9XFkjxEQfrxraM-xO_if-uM1uVBZZ5r4naE">
+{
+connectWithoutLoginBehavior: 'alwaysLogin',
+enabledProviders: 'facebook,google,yahoo,twitter',
+lang: 'en',
+cid: 'en-gb'
+}
+</script>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<!-- SiteCatalyst code version: H.25. Copyright 1996-2012 Adobe, Inc. All Rights Reserved More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName="Matches : Premier League : Aston Villa - Newcastle United : Aston Villa 0 - 0 Newcastle United Match preview - 07/05/2016 Premier League"
+s.channel="Matches"
+s.prop1="Matches : Premier League"
+s.prop2="Matches : Premier League : Aston Villa - Newcastle United"
+s.prop3="Matches : Premier League : Aston Villa - Newcastle United"
+s.hier1="Matches,Premier League,Aston Villa - Newcastle United"
+s.prop4="preview page"
+s.prop5="Aston Villa 0 - 0 Newcastle United Match preview - 07/05/2016 Premier League"
+s.prop6=s.eVar10="2043586"
+s.server=""
+s.pageType=""
+s.prop11=
+s.prop12="Desktop"
+s.prop13="goalglobal,goaluk"
+s.prop14=""
+s.prop15=s.eVar6="http://www.goal.com/en-gb/match/aston-villa-vs-newcastle-united/2043586/preview"
+s.prop16=s.eVar5=""
+s.prop18="By Joe Wright"
+s.prop19="N"
+s.prop21=""
+s.prop22=""
+s.prop23=""
+s.prop28=""
+s.prop29=""
+s.prop30=""
+s.prop31=""
+s.prop32=""
+s.prop33=""
+s.prop34=""
+s.prop40=""
+s.prop41=""
+s.prop43=""
+s.prop44=""
+s.prop45="2043586"
+s.prop46="8"
+s.prop47="665,664"
+s.prop48="89489,37915"
+s.prop51=""
+s.eVar15=""
+s.events="event13"
+//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script> <script language="JavaScript" type="text/javascript">
+if(navigator.appVersion.indexOf('Opera Mini')>=0) {
+document.write('<img src="http://premiumtv.122.2o7.net/b/ss/goalglobal/1/H.25--NS/0?pageName=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United+%3A+Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&g=%2Fen-gb%2Fmatch%2Faston-villa-vs-newcastle-united%2F2043586%2Fpreview&ch=Matches&c1=Matches+%3A+Premier+League&c2=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United&c3=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United&c4=preview+page&c5=Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&c6=2043586&c12=Desktop&c13=goalglobal%2Cgoaluk&c14=&c15=http%3A%2F%2Fwww.goal.com%2Fen-gb%2Fmatch%2Faston-villa-vs-newcastle-united%2F2043586%2Fpreview&c16=&v5=&c18=By+Joe+Wright&c19=N&c21=&c22=&c23=&c28=&c29=&c30=&c31=&c32=&c33=&c34=&c51=&v15=" height="1" width="1" border="0" alt="" />');
+}
+</script>
+<noscript><img src="http://premiumtv.122.2o7.net/b/ss/goalglobal/1/H.25--NS/0?pageName=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United+%3A+Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&g=%2Fen-gb%2Fmatch%2Faston-villa-vs-newcastle-united%2F2043586%2Fpreview&ch=Matches&c1=Matches+%3A+Premier+League&c2=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United&c3=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United&c4=preview+page&c5=Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&c6=2043586&c12=Desktop&c13=goalglobal%2Cgoaluk&c14=&c15=http%3A%2F%2Fwww.goal.com%2Fen-gb%2Fmatch%2Faston-villa-vs-newcastle-united%2F2043586%2Fpreview&c16=&v5=&c18=By+Joe+Wright&c19=N&c21=&c22=&c23=&c28=&c29=&c30=&c31=&c32=&c33=&c34=&c51=&v15=" height="1" width="1" border="0" alt="" /></noscript><!-- End SiteCatalyst code version: H.25. -->
+<!-- Begin: Google Analytics analytics.js --><script>
+var browserVersion = window.navigator.userAgent.match(/(opera\smini|UCBrowser)\/([\w\.-]+)/i);
+if (browserVersion) {
+
+var currentDate = new Date();
+var currentTime = currentDate.getTime();
+var cookieExpireDays = 730;
+var generateUUID = function () {
+var d = currentTime;
+var uuid = 'xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+var r = (d + Math.random() * 16) % 16 | 0;
+d = Math.floor(d / 16);
+return (c == 'x' ? r : (r&0x3|0x8)).toString(16);
+});
+return uuid;
+};
+var gaTrackingPixel = document.createElement('img');
+var gaTrackingPixelUrl = 'http://gaproxy.goal.com/collect?v=1&tid=UA-62411523-1&cid=915c1a96-ec97-4fc1-901a-819a2970dca9&t=pageview&dh=www.goal.com&dp=%2Fen-gb%2Fmatch%2Faston-villa-vs-newcastle-united%2F2043586%2Fpreview&cd1=soccer&cd2=Desktop&cd10=English+-+United+Kingdom&cd4=Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&cd5=Matches+%3A+Premier+League+%3A+Aston+Villa+-+Newcastle+United+%3A+Aston+Villa+0+-+0+Newcastle+United+Match+preview+-+07%2F05%2F2016+Premier+League&cd9=match+preview&cd3=By+Joe+Wright&cd13=2896&cd14=23198112&cd25=Opera+Mini';
+var gaTrackingPixelUUID = '';
+if (document.cookie.indexOf('_gaproxy') === -1) {
+gaTrackingPixelUUID = generateUUID();
+currentDate.setTime(currentTime + cookieExpireDays * 24 * 3600 * 1000);
+document.cookie = '_gaproxy=' + gaTrackingPixelUUID + '; expires=' + currentDate.toGMTString() + '; path=/';
+} else {
+var cookie = document.cookie.split('; ')
+.filter(function (value) {
+return value.indexOf('_gaproxy') !== -1;
+});
+gaTrackingPixelUUID = cookie[0].split('=')[1];
+}
+gaTrackingPixelUrl = gaTrackingPixelUrl.replace(/(opera\+mini)/i, browserVersion[1].replace(/(\s)/g, '+'));
+gaTrackingPixelUrl += '&uuid=' + gaTrackingPixelUUID;
+gaTrackingPixel.setAttribute('src', gaTrackingPixelUrl);
+document.onload = function() {
+document.getElementsByTagName('body')[0].appendChild(gaTrackingPixel);
+};
+} else {
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-62411523-1', 'auto', {'legacyHistoryImport': false});
+if (typeof Google_Analytics === 'undefined') {
+var Google_Analytics = {};
+Google_Analytics.pageviewExecute = function() {
+ga('set', 'dimension1', "soccer");
+ga('set', 'dimension2', "Desktop");
+ga('set', 'dimension3', "By Joe Wright");
+ga('set', 'dimension4', "Aston Villa 0 - 0 Newcastle United Match preview - 07/05/2016 Premier League");
+ga('set', 'dimension5', "Matches : Premier League : Aston Villa - Newcastle United : Aston Villa 0 - 0 Newcastle United Match preview - 07/05/2016 Premier League");
+ga('set', 'dimension9', "match preview");
+ga('set', 'dimension10', "English - United Kingdom");
+ga('set', 'dimension13', "2896");
+ga('set', 'dimension14', "23198112");
+ga('send', 'pageview');
+}
+}
+Google_Analytics.pageviewExecute();}</script> <!-- End: New Google Analytics analytics.js --><!-- Hotjar Tracking Code for www.goal.com -->
+<script>
+(function(h,o,t,j,a,r){
+h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+h._hjSettings={hjid:71354,hjsv:5};
+a=o.getElementsByTagName('head')[0];
+r=o.createElement('script');r.async=1;
+r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+a.appendChild(r);
+})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- Begin: MoreVisibleAds -->
+<script type="text/javascript"
+src="//wfpscripts.webspectator.com/bootstrap/ws-B112A62E.js">
+</script>
+<!-- End: MoreVisibleAds -->
+<!-- BEGIN: Chartbeat tracking code header -->
+<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+<!-- END: Chartbeat tracking code header -->
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Facebook SDK -->
+<script type="text/javascript">
+window._taboola = window._taboola || [];
+_taboola.push(
+{"article":"auto"});
+!function (e, f, u)
+{ e.async = 1; e.src = u; f.parentNode.insertBefore(e, f); }
+(document.createElement('script'),
+document.getElementsByTagName('script')[0],
+'//cdn.taboola.com/libtrc/performmediagroup-network/loader.js');
+</script>
+</head>
+<body class="page-match dir-ltr lang-en-GB en-gb lang-code-en context-undefined hour-format-24" data-omniture-icid="MP" data-user-country-code="">
+<script type="text/javascript">
+$.omnitureIcid({
+domain: 'goal.com'
+});
+</script>
+<!-- Begin: Lotame start tag -->
+<script type="text/javascript">
+var cc_client_id = 3376;
+
+document.write('<scr'+'ipt type="text/javascript" src="http://ad.crwdcntrl.net/5/c='+cc_client_id.toString()+'/pe=y/callback=processauds"></scr'+'ipt>');
+
+var adtechCCvals = "";
+function processauds(adtechccauds) {
+if (typeof(adtechccauds) != 'undefined') {
+for (var cci = 0; cci < adtechccauds.Profile.Audiences.Audience.length; cci++) {
+if (cci > 0) adtechCCvals += ":";
+adtechCCvals += adtechccauds.Profile.Audiences.Audience[cci].abbr;
+}
+}
+}
+</script>
+<!-- End: Lotame start tag -->
+<div class="page-wrapper">
+<div class="module module-cookie-info hidden" data-country-code="GB,UK" data-allowed-edition="en-gb">
+<div class="wrapper">
+<div class="message"></div>
+</div>
+<div class="cookie-content">
+<!--
+<span class="close img-rep"></span>
+<p>We use cookies on this web site... To find out more about cookies, please see our <a href="/en-gb/legal/privacy-policy">Privacy Policy</a>. If you continue using our website, we will assume that you consent to the cookies we set.</p>
+-->
+</div>
+</div>
+<div class="module-outdated-browsers hidden">
+<!--
+<div class="container">
+<p class="ob-msie-6 hidden">
+This website does not support Internet Explorer 6. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-7 hidden">
+This website does not support Internet Explorer 7. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-8 hidden">
+This website does not support Internet Explorer 8. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-9 hidden">
+You are using an outdated browser. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-other hidden">
+You are using an outdated browser. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<span class="close-button"></span>
+</div>
+-->
+</div>
+<div class="module module-ad leaderboard" id="ad728x90">
+<div>
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|3555308|0|225|ADTECH;cookie=info;alias=en-gbLMC14TL;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|3555308|0|225|ADTECH;loc=300;alias=en-gbLMC14TL;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|3555308|0|225|ADTECH;loc=300;alias=en-gbLMC14TL;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+</div>
+
+<div class="module-edition-picker" data-module="editionpicker">
+<div class="clearfix">
+<ul>
+<li><a href="/en" class="flag-en">International</a></li>
+<li><a href="/en-us" class="flag-en-us">America</a></li>
+<li><a href="/es-ar" class="flag-es-ar">Argentina</a></li>
+<li><a href="/en-au" class="flag-en-au">Australia</a></li>
+<li><a href="/ba" class="flag-ba">Bosna i Hercegovina</a></li>
+<li><a href="/br" class="flag-br">Brasil</a></li>
+<li><a href="/en-ca" class="flag-en-ca">Canada</a></li>
+</ul>
+<ul>
+<li><a href="/es-cl" class="flag-es-cl">Chile</a></li>
+<li><a href="/es-co" class="flag-es-co">Colombia</a></li>
+<li><a href="/de" class="flag-de">Deutsch</a></li>
+<li><a href="/es" class="flag-es">España</a></li>
+<li><a href="/fr" class="flag-fr">Français</a></li>
+<li><a href="/en-gh" class="flag-en-gh">Ghana</a></li>
+<li><a href="/hr" class="flag-hr">Hrvatska</a></li>
+</ul>
+<ul>
+<li><a href="/en-india" class="flag-en-india">India</a></li>
+<li><a href="/id-ID" class="flag-id-ID">Indonesia</a></li>
+<li><a href="/en-ie" class="flag-en-ie">Ireland</a></li>
+<li><a href="/it" class="flag-it">Italia</a></li>
+<li><a href="/en-ke" class="flag-en-ke">Kenya</a></li>
+<li><a href="/en-my" class="flag-en-my">Malaysia</a></li>
+<li><a href="/es-mx" class="flag-es-mx">México</a></li>
+</ul>
+<ul>
+<li><a href="/nl" class="flag-nl">Nederlands</a></li>
+<li><a href="/en-ng" class="flag-en-ng">Nigeria</a></li>
+<li><a href="/en-sg" class="flag-en-sg">Singapore</a></li>
+<li><a href="/en-za" class="flag-en-za">South Africa</a></li>
+<li><a href="/en-tz" class="flag-en-tz">Tanzania</a></li>
+<li><a href="/tr" class="flag-tr">Türkçe</a></li>
+<li><a href="/en-gb" class="flag-en-gb">UK</a></li>
+</ul>
+<ul>
+<li><a href="/cn" class="flag-cn">简体中文</a></li>
+<li><a href="/hk" class="flag-hk">繁體中文</a></li>
+<li><a href="/kr" class="flag-kr">한국어</a></li>
+<li><a href="/jp" class="flag-jp">日本語</a></li>
+<li><a href="/th" class="flag-th">ภาษาไทย</a></li>
+<li><a href="/ar" class="flag-ar">العربية</a></li>
+<li><a href="/ar-eg" class="flag-ar-eg">المصرية</a></li>
+</ul>
+<ul>
+<li><a href="/ar-sa" class="flag-ar-sa">السعودية</a></li>
+<li><a href="/en-ar" class="flag-en-ar">Gulf English</a></li>
+<li><a href="/hu" class="flag-hu">Magyarország</a></li>
+</ul>
+</div>
+</div>
+<header class="module-header clearfix" data-module="header">
+<ul>
+<li class="edition-picker-trigger">
+<a href="#" class="flag-en-gb" data-role="edition-picker-opener"> <b>Edition</b>: United Kingdom</a>
+</li>
+<li>
+<div id="gigya-register-login-buttons" data-gigya-api-key="3_wCLJT75ffirrzBqqAJaHe1zYGgdpb9XFkjxEQfrxraM-xO_if-uM1uVBZZ5r4naE" data-gigya-screen-set-code="Default">
+<span class="gigya-register-login">
+<a class="gigya-account-register" href="#">Register</a>
+<span>/</span>
+<a class="gigya-account-login" href="#">Login</a>
+</span>
+<a href="#" class="gigya-account-logout">Sign out</a>
+<a class="gigya-account-icon"><span></span></a>
+</div>
+</li>
+<li class="social">
+<span>Follow us on</span>
+<a href="https://www.facebook.com/GoalUK" class="facebook img-rep" target="_blank">Facebook</a>
+<a href="http://twitter.com/GoalUK" class="twitter img-rep" target="_blank">Twitter</a>
+<a href="http://www.youtube.com/goal" class="youtube img-rep" target="_blank">YouTube</a>
+<a href="http://www.instagram.com/goalglobal" class="instagram img-rep" target="_blank">instagram</a>
+<a href="https://plus.google.com/+Goal" class="googleplus img-rep" target="_blank">Google+</a>
+<a href="/en-gb/feeds/news?fmt=rss" class="rss img-rep" target="_blank">RSS</a>
+</li>
+</ul>
+<div class="main-logo"><a href="/en-gb" class="img-rep">Goal.com - Home</a></div>
+<div class="user" data-user-state="logged-in">
+<a href="https://secure.goal.com/en-gb/account">
+<img data-user="thumbnail" src="" height="23" width="23" alt="thumbnail">
+</a>
+<span class="greeting">Hello,</span>
+<a href="https://secure.goal.com/en-gb/account" data-user="nickname"></a>
+</div>
+</header>
+
+<div class="module-navigation" data-module="navigation" data-omniture-icid="TN">
+<div>
+<ul class="main clearfix" data-navigation>
+<li data-omniture-icid="1">
+<a href="/en-gb">Home</a>
+</li>
+<li data-omniture-icid="2">
+<a href="/en-gb/news/archive/1">News</a>
+</li>
+<li data-omniture-icid="3">
+<a href="/en-gb/news/3310/goal-50">Goal 50</a>
+</li>
+<li data-omniture-icid="4">
+<a href="/en-gb/news/2896/premier-league">Premier League</a>
+<ul class="sub">
+<li>
+<span>Latest</span>
+<ul data-omniture-icid="1">
+<li><a href="/en-gb/news/2896/premier-league">News</a></li>
+<li><a href="/en-gb/fixtures/premier-league/8">Fixtures</a></li>
+<li><a href="/en-gb/results/premier-league/8">Results</a></li>
+<li><a href="/en-gb/results-standings/64/premier-league/table">League Table</a></li>
+<li><a href="/en-gb/news/5432/goal-fantasy-football/2015/09/11/15198502/play-goals-champions-league-fantasy-football">Fantasy Football</a></li>
+</ul>
+</li>
+<li>
+<span>Teams A - M</span>
+<ul data-omniture-icid="2">
+<li><a href="/en-gb/teams/england/arsenal/660">Arsenal</a></li>
+<li><a href="/en-gb/teams/england/afc-bournemouth/711">Bournemouth</a></li>
+<li><a href="/en-gb/teams/england/burnley/698">Burnley</a></li>
+<li><a href="/en-gb/teams/england/chelsea/661">Chelsea</a></li>
+<li><a href="/en-gb/teams/england/crystal-palace/679">Crystal Palace</a></li>
+<li><a href="/en-gb/teams/england/everton/674">Everton</a></li>
+<li><a href="/en-gb/teams/england/hull-city/725">Hull City</a></li>
+<li><a href="/en-gb/teams/england/leicester-city/682">Leicester City</a></li>
+<li><a href="/en-gb/teams/england/liverpool/663">Liverpool</a></li>
+<li><a href="/en-gb/teams/england/manchester-city/676">Manchester City</a></li>
+</ul>
+</li>
+<li>
+<span>Teams M - W</span>
+<ul data-omniture-icid="3">
+<li><a href="/en-gb/teams/england/manchester-united/662">Manchester United</a></li>
+<li><a href="/en-gb/teams/england/middlesbrough/671">Middlesbrough</a></li>
+<li><a href="/en-gb/teams/england/southampton/670">Southampton</a></li>
+<li><a href="/en-gb/teams/england/stoke-city/690">Stoke City</a></li>
+<li><a href="/en-gb/teams/england/sunderland/683">Sunderland</a></li>
+<li><a href="/en-gb/teams/wales/swansea-city/738">Swansea City</a></li>
+<li><a href="/en-gb/teams/england/tottenham-hotspur/675">Tottenham</a></li>
+<li><a href="/en-gb/teams/england/watford/696">Watford</a></li>
+<li><a href="/en-gb/teams/england/west-bromwich-albion/678">West Brom</a></li>
+<li><a href="/en-gb/teams/england/west-ham-united/684">West Ham</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="5">
+<a href="/en-gb/news/2885/europe">Europe</a>
+<ul class="sub">
+<li>
+<span>Spain</span>
+<ul data-omniture-icid="1">
+<li><a href="/en-gb/teams/spain/barcelona/2017">Barcelona</a></li>
+<li><a href="/en-gb/teams/spain/real-madrid/2016">Real Madrid</a></li>
+<li><a href="/en-gb/teams/spain/atl%C3%A9tico-madrid/2020">Atletico Madrid</a></li>
+<li><a href="/en-gb/news/3277/la-liga">La Liga</a></li>
+</ul>
+</li>
+<li>
+<span>Italy</span>
+<ul data-omniture-icid="2">
+<li><a href="/en-gb/teams/italy/juventus/1242">Juventus</a></li>
+<li><a href="/en-gb/teams/italy/internazionale/1244">Inter</a></li>
+<li><a href="/en-gb/teams/italy/roma/1241">Roma</a></li>
+<li><a href="/en-gb/news/3276/serie-a">Serie A</a></li>
+</ul>
+</li>
+<li>
+<span>Germany</span>
+<ul data-omniture-icid="3">
+<li><a href="/en-gb/teams/germany/bayern-münchen/961">Bayern Munich</a></li>
+<li><a href="/en-gb/teams/germany/borussia-dortmund/964">Borussia Dortmund</a></li>
+<li><a href="/en-gb/teams/germany/wolfsburg/968">Wolfsburg</a></li>
+<li><a href="/en-gb/news/3275/bundesliga">Bundesliga</a></li>
+</ul>
+</li>
+<li>
+<span>France</span>
+<ul data-omniture-icid="4">
+<li><a href="/en-gb/teams/france/psg/886">Paris Saint-Germain</a></li>
+<li><a href="/en-gb/teams/france/olympique-lyonnais/884">Olympique Lyonnais</a></li>
+<li><a href="/en-gb/teams/monaco/monaco/885">Monaco</a></li>
+<li><a href="/en-gb/news/3274/ligue-1">Ligue 1</a></li>
+</ul>
+</li>
+<li>
+<span>Competitions</span>
+<ul data-omniture-icid="5">
+<li><a href="/en-gb/news/2914/champions-league">Champions League</a></li>
+<li><a href="/en-gb/news/2915/europa-league">Europa League</a></li>
+<li><a href="/en-gb/news/4961/international-football">International football</a></li>
+<li><a href="/en-gb/news/24102/icc-2016">ICC 2016</a></li>
+</ul>
+</li>
+<li>
+<span>Domestic</span>
+<ul data-omniture-icid="6">
+<li><a href="/en-gb/news/2880/english-football">English Football</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="6">
+<a href="/en-gb/news/2892/transfer-zone">Transfers</a>
+<ul class="sub">
+<li>
+<a href="/en-gb/rumours/last/72">Transfer Talk</a>
+</li>
+<li>
+<a href="/en-gb/news/2892/transfer-zone/archive/1">Latest Transfer News</a>
+</li>
+<li>
+<a href="/en-gb/scores/transfer-zone">Done Deals</a>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="7">
+<a href="/en-gb/live-scores">Live</a>
+</li>
+<li data-omniture-icid="8">
+<a href="/en-gb/news/2995/betting">Betting</a>
+</li>
+<li data-omniture-icid="9">
+<a href="/en-gb/news/5432/goal-gaming">Goal Gaming</a>
+</li>
+<li class="more"><a href="#">More</a></li>
+</ul>
+<div class="submenu-wrapper">
+<ul class="submenu clearfix" data-subnavigation>
+<li class="breadcrumb">
+<a href="#" class="arrow"></a>
+<ul>
+<li><a href="/en-gb/news/2896/premier-league">Premier League</a></li>
+<li><a href="/en-gb/news/2900/fa-cup">FA Cup</a></li>
+<li><a href="/en-gb/news/2897/championship">Football League Championship</a></li>
+<li><a href="/en-gb/news/3268/league-one">Football League One</a></li>
+<li><a href="/en-gb/news/3269/league-two">Football League Two</a></li>
+<li><a href="/en-gb/news/3274/ligue-1">Ligue 1</a></li>
+<li><a href="/en-gb/news/3276/serie-a">Serie A</a></li>
+<li><a href="/en-gb/news/3275/bundesliga">1. Bundesliga</a></li>
+<li><a href="/en-gb/news/3277/la-liga">Spain - La Liga</a></li>
+<li><a href="/en-gb/news/2914/champions-league">UEFA Champions League</a></li>
+<li><a href="/en-gb/news/2915/europa-league">Europa League</a></li>
+<li><a href="/en-gb/news/5020/club-world-cup">Club World Cup</a></li>
+<li><a href="/en-gb/news/7134/euro-2016">Euro 2016</a></li>
+<li><a href="/en-gb/news/24102/icc-2016">International Champions Cup</a></li>
+</ul>
+<a href="/en-gb/news/2896/premier-league">Premier League</a>
+</li>
+<li class="breadcrumb">
+<a href="#" class="arrow"></a>
+<ul>
+<li><a href="/en-gb/teams/england/afc-bournemouth/711">AFC Bournemouth</a></li>
+<li><a href="/en-gb/teams/england/arsenal/660">Arsenal</a></li>
+<li><a href="/en-gb/teams/england/burnley/698">Burnley</a></li>
+<li><a href="/en-gb/teams/england/chelsea/661">Chelsea</a></li>
+<li><a href="/en-gb/teams/england/crystal-palace/679">Crystal Palace</a></li>
+<li><a href="/en-gb/teams/england/everton/674">Everton</a></li>
+<li><a href="/en-gb/teams/england/hull-city/725">Hull City</a></li>
+<li><a href="/en-gb/teams/england/leicester-city/682">Leicester City</a></li>
+<li><a href="/en-gb/teams/england/liverpool/663">Liverpool</a></li>
+<li><a href="/en-gb/teams/england/manchester-city/676">Manchester City</a></li>
+<li><a href="/en-gb/teams/england/manchester-united/662">Manchester United</a></li>
+<li><a href="/en-gb/teams/england/middlesbrough/671">Middlesbrough</a></li>
+<li><a href="/en-gb/teams/england/southampton/670">Southampton</a></li>
+<li><a href="/en-gb/teams/england/stoke-city/690">Stoke City</a></li>
+<li><a href="/en-gb/teams/england/sunderland/683">Sunderland</a></li>
+<li><a href="/en-gb/teams/wales/swansea-city/738">Swansea City</a></li>
+<li><a href="/en-gb/teams/england/tottenham-hotspur/675">Tottenham Hotspur</a></li>
+<li><a href="/en-gb/teams/england/watford/696">Watford</a></li>
+<li><a href="/en-gb/teams/england/west-bromwich-albion/678">West Bromwich Albion</a></li>
+<li><a href="/en-gb/teams/england/west-ham-united/684">West Ham United</a></li>
+</ul>
+<span>Teams</span>
+</li>
+<li>
+<a href="/en-gb/fixtures/premier-league/8">Fixtures</a>
+</li>
+<li>
+<a href="/en-gb/results/premier-league/8">Results</a>
+</li>
+<li>
+<a href="/en-gb/tables/premier-league/8">Tables</a>
+</li>
+<li>
+<a href="https://challenge.deltapresents.com/?utm_source=Goal&utm_medium=Quicklink&utm_campaign=Delta" target="_blank">Win Flights to NYC</a>
+</li>
+</ul>
+</div>
+
+<div class="submenu-inner-module">
+</div>
+<span class="slide-left" data-role="submenu-slider"></span>
+<span class="slide-right" data-role="submenu-slider"></span>
+</div>
+<form action="/en-gb/search" method="get" class="form-search">
+<input type="search" name="q" placeholder="Search for team or player" class="keyword" required="required">
+<input type="submit" value="" class="submit">
+</form>
+</div>
+
+<div class="module module-ad header-strip">
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && "NAV" && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== "NAV") {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|5249175|0|16|ADTECH;cookie=info;alias=en-gbLMC14NAV;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|5249175|0|16|ADTECH;loc=300;alias=en-gbLMC14NAV;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|5249175|0|16|ADTECH;loc=300;alias=en-gbLMC14NAV;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+<!-- Goal match: 256242 -->
+<section class="top-section" data-match-id="2043586" data-match-time="1462629600" data-match-status="played" data-omniture-icid="TS">
+<script class="scorer-tmpl" type="text/template">
+<li><a href="<%= scorerHref %>"><%= scorer %></a></li>
+</script>
+<div class="match-header clearfix" itemscope itemtype="http://schema.org/SportsEvent">
+<div class="info">
+<div class="status-live">Live</div>
+<h3 itemprop="superEvent">Premier League</h3>
+<ul>
+<li itemprop="startDate">7 May 2016</li>
+<li>&#8226; 15:00</li>
+<li>&#8226; Villa Park, Birmingham</li>
+</ul>
+<ul>
+<li>Referee: R. Madley</li>
+<li>&#8226; Attendance: 33055</li>
+</ul>
+</div>
+<meta itemprop="name" content="Aston Villa - Newcastle United">
+<meta itemprop="url" content="/en-gb/match/aston-villa-vs-newcastle-united/2043586">
+<div class="home" data-omniture-icid="HDH">
+<a href="/en-gb/teams/england/aston-villa/665">
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png"/>
+<h2>Aston Villa</h2>
+</a>
+<ul>
+</ul>
+</div>
+<div class="score">
+<div class="home-score">0</div>
+<div class="vs">FT</div>
+<div class="away-score">0</div>
+<p></p>
+</div>
+<div class="away" data-omniture-icid="HDA">
+<a href="/en-gb/teams/england/newcastle-united/664">
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png"/>
+<h2>Newcastle United</h2>
+</a>
+<ul>
+</ul>
+</div>
+</div>
+</section>
+<section class="main-section">
+<div class="wrapper">
+<nav class="match-menu " data-tabs-quantity="6" data-omniture-icid="MS">
+<ul itemscope itemtype="http://schema.org/SportsMatch/Football">
+<li class="preview active" itemprop="previewLink"><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/preview" itemprop="url">Preview</a></li>
+<li class="lineups "><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/lineups" itemprop="url">Lineups</a></li>
+<li class="live-commentary " itemprop="liveUpdateLink"><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/live-commentary" itemprop="url">Live</a></li>
+<li class="stats "><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/stats" itemprop="url">Statistics</a></li>
+<li class="report " itemprop="recapLink"><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/report" itemprop="url">Report</a></li>
+<li class="ratings "><a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586/ratings" itemprop="url">Ratings</a></li>
+</ul>
+</nav>
+<div class="module module-ad mpu-620x50">
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4618327|0|16|ADTECH;cookie=info;alias=en-gbLMC14ST;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|4618327|0|16|ADTECH;loc=300;alias=en-gbLMC14ST;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|4618327|0|16|ADTECH;loc=300;alias=en-gbLMC14ST;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+<div class="main-content preview" role="main" data-content-tab="preview">
+<div data-role="view-count" data-gid="54501012"></div><header class="article-header default">
+<img class="article-image" itemprop="image" src="http://images.performgroup.com/di/library/omnisport/70/d5/georginio-wijanldum-cropped_v5y2tp0enf4c1xkvpiwr57ep9.jpg?t=-2143058268&w=620&h=430" alt="Aston Villa vs Newcastle United preview: Wijnaldum demands result to keep survival bid alive" width="620" height="430">
+<div class="headlines">
+<h1 itemprop="headline"><span><span>Aston Villa vs Newcastle United preview: Wijnaldum demands result to keep survival bid alive</span></span></h1>
+</div>
+<div class="photo-credit">Getty Images</div>
+</header>
+<div class="article-content">
+<!-- Article: 23198112 -->
+<section class="module module-article-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<header class="clearfix">
+<h2 class="author">By Joe Wright</h2>
+<div class="social-wrapper">
+<div class="module module-social-share-comments">
+<a href="#article-comments" class="comments-link"></a>
+<span class="comment-count">0</span>
+</div>
+<div class="module module-social-share-wide"
+data-plugin="gigya-share"
+data-url="http://www.goal.com/en-gb/news/2896/premier-league/2016/05/06/23198112/aston-villa-vs-newcastle-united-preview-wijnaldum-demands-result-"
+data-title="Aston Villa vs Newcastle United preview: Wijnaldum demands result to keep survival bid alive"
+data-description="With the visitors seeking to grind their way out of the relegation zone under Rafa Benitez, the Netherlands international says they have to win at the weekend"
+data-image="http://images.performgroup.com/di/library/omnisport/70/d5/georginio-wijanldum-cropped_v5y2tp0enf4c1xkvpiwr57ep9.jpg?t=-2143058268&w=350&h=230"
+data-stream-id="article_23198112"
+data-category-id="en_gb"
+data-providers="facebook,google,yahoo,twitter"
+data-blank-img-url="http://i1.goal.com/web/goal/2016.11.08-v1/images/module/blank.png"
+data-share-icons='{"facebook":"http://i2.goal.com/web/goal/2016.11.08-v1/images/module/social-share-icons/facebook-share.png"}'
+id="unique-id-1"
+>
+</div></div>
+</header>
+<div class="author-info"></div>
+</section>
+<div class="module module-article-body clearfix">
+<time datetime="2016-05-06T10:53:15+01:00" itemprop="datePublished">6 May 2016 10:53:15</time>
+<div itemprop="articleBody" class="article-text">
+<div>
+<p class="leading">With the visitors seeking to grind their way out of the relegation zone under Rafa Benitez, the Netherlands international says they have to win at the weekend</p>
+<div class="">
+<div class="module module-ad fresh8-inline-leaderboar">
+<!-- Begin: Fresh8 placement --> <div id="f8-005"></div><!-- End: Fresh8 placement --></div>
+</div>
+<!-- Article Start -->
+<p><a href="http://www.goal.com/en/people/netherlands/18304/georginio-wijnaldum?ICID=TP_TST_22">Georginio Wijnaldum</a> has warned <a href="http://www.goal.com/en/teams/england/newcastle-united/664?ICID=SP_TN_102">Newcastle United</a> that their win over Crystal Palace will count for nothing if they do not get a result at <a href="http://www.goal.com/en/match/aston-villa-vs-newcastle-united/2043586?ICID=TP_NMW_ML_1">Aston Villa</a> on Saturday.</p>
+
+<p>Andros Townsend&#39;s brilliant free-kick - and a penalty save from Karl Darlow - ensured a 1-0 victory against Alan Pardew&#39;s side&nbsp;which saw Newcastle climb out of the bottom three.</p>
+
+<p>Rafael Benitez&#39;s side have played a game more than Sunderland below them but head to already-relegated Villa with a formidable record, having not lost any of the last nine league encounters between the two.</p>
+
+<p>Wijnaldum, however, has warned against any sort of complacency as Newcastle look to cling on to their top-flight status with just two matches left to play.</p>
+
+<p>&quot;We have got ourselves back into a better situation,&quot;&nbsp;the midfielder told the <em>Sunderland Echo</em>.&nbsp;&quot;Every game is important to us. Every point we can take is crucial at this stage.</p>
+
+<p>&quot;We have beaten Crystal Palace, and now we have to show the same mentality at Aston Villa.</p>
+
+<p>&quot;We have to focus game by game and at the end we will see where we finish. We can&#39;t be too happy because it is about the end of the season.&quot;</p>
+
+<p>Confidence is growing at Newcastle but Villa are facing the prospect of an unwanted club record in their final home match of a dismal campaign.</p>
+<ad>
+<hr style="color: #00ac77; width: 100%; background: #00ac77; border: 0; height: 3px;" /><img alt="GOAL" src="http://u.goal.com/288600/288646_specials.jpg" style="float: right;" width="25;" /><span style="font-size: 12px;"><span><span style="font-size: small;"><strong><img alt="" height="20" src="http://static.goal.com/202900/202900.jpg" width="20" /> <a href="http://www.goal.com/en-gb/news/2896/premier-league" target="_blank">READ MORE</a>&nbsp;<img alt="" height="20" src="http://static.goal.com/202900/202900.jpg" width="20" /> | <a href="http://www.goal.com/en/news/1862/premier-league/2016/04/30/22977152/howe-defends-players-efforts-after-recent-slump-in-form?ICID=HP_BN_3">Howe: Bournemouth desperate to win</a></strong></span></span></span>
+
+<hr style="color: #00ac77; width: 100%; background: #00ac77; border: 0; height: 3px;" /></ad><ad><script src="http://player.performgroup.com/eplayer.js#c42aaeda9729fd1287b0d0e35d.r4lvn28jkqnw13l43y1upde5k.p" async></script></ad>
+
+<p>Defeat on Saturday would be their 12th in a row, surpassing the tally set back in 1963, and would further incense the club&#39;s fans, who&nbsp;are already planning a protest against owner Randy Lerner described as &quot;#InTheAirOn74&hellip; A mass release of energy on the 74th minute&quot;.</p>
+
+<p>Villa came close to arresting their torrid run last week, conceding two late Troy Deeney goals to surrender a 2-1 lead at Watford, and interim boss Eric Black wants to see a similar level of effort from his players against Newcastle in order to help win back the fans.</p>
+
+<p>&quot;That&#39;s all I think we can do,&quot; said Black, who is expected to be replaced by former Leicester City boss Nigel Pearson in the coming weeks. &quot;That&#39;s what we&#39;ve spoken about with the players.</p>
+
+<p>&quot;It&#39;s a fantastic football club with fantastic supporters and everything that surrounds it.&nbsp;It&#39;s about getting one little step, as small as it is, to getting the supporters back on side.&quot;</p>
+
+<p>Kieran Richardson (calf) is a doubt for Villa, who also have Aly Cissokho suspended after his red card against Watford. Gabriel Agbonlahor, who stepped down as captain last week, is unlikely to return.</p>
+
+<p>Benitez hopes to have Vurnon Anita back from a muscle problem, meanwhile, but Daryl Janmaat&nbsp;(wrist) and&nbsp;Fabricio Coloccini (calf) are expected to miss out. Yoan Gouffran could be available after a muscle injury.</p><div class="module module-ad fresh8-footer-widget">
+<!-- Begin: Fresh8 placement --> <div id="f8-007"></div><!-- End: Fresh8 placement --></div>
+
+
+<p>Gabriel Obertan and Sylvain Marveaux&#39;s seasons have come to an end already, though, after they were released from their contracts on Thursday</p>
+<!-- Article End -->
+</div>
+</div>
+</div>
+</div>
+
+
+<section class="opta-facts hidden">
+<div class="facts-shortened">
+<opta widget="optafacts" sport="football" competition="8" season="2016" match="803526" id_suffix="goal-facts"></opta>
+</div>
+<span class="button"><span></span></span>
+</section>
+
+
+
+<section class="last-games preview-widget">
+<header><h2>Last Five Matches</h2></header>
+<div class="home-team">
+<header>
+<h3 class="home"><a href="/en-gb/teams/england/aston-villa/665">Aston Villa</a></h3>
+<ul class="results">
+<li class="win">W</li>
+<li class="draw">D</li>
+<li class="win">W</li>
+<li class="win">W</li>
+<li class="draw">D</li>
+</ul>
+</header>
+<ul class="matches">
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-blackburn-rovers/2246908">
+<time>05/11/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">2 - 1</span>
+<div class="module module-team away">
+<span title="Blackburn Rovers FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/672.png" alt="Blackburn Rovers FC" width="20" height="20">
+<span>BBR</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/birmingham-city-vs-aston-villa/2246897">
+<time>30/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Birmingham City FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/669.png" alt="Birmingham City FC" width="20" height="20">
+<span>BIR</span>
+</span>
+</div>
+<span class="score">1 - 1</span>
+<div class="module module-team away">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-fulham/2246884">
+<time>22/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">1 - 0</span>
+<div class="module module-team away">
+<span title="Fulham FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/667.png" alt="Fulham FC" width="20" height="20">
+<span>FUL</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/reading-vs-aston-villa/2246883">
+<time>18/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Reading FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/688.png" alt="Reading FC" width="20" height="20">
+<span>REA</span>
+</span>
+</div>
+<span class="score">1 - 2</span>
+<div class="module module-team away">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-wolverhampton-wanderers/2246860">
+<time>15/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">1 - 1</span>
+<div class="module module-team away">
+<span title="Wolverhampton Wanderers FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/680.png" alt="Wolverhampton Wanderers FC" width="20" height="20">
+<span>WOL</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<div class="away-team">
+<header>
+<h3 class="away"><a href="/en-gb/teams/england/newcastle-united/664">Newcastle United</a></h3>
+<ul class="results">
+<li class="win">W</li>
+<li class="win">W</li>
+<li class="win">W</li>
+<li class="win">W</li>
+<li class="win">W</li>
+</ul>
+</header>
+<ul class="matches">
+<li class="match">
+<a href="/en-gb/match/newcastle-united-vs-cardiff-city/2246913">
+<time>05/11/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+<span class="score">2 - 1</span>
+<div class="module module-team away">
+<span title="Cardiff City FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/691.png" alt="Cardiff City FC" width="20" height="20">
+<span>CAR</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/preston-north-end-vs-newcastle-united/2246905">
+<time>29/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Preston North End FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/693.png" alt="Preston North End FC" width="20" height="20">
+<span>PNE</span>
+</span>
+</div>
+<span class="score">1 - 2</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/newcastle-united-vs-preston-north-end/2359884">
+<time>25/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+<span class="score">6 - 0</span>
+<div class="module module-team away">
+<span title="Preston North End FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/693.png" alt="Preston North End FC" width="20" height="20">
+<span>PNE</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/newcastle-united-vs-ipswich-town/2246889">
+<time>22/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+<span class="score">3 - 0</span>
+<div class="module module-team away">
+<span title="Ipswich Town FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/685.png" alt="Ipswich Town FC" width="20" height="20">
+<span>IPS</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/barnsley-vs-newcastle-united/2246872">
+<time>18/10/2016</time>
+<div class="wrapper">
+<div class="module module-team home">
+<span title="Barnsley FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/716.png" alt="Barnsley FC" width="20" height="20">
+<span>BAR</span>
+</span>
+</div>
+<span class="score">0 - 2</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</section>
+<div class="clearfix"></div>
+
+<section class="head-to-head preview-widget" data-omniture-icid="H2H">
+<header><h2>Head To Head</h2></header>
+<h3 class="home"><a href="/en-gb/teams/england/aston-villa/665" data-omniture-icid="H">Aston Villa</a></h3>
+<h3 class="away"><a href="/en-gb/teams/england/newcastle-united/664" data-omniture-icid="A">Newcastle United</a></h3>
+<div class="bar-graph">
+<span class="text">Wins</span>
+<div class="graph">
+<div class="won" style="width: 7%">0</div>
+<div class="drawn" style="width: 74%">4</div>
+<div class="lost" style="width: 18%">1</div>
+</div>
+<span class="text">Wins</span>
+</div>
+<ul class="matches" data-omniture-icid="PL">
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-newcastle-united/2246824">
+<time>24/09/2016</time>
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+<span class="score">1 - 1</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-newcastle-united/2043586">
+<time>07/05/2016</time>
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+<span class="score">0 - 0</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/newcastle-united-vs-aston-villa/2043235">
+<time>19/12/2015</time>
+<div class="module module-team home">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+<span class="score">1 - 1</span>
+<div class="module module-team away">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/newcastle-united-vs-aston-villa/1704025">
+<time>28/02/2015</time>
+<div class="module module-team home">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+<span class="score">1 - 0</span>
+<div class="module module-team away">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</a>
+</li>
+<li class="match">
+<a href="/en-gb/match/aston-villa-vs-newcastle-united/1703515">
+<time>23/08/2014</time>
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+<span class="score">0 - 0</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+<span class="btn match-btn"></span>
+</a>
+</li>
+</ul>
+</ul>
+</section>
+<div class="clearfix"></div>
+
+<section class="betting-prediction preview-widget no-predictor" data-bookmakers-ids="[5,13,117,211]">
+<header><h2>Betting & Predictions</h2></header>
+<div class="betting-container expanded">
+
+<div class="readers-predictions first-row">
+<h3>Reader's Predictions</h3>
+<div class="match">
+<div class="short-name">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+</div>
+<div class="long-name">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>Aston Villa</span>
+</span>
+</div>
+</div>
+<span class="draw">Draw</span>
+<div class="short-name">
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+</div>
+<div class="long-name">
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>Newcastle United</span>
+</span>
+</div>
+</div>
+</div>
+<div class="bar-graph">
+<div class="graph">
+<div class="won " style="width: 9%"></div>
+<div class="drawn " style="width: 18%">18%</div>
+<div class="lost " style="width: 73%">73%</div>
+</div>
+</div>
+</div>
+<div class="predict-submitted hidden-info">
+<p class="hidden">Prediction Submitted</p>
+</div>
+<div class="predictor-betting hidden">
+<div class="betting-logo"><img scr="" ></div>
+<select data-plugin="customDropdown" class="bet-value" data-odds="0">
+<option data-bet="5">&#163;5</option>
+<option data-bet="10">&#163;10</option>
+<option data-bet="25">&#163;25</option>
+<option data-bet="50">&#163;50</option>
+<option data-bet="100">&#163;100</option>
+</select>
+<p class="offer">Wins &#163;<span>-</span></p>
+<a class="hidden btn inverted btn-bet" data-context="Predictor" target="_blank">Bet</a>
+</div>
+
+<div class="top-predictions">
+<h3>Top 3 Predictions</h3>
+<div class="prediction" data-score="0-2">
+<div class="match">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">0 - 2</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+</div>
+<div class="bet hidden">
+<span>23%</span> Odds: <span class="odds">-</span>
+<a class="btn inverted btn-bet" data-context="Top Predictions" target="_blank">Bet</a>
+</div>
+</div>
+<div class="prediction" data-score="0-1">
+<div class="match">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">0 - 1</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+</div>
+<div class="bet hidden">
+<span>19%</span> Odds: <span class="odds">-</span>
+<a class="btn inverted btn-bet" data-context="Top Predictions" target="_blank">Bet</a>
+</div>
+</div>
+<div class="prediction" data-score="0-0">
+<div class="match">
+<div class="module module-team home">
+<span title="Aston Villa FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa FC" width="20" height="20">
+<span>AST</span>
+</span>
+</div>
+<span class="score">0 - 0</span>
+<div class="module module-team away">
+<span title="Newcastle United FC">
+<img data-competitionId="" src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle United FC" width="20" height="20">
+<span>NEW</span>
+</span>
+</div>
+</div>
+<div class="bet hidden">
+<span>14%</span> Odds: <span class="odds">-</span>
+<a class="btn inverted btn-bet" data-context="Top Predictions" target="_blank">Bet</a>
+</div>
+</div>
+</div>
+
+
+<div class="module module-bet-signup clearfix">
+<div data-role="bookmaker" data-bookmaker-url="http://www.bet365.com/home/?affiliate=365_076056" data-bookmaker="Bet365" data-index="1" class="hidden">
+<a href="http://www.bet365.com/home/?affiliate=365_076056" target="_blank" class="bet-logo"><img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/betting/bet365_w.png" alt="Bet365"></a>
+<a href="http://www.bet365.com/home/?affiliate=365_076056" target="_blank" class="bet-title">Sign up with bet365 for a 100% deposit bonus up to £200</a>
+</div>
+<div data-role="bookmaker" data-bookmaker-url="http://content.paddypower.com/ppc-pages/enhanced-campaign/affiliates/sportsbook/standard/bet-10-get-30.html?AFF_ID=10092763" data-bookmaker="PaddyPower" data-index="2" class="hidden">
+<a href="http://content.paddypower.com/ppc-pages/enhanced-campaign/affiliates/sportsbook/standard/bet-10-get-30.html?AFF_ID=10092763" target="_blank" class="bet-logo"><img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/betting/paddypower_w.png" alt="PaddyPower"></a>
+<a href="http://content.paddypower.com/ppc-pages/enhanced-campaign/affiliates/sportsbook/standard/bet-10-get-30.html?AFF_ID=10092763" target="_blank" class="bet-title">BET &pound;10 &amp; GET &pound;30</a>
+</div>
+<img src="http://ad.doubleclick.net/ad/N7312.128055.GOAL.COM/B6698976.10;sz=1x1;ord=1478711157?" class="hidden" alt="" />
+<div data-role="bookmaker" data-bookmaker-url="https://betway.com/?s=bw39142&a=1438865515409591" data-bookmaker="Betway" data-index="3" class="hidden">
+<a href="https://betway.com/?s=bw39142&a=1438865515409591" target="_blank" class="bet-logo"><img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/betting/betway_w.png" alt="Betway"></a>
+<a href="https://betway.com/?s=bw39142&a=1438865515409591" target="_blank" class="bet-title">Up to £30 Matched Bet</a>
+</div>
+<div data-role="bookmaker" data-bookmaker-url="https://banners.livepartners.com/click.php?z=12694" data-bookmaker="Netbet" data-index="4" class="hidden">
+<a href="https://banners.livepartners.com/click.php?z=12694" target="_blank" class="bet-logo"><img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/betting/netbet_w.png" alt="Netbet"></a>
+<a href="https://banners.livepartners.com/click.php?z=12694" target="_blank" class="bet-title">NetBet £50 Free</a>
+</div>
+</div>
+</div>
+<span class="button expanded"><span></span></span>
+</section>
+<div class="clearfix"></div>
+
+
+
+<section class="module module-article-related-articles" data-omniture-icid="RA">
+<header class="widget-header">
+<h2>Related</h2>
+</header>
+<ul>
+<li class="tags" itemprop="keywords">
+<a href="/en-gb/results/premier-league/8">Premier League</a>, <a href="/en-gb/teams/england/newcastle-united/664">Newcastle United</a>, <a href="/en-gb/teams/england/aston-villa/665">Aston Villa</a>, <a href="/en-gb/people/scotland/85425/eric-black">Eric Black</a>, <a href="/en-gb/people/netherlands/18304/georginio-wijnaldum">Georginio Wijnaldum</a></li>
+</ul>
+</section>
+<div class="module-ad-taboola">
+<div id="taboola-below-article-thumbnails"></div>
+<script type="text/javascript">
+window._taboola = window._taboola || [];
+_taboola.push(
+{ mode: 'thumbnails-a', container: 'taboola-below-article-thumbnails', placement: 'Below Article Thumbnails', target_type: 'mix' }
+);
+</script>
+</div>
+<div class="module module-promo placeholder" data-related-to="predict-related" data-device="tablet">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/module/promo/mpu/mobile/en-gb.gif"></div>
+<div class="module module-gigya-comments">
+<a name="article-comments"></a>
+<div
+id="unique-id-2"
+data-role="comments"
+data-stream-id="match_2043586"
+data-stream-tags=""
+data-stream-title="Aston Villa - Newcastle United"
+data-stream-url="http://www.goal.com/en-gb/match/aston-villa-vs-newcastle-united/2043586"
+data-width="620"
+data-category-id="en_gb"
+data-translations-title="Leave a comment"
+>
+</div>
+</div>
+</div>
+</div>
+
+<aside>
+<div class="module module-ad mpu-300x250">
+<script language="javascript">
+
+(function(dispatch) {
+if ("mpu" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("mpu" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|3555309|0|170|ADTECH;cookie=info;alias=en-gbLMC14TM;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbLMC14TM;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbLMC14TM;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+<div class="module module-ticketbis hidden" data-competition-id="8" data-edition-code="en-gb" data-restricted-geo-codes="DZ,AO,SH,BJ,BW,BF,BI,CM,CV,CF,TD,KM,CG,DJ,EG,GQ,ER,ET,GA,GM,GH,GW,GN,CI,KE,LS,LR,LY,MG,MW,ML,MR,MU,YT,MA,MZ,NA,NE,NG,ST,RE,RW,ST,SN,SC,SL,SO,ZA,SH,SD,SZ,TZ,TG,TN,UG,CD,ZM,TZ,ZW,SS,CD">
+<header class="widget-header">
+<span class="header-brand"><img src="/images/ticketbis/ticketbis.png" alt=""/></span>
+<h2>Tickets</h2>
+</header>
+<div class="content">
+<div class="competition">
+<p>Premier League</p>
+</div>
+<div class="selector">
+<select data-plugin="customDropdown">
+<option value="0">All teams</option>
+<option value="711">AFC Bournemouth</option>
+<option value="660">Arsenal</option>
+<option value="698">Burnley</option>
+<option value="661">Chelsea</option>
+<option value="679">Crystal Palace</option>
+<option value="674">Everton</option>
+<option value="725">Hull City</option>
+<option value="682">Leicester City</option>
+<option value="663">Liverpool</option>
+<option value="676">Manchester City</option>
+<option value="662">Manchester United</option>
+<option value="671">Middlesbrough</option>
+<option value="670">Southampton</option>
+<option value="690">Stoke City</option>
+<option value="683">Sunderland</option>
+<option value="738">Swansea City</option>
+<option value="675">Tottenham Hotspur</option>
+<option value="696">Watford</option>
+<option value="678">West Bromwich Albion</option>
+<option value="684">West Ham United</option>
+</select>
+</div>
+<div class="tickets">
+<div class="ticket">
+<div class="info">
+<div class="name">Manchester United v Arsenal</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;230.88</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/manchester-united-v-arsenal-tickets/ev103493?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Southampton v Liverpool</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;110.27</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/southampton-v-liverpool-tickets/ev103962?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Watford v Leicester City</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;54.49</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/watford-v-leicester-city-tickets/ev104008?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Crystal Palace v Manchester City</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;106.64</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/crystal-palace-v-manchester-city-tickets/ev103795?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Stoke City v Bournemouth</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;202.45</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/stoke-city-v-bournemouth-tickets/ev104078?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Sunderland v Hull City</div>
+<span class="price-text"><span class="date">19/11/16</span> From <span class="price">&#163;138.15</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/sunderland-v-hull-city-tickets/ev103859?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Middlesbrough v Chelsea</div>
+<span class="price-text"><span class="date">20/11/16</span> From <span class="price">&#163;46.93</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/middlesbrough-v-chelsea-tickets/ev103738?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Brom v Burnley</div>
+<span class="price-text"><span class="date">21/11/16</span> From <span class="price">&#163;51.89</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-brom-v-burnley-tickets/ev104022?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Burnley v Manchester City</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;118.96</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/burnley-v-manchester-city-tickets/ev103941?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Swansea v Crystal Palace</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;108.98</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/swansea-v-crystal-palace-tickets/ev103813?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Leicester City v Middlesbrough</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;85.62</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/leicester-city-v-middlesbrough-tickets/ev103338?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Hull City v West Brom</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;56.29</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/hull-city-v-west-brom-tickets/ev103856?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Liverpool v Sunderland</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;105.61</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/liverpool-v-sunderland-tickets/ev103394?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Chelsea v Tottenham</div>
+<span class="price-text"><span class="date">26/11/16</span> From <span class="price">&#163;187.26</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/chelsea-v-tottenham-tickets/ev103303?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Watford v Stoke City</div>
+<span class="price-text"><span class="date">27/11/16</span> From <span class="price">&#163;39.99</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/watford-v-stoke-city-tickets/ev104014?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Arsenal v Bournemouth</div>
+<span class="price-text"><span class="date">27/11/16</span> From <span class="price">&#163;81.61</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/arsenal-v-bournemouth-tickets/ev103161?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Southampton v Everton</div>
+<span class="price-text"><span class="date">27/11/16</span> From <span class="price">&#163;67.46</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/southampton-v-everton-tickets/ev103957?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Manchester United v West Ham</div>
+<span class="price-text"><span class="date">27/11/16</span> From <span class="price">&#163;85.61</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/manchester-united-v-west-ham-tickets/ev103511?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Manchester City v Chelsea</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;96.92</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/manchester-city-v-chelsea-tickets/ev103439?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Brom v Watford</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;81.44</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-brom-v-watford-tickets/ev104038?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Crystal Palace v Southampton</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;65.41</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/crystal-palace-v-southampton-tickets/ev103800?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Stoke City v Burnley</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;202.45</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/stoke-city-v-burnley-tickets/ev104058?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Sunderland v Leicester City</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;202.45</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/sunderland-v-leicester-city-tickets/ev103861?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Ham v Arsenal</div>
+<span class="price-text"><span class="date">03/12/16</span> From <span class="price">&#163;242.95</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-ham-v-arsenal-tickets/ev103914?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Bournemouth v Liverpool</div>
+<span class="price-text"><span class="date">04/12/16</span> From <span class="price">&#163;308.22</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/bournemouth-v-liverpool-tickets/ev103683?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Middlesbrough v Hull City</div>
+<span class="price-text"><span class="date">05/12/16</span> From <span class="price">&#163;56.93</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/middlesbrough-v-hull-city-tickets/ev103743?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Watford v Everton</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;79.14</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/watford-v-everton-tickets/ev104006?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Arsenal v Stoke City</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;101.74</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/arsenal-v-stoke-city-tickets/ev103231?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Hull City v Crystal Palace</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;66.65</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/hull-city-v-crystal-palace-tickets/ev103823?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Swansea v Sunderland</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;110.27</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/swansea-v-sunderland-tickets/ev103833?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Burnley v Bournemouth</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;101.57</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/burnley-v-bournemouth-tickets/ev103934?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Leicester City v Manchester City</div>
+<span class="price-text"><span class="date">10/12/16</span> From <span class="price">&#163;130.96</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/leicester-city-v-manchester-city-tickets/ev103335?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Chelsea v West Brom</div>
+<span class="price-text"><span class="date">11/12/16</span> From <span class="price">&#163;84.22</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/chelsea-v-west-brom-tickets/ev103305?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Manchester United v Tottenham</div>
+<span class="price-text"><span class="date">11/12/16</span> From <span class="price">&#163;211.36</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/manchester-united-v-tottenham-tickets/ev103508?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Southampton v Middlesbrough</div>
+<span class="price-text"><span class="date">11/12/16</span> From <span class="price">&#163;67.46</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/southampton-v-middlesbrough-tickets/ev103966?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Liverpool v West Ham</div>
+<span class="price-text"><span class="date">11/12/16</span> From <span class="price">&#163;130.92</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/liverpool-v-west-ham-tickets/ev103399?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Bournemouth v Leicester City</div>
+<span class="price-text"><span class="date">13/12/16</span> From <span class="price">&#163;0.00</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/bournemouth-v-leicester-city-tickets/ev103680?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Middlesbrough v Liverpool</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;114.45</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/middlesbrough-v-liverpool-tickets/ev103746?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Sunderland v Chelsea</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;135.90</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/sunderland-v-chelsea-tickets/ev103853?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Ham v Burnley</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;112.26</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-ham-v-burnley-tickets/ev103916?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Manchester City v Watford</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;90.65</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/manchester-city-v-watford-tickets/ev103461?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Brom v Swansea</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;45.69</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-brom-v-swansea-tickets/ev104035?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Crystal Palace v Manchester United</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;138.93</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/crystal-palace-v-manchester-united-tickets/ev103796?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Stoke City v Southampton</div>
+<span class="price-text"><span class="date">14/12/16</span> From <span class="price">&#163;56.29</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/stoke-city-v-southampton-tickets/ev104068?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Crystal Palace v Chelsea</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;147.00</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/crystal-palace-v-chelsea-tickets/ev103790?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Middlesbrough v Swansea</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;48.29</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/middlesbrough-v-swansea-tickets/ev103753?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Stoke City v Leicester City</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;172.26</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/stoke-city-v-leicester-city-tickets/ev104063?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">Sunderland v Watford</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;152.02</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/sunderland-v-watford-tickets/ev103872?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Ham v Hull City</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;98.94</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-ham-v-hull-city-tickets/ev103920?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+<div class="ticket">
+<div class="info">
+<div class="name">West Brom v Manchester United</div>
+<span class="price-text"><span class="date">17/12/16</span> From <span class="price">&#163;124.06</span></span>
+</div>
+<div class="buy">
+<a href="http://www.ticketbis.net/west-brom-v-manchester-united-tickets/ev104030?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="btn" target="_blank">Buy</a>
+</div>
+</div>
+</div>
+</div>
+<footer class="widget-footer">
+<a href="http://www.ticketbis.net/premier-league-tickets/ca667?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=widget-goal-uk" class="more-tickets-btn" target="_blank">More Tickets</a>
+</footer>
+</div>
+<div class="module-ad-taboola">
+<div id="taboola-right-rail-thumbnails"></div>
+<script type="text/javascript">
+window._taboola = window._taboola || [];
+_taboola.push(
+{ mode: 'thumbnails-rr', container: 'taboola-right-rail-thumbnails', placement: 'Right Rail Thumbnails', target_type: 'mix' }
+);
+</script>
+</div>
+
+<section class="module module-livenow" data-plugin="tabs" data-omniture-icid="LN">
+<header class="widget-header">
+<h2>Live Now</h2>
+</header>
+<ul class="tabs">
+<li class="tab" data-tab="schedule"><a href="#">Scores</a></li>
+<li class="tab" data-tab="table"><a href="#">Tables</a></li>
+</ul>
+<div class="selector">
+<select id="clubs-league-list" data-plugin="customDropdown">
+<option selected="selected" data-country-code="ENG" data-area-id="68" value="8">
+Premier League</option>
+<option data-country-code="ESP" data-area-id="176" value="7">
+Primera División</option>
+<option data-country-code="ITA" data-area-id="100" value="13">
+Serie A</option>
+<option data-country-code="DEU" data-area-id="80" value="9">
+Bundesliga</option>
+<option data-country-code="FRA" data-area-id="76" value="16">
+Ligue 1</option>
+<option data-country-code="" data-area-id="7" value="10">
+UEFA Champions League</option>
+<option data-country-code="" data-area-id="7" value="18">
+UEFA Europa League</option>
+<option data-country-code="ENG" data-area-id="68" value="70">
+Championship</option>
+<option data-country-code="" data-area-id="7" value="25">
+European Championship</option>
+<option data-country-code="ENG" data-area-id="68" value="15">
+League One</option>
+<option data-country-code="ENG" data-area-id="68" value="32">
+League Two</option>
+<option data-country-code="" data-area-id="7" value="224">
+WC Qualification Europe</option>
+</select>
+</div>
+<section class="tab-content schedule" data-omniture-icid="LS" data-tabcontent="schedule" data-competitionid="8">
+
+<header>
+<div class="matchday-selector">
+<div class="btn arrow previous" data-gameweek="10" data-roundId="35992"></div>
+<div class="btn arrow next" data-gameweek="12" data-roundId="35992"></div>
+<div class="matchday-name">
+Matchday 11</div>
+</div>
+</header>
+
+<div class="wrapper">
+<table>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-06 16:30:00" data-match-id="2241864" data-match-begindate="1478449800">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-682">
+<span>LEI</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 2</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-678">
+<span>WBA</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/leicester-city-vs-west-bromwich-albion/2241864" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-06 15:00:00" data-match-id="2241867" data-match-begindate="1478444400">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-738">
+<span>SWA</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 3</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-662">
+<span>MUN</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/swansea-city-vs-manchester-united/2241867" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-06 14:15:00" data-match-id="2241863" data-match-begindate="1478441700">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-725">
+<span>HUL</span>
+</div>
+</td>
+<td class="vs">
+<div>
+2 - 1</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-670">
+<span>SOT</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/hull-city-vs-southampton/2241863" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-06 14:15:00" data-match-id="2241865" data-match-begindate="1478441700">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-663">
+<span>LIV</span>
+</div>
+</td>
+<td class="vs">
+<div>
+6 - 1</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-696">
+<span>WAT</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/liverpool-vs-watford/2241865" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-06 12:00:00" data-match-id="2241860" data-match-begindate="1478433600">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-660">
+<span>ARS</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 1</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-675">
+<span>TOT</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/arsenal-vs-tottenham-hotspur/2241860" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-05 17:30:00" data-match-id="2241862" data-match-begindate="1478367000">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-661">
+<span>CHE</span>
+</div>
+</td>
+<td class="vs">
+<div>
+5 - 0</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-674">
+<span>EVE</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/chelsea-vs-everton/2241862" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-05 15:00:00" data-match-id="2241859" data-match-begindate="1478358000">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-711">
+<span>BOR</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 2</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-683">
+<span>SUN</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/afc-bournemouth-vs-sunderland/2241859" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-05 15:00:00" data-match-id="2241861" data-match-begindate="1478358000">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-698">
+<span>BUR</span>
+</div>
+</td>
+<td class="vs">
+<div>
+3 - 2</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-679">
+<span>CRY</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/burnley-vs-crystal-palace/2241861" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-05 15:00:00" data-match-id="2241866" data-match-begindate="1478358000">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-676">
+<span>MCI</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 1</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-671">
+<span>MID</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/manchester-city-vs-middlesbrough/2241866" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+<tbody class="match" data-match-status="played" data-match-time="2016-11-05 15:00:00" data-match-id="2241868" data-match-begindate="1478358000">
+<tr data-omniture-role="item">
+<td class="status">
+<span>
+FT</span>
+</td>
+<td class="team">
+<div class="module module-team simple home">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-684">
+<span>WHU</span>
+</div>
+</td>
+<td class="vs">
+<div>
+1 - 1</div>
+</td>
+<td class="team">
+<div class="module module-team simple away">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-690">
+<span>STO</span>
+</div>
+</td>
+<td class="match-centre">
+<a href="/en-gb/match/west-ham-united-vs-stoke-city/2241868" class="btn match-btn"></a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+<section class="tab-content table" data-omniture-icid="LT" data-tabcontent="table" data-competitionid="8">
+
+<div class="wrapper">
+<table>
+<thead>
+<tr>
+<th colspan="4"></th>
+<th><abbr title="Games played">p</abbr></th>
+<th><abbr title="Goal difference">GD</abbr></th>
+<th><abbr title="Points">PTS</abbr></th>
+</tr>
+</thead>
+<thead>
+</thead>
+<tbody>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="663">
+<td>1</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/liverpool/663" title="Liverpool">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-663" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Liverpool" href="/en-gb/teams/england/liverpool/663">
+Liverpool</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+16</td>
+<td>26</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="661">
+<td>2</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/chelsea/661" title="Chelsea">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-661" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Chelsea" href="/en-gb/teams/england/chelsea/661">
+Chelsea</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+17</td>
+<td>25</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="676">
+<td>3</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-city/676" title="Manchester City">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-676" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Manchester City" href="/en-gb/teams/england/manchester-city/676">
+Manchester City</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+15</td>
+<td>24</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="660">
+<td>4</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/arsenal/660" title="Arsenal">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-660" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Arsenal" href="/en-gb/teams/england/arsenal/660">
+Arsenal</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+13</td>
+<td>24</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="675">
+<td>5</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/tottenham-hotspur/675" title="Tottenham Hotspur">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-675" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Tottenham Hotspur" href="/en-gb/teams/england/tottenham-hotspur/675">
+Tottenham Hotspur</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+9</td>
+<td>21</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="662">
+<td>6</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-united/662" title="Manchester United">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-662" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Manchester United" href="/en-gb/teams/england/manchester-united/662">
+Manchester United</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+3</td>
+<td>18</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="674">
+<td>7</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/everton/674" title="Everton">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-674" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Everton" href="/en-gb/teams/england/everton/674">
+Everton</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+2</td>
+<td>18</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="696">
+<td>8</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/watford/696" title="Watford">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-696" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Watford" href="/en-gb/teams/england/watford/696">
+Watford</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-4</td>
+<td>15</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="698">
+<td>9</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/burnley/698" title="Burnley">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-698" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Burnley" href="/en-gb/teams/england/burnley/698">
+Burnley</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-4</td>
+<td>14</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="670">
+<td>10</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/southampton/670" title="Southampton">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-670" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Southampton" href="/en-gb/teams/england/southampton/670">
+Southampton</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>+0</td>
+<td>13</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="678">
+<td>11</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-bromwich-albion/678" title="West Bromwich Albion">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-678" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="West Bromwich Albion" href="/en-gb/teams/england/west-bromwich-albion/678">
+West Bromwich Albion</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-3</td>
+<td>13</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="690">
+<td>12</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/stoke-city/690" title="Stoke City">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-690" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Stoke City" href="/en-gb/teams/england/stoke-city/690">
+Stoke City</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-5</td>
+<td>13</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="711">
+<td>13</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/afc-bournemouth/711" title="AFC Bournemouth">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-711" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="AFC Bournemouth" href="/en-gb/teams/england/afc-bournemouth/711">
+AFC Bournemouth</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-3</td>
+<td>12</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="682">
+<td>14</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/leicester-city/682" title="Leicester City">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-682" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Leicester City" href="/en-gb/teams/england/leicester-city/682">
+Leicester City</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-5</td>
+<td>12</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="671">
+<td>15</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/middlesbrough/671" title="Middlesbrough">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-671" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Middlesbrough" href="/en-gb/teams/england/middlesbrough/671">
+Middlesbrough</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-2</td>
+<td>11</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="679">
+<td>16</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/crystal-palace/679" title="Crystal Palace">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-679" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Crystal Palace" href="/en-gb/teams/england/crystal-palace/679">
+Crystal Palace</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-3</td>
+<td>11</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="684">
+<td>17</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-ham-united/684" title="West Ham United">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-684" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="West Ham United" href="/en-gb/teams/england/west-ham-united/684">
+West Ham United</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-9</td>
+<td>11</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="725">
+<td>18</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/hull-city/725" title="Hull City">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-725" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Hull City" href="/en-gb/teams/england/hull-city/725">
+Hull City</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-14</td>
+<td>10</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="738">
+<td>19</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/wales/swansea-city/738" title="Swansea City">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-738" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Swansea City" href="/en-gb/teams/wales/swansea-city/738">
+Swansea City</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-11</td>
+<td>5</td>
+</tr>
+<tr data-match-status="0" data-omniture-role="item" data-team-id="683">
+<td>20</td>
+<td class="crest">
+<div class="module module-team home">
+<a href="/en-gb/teams/england/sunderland/683" title="Sunderland">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-683" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Sunderland" href="/en-gb/teams/england/sunderland/683">
+Sunderland</a>
+</td>
+<td class="arrow none"><span></span></td>
+<td>11</td>
+<td>-12</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<footer data-omniture-icid="LF" class="widget-footer" data-role="view-all-schedule"><a href="/en-gb/fixtures" class="btn">View All</a></footer>
+<footer data-omniture-icid="LF" class="widget-footer" data-role="view-all-table"><a href="/en-gb/tables" class="btn">View All</a></footer>
+</section>
+
+<section class="module module-latest-galleries">
+<header class="widget-header">
+<h2>Photo Galleries</h2>
+</header>
+<section class="content">
+<div class="slider">
+<div class="slide">
+<div class="photo-title">
+<a href="/en-gb/news/24082/video-games/2016/11/09/29345702/firmino-bale-the-fifa-17-ultimate-team-of-the-week">FIFA 17 Ultimate Team of the Week</a>
+</div>
+<img src="http://images.performgroup.com/di/library/goal_es/3c/cf/gareth-bale-real-madrid-leganes-la-liga_nm8ajzgv52mh1xkfgkh8z1d7j.png?t=967604695&w=300&h=210" alt="Liverpool forward Roberto Firmino and Real Madrid star Gareth Bale are among the selections for FIFA 17's latest Ultimate Team of the Week. Here they are in full with their upgraded stats...">
+<a class="img-overlay" href="/en-gb/news/24082/video-games/2016/11/09/29345702/firmino-bale-the-fifa-17-ultimate-team-of-the-week"><span class="btn inverted">View Gallery</span></a>
+</div>
+<div class="slide">
+<div class="photo-title">
+<a href="/en-gb/news/7182/galleries/2016/11/09/29097402/cartoon-of-the-day-november">CARTOON: Trump wins US election</a>
+</div>
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/62/ae/donald-trump-cartoon_5d40tq1h4aoj17g5ib7xyz9nq.jpg?t=1228371376&w=300&h=210" alt="Donald Trump won the US presidential election on Wednesday morning, earning 276 electoral votes to Hillary Clinton's 218.">
+<a class="img-overlay" href="/en-gb/news/7182/galleries/2016/11/09/29097402/cartoon-of-the-day-november"><span class="btn inverted">View Gallery</span></a>
+</div>
+<div class="slide">
+<div class="photo-title">
+<a href="/en-gb/news/7182/galleries/2016/11/07/29272152/alexis-drinkwater-and-the-premier-league-worst-team-of-the">Premier League Worst Team of the Week</a>
+</div>
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/5a/67/premier-league-wtotw_kh6m5xrlyek014rsa49mo0fnj.jpg?t=1035820488&w=300&h=210" alt="&lt;strong&gt;ALEXIS SANCHEZ&lt;/strong&gt; | Arsenal 1-1 Tottenham">
+<a class="img-overlay" href="/en-gb/news/7182/galleries/2016/11/07/29272152/alexis-drinkwater-and-the-premier-league-worst-team-of-the"><span class="btn inverted">View Gallery</span></a>
+</div>
+</div>
+</section>
+
+<footer class="navigation">
+<button class="prev"><span class="arrow"></span></button>
+<button class="next"><span class="arrow"></span></button>
+</footer>
+</section>
+<section class="module module-top-scorers" data-omniture-icid="TSW" data-competition-id="8">
+<header class="widget-header">
+<h2>Top scorers</h2>
+</header>
+<table class="players">
+<thead>
+<tr>
+<td>Player</td>
+<td>Goals</td>
+<td>Apps</td>
+</tr>
+</thead>
+<tbody>
+<tr itemscope itemtype="http://schema.org/SportsAthlete/Soccer">
+<td data-omniture-role="item">
+<img class="player-image" src="http://static.goal.com/447900/447904_mugshot.jpg" alt="Diego Costa" itemprop="image">
+<a class="name" href="/en-gb/people/spain/14826/diego-costa" itemprop="url"><span itemprop="name">Diego Costa</span></a>
+<span class="position" itemprop="positionName">
+Striker</span>
+<span itemprop="currentTeam" itemscope itemtype="http://schema.org/SportsTeam/Soccer">
+<a class="team" href="/en-gb/teams/england/chelsea/661" itemprop="url">
+<span itemprop="name">Chelsea</span>
+</a>
+</span>
+</td>
+<td class="goals" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/Soccer/Goals">
+<span itemprop="value">9</span>
+</td>
+<td class="apps" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/GamesPlayed">
+<span itemprop="value">11</span>
+</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/SportsAthlete/Soccer">
+<td data-omniture-role="item">
+<img class="player-image" src="http://static.goal.com/213300/213305_mugshot.jpg" alt="S. Agüero" itemprop="image">
+<a class="name" href="/en-gb/people/argentina/12590/sergio-ag%C3%BCero" itemprop="url"><span itemprop="name">S. Agüero</span></a>
+<span class="position" itemprop="positionName">
+Striker</span>
+<span itemprop="currentTeam" itemscope itemtype="http://schema.org/SportsTeam/Soccer">
+<a class="team" href="/en-gb/teams/england/manchester-city/676" itemprop="url">
+<span itemprop="name">Manchester City</span>
+</a>
+</span>
+</td>
+<td class="goals" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/Soccer/Goals">
+<span itemprop="value">8</span>
+</td>
+<td class="apps" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/GamesPlayed">
+<span itemprop="value">9</span>
+</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/SportsAthlete/Soccer">
+<td data-omniture-role="item">
+<img class="player-image" src="http://static.goal.com/198700/198707_mugshot.jpg" alt="E. Hazard" itemprop="image">
+<a class="name" href="/en-gb/people/belgium/23040/eden-hazard" itemprop="url"><span itemprop="name">E. Hazard</span></a>
+<span class="position" itemprop="positionName">
+Midfielder</span>
+<span itemprop="currentTeam" itemscope itemtype="http://schema.org/SportsTeam/Soccer">
+<a class="team" href="/en-gb/teams/england/chelsea/661" itemprop="url">
+<span itemprop="name">Chelsea</span>
+</a>
+</span>
+</td>
+<td class="goals" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/Soccer/Goals">
+<span itemprop="value">7</span>
+</td>
+<td class="apps" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/GamesPlayed">
+<span itemprop="value">11</span>
+</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/SportsAthlete/Soccer">
+<td data-omniture-role="item">
+<img class="player-image" src="http://static.goal.com/212500/212588_mugshot.jpg" alt="R. Lukaku" itemprop="image">
+<a class="name" href="/en-gb/people/belgium/36519/romelu-lukaku" itemprop="url"><span itemprop="name">R. Lukaku</span></a>
+<span class="position" itemprop="positionName">
+Striker</span>
+<span itemprop="currentTeam" itemscope itemtype="http://schema.org/SportsTeam/Soccer">
+<a class="team" href="/en-gb/teams/england/everton/674" itemprop="url">
+<span itemprop="name">Everton</span>
+</a>
+</span>
+</td>
+<td class="goals" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/Soccer/Goals">
+<span itemprop="value">7</span>
+</td>
+<td class="apps" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/GamesPlayed">
+<span itemprop="value">10</span>
+</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/SportsAthlete/Soccer">
+<td data-omniture-role="item">
+<img class="player-image" src="http://static.goal.com/229400/229461_mugshot.jpg" alt="J. Defoe" itemprop="image">
+<a class="name" href="/en-gb/people/england/2121/jermain-defoe" itemprop="url"><span itemprop="name">J. Defoe</span></a>
+<span class="position" itemprop="positionName">
+Striker</span>
+<span itemprop="currentTeam" itemscope itemtype="http://schema.org/SportsTeam/Soccer">
+<a class="team" href="/en-gb/teams/england/sunderland/683" itemprop="url">
+<span itemprop="name">Sunderland</span>
+</a>
+</span>
+</td>
+<td class="goals" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/Soccer/Goals">
+<span itemprop="value">6</span>
+</td>
+<td class="apps" itemprop="statistics" itemscope itemtype="http://schema.org/SportStat/GamesPlayed">
+<span itemprop="value">11</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="hidden">
+</div>
+</section>
+<div class="module module-ad fresh8-mpu">
+<!-- Begin: Fresh8 placement --> <div id="f8-003"></div><!-- End: Fresh8 placement --></div>
+
+<div class="module module-ad mpu-300x250-extra">
+<script language="javascript">
+
+(function(dispatch) {
+if ("mpu" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("mpu" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|3555309|0|170|ADTECH;cookie=info;alias=en-gbLMC14BM;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbLMC14BM;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbLMC14BM;key=match:index+L64;kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+</aside>
+</section>
+<div class="clearfix module module-footer" data-module="footer">
+<nav class="navigation">
+<header class="widget-header">
+<h2>Goal <span class="current-edition">United Kingdom</span></h2>
+</header>
+<ul class="common-links">
+<li><a href="/en-gb/legal/privacy-policy">Privacy Policy</a></li>
+<li><a href="/en-gb/legal/terms-conditions">Terms of Service</a></li>
+<li><a href="/en-gb/contact/about">About Us</a></li>
+<li class="line-spacer"><a href="/en-gb/contact">Contact Us</a></li>
+<li>
+<a href="/en-gb/info/683/main/2009/09/16/1505389/visit-mgoalcom-on-your-mobile">Mobile</a>
+</li>
+<li>
+<a href="/en-gb/news/2995/goal-com-betting">Betting</a>
+</li>
+<li>
+<a href="/en-gb/news/7119/commercial/2016/01/01/24330962/new-goal-app">Goal App</a>
+</li>
+<li>
+<a href="/en-gb/news/5432/gaming/2016/04/02/24476452/goal-live-scores">Goal Live Scores</a>
+</li>
+<li>
+<a href="/en-gb/news/5432/goal-fantasy-football/2014/07/29/4973670/play-the-new-goal-fantasy-football-game">Fantasy Football</a>
+</li>
+</ul>
+</nav>
+<section class="editions">
+<header class="widget-header">
+<h2>Editions</h2>
+</header>
+
+<ul>
+<li><a href="/en/" class="flag-en">International</a></li>
+<li><a href="/en-us/" class="flag-en-us">America</a></li>
+<li><a href="/es-ar/" class="flag-es-ar">Argentina</a></li>
+<li><a href="/en-au/" class="flag-en-au">Australia</a></li>
+<li><a href="/ba/" class="flag-ba">Bosna i Hercegovina</a></li>
+<li><a href="/br/" class="flag-br">Brasil</a></li>
+<li><a href="/en-ca/" class="flag-en-ca">Canada</a></li>
+<li><a href="/es-cl/" class="flag-es-cl">Chile</a></li>
+<li><a href="/es-co/" class="flag-es-co">Colombia</a></li>
+<li><a href="/de/" class="flag-de">Deutsch</a></li>
+<li><a href="/es/" class="flag-es">España</a></li>
+<li><a href="/fr/" class="flag-fr">Français</a></li>
+<li><a href="/en-gh/" class="flag-en-gh">Ghana</a></li>
+</ul>
+<ul>
+<li><a href="/hr/" class="flag-hr">Hrvatska</a></li>
+<li><a href="/en-india/" class="flag-en-india">India</a></li>
+<li><a href="/id-ID/" class="flag-id-ID">Indonesia</a></li>
+<li><a href="/en-ie/" class="flag-en-ie">Ireland</a></li>
+<li><a href="/it/" class="flag-it">Italia</a></li>
+<li><a href="/en-ke/" class="flag-en-ke">Kenya</a></li>
+<li><a href="/en-my/" class="flag-en-my">Malaysia</a></li>
+<li><a href="/es-mx/" class="flag-es-mx">México</a></li>
+<li><a href="/nl/" class="flag-nl">Nederlands</a></li>
+<li><a href="/en-ng/" class="flag-en-ng">Nigeria</a></li>
+<li><a href="/en-sg/" class="flag-en-sg">Singapore</a></li>
+<li><a href="/en-za/" class="flag-en-za">South Africa</a></li>
+<li><a href="/en-tz/" class="flag-en-tz">Tanzania</a></li>
+</ul>
+<ul>
+<li><a href="/tr/" class="flag-tr">Türkçe</a></li>
+<li><a href="/en-gb/" class="flag-en-gb">UK</a></li>
+<li><a href="/cn/" class="flag-cn">简体中文</a></li>
+<li><a href="/hk/" class="flag-hk">繁體中文</a></li>
+<li><a href="/kr/" class="flag-kr">한국어</a></li>
+<li><a href="/jp/" class="flag-jp">日本語</a></li>
+<li><a href="/th/" class="flag-th">ภาษาไทย</a></li>
+<li><a href="/ar/" class="flag-ar">العربية</a></li>
+<li><a href="/ar-eg/" class="flag-ar-eg">المصرية</a></li>
+<li><a href="/ar-sa/" class="flag-ar-sa">السعودية</a></li>
+<li><a href="/en-ar/" class="flag-en-ar">Gulf English</a></li>
+<li><a href="/hu/" class="flag-hu">Magyarország</a></li>
+</ul>
+
+</section>
+<footer itemscope itemtype="http://schema.org/WPFooter">
+<small>Copyright &copy; <span itemprop="copyrightYear">2016</span> <span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Goal.com</span></span> All rights reserved. The information contained in Goal.com may not be published, broadcast, rewritten, or redistributed without the prior written authority of Goal.com</small>
+</footer>
+</div>
+</div>
+<!--[if IE]>
+
+<script src="/static/js?files=%2Fjs%2Fexternal%2Fplugins%2Fexcanvas.compiled.js&version=2016.11.08-v1"></script><![endif]-->
+
+
+<script src="/static/js?files=%2Fjs%2Fexternal%2Flodash.min.js%2C%2Fjs%2Fexternal%2Funderscore.string.min.js%2C%2Fjs%2Fexternal%2Fcallbacks.lodash.js%2C%2Fjs%2Fexternal%2Fjstorage.js%2C%2Fjs%2Fglobals.js%2C%2Fjs%2Fhelpers.js%2C%2Fjs%2Fevents.js%2C%2Fjs%2Fexternal%2Fplugins%2C%2Fjs%2Finternal%2Fplugins%2C%2Fjs%2Finternal%2Flibraries%2C%2Fjs%2Fjquery%2Ffooter%2C%2Fjs%2Fexternal%2Fmoments.js&version=2016.11.08-v1"></script>
+<script src="/static/js?files=%2Fjs%2Fsettings.js%2C%2Fjs%2Fapplication.js&locale=en-gb&version=2016.11.08-v1"></script>
+<script src="/static/js?files=%2Fjs%2Finternal%2Fplugins%2Fsmartbanner%2Fjquery.smartbanner.js&version=2016.11.08-v1"></script><script type="text/javascript">
+/*global namespace, Goal, jQuery, _*/
+(function (window, document, $, _, undefined) {
+'use strict';
+
+var pluginNamespace = 'smartbanner';
+
+namespace(Goal.fmt('Goal.settings.%@', pluginNamespace));
+namespace(Goal.fmt('Goal.events.%@', pluginNamespace));
+
+Goal.settings[pluginNamespace] = {"Goal":{"author":"Goal.com","title":"Goal.com","id":{"iOS":"518026818","Android":"com.freerange360.mpp.GOAL"},"url":"http:\/\/smarturl.it\/goalsmartbanrs","price":"FREE","appStoreLanguage":"us","layer":"absolute","icon":"\/apple-touch-icon-114x114.png","daysHidden":2,"daysReminder":2,"button":"VIEW","iconGloss":false},"GoalLiveScores":{"author":"Goal.com","title":"Goal LiveScores","id":{"iOS":"687276446","Android":"com.kokteyl.goal"},"url":"http:\/\/hyperurl.co\/GoalLS","price":"FREE","appStoreLanguage":"us","layer":"absolute","icon":"\/images\/module\/live-scores\/icon57x57.png","daysHidden":2,"daysReminder":2,"button":"VIEW","iconGloss":false},"GoalFantasyFootball":{"author":"Goal.com","title":"Goal Fantasy Football","id":{"iOS":"873273187","Android":"com.fantasyiteam.goalus"},"url":"https:\/\/34ui.app.link\/SB","price":"Play for free","appStoreLanguage":"us","layer":"absolute","icon":"\/images\/rumour\/icon114x114.png","daysHidden":2,"daysReminder":2,"button":"Play Now","iconGloss":false}};
+Goal.events[pluginNamespace] = {
+init: function () {
+Goal.log(Goal.fmt('Goal:events:%@:init ', pluginNamespace));
+var $head = $('head'),
+$meta = $('<meta>'),
+appCookies = {
+closed : $.cookie('sb-closed-apps') ? $.cookie('sb-closed-apps').split(',') : [],
+installed : $.cookie('sb-installed-apps') ? $.cookie('sb-installed-apps').split(',') : []
+},
+config = Goal.settings.smartbanner,
+args = Object.keys(config).map(function (key) {return config[key];}),
+UA = window.navigator.userAgent;
+
+if(!$.fn.on) {
+$.fn.on = $.fn.bind;
+}
+
+args = args.filter(function (arg) {
+return ( ( -1 === appCookies.closed.indexOf(arg.id.Android) ) || ( -1 === appCookies.closed.indexOf(arg.id.iOS) ) ) &&
+( ( -1 === appCookies.installed.indexOf(arg.id.Android) ) || ( -1 === appCookies.installed.indexOf(arg.id.iOS) ) );
+});
+
+config = args[ Math.floor( Math.random() * args.length ) ];
+
+if (config && $.smartbanner) {
+if (config.id.iOS) {
+$head.append($meta.clone()
+.attr('name', 'apple-itunes-app-smart')
+.attr('content', 'app-id=' + config.id.iOS)
+);
+}
+
+if (config.id.Android && !($head.find('[name="google-play-app"]').length)) {
+$head.append($meta.clone()
+.attr('name', 'google-play-app')
+.attr('content', 'app-id=' + config.id.Android)
+);
+}
+
+$.cookie('sb-closed', null, {path: '/'});
+$.cookie('sb-installed', null, {path: '/'});
+
+if ( UA.match(/iPhone|iPod|iPad/i) ) {
+config.force = 'ios';
+}
+
+
+if (UA.toLowerCase().indexOf('ucbrowser') < 0) {
+$.smartbanner(config);
+}
+
+$('.sb-close', '#smartbanner').on('click', function() {
+appCookies.closed.push(config.id.Android);
+appCookies.closed.push(config.id.iOS);
+$.cookie('sb-closed-apps', appCookies.closed.join(','), {expires: config.daysHidden ,path: '/'});
+});
+
+$('.sb-button', '#smartbanner').on('click', function() {
+appCookies.installed.push(config.id.Android);
+appCookies.installed.push(config.id.iOS);
+$.cookie('sb-installed-apps', appCookies.installed.join(','), {expires: config.daysReminder ,path: '/'});
+});
+}
+}
+};
+}(window, document, jQuery, _));
+</script>
+<!-- Begin: Fresh8 data --><div id="fresh8-data-container" data-competitionids="8" data-matchids="2043586" data-teamids="665,664" ></div><!-- End: Fresh8 data --><!-- Begin: Fresh8 script --><script language='javascript'>
+(function () {var url = '//fresh8.co/CODE/embed.js?view=match-preview',defaultCountryCode = 'default',
+countryCode,
+fresh8Codes = {"default":864237,"GB":864238,"AU":864239,"CA":864240,"ES":864241,"GH":864242,"IE":864243,"NG":864244,"KE":864245,"ZA":864246,"IT":864247,"DE":864248,"FR":864249,"ID":864250,"TH":864251,"CS":864252,"SI":864253,"JP":864254,"MX":864255,"BE":754647},
+blackListCountryCodes = ["AF","AS","AO","BH","BI","KH","TD","CN","TW","CG","CD","EG","ER","GF","GP","GU","GW","HT","HK","ID","IR","IQ","IL","JP","JO","KW","LB","LY","MQ","MC","MM","NL","KP","OM","PS","PH","PR","QA","SA","SG","SO","SD","SY","TJ","TR","TM","AE","US","VI","UZ","VE","YE","ZW"],
+fresh8Interval;
+function getFresh8 () {
+countryCode = jQuery('body').data()['userCountryCode'];
+if (typeof(countryCode) !== 'undefined') {
+clearInterval(fresh8Interval);
+if (blackListCountryCodes.indexOf(countryCode) === -1) {
+if (Object.keys(fresh8Codes).indexOf(countryCode) >= 0) {
+countryCode = fresh8Codes[countryCode];
+} else {
+countryCode = fresh8Codes[defaultCountryCode];
+}
+jQuery.getScript( url.replace('CODE', countryCode), function () {
+if (typeof(Carpet) !== 'undefined') {
+var f8 = Carpet.getComponent('fresh8');
+f8.init();
+}
+});
+}
+}
+}
+fresh8Interval = setInterval(getFresh8, 100);
+})();
+</script><!-- End: Fresh8 script -->
+<script src="/static/js?files=%2Fjs%2Fslimcut.js&version=2016.11.08-v1"></script><div class="tracking-codes">
+<!-- Begin: Google Analytics dc.js -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3459197-19']);
+_gaq.push(['_setDomainName', '.goal.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- End: Google Analytics dc.js --><!-- BEGIN EFFECTIVE MEASURE CODE -->
+<!-- COPYRIGHT EFFECTIVE MEASURE -->
+<script type="text/javascript">
+var _em_survey_rate = 0;
+</script>
+<script type="text/javascript">
+(function() {
+var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true;
+em.src = ('https:' == document.location.protocol ? 'https://za-ssl' : 'http://za-cdn') + '.effectivemeasure.net/em.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s);
+})();
+</script>
+<noscript>
+<img src="https://s.effectivemeasure.net/d/6/i?pu=http%3A%2F%2Fwww.goal.com%2Fnoscript" alt="" style="position:absolute; left:-5px;" />
+</noscript>
+<!--END EFFECTIVE MEASURE CODE --><!-- Begin: William Hill -->
+<img src="http://serve.williamhill.com/promoLoadDisplay?member=goalcom&amp;campaign=DEFAULT&amp;channel=widget&amp;zone=593986973&amp;lp=0" height="1" width="1" style="width:1px;height:1px" />
+<!-- End: William Hill --><!-- Begin: Tribes Tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-94wNw88f65Rhk",
+labels:"MTVN Digital Tribes"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-94wNw88f65Rhk.gif?labels=MTVN%20Digital%20Tribes" style="display: none;" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End: Tribes Tag --><!-- Begin: Comscore Beacon -->
+<img id="comscore-beacon-img" height="1" width="1" alt="">
+<script type="text/javascript">
+var randnum = Math.floor(Math.random()*99999999);
+var p_url = escape(window.location.href);
+var p_title = escape(document.title);
+document.getElementById("comscore-beacon-img").src="http://beacon.securestudies.com/scripts/beacon.dll?C1=2&C2=6153249&C3=6153249&C4=www.goal.com&C5=Sports-Soccer&C6=Sports-Soccer&C7=" + p_url + "&C8=" + p_title + "&rn=" + randnum;
+</script>
+<!-- End: Comscore Beacon --><!-- Begin: Nielsen Tag -->
+<script type="text/javascript">
+var _nol = { pvar: { cid: 'sportal-goal', content: "0", server: 'secure-au'} };
+(function () {
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.async = true;
+s.src = '//secure-au.imrworldwide.com/v60a.js';
+var x = document.getElementsByTagName('script')[0];
+x.parentNode.insertBefore(s, x);
+})();
+</script>
+<noscript>
+<div>
+<img src="//secure-au.imrworldwide.com/cgi-bin/m?ci=sportal-goal&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" />
+</div>
+</noscript>
+<!-- End: Nielsen Tag --><!-- Begin: Lotame SmartTag audience-extraction.js -->
+<script type="text/javascript">
+// Lotame Solutions, Inc. JavaScript snippet for making audience extraction
+// calls using SmartTag and/or first party domains.
+// By: Ryan Chapin
+// Since: 2013-11-08
+var cc_client_id = 3376;
+
+// Callback method that will be invoked and passed the JSON payload from the
+// JSONP extraction call.
+var cc_extr_callback = 'ccauds';
+
+// Optional port number. If calls are being made to the Lotame servers on
+// a custom port, uncomment and set.
+// var portNumber = '8080';
+
+/**
+* Will generate the proper audience extraction URL to be used in a
+* JSONP call on the client page.
+*/
+function get_cc_extr_url() {
+var domain = '.crwdcntrl.net';
+
+// Look for a domain cookie first
+
+var noDomainCookie = true;
+var start = document.cookie.indexOf('_cc_domain');
+if (start > -1) {
+var valStartDc = document.cookie.indexOf('=', start);
+if (valStartDc > 0) {
+noDomainCookie = false;
+valStartDc++;
+var valEndDc = document.cookie.indexOf(';', valStartDc);
+valEndDc = valEndDc > 0 ? valEndDc : document.cookie.length;
+domain = document.cookie.slice(valStartDc, valEndDc);
+}
+}
+
+// If there was no domain cookie then check to see if there is an id cookie.
+
+var idCookie = false;
+if (noDomainCookie) {
+var id;
+start = document.cookie.indexOf('_cc_id');
+if (start > -1) {
+var valStartId = document.cookie.indexOf('=', start);
+if (valStartId > 0) {
+idCookie = true;
+valStartId++;
+var valEndId = document.cookie.indexOf(';', valStartId);
+valEndId = valEndId > 0 ? valEndId : document.cookie.length;
+id = document.cookie.slice(valStartId, valEndId);
+}
+}
+}
+var cc_url = 'http://ad' + domain;
+if (typeof(portNumber) != 'undefined' && portNumber != null) {
+cc_url = cc_url + ':' + portNumber;
+}
+cc_url = cc_url + '/5/c=' + cc_client_id + '/pe=y/callback=' + cc_extr_callback;
+if(idCookie) {
+cc_url = cc_url + '/pid=' + id;
+}
+return cc_url;
+}
+
+function ccauds(data) {
+var audiencesString = JSON.stringify(data, undefined, 2);
+
+// Do something with the audiences. This just prints it out in the DOM.
+var divTag = document.createElement('div');
+divTag.style.display = 'none';
+divTag.innerHTML = '<strong>Audiences:</strong> ' + audiencesString + '<br/><br/>';
+document.body.appendChild(divTag);
+}
+
+(function () {
+// get the correct URL to call based on the existing cookies
+var url = get_cc_extr_url();
+
+// Make the JSONP call
+var divTag = document.createElement('div');
+divTag.style.display = 'none';
+divTag.innerHTML = '<strong>Loading audience extraction url:</strong> ' + url +'<br/><br/>';
+document.body.appendChild(divTag);
+
+var tempScriptTag = document.createElement('script');
+tempScriptTag.type = 'text/javascript';
+tempScriptTag.src = url;
+document.body.appendChild(tempScriptTag);
+})();
+</script>
+<!-- End: Lotame SmartTag audience-extraction.js -->
+<!-- Begin: Lotame end tag -->
+<script type="text/javascript" src="http://tags.crwdcntrl.net/c/3376/cc.js?ns=_cc3376" id="LOTCC_3376"></script>
+<script type="text/javascript" language="javascript">_cc3376.bcp();</script>
+<!-- End: Lotame end tag -->
+<script language="javascript" type="text/javascript" src="//js.revsci.net/gateway/gw.js?csid=F09828&auto=t&bpid=performgroup"></script>
+<!-- Begin: Sentinel -->
+<script async="async" type="text/javascript" src="http://d3avqv6zaxegeu.cloudfront.net/sentinel.js" data-client-id="tBdOzZizJrxtncD"></script>
+<!-- End: Sentinel --><!-- BEGIN: Chartbeat tracking code -->
+<script type='text/javascript'>
+var _sf_async_config = _sf_async_config || {};
+/** CONFIGURATION START **/
+_sf_async_config.uid = 22788;
+_sf_async_config.domain = 'goal.com';
+_sf_async_config.useCanonical = true;
+_sf_async_config.sections = '';
+_sf_async_config.authors = '';
+/** CONFIGURATION END **/
+(function() {
+function loadChartbeat() {
+window._sf_endpt = (new Date()).getTime();
+var e = document.createElement('script');
+e.setAttribute('language', 'javascript');
+e.setAttribute('type', 'text/javascript');
+e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+document.body.appendChild(e);
+}
+var oldonload = window.onload;
+window.onload = (typeof window.onload != 'function') ?
+loadChartbeat : function() {
+oldonload();
+loadChartbeat();
+};
+})();
+</script>
+<!-- END: Chartbeat tracking code -->
+</div>
+
+<div class="module module-ad floatingbar" data-adtech="adtech-floating">
+<div class="floatingbar-wrapper desktop">
+<script language="javascript">
+(function(){
+var cookieName = 'goal_no_ad_floating_bar';
+if (!$.cookie(cookieName) && Goal.is('desktop')) {
+document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4633655|0|16|ADTECH;cookie=info;alias=en-gbLMC14FB;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');}
+})();
+</script>
+<span class="close">&nbsp;</span>
+</div>
+<div class="floatingbar-wrapper tablet">
+<script language="javascript">
+(function(){
+var cookieName = 'goal_no_ad_floating_bar';
+if (!$.cookie(cookieName) && Goal.is('tablet')) {
+document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4633655|0|16|ADTECH;cookie=info;alias=en-gbLMC14FB;key=match:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=match:index;kvpagetag=;kvarticleid=;kvoteamid=665:664;kvamz=' + window.amzValues + ';kvmatchid=2043586;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');}
+})();
+</script>
+<span class="close">&nbsp;</span>
+</div>
+</div><script type="text/javascript" src="http://widget.cloud.opta.net/2.0/js/widgets.opta.js"></script>
+<script type="text/javascript">
+var _optaParams = {
+custID: '24b3090269b03c8d196e17104e917977',
+language: 'en_GB',
+timezone: '-1'
+};
+</script>
+<script type="text/javascript">
+window._taboola = window._taboola || [];
+_taboola.push(
+{flush: true}
+);
+</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"dddd82eb94","applicationID":"4529285","transactionName":"MQEBYhRVXkAEVEJZDghLIlUSXV9dSnlZfQ4CEQ9TSVlRRwZfGVkPAgEb","queueTime":0,"applicationTime":915,"atts":"HUYCFFxPTU4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

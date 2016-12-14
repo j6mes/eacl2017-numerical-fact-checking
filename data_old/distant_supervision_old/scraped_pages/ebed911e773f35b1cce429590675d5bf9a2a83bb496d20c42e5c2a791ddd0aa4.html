@@ -1,0 +1,3501 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 9]><html class="no-js lt-ie10" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"> <!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Get current and upcoming local events in Cleveland, OH. Read news and search our local events calendar for the latest theater, gallery, arts and artist events at Cleveland.com" />
+<meta name="keywords" content="Cleveland events, Cleveland OH events, Cleveland events calendar, local events, current events, upcoming events" />
+<meta name="robots" content="all,index,follow" />
+<title>Cleveland, OH Local Events - Cleveland.com</title>
+
+<script>
+window.onload = function(){
+    document.getElementsByClassName('location_dropdown')[1].onclick = function(){
+        window.adiTrack.event({action:'use-my-location-activated', category:'events', label:'Screen width: '+window.innerWidth});
+    }
+}
+</script>
+    
+    
+<meta name="fragment" content="!">
+
+<!--[if lt IE 10]>
+ <script>
+    window.location = "/events/browsernotice/";
+</script> 
+<![endif]-->
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta property="fb:admins" content="100000302287435" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/js/adv-js-loader.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/js/resimg.js"></script>
+
+<!-- angular dependencies -->
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/angular.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/angular-resource.min.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/angular-route.js"></script>
+
+<!-- ics generator -->
+<script type="text/javascript" src="http://static.advance.net/static/common/events/js/ics/ics.deps.min.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/events/js/ics/ics.js"></script>
+
+<!-- filter auto-complete -->
+<script type="text/javascript" src="http://static.advance.net/static/common/events/js/autocomplete.js"></script>
+
+<!-- for the slideshow  -->
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/idangerous.swiper.js"></script>
+
+<!-- mapquest api -->
+<script type="text/javascript" src="http://static.advance.net/static/common/js/libs/mqa.toolkit.js"></script>
+
+<!-- events-specific files -->
+<link rel="stylesheet" type="text/css" href="http://static.advance.net/static/common/events/css/adv_events.css">
+<script type="text/javascript" src="http://static.advance.net/static/cleve/static/js/eventsConfig.js"></script>
+<script type="text/javascript" src="http://static.advance.net/static/common/events/js/eventsApp.js"></script>
+
+
+<link rel="stylesheet" href="http://static.advance.net/static/cleve/static/css/main.css" />
+<link rel="stylesheet" href="http://static.advance.net/static/common/css/fonts.css" />
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+if (!window.Advance) window.Advance = {};
+Advance.Affiliates = {
+'advance.net': 'advance', 'al.com': 'bama', 'cleveland.com': 'cleve', 'gulflive.com': 'gulf', 'lehighvalleylive.com': 'lvlive', 'masslive.com': 'mass', 'mlive.com': 'mlive', 'nj.com': 'njo', 'nola.com': 'nola', 'oregonlive.com': 'olive', 'pennlive.com': 'pennlive', 'silive.com': 'silive', 'syracuse.com': 'syr',
+'domain': (function() {
+		var h = (window.location.host).split(".").reverse();
+		return [ h[1], h[0] ].join(".");
+	})()
+};
+Advance.Affiliates['aff'] = (function(a) { return a[a.domain]; } )(Advance.Affiliates);
+Advance.Affiliates['tierSuffix'] = (function() {
+    var subdomain = window.location.href.split(".")[0];
+    if (subdomain.match("-uat")) {
+        tier = "-uat";
+    } else if (subdomain.match("-stage")) { // Previewing production builder pages
+        tier = "";
+    } else if (subdomain.match("-")) {
+            tier = "-shared-dev";
+    } else {
+            tier = "";
+    }
+    return tier;
+})();
+var isSSF = true;
+if (!blogURL) {
+	var blogId = 0;
+	var blogIdStr = "";
+	var blogURL = "";
+	var mediaURL = "http://media" + Advance.Affiliates.tierSuffix + "." + Advance.Affiliates.domain + "/design/alpha";
+	var advVersion = "alpha";
+	var advEnvPrefix = Advance.Affiliates.tierSuffix;	
+	var advAffiliate = Advance.Affiliates.aff;
+	var advDomain = Advance.Affiliates.domain;
+	var signinSubDomain = 'http://signup';
+	var mtRegistrationAllowed = false;
+	var mtRegistrationRequired = false;
+	var mtRegisterCGIPath = signinSubDomain+".advance.net/";
+	var mtRelativeCGIPath = "/cgi-bin/mte/";
+	var mtCommunityScript = "community/";
+	var mtUserSessionCookieName = "mt_blog_user";
+	var mtUserSessionCookiePath = "/";
+	var mtUserSessionCookieTimeout = 14400;
+	var mtUserSessionCookieDomain = "." + advDomain;
+	var mtAdminScript = "mt.cgi";
+	var mtCaptchaFields = "";
+	var mtAffiliate = advAffiliate;
+	var mtArmorValue = "";
+	var avatarURL = "http://media" + Advance.Affiliates.tierSuffix + "." + Advance.Affiliates.domain + "/avatars";
+}
+/* ]]> */
+</script>
+<script type="text/javascript">
+    var mtCookieName = "mt_blog_user", mtSessionCookieName = "mt_commenter", mtCookieDomain = document.location.host.replace(/([0-9a-z\-]+?\.)+([0-9a-z\-]+?\.[a-z]{3})/, ".$2"), mtCookiePath = "/", mtCookieTimeout = 14400, signinSubDomain = advEnvPrefix.match("dev") ? "http://signup" : "https://signup", mediaURL = "http://media" + advEnvPrefix + "." + advDomain + "/design/" + advVersion, avatarURL = "http://media" + advEnvPrefix + "." + advDomain + "/avatars", mtRegistrationAllowed = !0, mtRegistrationRequired = !0, mtRegisterCGIPath = signinSubDomain + advEnvPrefix + ".advance.net/", mtRelativeCGIPath = "/cgi-bin/mte/", mtCommunityScript = "community/", mtCaptchaFields = "", DEBUG;
+</script>
+
+  <script>
+   $(function() {
+    $(".three-col-promo, .promo-box, .topic-content, #three-over-two").append('<span class="expand-button"></span><div class="clearfix"></div>');
+    $(".expand-button").click(function() {
+     if ($(this).css("background-position") == "100% -80px"){
+      $(this).css("background-position","100% 0px");
+     } else {
+      $(this).css("background-position","100% -80px");
+     };
+    });
+    
+    $(".three-col-promo .expand-button").click(function() {
+     $(".tcp-row .col2 .tcp-item + .tcp-item, .tcp-row .col3").toggle();
+    });
+    $(".promo-box .expand-button").click(function() {
+     $("ul li + li", $(this).parent()).toggle();
+     if ($(".promo-box ul li + li.view-none, .promo-box ul li + li.view-gallery, .promo-box ul li + li.view-video").css("display") == "list-item") {
+      $(".promo-box ul li + li.view-none, .promo-box ul li + li.view-gallery, .promo-box ul li + li.view-video").css("display","block");    
+     }
+    });
+    $(".topic-content .expand-button").click(function() {
+     $(".topic-side, .topic-side-2", $(this).parent()).toggle();
+    });
+    
+    $("#three-over-two .expand-button").click(function() {
+     $("#three-over-two .row2, #three-over-two .row1 .col2 .tot-item + .tot-item").toggle();
+    });
+    
+    if ($('#three-over-two .row1').length == 0) {
+    $('#three-over-two .row2').show();
+    $("#three-over-two .expand-button").hide();
+    }
+    
+    if (document.documentElement.clientWidth >= 600) {
+     $("img.lazy").lazyload({});
+    }
+   });
+  </script>
+
+        
+		    <!-- Events UAT/Prod -->
+			<script type="text/javascript">
+CustomAdDataConfig = { attributes: {} } ;
+ CustomAdDataConfig['attributes']['nucleus'] = {
+           cache: { expires: 0, refresh: 0 },
+            source: {
+                     provider: 'nucleus',
+                     options: {
+                        site: 'cleveland.com',
+                        timeout: 2500,
+			position_list: {
+                            'mobile': ['Tile1', 'Tile2'],
+                            'desktop': ['Leaderboard', 'Rectangle', 'RectangleBelow', 'Marketing2', 'Rectangle2']
+                        }
+                    }
+            }
+}
+</script>
+
+<script type="text/javascript" src="//static.advance.net/static/common/js/ads/ads.js"></script>
+
+
+	    
+    
+	<script type="text/javascript" src="//tags.tiqcdn.com/utag/advancedigital/lib-common/prod/utag.sync.js"></script>
+
+    <!-- * -->
+    
+
+
+    
+</head>
+
+<body>
+    
+
+    
+    <script type="text/javascript">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/advancedigital/cleveland/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+
+    
+        
+
+
+<!-- toprail -->
+<section id="adv_network">
+    <div class="advWrapper">
+        <div class="Popup"><div class="Popup adunit nomobilead" id="Popup"></div></div>
+        <div class="adunit nomobilead" id="Leaderboard"></div>
+        <div id="Tile1" class="Tile1 adunit nofullad"></div>
+    </div>
+</section>
+
+<header id="adv_header">
+    
+    <div id="adv_masthead">
+        <div id="adv_header_logo">
+            <div id="adv_logo">
+                <a id="adv_aff_link" href="http://www.cleveland.com/" title="Cleveland.com">
+                    <span class="ir">Cleveland.com</span>
+                </a>
+
+                <div id="adv_header_text">
+                    
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="adv_mast_left">
+        
+        <nav id="adv_menu" class="advToprailBtn" data-state="1">
+            <span class="advToprailIcon"></span>
+            <span class="advMenuText">Menu</span>
+        </nav>
+
+        
+        <div id="adv_menu_dropdown" class="advDropdown advLayer">
+            <div class="advPanelArrow"></div>
+            <div class="advDropdownOuter">
+                <div id="adv_menu_container">
+                    <div class="advDropdownInner">
+
+                        
+                        <ul id="adv_menu_top" class="advMenu">
+                            <li><a href="http://www.cleveland.com/">Home</a></li>
+                            
+                            <li id="adv_mobi_weather" data-state="4">
+                                <div class="advWeatherInner">
+                                    <span class="advGeoChoosen"></span>
+                                    <span class="advConditions">
+                                        <span class="advTemp"></span>
+                                    </span>
+                                </div>
+                                <span class="next"></span>
+                            </li>
+                        </ul>
+
+                        
+                        <ul id="adv_menu_main" class="advMenu">
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/news/">News</a>
+                                    
+                                    <span class="next" data-state="2" data-key="11947"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <span class="nolink">Politics</span>
+                                    
+                                    <span class="next" data-state="2" data-key="11951"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/community/index.ssf">Local News</a>
+                                    
+                                    <span class="next" data-state="2" data-key="11966"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/opinion/">Opinion</a>
+                                    
+                                    <span class="next" data-state="2" data-key="11986"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/business/">Business</a>
+                                    
+                                    <span class="next" data-state="2" data-key="11991"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/sports/">Sports</a>
+                                    
+                                    <span class="next" data-state="2" data-key="11997"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://highschoolsports.cleveland.com/">High School Sports</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12014"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/entertainment/">Entertainment</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12042"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://obits.cleveland.com/obituaries/cleveland/">Obituaries</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12098"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/jobs/">Jobs</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12065"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://autos.cleveland.com/">Autos</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12066"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://realestate.cleveland.com/">Real Estate</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12067"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://realestate.cleveland.com/for-rent">Rentals</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12075"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="https://www.youtube.com/channel/UCJkc1COQO0WiZ2CI7dRdwAQ">Videos</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12080"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://photos.cleveland.com/plain-dealer/index.html">Photos</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12084"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/akron">Akron News</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12088"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://www.cleveland.com/placead/">Place an Ad</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12089"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://classifieds.cleveland.com/">Classifieds</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12090"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://findnsave.cleveland.com/?ac=AFFclevelandFSNAVFLS">Find&amp;Save</a>
+                                    
+                                    <span class="none" data-state="2" data-key="12099"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <a href="http://businessfinder.cleveland.com/">Local Businesses</a>
+                                    
+                                    <span class="next" data-state="2" data-key="12100"></span>
+                                </li>
+                            
+                                <li class="" style="">
+                                    
+                                        <span class="nolink">Follow Us</span>
+                                    
+                                    <span class="next" data-state="2" data-key="12113"></span>
+                                </li>
+                            
+                            
+                            
+                            
+                            <li id="adv_li_subscribe" data-state="2" data-key="subscribe"><span class="nolink">Subscribe</span>
+                                <span class="next" data-state="2" data-key="subscribe"></span>
+                            </li>
+                            
+                        
+                        </ul>
+
+                        <div class="SiteSponsor nomobilead injectedAd" id="SiteSponsor"></div>
+
+                        
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11947">
+    <li class="advMainMenuLink" data-state="2" data-key="11947">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/metro/">Metro</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/plaindealer/">The Plain Dealer</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/weather/">Weather</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/healthfit">Health &amp; Medical</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/crime/">Crime</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/datacentral">Data Central</a>
+                </li>
+            
+        
+    
+        
+            <li class=" advMenuExpansion" style="" data-state="3" data-sub-key="11959" data-sub-parent="11947">
+                
+                    <a href="http://www.cleveland.com/columns/">Columnists</a>
+                
+                <span class="next" data-state="3" data-sub-key="11959" data-sub-parent="11947"></span>
+            </li>
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/court-justice">Courts</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/nation/">Nation</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/world/">World</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+<ul class="advMenuSub advMenu advMenuSub2" data-sub-key="11959">
+    <li class="advMainMenuLink" data-state="3" data-sub-key="11959">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/naymik">Mark Naymik</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/tipoff">Michael McIntyre</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/morris">Phillip Morris</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11951">
+    <li class="advMainMenuLink" data-state="2" data-key="11951">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/open/">State Politics</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/politics/">National Politics &amp; Elections</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/rnc-2016/">RNC 2016</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/cityhall">Cleveland City Hall</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/cuyahoga-county">Cuyahoga County Insider</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11966">
+    <li class="advMainMenuLink" data-state="2" data-key="11966">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/akron">Akron</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/beachwood/">Beachwood</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/berea">Berea</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/brecksville">Brecksville</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/brunswick/">Brunswick</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/chagrin-falls/">Chagrin Falls</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/cleveland-heights/">Cleveland Heights</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/hillcrest/">Hillcrest</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/lakewood/">Lakewood</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/lyndhurst-south-euclid/">Lyndhurst-South Euclid</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/medina/">Medina</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/parma/">Parma</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/shaker-heights/">Shaker Heights</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/solon/">Solon</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/strongsville/">Strongsville</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/westlake/">Westlake</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/sunnews/index.ssf/2013/01/read_the_news_from_east_and_so.html">More East Side</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/sunnews/index.ssf/2013/01/read_the_news_from_west_and_so.html">More West Side</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/blogs">Community Bloggers</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11986">
+    <li class="advMainMenuLink" data-state="2" data-key="11986">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/letters/">Letters to the Editor</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/darcy">Jeff Darcy&#39;s Cartoons</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/obrien">Kevin O&#39;Brien</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/columns/">More columnists</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11991">
+    <li class="advMainMenuLink" data-state="2" data-key="11991">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/realestatenews/">Real Estate</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/ohio-utilities/">Energy</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/consumeraffairs/">Consumer Affairs</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/personalfinance/">Personal Finance</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/top-workplaces">Top Workplaces</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="11997">
+    <li class="advMainMenuLink" data-state="2" data-key="11997">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/browns/">Browns</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/tribe/">Indians</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/cavs/">Cavaliers</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/osu/">Ohio State</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/big-ten-football/">Big 10 &amp; Recruiting</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/sports/college/">College</a>
+                </li>
+            
+        
+    
+        
+            <li class=" advMenuExpansion" style="" data-state="3" data-sub-key="12003" data-sub-parent="11997">
+                
+                    <a href="http://www.cleveland.com/sports/columns/">Columns</a>
+                
+                <span class="next" data-state="3" data-sub-key="12003" data-sub-parent="11997"></span>
+            </li>
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/monsters/">Monsters</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/golf/">Golf</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/horseracing">Horse Racing</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/outdoors/">Outdoors</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/sportsinsider/">Sports Insider</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://videos.cleveland.com/plain-dealer/index.html?category=Sports">Videos</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://photos.cleveland.com/category/4501/sports/index.html">Photos</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+<ul class="advMenuSub advMenu advMenuSub2" data-sub-key="12003">
+    <li class="advMainMenuLink" data-state="3" data-sub-key="12003">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/pluto">Terry Pluto</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/budshaw">Bud Shaw</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/livingston">Bill Livingston</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12014">
+    <li class="advMainMenuLink" data-state="2" data-key="12014">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/football">Football</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boyscrosscountry">Boys Cross Country</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlscrosscountry">Girls Cross Country</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/fieldhockey">Field Hockey</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boysgolf">Boys Golf</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsgolf">Girls Golf</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boyssoccer">Boys Soccer</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlssoccer">Girls Soccer</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlstennis">Girls Tennis</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsvolleyball">Girls Volleyball</a>
+                </li>
+            
+        
+    
+        
+            <li class=" advMenuExpansion" style="" data-state="3" data-sub-key="12025" data-sub-parent="12014">
+                
+                    <span class="nolink">Off Season Sports</span>
+                
+                <span class="next" data-state="3" data-sub-key="12025" data-sub-parent="12014"></span>
+            </li>
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+<ul class="advMenuSub advMenu advMenuSub2" data-sub-key="12025">
+    <li class="advMainMenuLink" data-state="3" data-sub-key="12025">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boysicehockey">Boys Ice Hockey</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/wrestling">Wrestling</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boysbasketball">Boys Basketball</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsbasketball">Girls Basketball</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/baseball">Baseball</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/softball">Softball</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boystrackandfield">Boys Track and Field</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlstrackandfield">Girls Track and Field</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boyslacrosse">Boys Lacrosse</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlslacrosse">Girls Lacrosse</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boystennis">Boys Tennis</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsgymnastics">Girls Gymnastics</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boysswimming">Boys Swimming</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsswimming">Girls Swimming</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/boysbowling">Boys Bowling</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://highschoolsports.cleveland.com/girlsbowling">Girls Bowling</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12042">
+    <li class="advMainMenuLink" data-state="2" data-key="12042">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            <li class=" advMenuExpansion" style="" data-state="3" data-sub-key="12043" data-sub-parent="12042">
+                
+                    <a href="http://www.cleveland.com/food">Food/Dining</a>
+                
+                <span class="next" data-state="3" data-sub-key="12043" data-sub-parent="12042"></span>
+            </li>
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/best/">Best Of</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/events/">Events</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/movies/">Movies</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/music/">Music</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/tv/">TV</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/books/">Books</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/arts/">Arts</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/onstage/">Theater</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/friday/">Friday!</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/people/">People</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/living/">Living</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/travel/">Travel</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/style/">Style</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/essential/page/visitors-guide.html">Essential CLE</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/comics">Comics</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/puzzles-games">Crossword &amp; Puzzles</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+<ul class="advMenuSub advMenu advMenuSub2" data-sub-key="12043">
+    <li class="advMainMenuLink" data-state="3" data-sub-key="12043">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/dining">Dining Guide</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/bars/">Bars</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/cooking">Cooking</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/top-restaurants">Top Restaurants</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/drinks">Drinks</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12067">
+    <li class="advMainMenuLink" data-state="2" data-key="12067">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://realestate.cleveland.com/">Homes</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://realestate.cleveland.com/new-homes/">New Homes</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://realestate.cleveland.com/for-rent/">Rent</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://foreclosures.cleveland.com/">Foreclosures</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cityfeet.com/partner/cleveland/#">Commercial</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/homeremodeling/">Home Remodeling</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/placead/">Place an Ad</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12075">
+    <li class="advMainMenuLink" data-state="2" data-key="12075">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://realestate.cleveland.com/for-rent/">All Rentals</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://realestate.cleveland.com/for-rent/">Apartments &amp; Communities</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cityfeet.com/cleveland/">Commercial Leases</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/placead/">Place an Ad</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12080">
+    <li class="advMainMenuLink" data-state="2" data-key="12080">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="https://www.youtube.com/channel/UCJkc1COQO0WiZ2CI7dRdwAQ">cleveland.com Videos</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://videos.cleveland.com/index.html">Community Videos</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://videos.cleveland.com/upload.html">Submit Your Videos</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12084">
+    <li class="advMainMenuLink" data-state="2" data-key="12084">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://photos.cleveland.com/plain-dealer/index.html">cleveland.com Photos</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://photos.cleveland.com/photogallery/index.html">Community Photos</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://photos.cleveland.com/photogallery/upload.html">Submit Your Photos</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12090">
+    <li class="advMainMenuLink" data-state="2" data-key="12090">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://classifieds.cleveland.com/?orig_cat=&amp;property=cleveland.com&amp;orig_prop=cleveland.com&amp;temp_type=browse&amp;category=results&amp;tp=ME_cleve&amp;classification=Pets">Pets</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://classifieds.cleveland.com/?orig_cat=&amp;property=cleveland.com&amp;orig_prop=cleveland.com&amp;temp_type=browse&amp;category=results&amp;tp=ME_cleve&amp;classification=For+Sale">For Sale</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://classifieds.cleveland.com/?orig_prop=cleveland.com&amp;property=cleveland.com&amp;temp_type=browse&amp;category=results&amp;tp=ME_cleve&amp;classification=Garage-Yard%20and%20Estate%20Sales">Garage Sales</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/celebrations/">Celebrations</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/placead/fraud_prevention/index.ssf">Fraud Prevention</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/placead/manage/index.ssf">Manage Your Ad</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://www.cleveland.com/placead/">Place an Ad</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12100">
+    <li class="advMainMenuLink" data-state="2" data-key="12100">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/">Find A Business</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Food-and-Dining">Food &amp; Dining</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Retail-Shopping">Retail Shopping</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Health-and-Medicine">Health &amp; Medicine</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Personal-Care-and-Well-Being">Personal Care</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Entertainment-and-Arts">Entertainment</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Real-Estate">Real Estate</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/OH-Cleveland/Automotive">Automotive</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="" style="">
+                    <a href="http://businessfinder.cleveland.com/about/advertise.html">Claim Your Business</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+                            
+
+
+<ul class="advMenuSub advMenu " data-key="12113">
+    <li class="advMainMenuLink" data-state="2" data-key="12113">
+        <div class="prev"></div>
+        Back to Main Menu
+    </li>
+
+    
+        
+            
+                <li class="menuSocial menuFacebookIcon" style="">
+                    <a href="http://www.facebook.com/pages/clevelandcom/48573742500">Visit our Facebook Page</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="menuSocial menuTwitterIcon" style="">
+                    <a href="http://twitter.com/clevelanddotcom">Follow us on Twitter</a>
+                </li>
+            
+        
+    
+        
+            
+                <li class="menuSocial menuGplusIcon" style="">
+                    <a href="https://plus.google.com/u/0/b/107235278707360504631/107235278707360504631/posts">Visit us on Google Plus</a>
+                </li>
+            
+        
+    
+</ul>
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+                        
+
+                        
+                        
+                            <ul id="adv_subscribe_menu" class="advMenuSub advMenu" data-key="subscribe">
+                                <li class="advMainMenuLink" data-state="2">
+                                    <div class="prev"></div>
+                                    Back to Main Menu
+                                </li>
+
+                                
+                                    <li class="" style="" value="" data-val=""><a href="http://members.plaindealer.com/dssSubscribe.aspx">The Plain Dealer</a></li>
+                                
+                                    <li class="" style="" value="" data-val=""><a href="http://www.cleveland.com/sun/subscribe#subscribe_sun_news">Sun News</a></li>
+                                
+                                    <li class="" style="" value="" data-val=""><a href="http://members.plaindealer.com/">Media Insider Rewards</a></li>
+                                
+                            </ul>
+                        
+
+                        
+                        
+                        <div class="SiteSponsor nofullad injectedAd" id="SiteSponsor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="adv_weather" data-state="4" class="">
+            <div class="advWeatherInner">
+                <span class="advConditions intermittent-clouds-04">
+                    <span class="advTemp"></span>
+                </span>
+            </div>
+        </div>
+
+        
+        <div id="adv_weather_main" class="advDropdown advLayer">
+            <div class="advPanelArrow"></div>
+            <div class="advDropdownOuter">
+                <div class="advDropdownInner">
+                    <div class="advMainMenuLink" data-state="1"><div class="prev"><a href="#"></a></div>Back to Main Menu</div>
+                    <div id="adv_weather_inner">
+                        <div class="advClose" data-state="4"><span class="advToprailIcon ir">Close</span></div>
+
+                        <form id="adv_wlocation_form">
+                            <div class="title">Customize Your Weather</div>
+                            <div>
+                                <label for="adv_wlocation_input">Set Your Location:</label>
+                                <div class="errorMsg"></div>
+                            </div>
+                            <div class="advFrmInput"><input name="adv_wlocation_input" id="adv_wlocation_input" type="text" value="" placeholder="Enter City and State or Zip Code" /></div>
+                            <div class="advFrmBtn"><input type="submit" value="Submit" /></div>
+                        </form>
+
+                        <div id="adv_wlocation_confirm">
+                            <div class="title">Congratulations!</div>
+                            <div>Your weather is set to <span class="advGeoChoosen"></span>. You can change the location at any time.</div>
+                            <div class="advFrmBtn">
+                                <input class="adv-tray_link" data-state="4" data-phase="phase3" type="button" value="Done" />
+                            </div>
+                        </div>
+
+                        <div id="adv_weather_data">
+                            <div class="subtitle">AccuWeather.com Quick Look</div>
+                            <div class="title"></div>
+                            <div><a class="advTrayLink" data-state="2" data-phase="phase1">Change your current location &raquo;</a></div>
+                            <div class="advWeatherInner"></div>
+                            <div class="advFrmBtn"><a class="advABtn" href="">View Full Weather Report</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="adunit nomobilead" id="SponsorRight"></div>
+    </div>
+
+    
+    <div id="adv_mast_right">
+
+    
+    <div id="adv_search" class="advToprailBtn" data-state="6">
+        <span class="advToprailIcon ir">Search</span>
+        <span class="advIconLabel">Search</span>
+    </div>
+
+    
+    <div id="adv_search_main">
+        <div class="advPanelArrow"></div>
+        <form id="adv_search_form" method="get" action="//search.cleveland.com/sp" onsubmit="">
+            <div id="adv_search_panel">
+                <div class="advSearchBtn" data-state="6"><input class="advSearchIcon" type="submit" value="Search"/></div>
+                <div id="adv_search_bar" class="advLayer">
+                    <input class="advTextbox" name="keywords" id="adv_search_input" placeholder="Search" type="text" autocomplete="off" autocorrect="off" autocapitalize="off"/><br/>
+                </div>
+            </div>
+
+        <div class="advSearchLink">
+            <h2>Search Cleveland.com</h2>
+            <div class="next"></div>
+        </div>
+    </form>
+    </div>
+
+    
+    <div id="adv_account" class="advToprailBtn" data-state="5">
+        <span class="advToprailIcon ir">Account</span>
+        <span class="advIconLabel">Sign In</span>
+    </div>
+
+    
+    <div id="adv_user_dropdown" class="advDropdown advLayer">
+        <div class="advPanelArrow"></div>
+        <div class="advDropdownOuter">
+            <div class="advDropdownInner">
+                <div class="advClose" data-state="5"><span class="advToprailIcon ir">Close</span></div>
+                <div id="adv_user_main">
+                    <div id="adv_user_signin">
+                        <h2>Sign in to<br/><span>Cleveland.com</span></h2>
+                        <div id="adv_gigya_tr_container"></div>
+                    </div>
+                    <div id="adv_user_snapshot">
+                        <div id="adv_profile_menu">
+                            <img id="adv_profile_img"/>
+                            <div id="adv_profile_nameplate">
+                                <span class="advSignInStatus">You are signed in as</span><br/>
+                                <h2></h2>
+                            </div>
+                            <div id="adv_profile_btns">
+                                <span class="advProfileBtn" id="adv_profile_edit"><a href="" title="Edit your profile">Edit</a></span>
+                                <span class="advProfileBtn" id="adv_profile_view"><a href="" title="View your public profile">Public Profile</a></span>
+                                <span class="advProfileBtn" id="adv_profile_exit"><a href="" title="Sign out">Sign Out</a></span>
+                            </div>
+                        </div>
+                        <div id="adv_gigya_tr_profile"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        
+        <div id="adv_subscribe" data-state="9" class="">
+            <span class="advArrow">Subscribe</span><br/><strong></strong>
+        </div>
+
+
+        
+        <div id="adv_subscribe_main" class="advDropdown advLayer">
+            <div class="advPanelArrow"></div>
+            <div class="advDropdownOuter">
+                <div class="advDropdownInner">
+                    <ul class="advMenu">
+                        
+                            <li class="" style="" value="" data-val=""><a href="http://members.plaindealer.com/dssSubscribe.aspx">The Plain Dealer</a></li>
+                        
+                            <li class="" style="" value="" data-val=""><a href="http://www.cleveland.com/sun/subscribe#subscribe_sun_news">Sun News</a></li>
+                        
+                            <li class="" style="" value="" data-val=""><a href="http://members.plaindealer.com/">Media Insider Rewards</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+
+    
+    
+</header>
+
+<script type="text/javascript">
+    function getToprailVersion() { return 1; }
+    function getComscorekwValue() {
+        
+            return '';
+        
+    }
+
+    function getToprailMenuContext() {
+        return '';
+    }
+</script>
+<!-- /toprail -->
+
+    
+
+    
+    <div role="main" id="main">
+        <script type="text/javascript">if(!Modernizr.touch){document.write('<div id="ImpactAd" class="adunit nomobilead"></div>');}</script>
+        
+<style>
+#section_title { display: none; }
+#news-river, #news-river .wrapper { max-width: none !important; }
+</style>
+<div role="main" id="main" ng-app="eventsApp" >
+  <div class="wrapper">
+    <div id="events_controller">
+      <div ng-view></div>
+    </div>
+  </div>
+</div>
+
+
+
+        
+    </div>
+
+
+
+    
+    <footer id="footer">
+    <div class="wrapper clearfix">
+
+        <div id="footer-logos">
+            <img src="//static.advance.net/static/cleve/static/img/footer-logo-cleve-inc.png" alt="cleveland.com logo">
+        </div>
+
+        
+            <div id="footer-col-1" class="footer-col">
+                
+                    <div class="cluster clearfix">
+                        <h2>About Us</h2>
+
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/aboutus/">About Cleveland.com</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.advance-ohio.com/about-us/">About Advance Ohio</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.advance-ohio.com/">Advertise with us</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="https://www.advance.net/faqs/">Audience FAQ</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/contactus/">Contact Us</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="https://sjobs.brassring.com/TGWebHost/home.aspx?partnerid=26212&amp;siteid=5254">Career Opportunities</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://blog.cleveland.com/updates/2009/08/community_faq.html">Community FAQ</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+                    <div class="cluster clearfix">
+                        <h2>Subscribe</h2>
+
+                        
+                            <ul class="full-width">
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/dssSubscribe.aspx">The Plain Dealer</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/sun/subscribe">Sun News</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/newsletters/">eNewsletters</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+                    <div class="cluster clearfix">
+                        <h2>Subscriber Service</h2>
+
+                        
+                            <ul class="full-width">
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/">Media Insider Rewards</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/login.aspx?ReturnUrl=%2fSecurePage%2fMyProfile.aspx">View My Profile</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/login.aspx?ReturnUrl=%2fSecurePage%2fMissedPaper.aspx">Report a Delivery Issue</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/login.aspx?ReturnUrl=%2fSecurePage%2fVacationStop.aspx">Place a Vacation Hold</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://members.plaindealer.com/login.aspx?ReturnUrl=%2fSecurePage%2fPayment.aspx">Make a Payment</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+            </div>
+        
+            <div id="footer-col-2" class="footer-col">
+                
+                    <div class="cluster clearfix">
+                        <h2>Cleveland.com Sections</h2>
+
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/news/">News</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/sports/">Sports</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://highschoolsports.cleveland.com/">High School Sports</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/entertainment/">Entertainment</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/living/">Living</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/open/">Politics</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/opinion/">Opinion</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://obits.cleveland.com/Cleveland/DeathNotices.asp">Obituaries</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/jobs/">Jobs</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://autos.cleveland.com/">Autos</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://realestate.cleveland.com/">Real Estate</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://realestate.cleveland.com/for-rent">Rentals</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://classifieds.cleveland.com/">Classifieds</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://findnsave.cleveland.com/">Shopping Deals and Coupons</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://businessfinder.cleveland.com/">Local Businesses</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://update.cleveland.com/adv_cleveland/newsletters/cleve/subscribe.htm#topicf">Deals in Your Area</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+                    <div class="cluster clearfix">
+                        <h2>Your Regional News Pages</h2>
+
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/beachwood">Beachwood</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/brunswick">Brunswick</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/lakewood">Lakewood</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/parma">Parma &amp; Parma Heights</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/strongsville">Strongsville</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/community">More Communities</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+                    <div class="cluster clearfix">
+                        <h2>Mobile</h2>
+
+                        
+                            <ul class="full-width">
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/mobile-device/">Mobile Apps</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+            </div>
+        
+            <div id="footer-col-3" class="footer-col">
+                
+                    <div class="cluster clearfix">
+                        <h2>More on Cleveland.com</h2>
+
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="https://www.youtube.com/channel/UCJkc1COQO0WiZ2CI7dRdwAQ">Videos</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://photos.cleveland.com/">Photos</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/interact/">Interact with us</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/weather/">Weather</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                            <ul >
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/jobs/products/index.ssf">Post a job</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/placead/">Post a classified ad</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/placead/">Sell your car</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/placead/">Sell/rent your home</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/siteindex">Sitemap &amp; search</a>
+                                        
+                                    </li>
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://www.cleveland.com/sponsor-content-index/?prx_adpz=1109">Sponsor Content</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+                    <div class="cluster clearfix">
+                        <h2>Follow Us</h2>
+
+                        
+                            <ul class="full-width">
+                                
+                                    <li class="" style="">
+                                        
+                                            <a href="http://twitter.com/clevelanddotcom" class="adv-icn-twitter icn-link">Twitter</a> |  <a href="http://www.facebook.com/pages/clevelandcom/48573742500" class="adv-icn-facebook icn-link">Facebook</a> |  <a href="https://plus.google.com/u/0/b/107235278707360504631/107235278707360504631/posts" class="adv-icn-google icn-link">Google+</a> | <a class="adv-icn-instagram icn-link" href="http://instagram.com/clevelanddotcom">Instagram</a> |  <a class="adv-icn-pinterest icn-link" href="http://www.pinterest.com/clevelanddotcom/">Pinterest</a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                
+            </div>
+        
+
+    </div>
+
+    <div id="disclaimer">
+        <a href="http://www.advancedigital.com/" title="Advance Digital">
+            <div style="background-image:url(//static.advance.net/static/common/img/footer-logo-advance.png);" alt="Advance Digital logo" id="AdvanceDigitalLogo"></div>
+        </a>
+        <p>
+            Registration on or use of this site constitutes acceptance of our
+            <a href="http://www.cleveland.com/user-agreement/" title="User Agreement">User Agreement</a> and
+            <a href="http://www.cleveland.com/user-agreement/#privacy" title="Privacy Policy">Privacy Policy</a>
+        </p>
+        <p>
+            &copy; 2016 Advance Ohio All rights reserved (<a href="http://www.cleveland.com/aboutus/">About Us</a>).<br>
+            The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used,
+            except with the prior written permission of Advance Ohio</p>
+        <p>
+            <a href="http://www.cleveland.com/communityrules" title="Community Rules">Community Rules</a>
+            apply to all content you upload or otherwise submit to this site.</p>
+        <p>
+            <a href="http://www.advance.net/advancedigitalUserAgreementPP/#opt_out">
+            <img src="//static.advance.net/static/common/img/ad_choices_arrow_transparent.png"> Ad Choices</a>
+        </p>
+    </div>
+</footer>
+
+    
+    
+        <script type="text/javascript">
+        /* <![CDATA[ */
+        var arcs_page_template = 'homepage';
+        /* ]]> */
+        </script>
+        <script src="http://static.advance.net/static/cleve/static/js/homepage_res.js"></script>
+        <script src="http://static.advance.net/static/common/js/adv_gigya.js"></script>
+
+        <script language='JavaScript'>
+         var prd=new Date(),pru=Date.UTC(prd.getUTCFullYear(),prd.getUTCMonth(),prd.getUTCDay(),prd.getUTCHours(),prd.getUTCMinutes(),prd.getUTCSeconds(),prd.getUTCMilliseconds());
+         var pr_eid=pru+Math.random();
+         var pr_event='';
+         var pr_item='';
+         var pr_quantity='';
+         var pr_value='';
+         document.write("<img width='1' height='1' src='http://ev.ads.pointroll.com/event/?ss=5455D805-701C-4DEE-AE92-7E211BB40060&av=7857&eid="+pr_eid+"&ev="+pr_event+"&item="+pr_item+"&q="+pr_quantity+"&val="+pr_value+"&r="+Math.random()+"'>");
+        </script>
+        <span id="adilf" data-start="pages/events/main">
+    <script type="text/javascript" src="//static.advance.net/static/social/lf/build/events.js" async></script>
+</span>
+
+    
+
+    
+
+
+    
+
+
+    
+      
+    <script>
+        resimg.sizecheck();
+        resimg.resimf();
+    </script>
+</body>
+</html>

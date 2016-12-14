@@ -1,6 +1,6 @@
 import re
 
-from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.normalisation import normalise_keep_nos
 from distant_supervision.stop_words import StopWords
 from tabular.table_collection import TableCollection
 from tabular.table_reader import number_entity_tuples, number_tuples

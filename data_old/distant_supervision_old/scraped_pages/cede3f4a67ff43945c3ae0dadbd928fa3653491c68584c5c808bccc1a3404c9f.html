@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Ug8EUFNRGwIDVldRAQgB"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+<title>Buy US Flags and Flagpoles at United States Flag Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="description" content="Buy high-quality flags for residential or commercial use at United States Flag Store, and get super-fast shipping from warehouses near you." />
+<meta name="keywords" content="Buy US Flags and Flagpoles at United States Flag Store united states, US, U.S., USA, America, American, pole, flag, flags, flagpole, indoor, outdoor, nylon, made, polyester, store, buy, purchase, nsw-2gg6pvvfp5t5fm5obglwhb41af18aswmpz69gmou2hh919nz88vuwq322h4y-i124cj9m59c0tgfdzvp059mre3gk393lym6noybp04968uken-1f3520cen1btscvqq" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<link rel="icon" href="http://www.united-states-flag.com/media/favicon/websites/2/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.united-states-flag.com/media/favicon/websites/2/favicon.ico" type="image/x-icon" />
+
+
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.united-states-flag.com/js/blank.html';
+    var BLANK_IMG = 'http://www.united-states-flag.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<!--[if lt IE 9]>
+<div style=' clear: both; text-align:center; position: relative;'>
+ <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+</div>
+<![endif]--> 
+<!--[if lt IE 9]>
+	<style>
+	body {
+		min-width: 960px !important;
+	}
+	</style>
+<![endif]--> 
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/fonts_roboto/roboto.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/photoswipe.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/bootstrap.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/extra_style.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/responsive.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/menuzord/menuzord.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/font-awesome.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/default/css/widgets.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/menuzord/skins/menuzord-gradient.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/menuzord/menuzord-custom.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/conditional-responsive-lightbox.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/default/css/amasty/amlabel/amlabel.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/default/css/amshopby.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/usflag/css/conversionpro/CelebrosAutoCompleteV3.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/base/default/css/mageworx/downloads/downloads.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/base/default/magmodules/snippets/snippets.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/addressvalidation.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/print.css" media="print" />
+<script type="text/javascript" src="http://www.united-states-flag.com/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/lib/ccard.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/prototype/validation.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/varien/js.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/varien/form.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/mage/translate.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/mage/cookies.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/lib/jquery/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/lib/jquery/noconflict.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/google/ga.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/olscore/_optimize.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/menuzord.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/scripts.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/bootstrap.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/lib/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/lib/enquire.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/app.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/jquery.touchSwipe.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/lib/imagesloaded.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/enterprise/catalogevent.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/js/enterprise/wishlist.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/base/default/js/mageworx/downloads/downloads.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/qs/js/validationform.js"></script>
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/css/ie9.css" media="all" />
+<![endif]-->
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://www.united-states-flag.com/js/lib/ds-sleight.js"></script>
+<script type="text/javascript" src="http://www.united-states-flag.com/skin/frontend/base/default/js/ie6.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.united-states-flag.com';
+//]]>
+</script>
+<script type="application/ld+json">[{"@context":"http:\/\/schema.org","@type":"WebSite","name":"United States Flag Store","alternateName":null,"url":"http:\/\/www.united-states-flag.com\/"}]</script><script type="text/javascript">//<![CDATA[
+        var Translator = new Translate([]);
+        //]]></script><!--chartbeat-->
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script></head>
+<body class="ps-static  cms-index-index cms-home">
+    <!-- Google Tag Manager -->
+    <script>
+        dataLayer = [{"pageType":"home","emailHash":null,"product":[],"firstProductSku":null,"criteoProducts":null,"dynamicRemarketing":{"prodid":"","pagetype":"home","pname":"","pcat":"","value":""}}];
+    </script>
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TKX7DT"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>delayedGTM = function(){
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TKX7DT');
+        };
+        runAfterCritPath(delayedGTM);
+    </script>
+    <!-- End Google Tag Manager -->
+
+<!-- BEGIN: Google Trusted Store -->
+<script type="text/javascript">
+//<![CDATA[
+  var gts = gts || [];
+
+  gts.push(["id", "28595"]);
+  gts.push(["badge_position", "USER_DEFINED"]);
+  gts.push(["badge_container", "GTS_CONTAINER"]);
+  gts.push(["locale", "en_US"]);
+  gts.push(["google_base_subaccount_id", "7319306"]);
+
+  (function() {
+    var gts = document.createElement("script");
+    gts.type = "text/javascript";
+    gts.async = true;
+    gts.src = "https://www.googlecommerce.com/trustedstores/api/js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(gts, s);
+  })();
+//]]>
+</script>
+<!-- END: Google Trusted Store -->            <!-- BEGIN GOOGLE UNIVERSAL ANALYTICS CODE -->
+    <script type="text/javascript">
+        //<![CDATA[
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        
+ga('create', 'UA-1664957-2', 'auto');
+
+ga('send', 'pageview');
+        
+        //]]>
+    </script>
+    <!-- END GOOGLE UNIVERSAL ANALYTICS CODE -->
+        
+<script type="text/javascript">
+    var downloads = new Downloads('http://www.united-states-flag.com/downloads/dl/updateDownloads/product/0/id/%file_id%/');
+</script><div class="wrapper ps-static en-lang-class">
+        <noscript>
+        <div class="global-site-notice noscript">
+            <div class="notice-inner">
+                <p>
+                    <strong>JavaScript seems to be disabled in your browser.</strong><br />
+                    You must have JavaScript enabled in your browser to utilize the functionality of this website.                </p>
+            </div>
+        </div>
+    </noscript>
+    <div class="shadow"></div>
+<div class="swipe-left"></div>
+
+<div class="swipe">
+    <div class="swipe-menu">
+        <a href="http://www.united-states-flag.com/" title="Home" class="home-link">Home</a>
+        <ul class="links">
+                        <li class="first" ><a href="https://www.united-states-flag.com/customer/account/" title="My Account" >My Account</a></li>
+                                <li ><a href="/returns-center.html" title="Easy Returns" >Easy Returns</a></li>
+                                <li ><a href="https://www.united-states-flag.com/wishlist/" title="My Wishlist" >My Wishlist</a></li>
+                                <li ><a href="http://www.united-states-flag.com/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
+                                <li ><a href="https://www.united-states-flag.com/onestepcheckout/index/" title="Checkout" class="top-link-checkout">Checkout</a></li>
+                                <li class=" last" ><a href="https://www.united-states-flag.com/customer/account/login/" title="Log In" >Log In</a></li>
+            </ul>
+    </div>
+</div>
+<div class="top-icon-menu">
+    <div class="swipe-control"><i class="icon-reorder"></i></div>
+    <div class="top-search"><i class="icon-search"></i></div>
+    <span class="clear"></span>
+</div>
+<div class="header-container">
+    <div class="header-row">
+        <div class="page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="header-buttons">
+                            
+
+
+
+                                                    </div>
+                        
+                             <div class="quick-access"><ul class="links">
+                        <li class="first" ><a href="https://www.united-states-flag.com/customer/account/" title="My Account" >My Account</a></li>
+                                <li ><a href="/returns-center.html" title="Easy Returns" >Easy Returns</a></li>
+                                <li ><a href="https://www.united-states-flag.com/wishlist/" title="My Wishlist" >My Wishlist</a></li>
+                                <li ><a href="http://www.united-states-flag.com/checkout/cart/" title="My Cart" class="top-link-cart">My Cart</a></li>
+                                <li ><a href="https://www.united-states-flag.com/onestepcheckout/index/" title="Checkout" class="top-link-checkout">Checkout</a></li>
+                                <li class=" last" ><a href="https://www.united-states-flag.com/customer/account/login/" title="Log In" >Log In</a></li>
+            </ul>
+</div>
+                        
+                        <div class="clear"></div>
+                    </div>
+
+<div class = "col-xs-1 visible-lg"></div>
+<div class="col-xs-3 visible-lg  visible-md pull-right">
+<span class="visible-lg  visible-md pull-right"><p class="contact-info-large">Call Toll Free: <a href="tel:1.877.734.2458" class="phone-number">1.877.734.2458</a>  </p></span>
+</div>
+<!-- <div class="col-xs-4 visible-sm">
+<span class="visible-sm pull-right"><p class="contact-info-large">Call Toll Free: <a href="tel:1.877.734.2458" class="phone-number">1.877.734.2458</a>  </p></span>
+</div> -->
+
+                </div>
+             </div>
+        </div>
+
+    </div>
+	<div class="page">
+        <div class="container">
+
+<div class="row">
+<div class="col-xs-9 visible-sm visible-xs"><span class="visible-sm visible-xs"><p class="contact-info-small">Call Toll Free: <a href="tel:1.877.734.2458" class="phone-number">1.877.734.2458</a>  </p></span></div>
+<!-- <div class="col-xs-3">
+<span class="visible-lg visible-md visible-sm"><p class="contact-info-large"> </p></span>
+</div>-->
+</div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                        <div class="header">
+                            <div class="header-blocks">
+                                                            <h1 class="logo"><strong>US Flag Store</strong><a href="http://www.united-states-flag.com/" title="US Flag Store" class="logo"><img src="http://www.united-states-flag.com/skin/frontend/enterprise/usflag/images/usf-logo.png" alt="US Flag Store" /></a></h1>
+                                                        </div>
+
+                            <div class="header-blocks-ad1">
+                            <div class="center-block">
+                                <div>
+    <div class="carousel slide">
+            <div>
+                   <div class="carousel-inner">
+                             <div class="item active">
+                                   <a href="/shippinginfo.html"><img src="/media/wysiwyg/home_images/usflag/free-shipping-75-reduced-expited-combo-header.png" width="100%" title="Reduced Expedited Shipping" /></a></div>
+                  </div>
+           </div>  
+    </div>
+</div>                            </div>
+                            </div>
+
+                            <div class="header-blocks header-blocks-right">
+                            <form id="search_mini_form" action="http://www.united-states-flag.com/catalogsearch/result/" method="get">
+    <div class="form-search">
+        <label for="search">Search site:</label>
+        <input id="search" type="text" name="q" value="" class="input-text" maxlength="128"/>
+        <button id="search_button" type="submit" title="Search" class="button"><span><span>Search</span></span></button>
+                <div id="search_autocomplete" class="search-autocomplete"></div>
+        <script type="text/javascript">
+            //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Enter search keyword');
+            searchForm.initAutocomplete('http://www.united-states-flag.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+            //]]>
+        </script>
+    </div>
+</form>
+                            <div class="clear"></div>
+                            <div class="block-cart-header">
+        <h3>My Cart:</h3>
+    <div class="block-content">
+                                                                                    <div class="empty">
+			<div>0 item(s) - <span class="price">$0.00</span></div>
+            <div class="cart-content">
+				You have no items in your shopping cart.            </div>
+        </div>
+        <p class="mini-cart"><strong>0</strong></p>
+        </div>
+</div>
+                            </div>
+
+                                <div class="clear"></div>
+                                                    </div>
+                    </div>
+            </div>
+            <div class="clear"></div>
+            <div class="nav-container">
+        <!-- Main Navigation -->
+
+			<div id="menuzord3" class="menuzord ols">
+			<a href="#" class="menuzord-brand">Shop</a> 
+				<ul class="menuzord-menu">
+<!-- first menu -->
+						<li><a href="/outdoorflags.html">American Flags</a>
+						<div class="megamenu">
+							<div class="megamenu-row">
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/larusoutflag.html">Nylon US Flags</a></h4></li>
+										<li><a href="/amflagnylim.html">Online Stores Nylon Flags</a></li>
+										<li><a href="/amflagnylusm.html">Valley Forge Nylon Flags</a></li>
+                                         <li><a href="/annin-nylon-flags.html">Annin Nyl-Glo Flags</a></li>
+										<li><a href="/nyusbafl.html">Nylon US Banner Flags</a></li>
+                                        <li><a href="/vafogfl.html">Valley Forge G-Spec Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/outdoorflags-polyesterflags.html">Polyester US Flags</a></h4></li>
+										<li><a href="/ecsewpolflag.html">Online Stores Polyester</a></li>
+										<li><a href="/qualsewampol.html">Super Tough Flags</a></li>
+										<li><a href="/american-flags-superknit-polyester.html">Super Knit Flags</a></li>
+                                        <li><a href="/lowcoimusfl.html">Low Cost Polyester Flags</a></li>
+                                        <li><a href="/valley-forge-brand-koralex-ii.html">Koralex II Polyester Flags</a></li>
+                                        <li><a href="/annin-polyester-flags.html">Tough-Tex Polyester</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/usastickflags.html">Small US Flags</a></h4></li>
+										<li><a href="/4x6stickflags.html">4" x 6" Stick Flags</a></li>
+										<li><a href="/usflag8x121.html">8" x 12" Stick Flags</a></li>
+										<li><a href="/usstfl12.html">12" x 18" Stick Flags</a></li>
+										<li><a href="/usa-nautical-flags.html">Boat &amp; Vehicle US Flags</a></li>
+                                        <li><a href="/12x18fldiba.html">Small Flag Display Bases</a></li>
+                                        <li><a href="/migrmainbran.html">Grave Markers</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/pleatedfans.html">Patriotic Decor</a></h4></li>
+										<li><a href="/pleatedfans2.html">Pleated Fans</a></li>
+										<li><a href="/bunting.html">Bunting</a></li>
+										<li><a href="/patriotic-decorations.html">US Flag Pulldowns</a></li>
+                                        <li><a href="/patriotic-party-supplies.html">Patriotic Party Supplies</a></li>
+                                        <li><a href="/outdoor-decorations-patriotic.html">Patriotic Outdoor Decorations</a></li>
+                                        <li><a href="/patriotic-poly-streamers.html">Patriotic Pennant Streamers &amp; Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/outdoorflags/shopby/flagmaterial-cotton/flagtype-indoor/generickey-country.html">Indoor Flags</a></h4></li>
+										<li><a href="/indoorflag.html">Indoor US Flags</a></li>
+										<li><a href="/indoor-american-flagpole-kits.html">Indoor US Flagpole Kits</a></li>
+										<li><a href="/cotton-flags.html">Cotton US Flags</a></li>
+										<li><a href="/classroom-flag.html">Classroom Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/residential-flag-kits.html">Wall Mount Flag Kits</a></h4></li>
+										<li><a href="/ecreki.html">Economy US Flag Kits</a></li>
+                                        <li><a href="/valleyforgekits.html">Valley Forge Residential</a></li>
+										<li><a href="/bequreki.html">Best Quality Residential</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+<!-- second menu -->
+					<li><a href="/flags.html">Flags</a>
+						<div class="megamenu">
+							<div class="megamenu-row">
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/custom.html">Custom Flags</a></h4></li>
+										<li><a href="/advertising-flags.html">Advertising Flags</a></li>
+										<li><a href="/diprfl.html">Custom Nylon Flags</a></li>
+										<li><a href="/prsupo.html">Custom Super Knit Flags</a></li>
+                                        <li><a href="/custom-stick-flags.html">Custom Stick Flags</a></li>
+                                        <li><a href="/large-advertising-flags.html">Large Advertising Flags</a></li>
+                                        <li><a href="/culapi.html">Custom Lapel Pins</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/deba.html">Decorative Flags</a></h4></li>
+										<li><a href="/nflanddeba.html">Sports Flags</a></li>
+										<li><a href="/garden-flags.html">Garden Flags</a></li>
+										<li><a href="/decorative-banner-flags.html">Banner Flags</a></li>
+                                        <li><a href="/wind-socks.html">Windsocks</a></li>
+                                        <li><a href="/decorative-flags-3ftx5ft.html">3ft x 5ft Decorative Flags</a></li>
+                                        <li><a href="/mailwraps-magnetic-mailbox-covers.html">Magnetic Mailbox Covers</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/military.html">Military & Public Service</a></h4></li>
+										<li><a href="/usmarines.html">Marine Corps Flags</a></li>
+										<li><a href="/army.html">Army Flags</a></li>
+										<li><a href="/navy.html">Navy Flags</a></li>
+										<li><a href="/airforce.html">Air Force Flags </a></li>
+                                        <li><a href="/uscoastguard.html">Coast Guard Flags</a></li>
+                                        <li><a href="/powandveteran.html">POW MIA Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/nflanddeba.html">Sports Flags</a></h4></li>
+										<li><a href="/nfl-flags-banners.html">NFL Flags</a></li>
+										<li><a href="/nflanddeba-college-flags.html">College Flags</a></li>
+										<li><a href="/major-league-baseball-flags.html">MLB Flags</a></li>
+                                        <li><a href="/nhl-flags.html">NHL Flags</a></li>
+                                        <li><a href="/nabafl.html">NASCAR Flags</a></li>
+                                        <li><a href="/tailgating-flagpoles-accessories.html">Tailgating Kits</a></li>
+                                        <li><a href="/clearance.html">Clearance</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/smallhandflags.html">Small Flags</a></h4></li>
+										<li><a href="/usastickflags.html">U.S. Flags</a></li>
+										<li><a href="/statsticflag.html">State Flags</a></li>
+										<li><a href="/insticflag.html">International Flags</a></li>
+										<li><a href="/classroom-flag.html">Classroom Flags</a></li>
+                                        <li><a href="/usa-nautical-flags.html">Boat &amp; Vehicles</a></li>
+                                        <li><a href="/small-flag-base.html">Bases &amp; Holders</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/meandcufl.html">Other Flags</a></h4></li>
+                                                                                <li><a href="/messageflags.html">Message & Advertising</a></li>
+                                                                                <li><a href="/hifl.html">Historical Flags</a></li>
+                                                                                <li><a href="/cociwar.html">Civil War Flags</a></li>
+                                                                                <li><a href="/religiousflags.html">Religious Flags</a></li>
+										<li><a href="/naastfl.html">Nautical &amp; Pirate Flags</a></li>
+										<li><a href="/political-flags.html">Political Flags</a></li>
+										<li><a href="/rainbowflags.html">Rainbow Flags</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+<!-- third menu -->
+					<li><a href="/flagpolandki.html">Flagpoles</a>
+						<div class="megamenu">
+							<div class="megamenu-row">
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/coonepipo.html">Commercial Flagpoles</a></h4></li>
+										<li><a href="/cogrsepo.html">Sectionals</a></li>
+										<li><a href="/flsebyhe.html">Shop by Height</a></li>
+										<li><a href="/external-halyard-commercial-flagpole-group-page.html">External Halyard Flagpoles</a></li>
+                                        <li><a href="/internal-halyard-commercial-flagpole-group-page2.html">Internal Halyard Flagpoles</a></li>
+                                        <li><a href="/commercial-flagpole-finder.html">Flagpole Finder</a></li>
+                                        <li><a href="/opandac.html">Flagpole Accessories</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/reingrfl.html">Residential Flagpoles</a></h4></li>
+										<li><a href="/tefl.html">Telescoping Flagpoles</a></li>
+										<li><a href="/garden-flag-holder.html">Garden &amp; Banner Holders</a></li>
+										<li><a href="/residential-flag-kits.html">Wall Mount Kits</a></li>
+                                        <li><a href="/reingrfl/shopby/flagpolesize-20ft.html">20ft Residential Flagpoles</a></li>
+                                        <li><a href="/accessories1.html">Flagpole Accessories</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/inflagandlit.html">Indoor Flagpoles</a></h4></li>
+										<li><a href="/indoor-american-flagpole-kits.html">US Indoor Flagpoles</a></li>
+										<li><a href="/inmiflflbata.html">Military Flagpole Kits</a></li>
+										<li><a href="/inusstflflba.html">State Flagpole Kits</a></li>
+                                        <li><a href="/inreflflbata.html">Religious Flagpole Kits</a></li>
+                                        <li><a href="/accessories.html">Flagpole Accessories</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/lowcosresfla1.html">Wall Mount Flagpoles</a></h4></li>
+										<li><a href="/heduwamopo.html">Commercial &amp; Heavy Duty</a></li>
+										<li><a href="/spinner-flag-pole-kits.html">Spinner Poles</a></li>
+										<li><a href="/wamokiwifl.html">Wall Mount Kits</a></li>
+                                        <li><a href="/ecreki.html">Economy Residential Kits</a></li>
+                                        <li><a href="/bequreki.html">Best Quality Kits</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/street-banner-advertising-flagpoles.html">Banner &amp; Advertising</a></h4></li>
+										<li><a href="/pole-polekits.html">Advertising Flagpoles</a></li>
+										<li><a href="/street-flagpole.html">Street Banner Kits</a></li>
+										<li><a href="/tailgating-accessories-and-games.html">Tailgating Flagpoles</a></li>
+                                                                                <li><a href="/parade-flagpole-accesories.html">Parade Flagpoles & Accessories</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/accessories1.html">Accessories</a></h4></li>
+										<li><a href="/polebrackets.html">Brackets</a></li>
+										<li><a href="/flag-pole-light.html">Lighting</a></li>
+										<li><a href="/flagsnaps.html">Flag Snaps &amp; Flag Clips</a></li>
+                                        <li><a href="/flor.html">Ball Toppers</a></li>
+                                        <li><a href="/fltrp.html">Trucks</a></li>
+                                        <li><a href="/flagpole-cleat.html">Cleats</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+<!-- fourth menu -->
+					<li><a href="/state.html">State Flags</a>
+						<div class="megamenu">
+							<div class="megamenu-row">
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/alabamakentuky.html">Alphabetical: A-K</a></h4></li>
+										<li><a href="/state-arizona.html">Arizona</a></li>
+										<li><a href="/state-california.html">California</a></li>
+										<li><a href="/state-colorado.html">Colorado</a></li>
+                                        <li><a href="/state-d-c.html">District of Columbia (Washington D.C.)</a></li>
+                                        <li><a href="/state-florida.html">Florida</a></li>
+                                        <li><a href="/state-georgia.html">Georgia</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/lonewyo.html">Alphabetical: L-NE</a></h4></li>
+										<li><a href="/state-louisiana.html">Louisiana</a></li>
+										<li><a href="/state-maryland.html">Maryland</a></li>
+										<li><a href="/state-massachusetts.html">Massachusetts</a></li>
+                                        <li><a href="/state-michigan.html">Michigan</a></li>
+                                        <li><a href="/state-mississippi.html">Mississippi</a></li>
+                                        <li><a href="/state-nevada.html">Nevada</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/nocawy.html">Alphabetical: NO-W</a></h4></li>
+										<li><a href="/state-north-carolina.html">North Carolina</a></li>
+										<li><a href="/state-ohio.html">Ohio</a></li>
+										<li><a href="/state-pennsylvania.html">Pennsylvania</a></li>
+										<li><a href="/state-south-carolina.html">South Carolina</a></li>
+                                        <li><a href="/state-tennessee.html">Tennessee</a></li>
+                                        <li><a href="/state-texas.html">Texas</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/statsticflag.html">State Stick Flags</a></h4></li>
+										<li><a href="/statsticflag/shopby/flagsize-4in_x_6in.html">4" x 6" State Stick Flags</a></li>
+										<li><a href="/statsticflag/shopby/flagsize-12in_x_18in.html">12" x 18" State Stick Flags</a></li>
+										<li><a href="/com50statfla.html">50 State Flag Sets</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/state-territories.html">US Territories Flags</a></h4></li>
+										<li><a href="/state-territories-puerto-rico.html">Puerto Rico</a></li>
+										<li><a href="/state-territories-samoa.html">American Samoa</a></li>
+										<li><a href="/state-territories-guam.html">Guam</a></li>
+                                        <li><a href="/normar.html">Northern Marianas </a></li>
+                                        <li><a href="/state-territories-virgin.html">US Virgin Islands</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/flag-accessories/shopby/generickey-state.html">Other State Items</a></h4></li>
+										<li><a href="/statepins.html">State Pins</a></li>
+										<li><a href="/statepatches.html">State Patches</a></li>
+										<li><a href="/state1.html">State Decals</a></li>
+                                        <li><a href="/us-city-flags.html">City Flags</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+<!-- fifth menu --> 
+					<li><a href="/world.html">International Flags</a>
+						<div class="megamenu">
+							<div class="megamenu-row">
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/world.html">Alphabetical: A-GA</a></h4></li>
+										<li><a href="/world-australia.html">Austrailia</a></li>
+										<li><a href="/world-brazil.html">Brazil</a></li>
+										<li><a href="/world-british.html">British Flags</a></li>
+                                        <li><a href="/world-canada.html">Canada</a></li>
+                                        <li><a href="/world-china.html">China</a></li>
+                                        <li><a href="/world-france.html">France</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/world.html">Alphabetical: GE-PE</a></h4></li>
+										<li><a href="/world-germany.html">Germany</a></li>
+										<li><a href="/world-ireland.html">Ireland</a></li>
+										<li><a href="/israel.html">Israel</a></li>
+                                        <li><a href="/world-italy.html">Italy</a></li>
+                                        <li><a href="/world-japan.html">Japan</a></li>
+                                        <li><a href="/world-mexico.html">Mexico</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/world.html">Alphabetical: PH-Z</a></h4></li>
+										<li><a href="/poland.html">Poland</a></li>
+										<li><a href="/russia.html">Russian Federation</a></li>
+										<li><a href="/world-british-scotland.html">Scotland</a></li>
+                                        <li><a href="/world-ukraine.html">Ukraine</a></li>
+                                        <li><a href="/world-venezuela-flags.html">Venezuela</a></li>
+                                        <li><a href="/world-vietnam.html">Vietnam</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/insticflag.html">World Stick Flags</a></h4></li>
+										<li><a href="/international-world-stick-flags-4x6-inch.html">4" x 6" Stick Flags</a></li>
+										<li><a href="/cotton-international-4x6in-stick-flags.html">Cotton 4" x 6" Stick Flags</a></li>
+										<li><a href="/international-stick-flags-12x18-inch.html">12" x 18" Stick Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/inflshbysi.html">Shop by Size</a></h4></li>
+										<li><a href="/12x18-international-flags.html">12" x 18" Flags</a></li>
+										<li><a href="/infl2fny.html">2ft x 3ft Flags</a></li>
+										<li><a href="/infl3fny.html">3ft x 5ft Flags</a></li>
+                                        <li><a href="/infl4fny.html">4ft x 6ft Nylon Flags</a></li>
+										<li><a href="/international-flags-5ftx8ft-nylon.html">5ft x 8ft Nylon Flags</a></li>
+										<li><a href="/international-flags-6x10.html">6ft x 10ft Flags</a></li>
+									</ul>
+								</div>
+								<div class="col2">
+									<ul class="list-unstyled">
+										<li><h4><a href="/pipade/shopby/generickey-country.html">World Flag Items</a></h4></li>
+										<li><a href="/worldpins.html">World Pins</a></li>
+										<li><a href="/worldpatches.html">World Patches</a></li>
+										<li><a href="/world1.html">World Decals</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+<!-- sixth menu --> 
+                       <li><a href="/displaycases.html">Display Cases</a>
+						<div class="megamenu megamenu-half-width">
+							<div class="megamenu-row">
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/displaycases.html">Flag Cases</a></h4></li>
+										<li><a href="/flcafor3ftx5.html">3ft x 5ft Cases</a></li>
+										<li><a href="/flcafor5ftx9.html">5ft x 9.5ft Cases</a></li>
+										<li><a href="/displaycases-flag-display-and-memorial-accessories.html">Flag Case Pedestals</a></li>
+									</ul>
+								</div>
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/flag-case-accessories.html">Accessories</a></h4></li>
+										<li><a href="/cotton-flags.html">Cotton American Flags</a></li>
+										<li><a href="/enbrpl.html">Engraved Brass Plates</a></li>
+                                                                                <li><a href="/seme.html">Service Medallions</a></li>
+									</ul>
+								</div>
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/mimegi.html">Collectibles &amp; Memorial</a></h4></li>
+										<li><a href="/spandcodica.html">Sports Collectibles Cases</a></li>
+										<li><a href="/challenge-coin-cases-displays.html">Challenge Coin Displays</a></li>
+										<li><a href="/memorial-ornaments-military.html">Memorial Ornaments</a></li>
+										<li><a href="/memorial-plaques-military.html">Memorial Plaques</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+<!-- seventh menu -->
+                       <li><a href="/flag-accessories.html">Accessories</a>
+						<div class="megamenu megamenu-half-width">
+							<div class="megamenu-row">
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/accessories1.html">Flagpole Accessories</a></h4></li>
+										<li><a href="/flagsnaps.html">Flagpole Snaps & Clips</a></li>
+										<li><a href="/polebrackets.html">Flagpole Brackets</a></li>
+										<li><a href="/flagpole-cleat.html">Flagpole Cleats</a></li>
+                                                                                <li><a href="/fltrp.html">Flagpole Trucks</a></li>
+                                                                                <li><a href="/flag-pole-light.html">Flagpole Lighting</a></li>
+                                                                                <li><a href="/haflro.html">Flagpole Halyards</a></li>
+									</ul>
+								</div>
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/patriotic-apparel.html">Patriotic Apparel</a></h4></li>
+										<li><a href="/flag-tshirt.html">Patriotic Shirts</a></li>
+										<li><a href="/patriotic-headwear.html">Patriotic Headwear</a></li>
+                                                                                <li><a href="/patriotic-jewelry-accessories.html">Patriotic Jewelry</a></li>
+									</ul>
+								</div>
+								<div class="col4">
+									<ul class="list-unstyled">
+										<li><h4><a href="/pipade.html">Pins, Patches & Decals</a></h4></li>
+										<li><a href="/pins.html">Flag Pins</a></li>
+										<li><a href="/patches.html">Flag Patches</a></li>
+										<li><a href="/decals.html">Flag Decals</a></li>
+									</ul>
+								</div>
+								<!-- removed -->
+							</div>
+						</div>
+					</li>
+<!-- end menu -->
+                </ul>
+			</div>
+
+ 
+	<!-- End Navigation -->    <!-- Menuzord -->
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            jQuery("#menuzord3").menuzord({
+                align: "left",
+                indicatorFirstLevel: "<i class='icon-angle-down'></i>",
+                indicatorSecondLevel: "<i class='icon-angle-right'></i>"
+            });
+        });
+    </script>
+</div>        </div>
+    </div>
+</div>
+    <div class="page">
+		<div class="main-container col1-layout">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="main">
+															<div class="col-main">
+									<div class="padding-s">
+										                                        <div class="std"><style>
+	img[usemap] {
+		border: none;
+		height: auto;
+		max-width: 100%;
+		width: auto;
+}
+
+    .blend-link {text-decoration:none; color: #444444;}
+    .blend-link a {text-decoration:none; color: #444444;}
+    .blend-link a:hover {text-decoration:none; color: #004990;}
+    .blend-img {padding-bottom: 10px;}
+
+    @media only screen and (max-width: 767px) {
+         #blend-icons {display:none;}
+    }
+
+</style>
+
+
+        <!-- ICONS -->
+        
+        <div id="blend-icons" class="row" style=" text-align: center; padding: 10px 20px 0;">
+     <div class="col-md-1 col-sm-2 col-xs-3">
+<p class="blend-link">
+        <a href="/outdoorflags.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/american-flag-icons.png" width="100%" alt="American Flags" />
+            <br />American Flags</a></p>
+    </div>
+
+    <div class="col-md-1 col-sm-2 col-xs-3">
+        <p class="blend-link">
+        <a href="/flagpolandki.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/flagpoles-icons.png" width="100%" alt="Flagpoles" />
+        <br />Flagpoles</a></p>
+    </div>
+    
+         <div class="col-md-1 col-sm-2 col-xs-3">             
+         <p class="blend-link">
+        <a href="/flags.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/all-flags-icons.png" width="100%" alt="All Flags" />
+             <br />All Flags</a></p>
+    </div>
+
+       <div class="col-md-1 col-sm-2 col-xs-3">
+           <p class="blend-link">
+        <a href="/made-in-the-usa.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/made-in-usa-flag-icons.png" width="100%" alt="Made in the USA" />
+           <br />Made in USA</a></p>
+    </div>
+    
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <p class="blend-link">
+        <a href="/displaycases.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/flag-cases-icons.png" width="100%" alt="Flag Cases" />
+            <br />Flag Cases</a></p>
+    </div>
+
+    <div class="clearfix visible-xs"></div>    
+
+         <div class="col-md-1 col-sm-2 col-xs-3">
+             <p class="blend-link">
+        <a href="/world.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/international-flags-icons.png" width="100%" alt="International Flags" />
+             <br />International Flags</a></p>
+    </div>
+
+       <div class="col-md-1 col-sm-2 col-xs-3">
+           <p class="blend-link">
+        <a href="/hifl.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/historical-flags-icons.png" width="100%" alt="Historical Flags" />
+           <br />Historical Flags</a></p>
+    </div>
+    
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <p class="blend-link">
+        <a href="/flag-accessories.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/accessories-icons.png" width="100%" alt="Accessories" />
+            <br  />Accessories</a></p>
+    </div>
+    
+         <div class="col-md-1 col-sm-2 col-xs-3">
+             <p class="blend-link">
+        <a href="/state.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/state-flags.icons.png" width="100%" alt="State Flags" />
+             <br />State Flags</a></p>
+    </div>
+    
+    <div class="clearfix visible-xs"></div>
+
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <p class="blend-link">
+        <a href="/military.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/military-flags-icons.png" width="100%" alt="Military Flags" />
+            <br />Military Flags</a></p>
+    </div>
+    
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <p class="blend-link">
+        <a href="/smallhandflags.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/stick-flags-icons.png" width="100%" alt="Small Flags" />
+            <br />Small Flags</a></p>
+    </div>
+    
+        <div class="col-md-1 col-sm-2 col-xs-3">
+            <p class="blend-link">
+        <a href="/custom.html">
+            <img class="blend-img"  src="/media/wysiwyg/home_images/usflag/icons/custom-flags-icons.png" width="100%" alt="Custom Flags" />
+            <br />Custom Flags</a></p>
+    </div>
+    
+</div>
+<br />      
+        
+        
+        
+<!-- END ICONS -->
+
+
+
+
+<div>
+  <div class="row">
+    <div class="col-lg-6 col-sm-6 col-xs-12">
+              <img class="homeFeature" src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/American_flags-BannerMap-USF.jpg" usemap="#AF-Map" width="640" height="416"  alt="American Flags" /></div>
+
+     <div class="col-lg-6 col-sm-6 col-xs-12">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/Flagpoles-BannerMap-USF.jpg" usemap="#Flagpoles-Map" width="640" height="416"  alt="Flagpoles" /></div>
+</div>
+<br /><br />
+
+  <div class="row">
+
+     <div class="col-lg-4 col-sm-4 col-xs-12">
+        <a href="/garden-flags.html">
+             <img class="homeFeature" src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/decorative-fallgarden-banner-USF.jpg" alt="" /></a></div>
+
+    <div class="col-lg-4 col-sm-4 col-xs-12">
+        <a href="/usastickflags.html">
+             <img class="homeFeature" src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/New-Stick-Flags-banners-USF_5.jpg" alt="" /></a></div>
+     <div class="col-lg-4 col-sm-4 col-xs-12">
+        <a href="/pleatedfans.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/New-Patriotic-Bunting-USF_2.jpg" alt="" /></a></div>
+</div>
+
+<br /><br />
+<!-- products -->
+
+
+<span class="home-titles"><h2>Featured Categories</h2></span>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/qualsewampol.html">
+              <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/feature-category-super-tough-flags.jpg" alt="Super Tough Flags" /></a>
+<div style="padding: 5px 0;"><h2 class="section-name"><a href="/qualsewampol.html" title="Super Tough Flags">Super Tough Flags</a></h2>
+<div class="price-box">
+<span>3ft. x 5ft. Starting at: </span>
+<span class="price">$27.00</span></span></div>
+</div>
+</div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/superknit-polyester-flags-home-page.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/feature-category-super-knit-flags.jpg" alt="Super Knit Flags" /></a>
+<div style="padding: 5px 0;"><h2 class="section-name"><a href="/superknit-polyester-flags-home-page.html" title="Super Knit Flags">Super Knit Flags</a></h2>
+<div class="price-box">
+<span>3ft. x 5ft. Starting at: </span>
+<span class="price">$5.45</span></span></div>
+</div>
+
+</div>
+<div class="clearfix visible-xs"></div>
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/reingrfl.html">
+              <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/feature-category-residential-flag-poles.jpg" alt="Residential Flag Poles" /></a>
+<div style="padding: 5px 0;"><h2 class="section-name"><a href="/reingrfl.html" title="Residential Flag Poles">Residential Flag Poles</a></h2>
+<div class="price-box">
+<span>16ft Poles Starting at: </span>
+<span class="price">$57.79</span></span></div>
+</div>
+
+</div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/valley-forge-flags.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/feature-category-valley-forge-flags.jpg" alt="Valley Forge Flags" /></a>
+<div style="padding: 5px 0;"><h2 class="section-name"><a href="/valley-forge-flags.html" title="Valley Forge Flags">Valley Forge Flags</a></h2>
+<div class="price-box">
+<span>Sewn Nylon Flags Starting at: </span>
+<span class="price">$15.15</span></span></div>
+</div>
+
+</div></div>
+<br /><br />
+
+<!-- Categories -->
+
+
+<span class="home-titles"><h2>Popular Categories</h2></span>
+
+<div style="padding-left:20px; padding-right:20px;">
+
+<div class="row">
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/military.html">
+            <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-military.jpg" alt="Military Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/military.html" title="Military Flags">Military Flags</a></h2>
+</div>
+</div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/state.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-state.jpg" alt="State Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/state.html" title="State Flags">State Flags</a></h2>
+</div>
+</div>
+
+<div class="clearfix visible-xs"></div>
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/world.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-international.jpg" alt="International Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/world.html" title="International Flags">International Flags</a></h2>
+</div>
+</div>
+
+     <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/inflagandlit.html">
+            <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-indoor-flags-poles.jpg" alt="Indoor Flags &amp; Flag Poles" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/inflagandlit.html" title="Indoor Flags &amp; Flag Poles">Indoor Flags &amp; Flag Poles</a></h2>
+</div>
+</div>
+<!-- Second Row -->
+<div class="clearfix visible-xs"></div>
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/custom.html">
+            <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-custom.jpg" alt="Custom Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/custom.html" title="Custom Flags">Custom Flags</a></h2>
+</div>
+</div>
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/messageflags.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-message2-flags.jpg" alt="Message and Advertising Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/messageflags.html" title="Message and Advertising Flags">Message and Advertising Flags</a></h2>
+</div>
+</div>
+
+
+    <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/nflanddeba.html">
+             <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-sports-flags.jpg" alt="Sports Flags" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/nflanddeba.html" title="Sports Flags">Sports &amp; NASCAR</a></h2>
+</div>
+</div>
+
+     <div class="col-lg-3 col-sm-3 col-xs-6">
+        <a href="/pipade.html">
+            <img src="http://www.united-states-flag.com/media/wysiwyg/home_images/usflag/popular-category-pins-patches-decals.jpg" alt="Pins, Patches, & Decals" /></a>
+<div style="padding: 8px 0; margin-left: 9px;"><h2 class="section-name"><a href="/pipade.html" title="Pins, Patches, &amp; Decals">Pins, Patches, &amp; Decals</a></h2>
+</div>
+</div>
+</div>
+</div>
+
+
+<br />
+<span class="home-titles"><h2>About Us</h2></span>
+<div style="width: 100%; padding-left: 20px;">
+<div id="home_bottom_content">
+<div class="final-text-home">
+<p>Welcome to United States Flag Store, the largest online vendor of high-quality flags and flag accessories. We carry thousands of different flags for every state, country, religion, sport, holiday and special interest that you can think of. We also make custom flags for companies, special events or promotional use.</p>
+<p><strong>Specialty Flags</strong></p>
+<p>While it goes without saying that we carry United States flags, we also carry the largest selection of specialty flags including <a href="/military.html">military</a> and <a href="/powandveteran.html">POW flags</a>, <a href="/nflanddeba.html">sports flags</a>, <a href="/deba.html">decorative flags</a> and more. Honor our veterans, support your favorite team or send a welcoming message to visitors by hanging a decorative flag in your home or office. Our flags come in a variety of sizes, styles and materials including our exclusive Super Tough and Super Knit fabrics. With so many fantastic flag designs to choose from, you can change your flags as often as you wish. </p>
+
+<p><strong>Fabrics</strong></p>
+<p>Many of our bestselling flags are made of durable nylon. Nylon is affordable, lightweight and easy to hang. It is ideal for outdoor use because it is strong enough to withstand the elements and it has a vibrancy that's hard to beat. Because the material is lightweight, the flag will fly with very little wind, making it ideal for flag poles mounted in covered or protected areas. Our outdoor nylon flags are made using 200 denier nylon. They are made by Super Knit Polyester and are some of the most affordable flags we offer.</p>
+<p>On the other hand, sewn polyester flags are some of the most expensive flags we carry. They are the heaviest type of flags, but are also extremely durable. Sewn polyester flags retain their color well and will last longer than a printed nylon flag, but don't fly as well and require more wind to get lift. </p>
+ <p> For harsh climates like windy hilltops or rooftops, we offer <a href="/qualsewampol.html">Super Tough flags</a>. All Super Tough flags come with a 6-month warranty. Super Tough flags are available in a range of sizes, from 3ft by 5ft to 5 ft by 8 ft.</p>
+<p>Our high-quality flags are made in the United States by leading brands including Valley Forge and Annin. Our exclusive Super Knit Polyester Flags last as long as nylon at less than half the price. From U.S.-made nylon flags to heavyweight sewn polyester American flags, find any flag you're looking for here at the United States Flag Store; we have more than 10,000 flag items in stock!</p>
+
+<ul style="list-style:initial; margin-left:15px;">
+<li><strong>Nylon flags</strong> are the most popular outdoor flags. They are attractive to look at, durable, affordable, and they fly with the least wind. Our outdoor nylon flags are made of 200 Denier Nylon.</li>
+<li><strong>Super Knit</strong><strong> </strong><strong>Polyester</strong> flags are very low-cost. They are the lightest flags and fly with very little wind.</li>
+<li><strong>Sewn Polyester</strong> flags are the most expensive. These are the heaviest flags, need the most wind to fly, and are the most durable.</li>
+<li>Our <a href="/qualsewampol.html">US made Super Tough flags</a> come with a <strong>six-month warranty</strong>, and range in sizes up to 5 ft. x 8 ft. Availability in this fabric is limited to the US flag and selected states.</li>
+<li><a href="/buying-flag.html">More on Flag Fabrics and Sizes</a></li>
+</ul>
+<br>
+<p><strong>Special Categories</strong></p>
+<ul>
+<li>Military and POW flags to honor the veterans in your life. Message flags like &ldquo;Support Our Troops&rdquo; and &ldquo;Welcome&rdquo; flags.</li>
+<li>Flags from American history, including the Revolutionary War and the Civil War, perfect for history buffs planning reenactments or for teachers in classroom use.</li>
+<li>Team banners for sports fans to show support. Choose from Major League Baseball, the NFL, and college football teams.</li>
+<li>A great selection of NASCAR flags for racing fans.</li>
+<li>Nautical, boat, and pirate flags for all your water sport and boating activities.</li>
+<li>Decorative flags and banners enhance your home&rsquo;s interior or spruce up the garden.</li>
+<li>Feather and flutter attention flags are ideal for promotional use.</li>
+</ul>
+<p>Find <em>any</em> flag you&rsquo;re looking for, here at the <strong>United States Flag Store</strong>!</p>
+<p><strong><span style="text-decoration: underline;">Flag Fact</span></strong></p>
+<ul>
+<li><em><strong>Did you know? </strong></em>There is no evidence linking Betsy Ross to the American flag!<br /> Find out more at our <a title="Flag Blog" href="http://flags.me/2009/02/11/did-betsy-ross-design-the-american-flag" target="_blank">Flag Blog</a>.</li>
+<li>Was the 50-star American flag designed by our forefathers? Or was it a teenager needing a good grade in history class? Visit our <a title="Flag Blog" href="http://flags.me/2009/02/11/who-designed-the-fifty-star-american-flag/" target="_blank">Flag Blog</a> to find out.</li>
+</ul>
+<p><strong>RETAILERS:</strong> Want to sell US Flag Store products? Contact us for wholesale pricing, at 1.877.734.2458.</p>
+</div>
+</div>
+<br />
+</div>
+<!-- needed for responsive image maps -->
+
+<!-- American Flag Banner -->
+
+<map name="AF-Map">
+  <area shape="poly" coords="1,2,1,320,639,320,639,-9" href="/outdoorflags.html" alt="Valley Forge Flags" title="Valley Forge Flags">
+  <area shape="poly" coords="171,415,171,329,1,329,-1,417" href="/annin-flags.html" alt="Annin Flags" title="Annin Flags">
+  <area shape="poly" coords="356,415,356,329,170,327,170,417" href="/qualsewampol.html" alt="Super Tough Flags" title="Super Tough Flags">
+  <area shape="poly" coords="464,415,464,329,356,329,356,415" href="/american-flags-superknit-polyester.html" alt="Super Knit Flags" title="Super Knit Flags">
+  <area shape="poly" coords="638,329,464,329,462,415,638,417" href="/outdoorflags.html" alt="Shop All American Flags" title="Shop All American Flags">
+</map>
+
+<!-- Flagpoles Banner -->
+
+<map name="Flagpoles-Map">
+  <area shape="rect" coords="0,-1,646,321" href="/flagpolandki.html" alt="Shop All Flagpoles" title="Shop All Flagpoles">
+  <area shape="rect" coords="1,329,213,417" href="/coonepipo.html" alt="Commercial Flagpoles" title="Commercial Flagpoles">
+  <area shape="rect" coords="212,329,428,421" href="/reingrfl.html" alt="Residential Flagpoles" title="Residential Flagpoles">
+  <area shape="rect" coords="426,329,642,425" href="/tefl.html" alt="Telescoping Flagpoles" title="Telescoping Flagpoles">
+</map>
+
+
+<script src="/skin/frontend/enterprise/theme567/js/jquery.rwdImageMaps.min.js"></script>
+<script>
+
+(function($){
+
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end responsive images maps --></div>                                    </div>
+								</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <ul class="footer-banners">
+            <li>
+                <a href="/why-buy-from-us.html?banner=48/" class="banner1">
+                  <span class="inner"><img src="/media/wysiwyg/home_images/usflag/we-mean-it-made-in-usa.jpg" alt="Made in the USA" style="float:right" />
+                   <!--  <span class="banner-title">Made in the USA</span>
+                    <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do</p> -->
+                  </span>
+                </a>
+            </li>
+            <li>
+                <a href="/shippinginfo.html?banner=36/" class="banner1">
+                  <span class="inner"><img src="/media/wysiwyg/home_images/usflag/free-shipping-75-footer-2015.png" alt="Free Shipping at $75" />
+                   <!-- <span class="banner-title">Free Shipping at $75</span> 
+                    <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do</p> -->
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="why-buy-from-us.html?banner=49/" class="banner3">
+                  <span class="inner"><img src="/media/wysiwyg/home_images/usflag/shop-with-confidence.jpg" alt="" />
+                    <!-- <span class="banner-title">Shop with Confidence</span> 
+                    <p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do</p> -->
+                  </span>
+                </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div><div class="footer-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="footer">
+					  <p id="back-top"><a href="#top"><span></span></a> </p>
+					  					  <div class="footer-cols-wrapper">
+						<div class="footer-col">			
+							<h4>Information</h4>
+							<div class="footer-col-content">
+								<ul>
+<li><a title="About Us" href="/info.html">About Us</a></li>
+<li><a title="Careers" href="/careers.html">Careers</a></li>
+<li><a title="Site Map" href="http://www.united-states-flag.com/catalog/seo_sitemap/category/">Site Map</a></li>
+<li><a title="Blog" href="http://blog.united-states-flag.com/" target="_blank">Blog</a></li>
+<!-- <li><a title="News" href="/news.html">News</a></li> -->
+<li><a title="News" href="/info-news.html">Flag Info</a></li>
+<li><a title="News" href="/american-flag-pictures.html">Flag Pictures</a></li>
+<li><a title="Wholesale" href="/flags-wholesale.html">Wholesale</a></li>
+</ul>															</div>
+						</div>
+						<div class="footer-col">
+  <h4>Why buy from us</h4>
+  <div class="footer-col-content">
+    <ul>
+      <li><a title="Customer Service" href="http://www.united-states-flag.com/faqs.html">Customer Service FAQ</a></li>
+      <li><a title="Shipping Info" href="http://www.united-states-flag.com/shippinginfo.html">Shipping Info</a></li>
+      <li><a title="Return Policy" href="http://www.united-states-flag.com/return-policy.html">Return Policy</a></li>
+      <li><a title="Privacy Policy" href="http://www.united-states-flag.com/privacypolicy.html">Privacy Policy</a></li>
+      <li><a title="Resource Directory" href="/resources.html">Resource Directory</a></li>
+<li><a title="Resource Directory" href="/flag-store-reviews.html">Reviews &amp; Ratings</a></li>
+  </ul>
+  </div>
+</div>
+<div class="footer-col">
+<h4>My account</h4>
+  <div class="footer-col-content">
+    <ul>
+      <li><a href="https://www.united-states-flag.com/customer/account/login/">Sign In</a></li>
+      <li><a href="http://www.united-states-flag.com/checkout/cart/">View Cart</a></li>
+      <li><a href="https://www.united-states-flag.com/wishlist/">My Wishlist</a></li>
+      <li><a href="/order-status.html">Track My Order</a></li>
+      <li><a href="/returns-center.html">Returns</a></li>
+    </ul>
+  </div>
+</div>
+<div class="footer-col contacts">
+  <h4>Contact Us</h4>
+  <div class="footer-col-content">
+    <p>Online Stores, LLC 1000 Westinghouse Drive, Suite 1, New Stanton, PA 15672</p>
+    <p class="tel">Call us now toll free: <strong>1-877-734-2458</strong></p>
+  </div>
+<br /><br />
+<!-- extra copy here -->
+</div>						<div class="footer-col">
+							<form action="https://www.united-states-flag.com/newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+    <div class="form-subscribe">
+    <div class="form-subscribe-header">
+        <label for="newsletter">Sign Up for Our Newsletter:</label>
+    </div>
+        <div class="v-fix"><input name="email" type="text" id="newsletter" value="Enter your email address" onclick="this.value=='Enter your email address'?this.value='':''" onblur="this.value==''?this.value='Enter your email address':''" class="input-text required-entry validate-email" /></div>
+        <button type="submit" class="button" title="Subscribe"><span><span>Subscribe</span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+//]]>
+</script>
+							<br />
+<div class="socials">
+  <h3>Follow us</h3>
+  <ul class="list-icon">
+     <li><a class="icon-facebook" target="_blank" href="http://www.facebook.com/americanflag"></a></li>
+     <li><a class="icon-twitter" target="_blank" href="http://twitter.com/americanFlag"></a></li> 
+     <li><a class="icon-linkedin" target="_blank" href="http://www.linkedin.com/company/online-stores-inc"></a></li>
+     <li><a class="icon-pinterest" target="_blank" href="http://pinterest.com/usflags/"></a></li> 
+     <li><a class="icon-rss" target="_blank" href="http://blog.united-states-flag.com/" target="_blank" ></a></li>
+  </ul>
+<div>
+<div class="clearfix"></div>
+<a href="http://blog.united-states-flag.com/" target="_blank" border="0"><img src="/media/wysiwyg/home_images/usflag/flag-blog.png" alt="Visit our Flag Blog!" /></a>
+<br /><br />
+<a href="/united-states-flag-store-catalog.html" border="0"><img src="/media/wysiwyg/home_images/download-catalog-pdf.jpg" alt="Free Flag Catalog" /></a>
+</div>
+</div>							<address>Copyright &copy; 2016 Online Stores, LLC All Rights Reserved.</address>
+						</div>
+					  </div>
+					
+					
+					<!--{%FOOTER_LINK}-->					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-secondary-container">
+   <div class="footer-secondary-inner">
+
+
+        <div class="footer-static-bottom">
+            <div style="margin-top:10px;">
+<center>
+
+<!-- Google Trusted Stores Badge -->
+<div id="GTS_CONTAINER"></div>
+
+    <a href="/privacypolicy.html"><img src="/media/wysiwyg/CMS_images/privacy2.png" alt="Online Stores Privacy Guarantee" border="0" ></a>
+<a target="_BLANK" title="Online Stores Inc. BBB Business Review" href="http://www.bbb.org/pittsburgh/business-reviews/flags-and-banners/online-stores-inc-in-new-stanton-pa-4000836/#bbbonlineclick"><img alt=" Online Stores Inc. BBB Business Review" src="/media/wysiwyg/CMS_images/seal.png" border="0" hspace="5"></a>
+
+<!-- OLS Logo -->
+<a href="http://www.onlinestores.com" target="_blank"><img src="/media/wysiwyg/CMS_images/ols-logo-llc_1.png" alt="a division of Online Stores, LLC" /></a>
+<!-- end OLS Logo -->
+
+</center>
+</div>            <div style="margin-bottom: 50px;">
+<!-- begin ols stores icons -->
+<br clear="all"><br /><br />
+<center>
+<p>Visit our other stores:<br /><br /></p>
+<table border="0">
+<tr>
+<td>
+<center>
+<a href="http://www.constructiongear.com" target="_blank"><img alt="ConstructionGear.com" src="/media/wysiwyg/CMS_images/Store_Directory/cg-icon.png" border="0" height="36" hspace="10" vspace="0" width="74"></a>
+<a href="http://www.united-states-flag.com" target="_blank"><img alt="united-states-flag.com" src="/media/wysiwyg/CMS_images/Store_Directory/usfs-icon.png"  border="0" height="36" hspace="10" vspace="0" width="37"></a>
+<a href="http://www.englishteastore.com" target="_blank"><img alt="englishteastore.com" src="/media/wysiwyg/CMS_images/Store_Directory/ets-icon.png"  border="0" height="36" hspace="10" vspace="0" width="63"></a>
+<a href="http://www.discountsafetygear.com" target="_blank"><img alt="discountsafetygear.com" src="/media/wysiwyg/CMS_images/Store_Directory/dsg-icon.png" height="36" width="80"></a> 
+<a href="http://www.safetygirl.com" target="_blank"><img alt="safetygirl.com" src="/media/wysiwyg/CMS_images/Store_Directory/sg-icon.png" border="0" height="36" hspace="10" vspace="0" width="74"></a>
+<a href="http://www.toysplash.com" target="_blank"><img alt="toysplash.com" src="/media/wysiwyg/CMS_images/Store_Directory/ts3-text-logo.png" alt="Toy Splash" /></a>
+<a href="http://www.lightup.com" target="_blank"><img src="/media/wysiwyg/CMS_images/Store_Directory/lightup-logo-dir.png" alt="LightUp.com" /></a>
+</center>
+</td>
+</tr>
+</table >
+</center>
+<!-- end store icons -->
+</div>
+        </div>
+    </div>
+
+
+</div>        <script type="text/javascript">
+    var amlabel_selector = '.product-image';
+    </script><!--{BRONTO_CART_RECOVERY_422a746e2510ea258f679a5b54914e48}-->
+<!--/{BRONTO_CART_RECOVERY_422a746e2510ea258f679a5b54914e48}-->
+<!--
+<script bronto-popup-id="ca892749-ca49-4e0c-9111-a0f967e07f81" src="https://cdn.bronto.com/popup/delivery.js"></script>
+-->
+<script type="text/javascript">
+if (document.addEventListener) {
+  document.addEventListener('bronto:popup-submitted', function(e) {
+    new Ajax.Request('http://www.united-states-flag.com/btnewsletter/index/submit/', {
+      method: 'post',
+      parameters: { emailAddress: e.detail.email }
+    });
+  }, false);
+}
+</script>
+
+
+<script type="text/javascript" src="//p.bm23.com/bta.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    var bta = new __bta('009ddb61922db3c3628ab0b94cc15126');
+    //]]>
+</script>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    // Handle Magento Email Fields
+    Event.observe(window, 'load', function() {
+        $$('input.validate-email').each(function(item) {
+            item.observe('change', function(event) {
+                captureEmail(item.value);
+            });
+        });
+    });
+
+    // Handle Popup Event
+    if (document.addEventListener) {
+        document.addEventListener('bronto:popup-created', function(e) {
+            $$('.popup-dialog input[id*=inputs-email]').each(function(item) {
+                item.observe('change', function(event) {
+                    captureEmail(item.value);
+                });
+            });
+        }, false);
+    }
+
+    // Trigger AJAX call to capture Email Address
+    function captureEmail(emailAddress) {
+        var targetUrl = 'http://www.united-states-flag.com/emailcapture/index/capture/';
+        new Ajax.Request(targetUrl, {
+            method: 'post',
+            parameters: {emailAddress: emailAddress}
+        });
+    }
+    //]]>
+</script>
+<!--{CONVERSIONSONDEMAND_CONVERSIONS360CODE_5a99cf29c9ba7d48d64c9679edf40d24}--><!--/{CONVERSIONSONDEMAND_CONVERSIONS360CODE_5a99cf29c9ba7d48d64c9679edf40d24}--><div id="downloads_video_popup">
+    <div class="popup-cont">
+        <div id="dl_video_content">
+            <div id="dl_video_title">
+                <h2>video title</h2>
+            </div>
+            <div id="dl_video">
+                video content
+            </div>
+        </div>
+        <div id="dl-spinner" class="spinner"></div>
+        <div type="button" id="close_popup" class="close-button"></div>
+    </div>
+</div>
+<div id="downloads_video_overlay"></div>
+<script type="text/javascript">
+    downloads.postInit();
+</script>
+<div id="ols-email-popup" style="display:none;">
+    <span id="ols-email-popup-tab" style="background:#CE3131">
+        <div class="ols-icon">
+            <i class="icon-envelope"></i>
+        </div>
+        <img class="special-offer-text" src="http://www.united-states-flag.com/skin/frontend/enterprise/theme567/images/special-offer-vertical-text.png" alt='Special Offer' />    </span><div id="ols-email-popup-content">
+        <div id="ols-email-popup-overlay"><img src="http://www.united-states-flag.com/skin/frontend/enterprise/default/images/ajax-loader.gif" /></div>
+        <form action="/ols/popupNewsletter/ajaxSubscribe/" method="post" id="ols-newsletter-validate-detail">
+            <div class="ols-form-subscribe">
+                <div class="ols-form-subscribe-details">
+                    <label for="ols-newsletter"><h2>Sign up &amp; save 10% on your next order!</h2>
+<p>Subscribe to our newsletter and be the first to know about exclusive offers and new products!</p></label>
+                </div>
+                <div><input name="email" type="text" id="ols-newsletter" value="Enter your email address" onclick="this.value=='Enter your email address'?this.value='':''" onblur="this.value==''?this.value='Enter your email address':''" class="input-text required-entry validate-email" /></div>
+                <button type="submit" class="button" title="Subscribe"><span><span>Subscribe <i class="icon-envelope-alt"></i></span></span></button>
+                <div id="ols-email-popup-no-thanks"><a href="#"><i class="icon-remove-circle"></i> No Thanks</a></div>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+</div>
+<script type="text/javascript">
+  var _sf_async_config = { uid: 30602, domain: 'new.united-states-flag.com' };
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src',
+        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
+        "js/chartbeat.js");
+      document.body.appendChild(e);
+    };
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
+
+<!--Start of Zopim Live Chat Script Updated-->
+
+<script type="text/javascript">
+olsLoadZopim = function()
+{
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?11MjtNsCFAN9EV6MlODph6gVnfBlmJnY";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+}
+runAfterCritPath(olsLoadZopim);
+</script>
+
+<!--End of Zopim Live Chat Script--><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"808c4de717","applicationID":"13263696","transactionName":"YFZVMEQCVhdZUUZcXFkcdgdCClcKF0JTUlZUUlQMU0xKAUlHV0ZHGENFC1UGSxc=","queueTime":0,"applicationTime":107,"atts":"TBFWRgwYRRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

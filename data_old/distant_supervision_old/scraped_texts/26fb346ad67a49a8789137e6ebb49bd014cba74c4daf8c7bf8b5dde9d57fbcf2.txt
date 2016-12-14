@@ -1,0 +1,24 @@
+#scoreBox table {
+float: left;
+margin: 11px 0 0 5px;
+width: 333px;
+border: 1px solid rgb(0,0,85);
+background: rgb(205,213,213);
+if(typeof jQuery == "undefined") {
+var script = document.createElement('script');
+script.setAttribute("type","text/javascript");
+script.setAttribute("src", "http://code.jquery.com/jquery-latest.pack.js");
+if (typeof script!="undefined") {
+document.getElementsByTagName("head")[0].appendChild(script)
+tryReady = function(time_elapsed) {
+// Continually polls to see if jQuery is loaded.
+if (typeof jQuery == "undefined") { // if jQuery isn't loaded yet...
+if (time_elapsed <= 15000) { // and we havn't given up trying...
+setTimeout("tryReady(" + (time_elapsed + 200) + ")", 200); // set a timer to check again in 200 ms.
+} else {
+// add padding to the goal summary box
+maxheight=0;
+jQuery('#scoreBox>TABLE').each(function() {if(jQuery(this).height() > maxheight) { maxheight = jQuery(this).height(); }; });
+jQuery('#scoreBox>TABLE TD.goalsumm').each(function() { jQuery(this).css('padding-bottom',maxheight - jQuery(this).parent().parent().parent().height() ) }); // ugly form but compatible with jQuery 1.2.6
+//jQuery('#scoreBox>TABLE TD.goalsumm').each(function() { jQuery(this).css('padding-bottom',maxheight - jQuery(this).parents('#scoreBox>TABLE').height() ) }); // proper form for 1.4+
+tryReady(0);

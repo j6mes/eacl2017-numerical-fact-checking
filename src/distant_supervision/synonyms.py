@@ -2,7 +2,7 @@ import os
 from collections import defaultdict
 import pickle
 
-from distant_supervision.query_generation import normalise
+from distant_supervision.normalisation import normalise
 
 
 class SynonymRegistry():

@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+	<title>Lottery Results | Latest Draw Results</title>
+	<meta name="description" content="Get the latest lottery results for Lotto, EuroMillions, Thunderball, Health Lottery and Lotto HotPicks within seconds of the draws taking place." />
+	<meta name="keywords" content="lottery results, latest lottery results, lotto results, euromillions results, Thunderball results" />
+	<meta name="author" content="The Lottery Company Ltd" />
+	<meta name="format-detection" content="telephone=no">
+	
+	
+		<meta property="og:title" content="Lottery Results | Latest Draw Results" />
+		<meta property="og:description" content="Get the latest lottery results for Lotto, EuroMillions, Thunderball, Health Lottery and Lotto HotPicks within seconds of the draws taking place." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://www.lottery.co.uk/results" />
+		<meta property="og:site_name" content="Lottery" />
+		<meta property="og:image" content="https://www.lottery.co.uk/images/facebook-img.jpg" />
+		<meta property="fb:admins" content="100002871442561"/>
+	
+		<link href="/css/desktop.css?v=201609281452" rel="stylesheet" type="text/css" />
+		<noscript>
+			<style type="text/css">
+				.minimised{height:auto !important;overflow:visible !important;}
+				.socialContainer{display:none;}
+			</style>
+		</noscript>
+	
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	
+	<link rel="canonical" href="https://www.lottery.co.uk/results" />
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			
+			ga('create','UA-3838501-10','lottery.co.uk');
+			ga('require','linkid','linkid.js');
+			ga('require','displayfeatures');
+			ga('send','pageview');
+		</script>
+	
+	
+	<script type="text/javascript">
+		// Multiple window onload function
+		function addLoadEvent(e){var t=window.onload;if(typeof window.onload!="function"){window.onload=e}else{window.onload=function(){if(t){t()}e()}}}
+	</script>
+	
+	
+
+		<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	
+	fbq('init', '1030504883712306');
+	fbq('track', "PageView");</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1030504883712306&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+
+	<a id="top"></a>
+
+	<header>
+	
+		
+
+	<div id="login-panel" style="position: relative; margin-top:-132px">
+
+		<div class="container">
+			
+			<form id="form_login" name="form" action="/login" method="post" onSubmit="return checkloginForm();" class="horizontal-login">
+				<div class="username">
+					<input id="Email0" name="Email" type="text" placeholder="Email" tabindex="1" class="form-control" value="" >
+					<span><a href="/forgotten-password" title="Forgetten Your Password?">Forgot Password?</a></span>
+				</div>
+				<div class="password">
+					<input id="Password0" name="Password" type="password" placeholder="Password" tabindex="2" class="form-control">
+				</div>
+				<div class="submit">
+					<button id="submit_login_details" type="submit" class="button-blue cont-button">Sign In</button>
+				</div>
+				<input id="Login0" name="Login" type="hidden" value="1" />
+			</form>
+			
+			<div class="join">
+			
+				
+				
+					Haven't Registered? <a href="/register" title="Join Free Lottery"><div class="button-yellow">Join Now</div></a>
+					
+					<p><a href="/why-register" title="Registration Benefits">What are the benefits of registering?</a></p>
+					
+					
+					
+						<button id="panelButton" class="panel-button">Sign In</button>
+						<noscript>
+							<form method="post" action="/login" id="login_button" name="form">
+								<button class="panel-button">Sign In</button>
+							</form>
+						</noscript>
+						<a id="panel-close" onclick="return false;" style="cursor:pointer;">Close <span>X</span></a>
+					
+					
+				
+			</div>
+		
+		</div>
+		
+	</div>
+	
+
+
+<script type="text/javascript">	
+
+	
+	
+		(function() {
+			
+			var minheight = -132;
+			var maxheight = 0;
+			var time = 300;
+			var timer = null;
+			var toggled = false;
+			
+			window.onload = function() {
+				
+				if (document.getElementById('quickPick')) {
+					SelectedBalls();	
+				}
+				
+				if (document.getElementById('panelButton')) {
+					var panelBtn = document.getElementById('panelButton');
+					var panelBtnCls = document.getElementById('panel-close');
+					
+					if (panelBtn.addEventListener) {
+						panelBtn.addEventListener("click", loginSlider);
+						panelBtnCls.addEventListener("click", loginSlider);
+					} else {
+						panelBtn.attachEvent("onclick", loginSlider);
+						panelBtnCls.attachEvent("onclick", loginSlider);
+					}
+				}
+				
+				var slider = document.getElementById('login-panel');
+				slider.style.marginTop = minheight + 'px';
+				
+				function loginSlider() {
+					
+					clearInterval(timer);
+					var instanceheight = parseInt(slider.style.marginTop);
+					var init = (new Date()).getTime();
+					var height = (toggled = !toggled) ? maxheight : minheight;
+					var disp = height - parseInt(slider.style.marginTop);
+					
+					timer = setInterval(function() {
+						var instance = (new Date()).getTime() - init;
+						if (instance < time) {
+							var con = instance / time;
+							var pos = Math.floor(disp * con);
+							result = instanceheight + pos;
+							slider.style.marginTop = result + 'px';
+						} else {
+							slider.style.marginTop = height + 'px';
+							/*safety side ^^*/
+							clearInterval(timer);
+						}
+					}, 1);
+				};
+			};
+			
+		})();
+		
+	
+	
+</script>
+
+
+
+	<script type="text/javascript">
+	
+		function checkloginForm() {
+			
+			if (document.getElementById("Email0").value == "") {
+				alert("Please enter your email address.");
+				document.getElementById("Email0").focus();
+				return false;
+			} else {
+				apos = document.getElementById("Email0").value.indexOf("@");
+				dotpos = document.getElementById("Email0").value.lastIndexOf(".");
+
+				if (apos < 1 || dotpos - apos < 2) {
+					alert("Please enter a valid email address.");
+					document.getElementById("Email0").focus();
+					return false;
+				}
+			}
+			
+			if (document.getElementById("Password0").value == "") {
+				alert("Please enter a password.");
+				document.getElementById("Password0").focus();
+				return false;
+			}
+			
+			return true;
+		}
+		
+	</script>
+	
+
+	
+		<div class="hf header">
+		
+			<div class="hf-inner">
+			
+				<a class="siteLogo" href="/" title="Lottery"><img src="/images/template/logo.png" alt="Lottery" width="311" height="51" /></a>
+				
+				
+				<div class="topRight">
+				
+					
+						<div class="dateTime">Wednesday 9th November 2016</div>
+					
+						
+				</div>
+			
+				
+				
+					<ul id="tabMenu">
+						<li><a href="/lottery-tickets" title="Buy Lottery Tickets Online" class="tickets">Lottery Tickets</a></li>
+						<li><a href="https://www.bingo-lottery.co.uk/" title="Play bingo online at Bingo-Lottery" rel="nofollow">Bingo</a></li>
+						<li><a href="https://games.lottery.co.uk/" title="Lottery Games">Lottery Games</a></li>
+						<li><a href="/results" title="View the latest lottery results">Lottery Results</a></li>
+					</ul>
+					
+					<div id="siteSearch">
+						<script type="text/javascript">
+							function validateSearch() {
+								var q = document.getElementById('q');
+								if (q.value == '' || q.value == 'Search...') return false;
+							};
+						</script>
+						<form action="/search-results" id="search" name="mainSearch" onSubmit="return validateSearch()">
+							<input type="text" name="q" id="q" class="box" value="Search..." onFocus="if(this.value=='Search...'){this.value='';this.style.width='150px'}" onBlur="if(this.value==''){this.value='Search...';this.style.width='50px'}"  />
+							<input type="submit" name="submit" value="Search" class="btn"/>
+						</form>
+					</div>
+				
+				
+						
+			</div>
+	
+		</div>
+	
+	</header>
+	
+	<div id="siteContainer">
+
+		<div id="sidebarLeft">
+
+	<nav>
+	
+		
+		
+		<ul class="sideMenu" id="sideMenu">
+			
+				<li class="menuTitle">Main Menu</li>
+			
+			<li><a href="/" title="Lottery" class="nav-home left">Lottery.co.uk</a></li>
+			
+			<li>
+				<a href="/results" title="Lottery Results" class="nav-results subAvailable">Lottery Results</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto/results" title="Lotto Results">Lotto</a></li>
+					<li><a href="/lotto/raffle/results" title="Lotto Raffle Results">Lotto Raffle</a></li>
+					<li><a href="/euromillions/results" title="EuroMillions Results">EuroMillions</a></li>
+					<li><a href="/euromillions/millionaire-maker/results" title="EuroMillions Millionaire Maker Results">Millionaire Maker</a></li>
+					<li><a href="/thunderball/results" title="Thunderball Results">Thunderball</a></li>
+					<li><a href="/lotto/hotpicks/results" title="Lotto HotPicks Results">Lotto HotPicks</a></li>
+					<li><a href="/irish-lotto/results" title="Irish Lotto Results">Irish Lotto</a></li>
+					<li><a href="/health-lottery/results" title="Health Lottery Results">Health Lottery</a></li>
+					<li><a href="/postcode-lottery/results" title="Postcode Lottery Results">Postcode Lottery</a></li>
+					<li><a href="/free-lottery/results" title="Free Lottery Results">Free Lottery</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/lottery-tickets" title="Buy Lottery Tickets" class="nav-tickets subAvailable">Lottery Tickets</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto/tickets" title="Lotto Tickets">Lotto</a></li>
+					<li><a href="/euromillions/tickets" title="EuroMillions Tickets">EuroMillions</a></li>
+					<li><a href="/thunderball/tickets" title="Thunderball Tickets">Thunderball</a></li>
+					<li><a href="/irish-lotto/tickets" title="Irish Lotto Tickets">Irish Lotto</a></li>
+					<li><a href="/health-lottery/tickets" title="Health Lottery Tickets">Health Lottery</a></li>
+					<li><a href="/postcode-lottery/tickets" title="Postcode Lottery Tickets">Postcode Lottery</a></li>
+					<li><a href="/free-lottery/play" title="Free Lottery Tickets">Free Lottery</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/syndicates" title="Lottery Syndicates" class="nav-syndicate subAvailable">Lottery Syndicates</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/syndicates/guide" title="Syndicate Guide">What is a Syndicate?</a></li>
+					<li><a href="/syndicates/types" title="Types of Syndicates">Types of Syndicates</a></li>
+					<li><a href="/syndicates/join" title="Join a Syndicate">Join a Syndicate</a></li>
+					<li><a href="/syndicates/create" title="Create a Syndicate">Create a Syndicate</a></li>
+					<li><a href="/syndicates/faqs" title="Syndicate FAQs">FAQs</a></li>
+					<li><a href="/syndicates/winners" title="Syndicate Winners">Winners</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/checker" title="Lottery Results Checker" class="nav-checker subAvailable">Lottery Checker</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto/checker" title="Lotto Results Checker">Lotto</a></li>
+					<li><a href="/lotto/checker#lotto-raffle" title="Lotto Raffle Results Checker">Lotto Raffle</a></li>
+					<li><a href="/euromillions/checker" title="EuroMillions Results Checker">EuroMillions</a></li>
+					<li><a href="/euromillions/checker#millionaire-maker" title="Millionaire Maker Results Checker">Millionaire Maker</a></li>
+					<li><a href="/thunderball/checker" title="Thunderball Results Checker">Thunderball</a></li>
+					<li><a href="/irish-lotto/checker" title="Irish Lotto Results Checker">Irish Lotto</a></li>
+					<li><a href="/health-lottery/checker" title="Health Lottery Results Checker">Health Lottery</a></li>
+					<li><a href="/postcode-lottery/checker" title="Postcode Lottery Results Checker">Postcode Lottery</a></li>
+					<li><a href="/free-lottery/checker" title="Free Lottery Results Checker">Free Lottery</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/number-generator" title="Lottery Number Generator" class="nav-random subAvailable">Number Generator</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto/number-generator" title="Lotto Number Generator">Lotto</a></li>
+					<li><a href="/euromillions/number-generator" title="EuroMillions Number Generator">EuroMillions</a></li>
+					<li><a href="/thunderball/number-generator" title="Thunderball Number Generator">Thunderball</a></li>
+					<li><a href="/irish-lotto/number-generator" title="Irish Lotto Number Generator">Irish Lotto</a></li>
+					<li><a href="/health-lottery/number-generator" title="Health Lottery Number Generator">Health Lottery</a></li>
+					<li><a href="/free-lottery/number-generator" title="Free Lottery Number Generator">Free Lottery</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/statistics" title="Lottery Statistics" class="nav-stats subAvailable">Lottery Statistics</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto/statistics" title="Lottery Statistics">Lotto</a></li>
+					<li><a href="/euromillions/statistics" title="EuroMillions Statistics">EuroMillions</a></li>
+					<li><a href="/thunderball/statistics" title="Thunderball Statistics">Thunderball</a></li>
+					<li><a href="/irish-lotto/statistics" title="Irish Lotto Statistics">Irish Lotto</a></li>
+					<li><a href="/health-lottery/statistics" title="Health Lottery Statistics">Health Lottery</a></li>
+					<li><a href="/postcode-lottery/statistics" title="Postcode Lottery Statistics">Postcode Lottery</a></li>
+					<li><a href="/free-lottery/statistics" title="Free Lottery Statistics">Free Lottery</a></li>
+				</ul>
+			</li>
+			
+			<li><a href="/news" title="Lottery News" class="nav-news">Lottery News</a></li>
+			<li>
+				<a href="/lotteries" title="Lotteries" class="nav-lotteries subAvailable">The Lotteries</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/lotto" title="Lotto Draw Information">Lotto</a></li>
+					<li><a href="/lotto/raffle" title="Lotto Raffle Information">Lotto Raffle</a></li>
+					<li><a href="/euromillions" title="EuroMillions Lottery Information">EuroMillions</a></li>
+					<li><a href="/euromillions/millionaire-maker" title="EuroMillions Millionaire Maker Information">Millionaire Maker</a></li>
+					<li><a href="/thunderball" title="Thunderball Information">Thunderball</a></li>
+					<li><a href="/lotto/hotpicks" title="Lotto HotPicks Information">Lotto HotPicks</a></li>
+					<li><a href="/irish-lotto" title="Irish Lotto Information">Irish Lotto</a></li>
+					<li><a href="/health-lottery" title="Health Lottery Information">Health Lottery</a></li>
+					<li><a href="/postcode-lottery" title="Postcode Lottery Information">Postcode Lottery</a></li>
+					<li><a href="/free-lottery" title="Free Lottery Information">Free Lottery</a></li>
+					<li><a href="/other-lottery-games" title="Information on other world lotteries">Other Lotteries</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="/information" title="Lottery Information" class="nav-info subAvailable">Lottery Information</a>
+				
+				<ul class="subMenu" onMouseOver="hover(this,'on')" onMouseOut="hover(this,'off')">
+					<li><a href="/winners-guide" title="Winners Guide">Winners Guide</a></li>
+					<li><a href="/lost-ticket" title="Lost Lottery Tickets">Lost Tickets</a></li>
+					<li><a href="/damaged-ticket" title="Damaged Lottery Tickets">Damaged Tickets</a></li>
+					<li><a href="/history-of-lotteries" title="History of UK Lotteries">History of Lotteries</a></li>
+					<li><a href="/good-causes" title="Lottery Funding">Good Causes</a></li>
+					<li><a href="/unclaimed-lottery-prizes" title="Lottery Unclaimed Prizes">Unclaimed Prizes</a></li>
+				</ul>
+			</li>
+			<li class="last"><a href="/login" title="Sign In to Lottery.co.uk" class="nav-logout">Sign In</a></li>
+			
+		</ul>
+		
+		
+		
+	</nav>
+	
+	<script type="text/javascript">
+	<!--
+		function hover(obj,state) {
+			if (state == 'on') {prevNode(obj).className+=' hovered'}
+			else {prevNode(obj).className = prevNode(obj).className.replace(' hovered','')}	
+		}
+		
+		function prevNode(n) {
+			x = n.previousSibling
+			while (x.nodeType != 1) {
+				x = x.previousSibling;
+			} return x;
+		};
+		
+		function nextNode(n) {
+			x = n.nextSibling
+			while (x.nodeType != 1) {
+				x = x.nextSibling;
+			} return x;
+		};
+		
+		
+	-->	
+	</script>
+	
+	
+			<a href="/apps" title="Download our iPhone app here">
+				<img src="/images/banners/iphone-app-banner.jpg" alt="iPhone App image" class="sideSquare" width="248" height="248" />
+			</a>
+			<!--<a href="/free-lottery/play" title="Play Free Lottery here">
+				<img src="/images/banners/free-lottery/free-lottery.gif" alt="Free Lottery image" class="sideSquare" width="248" height="248" />
+			</a>-->
+        	<!--<a id="fl-base" href="/free-lottery/play">
+				
+					<img src="/images/banners/free-lottery/free-lottery.gif" alt="Play For FREE, Win up to &pound;1 Million Every Week!" border="0" />
+				
+					<div id="fl-bg"></div>
+					<div id="fl-image"><img src="/images/vault/free-lottery-logo-wide.png" alt="Free Lottery" /></div>
+					<div id="fl-textA1">Play for</div>
+					<div id="fl-textA2">FREE</div>
+					<div id="fl-textA3">Every Day!</div>
+					<div id="fl-textB1">Win up to</div>
+					<div id="fl-textB2">&pound;1 MILLION</div>
+					<div id="fl-textB3">Every Week!</div>
+					<div id="fl-button" class="button-yellow">Play Now</div>
+				-->
+			</a>
+		<div id="sidebar-games">
+
+	
+		
+			<div class="sidebar-game" id="sidebar-game-1">
+				<a href="https://games.lottery.co.uk/play/racing-for-pinks" target="_blank" title="Play Racing For Pinks for real" class="sidebar-game-real">
+					<img src="/images/games/sidebar/racing-for-pinks.jpg" alt="Racing For Pinks" />
+					<span>Play Now</span>
+				</a>
+				
+					<a href="https://games.lottery.co.uk/play/racing-for-pinks-free" target="_blank" title="Try Racing For Pinks for free" class="sidebar-game-demo">Free Play</a>
+				
+			</div>
+		
+			<div class="sidebar-game" id="sidebar-game-2">
+				<a href="https://games.lottery.co.uk/play/game-of-thrones" target="_blank" title="Play Game of Thrones for real" class="sidebar-game-real">
+					<img src="/images/games/sidebar/game-of-thrones.jpg" alt="Game of Thrones" />
+					<span>Play Now</span>
+				</a>
+				
+					<a href="https://games.lottery.co.uk/play/game-of-thrones-free" target="_blank" title="Try Game of Thrones for free" class="sidebar-game-demo">Free Play</a>
+				
+			</div>
+		
+			<div class="sidebar-game" id="sidebar-game-3">
+				<a href="https://games.lottery.co.uk/play/live-multi-player-blackjack" target="_blank" title="Play Live Blackjack for real" class="sidebar-game-real">
+					<img src="/images/games/sidebar/live-blackjack.jpg" alt="Live Blackjack" />
+					<span>Play Now</span>
+				</a>
+				
+					<a href="https://games.lottery.co.uk/play/live-multi-player-blackjack-free" target="_blank" title="Try Live Blackjack for free" class="sidebar-game-demo">Free Play</a>
+				
+			</div>
+	
+	<!--[if lte IE 8]>
+		<script type="text/javascript">
+		
+			var showGame = 1;
+			setInterval('switchGame()',7000);
+			
+			function switchGame() {
+				for (i=1;i<4;i++) {document.getElementById('sidebar-game-'+i).style.display = 'none';}
+				document.getElementById('sidebar-game-'+showGame).style.display = 'block';
+				showGame++;
+				if (showGame > 3) {showGame = 1;}
+			};
+			
+		</script>
+	<![endif]-->
+	
+</div>
+		
+			
+
+		
+		<div class="centred">
+			<a href="https://www.facebook.com/Lottery.UK" id="footerFacebook" title="Click here for our Facebook page" target="_blank"><img src="/images/template/icon-facebook.png" alt="Facebook" style="width: 40px;" /></a> 
+			<a href="https://twitter.com/lottery_uk" title="Click here for our Twitter page" target="_blank"><img src="/images/template/icon-twitter.png" alt="Twitter" style="width: 40px;" /></a>
+			<a href="https://www.instagram.com/lottery_uk" title="Click here for our Instagram page" target="_blank"><img src="/images/template/icon-instagram.png" alt="Instagram" style="width: 40px;" /></a>
+		</div>
+		<script type="text/javascript">window.fbAsyncInit=function(){FB.init({appId:"592933847410638",status:!0,cookie:!0,xfbml:!0,version:"v2.5"}),FB.getLoginStatus(function(e){if(e||!e.status)if("connected"===e.status||"not_authorized"===e.status)document.getElementById("footerFacebook")&&document.getElementById("footerFacebook").href("https://www.facebook.com/Lottery.UK");else if(document.getElementById("footerFacebook")){var t=document.getElementById("footerFacebook"),o=document.getElementById("closeFB"),n=function(e){e.preventDefault(),e.stopPropagation();var t=document.getElementById("LotteryUK");t.className="FBPopup showModal"},c=function(e){e.preventDefault(),e.stopPropagation();var t=document.getElementById("LotteryUK");t.className="FBPopup hideModal"};t.addEventListener("click",n),o.addEventListener("click",c)}})},function(e,t,o){var n,c=e.getElementsByTagName(t)[0];e.getElementById(o)||(n=e.createElement(t),n.id=o,n.src="//connect.facebook.net/en_US/sdk.js",c.parentNode.insertBefore(n,c))}(document,"script","facebook-jssdk");</script>
+
+
+		<div id="LotteryUK" class="FBPopup">
+			<div class="box">
+				<div class="head"><a id="closeFB">Close</a></div>
+				<p>You first need to log in to Facebook to view this page because it contains age-restricted content.</p>
+				<a href="https://www.facebook.com/Lottery.UK" title="Go to Facebook and Login" class="button-alt">Go to Facebook and Login</a>
+			</div>
+		</div>
+	
+
+</div>
+
+
+		
+		<a id="content"></a>
+
+
+	<div class="main">	
+    
+		<h1>Lottery Results</h1> 
+		
+        <div class="breadcrumb">
+			<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="/" title="Lottery.co.uk Home" itemprop="url">
+					<span itemprop="title">Lottery.co.uk</span>
+				</a>
+			</span>
+				Lottery Results
+		</div>
+		
+		
+		
+		<p>Lottery.co.uk's results section covers all of the most popular games and the relevant pages are updated within moments of the draws taking place. It is the perfect place to discover whether you have become a big winner and you can easily access the latest results for all of the following lotteries:</p> 
+		<a id="lottoResults"></a><h2 class="centred">Lotto Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader lotto">
+		<div class="calendar small centred">
+			<span class="calDate">5<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Lotto Results for </span><br>Saturday <br><span class="smallerHeading">5th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 30px 0 0;">
+<div class="result medium lotto-ball">8</div>
+<div class="result medium lotto-ball">12</div>
+<div class="result medium lotto-ball">16</div>
+<div class="result medium lotto-ball">26</div>
+<div class="result medium lotto-ball">45</div>
+<div class="result medium lotto-ball">49</div>
+<div class="result medium lotto-bonus-ball">27</div>
+<br><br>
+<a href="/lotto/results-05-11-2016" class="button-blue">Raffle Numbers &amp; Prize Breakdown</a>
+<a href="/lotto/results" title="Lottery Results - Lotto" class="button-blue">Lotto Results</a>
+	</div>
+</div>
+<a id="euromillionsResults"></a><h2 class="centred">EuroMillions Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader euromillions">
+		<div class="calendar small centred">
+			<span class="calDate">8<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">EuroMillions Results for </span><br>Tuesday <br><span class="smallerHeading">8th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 30px 0 0;">
+<div class="result medium euromillions-ball">5</div>
+<div class="result medium euromillions-ball">9</div>
+<div class="result medium euromillions-ball">47</div>
+<div class="result medium euromillions-ball">49</div>
+<div class="result medium euromillions-ball">50</div>
+<div class="result medium euromillions-lucky-star">8</div>
+<div class="result medium euromillions-lucky-star">9</div>
+<br><br>
+<a href="/euromillions/results-08-11-2016" class="button-blue">Millionaire Maker &amp; Prize Breakdown</a>
+<a href="/euromillions/results" title="Lottery Results - EuroMillions" class="button-blue">EuroMillions Results</a>
+	</div>
+</div>
+<a id="healthLotteryResults"></a><h2 class="centred">Health Lottery Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader health">
+		<div class="calendar small centred">
+			<span class="calDate">8<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Health Lottery Results </span><br>Tuesday <br><span class="smallerHeading">8th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 50px 0 0;">
+<div class="result medium health-ball">2</div>
+<div class="result medium health-ball">9</div>
+<div class="result medium health-ball">11</div>
+<div class="result medium health-ball">37</div>
+<div class="result medium health-ball">49</div>
+<div class="result medium health-bonus-ball">14</div>
+<br><br>
+<a href="/health-lottery/results-08-11-2016" class="button-blue">Prize Breakdown &amp; Draw Details</a>
+<a href="/health-lottery/results" title="Lottery Results - Health Lottery" class="button-blue">Health Lottery Results</a>
+	</div>
+</div>
+<a id="thunderballResults"></a><h2 class="centred">Thunderball Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader thunderball">
+		<div class="calendar small centred">
+			<span class="calDate">5<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Thunderball Results for </span><br>Saturday <br><span class="smallerHeading">5th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 50px 0 0;">
+<div class="result medium thunderball-ball">2</div>
+<div class="result medium thunderball-ball">16</div>
+<div class="result medium thunderball-ball">18</div>
+<div class="result medium thunderball-ball">24</div>
+<div class="result medium thunderball-ball">26</div>
+<div class="result medium thunderball-thunderball">1</div>
+<br><br>
+<a href="/thunderball/results-05-11-2016" class="button-blue">Prize Breakdown &amp; Draw Details</a>
+<a href="/thunderball/results" title="Lottery Results - Thunderball" class="button-blue">Thunderball Results</a>
+	</div>
+</div>
+<a id="hotpicksResults"></a><h2 class="centred">Lotto HotPicks Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader hotpicks">
+		<div class="calendar small centred">
+			<span class="calDate">5<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Lotto HotPicks Results for </span><br>Saturday <br><span class="smallerHeading">5th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 50px 0 0;">
+<div class="result medium hotpicks-ball">8</div>
+<div class="result medium hotpicks-ball">12</div>
+<div class="result medium hotpicks-ball">16</div>
+<div class="result medium hotpicks-ball">26</div>
+<div class="result medium hotpicks-ball">45</div>
+<div class="result medium hotpicks-ball">49</div>
+<br><br>
+<a href="/lotto/hotpicks/results-05-11-2016" class="button-blue">Prize Breakdown &amp; Draw Details</a>
+<a href="/lotto/hotpicks/results" title="Lottery Results - Lotto HotPicks" class="button-blue">HotPicks Results</a>
+	</div>
+</div>
+<a id="irishLottoResults"></a><h2 class="centred">Irish Lotto Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader irish">
+		<div class="calendar small centred">
+			<span class="calDate">5<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Irish Lotto Results </span><br>Saturday <br><span class="smallerHeading">5th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 30px 0 0;">
+<div class="result medium irish-ball">1</div>
+<div class="result medium irish-ball">16</div>
+<div class="result medium irish-ball">27</div>
+<div class="result medium irish-ball">32</div>
+<div class="result medium irish-ball">35</div>
+<div class="result medium irish-ball">45</div>
+<div class="result medium irish-bonus-ball">28</div>
+<br><br>
+<a href="/irish-lotto/results-05-11-2016" class="button-blue">Prize Breakdown &amp; Draw Details</a>
+<a href="/irish-lotto/results" title="Lottery Results - Irish Lottery" class="button-blue">Irish Lottery Results</a>
+	</div>
+</div>
+<a id="irishLottoResults"></a><h2 class="centred">Free Lottery Daily Draw Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader free">
+		<div class="calendar small centred">
+			<span class="calDate">8<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Daily Draw Results </span><br>Tuesday <br><span class="smallerHeading">8th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 50px 0 0;">
+<div class="result medium free-ball">13</div>
+<div class="result medium free-ball">21</div>
+<div class="result medium free-ball">31</div>
+<div class="result medium free-ball">37</div>
+<div class="result medium free-ball">62</div>
+<div class="result medium free-ball">68</div>
+<br><br>
+<a href="/free-lottery/results" title="Lottery Results - Free Lottery Daily Draw" class="button-blue">Free Lottery Results</a>
+	</div>
+</div>
+<a id="freelotteryResults"></a><h2 class="centred">Free Lottery Weekly Draw Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader free">
+		<div class="calendar small centred">
+			<span class="calDate">7<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Weekly Draw Results </span><br>Monday <br><span class="smallerHeading">7th November 2016</span></h3>
+	</div>
+	<div class="floatRight centred" style=" padding: 12px 50px 0 0;">
+<div class="result medium free-weekly-ball">6</div>
+<div class="result medium free-weekly-ball">10</div>
+<div class="result medium free-weekly-ball">22</div>
+<div class="result medium free-weekly-ball">36</div>
+<div class="result medium free-weekly-ball">40</div>
+<div class="result medium free-weekly-ball">62</div>
+<br><br>
+<a href="/free-lottery/results" title="Lottery Results - Free Lottery Weekly Draw" class="button-blue">Free Lottery Results</a>
+	</div>
+</div>
+<a id="postcodeLotteryResults"></a><h2 class="centred">Postcode Lottery Results</h2>
+<div class="resultBox shorter centred">
+	<div class="sideHeader postcode">
+		<div class="calendar small centred">
+			<span class="calDate">9<sup>th</sup></span>
+		</div>
+		<h3 style="color: #FFF;"><span class="smallerHeading">Postcode Lottery Results </span><br>Wednesday <br><span class="smallerHeading">9th November 2016</span></h3>
+	</div>
+	<span class="postcodeType daily">
+		<strong>Daily</strong><br>Wed 9th Nov<br>
+		<span class="postcodeResult daily">CM2 7LR </span>
+	</span>
+	<span class="postcodeType weekly">
+		<strong>Weekly</strong><br>Sat 5th Nov<br>
+		<span class="postcodeResult weekly">NN5 5AN </span>
+	</span>
+	<span class="postcodeType millions">
+		<strong>Millions</strong><br>29th Oct 2016<br>
+		<span class="postcodeResult millions">HP15 6UB </span>
+	</span>
+
+<br><a href="/postcode-lottery/results-09-11-2016" class="button-blue">More Details About the Latest Draw</a>
+
+	<a href="/postcode-lottery/results" title="Lottery Results - Postcode Lottery" class="button-blue">Postcode Lottery Results</a>
+</div>
+<p style="text-align: center;"><a href="/lottery-tickets" title="Buy your lottery tickets online today" class="button-yellow">Buy Lottery Tickets Online</a></p><br>
+
+<!-- Build Last Updated: 9th November 2016 14:14:17 -->
+
+		<p>Whilst every care is taken to ensure the accuracy of information containing <strong>Lottery results</strong> and Lotto results, Lottery.co.uk cannot take any responsibility for any errors or omissions in the numbers. <a href="/disclaimer" rel="nofollow">Please read the disclaimer</a>. </p>
+				
+	</div>
+
+
+		<br class="clear" />
+	
+	</div>
+	
+	<footer>
+			
+		<div class="hf footer">
+		
+			<div class="hf-inner">
+				
+				<a href="#top" rel="nofollow" class="topBtn" id="topBtn" onclick="smoothScroll('top'); return false"></a>
+				
+				
+				
+				<p class="copyright">
+					<img src="/images/template/logo.png" alt="Lottery.co.uk" width="240" height="39" style="position: relative; top: 13px; padding: 0 10px;"  /> 
+					
+					Copyright &copy; 2016 Lottery.co.uk
+				</p>
+				
+				<div class="footerLinks">
+					<a href="/" title="Lottery.co.uk Home page">Home</a>
+					<a href="/information" title="Lottery Information">Information</a>
+					<a href="/about" title="About Lottery.co.uk">About Us</a>
+					<a href="/contact" title="Contact Lottery.co.uk">Contact Us</a>
+					<a href="/scams" title="Information to help you avoid lottery scams">Scams</a>
+					<a href="/disclaimer" title="Lottery.co.uk disclaimer">Disclaimer</a>
+					<a href="/cookies" title="Lottery.co.uk Cookie Policy">Cookie Policy</a>
+					<a href="/sitemap" title="Sitemap of Lottery.co.uk">Sitemap</a>
+				</div>
+				
+				
+				
+				<p class="disclaimer">The content and operations of this website have not been approved or endorsed by Camelot UK Lotteries Limited, the National Lottery Commission or SLE.</p>
+
+			</div>
+		
+		</div>
+
+	</footer>
+	
+	<script type="text/javascript">
+	<!--
+		//SMOOTH SCROLLING WITHOUT JQUERY
+		
+		function yPos() {
+			if (self.pageYOffset) return self.pageYOffset;
+			if (document.documentElement && document.documentElement.scrollTop) return document.documentElement.scrollTop;
+			if (document.body.scrollTop) return document.body.scrollTop;
+			return 0;
+		};
+		
+		function elYPos(eID) {
+        	var elm = document.getElementById(eID), y = elm.offsetTop, node = elm;
+        	while (node.offsetParent && node.offsetParent != document.body) {
+            	node = node.offsetParent;
+            	y += node.offsetTop;
+        	} return y;
+    	};
+
+		function smoothScroll(eID) {
+			var startY = yPos();
+			var stopY = elYPos(eID);
+			var distance = stopY > startY ? stopY - startY : startY - stopY;
+			if (distance < 100) {
+				scrollTo(0, stopY); return;
+			}
+			var speed = Math.round(distance / 100);
+			if (speed >= 20) speed = 20;
+			var step = Math.round(distance / 25);
+			var leapY = stopY > startY ? startY + step : startY - step;
+			var timer = 0;
+			if (stopY > startY) {
+				for ( var i=startY; i<stopY; i+=step ) {
+					setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+					leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+				} return;
+			}
+			for ( var i=startY; i>stopY; i-=step ) {
+				setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+				leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+			}
+		}
+		
+		
+		//TOP BUTTON DISPLAY
+		if (document.getElementById("sidebarLeft") && document.getElementById("siteContainer").clientHeight <= document.getElementById("sidebarLeft").clientHeight + 100) {
+			document.getElementById("topBtn").style.display = 'none';
+		}
+		
+		
+		//FIX FOR SOCIAL MEDIA BOX EXPANDING WIDTH OF SITE
+		addLoadEvent(function(){
+			var allDivs = document.getElementsByTagName("div");
+			for (i = 0; i < allDivs.length; i++) {
+				if (allDivs[i].className.indexOf("socialContainer") != -1) {
+					allDivs[i].style.overflow = "visible";	
+				}
+			}
+		});
+		
+		
+		
+	-->
+	</script>
+	
+	
+</body>
+</html>

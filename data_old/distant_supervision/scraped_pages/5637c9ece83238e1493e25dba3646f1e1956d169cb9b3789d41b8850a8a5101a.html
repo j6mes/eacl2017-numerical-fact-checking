@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"f2a8febd4f",applicationID:"27462443",sa:1}
+</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google-play-app" content="app-id=com.move.realtor">
+    <title>Arizona Real Estate &amp; Homes for Sale - realtor.com®</title>
+    <meta name="description" content="Find homes for sale in Arizona, and Arizona real estate listings on realtor.com&amp;reg;. Use realtor.com&amp;reg; search to get property details and photos."/>
+    <script>
+//<![CDATA[
+window.MOVE_DATA={};MOVE_DATA.isPhone=null;MOVE_DATA.app_js=["//static3.rdc-next.rdc.moveaws.com/assets/application_non_critical-87f4b1dc5c8f10c4e811c3e24ad4b20b1ae0256e5ad221d93c38008cde0ffc1a.js","//static3.rdc-next.rdc.moveaws.com/assets/property_records_non_critical-3895eefd0a3ff0389e0fcea7075fe5ecf906d40f6b8ae3baec5761fe68e07e6b.js"];MOVE_DATA.railsEnvironment="production";MOVE_DATA.suggestApiEndPoint="http://parser-external.geo.moveaws.com/suggest";MOVE_DATA.pageType="property_records";MOVE_DATA.adobeDTM={"propertyStatus":"for_sale","pageType":"browse","geoType":"state","identityStatus":"not-registered","identityID":null,"appVersion":"8.0.0.1","userTesting":"renovate:dialUp:testGroup"};
+//]]>
+</script>
+    <link rel="apple-touch-icon" type="image/png" href="http://static0.rdc-next.rdc.moveaws.com/assets/apple-touch-icon-050bdb9e192096f6ca07f7c4cc24eaafc1320f74b1b82f3a8a1e92acf84ccb42.png" />
+              <link rel="alternate" href="ios-app://336698281/move-rdc/www.realtor.com/realestateandhomes-search/Arizona"/>
+    <link rel="alternate" href="android-app://com.move.realtor/move-rdc/www.realtor.com/realestateandhomes-search/Arizona"/>
+
+
+        <style>/*! normalize.css v3.0.2 | MIT License | git.io/normalize */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{box-sizing:border-box}*:before,*:after{box-sizing:border-box}.container{margin-right:auto;margin-left:auto;padding-left:10px;padding-right:10px}.container:after,.container:before{content:" ";display:table}.container:after{clear:both}@media(min-width:767px){.container{width:750px}}@media(min-width:996px){.container{width:996px}}@media(min-width:1280px){.container{width:1280px}}.global-nav{margin-bottom:0;padding-left:0;list-style:none}.global-nav:before,.global-nav:after{content:" ";display:table}.global-nav:after{clear:both}.global-nav>li{position:relative;display:block}.global-nav>li>a{position:relative;display:block;padding:10px 12px}.global-nav>li>a:hover,.global-nav>li>a:focus{text-decoration:none;background-color:#c4c4c4}.global-nav>li.disabled>a{color:#dcdcdc}.global-nav>li.disabled>a:hover,.global-nav>li.disabled>a:focus{color:#dcdcdc;text-decoration:none;background-color:transparent;cursor:not-allowed}.global-nav .open>a,.global-nav .open>a:hover,.global-nav .open>a:focus{background-color:#c4c4c4;border-color:#d92228}.global-nav>li>a>img{max-width:none}.global-navbar{position:relative;min-height:48px;margin-bottom:20px;border:1px solid transparent}.global-navbar:before,.global-navbar:after{content:" ";display:table}.global-navbar:after{clear:both}@media(min-width:996px){.global-navbar{border-radius:0}}.global-navbar-header:before,.global-navbar-header:after{content:" ";display:table}.global-navbar-header:after{clear:both}@media(min-width:996px){.global-navbar-header{float:left}}.container>.global-navbar-header,.container-fluid>.global-navbar-header{margin-right:-10px;margin-left:-10px}@media(min-width:996px){.container>.global-navbar-header,.container-fluid>.global-navbar-header{margin-right:0;margin-left:0}}.global-navbar-brand{float:left;padding:14px 10px;font-size:18px;line-height:20px;height:48px}.global-navbar-brand:hover,.global-navbar-brand:focus{text-decoration:none}.global-navbar-brand>img{display:block}@media(min-width:996px){.global-navbar>.container .global-navbar-brand,.global-navbar>.container-fluid .global-navbar-brand{margin-left:-10px}}.global-navbar-toggle{position:relative;float:right;margin-right:10px;padding:9px 10px;margin-top:7px;margin-bottom:7px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}.global-navbar-toggle:focus{outline:0}.global-navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.global-navbar-toggle .icon-bar+.icon-bar{margin-top:4px}@media(min-width:996px){.global-navbar-toggle{display:none}}.global-navbar-nav{margin:7px -10px}.global-navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}
+@media(max-width:995px){.global-navbar-nav .open .dropdown-menu{position:static;float:none;width:auto;margin-top:0;background-color:transparent;border:0;box-shadow:none}.global-navbar-nav .open .dropdown-menu>li>a,.global-navbar-nav .open .dropdown-menu .dropdown-header{padding:5px 15px 5px 25px}.global-navbar-nav .open .dropdown-menu>li>a{line-height:20px}.global-navbar-nav .open .dropdown-menu>li>a:hover,.global-navbar-nav .open .dropdown-menu>li>a:focus{background-image:none}}@media(min-width:996px){.global-navbar-nav{float:left;margin:0}.global-navbar-nav>li{float:left}.global-navbar-nav>li>a{padding-top:14px;padding-bottom:14px}}.global-navbar-nav>li>.dropdown-menu{margin-top:0;border-top-right-radius:0;border-top-left-radius:0}@media(min-width:996px){.global-navbar-left{float:left!important}.global-navbar-right{float:right!important;margin-right:-10px}.global-navbar-right ~ .global-navbar-right{margin-right:0}}.global-navbar-default{background-color:#fff;border-color:#c4c4c4}.global-navbar-default .global-navbar-brand{color:#333}.global-navbar-default .global-navbar-brand:hover,.global-navbar-default .global-navbar-brand:focus{color:#1a1a1a;background-color:transparent}.global-navbar-default .global-navbar-nav>li>a{color:#333}.global-navbar-default .global-navbar-nav>li>a:hover,.global-navbar-default .global-navbar-nav>li>a:focus{color:#d92228;background-color:transparent}.global-navbar-default .global-navbar-nav>.active>a,.global-navbar-default .global-navbar-nav>.active>a:hover,.global-navbar-default .global-navbar-nav>.active>a:focus{color:#333;background-color:transparent}.global-navbar-default .global-navbar-nav>.disabled>a,.global-navbar-default .global-navbar-nav>.disabled>a:hover,.global-navbar-default .global-navbar-nav>.disabled>a:focus{color:#ccc;background-color:transparent}.global-navbar-default .global-navbar-toggle{border-color:#f7f7f7}.global-navbar-default .global-navbar-toggle:hover,.global-navbar-default .global-navbar-toggle:focus{background-color:#f7f7f7}.global-navbar-default .global-navbar-toggle .icon-bar{background-color:#999}.global-navbar-default .global-navbar-nav>.open>a,.global-navbar-default .global-navbar-nav>.open>a:hover,.global-navbar-default .global-navbar-nav>.open>a:focus{background-color:transparent;color:#333}@media(max-width:995px){.global-navbar-default .global-navbar-nav .open .dropdown-menu>li>a{color:#333}.global-navbar-default .global-navbar-nav .open .dropdown-menu>li>a:hover,.global-navbar-default .global-navbar-nav .open .dropdown-menu>li>a:focus{color:#d92228;background-color:transparent}.global-navbar-default .global-navbar-nav .open .dropdown-menu>.active>a,.global-navbar-default .global-navbar-nav .open .dropdown-menu>.active>a:hover,.global-navbar-default .global-navbar-nav .open .dropdown-menu>.active>a:focus{color:#333;background-color:transparent}.global-navbar-default .global-navbar-nav .open .dropdown-menu>.disabled>a,.global-navbar-default .global-navbar-nav .open .dropdown-menu>.disabled>a:hover,.global-navbar-default .global-navbar-nav .open .dropdown-menu>.disabled>a:focus{color:#ccc;background-color:transparent}}.dropup,.dropdown{position:relative}.dropdown-toggle:focus{outline:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;list-style:none;font-size:14px;text-align:left;background-color:#fff;border:1px solid #ccc;border:1px solid rgba(0,0,0,0.15);border-radius:4px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,0.175);box-shadow:0 6px 12px rgba(0,0,0,0.175);background-clip:padding-box}.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:normal;line-height:1.42857;color:#333;white-space:nowrap}.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{text-decoration:none;color:#262626;background-color:#f5f5f5}.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#fff;text-decoration:none;outline:0;background-color:#d92228}.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{color:#dcdcdc}.dropdown-menu>.disabled>a:hover,.dropdown-menu>.disabled>a:focus{text-decoration:none;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);cursor:not-allowed}.open>.dropdown-menu{display:block}.open>a{outline:0}.dropdown-header{display:block;padding:3px 20px;font-size:12px;line-height:1.42857;color:#999;white-space:nowrap}@media(min-width:996px){.global-navbar-right .dropdown-menu{right:0;left:auto}.global-navbar-right .dropdown-menu-left{left:0;right:auto}}.popover{position:absolute;top:0;left:0;z-index:1060;display:none;max-width:none;padding:1px;font-family:sans-serif;font-size:14px;font-weight:normal;line-height:1.42857;text-align:left;background-color:#fff;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,0.2);border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,0.2);box-shadow:0 5px 10px rgba(0,0,0,0.2);white-space:normal}
+.popover.top{margin-top:-10px}.popover.bottom{margin-top:10px}.popover-content{padding:9px 14px}.svg-icon,.svg-logo{display:inline-block}.svg-icon-angle-down-header{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-header-v2-b1a1fa585e8393a621c8ac16d515d96560d469afd8b9aadb36dc290acc4e9c42.svg") 0 0 no-repeat;width:20px;height:20px}.svg-icon-mobile-menu-toggle{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-header-v2-b1a1fa585e8393a621c8ac16d515d96560d469afd8b9aadb36dc290acc4e9c42.svg") 0 22.47191% no-repeat;width:12px;height:20px}.svg-icon-mobile-menu-toggle-primary{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-header-v2-b1a1fa585e8393a621c8ac16d515d96560d469afd8b9aadb36dc290acc4e9c42.svg") 0 44.94382% no-repeat;width:12px;height:20px}.svg-icon-user{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-header-v2-b1a1fa585e8393a621c8ac16d515d96560d469afd8b9aadb36dc290acc4e9c42.svg") 0 67.41573% no-repeat;width:20px;height:20px}.svg-logo-realtor{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-header-v2-b1a1fa585e8393a621c8ac16d515d96560d469afd8b9aadb36dc290acc4e9c42.svg") 0 99.50249% no-repeat;width:156px;height:28.6px}.svg-menu-icons{background-image:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-menu-icons-v3-b5caff11e5074e6736a4dbd0302a345c5ecc51b1bbcc166599d1c71d16f5536c.svg")}.svg-icon-angle-down{background-position:0 0;background-repeat:no-repeat;width:16px;height:16px}.svg-icon-app-doorsteps{background-position:0 7.655502392344498%;background-repeat:no-repeat;width:50px;height:50px}.svg-icon-app-mobile{background-position:0 31.57894736842105%;background-repeat:no-repeat;width:50px;height:50px}.svg-icon-app-realtor{background-position:0 55.50239234449761%;background-repeat:no-repeat;width:50px;height:50px}.svg-icon-app-rentals{background-position:0 79.42583732057416%;background-repeat:no-repeat;width:50px;height:50px}.svg-icon-heart-o{background-position:0 88.52459016393442%;background-repeat:no-repeat;width:15px;height:15px}.svg-icon-search{background-position:0 100%;background-repeat:no-repeat;width:28px;height:28px}.svg-icon-facebook{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 0 no-repeat;width:24px;height:24px}.svg-icon-google-plus{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 18.18182% no-repeat;width:24px;height:24px}.svg-icon-pinterest{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 36.36364% no-repeat;width:24px;height:24px}.svg-icon-twitter{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 54.54545% no-repeat;width:24px;height:24px}.svg-logo-houselogic{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 76.19048% no-repeat;width:100px;height:30px}.svg-logo-realtoru{background:url("//dy0wsww1w6so8.cloudfront.net/assets/sprite-footer-fceb992540a699741d4168c0a33453415e3ce9ab3ccd49797e96cdea9abab85b.svg") 0 100% no-repeat;width:100px;height:30px}.global-nav-font-size-xsmall{font-size:10px}.global-nav-font-size-small{font-size:12px}.global-nav-font-semibold{font-weight:400}.global-nav-text-center{text-align:center}.global-nav-clearfix{clear:both}.global-nav-clearfix:before,.global-nav-clearfixafter{content:" ";display:table}.global-nav-clearfix:after{clear:both}.global-nav-hide{display:none}.global-nav-clearboth{clear:both}.global-nav-list-unstyled,.global-nav-list-horizontal{padding-left:0;list-style-type:none}.global-nav-list-horizontal{display:table}.global-nav-list-horizontal>li{float:left;display:inline;margin-left:5px}.global-nav-list-horizontal>li:first-child{margin-left:0}.global-nav-list-horizontal.global-nav-list-style-line>li{padding-left:5px}.global-nav-list-horizontal.global-nav-list-style-line li+li{border-left:1px solid #ccc}.global-nav-list-horizontal.global-nav-list-style-line>li:first-child{border:0;padding-left:0}.global-nav-mar-top{margin-top:10px}.global-nav-mar-bottom{margin-bottom:10px}.global-nav-no-mar{margin:0}.global-nav-no-pad{padding:0}.global-nav-header.global-navbar .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}.global-nav-btn{-moz-user-select:none;background-image:none;border-radius:2px;cursor:pointer;font-size:14px;line-height:1.42857;padding:6px 20px;text-align:center;vertical-align:middle;display:inline-block;margin-bottom:10px}.global-nav-btn-primary{background-color:#d92228;border:1px solid #d92228;color:#fff}.global-nav-btn-primary:hover{background-color:#e14248;text-decoration:none!important}.global-nav-btn-secondary{background-color:#fff;color:#d92228;border:1px solid #d92228}.global-nav-btn-secondary:hover{background-color:#fff;text-decoration:none!important}.global-nav-ellipsis{display:block;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.global-nav-links-divider{margin-top:5px;margin-bottom:5px;border:0;height:0;border-top:1px solid #c4c4c4}.global-nav-ellipsis{display:block;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;white-space:nowrap}.global-nav-overflow{overflow:hidden}.global-nav-display-block{display:block}.global-nav-header.global-navbar{border-width:0 0 1px;margin-bottom:0;font-weight:300!important;font-size:14px!important;font-family:"helvetica",sans-serif!important;color:#333;font-size:14px}.global-nav-header.global-navbar .header-rdc-logo{padding:8px 6px 0 10px}.global-nav-header.global-navbar a:link{text-decoration:none}.global-nav-header.global-navbar a:hover{text-decoration:underline}.global-nav-header.global-navbar p{margin:0 0 10px;line-height:1.4}.global-nav-header.global-navbar .global-nav-login-section-header{margin:0 0 10px;line-height:1.4;font-weight:400}
+.global-nav-header.global-navbar .global-navbar-nav>li>a,.global-nav-header.global-navbar .global-navbar-nav>li.active>a,.global-nav-header.global-navbar .global-navbar-nav>li>a:focus,.global-nav-header.global-navbar .global-navbar-nav>li.active>a:focus,.global-nav-header.global-navbar .dropdown-menu ul>li>a,.global-nav-header.global-navbar .dropdown-menu ul>li.active>a,.global-nav-header.global-navbar .dropdown-menu ul>li>a:focus,.global-nav-header.global-navbar .dropdown-menu ul>li.active>a:focus,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content>a,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content.active>a,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content>a:focus,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content.active>a:focus{color:#333;background:transparent}.global-nav-header.global-navbar .global-navbar-nav>li>a:hover,.global-nav-header.global-navbar .global-navbar-nav>li.active>a:hover,.global-nav-header.global-navbar .dropdown-menu ul>li>a:hover,.global-nav-header.global-navbar .dropdown-menu ul>li.active>a:hover,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content>a:hover,.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content.active>a:hover{color:#d92228;background:transparent;text-decoration:none}.global-nav-header.global-navbar .global-navbar-nav>li>a{padding-bottom:0;cursor:pointer}.global-nav-header.global-navbar .global-navbar-nav>li.active>a{border-color:#d92228;cursor:pointer}.global-nav-header.global-navbar .global-navbar-nav>li:hover>a{border-color:#d92228}.global-nav-header.global-navbar .global-header-li-menu-hover{border-bottom:3px solid transparent;border-color:#d92228;padding-bottom:11px}.global-nav-header.global-navbar .dropdown-toggle-mobile{display:none}.global-nav-header.global-navbar .global-navbar-main-links .svg-icon{vertical-align:bottom}.global-nav-header.global-navbar .global-navbar-main-links>li>a{text-transform:uppercase}.global-nav-header.global-navbar .global-navbar-main-links>li>a .global-nav-text-tranform{text-transform:capitalize;line-height:1}.global-nav-header.global-navbar .global-navbar-nav>li>.dropdown-menu{border-left:0;border-right:0;border-bottom:0;border-radius:0;z-index:1002;margin-top:0}.global-nav-header.global-navbar .global-navbar-nav>li .dropdown-menu-link-active{color:#d92228}.global-nav-header.global-navbar .mobile-dropdown-icon{line-height:0;padding-right:20px}.global-nav-header.global-navbar .mobile-dropdown-icon .text-mobile-menu-toggle{display:none}.global-nav-header.global-navbar .mobile-dropdown-icon .svg-icon-mobile-menu-toggle{display:inline-block}.global-nav-header.global-navbar .dropdown-mobile-link>ul{min-width:330px}.global-nav-header.global-navbar .dropdown-mobile-link>ul>li{margin-top:15px}.global-nav-header.global-navbar .dropdown-mobile-link>ul>li:first-child{margin-top:0}.global-nav-header.global-navbar .dropdown-mobile-link>ul>li:last-child{margin-bottom:10px}.global-nav-header.global-navbar .dropdown-mobile-link .mobile-link-title{margin:10px 0 5px;display:block;font-weight:400}.global-nav-header.global-navbar .dropdown-mobile-link .global-nav-list-horizontal{padding-top:0}.global-nav-header.global-navbar .dropdown-mobile-link .link-icon{float:left;margin-left:15px;margin-right:10px}.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content{margin-left:75px}.global-nav-header.global-navbar .header-login-wrapper .header-login-icon{display:none}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu{width:280px;white-space:normal;right:0;left:auto;padding:15px 20px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu a,.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu a:focus{color:#d92228}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu .global-nav-list-horizontal a,.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu .global-nav-list-horizontal a:focus{color:#333}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu .global-nav-list-horizontal a:hover{color:#d92228;text-decoration:none}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu h5{font-size:14px;margin-bottom:0;font-weight:300!important;font-size:14px!important;font-family:"helvetica",sans-serif!important}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu .divider{display:block;margin-left:-20px;margin-right:-20px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu a.global-nav-login-btn{width:130px;display:block;margin:0 auto;margin-bottom:10px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu a.global-nav-login-btn.global-nav-btn-primary{color:#fff}.global-nav-header.global-navbar .header-login-wrapper .dropdown-menu .global-nav-agent-wrap{margin:-9px -20px -25px;background:#f7f7f7;padding-top:24px;padding-bottom:15px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .sub-menu{left:100%;position:absolute;top:0;visibility:hidden;margin-top:-1px}
+.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu li:hover .sub-menu{visibility:visible}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-recent-activity .global-nav-login-section-header{margin-top:10px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card{position:relative;margin-top:10px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card .global-nav-listing-card-media{float:left}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card .global-nav-listing-card-media img{width:60px;height:40px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card .global-nav-listing-card-info{margin-left:70px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card .global-nav-listing-card-info ul{padding-top:0}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card .global-nav-listing-card-info ul .global-nav-listing-address{width:70%;margin-top:2px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-listing-card+.global-nav-listing-card{margin-top:15px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-search-card{position:relative;margin-top:15px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-search-card .global-nav-search-card-icon{float:left;margin-right:10px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-search-card ul{padding-top:0;max-width:188px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .global-nav-activity-notification{position:absolute;right:-3px;top:7px;border-radius:50%;width:16px;height:16px;background:#d92228;color:#fff;text-align:center;font-size:10px;padding:2px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-login.dropdown-menu .dropdown-hover-login-signin-spacing{margin-bottom:24px}.global-nav-header.global-navbar .header-login-wrapper .dropdown:hover .dropdown-hover-login.dropdown-menu{display:block}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu{width:280px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper a{color:#333}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper a:hover{color:#d92228;text-decoration:none}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-username-section{background:#f7f7f7;padding:12px 10px;height:40px;margin:-15px -20px 0;border-bottom:1px solid #c4c4c4}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-username-section .global-nav-username{float:left}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-username-section .global-nav-username p{padding:0;margin:0;font-size:16px;font-weight:400}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-username-section .global-nav-profile-links{float:right}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-username-section .global-nav-profile-links ul{padding-top:0;font-size:12px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-logged-recent-activity>div{margin-top:15px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-logged-recent-activity .svg-icon-heart-o{vertical-align:top}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-logged-recent-activity .global-nav-logged-activity-titles{font-size:16px}.global-nav-header.global-navbar .header-login-wrapper .dropdown-hover-logged.dropdown-menu .global-nav-logged-wrapper .global-nav-logged-recent-activity .global-nav-logged-activity-seeall{font-size:12px;float:right}.global-nav-header.global-navbar .dropdown-hover.dropdown-menu .sub-menu .sub-menu{left:100%;position:absolute;top:0;visibility:hidden;margin-top:-1px}.global-nav-header.global-navbar .dropdown-hover.dropdown-menu .sub-menu li:hover .sub-menu{visibility:visible}.global-nav-header.global-navbar .dropdown:hover .dropdown-hover.dropdown-menu{display:block}
+.global-nav-header.global-navbar .dropdown-multicolumn{white-space:nowrap;padding-top:0;padding-bottom:28px}.global-nav-header.global-navbar .dropdown-multicolumn ul{display:table-cell;padding-top:10px}.global-nav-header.global-navbar .dropdown-multicolumn ul:not(.global-nav-list-horizontal)>li>a{display:block;padding:4px 17px 8px;clear:both;line-height:1.3}.global-nav-header.global-navbar .dropdown-multicolumn ul>li.dropdown-header{font-size:18px;color:#333;margin-bottom:10px;font-weight:400;padding:3px 17px;position:relative;margin-top:8px}.global-nav-header.global-navbar .dropdown-multicolumn ul>li.dropdown-header>a{padding:0;display:inline-block;line-height:inherit}.global-nav-header.global-navbar .dropdown-multicolumn ul>li.dropdown-header.dropdown-header-section-seperator{margin-top:24px}.global-nav-header.global-navbar .global-nav-news-feed-item{display:inline-block}.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-content{float:left;width:56%}.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-content>a{display:block;padding:4px 17px 3px;clear:both;line-height:1.3;color:#333;background:transparent}.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-content>a:hover,.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-content>a:focus{color:#d92228;background:transparent;text-decoration:none}.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-media{float:right;width:43%;margin-left:1%;text-align:right}.global-nav-header.global-navbar .global-nav-news-feed-item .global-nav-news-feed-media img{width:145px}.global-nav-header.global-navbar .global-nav-news-feed-item+.global-nav-links-divider{width:100%;margin-left:4%;margin-top:10px;margin-bottom:10px}.move-network-links{padding:17px 0 0;margin-right:10px;cursor:pointer;float:left}.global-nav-network-sites-popover{width:100%!important;border-width:1px 0 0!important;border-radius:0!important;top:38px!important;max-width:100%!important}.global-nav-network-sites-popover.bottom>.global-nav-popover-arrow{border-bottom-color:transparent!important;top:0!important}.global-nav-network-sites-popover.bottom>.global-nav-popover-arrow:after{height:3px;top:-5px!important;margin-left:-16px!important}.global-nav-network-sites-popover>.global-nav-popover-arrow{position:relative!important}.global-nav-network-sites-popover>.global-nav-popover-arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid;content:"";border-color:#d92228;border-style:solid;width:30px!important;border-width:0!important;background:#d92228;top:2px}.global-nav-network-menu-content{margin-left:-5px;margin-right:-5px}.global-nav-network-menu-content>div{float:left;width:50%;padding-left:5px;padding-right:5px;position:relative;font-size:12px}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-links-wrap,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-links-wrap{float:left;text-align:right;width:125px}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-links-wrap a,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-links-wrap a{font-weight:700;color:#333;text-decoration:none;padding:5px 0;display:block}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-links-wrap a:hover,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-links-wrap a:hover{color:#d92228;text-decoration:none}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-intro-wrap,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-intro-wrap{float:left;margin-left:12px}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-intro-wrap span,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-intro-wrap span{padding:5px 0;display:block;font-weight:400}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap{border-left:2px solid #dcdcdc;padding-left:25px}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-intro-wrap{float:left;max-width:165px;margin-right:20px;font-weight:400}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-intro-wrap p{margin-top:2px;line-height:1.84}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap{float:left}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-unstyled,.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-horizontal{margin:0}
+.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-unstyled>li a,.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-horizontal>li a{font-weight:700;color:#333;text-decoration:none;padding:5px 20px;display:block}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-unstyled>li a:hover,.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-sites-links-wrap .global-nav-list-horizontal>li a:hover{color:#d92228;text-decoration:none}.global-nav-network-menu-content .network-menu-section-titles{font-size:18px;margin:10px 0;font-weight:400}.full-overlay{display:none;background-color:#000;opacity:.5;width:100%;height:100%;z-index:9998;position:fixed;top:0}@media only screen and (min-width:996px){.global-nav-header.global-navbar .global-navbar-main-links>li{position:static}.global-nav-header.global-navbar .global-navbar-main-links>li>.dropdown-menu{width:100%}.global-nav-header.global-navbar .dropdown-multicolumn{white-space:normal}.global-nav-header.global-navbar .dropdown-multicolumn>.dropdown-content-wrapper{padding-left:8.5%;padding-right:8.5%}.global-nav-header.global-navbar .dropdown-multicolumn>.dropdown-content-wrapper>div{width:30%;float:left}.global-nav-header.global-navbar .dropdown-multicolumn>.dropdown-content-wrapper>div:last-child{width:40%}.global-navbar-mobile-network-sites{display:none!important}.move-network-links{display:block}#header-mobile-menu>a{border-bottom:3px solid transparent;padding-bottom:11px;cursor:pointer}#header-mobile-menu.active>a{border-color:#d92228;cursor:pointer}#header-mobile-menu:hover>a{border-color:#d92228}}@media only screen and (max-width:995px){.nav-menu-desktop{display:none}.global-nav-header.global-navbar .global-navbar-toggle{border:0;float:left;padding:10px;margin-right:0}.global-nav-header.global-navbar .global-navbar-toggle .icon-bar{background-color:#222}.global-nav-header.global-navbar .dropdown-toggle-mobile{position:absolute;top:0;right:0;height:50px;display:block;background-color:#f7f7f7;border-left:1px solid rgba(0,0,0,0.1);padding:15px 20px;cursor:pointer;line-height:1.7}.global-nav-header.global-navbar .dropdown-toggle-mobile .svg-icon{vertical-align:baseline}.global-nav-header.global-navbar .nav-menu-mobile{height:100%;position:fixed;background:#fff;top:0;bottom:0;left:-260px;width:260px;z-index:9999;padding:0 10px;overflow-y:auto}.global-nav-header.global-navbar .global-navbar-main-links,.global-nav-header.global-navbar .global-navbar-side-links{margin-top:0;margin-bottom:0}.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu){border-top:1px solid rgba(0,0,0,0.1)}.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu)>a{padding:15px 17px 15px 12px;border-bottom:0;text-align:left}.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu).active>a,.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu).active>a:hover{border-color:transparent;background-color:#f7f7f7;border-left:5px solid #d92228}.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu).dropdown:hover::after{display:none}.global-nav-header.global-navbar .global-navbar-nav>li:not(.header-login-menu) .dropdown-menu{border:0;border-top:1px solid rgba(0,0,0,0.1);margin-top:0}.global-nav-header.global-navbar .dropdown-multicolumn:not(.dropdown-hover-login){white-space:normal;padding-bottom:16px}.global-nav-header.global-navbar .dropdown-multicolumn:not(.dropdown-hover-login) ul{display:block;padding-top:0}.global-nav-header.global-navbar .dropdown-multicolumn:not(.dropdown-hover-login) ul>li>a{white-space:normal;padding-top:8px;padding-bottom:8px}.global-nav-header.global-navbar .dropdown-multicolumn:not(.dropdown-hover-login) .dropdown-header{padding:15px 17px 1px;margin-bottom:8px}.global-nav-header.global-navbar .dropdown-multicolumn:not(.dropdown-hover-login) .dropdown-header.dropdown-header-section-seperator{margin-top:0}.global-nav-header.global-navbar .global-navbar-side-links>li>a{text-transform:uppercase}.global-nav-header.global-navbar .global-navbar-side-links>li>a.mobile-dropdown-icon{line-height:20px}.global-nav-header.global-navbar .global-navbar-side-links>li>a .global-nav-text-tranform-lower{text-transform:lowercase}.global-nav-header.global-navbar .global-navbar-side-links{border-bottom:1px solid rgba(0,0,0,0.1)}.global-nav-header.global-navbar .mobile-dropdown-icon .text-mobile-menu-toggle{display:inline-block}.global-nav-header.global-navbar .mobile-dropdown-icon .svg-icon-mobile-menu-toggle{display:none}.global-nav-header.global-navbar .dropdown-mobile-link{margin-top:10px}.global-nav-header.global-navbar .dropdown-mobile-link>ul{min-width:0}.global-nav-header.global-navbar .dropdown-mobile-link .link-icon{display:none}.global-nav-header.global-navbar .dropdown-mobile-link .link-icon-content{margin-left:0;padding-left:20px}
+.global-nav-header.global-navbar .container{position:relative}.global-nav-header.global-navbar .header-login-wrapper{position:absolute;top:0;right:10px}.global-nav-header.global-navbar .header-login-wrapper .global-navbar-nav{margin:0}.global-nav-header.global-navbar .header-login-wrapper .global-navbar-nav>li>a{padding-bottom:9px;padding-top:14px}.global-nav-header.global-navbar .dropdown-multicolumn>.dropdown-content-wrapper{width:auto;padding:0}.global-nav-header.global-navbar .global-nav-news-feed-items-wrap{display:none}.global-nav-network-menu-content>div{width:100%}.global-nav-network-menu-content .global-nav-move-sites-wrap{padding-bottom:15px}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap{border-left:0;border-top:2px solid #dcdcdc;padding-top:15px;padding-left:0}.global-navbar-mobile-network-sites{display:block!important}.global-navbar-mobile-network-sites>a .global-nav-font-size-small{font-size:12px;text-transform:none}.move-network-links{display:none}}@media only screen and (max-width:766px){.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-links-wrap,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-links-wrap{float:none;text-align:left;width:auto}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-links-wrap a,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-links-wrap a{padding-bottom:2px}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-intro-wrap,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-intro-wrap{float:none;margin-left:0}.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-unstyled .move-sites-intro-wrap span,.global-nav-network-menu-content .global-nav-move-sites-wrap .global-nav-list-horizontal .move-sites-intro-wrap span{padding-top:0}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-intro-wrap{max-width:100%}.global-nav-network-menu-content .global-nav-newscorp-sites-wrap .newscorp-intro-wrap+.newscorp-sites-links-wrap{display:block;clear:both;margin-left:-18px}}@media only screen and (max-width:480px){.global-nav-header.global-navbar .header-login-wrapper{font-weight:300!important;font-size:14px!important;font-family:"helvetica",sans-serif!important}.global-nav-header.global-navbar .header-login-wrapper .global-navbar-nav>li{border:0}.global-nav-header.global-navbar .header-login-wrapper .global-navbar-nav>li>a{padding:10px 10px 2px;margin-right:-10px;line-height:1;border-color:transparent}.global-nav-header.global-navbar .header-login-wrapper .global-navbar-nav>li.dropdown:hover::after{left:65%}.global-nav-header.global-navbar .header-login-wrapper .header-login-text{display:none}.global-nav-header.global-navbar .header-login-wrapper .header-login-icon{display:inline-block;border:1px solid #222;border-radius:50%;padding:8px 4px;width:30px;height:30px;overflow:hidden}}.global-nav-list-justified{position:relative;text-align:justify;padding-left:0}.global-nav-list-justified:after{position:relative;display:inline-block;width:100%;height:0;line-height:0;content:''}.global-nav-list-justified>li{display:inline-block}.global-nav-footer{color:#333;font-size:14px;font-weight:300!important;font-size:14px!important;font-family:"helvetica",sans-serif!important}.global-nav-footer a:link{text-decoration:none}.global-nav-footer a:hover{text-decoration:underline}.global-nav-footer div[class^="footer-wrapper-links"] a{text-transform:uppercase;padding:15px 0;display:inline-block}.global-nav-footer ul{margin:0}.global-nav-footer p{margin:0 0 10px;line-height:1.4}.global-nav-footer .footer-wrapper-social{background:#f7f7f7;background:-webkit-linear-gradient(left,#f7f7f7 0,#f7f7f7 50%,#fff 50%,#fff 100%);background:-o-linear-gradient(left,#f7f7f7 0,#f7f7f7 50%,#fff 50%,#fff 100%);background:-ms-linear-gradient(left,#f7f7f7 0,#f7f7f7 50%,#fff 50%,#fff 100%);background:linear-gradient(to right,#f7f7f7 0,#f7f7f7 50%,#fff 50%,#fff 100%);filter:none}.global-nav-footer .footer-wrapper-social .footer-links-social{background-color:#f7f7f7;float:left;width:70%}.global-nav-footer .footer-wrapper-social .footer-links-social>ul{height:50px;width:300px}.global-nav-footer .footer-wrapper-social .footer-links-social>ul a{padding:10px 0;display:inline-block}.global-nav-footer .footer-wrapper-social .footer-links-network{background:#fff;float:right;height:50px;border-left:4px solid #d92228;width:30%}.global-nav-footer .footer-wrapper-social .footer-links-network a{text-align:right;display:inline-block;padding:8px 0;line-height:1;width:49%}.global-nav-footer .footer-wrapper-links-main li,.global-nav-footer .footer-wrapper-links-secondary li{margin-right:80px;margin-left:0}
+.global-nav-footer .footer-wrapper-links-main li:last-child,.global-nav-footer .footer-wrapper-links-secondary li:last-child{margin-right:0}.global-nav-footer .footer-wrapper-links-main{background-color:#222}.global-nav-footer .footer-wrapper-links-main a{color:#fff}.global-nav-footer .footer-wrapper-links-secondary{background-color:#f7f7f7}.global-nav-footer .footer-wrapper-links-secondary a{color:#333;outline:0}.global-nav-footer .footer-wrapper-links-secondary a:hover{color:#d92228;text-decoration:none}.global-nav-footer .footer-wrapper-links-secondary .icon-down-arrow-circle{vertical-align:bottom}.global-nav-footer .footer-wrapper-copyright{padding:15px 0;text-align:right}.global-nav-footer .footer-wrapper-copyright p,.global-nav-footer .footer-wrapper-copyright a{font-size:10px;color:#c4c4c4}.footer-popover-content{min-width:150px}.footer-popover-content ul>li{border-bottom:1px solid rgba(0,0,0,0.1)}.footer-popover-content ul>li:last-child{border-bottom:0}.footer-popover-content a{color:#333;padding:10px 0;display:block}.footer-popover-content a:hover{color:#d92228;text-decoration:none}@media only screen and (max-width:1279px){.global-nav-footer .footer-wrapper-links-main li,.global-nav-footer .footer-wrapper-links-secondary li{margin-right:30px}}@media only screen and (max-width:767px){.global-nav-footer .footer-wrapper-social{background:#f7f7f7}.global-nav-footer .footer-wrapper-social .footer-links-social{float:none;width:100%}.global-nav-footer .footer-wrapper-social .footer-links-network{display:none}}@media only screen and (max-width:480px){.global-nav-footer .footer-wrapper-links-main li,.global-nav-footer .footer-wrapper-links-secondary li{margin-right:25px}}.global-login-modal-open{overflow:hidden}.global-login-modal{display:none;overflow:hidden;position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;-webkit-overflow-scrolling:touch;outline:0}.global-login-modal.fade .global-login-modal-dialog{-webkit-transform:translate(0,-25%);-ms-transform:translate(0,-25%);-o-transform:translate(0,-25%);transform:translate(0,-25%);-webkit-transition:-webkit-transform .3s ease-out;-moz-transition:-moz-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out}.global-login-modal.in .global-login-modal-dialog{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0);transform:translate(0,0)}.global-login-modal-open .global-login-modal{overflow-x:hidden;overflow-y:auto}.global-login-modal-dialog{position:relative;width:auto;margin:10px}.global-login-modal-content{position:relative;background-color:#fff;border:1px solid #999;border:1px solid rgba(0,0,0,0.2);border-radius:2px;-webkit-box-shadow:0 3px 9px rgba(0,0,0,0.5);box-shadow:0 3px 9px rgba(0,0,0,0.5);background-clip:padding-box;outline:0}.global-login-modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.global-login-modal-backdrop.fade{opacity:0;filter:alpha(opacity=0)}.global-login-modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}.global-login-modal-header{padding:15px;border-bottom:1px solid #e5e5e5;min-height:16.42857px}.global-login-modal-header .global-login-close{margin-top:-2px}.global-login-modal-title{margin:0;line-height:1.42857}.global-login-modal-body{position:relative;padding:15px}.global-login-modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5}.global-login-modal-footer:before,.global-login-modal-footer:after{content:" ";display:table}.global-login-modal-footer:after{clear:both}.global-login-modal-footer .btn+.btn{margin-left:5px;margin-bottom:0}.global-login-modal-footer .btn-group .btn+.btn{margin-left:-1px}.global-login-modal-footer .btn-block+.btn-block{margin-left:0}.global-login-modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media(min-width:767px){.global-login-modal-dialog{width:600px;margin:30px auto}.global-login-modal-content{-webkit-box-shadow:0 5px 15px rgba(0,0,0,0.5);box-shadow:0 5px 15px rgba(0,0,0,0.5)}.global-login-modal-sm{width:400px}}@media(min-width:996px){.global-login-modal-lg{width:900px}}label.global-login-label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:bold}input[type="checkbox"].global-login-input{margin:4px 0 0;margin-top:1px \9;line-height:normal}input[type="checkbox"].global-login-input:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.global-login-form-control{display:block;width:100%;height:32px;padding:6px 12px;font-size:14px;line-height:1.42857;color:#333;background-color:#fff;background-image:none;border:1px solid #999;border-radius:2px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.global-login-form-control:focus{border-color:#999;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(153,153,153,0.6);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(153,153,153,0.6)}.global-login-form-control::-moz-placeholder{color:#999;opacity:1}.global-login-form-control:-ms-input-placeholder{color:#999}.global-login-form-control::-webkit-input-placeholder{color:#999}.global-login-form-control[disabled],.global-login-form-control[readonly],fieldset[disabled] .global-login-form-control{background-color:#c4c4c4;opacity:1}.global-login-form-control[disabled],fieldset[disabled] .global-login-form-control{cursor:not-allowed}.global-login-form-group{margin-bottom:15px}.global-login-checkbox{position:relative;display:block;margin-top:10px;margin-bottom:10px}.global-login-checkbox label{min-height:20px;padding-left:20px;margin-bottom:0;font-weight:normal;cursor:pointer}.global-login-checkbox input[type="checkbox"]{position:absolute;margin-left:-20px;margin-top:4px \9}.global-login-checkbox+.global-login-checkbox{margin-top:-5px}.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}.global-login-close{float:right;font-size:21px;font-weight:bold;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.2;filter:alpha(opacity=20)}.global-login-close:hover,.global-login-close:focus{color:#000;text-decoration:none;cursor:pointer;opacity:.5;filter:alpha(opacity=50)}button.global-login-close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none}.global-login-checkbox{margin-top:5px;margin-bottom:5px}.global-login-checkbox>label{padding-top:5px;padding-bottom:5px;font-weight:300}.global-login-form-group label.error{background:#fee;color:#700;padding:2px 5px 0;font-size:12px;width:100%;font-weight:300}.global-login-form-group input.error{border-color:#b00;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075)}.global-login-form-group input.error+label.error{margin-top:5px}.input-error::-webkit-input-placeholder{color:red}.input-error::-moz-placeholder{color:red}.input-error:-moz-placeholder{color:red}.input-error:-ms-input-placeholder{color:red}.global-login-modal-content{border:0;border-radius:0}.global-login-modal-content .global-login-close{color:#333;text-shadow:none;opacity:1;filter:none}.global-login-modal-header{padding:15px;border-bottom:0;background-color:#f7f7f7}.global-login-modal-title{font-weight:300}.global-login-modal-backdrop{height:100%}.global-login-modal-backdrop{z-index:1039;position:fixed;bottom:0}.global-login-modal-actions{margin:20px 0 20px}@media only screen and (max-width:766px){.global-login-modal-mobile-fullscreen .global-login-modal-dialog,.global-login-modal-mobile-fullscreen .global-login-modal-content{height:100%;margin:0;overflow-y:auto}.global-login-modal-mobile-fullscreen .global-login-modal-header{text-align:center}.global-login-modal-mobile-fullscreen .global-login-modal-header .close{position:absolute;top:0;left:0}.global-login-modal-mobile-fullscreen .global-login-modal-header .close span{padding:15px 10px;height:100%;display:block;font-size:28px}.global-login-modal-mobile-fullscreen .global-login-modal-actions .btn{display:block;min-width:290px;margin:5px auto}}.global-login-modal *{box-sizing:border-box}.global-login-modal .text-center{text-align:center}.global-login-modal .pull-left{float:left}.global-login-modal .pull-right{float:right}.global-login-modal .clearfix:before,.global-login-modal .clearfix:after{content:" ";display:table}.global-login-modal .clearfix:after{clear:both}.global-login-modal .margin-top{margin-top:10px}.global-login-modal .margin-bottom{margin-bottom:10px}.global-login-modal .row-half:before,.global-login-modal .row-half:after{content:" ";display:table}.global-login-modal .row-half:after{clear:both}.global-login-modal .row-half .col-half{width:49%;margin-right:1%;float:left}.global-login-modal .row-half .col-half:last-child{margin-right:0}@media(max-width:766px){.global-login-modal .row-half .col-half{width:100%;margin:0;float:none}}.global-login-modal a{color:#d92228;text-decoration:none}.global-login-modal a:hover{text-decoration:underline}.global-login-modal .link-secondary a{color:#999}.global-login-modal .link-secondary a:hover{color:#d92228;text-decoration:none}.global-login-modal .btn{border-radius:2px;-webkit-user-select:none;background-image:none;border-image-outset:0;border-image-repeat:stretch;border-image-slice:100%;border-image-source:none;border-image-width:1;box-sizing:border-box;cursor:pointer;line-height:20px;margin-bottom:0;outline-color:#fff;outline-style:none;outline-width:0;padding:6px 12px;text-align:center;text-decoration:none;touch-action:manipulation;vertical-align:middle;white-space:nowrap;border:1px solid transparent}.global-login-modal .btn:hover{text-decoration:none}.global-login-modal .btn-primary{color:#fff;background-color:#d92228;border-color:#d92228}
+.global-login-modal .btn-primary:hover{background-color:#ea1525;border-color:#d92228}.global-login-modal .btn-default{color:#d92228;background-color:#fff;border-color:#999}.global-login-modal .btn-default:hover{background-color:#f7f7f7;border-color:#999}.global-login-modal .btn-facebook{border-color:#39589b;background-color:#39589b;color:#fff}.global-login-modal .btn-facebook:hover{border-color:#4367b5;background-color:#4367b5;color:#fff}.global-login-modal .btn-block{display:block}.global-login-modal .btn-text-disclaimer{font-size:12px;margin-top:5px;margin:0}.global-login-modal .global-login-modal-header{text-align:center}.global-login-modal .global-login-modal-body{max-width:420px;margin:0 auto}.global-login-modal .global-login-modal-body .login-divider{display:block;margin:10px 0;text-align:center;color:#999}.global-login-modal .global-login-modal-footer{text-align:center}.global-login-modal .facebook-svg-icon{width:16px;height:16px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAn0lEQVQ4T+2SYQ3CMBBG36cAJOAAJICCWZgFFAAOJgEJoAAkbAqwgIOPNOlIt3QNBBL+0KS/evd69+5E4dheATtgDcxj6EbStU/TVL7tBXDLvL8MOAHVJ4AWWEbAGagl3cfAUgtOgg+S9rl2BwDbQVT/61MUcIw3MLq0kjEg2L6UJgNMS7T9Y0Bauu33Jf4Bw+l/Q2LY+1nEbiU1uQV7ACJEUxGRTSgnAAAAAElFTkSuQmCC");display:inline-block;margin-right:5px;vertical-align:middle}@media(min-width:767px){.global-login-modal-dialog{width:480px;margin:30px auto}}</style>
+
+    <link rel="stylesheet" media="all" href="http://static0.rdc-next.rdc.moveaws.com/assets/application-f5e7183ff83ff47521f79eabf702fa9c68620a20d7eb6a188c2513b648d71a02.css" data-turbolinks-track="true" />
+    <link rel="stylesheet" media="screen" href="http://static3.rdc-next.rdc.moveaws.com/assets/property_records-09df695b227713e5320a96745c04393c4899f4bbb2fb31c03407ee6dd9974876.css" data-turbolinks-track="true" />
+    
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="iek8Ku4j2GEm2sYrYAy2fUItu7bFCN4jnr8SBHTnQ/O1iiwUq16OTFrOEOTb67SzGxTt+UlRvDvoL/72jvewKw==" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link rel="canonical" href="http://www.realtor.com/realestateandhomes-search/Arizona" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://static1.rdc-next.rdc.moveaws.com/assets/favicon-144287b492113455703667bc3182768a9b2666765a1cd4beba38cfe40294eccc.ico" />
+    <meta name="theme-color" content="#d92228">
+  </head>
+  <body class="state_page show " data-spy="scroll" data-offset='160' data-target="#sticky-bar-scroll-spy">
+    
+    
+    <div class="alert alert-sm alert-warning alert-corner alert-dismissible no-show" role="alert" id="notification-cookies">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <span>It looks like Cookies are disabled in your browser. For the best experience, please enable cookies when using our site.</span>
+    </div>
+    
+      <div id="div-gpt-ad-LB1" class="ads padding-top padding-bottom text-center lb-ads txtinadslistview"></div>
+    <!-- To avoid  delay in time for sprite-header.svg -->
+ <img id="header-sprite" style="display:none" alt="header sprite" src="" />
+
+ <!--BEGIN QUALTRICS SITE INTERCEPT-->
+ <!-- commented out for the time being -->
+
+ <!-- <div id='ZN_8p1dPH4RgQzWV0x'></div> -->
+<!--End QUALTRICS SITE INTERCEPT -->
+
+  <nav class="global-navbar global-navbar-default global-nav-header" id="header-navbar">
+    <div class="container">
+      <div class="global-navbar-header">
+        <button id="header-menu-btn" class="global-navbar-toggle">
+  <span class="sr-only">Toggle navigation</span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+</button>
+<a id="header-rdc-logo" href="/" class="global-navbar-brand header-rdc-logo" data-omtag="header-menu:network:realtor" data-no-turbolink="true">
+  <i class="svg-logo svg-logo-realtor"></i>
+</a>
+<a id="move-network-links" class="move-network-links" data-container="body" data-toggle="popover" data-placement="bottom" data-popover-content="#move-network-popover" data-original-title="" title="" data-template='<div class="popover global-nav-network-sites-popover" role="tooltip"><div class="global-nav-popover-arrow arrow"></div><div class="popover-content"></div></div>'>
+  <i class="svg-icon svg-icon-angle-down-header"></i>
+</a>
+<div id="move-network-popover" class="global-nav-hide">
+  <div class="container">
+    <div class="global-nav-network-menu-content">
+      <div class="global-nav-move-sites-wrap">
+        <p class="network-menu-section-titles">Part of realtor.com<sup class="global-nav-font-size-xsmall">&reg;</sup> Network</p>
+        <ul class="global-nav-list-unstyled">
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://www.realtor.com/international/" data-omtag="header-menu:network:international">International</a></div>
+            <div class="move-sites-intro-wrap"><span>International Properties in over 36 countries in 11 languages</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://commercialsearch.realtor.com/" data-omtag="header-menu:network:commerical">Commercial</a></div>
+            <div class="move-sites-intro-wrap"><span>Find office, industrial, retail and other commercial property</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://www.moving.com"  data-omtag="header-menu:network:moving">Moving.com</a></div>
+            <div class="move-sites-intro-wrap"><span>Moving quotes, tips, supplies, and tools</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://www.seniorhousingnet.com/" data-omtag="header-menu:network:senior">SeniorHousingNet.com</a></div>
+            <div class="move-sites-intro-wrap"><span>Find assisted living, nursing homes, and senior communities</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="https://www.doorsteps.com/" >Doorsteps</a></div>
+            <div class="move-sites-intro-wrap"><span>Search apartment rentals with original content from local experts</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://www.remodelista.com/?utm_source=realtor&utm_medium=top_nav&utm_campaign=rdc_nav/" data-omtag="header-menu:network:remodelista">Remodelista</a></div>
+            <div class="move-sites-intro-wrap"><span>Home design inspiration + remodeling tips and advice</span></div>
+          </li>
+          <li class="global-nav-clearfix">
+            <div class="move-sites-links-wrap"><a href="http://www.gardenista.com/?utm_source=realtor&utm_medium=top_nav&utm_campaign=rdc_nav/" data-omtag="header-menu:network:gardenista">Gardenista</a></div>
+            <div class="move-sites-intro-wrap"><span>Garden design inspiration + landscaping tips and advice</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="global-nav-newscorp-sites-wrap">
+        <p class="network-menu-section-titles">News Corp Properties</p>
+        <div class="newscorp-intro-wrap">
+          <p>realtor.com<sup>&reg;</sup> and Move, Inc. are part of News Corp – a network of leading companies in the worlds of diversified media, news, education, and information services.</p>
+        </div>
+        <div class="newscorp-sites-links-wrap">
+          <ul class="global-nav-list-unstyled">
+            <li><a href="http://www.barrons.com" data-omtag="header-menu:nc:network:barrons">Barron’s</a></li>
+            <li><a href="http://www.wsj.com" data-omtag="header-menu:nc:network:wall-street-journal">Wall Street Journal</a></li>
+            <li><a href="http://www.efinancialnews.com" data-omtag="header-menu:nc:network:financial-news">Financial News</a></li>
+            <li><a href="http://www.mansionglobal.com/" data-omtag="header-menu:nc:network:mansion-global">Mansion Global</a></li>
+            <li><a href="http://nypost.com/" data-omtag="header-menu:nc:network:new-york-post">New York Post</a></li>
+          </ul>
+        </div>
+        <div class="newscorp-sites-links-wrap">
+          <ul class="global-nav-list-unstyled">
+            <li><a href="http://www.marketwatch.com/" data-omtag="header-menu:nc:network:market-watch">Market Watch</a></li>
+            <li><a href="http://www.checkout51.com" data-omtag="header-menu:nc:network:checkout-51">Checkout 51</a></li>
+            <li><a href="http://www.harpercollins.com/" data-omtag="header-menu:nc:network:harper-collins">Harper Collins</a></li>
+            <li><a href="http://www.rea-group.com/" data-omtag="header-menu:nc:network:rea">REA</a></li>
+            <li><a href="http://storyful.com/" data-omtag="header-menu:nc:network:storyful">Storyful</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="global-nav-clearboth"></div>
+</div>
+
+      </div>
+      <div class="header-login-wrapper">
+        <ul class="global-nav global-navbar-nav global-navbar-right">
+                 <div id="loginEl" data-login-env= "prod" ng-controller="loginCtrl">
+	     <div ng-view></div>
+	  </div>
+<li class="dropdown header-login-menu header-logged-menu" id="header-login-menu" style="display:none">
+  <a data-omtag="header-menu:my-account:profile" href="https://myaccount.realtor.com?new=1" class="dropdown-toggle disabled dropdown-toggle-desktop">
+    <span class="header-login-text js-username"></span>
+    <span class="header-login-icon"><i class="svg-icon svg-icon-user"></i></span>
+  </a>
+  <div role="menu" class="fade-effect dropdown-menu dropdown-hover-login dropdown-multicolumn dropdown-hover dropdown-hover-logged">
+    <div id="idSavedSearchesAndProp" class="global-nav-logged-wrapper">
+	<div class="global-nav-username-section global-nav-clearfix">
+		<div class="global-nav-username">
+			<p>Hi, <span class="myaccount-username"></span></p></div>
+			<div class="global-nav-profile-links"><ul class="global-nav-list-horizontal global-nav-list-style-line">
+				<li><a href="https://myaccount.realtor.com/member_profile#/profile?new=1" data-omtag="header-menu:my-acct:settings">Settings</a></li>
+				<li><a id="myaccount_logout" href="javascript:void(0);" onclick="myServiceLogout();" data-omtag="header-menu:my-acct:sign-out">Sign Out</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="global-nav-logged-recent-activity">
+		<div id ="my_properties_div">
+			 	<div class="global-nav-clearfix">
+        <a class="global-nav-logged-activity-titles" data-omtag="header-menu:my-acct:my-properties" href="https://myaccount.realtor.com/properties?new=1">My Properties </a>
+        <p>Click the <i class="svg-icon svg-icon-heart-o svg-menu-icons"></i> to save properties</p>
+    </div>
+			
+
+		</div>
+		<div>
+			<div id = "no_property_div"> 
+					<div class="global-nav-clearfix">
+        <a class="global-nav-logged-activity-titles" data-omtag="header-menu:my-acct:my-properties" href="https://myaccount.realtor.com/properties?new=1">My Properties </a>
+        <p>Click the <i class="svg-icon svg-icon-heart-o svg-menu-icons"></i> to save properties</p>
+    </div>
+			</div>
+			<hr class="global-nav-links-divider">
+        </div>
+		<div id ="my_search_div">
+				<div class="global-nav-clearfix">
+      <a class="global-nav-logged-activity-titles" data-omtag="header-menu:my-acct:my-searches" href="https://myaccount.realtor.com/searches?new=1">My Searches</a>
+     <p>Click <span class="global-nav-font-semibold">Follow Search</span> to get alerts on new listings</p>
+    </div>
+			
+
+		</div>
+		<div>
+			<div id = "no_search_div">
+				 	<div class="global-nav-clearfix">
+      <a class="global-nav-logged-activity-titles" data-omtag="header-menu:my-acct:my-searches" href="https://myaccount.realtor.com/searches?new=1">My Searches</a>
+     <p>Click <span class="global-nav-font-semibold">Follow Search</span> to get alerts on new listings</p>
+    </div>
+			</div>
+			<hr class="global-nav-links-divider">
+        </div>
+	</div>
+</div>
+
+    <ul class="global-nav-list-unstyled header-log-out"><li><a id="logout" href="javascript:void(0)">Log Out</a></li></ul>
+  </div>
+</li>
+<li id="header-login-menu" class="dropdown header-login-menu">
+  <a  data-omtag="header-menu:my-account:login">    
+    <span class="header-login-text login">Sign In</span><span class="header-login-text signup"> / Sign Up</span>
+    <span class="header-login-icon login"><i class="svg-icon svg-icon-user"></i></span>
+  </a>
+  <div id="login-signup-popup">
+  <div class="fade-effect dropdown-menu dropdown-hover-login dropdown-multicolumn dropdown-hover" role="menu">
+    <div class="global-nav-login-wrap">
+      <p class="global-nav-text-center global-nav-login-section-header">Log in to save favorites, <span class="global-nav-display-block">get alerts, and sync devices.</span></p>
+      <a class="global-nav-btn global-nav-btn-primary global-nav-login-btn login"  data-omtag="header-menu:my-account:login">Sign In</a>
+      <p class="global-nav-text-center">No account? <a href="javascript:void(0)" class="signup" >Sign Up</a></p>
+      <span class="divider"></span>
+      <div class="global-nav-agent-wrap">
+        <a target="_blank" href="//solutioncenter.realtor.com/ControlPanel/Login.aspx#iid=rdc_hdr_realtors_agentloginn" data-omtag="header-menu:account:agent-login" class="global-nav-btn global-nav-btn-secondary global-nav-login-btn">Agent Sign In</a>
+        <p class="global-nav-text-center">No account? <a href="//solutioncenter.realtor.com/ControlPanel/Login.aspx#iid=rdc_hdr_realtors_agentloginn" class="agent-signup" >Agent Sign Up</a></p>
+      </div>
+    </div>
+   </div>
+   </div>
+  </li>
+
+        </ul>
+      </div>
+      <div id="header-nav-menu" class="nav-menu-desktop">
+        <ul class="global-nav global-navbar-nav global-navbar-main-links">
+          <li id="img_buy" class="dropdown active ">
+               <a href="/realestateforsale" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" role="button" aria-expanded="false" data-omtag="header-menu:buy">Buy</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+  <div class="container dropdown-content-wrapper">
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Homes for Sale</li>
+        <li>
+			<a href="/realestateforsale" data-omtag="header-menu:buy:all-homes">All Homes</a>
+		</li>
+		<li>
+			<a href="/newhomes" data-omtag="header-menu:buy:new-homes">New Homes &amp; Communities</a>
+		</li>
+		<li>
+			<a href="/newhomes" data-omtag="header-menu:buy:new-homes">New Construction</a>
+		</li>
+		<li>
+			<a href="/foreclosure" data-omtag="header-menu:buy:foreclosures">Foreclosures</a>
+		</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Home Values</li>
+        <li>
+			<a href="/soldhomes" data-omtag="header-menu:buy:homeValues:geo-recently-sold">Recently Sold</a>
+		</li>
+		<li>
+			<a  href="/propertyrecord-search" data-omtag="header-menu:buy:homeValues:geo-property-records">Property Records</a>
+		</li>
+		<hr class="global-nav-links-divider">
+		<li>
+			<a href="/advice/buy/" data-omtag="header-menu:buy:homeValues:buying-tips">Home Buying Tips</a>
+		</li>
+		<li>
+			<a data-omtag="header-menu:buy:homeValues:selling-tips" href="/advice/sell/">Home Selling Tips</a>
+		</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Home Buying Tips</li>
+       		<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/advice/buy/questions-to-ask-when-buying-a-home/">10 Essential Questions to Ask When Buying a Home</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/advice/buy/questions-to-ask-when-buying-a-home/"><img class="thumbnail buy_links" alt="10 Essential Questions to Ask When Buying a Home"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+
+        <li><a href="/advice/buy/" data-omtag="header-menu:buy:buying-advice">More Home Buying Advice</a></li>
+        <li>
+          <a  href="//community.realtor.com/t5/Buying-Selling/bd-p/buyingandselling" data-omtag="header-menu:buy:read-buying-discussions">Read Buying Discussions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+          </li>
+           <li id="img_sell" class="dropdown INACTIVE_sell ">
+               <a href="/sell" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" data-omtag="header-menu:sell">Sell</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+	<div class="container dropdown-content-wrapper">
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Home Selling</li>
+        <li>
+        	<a href="/sell" data-omtag="header-menu:sell:see-what-your-home-is-worth">See What Your Home Is Worth</a>
+        </li>
+        <li>
+			<a href="/tag/2016-home-sellers-guide/" data-omtag="header-menu:sell:learn-to-sell-your-home">Learn How to Sell Your Home</a>
+		</li>
+        <li>
+          <a href="/advice/sell/interviewing-listing-agents/" data-omtag="header-menu:sell:how-to-select-an-agent">How to Select an Agent</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Community</li>
+        <li>
+          <a href="http://community.realtor.com/t5/Buying-Selling/bd-p/buyingandselling"  data-omtag="header-menu:sell:discussion-buy-sell">Discussions on Buying & Selling</a>
+        </li>
+        <li>
+          <a href="http://community.realtor.com/" data-omtag="header-menu:sell:ask-the-community">Ask the Community</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Home Selling Tips</li>
+         		<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/advice/sell/spark-a-bidding-war-for-your-home/">How to Spark a Bidding War for Your Home</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/advice/sell/spark-a-bidding-war-for-your-home/"><img class="thumbnail sell_links" alt="How to Spark a Bidding War for Your Home"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+
+        <li><a href="/advice/sell/"  data-omtag="header-menu:sell:selling-advice">More Home Selling Advice</a></li>
+        <li>
+          <a href="//community.realtor.com/t5/Buying-Selling/bd-p/buyingandselling" data-omtag="header-menu:sell:read-selling-discussions">Read Selling Discussions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+          </li>
+         <li id="img_rentals" class="dropdown INACTIVE_rentals ">
+               <a href="/rentals" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" data-omtag="header-menu:rent">Rent</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+	<div class="container dropdown-content-wrapper">
+	<div>
+		<ul class="global-nav-list-unstyled">
+			<li class="dropdown-header">
+				Apartments for Rent
+			</li>
+			<li>
+				<a href="/rentals?styp=1" data-omtag="header-menu:rent:apartments">Apartments For Rent</a>
+			</li>
+			<li>
+				<a href="/rentals?styp=2" data-omtag="header-menu:rent:condo/townhouses">House/Condo Rentals</a>
+			</li>
+			<li>
+				<a href="/rentals?styp=3" data-omtag="header-menu:rent:all-rentals">All Rentals</a>
+			</li>
+		</ul>
+	 </div>
+	 <div>
+		<ul class="global-nav-list-unstyled">
+		<li class="dropdown-header">Common Searches</li>
+		<li>
+			<a href="/mortgage/tools/rent-or-buy-calculator/" data-omtag="header-menu:editorial:news">Should I Rent or Buy?</a>
+		</li>
+		<li>
+			<a href="/tag/pets/" data-omtag="header-menu:rent:advice">Renting With Pets Tips</a>
+		</li>
+		<li class="dropdown-header dropdown-header-seperator">Landlord Tools
+		</li>
+		<li>
+			<a href="https://www.doorsteps.com/post-rental" data-omtag="header-menu:rent:list-your-rental">List Your Rental</a>
+		</li>
+		</ul>
+   </div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Home Renting Tips</li>
+			     		<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/advice/rent/rules-on-raising-rent/">The Rules on Raising Rent: What Landlords Can and Can&#39;t Do</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/advice/rent/rules-on-raising-rent/"><img class="thumbnail rent_links" alt="The Rules on Raising Rent: What Landlords Can and Can&#39;t Do"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+
+				<li>
+					<a href="/advice/rent/" data-omtag="header-menu:rent:advice">More Renting Advice</a>
+				</li>
+				<li>
+					<a href="http://community.realtor.com/t5/Renting/bd-p/Renting" data-omtag="header-menu:rent:renting-discussions">Read Renting Discussions</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+          </li>
+          <li id="img_mortgage" class="dropdown INACTIVE_mortgage ">
+              <a href="/mortgage/" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" role="button" aria-expanded="false" data-omtag="header-menu:finance">Mortgage</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+	<div class="container dropdown-content-wrapper">
+		<div>
+    <ul class="global-nav-list-unstyled">
+		<li class="dropdown-header">
+			Mortgage Rates
+		</li>
+	    <li>
+			<a href="/mortgage/rates/" data-omtag="header-menu:finance:mortgages-rates:purchase">Mortgage Rates</a>
+		</li>
+		<li>
+			<a href="/mortgage/rates/#loan_purpose=refinance" data-omtag="header-menu:finance:mortgage-rates:refinance">Refinance Rates</a>
+		</li>
+		<li>
+			<a href="/advice/finance/" data-omtag="header-menu:finance:advice">Finance Advice</a>
+		</li>
+		<li>
+			<a href="/mortgage/va-home-loan-center/" data-omtag="header-menu:finance:mortgage-rates:veteransHub">For Veterans</a>
+		</li>
+	</ul>
+</div>
+<div>
+	<ul class="global-nav-list-unstyled">
+		<li class="dropdown-header">
+			Calculators
+		</li>
+		<li>
+			<a href="/mortgage/tools/mortgage-calculator/" data-omtag="header-menu:finance:calculators:mortgage">Mortgage Calculator</a>
+		</li>
+		<li>
+			<a href="/mortgage/tools/refinance-calculator/" data-omtag="header-menu:finance:calculators:refinance">Refinance Calculator</a>
+		</li>
+		<li>
+			<a href="/mortgage/tools/affordability-calculator/" data-omtag="header-menu:finance-calculators-affordability">What Can I Afford</a>
+		</li>
+		<li>
+			<a href="/mortgage/tools/rent-or-buy-calculator/" data-omtag="header-menu:finance-calculators-rent-vs-buy">Rent vs. Buy</a>
+		</li>
+	</ul>
+</div>
+<div>
+	<ul class="global-nav-list-unstyled">
+		<li class="dropdown-header">Finance Advice</li>
+				<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/advice/4-signs-great-va-loan-candidate/?guide_ref=223057">4 Signs You’re a Great VA Loan Candidate</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/advice/4-signs-great-va-loan-candidate/?guide_ref=223057"><img class="thumbnail mortgage_links" alt="4 Signs You’re a Great VA Loan Candidate"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+
+		<li><a href="/advice/finance/" data-omtag="header-menu:finance:finance-advice">More Finance Advice</a></li>
+		<li>
+			<a href="//community.realtor.com/t5/Financing/bd-p/Financing"  data-omtag="header-menu:finance:finance-discussions">Read Finance Discussions</a>
+		</li>
+	</ul>	
+</div>
+</div>
+</div>
+          </li>
+          <li id="img_far" class="dropdown INACTIVE_far ">
+             <a href="/realestateagents" data-omtag="header-menu:realtors"  class="dropdown-toggle disabled dropdown-toggle-desktop"><span class="global-nav-text-tranform">Find</span> Realtors<sup>&reg;</sup></a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+  <div class="container dropdown-content-wrapper">
+    <div>    	
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Find REALTORS<sup class="global-nav-font-size-xsmall">&reg;</sup></li>
+        <li><a href="/realestateagents" data-omtag="header-menu:realtors:search-realtors" >Search for a Real Estate Agent</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">Why Use a REALTOR<sup class="global-nav-font-size-xsmall">&reg;</sup></li>
+        <li>
+          <a href="/advice/buy/why-you-should-use-realtor/">6 Reasons You Should Never Buy or Sell a Home Without an Agent</a>
+        </li>
+        <li>
+          <a href="/advice/buy/whats-difference-real-estate-salesperson-broker/" data-omtag="header-menu:far:difference-between-agent-broker-realtor">Difference Between Agent, Broker & REALTOR<sup class="global-nav-font-size-xsmall">&reg;</sup></a>
+        </li>
+        <li>
+          <a href="/advice/listing-agent-vs-buyer-agent/" data-omtag="header-menu:far:listing-versus-buyer-agent">Listing vs. Buyer Agent</a>
+        </li>
+        <li>
+          <a href="/advice/sell/find-a-realtor/" data-omtag="header-menu:far:how-to-find-realtor">How To Find a REALTOR<sup class="global-nav-font-size-xsmall">&reg;</sup></a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="global-nav-list-unstyled">
+        <li class="dropdown-header">News Around REALTORS<sup class="global-nav-font-size-xsmall">&reg;</sup></li>
+        		<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/videos/video-hiring-a-realtor-better-look-beyond-this-one-thing/b47bcb02-24f9-479e-ac3a-349f2f3b9b3a">Hiring a Realtor? Better Look Beyond This One Thing</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/videos/video-hiring-a-realtor-better-look-beyond-this-one-thing/b47bcb02-24f9-479e-ac3a-349f2f3b9b3a"><img class="thumbnail find_realtor_links" alt="Hiring a Realtor? Better Look Beyond This One Thing"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+    
+        <li><a href="/news/trends/"  data-omtag="header-menu:realtors:more-news">More News Around REALTORS<sup class="global-nav-font-size-xsmall">&reg;</sup></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+          </li>
+          <li id="img_local" class="dropdown INACTIVE_local ">
+               <a href="/local/" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" role="button" aria-expanded="false" data-omtag="header-menu:learn">Local</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+	<div class="container dropdown-content-wrapper">
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Local Info</li>
+				<li>
+					<a href="/local/" data-omtag="header-menu:learn:overview">Local Information <span class="global-nav-display-block">for Neighborhoods &amp; Cities</span></a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Advice</li>
+				<li><a href="http://community.realtor.com/t5/Local-Info/bd-p/LocalTopics" data-omtag="header-menu:local:community-talk">Local Community Talk</a></li>
+				<li><a href="http://community.realtor.com/t5/General-Discussion/bd-p/TLR"  data-omtag="header-menu:local:ask-the-community">Ask the Community</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Neighborhood Tips</li>
+						<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/news/trends/top-school-districts-premium/">It Pays to Own in an A-Plus School District—Here’s How Much</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/news/trends/top-school-districts-premium/"><img class="thumbnail local_links" alt="It Pays to Own in an A-Plus School District—Here’s How Much"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+  
+				<li><a href="http://research.realtor.com/market-trends/"  data-omtag="header-menu:local:market-trends" >Local Market Trends</a></li>
+				<li>
+					<a href="http://research.realtor.com/reports/hottest-markets/" data-omtag="header-menu:local:hot-market">Hot Local Markets</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+          </li>
+
+          <li id="img_news" class="dropdown INACTIVE_news ">
+              <a  href="/news/" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" role="button" aria-expanded="false" data-omtag="header-menu:editorial:news-advice">News &amp; Advice</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn">
+	<div class="container dropdown-content-wrapper">
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">News</li>
+				<li>
+					<a href="/news/" data-omtag="header-menu:editorial:latest-news">The Latest News</a>
+				</li>
+				<li>
+					<a href="/news/trends/" data-omtag="header-menu:editorial:news-trends">Housing Trends</a>
+				</li>
+				<li>
+					<a href="/news/real-estate-news/" data-omtag="header-menu:editorial:real-estate-news">Real Estate News</a>
+				</li>
+				<li>
+					<a href="/news/celebrity-real-estate/" data-omtag="header-menu:editorial:news-celebrity">Celebrity Real Estate</a>
+				</li>
+				<li>
+					<a href="/news/unique-homes/" data-omtag="header-menu:editorial:news-unique-homes">Unique Homes</a>
+				</li>
+				<li>
+					<a href="//research.realtor.com" data-omtag="header-menu:editorial:news-research">Research</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Advice</li>
+				<li>
+					<a href="//community.realtor.com" data-omtag="header-menu:editorial:advice-HouseTalk">realtor.com Community</a>
+				</li>
+				<li>
+					<a href="/advice/buy/" data-omtag="header-menu:editorial:advice-Buy">Buying</a>
+				</li>
+				<li>
+					<a href="/advice/sell/" data-omtag="header-menu:editorial:advice-Sell">Selling</a>
+				</li>
+				<li>
+					<a href="/advice/rent/" data-omtag="header-menu:editorial:advice-Rent">Renting</a>
+				</li>
+				<li>
+					<a href="/advice/finance/" data-omtag="header-menu:editorial:advice-Finance">Financing</a>
+				</li>
+				<li>
+					<a href="/advice/move/" data-omtag="header-menu:editorial:advice-Move">Moving</a>
+				</li>
+				<li>
+					<a href="/advice/home-improvement/" data-omtag="header-menu:editorial:advice-homeImprov">Home Improvement</a>
+				</li>
+				<li>
+					<a href="/advice/for-pros/" data-omtag="header-menu:editorial:advice-Pros">For Pros</a>
+				</li>
+				<li>
+					<a href="/advice/guides/va-loan/" data-omtag="header-menu:advice:guide:veterans">Veterans Home Buying Guide</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">Videos</li>
+						<li class="global-nav-news-feed-items-wrap">
+			<div class="global-nav-news-feed-item">
+				<div class="global-nav-news-feed-content">
+					<a href="http://www.realtor.com/videos/video-the-true-meaning-behind-these-4-secret-real-estate-code-words/11c13144-4434-407c-8991-e0550cd61fb9">The True Meaning Behind These Four Secret Real Estate Code Words</a>
+				</div>
+				<div class="global-nav-news-feed-media">
+					<a href="http://www.realtor.com/videos/video-the-true-meaning-behind-these-4-secret-real-estate-code-words/11c13144-4434-407c-8991-e0550cd61fb9"><img class="thumbnail news_advice_links" alt="The True Meaning Behind These Four Secret Real Estate Code Words"></a>
+				</div>
+			</div>
+			<hr class="global-nav-links-divider">
+		</li>
+
+
+				<li>
+					<a href="/videos" data-omtag="header-menu:editorial:real-estate-videos">Real Estate Videos</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+          </li>
+        </ul>
+
+        <ul class="global-nav global-navbar-nav global-navbar-right global-navbar-side-links">
+          <li id="header-mobile-menu" class="dropdown">
+            <a href="/mobile/" class="dropdown-toggle disabled mobile-dropdown-icon" data-toggle="dropdown" role="button" aria-expanded="false" data-omtag="header-menu:mobile">
+              <i class="svg-icon svg-icon-mobile-menu-toggle"></i>
+              <span class="text-mobile-menu-toggle">Mobile Apps</span>
+            </a>
+            <span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+              <div class="dropdown-menu dropdown-hover dropdown-mobile-link" role="menu">
+	<ul class="global-nav-list-unstyled">
+		<li>
+			<i class="svg-icon svg-icon-app-mobile link-icon"></i>
+			<div class="link-icon-content">
+				<a class="mobile-link-title" href="/mobile/?iid=rdc_hdrmenu_mobile" data-omtag="header-menu:mobile:core">Realtor.com<sup>&reg;</sup> mobile apps</a>
+				Find homes for sale or rent on
+				<br>
+				iPhone, iPad, and Android
+			</div>
+			<div class="global-nav-clearfix"></div>
+		</li>
+		<li class="divider"></li>
+		<li>
+			<i class="svg-icon svg-icon-app-realtor link-icon"></i>
+			<div class="link-icon-content">
+				<a class="mobile-link-title" href="/mobile/?iid=rdc_hdrmenu_mobile" data-omtag="header-menu:mobile:core">Realtor.com<sup>&reg;</sup> Real Estate</a>
+				<ul class="global-nav-list-horizontal global-nav-list-style-line">
+					<li>
+						<a href="https://itunes.apple.com/us/app/realtor.com-real-estate-homes/id336698281?mt=8" data-omtag="header-menu:mobile:ios-core">iOS</a>
+					</li>
+					<li>
+						<a href="http://c00.adobe.com/b2d5a4e1-adc8-4a1d-a2b3-d5c186e399ba/dsp_rdc_mobile_uni-header/g/com.move.realtor" data-omtag="header-menu:mobile:android-core">Android</a>
+					</li>
+					<li>
+						<a href="http://apps.microsoft.com/windows/en-us/app/real-estate-search-by-realtor/ec047c00-1692-4e8f-8a62-1877d1716b24" data-omtag="header-menu:mobile:windows-core">Windows</a>
+					</li>
+				</ul>
+			</div>
+			<div class="global-nav-clearfix"></div>
+		</li>
+		<li>
+			<i class="svg-icon svg-icon-app-rentals link-icon"></i>
+			<div class="link-icon-content">
+				<a class="mobile-link-title" href="http://marketing.realtor.com/rental-app/?iid=rdc_hdrmenu_mobile" data-omtag="header-menu:mobile:rentals">Realtor.com<sup>&reg;</sup> Rentals</a>
+				<ul class="global-nav-list-horizontal global-nav-list-style-line">
+					<li>
+						<a href="https://itunes.apple.com/us/app/realtor.com-rentals-apartments/id639619979?ls=1&amp;mt=8" data-omtag="header-menu:mobile:rentals-ios">iOS</a>
+					</li>
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.move.rentals" data-omtag="header-menu:mobile:rentals-android">Android</a>
+					</li>
+				</ul>
+			</div>
+			<div class="global-nav-clearfix"></div>
+		</li>
+		<li>
+			<i class="svg-icon svg-icon-app-doorsteps link-icon"></i>
+			<div class="link-icon-content">
+				<a class="mobile-link-title" href="http://www.realtor.com/mobile/?iid=rdc_hdrmenu_mobile" data-omtag="header-menu:mobile:doorsteps">Doorsteps Swipe<sup>&trade;</sup></a>
+				<ul class="global-nav-list-horizontal global-nav-list-style-line">
+					<li>
+						<a href="https://itunes.apple.com/app/id839814107" data-omtag="header-menu:mobile:ios-swipe">iOS</a>
+					</li>
+				</ul>
+			</div>
+			<div class="global-nav-clearfix"></div>
+		</li>
+	</ul>
+</div>
+          </li>
+          <li id="header-mobile-network-links" class="dropdown global-navbar-mobile-network-sites">
+            <a href="#" class="dropdown-toggle disabled dropdown-toggle-desktop" data-toggle="dropdown" role="button" aria-expanded="false"><span class="global-nav-text-tranform-lower">realtor.com<sup>&reg;</sup></span> NETWORK</a>
+<span class="dropdown-toggle-mobile"><i class="svg-icon svg-icon-angle-down"></i></span>
+<div class="dropdown-menu dropdown-hover dropdown-multicolumn" role="menu">
+	<div class="container dropdown-content-wrapper">
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">
+					Part of realtor.com<sup>&reg;</sup> Network
+				</li>
+				<li>
+					<a href="http://www.realtor.com/international/" data-omtag="header-menu:network:international">International</a>
+				</li>
+				<li>
+					<a href="http://commercialsearch.realtor.com/" data-omtag="header-menu:network:commerical">Commercial</a>
+				</li>
+				<li>
+					<a href="http://www.moving.com"  data-omtag="header-menu:network:moving">Moving.com</a>
+				</li>
+				<li>
+					<a href="http://www.seniorhousingnet.com/" data-omtag="header-menu:network:senior">SeniorHousingNet.com</a>
+				</li>
+				<li>
+					<a href="http://www.doorsteps.com/?utm_source=realtor&amp;utm_medium=top_nav&amp;utm_campaign=rdc_nav/" data-omtag="header-menu:network:doorsteps">Doorsteps</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<ul class="global-nav-list-unstyled">
+				<li class="dropdown-header">
+					News Corp Properties
+				</li>
+				<li><a href="http://www.barrons.com" data-omtag="header-menu:nc:network:barrons">Barron’s</a></li>
+				<li><a href="http://www.wsj.com" data-omtag="header-menu:nc:network:wall-street-journal">Wall Street Journal</a></li>
+				<li><a href="http://www.efinancialnews.com" data-omtag="header-menu:nc:network:financial-news">Financial News</a></li>
+				<li><a href="http://www.mansionglobal.com/" data-omtag="header-menu:nc:network:mansion-global">Mansion Global</a></li>
+				<li><a href="http://nypost.com/" data-omtag="header-menu:nc:network:new-york-post">New York Post</a></li>
+				<li><a href="http://www.marketwatch.com/" data-omtag="header-menu:nc:network:market-watch">Market Watch</a></li>
+				<li><a href="http://www.checkout51.com" data-omtag="header-menu:nc:network:checkout-51">Checkout 51</a></li>
+				<li><a href="http://www.harpercollins.com/" data-omtag="header-menu:nc:network:harper-collins">Harper Collins</a></li>
+				<li><a href="http://www.rea-group.com/" data-omtag="header-menu:nc:network:rea">REA</a></li>
+				<li><a href="http://storyful.com/" data-omtag="header-menu:nc:network:storyful">Storyful</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<input type="hidden" name="hidden_menu_id" id="hidden_menu_id" value="" />
+<input type="hidden" name="site_id" id="site_id" value="rdcV8" />
+<input type="hidden" name="is_bootstrap_present" id="is_bootstrap_present" value="" />
+  <div id="header-nav-overlay" class="full-overlay"></div>
+
+    <div class="page-content">
+        
+<div class="srp-property-records">
+  <div class="container">
+    <div class="property-records-header">
+      <h1 class="text-center">Arizona Real Estate &amp; Homes for Sale</h1>
+      <p class="text-center">Find homes for sale in Arizona, or type an address below:</p>
+      <div class="property-records-search">
+  
+<div class="input-group search-input-group">
+  <input type="text" id="searchBox" class="form-control" placeholder="Address, City, Zip,  Neighborhood or MLS ID"  value='' autocomplete="off">
+  <span class="input-group-btn">
+      <button class="btn btn-primary js-searchButton" type="button">
+        <i class="ra ra-search"></i>
+      </button>
+  </span>
+</div>
+
+<div class="search-autocomplete container-fluid no-show js-autocomplete-dropdow">
+  <div class="no-show found-search-results js-found-search-results">
+    <ul class="list-unstyled">
+    </ul>
+  </div>
+  <div class="autocomplete-error no-show no-found-results js-no-found-results">
+    <div class="hidden-xs hidden-xxs">
+      <p class="h5 autocomplete-title font-normal">We did not find listings for: <strong class="not-found-text"> </strong></p>
+      <p>Please visit our <a href="http://www.realtor.com/international/" target="_blank">International Site <i class="ra ra-external-link"></i></a> for listings outside the United States.</p>
+      <p class="hidden-xs hidden-xxs autocomplete-margin-top">To search for an <strong>MLS Listing Number</strong>, please type a <strong># symbol</strong> in front of the number and click search </p>
+      <hr class="divider">
+      <div class="h5">Check the spelling and formatting:</div>
+      <p>Please check your spelling and use the common location formats listed below.</p>
+      <p>We cannot find listings using informal location names such as "Maui" or "Bay Area".</p>
+      <table class="table table-clear">
+        <tr>
+          <th>By City</th>
+          <td>Columbus, OH</td>
+        </tr>
+        <tr>
+          <th>By ZIP Code</th>
+          <td>43224</td>
+        </tr>
+        <tr>
+          <th>By Neighborhood</th>
+          <td>Old Town, Chicago, IL</td>
+        </tr>
+        <tr>
+          <th>By Street or Address</th>
+          <td>910 E Hamilton Ave, Campbell, CA or Hamilton Ave, Campbell, CA</td>
+        </tr>
+        <tr>
+          <th>By MLS ID</th>
+          <td>#12345 or #QW12345</td>
+        </tr>
+      </table>
+    </div>
+    <div class="hidden-lg hidden-md hidden-sm">
+      Nothing matches <strong class="not-found-text"> </strong>. Please check your spelling and try again.
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    <div class="property-records-content">
+      <div class="row">
+  <div class="col-md-6">
+
+    <h3 class="content-header">Counties in Arizona</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-unstyled">
+              <li><a href="/realestateandhomes-search/Apache-County_AZ">Apache County</a></li>
+              <li><a href="/realestateandhomes-search/Cochise-County_AZ">Cochise County</a></li>
+              <li><a href="/realestateandhomes-search/Coconino-County_AZ">Coconino County</a></li>
+              <li><a href="/realestateandhomes-search/Gila-County_AZ">Gila County</a></li>
+              <li><a href="/realestateandhomes-search/Graham-County_AZ">Graham County</a></li>
+              <li><a href="/realestateandhomes-search/Greenlee-County_AZ">Greenlee County</a></li>
+              <li><a href="/realestateandhomes-search/La-Paz-County_AZ">La Paz County</a></li>
+              <li><a href="/realestateandhomes-search/Maricopa-County_AZ">Maricopa County</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="list-unstyled">
+              <li><a href="/realestateandhomes-search/Mohave-County_AZ">Mohave County</a></li>
+              <li><a href="/realestateandhomes-search/Navajo-County_AZ">Navajo County</a></li>
+              <li><a href="/realestateandhomes-search/Pima-County_AZ">Pima County</a></li>
+              <li><a href="/realestateandhomes-search/Pinal-County_AZ">Pinal County</a></li>
+              <li><a href="/realestateandhomes-search/Santa-Cruz-County_AZ">Santa Cruz County</a></li>
+              <li><a href="/realestateandhomes-search/Yavapai-County_AZ">Yavapai County</a></li>
+              <li><a href="/realestateandhomes-search/Yuma-County_AZ">Yuma County</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 hidden-xs hidden-xxs">
+    <div class="popular-section">
+      <h4 class="content-subheader">Top Cities in Arizona</h4>
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="list-unstyled">
+              <li><a href="/realestateandhomes-search/Tucson_AZ">Tucson For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Phoenix_AZ">Phoenix For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Scottsdale_AZ">Scottsdale For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Mesa_AZ">Mesa For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Prescott_AZ">Prescott For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Yuma_AZ">Yuma For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Lake-Havasu-City_AZ">Lake Havasu City For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Gilbert_AZ">Gilbert For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Peoria_AZ">Peoria For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Kingman_AZ">Kingman For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Surprise_AZ">Surprise For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Chandler_AZ">Chandler For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Bullhead-City_AZ">Bullhead City For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Payson_AZ">Payson For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Glendale_AZ">Glendale For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Queen-Creek_AZ">Queen Creek For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Buckeye_AZ">Buckeye For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Show-Low_AZ">Show Low For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Flagstaff_AZ">Flagstaff For Sale</a></li>
+              <li><a href="/realestateandhomes-search/Green-Valley_AZ">Green Valley For Sale</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="list-unstyled">
+              <li><a href="/apartments/Tucson_AZ">Tucson For Rent</a></li>
+              <li><a href="/apartments/Phoenix_AZ">Phoenix For Rent</a></li>
+              <li><a href="/apartments/Scottsdale_AZ">Scottsdale For Rent</a></li>
+              <li><a href="/apartments/Mesa_AZ">Mesa For Rent</a></li>
+              <li><a href="/apartments/Sierra-Vista_AZ">Sierra Vista For Rent</a></li>
+              <li><a href="/apartments/Yuma_AZ">Yuma For Rent</a></li>
+              <li><a href="/apartments/Chandler_AZ">Chandler For Rent</a></li>
+              <li><a href="/apartments/Tempe_AZ">Tempe For Rent</a></li>
+              <li><a href="/apartments/Gilbert_AZ">Gilbert For Rent</a></li>
+              <li><a href="/apartments/Oro-Valley_AZ">Oro Valley For Rent</a></li>
+              <li><a href="/apartments/Glendale_AZ">Glendale For Rent</a></li>
+              <li><a href="/apartments/Surprise_AZ">Surprise For Rent</a></li>
+              <li><a href="/apartments/Peoria_AZ">Peoria For Rent</a></li>
+              <li><a href="/apartments/Lake-Havasu-City_AZ">Lake Havasu City For Rent</a></li>
+              <li><a href="/apartments/Fountain-Hills_AZ">Fountain Hills For Rent</a></li>
+              <li><a href="/apartments/Martinez-Lake_AZ">Martinez Lake For Rent</a></li>
+              <li><a href="/apartments/Yuma-Proving-Ground_AZ">Yuma Proving Ground For Rent</a></li>
+              <li><a href="/apartments/Prescott_AZ">Prescott For Rent</a></li>
+              <li><a href="/apartments/Prescott-Valley_AZ">Prescott Valley For Rent</a></li>
+              <li><a href="/apartments/Avondale_AZ">Avondale For Rent</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div id="footer" class="global-nav-footer">
+<div class="footer-wrapper-social">
+    <div class="container">
+      <div class="footer-links-social">
+        <ul id="footer-links-social" class="global-nav-list-justified">
+          <li><a href="https://twitter.com/REALTORdotcom" data-omtag="footer:social:tw"><i></i></a></li>
+          <li><a href="https://www.facebook.com/realtor.com" data-omtag="footer:social:fb"><i></i></a></li>
+          <li><a href="https://plus.google.com/+REALTORdotcom/posts" data-omtag="footer:social:gp"><i></i></a></li>
+          <li><a href="https://www.pinterest.com/realtordotcom/" data-omtag="footer:social:pt"><i></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-links-network">
+        <a id="footer-link-houselogic" href="http://www.houselogic.com/?nicmp=hlim%26nichn=footerlink%26niseg=rc" data-omtag="footer:partners:houseLogic"> <i></i> </a>
+        <a id="footer-link-realtoru" href="http://www.realtoru.com/about/" data-omtag="footer:partners:realtorUniv"> <i></i> </a>
+      </div>
+    </div>
+</div>
+<input type="hidden" name="channel_flag" id="channel_flag" value="true" />
+  <div class="footer-wrapper-links-main">
+    <div class="container">
+      <ul id="footer-links-primary" class="global-nav-list-horizontal">
+        <li><a href="http://marketing.move.com/" data-omtag="footer:corp:about">About Us</a></li>
+        <li><a href="http://careers.move.com" data-omtag="footer:corp:careers">Careers</a></li>
+        <li><a href="#" id="global-nav-feedback" data-omtag="footer:corp:feedback">Feedback</a></li>
+        <li><a href="http://news.move.com/" data-omtag="footer:corp:mediaRoom">Media Room</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-wrapper-links-secondary">
+    <div class="container">
+      <ul id="footer-links-secondary" class="global-nav-list-horizontal">
+        <li><a href="http://marketing.move.com/privacy-policy/#oba_anchor" data-omtag="footer:corp:ad-choices">Ad Choices</a></li>
+        <li><a href="http://marketing.realtor.com/advertise/" data-omtag="footer:corp:advertise">Advertise with us</a></li>
+        <li><a href="http://support.realtor.com/#iid=rdc_hdr_realtors_support" data-omtag="footer:corp:agentSupport">Agent support</a></li>
+        <li>
+            <a id="toggle-products" rel="popover" href="javascript:void(0)" data-placement="top" data-popover-content="#footer-popover-products" data-original-title="" title=""> Products </a>
+          <div id="footer-popover-products" class="global-nav-hide footer-popover-content">
+            <ul class="global-nav-list-unstyled">
+              <li><a href="https://www.listhub.com/home.html" data-omtag="footer:products:listHub">ListHub</a></li>
+              <li><a href="http://www.tigerlead.com/" data-omtag="footer:products:tigerlead">TigerLead</a></li>
+              <li><a href="http://www.topproducer.com/" data-omtag="footer:products:topProducer">Top Producer</a></li>
+              <li><a href="http://www.homefair.com/" data-omtag="footer:partners:homeFair">Homefair</a></li>
+              <li><a href="http://www.move.com/" data-omtag="footer:partners:move">Move.com</a></li>
+              <li><a href="http://www.relocation.com/" data-omtag="footer:partners:relocation">Relocation</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a href="http://marketing.move.com/privacy-policy/" data-omtag="footer:corp:privacy">Privacy</a> / <a href="//marketing.move.com/terms-of-service/" data-omtag="footer:corp:terms">Terms</a>
+        </li>
+        <li><a href="http://www.realtor.com/sitemap" data-omtag="footer:corp:sitemap">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-wrapper-copyright">
+    <div class="container">
+      <p id="footer-copyright">
+        &copy;1995-2016 <a href="http://www.realtor.org" data-omtag="footer:corp:nar">National Association of REALTORS<sup>&reg;</sup></a> and <a href="http://www.move.com/">Move, Inc.</a> All rights reserved.<br>
+        realtor.com<sup>&reg;</sup> is the official site of the National Association of REALTORS<sup>&reg;</sup> and is operated by Move, Inc., a subsidiary of News Corp.
+      </p>
+    </div>
+  </div>
+
+</div>
+      <script type="text/javascript">
+        (function(){"use strict";function e(e){return"[object Array]"===o.call(e)}function t(t,i){if(!e(t))return!1;for(var a=0;a<t.length;a++)if(t[a]===i)return!0;return!1}function i(e){return"[object Function]"===o.call(e)}var a=this,n=a.sjl,o=Object.prototype.toString,r=a.document.getElementsByTagName("head")[0],s=function(){this.stack=1,this.container=[],this.callbacks=[],this.injected=[],this.loaded=[],this.instack=[],this.fired=[]};s.prototype.add=function(i){e(this.container[this.stack])||(this.container[this.stack]=[]),e(i)||(i=[i]);for(var a=0;a<i.length;a++)if(!t(this.loaded,i[a])&&!t(this.container[this.stack],i[a])){this.container[this.stack].push(i[a]);var n="Sjl-loaded-"+i[a].replace(/[^a-zA-Z0-9]+/g,"-");e(this.instack[n])||(this.instack[n]=[]),this.instack[n].push(this.stack)}return this},s.prototype.load=function(n,o){var s=this.stack;if(this.loaded[s]=0,i(n)?this.callbacks[s]=n:(this.add(n),this.callbacks[s]=o),!e(this.container[s])||this.container[s].length<1)return void this.fireCallback(s);for(var l=this,d=function(){if(!this.readyState||"loaded"==this.readyState||"complete"==this.readyState||this.cssLoaded===!0){this.onload=this.onreadystatechange=this.onerror=null,l.loaded[this.className]=!0;for(var e=0;e<l.instack[this.className].length;e++){var t=l.instack[this.className][e];l.stackLoaded(t)&&l.fireCallback(t)}}},c=0;c<this.container[s].length;c++){var u=this.container[s][c],h="Sjl-loaded-"+u.replace(/[^a-zA-Z0-9]+/g,"-");if(t(this.injected,this.container[s][c])){if(1==l.loaded[h]&&l.stackLoaded(s))return l.fireCallback(s),!0}else if(this.injected.push(this.container[s][c]),u.toLowerCase().indexOf(".css")>-1){var p=a.document.createElement("link"),f=a.document.getElementsByTagName("script")[0];p.rel="stylesheet",p.href=u,p.className=h,p.media="only x",f.parentNode.insertBefore(p,f),setTimeout(function(){p.media="all",p.cssLoaded=!0,d.call(p)},0)}else{var m=a.document.createElement("script");m.type="text/javascript",m.className=h,m.src=u,m.onload=m.onreadystatechange=m.onerror=d,r.appendChild(m)}}this.stack++},s.prototype.seq=s.prototype.sequence=function(){var e=Array.prototype.slice.call(arguments);if(e.length>0){var t=Array.prototype.shift.call(e);if(i(t))t(),this.seq.apply(this,e);else{var a=this;this.load(t,function(){a.seq.apply(a,e)})}}},s.prototype.noConflict=function(){return a.Sjl=n,this},s.prototype.fireCallback=function(e){!this.fired[e]&&i(this.callbacks[e])&&(this.fired[e]=!0,this.callbacks[e].call())},s.prototype.stackLoaded=function(e){for(var t=0;t<this.container[e].length;t++)if(1!=this.loaded["Sjl-loaded-"+this.container[e][t].replace(/[^a-zA-Z0-9]+/g,"-")])return!1;return!0},a.sjl=new s;var l,d=a.document.getElementsByTagName("script"),c=d[d.length-1];((l=c.dataMain)||(l=c.getAttribute("data-main")))&&a.sjl.load(l)}).call(this);var move=window.move=window.move||{};move.map=move.map||{},move.map.loader={loading:!1,isGoogleMapsLoaded:function(){return void 0!==window.google&&void 0!==window.google.maps&&void 0!==window.google.maps.Map},isMapLoaded:function(){return void 0!==window.move&&void 0!==window.move.map&&void 0!==window.move.map.Component},isMapReportLoaded:function(){return void 0!==window.move&&void 0!==window.move.map&&void 0!==window.move.map.report&&void 0!==window.move.map.report.ReportHelper},isToolsLoaded:function(){return void 0!==window.move&&void 0!==window.move.tools&&void 0!==window.move.tools.Utils},isJQueryLoaded:function(){return void 0!==window.jQuery},initialize:function(e,t){var i,a,n,o,r=this;a=function(){i=["http://ajax.googleapis.com/ajax/libs/jquery/",r.options.version.jquery,"/jquery.min.js"].join(""),sjl.load(i,o)},n=function(){if(r.isGoogleMapsLoaded()===!1){var t=""===e.googleMapsChannel?"":"&channel="+e.googleMapsChannel;""!==e.googleMapsClientId?i=["https://maps.googleapis.com/maps/api/js?v=",e.googleMapsVersion,"&client=",e.googleMapsClientId,t,"&callback=move.map.loader.loadDependencies"].join(""):""!==e.googleMapsApiKey&&(i=["https://maps.googleapis.com/maps/api/js?v=",e.googleMapsVersion,"&key=",e.googleMapsApiKey,t,"&callback=move.map.loader.loadDependencies"].join("")),sjl.load(i)}},o=function(){r.isJQueryLoaded()===!1?a():n()},r.options=e||{},r.options.googleMapsApiKey=void 0===r.options.googleMapsApiKey?"":r.options.googleMapsApiKey,r.options.googleMapsClientId=void 0===r.options.googleMapsClientId?"":r.options.googleMapsClientId,r.options.googleMapsChannel=void 0===r.options.googleMapsChannel?"":r.options.googleMapsChannel,r.options.googleMapsVersion=void 0===r.options.googleMapsVersion?"3":r.options.googleMapsVersion,r.options.version=r.options.version||{},r.options.version.jquery=void 0===r.options.version.jquery?"":r.options.version.jquery,r.options.version.report=void 0===r.options.version.report?"":r.options.version.report,r.options.version.tools=void 0===r.options.version.tools?"":r.options.version.tools,r.options.version.map=void 0===r.options.version.map?"":r.options.version.map,r.options.enabled=r.options.enabled||{},r.options.enabled.jquery=void 0!==r.options.enabled.jquery&&r.options.enabled.jquery,r.options.enabled.report=void 0!==r.options.enabled.report&&r.options.enabled.report,r.options.enabled.tools=void 0!==r.options.enabled.tools&&r.options.enabled.tools,r.options.enabled.map=void 0!==r.options.enabled.map&&r.options.enabled.map,r.loading===!0?t&&r.events.push(t):(r.loading=!0,r.events=[],t&&r.events.push(t),r.options.enabled.jquery===!0?o():n())},loadDependencies:function(){var e=this,t=function(){var e="min",t=window.location.search.toString().toLowerCase();return(t.indexOf("jsmode=dev")>-1||t.indexOf("jsmode=debug")>-1)&&(e="dev"),e},i=[],a=e.options.cdnUrl,n=void 0===e.options.mode||null===e.options.mode?t():e.options.mode,o=e.options.version||{},r=e.options.enabled||{};r.map===!0&&e.isMapLoaded()===!1&&("dev"===n?i.push([[a,"/map/css/move.map-",o.map,".css"].join(""),[a,"/map/js/move.map-",o.map,".js"].join("")]):i.push([[a,"/map/css/move.map-",o.map,".min.css"].join(""),[a,"/map/js/move.map-",o.map,".min.js"].join("")])),r.report===!0&&e.isMapReportLoaded()===!1&&("dev"===n?i.push([[a,"/map/js/move.map.report-",o.report,".js"].join("")]):i.push([[a,"/map/js/move.map.report-",o.report,".min.js"].join("")])),e.events.length>0&&i.push(function(){e.loading=!1;for(var t=0,i=e.events.length;i>t;t++)e.events[t]&&e.events[t]()}),sjl.sequence.apply(sjl,i)}},Array.prototype.indexOf||(Array.prototype.indexOf=function(e){var t=this.length>>>0,i=Number(arguments[1])||0;for(i=0>i?Math.ceil(i):Math.floor(i),0>i&&(i+=t);t>i;i++)if(i in this&&this[i]===e)return i;return-1});var _utils=function(){"use strict";var e=this;return e.guid=function(e){e=void 0===e?16:e;var t=new Array(e+1).join("x");return t.replace(/x/g,function(){return Math.floor(Math.random()*e).toString(e).toUpperCase()})},e.hasValue=function(e){return void 0!==e&&null!==e},e.getValue=function(t,i){var a;return a="Function"===e.getType(t)?void 0===i?t():t(i):t},e.getType=function(e){return!!e&&Object.prototype.toString.call(e).match(/(\w+)\]/)[1]},e.getObjectSize=function(e){var t,i=0;for(t in e)e.hasOwnProperty(t)&&i++;return i},e.objectListToArray=function(e){var t=[];if(e)for(var i in e)e.hasOwnProperty(i)&&t.push(e[i]);return t},e.extend=function(e,t){e=e||{},t=t||{};for(var i in t)t.hasOwnProperty(i)&&(e[i]=t[i]);return e},e.toSingleArray=function(t){var i=[];if(t&&"Array"===e.getType(t))for(var a in t)t.hasOwnProperty(a)&&("Array"===e.getType(t[a])?i=i.concat(e.toSingleArray(t[a])):i.push(t[a]));return i},e.addToEvents=function(e,t){var i=!1;return e&&t.indexOf&&-1===t.indexOf(e)&&(t.push(e),i=!0),i},e.thousandsSeperator=function(t){var i=/(\d+)(\d{3})/;for(t=e.hasValue(t)&&""!==t?t:0,t=t.toString();i.test(t);)t=t.replace(i,"$1,$2");return t},e.abbreviateNumber=function(t){t=e.hasValue(t)&&""!==t?t:0;var i=t.toString(),a="";return t=parseInt(t,10),t>=1e3&&1e6>t?(t=Math.floor(t/1e3),1e3>t?a="k":(t=Math.floor(t/1e3),a="M")):t>=1e6&&(t=Math.floor(t/1e3),t=Math.floor(t/10),t=(t/100).toFixed(2),a="M"),i=t.toString(),i.indexOf(".00")>-1&&(i=i.substr(0,i.indexOf(".00"))),i.indexOf(".")>-1&&"0"===i.substr(i.length-1,1)&&(i=i.substr(0,i.length-1)),i+=a},e.formatPhone=function(e){e=void 0===e?"":e;var t=/^(?:\+?1[\-. ]?)?(?:\(?([0-9]{3})\)?[\-. ]?)?([0-9]{3})[\-. ]?([0-9]{4})$/;if(t.test(e)){var i=e.match(t),a="";return i[1]&&(a+="+1 ("+i[1]+") "),a+=i[2]+"-"+i[3]}return e},e.trim=function(e){return e.replace(/^\s+|\s+$/g,"")},e.trimEnd=function(t){return t&&(t=t.replace(new RegExp(e.escapeRegExp(t)+"*$"),"")),t},e.trimStart=function(t){return t&&(t=t.replace(new RegExp("^"+e.escapeRegExp(t)+"*"),"")),t},e.startsWith=function(e,t){return void 0!==e&&void 0!==e.substring&&void 0!==t&&void 0!==t.length&&t.length>0&&e.substring(0,t.length)===t},e.endsWith=function(e,t){return void 0!==e&&void 0!==e.length&&t.length>0&&e.substring(e.length-t.length,e.length)===t},e.escapeRegExp=function(e){return e&&(e=e.replace(/[.*+?^${}()|[\]\/\\]/g,"\\$0")),e},e.replaceAll=function(e,t,i){return e&&(e=e.replace(new RegExp(t,"g"),i)),e},e.updateUrl=function(t,i){t=t||{},i=void 0===i?window.location.href:i;for(var a in t)t.hasOwnProperty(a)&&(i=e.setQueryValue(a,t[a],i));if("undefined"!=typeof window&&"undefined"!=typeof window.history&&window.history.pushState&&i){var n=i,o=window.location.href,r=[window.location.protocol,"//",window.location.hostname,""===window.location.port?"":":",window.location.port].join("");-1===i.indexOf(r)&&(n=[r,"/"===i[0]?"":"/",i].join("")),n!==o&&window.history.pushState({path:n},"",n)}},e.parseQueryValues=function(e){var t,i={};if(e=void 0===e?"undefined"!=typeof window?window.location.href:"":e){e.indexOf("?")>-1&&(t=e.split("?"),e=t[1]),e.indexOf("#")>-1&&(t=e.split("#"),e=t[0]),t=e.split("&");for(var a in t)if(t.hasOwnProperty(a)){var n=t[a].split("=");i[n[0]]=n[1]}}return i},e.getQueryValue=function(t,i){var a,n;if(i=void 0===i?"undefined"!=typeof window?window.location.href:"":i){n=e.parseQueryValues(i);for(var o in n)if(n.hasOwnProperty(o)&&o===t){a=n[o];break}}return a},e.setQueryValue=function(t,i,a){a=void 0===a?"undefined"!=typeof window?window.location.href:"":a;var n,o,r=e.getQueryValue(t,a),s=a.indexOf("#")>-1?a.split("#")[1]:"",l=a.indexOf("?")>-1?"&":"?",d=a;return r&&r!==i&&t&&i?(n=[t,"=",r].join(""),o=[t,"=",i].join(""),d=d.replace(n,o)):void 0===r&&t&&i&&(""!==s&&(d=d.replace(s,"")),s=""===s?"":["#",s].join(""),d=[d,l,t,"=",i,s].join("")),d},e.parseUri=function(e,t){t=void 0===t||t;for(var i={key:["source","protocol","authority","userInfo","user","password","host","port","relative","path","directory","file","query","anchor"],q:{name:"queryKey",parser:/(?:^|&)([^&=]*)=?([^&]*)/g},parser:{strict:/^(?:([^:\/?#]+):)?(?:\/\/((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?))?((((?:[^?#\/]*\/)*)([^?#]*))(?:\?([^#]*))?(?:#(.*))?)/,loose:/^(?:(?![^:@]+:[^:@\/]*@)([^:\/?#.]+):)?(?:\/\/)?((?:(([^:@]*)(?::([^:@]*))?)?@)?([^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/}},a=i.parser[t?"strict":"loose"].exec(e),n={},o=14;o--;)n[i.key[o]]=a[o]||"";return n[i.q.name]={},n[i.key[12]].replace(i.q.parser,function(e,t,a){t&&(n[i.q.name][t]=a)}),n},e};if("undefined"!=typeof window){var move=window.move=window.move||{};move.tools=move.tools||{},move.tools.Utils=_utils}else"undefined"!=typeof module&&"undefined"!=typeof module.exports&&(module.exports=_utils);var _storage=function(e){"use strict";var t,i,a,n,o,r=this,s=null,l=null;r.options=e||{},r.options.events=r.options.events||{},r.options.defaultStorage=void 0===r.options.defaultStorage?"session":r.options.defaultStorage,r.valid=function(){return null!==s&&null!==l},r.load=function(e,a){var n;return r.valid()&&(n=i(a)?t(e,s):t(e,l)),n},r.save=function(e,t,o,r){var d;a(e)&&a(t)&&(d={type:n(t),expire:void 0===r?void 0:r.toUTCString()},d.value="Object"===d.type?JSON.stringify(t):"Boolean"===d.type?t===!0?"true":"false":"Date"===d.type?t.toUTCString():"Array"===d.type?JSON.stringify(t):t.toString(),i(o)?s.setItem(e,JSON.stringify(d)):l.setItem(e,JSON.stringify(d)))},r.list=function(e){var t,a={};if(r.valid()&&(t=i(e)?s:l))for(var n in t)t.hasOwnProperty(n)&&(a[n]=JSON.parse(t[n]));return a},r.remove=function(e,t){r.valid()&&(i(t)?s.removeItem(e):l.removeItem(e))},r.clear=function(e){r.valid()&&(i(e)?s.clear():l.clear())},o=function(){s="undefined"!=typeof window&&"undefined"!=typeof window.localStorage?window.localStorage:null,l="undefined"!=typeof window&&"undefined"!=typeof window.sessionStorage?window.sessionStorage:null},t=function(e,t){var i,a,n=new Date,o=t.getItem(e);return o&&(o=JSON.parse(o),o.value&&(i=o.value),o.expire&&(a=new Date(o.expire),n>a&&(t.removeItem(e),i=void 0)),void 0!==i&&("Object"===o.type?i=JSON.parse(i):"Number"===o.type?i=Number(i):"Boolean"===o.type?i="true"===i:"Date"===o.type?i=new Date(i):"Array"===o.type&&(i=JSON.parse(i)))),i},i=function(e){return void 0===e?"local"===r.options.defaultStorage:e},a=function(e){return void 0!==e&&null!==e},n=function(e){return!!e&&Object.prototype.toString.call(e).match(/(\w+)\]/)[1]},o()};if("undefined"!=typeof window){var move=window.move=window.move||{};move.tools=move.tools||{},move.tools.Storage=_storage}else"undefined"!=typeof module&&"undefined"!=typeof module.exports&&(module.exports.Storage=_storage);var _cache=function(){"use strict";var e=this;e.data={},e.exists=function(t,i,a){var n=!1;return t&&(n=void 0!==e.data[t],i&&n===!0&&(n=void 0!==e.data[t][i],a&&n===!0&&(n=void 0!==e.data[t][i][a]))),n},e.remove=function(t){e.data[t]&&(e.data[t]=null,delete e.data[t])},e.clear=function(t,i,a){a=a||{},t&&i&&e.exists(t,i)&&(e.data[t][i]=null,e.data[t][i]=a)},e.count=function(t,i){var a,n=0;if(i=i||"items",t&&i&&e.exists(t,i)){a=e.data[t][i];for(var o in a)a.hasOwnProperty(o)&&n++}return n},e.toArray=function(t,i){var a,n=[];if(i=i||"items",t&&i&&e.exists(t,i)){a=e.data[t][i];for(var o in a)a.hasOwnProperty(o)&&n.push(a[o])}return n},e.setup=function(t,i){e.remove(t),i&&(e.data[t]=i)}};if("undefined"!=typeof window){var move=window.move=window.move||{};move.tools=move.tools||{},move.tools.Cache=_cache}else"undefined"!=typeof module&&"undefined"!=typeof module.exports&&(module.exports.Cache=_cache);
+      </script>
+    <script type='text/javascript'>
+  window.sonobi_data = null;
+  window.ads_library = window.ads_library || {
+    initialized: false
+  };
+
+  //Sonobi JSONP callback function that sets the key-values
+  var sonobiCallback = function(response) {
+    window.sonobi_data = response;
+  };
+
+  window.Krux=window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+</script>
+
+  <script async="async" src="http://cdn.krxd.net/controltag?confid=J7KSr-4q"></script>
+  <script async="async" src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+          <script src="http://static2.rdc-next.rdc.moveaws.com/assets/soasta-99494647a4401e6884c013735912a4ae0c746115d1bc8c36bb41a1026ac32a63.js"></script>
+    <script src="http://static1.rdc-next.rdc.moveaws.com/assets/application_critical-18a28946e7406b8cc41d907ffb7a92aa52cabc1959c8c51c01e073eab09ce6ca.js" data-turbolinks-track="true"></script>
+    <script src="http://static2.rdc-next.rdc.moveaws.com/assets/property_records_critical-0d89804d3a414c16b139826f9f38fcf05cc88e8d4130deb0d2253f44a9c67114.js" data-turbolinks-track="true"></script>
+    
+        <script src="//dy0wsww1w6so8.cloudfront.net/assets/application-b7c9fa2be812172840ce5c53b3d62cebdee21c5c8434991ee183b640c420bb47.js"></script>
+    <script src="//d1v9hyvpzys6td.cloudfront.net/v1/js/raas-static-v8.js"></script>
+
+    <script src="//assets.adobedtm.com/faebb50624175676cb77dee13f41dc903c81f27e/satelliteLib-55d21e8caa3d58b6207a9d1707e7dce9f3f19a44.js"></script>
+    
+  </body>
+  
+
+  <div id="modal-container"></div>
+</html>

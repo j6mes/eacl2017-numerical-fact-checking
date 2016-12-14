@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,400,600,700|Lato:400,700" rel="stylesheet" type="text/css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:site_name" content="Television Academy" />
+<meta property="og:url" content="http://www.emmys.com/events/68th-emmy-nominations-announcement" />
+<meta property="og:image" content="http://www.emmys.com/sites/default/files/marquees/68th-nominations-webcast-1180x520.jpg" />
+<link rel="shortcut icon" href="http://www.emmys.com/sites/all/themes/emmys/favicon-1.ico" type="image/vnd.microsoft.icon" />
+<meta property="og:title" content="68th Emmy Nominations Announcement" />
+<meta property="og:type" content="article" />
+<meta name="description" content="68th Emmy Nominations Announcement" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.emmys.com/events/68th-emmy-nominations-announcement" />
+<link rel="shortlink" href="http://www.emmys.com/node/349621" />
+  <title>68th Emmy Nominations Announcement | Television Academy</title>
+  <link type="text/css" rel="stylesheet" href="http://www.emmys.com/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.emmys.com/sites/default/files/css/css_DMOrN0f5gxvHVX_rm4DLC9ht1EqbIKYHmSDnlDVJJIU.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.emmys.com/sites/default/files/css/css_FWNi90T1R96s2dFzdt3zfQRn4G3vGsuOAqQmcPzEkDE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.emmys.com/sites/default/files/css/css_vHgrDnxfkn93DXjD6pmjbCyiFrCLHwc1Bti3rfDctR4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.emmys.com/sites/default/files/css/css_UK258JPZ6ZKrEIfflY8DqwStQa4XgxKRMjtweC-pp1k.css" media="all" />
+
+  <!--[if lt IE 9]>
+    <link href="/sites/all/themes/emmys/css/ie.css" rel="stylesheet" type="text/css" media="screen">
+  <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script type="text/javascript" src="/sites/all/themes/emmys/js/html5/html5.js"></script>
+    <script type="text/javascript" src="/sites/all/themes/emmys/js/PIE.js"></script>
+  <![endif]-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")</script>
+<script src="http://www.emmys.com/sites/default/files/js/js_3TykeRWpejhD4-J3vdlaNXdULg9xhOZhbsppK0o2bUs.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_2mOPNig5gpfY3GTAhQMNJhiPks-L0O8fV8LjOFI2Bxo.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_FohWBqgVO5CoQAhmwUERdd15ww3JYycQ9zByJpl9Xw0.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_zu87nJ1_EMcMe4MXUK7bsjCsbMmk2ek_IWb3BhP5AT0.js"></script>
+<script src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_44Q-jH4R-kluDwpXm_7a6QXL8Wc9xRdmVF_eeUG7MYY.js"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-9379389-3"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="http://www.emmys.com/sites/default/files/js/js_VdFgnTPvD0XmQ2iHwebmxWSMvWrsRRFU3BjX31jJv8g.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_pONuHkskr0IBVENxcYJ_osECOGEVbRy0DomNLW0Yl0s.js"></script>
+<script src="http://www.emmys.com/sites/default/files/js/js_vkD102GlRUVdcXtWvpiY-Cp5XZ0NXRbTNF5V7lvklm4.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"emmys","theme_token":"-5rKATvz6hg-I2WcTfetQc-JPV1p6dK2EdWPw3zdaXo","js":{"https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.7.1\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/misc\/jquery.form.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/custom\/archives_all\/js\/archive_video.js":1,"sites\/all\/modules\/custom\/members_helper\/members_helper.js":1,"sites\/all\/themes\/bootstrap\/js\/progress.js":1,"http:\/\/admin.brightcove.com\/js\/BrightcoveExperiences.js":1,"sites\/all\/modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/all\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"sites\/all\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"misc\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/hide_submit\/hide_submit.js":1,"sites\/all\/themes\/emmys\/js\/bootstrap.min.js":1,"sites\/all\/themes\/emmys\/js\/jquery.lazyload.min.js":1,"sites\/all\/themes\/emmys\/js\/flexslider\/jquery.flexslider-min.js":1,"sites\/all\/themes\/emmys\/js\/jquery.history.js":1,"sites\/all\/themes\/emmys\/js\/script.js":1,"sites\/all\/themes\/emmys\/js\/raspond.js":1,"sites\/all\/themes\/emmys\/js\/html5shiv.js":1,"sites\/all\/themes\/emmys\/js\/bootstrap-select.min.js":1,"sites\/all\/themes\/emmys\/js\/bootstrap-multiselect.js":1,"sites\/all\/themes\/emmys\/js\/uniform\/jquery.uniform.min.js":1,"sites\/all\/themes\/emmys\/js\/jquery.colorbox-min.js":1,"sites\/all\/themes\/emmys\/js\/scroller\/core.js":1,"sites\/all\/themes\/emmys\/js\/scroller\/touch.js":1,"sites\/all\/themes\/emmys\/js\/scroller\/scrollbar.js":1,"sites\/all\/themes\/emmys\/js\/modernizr.js":1,"sites\/all\/themes\/emmys\/js\/main.js":1,"sites\/all\/themes\/emmys\/js\/custom.js":1,"sites\/all\/themes\/emmys\/js\/backstage-live.js":1,"sites\/all\/themes\/emmys\/js\/foundation.js":1,"sites\/all\/themes\/emmys\/js\/swiper.jquery.min.js":1,"sites\/all\/themes\/emmys\/js\/archives.js":1,"sites\/all\/themes\/emmys\/js\/bsl.js":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap_ajax_view.js":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap_ajax.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/custom\/archives_all\/css\/listnav.css":1,"sites\/all\/modules\/custom\/archives_all\/css\/archive_highlights.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/custom\/emmys_admin\/top-button.css":1,"sites\/all\/modules\/contrib\/entityreference_live_preview\/entityreference_live_preview.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/freepager\/freepager.css":1,"sites\/all\/modules\/contrib\/video_filter\/video_filter.css":1,"sites\/all\/modules\/contrib\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/views_slideshow\/views_slideshow.css":1,"sites\/all\/themes\/emmys\/plugins\/layouts\/ammys\/events\/events_post.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/fonts\/font-awesome\/css\/font-awesome.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/bootstrap.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/base.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/default.css":1,"sites\/all\/modules\/contrib\/tb_megamenu\/css\/styles\/black.css":1,"sites\/all\/modules\/contrib\/hide_submit\/hide_submit.css":1,"sites\/all\/themes\/emmys\/css\/media-q.css":1,"sites\/all\/themes\/emmys\/css\/bootstrap.css":1,"sites\/all\/themes\/emmys\/css\/bootstrap-select.min.css":1,"sites\/all\/themes\/emmys\/css\/flexslider.css":1,"sites\/all\/themes\/emmys\/css\/uniform.default.css":1,"sites\/all\/themes\/emmys\/css\/swiper.min.css":1,"sites\/all\/themes\/emmys\/css\/scrollbar.css":1,"sites\/all\/themes\/emmys\/css\/colorbox.css":1,"sites\/all\/themes\/emmys\/css\/global.css":1,"sites\/all\/themes\/emmys\/css\/style-desktop.css":1,"sites\/all\/themes\/emmys\/css\/style.css":1,"sites\/all\/themes\/emmys\/css\/style2.css":1,"sites\/all\/themes\/emmys\/css\/custom.css":1,"sites\/all\/themes\/emmys\/css\/style3.css":1,"sites\/all\/themes\/emmys\/css\/style4.css":1,"sites\/all\/themes\/emmys\/css\/style5.css":1,"sites\/all\/themes\/emmys\/css\/goldenson-theater.css":1,"sites\/all\/themes\/emmys\/css\/maintenance.css":1,"sites\/all\/themes\/emmys\/css\/maintenance-bsl.css":1,"sites\/all\/themes\/emmys\/css\/academy.css":1,"sites\/all\/themes\/emmys\/css\/search.css":1,"sites\/all\/themes\/emmys\/css\/videos.css":1,"sites\/all\/themes\/emmys\/css\/marquee.css":1,"sites\/all\/themes\/emmys\/css\/bsl-custom.css":1,"sites\/all\/themes\/emmys\/css\/bsl.css":1,"sites\/all\/themes\/emmys\/css\/reskin.css":1,"sites\/all\/themes\/emmys\/css\/foundation.css":1,"sites\/all\/themes\/emmys\/css\/archives.css":1,"sites\/all\/themes\/emmys\/css\/archives_node.css":1,"sites\/all\/themes\/emmys\/css\/archives_basic.css":1,"sites\/all\/themes\/emmys\/css\/archives_integration.css":1,"sites\/all\/themes\/emmys\/css\/events.css":1}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:f6a741cd7726f2ba4349a84e69053b0e":{"view_name":"related","view_display_id":"panel_pane_2","view_args":"349621","view_path":"node\/349621","view_base_path":"node\/349621","view_dom_id":"f6a741cd7726f2ba4349a84e69053b0e","pager_element":0}}},"hide_submit":{"hide_submit_status":true,"hide_submit_method":"disable","hide_submit_css":"hide-submit-disable","hide_submit_abtext":"","hide_submit_atext":"","hide_submit_hide_css":"hide-submit-processing","hide_submit_hide_text":"Processing...","hide_submit_hide_fx":false,"hide_submit_reset_time":5000},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"urlIsAjaxTrusted":{"\/events\/68th-emmy-nominations-announcement":true},"mobile":{"desktop_domain":"http:\/\/www.emmys.com\/","mobile_domain":"http:\/\/m.emmys.com\/"}});</script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-349621 node-type-events events-post " >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <header class="main-header">
+    <div class="container">
+
+		<!-- START: div#header_top1 -->
+		<div id="header_top1">
+
+      <div class="region-left-logo">
+        <a href="/" title="Emmys Home" class="tv-academy-logo">Television Academy</a>
+  			  				  <div class="region region-topleft">
+    <div id="block-block-9" class="block block-block pull-left offset1 span2">
+  <div class="content">
+    <p> </p>
+  </div>
+</div>
+  </div>
+  			      </div>
+
+		  		  <div class="logo-and-sitename">
+			<h1 id="site-name">
+			  <a href="/" title="Emmys Home" class="brand">Television Academy</a>
+			</h1>
+			</div>
+		  
+							  <div class="region region-topright">
+    <div id="block-block-10" class="block block-block pull-right">
+  <div class="content">
+    <div id="social_reveal1">
+<div id="social_image1">Social Icons</div>
+<div id="social_reveal_content1">
+<h2>Social Connect</h2>
+<ul class="social1"><li class="social_facebook1"><a href="https://www.facebook.com/televisionacad" target="_blank" title="Opens a new window to the Television Academy Facebook page"><img src="/sites/all/themes/emmys/images/social-facebook1.png" alt="Facebook" /></a></li>
+<li class="social_twitter1"><a href="https://www.twitter.com/televisionacad" target="_blank" title="Opens a new window to the Television Academy Twitter page"><img src="/sites/all/themes/emmys/images/social-twitter1.png" alt="Twitter" /></a></li>
+<li class="social_pinterest1"><a href="http://www.pinterest.com/televisionacad" target="_blank" title="Opens a new window to the Television Academy Pinterest page"><img src="/sites/all/themes/emmys/images/social-pinterest1.png" alt="Pinterest" /></a></li>
+<li class="social_youtube1"><a href="http://www.youtube.com/user/PrimetimeEmmys" target="_blank" title="Opens a new window to the Television Academy Youtube page"><img src="/sites/all/themes/emmys/images/social-youtube1.png" alt="Youtube" /></a></li>
+<li class="social_instagram1"><a href="http://instagram.com/televisionacad" target="_blank" title="Opens a new window to the Television Academy Instagram page"><img src="/sites/all/themes/emmys/images/social-instagram.png" alt="Instagram" /></a></li>
+<li class="social_google1"><a href="http://tvtag.com/primetimeemmys" target="_blank" title="Opens a new window to the Television Academy TVTag page"><img src="/sites/all/themes/emmys/images/social-tvtag.png" alt="TVTag" /></a></li>
+<li class="social_tumblr1"><a href="http://televisionacad.tumblr.com" target="_blank" title="Opens a new window to the Television Academy Tumblr page"><img src="/sites/all/themes/emmys/images/social-tumblr1.png" alt="Tumblr" /></a></li>
+</ul></div>
+</div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search pull-right span2">
+  <div class="content">
+    <form class="form-search content-search" action="/events/68th-emmy-nominations-announcement" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="input-append"><input title="Enter the terms you wish to search for." class="search-query span2 form-text" placeholder="Search" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><button type="submit" class="btn"><i class="icon-search"></i><span class="element-invisible">Search</span></button></div><button class="element-invisible btn btn-primary form-submit" id="edit-submit" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form-5eYMKiYzwwuLhU1qWI_pmmZMGY9NSu7aH_3ioLfjfho" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+</div>
+  </div>
+			
+		</div>
+		<!-- END: div#header_top1 -->
+
+                <nav role="navigation" class="primary-nav">
+               <div class="region region-header">
+    <div id="block-tb-megamenu-main-menu" class="block block-tb-megamenu">
+  <div class="content">
+    <div  data-duration="400" data-delay="200" id="tb-megamenu-main-menu" class="tb-megamenu tb-megamenu-main-menu style-black animate fading">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="icon-reorder"></i>
+    </button>
+    <div class="nav-collapse collapse">
+    <ul  class="tb-megamenu-nav nav level-0 items-11">
+  <li  data-id="217" data-level="1" data-type="menu_item" data-class="first" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega first">
+  <a href="/" class="" >
+        Home          </a>
+  </li>
+
+<li  data-id="789" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/awards" class="dropdown-toggle" >
+        Awards          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---awards-" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-awards-" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/awards/nominations" class="megamenu-bold-item">Nominations</a></li>
+<li class="leaf"><a href="/awards/nominees-winners">Nominees/Winners</a></li>
+<li class="leaf"><a href="/awards/nominations/award-search">Emmy Awards Search</a></li>
+<li class="leaf"><a href="/news/awards-news">Awards News</a></li>
+<li class="last leaf"><a href="/downloads">All 2016 Nominees/Winners (printable lists)</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-2" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---primetime" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-primetime" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/awards/emmys" class="megamenu-bold-item">Emmy Awards</a></li>
+<li class="leaf"><a href="/awards/emmys/show">Emmy Awards Show</a></li>
+<li class="leaf"><a href="/awards/backstage-live/2016">Backstage LIVE!</a></li>
+<li class="leaf"><a href="/awards/emmys/creative-arts-emmys">Creative Arts Emmys Show</a></li>
+<li class="leaf"><a href="/news/emmys-calendar/emmy-awards-industry-calendar">2016 Industry Calendar</a></li>
+<li class="leaf"><a href="/awards/governors-award">Governors Award</a></li>
+<li class="leaf"><a href="/awards/emmys/engineering-emmys">Engineering Emmy Awards</a></li>
+<li class="leaf"><a href="/downloads" title="Forms for membership application, submission, and other commonly-used functions">Forms &amp; Downloads</a></li>
+<li class="last leaf"><a href="/press">Press Portal</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-3" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---la-area-e" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-la-area-e" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/la">Los Angeles Area Emmy Awards</a></li>
+<li class="leaf"><a href="/news/awards-news/68th-los-angeles-area-emmy-award-nominations-announced">68th Los Angeles Area Emmy Awards</a></li>
+<li class="leaf"><a href="http://emmys.com/sites/default/files/Downloads/68th-Los-Angeles-Area-Emmy-Awards-Winners-v1.pdf" target="_blank">- Winners</a></li>
+<li class="leaf"><a href="/news/press-releases/68th-los-angeles-area-emmy-awards-announces-individual-achievement-winners">- Winners: Individual Achievement</a></li>
+<li class="leaf"><a href="/events/68th-los-angeles-area-emmy-awards">- Webcast Replay</a></li>
+<li class="leaf"><a href="/news/awards-news/68th-los-angeles-area-emmy-award-nominations-announced">- Nominees</a></li>
+<li class="leaf"><a href="/news/awards/2016-2017-los-angeles-area-emmy-awards-calendar">2015-2016 Calendar</a></li>
+<li class="last leaf"><a href="http://www.emmys.com/sites/default/files/Downloads/68th-LAA-emmy-awards-rules-procedures-v2.pdf" target="_blank">Rules and Procedures</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-4" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---hall-of-f" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-hall-of-f" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/awards/hall-of-fame" class="megamenu-bold-item">Hall of Fame</a></li>
+<li class="last leaf"><a href="/awards/hall-of-fame-honorees">Honorees</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="1" id="tb-megamenu-column-5" class="tb-megamenu-column span2  mega-col-nav  hidden-collapse">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---televisio" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-televisio" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/awards/honors" class="megamenu-bold-item">Television Academy Honors</a></li>
+<li class="leaf"><a href="/events/ninth-annual-television-academy-honors">Ninth Annual Honors Celebration</a></li>
+<li class="leaf"><a href="/awards/television-academy-honors/industry-info">Industry Info</a></li>
+<li class="last leaf"><a href="/awards/honors/summary">Complete Honoree List</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-6" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-awards-megamenu---college-t" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-awards-megamenu-college-t" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/foundation/programs/cta">College Television Awards</a></li>
+<li class="leaf"><a href="/events/37th-college-television-awards">2016 Awards Replay</a></li>
+<li class="leaf"><a href="/foundation/programs/cta/winners">2016 Winners</a></li>
+<li class="last leaf"><a href="/foundation/programs/cta/nominees">2016 Nominees</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="791" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/news" class="dropdown-toggle" >
+        News & Magazine          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-7" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-news-latest" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-news-latest" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/news" class="megamenu-bold-item">News</a></li>
+<li class="leaf"><a href="/news/awards-news">Awards News</a></li>
+<li class="leaf"><a href="/news/academy-news">Academy News</a></li>
+<li class="leaf"><a href="/news/industry-news">Industry News</a></li>
+<li class="leaf"><a href="/news/member-news">Member News</a></li>
+<li class="last leaf"><a href="/news/press-releases">Press Releases</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-8" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-news-online-origi" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-news-online-origi" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/news/online-originals" class="megamenu-bold-item">Online Originals</a></li>
+<li class="leaf"><a href="/news/online-originals">Articles</a></li>
+<li class="leaf"><a href="/video-gallery/crew-call">Crew Call</a></li>
+<li class="last leaf"><a href="/video-gallery/taking-action">Taking Action</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-9" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-news-magazine" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-news-magazine" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/emmy-magazine" class="megamenu-bold-item">Emmy Magazine</a></li>
+<li class="leaf"><a href="/emmy-magazine/features">Features</a></li>
+<li class="leaf"><a href="/emmy-magazine/in-the-mix">In The Mix</a></li>
+<li class="leaf"><a href="/emmy-magazine/subscribe">Subscribe</a></li>
+<li class="leaf"><a href="/emmy-magazine/advertising">Advertising</a></li>
+<li class="leaf"><a href="/emmy-magazine/back-issues">Digital &amp; Back Issues</a></li>
+<li class="last leaf"><a href="http://televisionacademy.com/emmy-magazine/staff">Magazine Staff</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-10" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-news-memoriam" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-news-memoriam" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first last leaf"><a href="/in-memoriam" class="megamenu-bold-item">In Memoriam</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-11" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--400d591a5386b5bcf25cf00db8edca83" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-400d591a5386b5bcf25cf00db8edca83" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-news-current-issue view-id-megamenu_news_current_issue view-display-id-block view-dom-id-419991b46399d1b163ca768a98c393ae">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    
+<div>
+  <a href="/emmy-magazine">
+  <div class="feature_img"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_megamenu/public/Cover-9-600x785.jpg?itok=3JNp_JuA" alt="" /></div>  <div class="current_issue_info">Current Issue No. 9, <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-01-01T00:00:00-08:00">2016</span></div>  </a>
+</div>
+
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="788" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/photos" class="dropdown-toggle" >
+        Photos          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-12" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-photos-latest" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-photos-latest" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/photos" class="megamenu-bold-item">Latest Photos</a></li>
+<li class="leaf"><a href="/gallery/Emmy-Awards">Emmy Awards</a></li>
+<li class="leaf"><a href="/gallery/Creative-Arts-Emmys">Creative Arts Emmys</a></li>
+<li class="leaf"><a href="/gallery/Hall-Of-Fame">Hall of Fame</a></li>
+<li class="leaf"><a href="/gallery/Red-Carpet">Red Carpet</a></li>
+<li class="leaf"><a href="/gallery/Governors-Ball">Governors Ball</a></li>
+<li class="last leaf"><a href="/gallery/Events">Events</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="9" data-hidewcol="" id="tb-megamenu-column-13" class="tb-megamenu-column span9  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--56ba9079d055d83e346dd1e78a06c3ab" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-56ba9079d055d83e346dd1e78a06c3ab" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-photos-latest-photos view-id-megamenu_photos_latest_photos view-display-id-block view-dom-id-55f1ce76790c075abfd923dabc52986f">
+            <div class="view-header">
+      <h2>Latest in Photos</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    
+<div class="f_image"><div class="field-content"><a href="/gallery/379821"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/photos-gallery/jeff-boslet-kate-holt-900x600.jpg?itok=iqtvmN9y" alt="Jeff Bosley and Kate Holt at the Got Your Six &amp;quot;Storytellers&amp;quot; event at the Television Academy&amp;#039;s Wolf Theatre at the Saban Media Center on Tuesday, November 1, 2016, in North Hollywood, California." title="Jeff Bosley and Kate Holt at the Got Your Six &amp;quot;Storytellers&amp;quot; event at the Television Academy&amp;#039;s Wolf Theatre at the Saban Media Center on Tuesday, November 1, 2016, in North Hollywood, California." /></a></div></div><div class="f_title"><span><a href="/gallery/379821">Got Your Six Storytellers, 2016</a></span></div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+    
+<div class="f_image"><div class="field-content"><a href="/gallery/379587"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/photos-gallery/sam-bolvin-900x600.jpg?itok=sniklU9P" alt="Sam Bolvin speaks at the 68th Engineering Emmy Awards, October 28, 2016 at Loews Hollywood Hotel in Los Angeles, California." title="Sam Bolvin speaks at the 68th Engineering Emmy Awards, October 28, 2016 at Loews Hollywood Hotel in Los Angeles, California." /></a></div></div><div class="f_title"><span><a href="/gallery/379587">68th  Engineering Emmys</a></span></div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+    
+<div class="f_image"><div class="field-content"><a href="/gallery/378691"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/photos-gallery/Key-and-Peele-900x600.jpg?itok=_jSO52ar" alt="Cast and producers of Key and Peele" title="Cast and producers of Key and Peele" /></a></div></div><div class="f_title"><span><a href="/gallery/378691">Modern Magic</a></span></div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="787" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/videos" class="dropdown-toggle" >
+        Videos          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-14" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-videos-latest" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-videos-latest" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/videos" class="megamenu-bold-item">Latest Videos</a></li>
+<li class="leaf"><a href="/video-gallery/emmy-awards">Emmy Awards</a></li>
+<li class="leaf"><a href="/video-gallery/68th-emmy-awards-show">- Presentations/Acceptance</a></li>
+<li class="leaf"><a href="/video-gallery/emmy-awards-thank-you-cam">- Thank You Cam</a></li>
+<li class="leaf"><a href="/video-gallery/backstage-live">- Backstage LIVE!</a></li>
+<li class="leaf"><a href="/video-gallery/press-room">- Press Room</a></li>
+<li class="leaf"><a href="/video-gallery/Creative-Arts-Emmys">Creative Arts Emmys</a></li>
+<li class="leaf"><a href="/video-gallery/creative-arts-emmy-awards-show">- Complete Shows</a></li>
+<li class="leaf"><a href="/video-gallery/creative-arts-thank-you-cam">- Thank You Cam</a></li>
+<li class="leaf"><a href="/video-gallery/me-in-30-seconds">- Me in 30 Seconds</a></li>
+<li class="leaf"><a href="/video-gallery/2016-nominee-sizzle">2016 Nominee Sizzle</a></li>
+<li class="leaf"><a href="http://www.emmys.com/video-gallery/crew-call">Crew Call</a></li>
+<li class="leaf"><a href="/video-gallery/Events">Events</a></li>
+<li class="leaf"><a href="/video-gallery/emmy-magazine">Emmy Magazine</a></li>
+<li class="leaf"><a href="/video-gallery/my-emmy-moment">My Emmy Moment</a></li>
+<li class="last leaf"><a href="/video-gallery">All Videos</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="9" data-hidewcol="" id="tb-megamenu-column-15" class="tb-megamenu-column span9  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--de2b776132576e6c4ad8e7eec4c368f8" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-de2b776132576e6c4ad8e7eec4c368f8" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-videos-latest-videos view-id-megamenu_videos_latest_videos view-display-id-block view-dom-id-009ffd5fb83e1dee3c72c0023b44d1dd">
+            <div class="view-header">
+      <h2>Latest in Videos</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-high-quality-still-image">        <div class="field-content"><div id="file-101341" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/101341">kirsten-vangsness-900x600.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/68th-engineering-emmy-awards"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/kirsten-vangsness-900x600.jpg?itok=4FcTsJaG" alt="" /></a>  </div>
+
+  
+</div>
+  </div>  </div>  
+  <div>        <span><a href="/video/68th-engineering-emmy-awards">68th Engineering Emmy Awards</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-high-quality-still-image">        <div class="field-content"><div id="file-100561" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/100561">TA_CC_DorendaMoore.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/crew-call-dorenda-moore"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/TA_CC_DorendaMoore.jpg?itok=w4k-Hhgs" alt="" /></a>  </div>
+
+  
+</div>
+  </div>  </div>  
+  <div>        <span><a href="/video/crew-call-dorenda-moore">Crew Call: Dorenda Moore</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-field-high-quality-still-image">        <div class="field-content"><div id="file-99371" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/99371">CAE_16_InMemoriam.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/2016-creative-arts-emmy-awards-memoriam"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/CAE_16_InMemoriam.jpg?itok=xdRqNi0P" alt="" /></a>  </div>
+
+  
+</div>
+  </div>  </div>  
+  <div>        <span><a href="/video/2016-creative-arts-emmy-awards-memoriam">2016 Creative Arts Emmy Awards: In Memoriam</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="783" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/events" class="dropdown-toggle" >
+        Events          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-16" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-panels-panels" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-panels-panels" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first last leaf"><a href="/events" class="megamenu-bold-item">Events</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-17" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-mega-main-panels-goldenson" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-mega-main-panels-goldenson" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first last leaf"><a href="/events/fyc">For Your Consideration Events</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="8" data-hidewcol="" id="tb-megamenu-column-18" class="tb-megamenu-column span8  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--1875ed16cc606ddaa9fe217a50959645" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-1875ed16cc606ddaa9fe217a50959645" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-panels-latest-events view-id-megamenu_panels_latest_events view-display-id-block view-dom-id-9dfec122c16d16de6eab969549f781e6">
+            <div class="view-header">
+      <h2>Latest Events</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"><a href="/events/animation-161112"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/marquees/event-animation-2016-380x253.jpg?itok=zM9COdzZ" /></a></div>  </div>  
+  <div class="views-field views-field-field-event-type">        <div class="field-content">Panel</div>  </div>  
+  <div>        <span><a href="/events/animation-161112">It&#039;s Not Just a Cartoon</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"><a href="/events/safety-first"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/Peer_Group_380x253.jpg?itok=lqey2rLW" title="160531946" /></a></div>  </div>  
+  <div class="views-field views-field-field-event-type">        <div class="field-content">Panel</div>  </div>  
+  <div>        <span><a href="/events/safety-first">Safety First</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="3081" data-level="1" data-type="menu_item" data-class="academy" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega academy mega-align-justify dropdown">
+  <a href="/academy" class="dropdown-toggle" >
+        Academy          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-19" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--5" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-5" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-5 menu-name-menu-academy-sub-menu parent-mlid-2073 menu-level-1">
+  <ul class="menu nav"><li class="first leaf menu-mlid-2074"><a href="/academy/about" title="About the Television Academy" class="megamenu-bold-item">About the Academy</a></li>
+<li class="leaf menu-mlid-2075"><a href="/news/academy/chairman">From the Chairman</a></li>
+<li class="leaf menu-mlid-3441"><a href="/academy/newdestination">New Destination</a></li>
+<li class="leaf menu-mlid-2076"><a href="/academy/about/history">History</a></li>
+<li class="leaf menu-mlid-2650"><a href="/academy/about/statuette" title="How the Emmy Statuette came to be">The Emmy Statuette</a></li>
+<li class="leaf menu-mlid-2651"><a href="/academy/about/faq" title="Frequently Asked Questions about the Television Academy">Frequently Asked Questions (FAQs)</a></li>
+<li class="leaf menu-mlid-2652"><a href="/contact" title="Address and map, phone numbers and e-mail addresses">Contact Us</a></li>
+<li class="leaf menu-mlid-2653"><a href="/downloads" title="Forms for membership application, submission, and other commonly-used functions">Forms &amp; Downloads</a></li>
+<li class="last leaf menu-mlid-2654"><a href="/academy/about/sister-organizations" title="The National Academy and International Academy">Sister Organizations</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-20" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--6" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-6" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-6 menu-name-menu-academy-sub-menu parent-mlid-2077 menu-level-1">
+  <ul class="menu nav"><li class="first leaf menu-mlid-2078"><a href="/content/organization" class="megamenu-bold-item">Organization</a></li>
+<li class="leaf menu-mlid-2079"><a href="/academy/organization/peer-groups">Peer Groups</a></li>
+<li class="leaf menu-mlid-2655"><a href="/academy/organization/board-governors" title="The Board of Governors">Board of Governors</a></li>
+<li class="leaf menu-mlid-2656"><a href="/academy/organization/executive-committee" title="The Executive Committee">Executive Committee</a></li>
+<li class="leaf menu-mlid-2657"><a href="/academy/organization/committees" title="The Committees">Committees</a></li>
+<li class="leaf menu-mlid-2659"><a href="/academy/organization/executive-staff">Executive Staff</a></li>
+<li class="last leaf menu-mlid-2658"><a href="/academy/organization/careers">Careers</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-21" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--7" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-7" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-7 menu-name-menu-academy-sub-menu parent-mlid-2080 menu-level-1">
+  <ul class="menu nav"><li class="first last leaf menu-mlid-2081"><a href="/academy/sponsors" class="megamenu-bold-item">Corporate Sponsors</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-22" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--8" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-8" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-8 menu-name-menu-academy-sub-menu parent-mlid-2082 menu-level-1">
+  <ul class="menu nav"><li class="first leaf menu-mlid-2083"><a href="/members" class="megamenu-bold-item">Membership</a></li>
+<li class="leaf menu-mlid-8891"><a href="http://members.televisionacademy.com" target="_blank">Become a Member</a></li>
+<li class="last leaf menu-mlid-2084"><a href="/members/how-to-join">How to Join</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-23" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--6ffe2d786b00e7f15a0e95f22f74f18b" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-6ffe2d786b00e7f15a0e95f22f74f18b" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-latest-in-academy view-id-megamenu_latest_in_academy view-display-id-block view-dom-id-aabc7b0f1493fe1f265715663b76a34b">
+            <div class="view-header">
+      <h2>Latest Academy News</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"><a href="/news/academy-news/2016-prime-cuts"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/panelists-laugh-900x600.jpg?itok=Wvd9d0kb" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/news/academy-news/2016-prime-cuts">2016 Prime Cuts</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="785" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega mega-align-justify dropdown">
+  <a href="/foundation" class="dropdown-toggle" >
+        Foundation          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-24" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-foundation-mega-menu---abou" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-foundation-mega-menu-abou" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/foundation/about" class="megamenu-bold-item">About the Foundation</a></li>
+<li class="leaf"><a href="/foundation/board">Foundation Board</a></li>
+<li class="leaf"><a href="/foundation/staff">Foundation Staff</a></li>
+<li class="leaf"><a href="/foundation/council">New Leadership Council</a></li>
+<li class="leaf"><a href="/contact#media-contacts">Media Relations</a></li>
+<li class="last leaf"><a href="/contact">Contact Us</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-25" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-foundation-mega-menu---prog" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-foundation-mega-menu-prog" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/foundation/programs" class="megamenu-bold-item">Programs</a></li>
+<li class="leaf"><a href="http://emmytvlegends.org" target="_blank">Archive of American Television</a></li>
+<li class="leaf"><a href="/foundation/programs/cta">College Television Awards</a></li>
+<li class="leaf"><a href="/foundation/programs/faculty-seminar">Faculty Seminar</a></li>
+<li class="leaf"><a href="/foundation/programs/mister-rogers">Mister Rogers Memorial Scholarship</a></li>
+<li class="leaf"><a href="/internship">Internship Program</a></li>
+<li class="last leaf"><a href="/foundation/programs/visiting-professionals">Visiting Professionals</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-26" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-foundation-mega-menu---news" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-foundation-mega-menu-news" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/foundation/news" class="megamenu-bold-item">Foundation News</a></li>
+<li class="leaf"><a href="/foundation/auction">Online Auction</a></li>
+<li class="leaf"><a href="/foundation/emmys-golf-classic">Emmys Golf Classic</a></li>
+<li class="last leaf"><a href="https://secure.jotformpro.com/form/51595204562152" target="_blank">Donate Now</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="2" data-hidewcol="" id="tb-megamenu-column-27" class="tb-megamenu-column span2  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu--menu-foundation-mega-menu---supp" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-menu-foundation-mega-menu-supp" class="block block-menu">
+  <div class="content">
+    <ul class="menu nav"><li class="first leaf"><a href="/academy/newdestination" class="megamenu-bold-item">Support us</a></li>
+<li class="leaf"><a href="/academy/newdestination">New Destination</a></li>
+<li class="leaf"><a href="/academy/newdestination/take-your-seat">Take Your Seat!</a></li>
+<li class="last leaf"><a href="/contact">Contact Us</a></li>
+</ul>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="1" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-28" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--d3eb1fe208d17594fec5c8323c34edeb" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-d3eb1fe208d17594fec5c8323c34edeb" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-latest-in-foundation view-id-megamenu_latest_in_foundation view-display-id-block view-dom-id-5437c302e8b165af138726b2adeff8b2">
+            <div class="view-header">
+      <h2>Latest Academy News</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/news/foundation-news/2016-summer-networking-soiree">2016 Summer Networking Soiree</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+
+<li  data-id="9601" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega">
+  <a href="http://emmytvlegends.org/" class=""     target="_blank"
+    >
+        Archives          </a>
+  </li>
+
+<li  data-id="790" data-level="1" data-type="menu_item" data-class="last" data-xicon="" data-caption="" data-alignsub="justify" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega last mega-align-justify dropdown">
+  <a href="/members" class="dropdown-toggle" >
+        Members          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="row-fluid">
+  <div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-29" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--9" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-9" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-9 menu-name-menu-members-megasubmenu parent-mlid-2086 menu-level-1">
+  <ul class="menu nav"><li class="first leaf menu-mlid-2087"><a href="/members" class="megamenu-bold-item">Member Home</a></li>
+<li class="leaf menu-mlid-8886"><a href="http://members.televisionacademy.com" target="_blank">Become a Member</a></li>
+<li class="leaf menu-mlid-2088"><a href="/members/how-to-join">How to Join</a></li>
+<li class="leaf menu-mlid-3228"><a href="/academy/organization/peer-groups" title="Peer Groups and requirements for membership">Peer Group Requirements</a></li>
+<li class="leaf menu-mlid-2089"><a href="/members/benefits">Membership Benefits</a></li>
+<li class="leaf menu-mlid-2094"><a href="/members/film-screenings">Film Group Screenings</a></li>
+<li class="leaf menu-mlid-2092"><a href="/members/member-discount-program">Member Discount Program</a></li>
+<li class="leaf menu-mlid-7896"><a href="http://televisionacademy.com/greatworkperks" target="_blank">Great Work Perks</a></li>
+<li class="leaf menu-mlid-2093"><a href="/members/faq">Frequently Asked Questions (Member FAQs)</a></li>
+<li class="leaf menu-mlid-3418"><a href="/downloads">Forms &amp; Downloads</a></li>
+<li class="last leaf menu-mlid-7306"><a href="/online-voting">Online Voting</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="3" data-hidewcol="" id="tb-megamenu-column-30" class="tb-megamenu-column span3  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="menu_block--10" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-menu-block-10" class="block block-menu-block">
+  <div class="content">
+    <div class="menu-block-wrapper menu-block-10 menu-name-menu-members-megasubmenu parent-mlid-2090 menu-level-1">
+  <ul class="menu nav"><li class="first last leaf menu-mlid-2091"><a href="/members" class="megamenu-bold-item">Member Sign In</a></li>
+</ul></div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+
+<div  data-showblocktitle="0" data-class="" data-width="6" data-hidewcol="" id="tb-megamenu-column-31" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="views--f6cb16134a1e33b7c697c57c2bdc8e5d" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div id="block-views-f6cb16134a1e33b7c697c57c2bdc8e5d" class="block block-views">
+  <div class="content">
+    <div class="view view-megamenu-latest-in-member-news view-id-megamenu_latest_in_member_news view-display-id-block view-dom-id-b391bf1c7e88a84434ee7cf1f5d0f2c6">
+            <div class="view-header">
+      <h2>Latest Member News</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/news/member-news/dues-increase-2017">A Letter from the Television Academy President and COO</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-event-thumbnail">        <div class="field-content"><a href="/news/awards-news/68th-engineering-emmy-awards-bestowed"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/magazine_photos_videos/public/sony-execs-900x600.jpg?itok=vYNK0UFg" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/news/awards-news/68th-engineering-emmy-awards-bestowed">68th Engineering Emmy Awards Bestowed</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+      </div>
+  </div>
+  </div>
+</div>
+  </div>
+          </nav>
+      	  		
+    </div>
+</header>
+
+  
+	
+	
+
+	
+
+<!-- START: div#main_content1 -->
+<div id="main_content1" class="events-type events-post">
+
+
+<div class="main-container container">
+    <section class="span15 ">
+            <a id="main-content"></a>
+                                                              
+<div class="panel-display" >
+  <div class="row-fluid top-wrapper">
+    <div class="panel-panel span15">
+      <div class="panel-pane pane-entity-field pane-node-field-event-graphic"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="field field-name-field-event-graphic field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><div id="file-87251" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/87251">68th-nominations-webcast-1180x520.jpg</a></h2>
+    
+  
+  <div class="content">
+    <img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/marquee_main_wide/public/marquees/68th-nominations-webcast-1180x520.jpg?itok=ZqxrJdSa" width="1180" height="520" alt="" title="" />  </div>
+
+  
+</div>
+</div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-node-title"  >
+  
+      
+  
+  <div class="pane-content">
+    <h1>68th Emmy Nominations Announcement</h1>
+  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-entity-field pane-node-field-when"  >
+  
+        <h2 class="pane-title">
+      WHEN:    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="field field-name-field-when field-type-datetime field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-07-14T08:30:00-07:00">July 14, 2016 - 08:30am</span></div></div></div>  </div>
+
+  
+  </div>
+    </div>
+  </div>
+  <div class="row-fluid webcast-wrapper">
+    <div class="panel-panel span15">
+      <div class="panel-pane pane-views-panes pane-related-panel-pane-2"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-related view-id-related view-display-id-panel_pane_2 view-dom-id-f6a741cd7726f2ba4349a84e69053b0e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first span5">
+      
+  <div class="views-field views-field-field-video-still-image">        <div class="field-content"><div id="file-88756" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/88756">PTE_16_Noms68_FullShow_Graphics.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/68th-emmy-nominations-announcement-replay"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/PTE_16_Noms68_FullShow_Graphics.jpg?itok=JvT_pR5n" width="380" height="253" alt="" /></a>  </div>
+
+  
+</div>
+</div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><div class="screenings-one-title-container">
+<a href="/video/68th-emmy-nominations-announcement-replay">68th Emmy Nominations Announcement Replay</a></div>
+</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Presenters Anthony Anderson ('black-ish) and Lauren Graham (Gilmore Girls: A Year in the Life) with Television Academy Chairman and CEO Bruce Rosenblum, announced the nominees for the 68th Emmy Awards.</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even span5">
+      
+  <div class="views-field views-field-field-video-still-image">        <div class="field-content"><div id="file-88791" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/88791">PTE_16_Noms68_LeadActorComedy.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/68th-emmy-nominations-lead-actor-comedy-series"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/PTE_16_Noms68_LeadActorComedy.jpg?itok=wbOYoAYM" width="380" height="253" alt="" /></a>  </div>
+
+  
+</div>
+</div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><div class="screenings-one-title-container">
+<a href="/video/68th-emmy-nominations-lead-actor-comedy-series">68th Emmy Nominations: Lead Actor in a Comedy Series</a></div>
+</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Anthony Anderson (<em>'black-ish</em>) and Lauren Graham (<em>Gilmore Girls: A Year in the Life</em>) present the 68th Emmy Award nominees for Lead Actor in a Comedy Series.</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last span5">
+      
+  <div class="views-field views-field-field-video-still-image">        <div class="field-content"><div id="file-88806" class="file file-image file-image-jpeg">
+
+        <h2 class="element-invisible"><a href="/photos/88806">PTE_16_Noms68_LeadActressComedy.jpg</a></h2>
+    
+  
+  <div class="content">
+    <a href="/video/68th-emmy-nominations-lead-actress-comedy-series"><img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/PTE_16_Noms68_LeadActressComedy.jpg?itok=Rwaj0FvQ" width="380" height="253" alt="" /></a>  </div>
+
+  
+</div>
+</div>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content"><div class="screenings-one-title-container">
+<a href="/video/68th-emmy-nominations-lead-actress-comedy-series">68th Emmy Nominations: Lead Actress in a Comedy Series</a></div>
+</span>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Anthony Anderson (<em>'black-ish</em>) and Lauren Graham (<em>Gilmore Girls: A Year in the Life</em>) present the 68th Emmy Award nominees for Lead Actress in a Comedy Series.</p>
+</div>  </div>  </div>
+    </div>
+  
+      <ul class="pager"><li class="pager-next first last"><a href="/events/68th-emmy-nominations-announcement?page=1">next</a></li>
+</ul>  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+    </div>
+  </div>
+  <div class="row-fluid middle-3-column-wrapper">
+    <div class="panel-panel span9">
+      <div class="panel-pane pane-entity-field pane-node-body"  >
+  
+        <h2 class="pane-title">
+      ABOUT THE EVENT    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2>68th Emmy Awards (2016)</h2>
+<table><tbody><tr><td><strong>68th Emmy Awards (2015-2016) Complete Nominations List</strong></td>
+<td>  <a href="/sites/default/files/Downloads/68th-nominations-list-v6.pdf" target="_blank">PDF</a></td>
+</tr><tr><td>68th Emmy Awards Nominations Key Categories</td>
+<td>  <a href="/sites/default/files/Downloads/68th-nominations-key-categories-v2.pdf" target="_blank">PDF</a></td>
+</tr><tr><td>68th Emmy Facts &amp; Figures</td>
+<td>  <a href="/sites/default/files/Downloads/68th-facts-figures-v3.pdf" target="_blank">PDF</a></td>
+</tr><tr><td>68th Emmy Supplemental Info</td>
+<td>  <a href="/sites/default/files/Downloads/68th-supplemental-v3.pdf" target="_blank">PDF</a></td>
+</tr><tr><td>68th Emmy Nominations by Program</td>
+<td>  <a href="/sites/default/files/Downloads/68th-nominations-program-v2.pdf" target="_blank">PDF</a></td>
+</tr><tr><td>68th Emmy Nominations by Network</td>
+<td>  <a href="/sites/default/files/Downloads/68th-nominations-network-v1.pdf" target="_blank">PDF</a></td>
+</tr><!-- <tr><td>Infographic: "How an Emmy is Won"</td>
+<td>&nbsp; <a href="/sites/default/files/Downloads/emmy-process-infographic-v1-2016.pdf" target="_blank">PDF</a></td>
+</tr>
+<p>--><br /><tr><td>67 Years of Emmy</td>
+<td>  <a href="/sites/default/files/Downloads/67-years-emmy-v1.pdf" target="_blank">PDF</a></td>
+</tr></tbody></table><p><br />For more Emmy Awards info, check <a href="/downloads" class="links">Downloads</a>.</p>
+<hr /><p>Presenters Anthony Anderson (<em>'black-ish</em>) and Lauren Graham (<em>Gilmore Girls: A Year in the Life</em>) with Television Academy Chairman and CEO Bruce Rosenblum, announced the nominees for the 68th Emmy Awards.<br /><br /><img src="/sites/default/files/photos-article/68th-nominations-presenters-900x600.jpg" alt="Anthony Anderson and Lauren Graham" height="300" border="0" width="450" /><br /><br />Tune in Sunday, September 18 for the <a href="/awards/emmys/show" class="links">68th Emmy Awards</a> on ABC.</p>
+</div></div></div>  </div>
+
+  
+  </div>
+    </div>
+    <div class="panel-panel span3">
+      <div class="panel-pane pane-entity-field pane-node-field-when"  >
+  
+        <h2 class="pane-title">
+      When:     </h2>
+    
+  
+  <div class="pane-content">
+    <div class="field field-name-field-when field-type-datetime field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-07-14T08:30:00-07:00">July 14, 2016 - 08:30am</span></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-entity-field pane-node-field-where"  >
+  
+        <h2 class="pane-title">
+      Where:    </h2>
+    
+  
+  <div class="pane-content">
+    <div class="field field-name-field-where field-type-text-long field-label-hidden"><div class="field-items"><div class="field-item even"><p>Wolf Theatre<br />at Saban Media Center<br />Television Academy<br />5210 Lankershim Blvd.<br />North Hollywood, CA 91601</p>
+</div></div></div>  </div>
+
+  
+  </div>
+    </div>
+    <div class="panel-panel span3">
+          </div>
+  </div>
+  <div class="row-fluid middle-wrapper">
+    <div class="panel-panel span15">
+          </div>
+  </div>
+  <div class="row-fluid span15 bottom-3-column-wrapper">
+    <div class="panel-panel span5">
+          </div>
+    <div class="panel-panel span5">
+          </div>
+    <div class="panel-panel span5">
+          </div>
+  </div>
+  <div class="panel-panel span15 bottom-wrapper">
+    <div class="panel-pane pane-views-panes pane-related-panel-pane-1"  >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-related view-id-related view-display-id-panel_pane_1 view-dom-id-28dce6e5abddd7a92ae0d272b6df5832">
+        
+  
+  
+      <div class="view-empty">
+        <section class="must-see">
+  	<div class="container">
+    	<div class="row">
+        
+   <div class="span5 item">
+    	<a href="http://Charitybuzz.com/emmysfoundation" class="image">
+  	  <img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/16HolidayAuction_900x600B.jpeg?itok=OZbi6qA3" width="380" height="253" alt="" />    </a>
+    <div class="title">
+      	  <b><a href="http://Charitybuzz.com/emmysfoundation"> Foundation Holiday Auction</a></b>
+        		  <div class="description"><p>Just in time for the holidays!</p></div>
+      </div>
+</div>
+   <div class="span5 item">
+    	<a href="http://www.emmys.com/video/crew-call-dorenda-moore" class="image">
+  	  <img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/crew-call-dorenda-900x600.jpg?itok=y7lWDzR7" width="380" height="253" alt="" />    </a>
+    <div class="title">
+      	  <b><a href="http://www.emmys.com/video/crew-call-dorenda-moore">Crew Call: Dorenda Moore</a></b>
+        		  <div class="description"><p>Stunt Coordinator Dorenda Moore walks us through a fight action sequence on the set of Hulu's new high school horror show, <em>Freakish</em>.</p></div>
+      </div>
+</div>
+   <div class="span5 item">
+    	<a href="http://www.emmys.com/news/features/let-it-reign" class="image">
+  	  <img typeof="foaf:Image" src="http://www.emmys.com/sites/default/files/styles/default_three_image_row/public/Cover-9-900x600.jpg?itok=LhB2faej" width="380" height="253" alt="" />    </a>
+    <div class="title">
+      	  <b><a href="http://www.emmys.com/news/features/let-it-reign">Emmy Bash Photo Splash</a></b>
+        		  <div class="description"><p>All the photos from the 68th Emmy Awards!</p></div>
+      </div>
+</div>
+      </div>
+    </div>
+  </section>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+
+  
+  </div>
+  </div>
+</div>
+    </section>
+  <!--<div class="back-to-top pull-right"></div>-->
+</div>
+</div>
+<!-- END: div#main_content1 -->
+
+<footer id="footer">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="top-link-wrap pull-right">
+					<a class="top-link" href="#"></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<nav>
+		<div class="container">
+			<div class="row">
+				  <div class="region region-footer-top">
+    <div id="block-menu-menu-footer-emmys" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Emmys</b>
+  <ul>
+    <li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/awards">Awards</a></li>
+<li class="leaf"><a href="/news">News &amp; Magazine</a></li>
+<li class="leaf"><a href="/in-memoriam">- In Memoriam</a></li>
+<li class="leaf"><a href="/photos">Photos</a></li>
+<li class="leaf"><a href="/videos">Videos</a></li>
+<li class="leaf"><a href="/events">Events</a></li>
+<li class="leaf"><a href="/academy">Academy</a></li>
+<li class="leaf"><a href="/foundation">Foundation</a></li>
+<li class="last leaf"><a href="/members">Members</a></li>
+  </ul>
+</div>  </div>
+</div>
+<div id="block-menu-menu-footer-contact" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Contact</b>
+  <ul>
+    <li class="first leaf"><a href="/contact">Contact Us</a></li>
+<li class="leaf"><a href="/downloads" title="Membership forms and downloadable information">Forms &amp; Downloads</a></li>
+<li class="last leaf"><a href="/academy/about/faq">Frequently Asked Questions (FAQs)</a></li>
+  </ul>
+</div>  </div>
+</div>
+<div id="block-menu-menu-footer-press-media" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Press / Media</b>
+  <ul>
+    <li class="first leaf"><a href="/press">Press Portal</a></li>
+<li class="leaf"><a href="/contact#media-contacts">Media Contacts</a></li>
+<li class="last leaf"><a href="http://televisionacademy.com/sites/default/files/Downloads/emmy-copyright-trademark-policy-150115.pdf" target="_blank">Trademark Policy</a></li>
+  </ul>
+</div>  </div>
+</div>
+<div id="block-menu-menu-footer-privacy-terms" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Privacy / Terms</b>
+  <ul>
+    <li class="first leaf"><a href="/privacy-policy">Privacy Policy</a></li>
+<li class="leaf"><a href="/user-agreement">User Agreement</a></li>
+<li class="last leaf"><a href="/site-submission-rules">Site Submission Rules</a></li>
+  </ul>
+</div>  </div>
+</div>
+<div id="block-menu-menu-footer-academy-sites" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Academy Sites</b>
+  <ul>
+    <li class="first leaf"><a href="/foundation" title="Television Academy Foundation">Foundation</a></li>
+<li class="last leaf"><a href="http://emmytvlegends.org">Archive</a></li>
+  </ul>
+</div>  </div>
+</div>
+<div id="block-menu-menu-footer-connect" class="block block-menu">
+  <div class="content">
+    
+<div class="span2">
+  <b>Connect</b>
+  <ul>
+    <li class="first leaf"><a href="https://www.facebook.com/televisionacad" title="The Television Academy&#039;s official Facebook page" target="_blank">Facebook</a></li>
+<li class="leaf"><a href="https://www.twitter.com/televisionacad" title="Follow the Television Academy for the latest information" target="_blank">Twitter</a></li>
+<li class="leaf"><a href="http://Instagram.com/televisionacad" target="_blank">Instagram</a></li>
+<li class="leaf"><a href="http://www.Pinterest.com/televisionacad" target="_blank">Pinterest</a></li>
+<li class="leaf"><a href="http://www.youtube.com/PrimetimeEmmys" title="The Television Academy&#039;s YouTube channel" target="_blank">YouTube</a></li>
+<li class="leaf"><a href="http://tvtag.com/primetimeemmys" title="Check-in to the best in television entertainment with tvtag" target="_blank">TVTag</a></li>
+<li class="last leaf"><a href="http://Televisionacad.tumblr.com" target="_blank">Tumblr</a></li>
+  </ul>
+</div>  </div>
+</div>
+  </div>
+			</div>
+		</div>
+	</nav>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="copyright-wrap">
+				  <span class="footer-logo pull-left"></span>
+				    <div class="region region-footer-bottom">
+    <div id="block-block-14" class="block block-block">
+  <div class="content">
+    <div class="copyright pull-right">
+<p>© 1995-2016 Academy of Television Arts &amp; Sciences.</p>
+<p>All Rights Reserved. Emmy and the Emmy Statuette are the Trademark Property Of ATAS/NATAS.</p>
+<p>Website design and development by <a href="http://www.dsire.com" target="_blank">Dsire Design</a>. Web hosting by <a href="http://www.acquia.com" target="_blank">Acquia</a>.</p></div>
+  </div>
+</div>
+  </div>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+  <script src="//d1ks1friyst4m3.cloudfront.net/toolbar/prod/td.js" async data-trackduck-id="5723ab00570363935bab925c"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3cb68ae61e","applicationID":"3124046","transactionName":"YlFQbEVYDUoDVhEPWVsbZ0peFgpXBlAdSEZdRA==","queueTime":0,"applicationTime":27,"atts":"ThZTGg1CHkQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

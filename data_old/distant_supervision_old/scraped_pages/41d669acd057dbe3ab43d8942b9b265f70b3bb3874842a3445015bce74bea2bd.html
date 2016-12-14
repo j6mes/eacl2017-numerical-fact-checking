@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en-us" xml:lang="en-us">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Release notes</title>
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <meta name="Robots" content="noodp" />
+    <link rel="canonical" href="https://developer.microsoft.com/en-us/windows/holographic/release_notes" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://az835927.vo.msecnd.net/sites/holographic/Resources/css/holodocs.css" rel="stylesheet" />
+    <link href="https://az835927.vo.msecnd.net/sites/holographic/Resources/css/prettify.css" rel="stylesheet" />
+    <link href="https://az835927.vo.msecnd.net/sites/holographic/Resources/css/possible.css" rel="stylesheet" />
+    <meta name="ms.pagename" id="ms.pagename" content="cms/windows/holographic/release_notes" />
+  </head>
+  <body>
+    <div>
+      <div id="headerWrapper">
+        <link rel="stylesheet" type="text/css" href='https://assets.onestore.ms/cdnfiles/external/webcore/4.15.0/stylesheets/WebCore.4.15.0.ltr.light.min.css' />
+
+    <link href="/content/bundles/css?v=F78cLOr7kwF4KtwpTM6V0waNon7vVm8vDe1VNiKwG1M1" rel="stylesheet"/>
+
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src='https://assets.onestore.ms/cdnfiles/external/webcore/4.15.0/scripts/bootstrap.js'></script>
+    <script type="text/javascript" src="/content/9.0.16307.6/require.min.js"></script>
+
+    
+    <script type="text/javascript">var guid = ("xxxxxxxx-xxxx-4xxx-Rxxx-xxxxxxxxxxxx".replace(/x/g, function () { return Math.floor(Math.random() * 16).toString(16); })).replace("R", (8 | Math.floor(Math.random() * 3)).toString(16)); var m = document.createElement("meta"); m.content = guid; m.name = "ms.dqid"; document.getElementsByTagName("head")[0].appendChild(m);</script>
+    <img style="display:none;" onerror="var m=document.createElement('meta');m.name='ms.dqp0';m.content='true';document.getElementsByTagName('head')[0].appendChild(m);" onload="var m=document.createElement('meta');m.name='ms.dqp0';m.content='false';document.getElementsByTagName('head')[0].appendChild(m);" src="https://c1.microsoft.com/c.gif?" />
+    <script>
+    //<![CDATA[
+    (function () {
+        
+        function reportError(errorText) {
+            new Image().src = '/reporterror?clientError=' + encodeURIComponent(errorText) + '&sourceUri=' + encodeURIComponent(document.location.href);
+        }
+
+        requirejs.onError = function (err) {
+            console.log(err);
+
+            // Sometimes the list of required modules is null, so reporting an error will at best give us the page URL.
+            var requireModules = err.requireModules || [];
+            reportError('RequireJS error: ' + err.message + ' Type: "' + err.requireType + '" for module(s): [' + requireModules.join(', ') + ']');
+        };
+
+        $(document).ajaxError(function (event, jqxhr, ajaxSettings, thrownError) {
+            
+            if (jqxhr.status == 401 && jqxhr.getResponseHeader("WWW-Authenticate") != null) {
+                $('#signInPrompt').modal('show');
+            } else {
+                reportError('ajax error requesting: "' + ajaxSettings.url + '"; thrownError: "' + thrownError + '"');
+            }
+        });
+
+        $(document).ready(function () {
+            $('#signInCancel').click(function () {
+                $('#signInPrompt').modal('hide');
+            });
+        });
+    })();
+
+    var fdRequireConfig = {
+        baseUrl: '/content/9.0.16307.6/',
+        
+        context: 'frontdoor',
+        paths: {
+            'jquery': '//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min',
+            'knockout': '//ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0',
+            'clickstreamTracker': '//az725175.vo.msecnd.net/scripts/jsll-3.3.1-beta-1'
+        },
+        bundles: {
+            /* Tell requireJS to find these modules via the bundle definition.  In debug mode (fltdebug:1), individual script files
+            are emitted without bundling/minification. */
+'/content/bundles/js?v=Kh1yC6ahiVphJSnswevVegBR-sY8vBMOlzTyAkkuz141': ['local-storage','local-storage-helper','fdjsll','util','meControl','single-signon','customTracker','leftNav','leftNavInit','feedbackDialog','npsDialog','init','util','nav','app-info','bundle-info','feedback','common','notification','text','left-nav'],        },
+        waitSeconds: 0,
+        config: {
+            leftNav: {
+                enableNav: "true",
+            }
+        }
+    }
+
+    var fdRequire = require.config(fdRequireConfig);
+    fdRequire(['single-signon']);
+    fdRequire(['fdjsll']);
+    // ]]>
+</script>
+    <input type="hidden" id="localStoreDeltaUiKey" value="delta-ui:dbv2=false:bcast-q=showin=everywhere" />
+    
+    <input type="hidden" id="isPortalAuthenticationRps" value="" />
+    <input type="hidden" id="isPortalAuthenticationAad" value="" />
+    <input type="hidden" id="msaSignInUrl" value="" />
+    <input type="hidden" id="msaSignOutUrl" value="" />
+    <input type="hidden" id="serviceName" value="cms-halcyon-holographic" />
+    <input type="hidden" id="asimovTelemetryAppId" value="JS:DevCenter" />
+
+    
+         
+
+<link href="https://assets.onestore.ms/cdnfiles/onestorerolling-1610-27000/shell/v3/scss/shell.min.css" rel="stylesheet" type="text/css" />
+
+<!--[if lte IE 8]>
+    <link href="https://assets.onestore.ms/cdnfiles/onestorerolling-1610-27000/shell/common/respond-proxy.html" id="respond-proxy" rel="respond-proxy"/>
+<![endif]-->
+
+    
+    
+         
+<!--[if lte IE 8]>
+    <script src="https://assets.onestore.ms/cdnfiles/onestorerolling-1610-27000/shell/common/js/shell_ie8.js"></script>
+<![endif]-->
+
+
+
+<script async src="https://mem.gfx.ms/meversion?partner=dev_windows&market=en-US"></script>
+
+<script src="https://assets.onestore.ms/cdnfiles/onestorerolling-1610-27000/shell/generated/shellservice.v3.min.js"></script>
+
+
+    
+    
+         
+
+
+
+
+
+
+<div id="shell-header" class="shell-header shell-responsive " ms.pgarea="header" role="banner">
+    
+    <div class="shell-header-wrapper">
+        <div class="shell-header-top" data-bi-area="HeaderL0" data-bi-view="L0V1">
+                <div class="shell-header-brand" ms.cmpgrp="logo">
+                            <a id="srv_shellHeaderMicrosoftLogo" href="https://www.microsoft.com" ms.cmpnm="MicrosoftBrandLogo" ms.title="Microsoft" title="Microsoft" data-bi-name="BrandLogo" tabindex="10">
+            <img src="https://assets.onestore.ms/cdnfiles/external/uhf/long/9a49a7e9d8e881327e81b9eb43dabc01de70a9bb/images/microsoft-gray.png" alt="Microsoft" />
+        </a>
+
+                </div>
+            <div class="shell-header-nav-wrapper" ms.cmpgrp="nav" role="navigation">
+                <ul class="shell-header-nav" role="menubar" id="srv_shellHeaderNav" data-bi-area="L1" data-bi-view="Hovermenus">
+                        <li class="shell-header-user-mobile-container">
+                        </li>
+                                    <li class="shell-header-dropdown  " data-navcontainer="developer_resources_NavContainer">
+                                        <div id="developer_resources" class="shell-header-dropdown-label">
+                                            <a id="Developer resources-navigation" href="javascript:void(0)" role="button" aria-labelledby="developer_resources" aria-expanded="false" ms.title="Developer resources" data-bi-name="DeveloperResources" data-bi-slot="1" tabindex="20">
+                                                Developer resources
+                                            </a>
+                                        </div>
+
+
+
+
+
+<div class="shell-header-dropdown-content " aria-hidden="true" role="menu">
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Microsoft developer">
+
+                            <dt id="dev_tech_ms_developer" class="shell-header-dropdown-tab-label shell-header-L2menu-direct-link">
+                                <a href="https://developer.microsoft.com/en-us" ms.title="Microsoft developer" tabindex="20" data-bi-name="DeveloperTech_MSDeveloper">Microsoft developer</a>                         
+                            </dt>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Windows">
+
+                            <dt id="developer_tech_windows" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Windows" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Windows
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_windows_WindowDevCenter">
+                        <a href="https://developer.microsoft.com/en-us/windows" class="shell-l3-list-item" ms.title="Windows Dev Center" tabindex="20" data-bi-name="DeveloperTech_Windows_WindowDevCenter">
+                            Windows Dev Center
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_windows_apps">
+                        <a href="https://developer.microsoft.com/en-us/windows/windows-apps " class="shell-l3-list-item" ms.title="Windows apps" tabindex="20" data-bi-name="DeveloperTech_Windows_WindowsApps">
+                            Windows apps
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_classic_desktop">
+                        <a href="https://developer.microsoft.com/en-us/windows/desktop" class="shell-l3-list-item" ms.title="Desktop" tabindex="20" data-bi-name="DeveloperTech_Windows_ClassicDesktop">
+                            Desktop
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_IoT">
+                        <a href="https://developer.microsoft.com/en-us/windows/iot" class="shell-l3-list-item" ms.title="Internet of Things" tabindex="20" data-bi-name="DeveloperTech_Windows_IoT">
+                            Internet of Things
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_games">
+                        <a href="https://developer.microsoft.com/en-us/windows/games" class="shell-l3-list-item" ms.title="Games" tabindex="20" data-bi-name="DeveloperTech_Games">
+                            Games
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_holographic">
+                        <a href="https://developer.microsoft.com/en-us/windows/holographic" class="shell-l3-list-item" ms.title="Holographic" tabindex="20" data-bi-name="DeveloperTech_Windows_Holographic">
+                            Holographic
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_edge">
+                        <a href="https://developer.microsoft.com/en-us/microsoft-edge" class="shell-l3-list-item" ms.title="Microsoft Edge" tabindex="20" data-bi-name="DeveloperTech_Windows_Edge">
+                            Microsoft Edge
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_hardware ">
+                        <a href="https://developer.microsoft.com/windows/hardware" class="shell-l3-list-item" ms.title="Hardware" tabindex="20" data-bi-name="DeveloperTech_Hardware">
+                            Hardware
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Azure">
+
+                            <dt id="dev_tech_azure" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Azure" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Azure
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_windows_Azure">
+                        <a href="https://azure.microsoft.com/" class="shell-l3-list-item" ms.title="Azure" tabindex="20" data-bi-name="DeveloperTech_Windows_Azure">
+                            Azure
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_web_apps">
+                        <a href="https://azure.microsoft.com/documentation/scenarios/web-app/" class="shell-l3-list-item" ms.title="Web apps" tabindex="20" data-bi-name="DeveloperTech_Windows_WebApps">
+                            Web apps
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_mobile_apps">
+                        <a href="https://azure.microsoft.com/documentation/scenarios/mobile-app/ " class="shell-l3-list-item" ms.title="Mobile apps" tabindex="20" data-bi-name="DeveloperTech_Windows_MobileApps">
+                            Mobile apps
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_api_apps">
+                        <a href="https://azure.microsoft.com/services/app-service/api/" class="shell-l3-list-item" ms.title="API apps" tabindex="20" data-bi-name="DeveloperTech_Windows_APIapps">
+                            API apps
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_service_fabric">
+                        <a href="https://azure.microsoft.com/services/service-fabric/" class="shell-l3-list-item" ms.title="Service fabric" tabindex="20" data-bi-name="DeveloperTech_Windows_ServiceFabric">
+                            Service fabric
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Visual Studio">
+
+                            <dt id="developer_tech_visual_studio" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Visual Studio" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Visual Studio
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_windows_visual_studio">
+                        <a href="https://www.visualstudio.com/" class="shell-l3-list-item" ms.title="Visual Studio " tabindex="20" data-bi-name="DeveloperTech_Windows_VisualStudio">
+                            Visual Studio 
+                        </a>
+                    </li>
+                    <li id="developer_tech_vs_visual_studio_2015_products">
+                        <a href="https://visualstudio.com/products/vs-2015-product-editions" class="shell-l3-list-item" ms.title="Visual Studio 2015 products" tabindex="20" data-bi-name="DeveloperTech_VS_VisualStudio2015Products">
+                            Visual Studio 2015 products
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_visual_studio_team_services">
+                        <a href="https://visualstudio.com/products/visual-studio-team-services-vs" class="shell-l3-list-item" ms.title="Visual Studio Team Services" tabindex="20" data-bi-name="DeveloperTech_Windows_VisualStudioTeamServices">
+                            Visual Studio Team Services
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_visual_studio_code">
+                        <a href="https://www.visualstudio.com/products/code-vs.aspx" class="shell-l3-list-item" ms.title="Visual Studio Code" tabindex="20" data-bi-name="DeveloperTech_Windows_VisualStudioCode">
+                            Visual Studio Code
+                        </a>
+                    </li>
+                    <li id="developer_tech_vs_visual_studio_dev_essentials">
+                        <a href="https://visualstudio.com/visual-studio-dev-essentials-vs" class="shell-l3-list-item" ms.title="Visual Studio Dev Essentials" tabindex="20" data-bi-name="DeveloperTech_VS_VisualStudioDevEssentials">
+                            Visual Studio Dev Essentials
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Office">
+
+                            <dt id="developer_tech_office" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Office" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Office
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_windows_Office">
+                        <a href="https://dev.office.com/" class="shell-l3-list-item" ms.title="Office" tabindex="20" data-bi-name="DeveloperTech_Windows_Office">
+                            Office
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_word_excel_powerpoint">
+                        <a href="https://dev.office.com/getting-started/addins" class="shell-l3-list-item" ms.title="Word/Excel/PowerPoint" tabindex="20" data-bi-name="DeveloperTech_Windows_WordExcelPowerPoint">
+                            Word/Excel/PowerPoint
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_microsoft_graph">
+                        <a href="http://graph.microsoft.io" class="shell-l3-list-item" ms.title="Microsoft Graph" tabindex="20" data-bi-name="DeveloperTech_Windows_MicrosoftGraph">
+                            Microsoft Graph
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_outlook">
+                        <a href="https://dev.outlook.com/" class="shell-l3-list-item" ms.title="Outlook" tabindex="20" data-bi-name="DeveloperTech_Windows_Outlook">
+                            Outlook
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_one_drive_sharepoint">
+                        <a href="https://dev.onedrive.com/" class="shell-l3-list-item" ms.title="OneDrive/Sharepoint" tabindex="20" data-bi-name="DeveloperTech_Windows_OneDriveSharepoint">
+                            OneDrive/Sharepoint
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_skype">
+                        <a href="https://www.skype.com/developer/ " class="shell-l3-list-item" ms.title="Skype" tabindex="20" data-bi-name="DeveloperTech_Windows_Skype">
+                            Skype
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Services">
+
+                            <dt id="developer_tech_services" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Services" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Services
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_windows_store">
+                        <a href="https://developer.microsoft.com/en-us/store" class="shell-l3-list-item" ms.title="Store" tabindex="20" data-bi-name="DeveloperTech_Windows_Store">
+                            Store
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_cortana">
+                        <a href="https://developer.microsoft.com/en-us/windows-apps/cortana" class="shell-l3-list-item" ms.title="Cortana" tabindex="20" data-bi-name="DeveloperTech_Windows_Cortana">
+                            Cortana
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_bing">
+                        <a href="https://www.bing.com/dev " class="shell-l3-list-item" ms.title="Bing" tabindex="20" data-bi-name="DeveloperTech_Windows_Bing">
+                            Bing
+                        </a>
+                    </li>
+                    <li id="developer_tech_windows_app_insights">
+                        <a href="https://azure.microsoft.com/services/application-insights/" class="shell-l3-list-item" ms.title="Application Insights" tabindex="20" data-bi-name="DeveloperTech_Windows_AppInsights">
+                            Application Insights
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Languages &amp; platforms">
+
+                            <dt id="dev_tech_lang_platforms" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Languages &amp; platforms" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Languages &amp; platforms
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_lang_platform_service_fabric">
+                        <a href="https://developer.xamarin.com/" class="shell-l3-list-item" ms.title="Xamarin" tabindex="20" data-bi-name="DeveloperTech_LangPlatform_ServiceFabric">
+                            Xamarin
+                        </a>
+                    </li>
+                    <li id="developer_tech_lang_platform_asp_net">
+                        <a href="https://www.asp.net/" class="shell-l3-list-item" ms.title="ASP.NET" tabindex="20" data-bi-name="DeveloperTech_LangPlatform_ASP.NET">
+                            ASP.NET
+                        </a>
+                    </li>
+                    <li id="developer_tech_lang_platform_c++">
+                        <a href="https://msdn.microsoft.com/library/60k1461a.aspx" class="shell-l3-list-item" ms.title="C++" tabindex="20" data-bi-name="DeveloperTech_LangPlatform_C++">
+                            C++
+                        </a>
+                    </li>
+                    <li id="developer_tech_lang_platform_type_script">
+                        <a href="https://www.typescriptlang.org/" class="shell-l3-list-item" ms.title="TypeScript" tabindex="20" data-bi-name="DeveloperTech_LangPlatform_TypeScript">
+                            TypeScript
+                        </a>
+                    </li>
+                    <li id="developer_tech_lang_platform_net_vb_c#_f#">
+                        <a href="https://msdn.microsoft.com/vstudio/aa496123" class="shell-l3-list-item" ms.title=".NET - VB, C#, F#" tabindex="20" data-bi-name="DeveloperTech_LangPlatform_NET_VB_C#F#">
+                            .NET - VB, C#, F#
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Server">
+
+                            <dt id="dev_tech_server" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Server" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Server
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_server_windows_server">
+                        <a href="https://msdn.microsoft.com/windowsserver" class="shell-l3-list-item" ms.title="Windows Server" tabindex="20" data-bi-name="DeveloperTech_Server_WindowsServer">
+                            Windows Server
+                        </a>
+                    </li>
+                    <li id="developer_tech_server_sql_server">
+                        <a href="https://msdn.microsoft.com/library/mt590198" class="shell-l3-list-item" ms.title="SQL Server" tabindex="20" data-bi-name="DeveloperTech_Server_SQLServer">
+                            SQL Server
+                        </a>
+                    </li>
+                    <li id="developer_tech_server_biz_talk_server">
+                        <a href="https://msdn.microsoft.com/biztalk/aa937640.aspx" class="shell-l3-list-item" ms.title="BizTalk Server" tabindex="20" data-bi-name="DeveloperTech_Server_BizTalkServer">
+                            BizTalk Server
+                        </a>
+                    </li>
+                    <li id="developer_tech_server_sharepoint">
+                        <a href="https://msdn.microsoft.com/library/mt674607" class="shell-l3-list-item" ms.title="SharePoint" tabindex="20" data-bi-name="DeveloperTech_Server_SharePoint">
+                            SharePoint
+                        </a>
+                    </li>
+                    <li id="developer_tech_server_dynamics">
+                        <a href="https://msdn.microsoft.com/dynamics" class="shell-l3-list-item" ms.title="Dynamics" tabindex="20" data-bi-name="DeveloperTech_Server_Dynamics">
+                            Dynamics
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+                <dl class="shell-header-dropdown-tab  " ms.cmpnm="Developer resources; Programs &amp; communities">
+
+                            <dt id="dev_tech_programs_community" class="shell-header-dropdown-tab-label">
+                                <a href="javascript:void(0)" role="button" ms.title="Programs &amp; communities" ms.interactiontype="14" tabindex="20" data-bi-dnt="">
+                                    Programs &amp; communities
+                                    <i class="shell-icon-dropdown facing-right"></i>
+                                </a>
+                            </dt>
+                            <dd class="shell-header-dropdown-tab-content" data-col="0">
+
+
+
+    <ul class="shell-header-dropdown-tab-list">
+                    <li id="developer_tech_server_programs_community_students">
+                        <a href="https://msdn.microsoft.com/imagine/imagine-home" class="shell-l3-list-item" ms.title="Students" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity_Students">
+                            Students
+                        </a>
+                    </li>
+                    <li id="developer_tech_programs_community_startups">
+                        <a href="https://microsoft.com/bizspark" class="shell-l3-list-item" ms.title="Startups" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity_Startups">
+                            Startups
+                        </a>
+                    </li>
+                    <li id="developer_tech_programs_community_forums">
+                        <a href="https://social.msdn.microsoft.com/Forums/" class="shell-l3-list-item" ms.title="Forums" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity_Forums">
+                            Forums
+                        </a>
+                    </li>
+                    <li id="developer_tech_programs_community _msdn">
+                        <a href="https://msdn.microsoft.com" class="shell-l3-list-item" ms.title="MSDN" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity _MSDN">
+                            MSDN
+                        </a>
+                    </li>
+                    <li id="developer_tech_programs_community _subscriber_downloads">
+                        <a href="https://msdn.microsoft.com/subscriptions/" class="shell-l3-list-item" ms.title="Subscriber downloads" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity _SubscriberDownloads">
+                            Subscriber downloads
+                        </a>
+                    </li>
+                    <li id="developer_tech_server_programs_community_dev_center_benefits">
+                        <a href="https://developer.microsoft.com/en-us/windows/benefits" class="shell-l3-list-item" ms.title="Dev Center Benefits" tabindex="20" data-bi-name="DeveloperTech_ProgramsCommunity_Dev_Center_Benefits">
+                            Dev Center Benefits
+                        </a>
+                    </li>
+
+    </ul>
+
+
+
+                            </dd>
+
+                </dl>
+
+</div>
+                                    </li>
+
+                </ul>
+            </div>
+                <div class="shell-header-user-container">
+                    <dl class="shell-header-user">
+                        <dt>
+                            <span id="meControl">
+                                <div class="msame_Header" tabindex="60" style="display: inline-block; height: 48px; font-size: 14px; border: 1px solid transparent; border-bottom-style: none; width: 100%;">
+                                    <div class="msame_Header_name" style="line-height: 48px; max-width: 160px; display: inline-block; vertical-align: top; font-size: 86%; color: #505050; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; word-break: break-all">Sign in </div>
+                                </div>
+                            </span>
+                        </dt>
+                    </dl>
+                </div>
+            
+            <div class="shell-header-nav-toggle " ms.cmpgrp="nav">
+                <button class="shell-header-toggle-menu" ms.cmpnm="mobile global nav toggle button" ms.title="Toggle menu" title="Toggle Menu" type="button" data-bi-name="Toggle Menu" tabindex="55">
+                    <i class="shell-icon-menu"></i>
+                </button>
+            </div>
+
+            <ul class="shell-header-toggle" ms.cmpgrp="header actions">
+                    <li>
+                        <button class="shell-header-toggle-search" type="button" data-bi-name="Toggle Search Icon" ms.title="search toggle" title="Toggle Search" tabindex="45">
+                            <i class="shell-icon-search"></i>
+                        </button>
+                    </li>
+                            </ul>
+
+            <div class="shell-header-actions" ms.cmpgrp="header actions">
+                    <form id="srv_shellHeaderSearchForm" class="shell-search" role="search" action="https://social.msdn.microsoft.com/search/windows" method="GET" autocomplete="off" onsubmit=" return window.msCommonShell.onSearch(this) " ms.cmpnm="search">
+                        <div class="shell-search-wrapper">
+                            <label for="cli_shellHeaderSearchInput" class="sr-only">Search Microsoft</label>
+                            <input id="cli_shellHeaderSearchInput" type="search" title="Search Dev Center" name="query" data-bi-dnt="" placeholder="Search Dev Center" maxlength="200" tabindex="30" />
+
+                                <input type="hidden" name="Refinement"
+                                       data-bi-dnt="" value="183" />
+
+                            <button type="submit" title="Search" data-bi-dnt="" tabindex="40">
+                                <i class="shell-icon-search"></i>
+                                <span class="sr-only">Search</span>
+                            </button>
+                            <div id="cli_searchSuggestionsContainer" class="shell-search-dropdown-container">
+                                <div class="search-dropdown">
+                                    <div class="dropdown-item">
+                                        <ul id="cli_searchSuggestionsResults" data-bi-name="Search Suggestions" data-bi-source="UnifiedSearch" ms.cmpgrp="search suggestions"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="fixed-global-nav-buffer"></div>
+
+
+
+
+
+
+<!--[if lt IE 9]>
+<div class="shell-category-header lt-ie9 cat-theme-blue" ms.pgarea="categoryheader">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<div class="shell-category-header cat-theme-blue" ms.pgarea="categoryheader">
+    <!--<![endif]-->
+    <div role="navigation" aria-label="Category level navigation" class="shell-category-nav" ms.cmpgrp="cat nav" data-bi-area="CategoryHeader-Windows Dev Center" data-bi-view="C0">
+        <div class="c-nav-pagination c-nav-pagination-prev">
+            <i class="shell-icon-dropdown facing-left"></i>
+        </div>
+        <ul class="shell-category-top-level shell-category-brand">
+            <li class="c-logo-item">
+                                <a id="shell-cat-header-logo" class="c-logo c-top-nav-link" href="https://developer.microsoft.com/en-us/windows" title="" ms.title="Windows Dev Center" data-bi-name="Category logo" tabindex="70">
+                    <span class="logo-text-label">Windows Dev Center</span>
+                </a>
+                <a id="shell-cat-header-logo-mobile" class="c-logo-mobile c-top-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Windows Dev Center" ms.interactiontype="14" data-bi-name="Mobile category logo" tabindex="70">
+                    <span class="logo-text-label">Windows Dev Center</span>
+                    <i class="shell-icon-dropdown"></i>
+                </a>
+            <ul class="c-nav-dropdown-menu" role="menu" data-bi-area="CategoryHeader-Windows Dev Center" data-bi-view="C1">
+
+
+
+                <li class="c-top-nav-item" id="dev_center_hololens_holographic-mobilelist">
+                    <a id="dev_center_hololens_holographic-mobile" tabindex="70" aria-labelledby="dev_center_hololens_holographic-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/" ms.title="Holographic" data-bi-name="DevCenter_Hololens_Holographic" data-bi-slot="1" data-show-cta="True">
+                        <span>Holographic</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_get_started-mobilelist">
+                    <a id="dev_center_hololens_get_started-mobile" tabindex="70" aria-labelledby="dev_center_hololens_get_started-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/en-us/windows/holographic/getting_started" ms.title="Get started " data-bi-name="DevCenter_Hololens_GetStarted" data-bi-slot="2" data-show-cta="True">
+                        <span>Get started </span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_academy-mobilelist">
+                    <a id="dev_center_hololens_academy-mobile" tabindex="70" aria-labelledby="dev_center_hololens_academy-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/academy " ms.title="Academy" data-bi-name="DevCenter_Hololens_Academy" data-bi-slot="3" data-show-cta="True">
+                        <span>Academy</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_documentation-mobilelist">
+                    <a id="dev_center_hololens_documentation-mobile" tabindex="70" aria-labelledby="dev_center_hololens_documentation-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/documentation " ms.title="Documentation" data-bi-name="DevCenter_Hololens_Documentation" data-bi-slot="4" data-show-cta="True">
+                        <span>Documentation</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_community-mobilelist">
+                    <a id="dev_center_hololens_community-mobile" tabindex="70" aria-labelledby="dev_center_hololens_community-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/community" ms.title="Community" data-bi-name="DevCenter_Hololens_Community" data-bi-slot="5" data-show-cta="True">
+                        <span>Community</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="devcenter_hololens_support-mobilelist">
+                <a id="devcenter_hololens_support-mobile" tabindex="70" aria-expanded="false" aria-labelledby="devcenter_hololens_support-mobilelist" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Support" role="button" ms.interactiontype="14" data-bi-name="DevCenter_Hololens_Support" data-bi-slot="6" data-show-cta="True">
+                    <span>Support<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-Windows Dev Center" data-bi-view="DevCenter_Hololens_Support-C2" ms.cmpnm="Support" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="devcenter_hololens_support_developer-mobile" class="c-nav-dropdown-item c-nav-link " href="https://developer.microsoft.com/en-us/windows/support" ms.title="Developer"  data-bi-name="DevCenterHololens_SupportDeveloper" data-bi-slot="1" tabindex="70">
+                <span>
+                    Developer
+                </span>
+            </a>
+
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="devcenter_hololens_support_hardware-mobile" class="c-nav-dropdown-item c-nav-link " href="http://support.microsoft.com/products/hololens" ms.title="Hardware"  data-bi-name="DevCenterHololens_SupportHardware" data-bi-slot="2" tabindex="70">
+                <span>
+                    Hardware
+                </span>
+            </a>
+
+
+
+        </li>
+
+
+                </ul>
+            </li>
+                <li class="c-top-nav-item" id="dashboard-mobilelist">
+                    <a id="dashboard-mobile" tabindex="70" aria-labelledby="dashboard-mobilelist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/en-us/dashboard/apps/overview" ms.title="Dashboard" data-bi-name="Dashboard" data-bi-slot="7" data-show-cta="True">
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+            </ul>
+
+            </li>
+
+        </ul>
+
+        
+        <ul class="c-menu-container shell-category-top-level shell-category-nav-wrapper" role="menu" data-bi-area="CategoryMenuItems-Windows Dev Center" data-bi-view="C1">
+
+
+
+                <li class="c-top-nav-item" id="dev_center_hololens_holographiclist">
+                    <a id="dev_center_hololens_holographic" tabindex="70" aria-labelledby="dev_center_hololens_holographiclist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/" ms.title="Holographic" data-bi-name="DevCenter_Hololens_Holographic" data-bi-slot="1" data-show-cta="True">
+                        <span>Holographic</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_get_startedlist">
+                    <a id="dev_center_hololens_get_started" tabindex="70" aria-labelledby="dev_center_hololens_get_startedlist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/en-us/windows/holographic/getting_started" ms.title="Get started " data-bi-name="DevCenter_Hololens_GetStarted" data-bi-slot="2" data-show-cta="True">
+                        <span>Get started </span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_academylist">
+                    <a id="dev_center_hololens_academy" tabindex="70" aria-labelledby="dev_center_hololens_academylist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/academy " ms.title="Academy" data-bi-name="DevCenter_Hololens_Academy" data-bi-slot="3" data-show-cta="True">
+                        <span>Academy</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_documentationlist">
+                    <a id="dev_center_hololens_documentation" tabindex="70" aria-labelledby="dev_center_hololens_documentationlist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/documentation " ms.title="Documentation" data-bi-name="DevCenter_Hololens_Documentation" data-bi-slot="4" data-show-cta="True">
+                        <span>Documentation</span>
+                    </a>
+                </li>
+                <li class="c-top-nav-item" id="dev_center_hololens_communitylist">
+                    <a id="dev_center_hololens_community" tabindex="70" aria-labelledby="dev_center_hololens_communitylist" class="c-top-nav-link c-nav-link" href="https://developer.microsoft.com/windows/holographic/community" ms.title="Community" data-bi-name="DevCenter_Hololens_Community" data-bi-slot="5" data-show-cta="True">
+                        <span>Community</span>
+                    </a>
+                </li>
+            <li class="c-top-nav-item" id="devcenter_hololens_supportlist">
+                <a id="devcenter_hololens_support" tabindex="70" aria-expanded="false" aria-labelledby="devcenter_hololens_supportlist" class="c-top-nav-link c-nav-link c-nav-dropdown" href="javascript:void(0);" ms.title="Support" role="button" ms.interactiontype="14" data-bi-name="DevCenter_Hololens_Support" data-bi-slot="6" data-show-cta="True">
+                    <span>Support<i class="shell-icon-dropdown"></i></span>
+                </a>
+                <ul aria-hidden="true" class="c-nav-dropdown-menu" data-bi-area="CategoryHeader-Windows Dev Center" data-bi-view="DevCenter_Hololens_Support-C2" ms.cmpnm="Support" role="menu">
+
+
+
+
+        <li class="c-nav-item ">
+            <a id="devcenter_hololens_support_developer" class="c-nav-dropdown-item c-nav-link " href="https://developer.microsoft.com/en-us/windows/support" ms.title="Developer"  data-bi-name="DevCenterHololens_SupportDeveloper" data-bi-slot="1" tabindex="70">
+                <span>
+                    Developer
+                </span>
+            </a>
+
+
+
+        </li>
+        <li class="c-nav-item ">
+            <a id="devcenter_hololens_support_hardware" class="c-nav-dropdown-item c-nav-link " href="http://support.microsoft.com/products/hololens" ms.title="Hardware"  data-bi-name="DevCenterHololens_SupportHardware" data-bi-slot="2" tabindex="70">
+                <span>
+                    Hardware
+                </span>
+            </a>
+
+
+
+        </li>
+
+
+                </ul>
+            </li>
+
+        </ul>
+                <div class="shell-category-nav-featured">
+                    <a id="dashboard" class="c-nav-link c-top-nav-link" ms.title="Dashboard" href="https://developer.microsoft.com/en-us/dashboard/apps/overview" role="menuitem" data-bi-name="Dashboard" data-bi-slot="7">
+                        <span tabindex="70">Dashboard</span>
+                    </a>
+                </div>
+
+        <div class="c-nav-pagination c-nav-pagination-next">
+            <i class="shell-icon-dropdown facing-right"></i>
+        </div>
+    </div>
+
+</div>
+<div class="fixed-category-nav-buffer"></div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+    var shellInitOptions = {
+        lcaDisclaimerEnabled: false,
+        suggestedProductTitle : 'Suggested products'
+    };
+
+    
+    var meControlInitOptions = {
+        containerId: 'meControl',
+            enabled: true,
+        headerHeight: 48,
+        custom: { chevHtml: '<i class="msame_chev_uhf shell-icon-dropdown"></i>' },
+        
+
+        mobileBreakpoints: {
+            shortHeader: 1084
+        },
+
+        rpData:
+        {
+            msaInfo:
+            {
+                    
+                        signInUrl: '/en-us/store/signin',
+                        signOutUrl: '/en-us/store/signout',
+                        accountSettingsUrl: 'https://account.microsoft.com/',
+                        switchUrl: '',
+                        meUrl: 'https://login.live.com/me.srf?wa=wsignin1.0',
+                        isSupported: true
+                    
+            },
+            aadInfo:
+            {
+            },
+            preferredIdp: 'msa',
+        },
+        signInStr: 'Sign in',
+        signOutStr: 'Sign out'
+    };
+</script>
+ 
+    
+    <meta name="ms.Cv" content="undefined"/>
+    <div id="flightPicker" style="display: none"></div>
+</div>
+      <script src="https://az835927.vo.msecnd.net/sites/holographic/Resources/scripts/main.js" type="text/javascript"></script>
+      <script src="https://az835927.vo.msecnd.net/sites/holographic/Resources/scripts/holodocs.js" type="text/javascript"></script>
+      <script src="https://az835927.vo.msecnd.net/sites/holographic/Resources/scripts/prettify.js" type="text/javascript"></script>
+      <script src="https://az835927.vo.msecnd.net/sites/holographic/Resources/scripts/run_prettify.js" type="text/javascript"></script>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-24 col-lg-18">
+<div class="holodocs-body">
+<h1>
+Release notes
+</h1><p>The HoloLens team is listening to feedback from developers in the Windows Insider Program to prioritize our work. Please continue to <a href="give_us_feedback">give us feedback</a> through the Feedback Hub, the <a href="https://forums.hololens.com">developer forums</a> and <a href="https://twitter.com/hololens">Twitter via @HoloLens</a>. As Windows 10 embraces the Anniversary Update, the HoloLens team is happy to deliver further improve to the holographic experience. In this update, we focused on major fixes, improvements, and introducing features requested by businesses and available in the Microsoft HoloLens Commercial Suite.</p><p><b>Latest release:</b> Windows Holographic August 2016 Update (<b>10.0.14393.0</b>, Windows 10 Anniversary Release)</p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/tNd0e2CiAkE?rel=0&amp;modestbranding=1" frameborder="0" allowfullscreen="1">
+
+</iframe></p><p>To <a href="updating_the_hololens_device">update to the current release</a>, open the <i>Settings</i> app, go to <i>Update &amp; Security</i>, then select the <i>Check for updates</i> button.</p><div id="toc">
+<h2>
+Contents
+</h2><ul>
+<li><a href="#new_features">1 New features</a></li><li><a href="#improvements_and_fixes">2 Improvements and fixes</a></li><li><a href="#introducing_microsoft_hololens_commercial_suite">3 Introducing Microsoft HoloLens Commercial Suite</a></li><li><a href="#prior_release_notes">4 Prior release notes</a></li><li><a href="#see_also">5 See also</a></li>
+</ul>
+</div><h2>
+<span class="doc-headline" id="new_features">New features</span>
+</h2><p><b>Attach To Process Debugging</b><br /> HoloLens now supports attach-to-process debugging. You can use Visual Studio 2015 Update 3 to connect to a running app on a HoloLens and <a href="Using_Visual_Studio.html#debugging_an_installed_or_running_app">start debugging it</a>. This works without the need to deploy from a Visual Studio project.</p><p><b>Updated HoloLens Emulator</b><br /> We&#39;ve also released an updated version of the HoloLens Emulator.</p><p><b>Gamepad Support</b><br /> You can now pair and use Bluetooth gamepads with HoloLens! The newly released Xbox Wireless Controller S features Bluetooth capabilities and can be used to play your favorite gamepad-enabled games and apps. A <a href="http://support.xbox.com/en-US/xbox-one/accessories/update-controller-for-stereo-headset-adapter">controller update</a> must be applied before you can connect the Xbox Wireless Controller S with HoloLens. The Xbox Wireless Controller S is supported by <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/hh405053(v=vs.85).aspx">XInput</a> and <a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.aspx">Windows.Gaming.Input</a> APIs. Additional models of Bluetooth controllers may be accessed through the <a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.aspx">Windows.Gaming.Input</a> API.</p><h2>
+<span class="doc-headline" id="improvements_and_fixes">Improvements and fixes</span>
+</h2><p>We are in sync with the rest of the Windows 10 Anniversary update, so in addition to the Hololens specific fixes, you are also receiving all the goodness from the Windows update to increase platform reliability and performance. Your feedback is highly valued and prioritized for fixes in the release.</p><ul>
+<li>We&#39;ve improved experiences around<ul>
+<li>log in experiences.</li><li>workplace join.</li><li>power efficiency for device power state transitions.</li><li>stability with Mixed Reality Captures.</li><li>reliability for Bluetooth connectivity</li><li>hologram persistence in multi app scenario.</li>
+</ul></li>
+</ul><ul>
+<li>We&#39;ve fixed an issue where<ul>
+<li>the Visual Studio profilers and graphics debugger fail to connect.</li><li>photos &amp; documents do not show up in the file explorer in the device portal.</li><li>the App Bar can flash when the cursor is placed above it while in Adjust mode.</li><li>When in Adjust mode, the eye gaze dot cursor will change to the 4-arrow cursor sometime more slowly.</li><li>&quot;Hey Cortana play music&quot; does not launch Groove.</li><li>after the previous update, saying &quot;Go Home&quot; does not display the pins panel correctly.</li>
+</ul></li>
+</ul><h2>
+<span class="doc-headline" id="introducing_microsoft_hololens_commercial_suite">Introducing Microsoft HoloLens Commercial Suite</span>
+</h2><p>The Microsoft HoloLens Commercial Suite is ready for enterprise deployment. We&#39;ve added several highly requested <a href="commercial_features">commercial features</a> from our early business partners.</p><p><b>Key Commercial Features</b> <div class="thumb tright">
+<div class="thumbinner" style="width:402px;">
+<a href="https://az835927.vo.msecnd.net/sites/holographic/resources/images/201608-KioskMode.png"><img class="thumbborder" alt="With kiosk mode, HoloLens launches directly into the app of your choice." width="400" height="225" src="https://az835927.vo.msecnd.net/sites/holographic/resources/images/201608-KioskMode.png" /></a><div class="thumbcaption">
+With kiosk mode, HoloLens launches directly into the app of your choice.
+</div>
+</div>
+</div></p><ul>
+<li><b>Kiosk mode.</b> With HoloLens kiosk mode, you can limit which apps to run to enable demo or showcase experiences.</li>
+</ul><p><div class="thumb tright">
+<div class="thumbinner" style="width:402px;">
+<a href="https://az835927.vo.msecnd.net/sites/holographic/resources/images/201608-EnterpriseManagement.png"><img class="thumbborder" alt="Mobile Device Management on HoloLens provides enterprise grade device management across multiple devices." width="400" height="225" src="https://az835927.vo.msecnd.net/sites/holographic/resources/images/201608-EnterpriseManagement.png" /></a><div class="thumbcaption">
+Mobile Device Management on HoloLens provides enterprise grade device management across multiple devices.
+</div>
+</div>
+</div></p><ul>
+<li><b>Mobile Device Management (MDM) for HoloLens.</b> Your IT department can manage multiple HoloLens devices simultaneously using solutions like Microsoft Intune. You will be able to manage settings, select apps to install and set security configurations tailored to your organization&#39;s need.</li><li><b>Windows Update for Business.</b> Controlled operating system updates to devices and support for long term servicing branch.</li><li><b>Data security.</b> BitLocker data encryption is enabled on HoloLens to provide the same level of security protection as any other Windows device.</li><li><b>Work access.</b> Anyone in your organization can remotely connect to the corporate network through virtual private network on a HoloLens. HoloLens can also access Wi-Fi networks that require credentials.</li><li><b>Windows Store for Business.</b> Your IT department can also set up an enterprise private store, containing only your company’s apps for your specific HoloLens usage. Securely distribute your enterprise software to selected group of enterprise users.</li>
+</ul><p><div style="clear:both">
+
+</div></p><p><b>Development Edition vs. Commercial Suite</b><br /> Please contact your local Microsoft account manager to purchase the Microsoft HoloLens Commercial Suite.</p><table>
+<tr>
+<th>Features</th><th>Development Edition</th><th>Commercial Suite</th>
+</tr><tr>
+<td>Device Encryption (Bitlocker)</td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Virtual Private Network (VPN)</td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<td><a href="Using_the_Windows_Device_Portal.html#kiosk_mode">Kiosk mode</a></td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<th colspan="3" style="text-align: left;"> Management and deployment</th>
+</tr><tr>
+<td>Mobile Device Management (MDM)</td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Ability to block un-enrollment</td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Cert Based Corporate WiFi Access</td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Windows Store (Consumer)</td><td style="text-align: center;">Consumer</td><td style="text-align: center;">Filtering via MDM</td>
+</tr><tr>
+<td><a href="https://technet.microsoft.com/itpro/windows/manage/working-with-line-of-business-apps">Business Store Portal</a></td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<th colspan="3" style="text-align: left;"> Security and Identity</th>
+</tr><tr>
+<td>Login with Azure Active Directory (AAD)</td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Login with Microsoft Account (MSA)</td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Next Generation Credentials with PIN unlock</td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<td><a href="https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/secure-boot-overview">Secure boot</a></td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<th colspan="3" style="text-align: left;"> Servicing and Support</th>
+</tr><tr>
+<td>Automatic system updates as they arrive</td><td style="text-align: center;">X</td><td style="text-align: center;">X</td>
+</tr><tr>
+<td><a href="https://technet.microsoft.com/en-us/itpro/windows/plan/windows-update-for-business">Windows Update for Business</a></td><td></td><td style="text-align: center;">X</td>
+</tr><tr>
+<td>Long term servicing branch</td><td></td><td style="text-align: center;">X</td>
+</tr>
+</table><h2>
+<span class="doc-headline" id="prior_release_notes">Prior release notes</span>
+</h2><ul>
+<li><a href="release_notes_-_may_2016">Release notes - May 2016</a></li><li><a href="release_notes_-_march_2016">Release notes - March 2016</a></li>
+</ul><h2>
+<span class="doc-headline" id="see_also">See also</span>
+</h2><ul>
+<li><a href="known_issues">Known issues</a></li><li><a href="commercial_features">Commercial features</a></li><li><a href="install_the_tools">Install the tools</a></li><li><a href="working_with_accessories">Working with accessories</a></li><li><a href="using_the_hololens_emulator">Using the HoloLens emulator</a></li>
+</ul>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearBoth">
+      <div>
+    <script type="text/javascript">
+          function openNpsDialog(askLater) {
+              (askLater === undefined) ? ifEligibleOpenDialog(false) : ifEligibleOpenDialog(askLater);
+          }
+      </script>
+
+    
+    <div class="modal" id="npsFeedback" data-bind="with: npsfeedbackvm">
+        <div class="overlay">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" data-bind="text: surveyData().SurveyTitle"></h2>
+                    </div>
+                    <div class="modal-body">
+                        <p data-bind="text: surveyData().SurveySubTitle"></p>
+                        <!-- ko foreach: surveyData().Questions -->
+                        <div class="surveyQuestion">
+                            <p data-bind="text: $index()+1 + '. ' + QuestionText"></p>
+                            <br/>
+                            <!-- ko if: ShowRating == true -->
+                            <div class="radio pull-left">
+                                <div class="ratingLabel">Not at all satisfied</div>
+                            </div>
+                            <div class="radio pull-left"></div>
+                            <div class="radio pull-left"></div>
+                            <div class="radio pull-left"></div>
+                            <div class="radio pull-left">
+                                <div class="ratingLabel">Extremely satisfied</div>
+                            </div>
+
+                            <div class="clear"></div>
+                                <div class="radio pull-left">
+                                    <label>
+                                        <input type="radio" value="1" id="NPSFeedback_Category_NpsRating1" data-bind="checked: rating"/>
+                                        <span class="text-body">1</span>
+                                    </label>
+                                </div>
+                                <div class="radio pull-left">
+                                    <label>
+                                        <input type="radio" value="2" id="NPSFeedback_Category_NpsRating2" data-bind="checked: rating"/>
+                                        <span class="text-body">2</span>
+                                    </label>
+                                </div>
+                                <div class="radio pull-left">
+                                    <label>
+                                        <input type="radio" value="3" id="NPSFeedback_Category_NpsRating3" data-bind="checked: rating"/>
+                                        <span class="text-body">3</span>
+                                    </label>
+                                </div>
+                                <div class="radio pull-left">
+                                    <label>
+                                        <input type="radio" value="4" id="NPSFeedback_Category_NpsRating4" data-bind="checked: rating"/>
+                                        <span class="text-body">4</span>
+                                    </label>
+                                </div>
+                                <div class="radio pull-left">
+                                    <label>
+                                        <input type="radio" value="5" id="NPSFeedback_Category_NpsRating5" data-bind="checked: rating"/>
+                                        <span class="text-body">5</span>
+                                    </label>
+                                </div>
+                            <div class="clear"></div>
+                            <!-- /ko -->
+                            <div class="form-group">
+                                <textarea id="npsFeedbackDetails" data-bind="textInput: description" class="form-control" rows="3" maxlength="1500" placeholder="Please explain why you gave this score."></textarea>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                    <div class="modal-footer" data-bi-area="NPSDialog">
+                        <div class="btn-group">
+                            <button type="submit" id="npsFeedbackSubmit" class="btn btn-primary" data-bi-slot="1" data-bi-id="Submit" data-bi-name="NPSButton" data-bind="disable: !canSubmitSurvey()">Submit feedback</button>
+                            <button type="cancel" id="npsFeedbackNotNow" class="btn" data-bi-slot="2" data-bi-id="NotNow" data-bi-name="NPSButton">Remind me later</button>
+                        </div>
+                        <a href="javascript:void(0)" id="npsFeedbackNeverShow" class="pull-right" data-bi-slot="3" data-bi-id="DoNotShow" data-bi-name="NPSButton">Dismiss</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+<div class="modal" id="feedbackDialog" style="display: none;" data-bind="with: feedbackVM">
+    <div class="overlay">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- ko if: !feedbackVM.apiSuccessful() -->
+                <div class="modal-header">
+                    <h2 class="modal-title">Send feedback</h2>
+                </div>
+                <div class="modal-body">
+                    <div>What type of feedback is this?</div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="1" data-bind="checked: category" />
+                                <span class="text-body">Problem</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="0" data-bind="checked: category" />
+                                <span class="text-body">Suggestion</span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="feedbackRadios" value="4" data-bind="checked: category" />
+                                <span class="text-body">Kudos</span>
+                            </label>
+                        </div>
+
+                    <div data-bind="toggleSlideVisible: category() == 1">If you are experiencing issues please <a href="https://support.microsoft.com/en-us/getsupport?tenant=store&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16070&supporttopic_L1=32530383&supporttopic_L2=32530384&ccsid=636112993087301826" target="_blank">file a support ticket</a>.</div>
+
+                    <div class="form-group">
+                        <label>What area does this apply to?</label>
+                        <select data-bind="value: area" class="form-control" id="feedbackAreaSelectBox">
+                            
+                            <option value="">Please select an area</option>
+                                    <option value="Feedback_Area_Registration" key="Account/Registration">Account/Registration</option>
+                                    <option value="Feedback_Area_Analytics" key="Analytics">Analytics</option>
+                                    <option value="Feedback_Area_CantFindAppInStore" key="Can&#39;t find app in the Store">Can&#39;t find app in the Store</option>
+                                    <option value="Feedback_Area_Hardware" key="Hardware dashboard preview">Hardware dashboard preview</option>
+                                    <option value="Feedback_Area_Other" key="Other">Other</option>
+                                    <option value="Feedback_Area_Payouts" key="Payouts">Payouts</option>
+                                    <option value="Feedback_Area_PromotionAndMonetization" key="Promotion and monetization">Promotion and monetization</option>
+                                    <option value="Feedback_Area_RatingsAndReviews" key="Ratings and reviews">Ratings and reviews</option>
+                                    <option value="Feedback_Area_Submissions" key="Submissions">Submissions</option>
+                                    <option value="Feedback_Area_TargetedNotifications" key="Targeted notifications">Targeted notifications</option>
+                                    <option value="Feedback_Area_UX" key="User experience">User experience</option>
+
+                        </select>
+                    </div>
+
+                    <div id="feedbackSubArea" class="form-group" data-bind="toggleSlideVisible: showSubArea">
+                        <label>What sub-area does this apply to?</label>
+                        <select data-bind="value: subArea" class="form-control">
+                            <option value="">Please select a sub-area</option>
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Submissions' -->
+                                    <option value="Age rating">Age rating</option>
+                                    <option value="App submission is stalled">App submission is stalled</option>
+                                    <option value="App/Add-on submissions">App/Add-on submissions</option>
+                                    <option value="Certification or removal">Certification or removal</option>
+                                    <option value="Desktop bridge and other app programs">Desktop bridge and other app programs</option>
+                                    <option value="Flighting">Flighting</option>
+                                    <option value="Package upload">Package upload</option>
+                                    <option value="Restricted capability requests">Restricted capability requests</option>
+                                    <option value="Submission API">Submission API</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_PromotionAndMonetization' -->
+                                    <option value="Advertising">Advertising</option>
+                                    <option value="Experimentation">Experimentation</option>
+                                    <option value="Promote your app">Promote your app</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Payouts' -->
+                                    <option value="Azure">Azure</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Payout">Payout</option>
+                                    <option value="Payout report">Payout report</option>
+                                    <option value="Tax">Tax</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Registration' -->
+                                    <option value="Change account type">Change account type</option>
+                                    <option value="Closed account">Closed account</option>
+                                    <option value="Enterprise certificates">Enterprise certificates</option>
+                                    <option value="Expired account">Expired account</option>
+                                    <option value="Publisher display name">Publisher display name</option>
+                                    <option value="Registration">Registration</option>
+                                    <option value="Verification">Verification</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Analytics' -->
+                                    <option value="Advertising">Advertising</option>
+                                    <option value="Incorrect data">Incorrect data</option>
+                                    <option value="Missing data">Missing data</option>
+                                    <option value="Other">Other</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_Hardware' -->
+                                    <option value="Driver submission">Driver submission</option>
+                                    <option value="Registration and access">Registration and access</option>
+
+                            <!-- /ko -->
+
+                            <!-- ko if: feedbackVM.area() == 'Feedback_Area_UX' -->
+                                    <option value="Errors">Errors</option>
+                                    <option value="Interface">Interface</option>
+                                    <option value="Notifications">Notifications</option>
+                                    <option value="Performance">Performance</option>
+
+                            <!-- /ko -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Add your feedback here" id="feedbackDetails" class="form-control" rows="6" data-bind="textInput: description" maxlength="2500"></textarea>
+                    </div>
+                    <div id="feedbackDialogError" class="alert alert-error" style="display: none;">There was an error sending your feedback.</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <button id="submitFeedback" class="btn btn-primary" data-bind="click: savedeveloperfeedback, disable: disableSubmit">Submit feedback</button>
+                        <button id="cancelFeedback" class="btn" data-bind="click: closeFeedbackDialog">Cancel</button>
+                    </div>
+                </div>
+                <br />
+                <!-- /ko -->
+                <!-- ko if: feedbackVM.apiSuccessful -->
+                <div>Thanks for your feedback!</div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+        <div id="footerWrapper">
+            
+             
+
+
+<div class="shell-footer" ms.pgarea="uhffooter" data-bi-area="Footer" data-bi-view="3xLinks">
+    <div class="shell-footer-wrapper">
+
+            <div class="shell-footer-menugroups" ms.cmpgrp="footer nav">
+                    <div class="sfm-group" ms.cmpnm="Footer_Tools">
+                        <div class="grp-title">
+                            Downloads and tools <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?linkid=280676" ms.title="Windows 10 dev tools" data-bi-name="footer_DownloadsAndTools_Win10DevTools" data-bi-slot="1" data-bi-source="Compass">
+                                            Windows 10 dev tools
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkId=618475" ms.title="Visual Studio" data-bi-name="Footer_DownloadsAndTools_VS" data-bi-slot="2" data-bi-source="Compass">
+                                            Visual Studio
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?linkid=616887" ms.title="Windows SDK" data-bi-name="Footer_DownloadsAndTools_WinSDK" data-bi-slot="3" data-bi-source="Compass">
+                                            Windows SDK
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkId=534236" ms.title="Windows Store badges" data-bi-name="Footer_DownloadsAndTools_Badges" data-bi-slot="4" data-bi-source="Compass">
+                                            Windows Store badges
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Footer_Essentials">
+                        <div class="grp-title">
+                            Essentials <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt244352.aspx" ms.title="API reference (Windows apps)" data-bi-name="Footer_Essentials_WinAppsAPIRef" data-bi-slot="1" data-bi-source="Compass">
+                                            API reference (Windows apps)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?linkid=285627" ms.title="API reference (desktop apps)" data-bi-name="Footer_Essentials_DesktopAppsAPIRef" data-bi-slot="2" data-bi-source="Compass">
+                                            API reference (desktop apps)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/?LinkID=280677" ms.title="Code samples" data-bi-name="FooterEssentialsCodeSamples" data-bi-slot="3" data-bi-source="Compass">
+                                            Code samples
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt244352.aspx" ms.title="How-to guides (Windows apps)" data-bi-name="Footer_Essentials_HowToWinApps" data-bi-slot="4" data-bi-source="Compass">
+                                            How-to guides (Windows apps)
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Footer_LearningResources">
+                        <div class="grp-title">
+                            Learning resources <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="http://www.microsoftvirtualacademy.com/" ms.title="Microsoft Virtual Academy" data-bi-name="Footer_MS_Virtual_Academy" data-bi-slot="1" data-bi-source="Compass">
+                                            Microsoft Virtual Academy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://channel9.msdn.com/" ms.title="Channel 9" data-bi-name="Footer_Ch9" data-bi-slot="2" data-bi-source="Compass">
+                                            Channel 9
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkId=534190" ms.title="Video gallery" data-bi-name="Footer_VidGallery" data-bi-slot="3" data-bi-source="Compass">
+                                            Video gallery
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://blogs.windows.com/buildingapps/2015/08/05/build-better-apps-windows-10-by-10-development-series/" ms.title="Windows 10 by 10 blog series" data-bi-name="Footer_LearningResources_WIN10x10blog" data-bi-slot="4" data-bi-source="Compass">
+                                            Windows 10 by 10 blog series
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+                    <div class="sfm-group" ms.cmpnm="Footer_Programs">
+                        <div class="grp-title">
+                            Programs <i class="shell-icon-dropdown"></i>
+                        </div>
+                        <ul>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkId=534191" ms.title="Get a dev account" data-bi-name="Footer_Programs_DevAcct" data-bi-slot="1" data-bi-source="Compass">
+                                            Get a dev account
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkID=246847" ms.title="App Developer Agreement" data-bi-name="Footer_Programs_DevAgreement" data-bi-slot="2" data-bi-source="Compass">
+                                            App Developer Agreement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://insider.windows.com/" ms.title="Windows Insider Program" data-bi-name="Footer_Programs_WinInsider" data-bi-slot="3" data-bi-source="Compass">
+                                            Windows Insider Program
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://go.microsoft.com/fwlink/p/?LinkId=529768" ms.title="Microsoft Affliate Program" data-bi-name="Footer_Programs_MsftAffliatePgrm" data-bi-slot="4" data-bi-source="Compass">
+                                            Microsoft Affliate Program
+                                        </a>
+                                    </li>
+
+                        </ul>
+                    </div>
+
+            </div>
+
+        <div class="shell-footer-lang" ms.cmpgrp="loc picker" ms.cmpnm="loc picker" >
+                <ul>
+                    <li>
+                        <i class="shell-icon-globe"></i>
+                    </li><li>
+                        <a id="locale-picker-link" ms.title="English (United States)" href="https://developer.microsoft.com/locale"
+                           data-bi-name="LocalePicker">
+                            English (United States)‎
+                        </a>
+                    </li>
+                </ul>
+        </div>
+        <div class="shell-footer-copyright" ms.cmpgrp="corp links" ms.cmpnm="corp" role="contentinfo">
+            <ul>
+                            <li>
+                                <a id="privacyandcookies" href="//go.microsoft.com/fwlink/p/?LinkId=521839" ms.title="Privacy and cookies" class="ctl_footerNavLink" data-bi-name="PrivacyAndCookies" data-bi-slot="1">
+                                    Privacy and cookies
+                                </a>
+                            </li>
+                            <li>
+                                <a id="termsofuse" href="//go.microsoft.com/fwlink/p/?linkid=248155" ms.title="Terms of use" class="ctl_footerNavLink" data-bi-name="TermsOfUse" data-bi-slot="2">
+                                    Terms of use
+                                </a>
+                            </li>
+                            <li>
+                                <a id="trademarks" href="//go.microsoft.com/fwlink/p/?linkid=248154" ms.title="Trademarks" class="ctl_footerNavLink" data-bi-name="Trademarks" data-bi-slot="3">
+                                    Trademarks
+                                </a>
+                            </li>
+
+                <li class="ctl_footerCopyright">
+                    © 2016 Microsoft
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        
+        </div>
+
+    <script>
+        
+        if ($('#devcenter-left-nav').length) {
+            fdRequire(['leftNavInit']);
+        } else {
+            fdRequire(['leftNav']);
+        }
+        fdRequire(['feedbackDialog']);
+        fdRequire(['npsDialog']);
+        fdRequire(['init']);
+    </script>
+    
+    <!-- MSCOM collection script -->
+    <script type="text/javascript">
+        var varAutoFirePV = 1;
+        var varClickTracking = 1;
+        var varCustomerTracking = 0;
+        var varCustomerCookies = ['MUID'];
+        var route = 43151;
+    </script>
+    <script type="text/javascript" src="https://c.microsoft.com/ms.js"></script>
+    <!-- End of MSCOM script -->
+    <div id="expiredAgreements"></div>
+    <div id="signInPrompt" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-subtitle">Sign in required</h4>
+                </div>
+                <div class="modal-body">
+                    <br/><p>Your session has expired.  Please sign-in again to continue.  Unfortunately any unsaved changes will be lost.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                        <a href="/aad?action=signin&returnPath=/en-us/windows/holographic/release_notes" class="btn btn-primary">Sign in</a>
+                        <button type="cancel" class="btn" id="signInCancel">Cancel</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+  </body>
+</html>
+<!-- Correlation: ba6369d6-f93d-4a77-aa66-fca68bb08192,nXH9dS8RxEKcGwE7.1 -->
+<!-- BN3SCH020021321 -->

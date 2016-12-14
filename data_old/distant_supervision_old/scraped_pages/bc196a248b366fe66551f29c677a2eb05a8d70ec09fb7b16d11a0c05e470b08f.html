@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="/etc/clientlibs/browsermap.standard.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+    var fullSitePath = "/content/fordmedia/fna/us/en.html",
+        mobileSitePath = "/content/fordmedia-mobile/fna/us/en.html",
+        group,
+        found;
+    var g;
+    BrowserMap.matchDeviceGroups();
+    for (g in BrowserMap.getMatchedDeviceGroups()) {
+        if (g === "smartphone") {
+            window.location.href = mobileSitePath;
+            found = true;
+        }
+    }
+    if (!found) {
+        window.location.href = fullSitePath;
+    }
+}());
+</script>
+</head>
+<body>
+
+</body>
+</html>

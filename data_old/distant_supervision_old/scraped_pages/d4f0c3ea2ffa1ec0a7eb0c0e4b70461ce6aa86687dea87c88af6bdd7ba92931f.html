@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"d0a1d361ac","applicationID":"2130988","transactionName":"cl8NTEZaDVlUEU0ERUVZAFRRRk5GWQwV","queueTime":0,"applicationTime":410,"agentToken":null,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwIOVlBTGwEBV1FbDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+  <title>
+      2013 Best of Year Tablet Awards - Reviewed.com Tablets
+  </title>
+
+
+    <script async src="//cdn.optimizely.com/js/235651488.js"></script>
+
+  <script>
+//<![CDATA[
+
+    window.js_vars = {"gtmVersion":21,"website_id":"tablets","category":"Tablets","search_is_unscoped":null,"env":"production","dfpid":"7103","search_es_url":"http://cerebro-production.herokuapp.com:80","search_es_env":"production","search_categories":{"ovens":"Ovens","refrigerators":"Refrigerators","laundry":"Laundry","dishwashers":"Dishwashers","home-outdoors":"Home \u0026 Outdoors","projectors":"Projectors","tech":"Tech","cruises":"Cruises","reviewed":"Reviewed","laptops":"Laptops","smarthome":"Smart Home","mobilecoverage":"Mobile Coverage","printers":"Printers","monitors":"Computer Monitors","tablets":"Tablets","cars":"Cars","grills":"Grills","headphones":"Headphones","lenses":"Lenses","televisions":"Televisions","vacuums":"Vacuums","robotvacuums":"Robot Vacuums","freezers":"Freezers","coffee":"Coffee","camcorders":"Camcorders","espresso":"Espresso","wearables":"Wearables","smartphones":"Smartphones","microwaves":"Microwaves","cameras":"Cameras","luxuryhome":"Luxury Appliances"},"search_suppress_scores":["cars","cruises","wearables"],"search_excluded":["cruises","mobilecoverage","tech","home-outdoors"],"search_articles_only":["reviewed","wearables","smarthome","grills","luxuryhome","tech","home-outdoors"],"hooper_url":"http://hooper.herokuapp.com","niche_tracking_id":"UA-21732162-1","suppress_rendering_xhr_includes":false,"page_action_ids":"articles.show","retailer":{},"read_more":true,"article_id":15512}
+
+//]]>
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Tablets, e-Readers, Tablet Reviews, e-Reader reviews" name="keywords" />
+  <meta name="surrogate-key" value="4593f5f7d5391fe6cedf14ad142e4479e28c6f8b tablets/articles/show articles/show tablets" />
+      <meta name="item-image" content="http://reviewed-production.s3.amazonaws.com/attachment/9cad151e88ff46e4/Hero3.jpg" />
+    <meta name="article-classification" content="feature" />
+  <meta property="fb:pages" content="201996980631" />
+    <meta property="fb:app_id" content="354875974636581">
+  <meta property="og:type" content="article"></meta>
+  <meta property="og:image" content="http://reviewed-production.s3.amazonaws.com/attachment/9cad151e88ff46e4/Hero3.jpg"></meta>
+  <meta property="og:title" content="2013 Best of Year Tablet Awards"></meta>
+  <meta property="og:url" content="http://tablets.reviewed.com/features/2013-best-of-year-tablet-awards"></meta>
+  <meta property="og:site_name" content="Reviewed.com Tablets"></meta>
+  <meta property="og:description" content="The year&#39;s top tablets"></meta>
+    <meta property="article:author" content="http://www.facebook.com/Reviewedcom">
+
+    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@revieweddotcom">
+  <meta name="twitter:creator" content="@ReviewedTech">
+  <meta name="twitter:title" content="2013 Best of Year Tablet Awards">
+  <meta name="twitter:description" content="The year&#39;s top tablets">
+  <meta name="twitter:image" content="http://reviewed-production.s3.amazonaws.com/attachment/9cad151e88ff46e4/Hero3.jpg">
+
+  
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7MkPw8lyKfCW2BEAj+/KDSNwUJE6XJw0jTTh5jbJfZF1Q14B623HloqaSf3WBzZq6HLBFzuSihb9vlwm9t1m3w==" />
+  <meta content="feature" name="page_class" data-gad-target="true" >
+<meta content="default" name="layout" data-gad-target="true" >
+<meta content="brand_value" name="reviewed-brand" data-gad-target="true" >
+<meta content="tri" name="reviewed-website-id" data-gad-target="true" >
+<meta content="tablets" name="reviewed-category" data-gad-target="true" >
+<meta content="false" name="is_search" data-gad-target="true" >
+<meta content="NA" name="prod_id" data-gad-target="true" >
+<meta content="" name="utm_source" data-gad-target="true" >
+<meta content="" name="search_cat" data-gad-target="true" >
+
+  <meta content="The year&#39;s top tablets" name="description"></meta>
+
+  <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,400,300,600,700" />
+  <link rel="stylesheet" media="screen" href="/assets/bootstrap-35574fbae4ae25d8d3502e65caadaf21ec62ff54e2b1f6bfadb107e1ee8c6a5d.css" />
+  <link rel="stylesheet" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" media="screen" href="/assets/vendored-da09876533382521b90b19be3cb02f983519b71281237eaed57ccc378aa6eeee.css" />
+  <link rel="stylesheet" media="screen" href="/assets/application-1c0dbc2f366cec8f198b04b0dd6d5f55c142351d998206c174365bba01746185.css" />
+  
+
+  <link rel="stylesheet" media="screen" href="/assets/articles-706c7cfdb74dbf64c24874eef5081b610e0888f47eea1fbd4365968552c946b6.css" />
+
+  <link rel="stylesheet" media="screen" href="/assets/categories/tablets/tablets-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" />
+  <link rel="stylesheet" media="print" href="/assets/article_print-459b5379efcd4603db9db457b6abe20e177daf073a7a21ba9697d370fab3fda5.css" />
+
+  <link rel="shortcut icon" href=/assets/favicon-c4fa22787527d989c36d7c2c0b8a1cfae10144608a1acfb204c635bedcba70c8.ico />
+  <link rel="alternate" type="application/atom+xml" title="Reviewed.com Tablets Atom" href="/articles.atom" />
+  <link rel="alternate" type="application/atom+xml" title="Reviewed.com Science Atom" href="http://www.reviewed.com/science.atom" />
+  <link rel="canonical" href="http://tablets.reviewed.com/features/2013-best-of-year-tablet-awards">
+
+  <meta name="apple-mobile-web-app-title" content="Reviewed.com">
+  <link rel="apple-touch-icon" href="/assets/mobile/touch-icon-iphone-c2e8288c6fffd3d599ef95ee24de4ed295aeb6cc7a42d5e413010484cb6326a6.png">
+  <link rel="apple-touch-icon" sizes="36x36" href="/assets/mobile/launcher-icon-0-75x-e7d7a256e31854548df4945670f67dd9b5401f4575e8cd7c3a0b5b66148fedcd.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="/assets/mobile/launcher-icon-1x-650f5dfc2ef39c5982e1acc2cc2e6c4f267eb0b0cff28ad8b0cd39d50e66542b.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/mobile/touch-icon-iphone-c2e8288c6fffd3d599ef95ee24de4ed295aeb6cc7a42d5e413010484cb6326a6.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/mobile/launcher-icon-1-5x-c63ba5777b7c862e0758290fd3b68da4c2e78601eede06d428e5e013d8d0dcd0.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/mobile/touch-icon-ipad-7b2c9580e68ac66b1b9a3950e05acdf2e1e18a873ee2a8a5dad976c4e3499bc9.png">
+  <link rel="apple-touch-icon" sizes="96x96" href="/assets/mobile/launcher-icon-2x-86641af860e083b707dbc8205babada9db0f8ad7e97774c3a7945c764833c862.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/mobile/touch-icon-iphone-retina-41130978c27af88429038dba656ea1f6a0826d0229cec72c6e1e7dcab0aab59d.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/mobile/launcher-icon-3x-5cc96dc03a682666c34d4e1133c44e6c3a5641b2768a73b62039e2206d66f5c1.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/mobile/touch-icon-ipad-retina-a202cddc6eac3195a4bc2e96ad0cedc01afc341ea53cbb9dafd9cfb9d8af59f7.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="/assets/mobile/launcher-icon-4x-598a7f44e8bd3684bce184c646355d05dbcf48ab5e825c893fa1f0404728bc39.png">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <script src="/assets/head-c53722b30c80303d8cdefbff26bd30f9db2448077e53f2578a63a5b3e6f57d69.js"></script>
+
+  
+  
+</head>
+
+<body class="body-tablets ctrl-articles method-show">  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KB4CSW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KB4CSW');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript">
+var utag_data = {
+  "page_domain": document.location.host,
+  "full_url": document.location.href,
+  "device": window.innerWidth > 979 ? "desktop" : (window.innerWidth > 767 ? "tablet" : "mobile"),   // TODO: question, does this _need_ to be async or will this be ok?
+  "ssts": "reviewed:consumer_electronics:tablets"
+}
+
+  utag_data.published_date = "2013-11-25t21:13:09.000000000"
+
+  utag_data.assetid = 15512;
+  utag_data.content_type = "features";
+  utag_data.author = "Virginia Barry";
+
+  utag_data.taxonomykeywords = "feature,tablets";
+
+</script>
+<script type="text/javascript" src="https://tags.tiqcdn.com/utag/gci/reviewed.com/prod/utag.js"></script>
+
+
+    <div id='background_1' class='ad_background_1' data-placement="background" data-gad-mobile='false' data-gad-unit='true' data-gad-sizes='[[1440,1000]]'></div>
+
+
+  <link href="https://plus.google.com/+Reviewedcom/" rel="publisher" />
+
+  <header>
+  <div class="navbar navbar-fixed-top admin">
+    <div class="navbar-inner">
+      <div id="admin_bar"></div>
+    </div>
+  </div>
+
+  <div class="navbar navbar-inverse navbar-fixed-top visible-desktop">
+    <div class="navbar-inner">
+        <div class="pull-right referrer-header">
+  <a><i class="fa fa-chevron-left"></i> BACK TO <img width="150" height="27" srcset="/assets/back-to-usat-1c0e0415ce535007b5527ca1658ee1e33cd9b2c21e612e956a1e3af253870599.png 1x, /assets/back-to-usat-retina-a485e13ea1ff5faf7fbd9904d17f07ef40892245a07ae69fc34306cb60f64c88.png 2x" src="/assets/back-to-usat-1c0e0415ce535007b5527ca1658ee1e33cd9b2c21e612e956a1e3af253870599.png" alt="Back to usat 1c0e0415ce535007b5527ca1658ee1e33cd9b2c21e612e956a1e3af253870599" /></a>
+</div>
+
+
+      <a class="logo visible-desktop" href="http://www.reviewed.com"><img width="199" height="35" alt="Reviewed.com" srcset="/assets/navbar-logo-78d373dd06653c181d23a1a4b1eedfad8d08216cca69f54c1e4b6eda3d3775ca.png 1x, /assets/navbar-logo-retina-84a714b93396124f2910523f9b394500bfd51c28f4671136fb3ddf886d9e8974.png 2x" src="/assets/navbar-logo-78d373dd06653c181d23a1a4b1eedfad8d08216cca69f54c1e4b6eda3d3775ca.png" /></a>
+
+      <ul class="inline visible-desktop">
+        <li><a href="http://www.reviewed.com/best-right-now">Best Right Now</a></li>
+        <li><a class="howtos" href="http://www.reviewed.com/how-to">How To<span>s</span></a></li>
+        <li><a href="http://www.reviewed.com/awards/editors-choice">Award Winners</a></li>
+        <li><a href="http://www.reviewed.com/how_we_test">How We Test</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="navbar navbar-fixed-top primary">
+    <div class="navbar-inner">
+      <div class="searchbox dropdown" id="search-top">
+  <typeahead placeholder="Search" category="tablets" algolia-app-id="M5OIGTW601" algolia-search-key="a98afffe5a350b389f931e5ed811c546" algolia-env="production">
+</div>
+
+      <a class="btn btn-navbar hidden-desktop toggle-button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        Menu
+      </a>
+
+      <a class="logo hidden-desktop" href="http://www.reviewed.com"><img width="175" height="22" alt="Reviewed.com" srcset="/assets/navbar-logo-mobile-a6ec3324ce0815a074fdc27bb57d436f6f81ebbf2b0050d423e6536777231677.png 1x, /assets/navbar-logo-retina-mobile-5321fc8953ac3fec375962957b58eb5201752e1a51777f34b44a79ee7d26d5ce.png 2x" src="/assets/navbar-logo-mobile-a6ec3324ce0815a074fdc27bb57d436f6f81ebbf2b0050d423e6536777231677.png" /></a>
+
+      <ul class="inline visible-desktop">
+        <li class="dropdown">
+          <a class="logo" href="/"><img width="101" height="13" alt="Reviewed.com" srcset="/assets/navbar-slide-logo-850c10ffba119b079d6d4fede045bb640186a62082ebe3258adc0b13ed2c6c5f.png 1x, /assets/navbar-slide-logo-retina-7bb481809f5278303b9260a680adf995b01ee35ec1997e6da1786c87ae82ede1.png 2x" src="/assets/navbar-slide-logo-850c10ffba119b079d6d4fede045bb640186a62082ebe3258adc0b13ed2c6c5f.png" /></a>
+          <a href="/">Tablets</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-chevron-down"></i></a> |
+          <div class="dropdown-menu">
+            <p>Our Categories</p>
+
+            <ul class="unstyled">
+              <li><a class="col-head" href="http://www.reviewed.com/home-outdoors">Home &amp; Outdoors</a>
+
+                <ul class="unstyled">
+                    <li><a href="http://dishwashers.reviewed.com">Dishwashers</a></li>
+                    <li><a href="http://refrigerators.reviewed.com">Refrigerators</a></li>
+                    <li><a href="http://laundry.reviewed.com">Laundry</a></li>
+                    <li><a href="http://ovens.reviewed.com">Ovens</a></li>
+                    <li><a href="http://freezers.reviewed.com">Freezers</a></li>
+                    <li><a href="http://microwaves.reviewed.com">Microwaves</a></li>
+                    <li><a href="http://vacuums.reviewed.com">Vacuums</a></li>
+                    <li><a href="http://robotvacuums.reviewed.com">Robot Vacuums</a></li>
+                    <li><a href="http://smarthome.reviewed.com">Smart Home</a></li>
+                    <li><a href="http://luxuryhome.reviewed.com">Luxury Appliances</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="unstyled">
+              <li><a class="col-head" href="http://www.reviewed.com/tech">Tech</a>
+
+                <ul class="unstyled">
+                    <li><a href="http://televisions.reviewed.com">Televisions</a></li>
+                    <li><a href="http://cameras.reviewed.com">Cameras</a></li>
+                    <li><a href="http://lenses.reviewed.com">Lenses</a></li>
+                    <li><a href="http://headphones.reviewed.com">Headphones</a></li>
+                    <li><a href="http://smartphones.reviewed.com">Smartphones</a></li>
+                    <li><a href="http://laptops.reviewed.com">Laptops</a></li>
+                    <li><a href="http://camcorders.reviewed.com">Camcorders</a></li>
+                    <li><a href="http://tablets.reviewed.com">Tablets</a></li>
+                    <li><a href="http://wearables.reviewed.com">Wearables</a></li>
+                </ul>
+              </li>
+                <li><a href="http://cars.reviewed.com">Cars</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle disabled" data-toggle="dropdown" href="/reviews">
+            Brands
+            &amp; Categories
+</a>          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-chevron-down"></i></a>
+
+          <div class="dropdown-menu brands">
+            <p class="section">Reviews By Brand</p>
+            <ul class="inline brands">
+                <li>
+                    <a href="/brands/acer"><img alt="Acer" src="http://a4.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/909e3a858370aee336ac2abd36d6577ad5227932/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/amazon"><img alt="Amazon" src="http://a3.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/76b2a262240ca0a38e59821844cc5e427575a79f/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/lenovo"><img alt="Lenovo" src="http://a3.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/bc512f3dd84538e862d80c64e147b282148d3c81/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/apple"><img alt="Apple" src="http://a2.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/34adab0040b47fffa06fe2aaa5241d916a2a81a0/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/google"><img alt="Google" src="http://a5.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/https://reviewed-production.s3.amazonaws.com/brand/366/google.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/asus"><img alt="Asus" src="http://a5.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/e063d0d43ca02112bb3ac2678c6c45252e0a8ec1/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/toshiba"><img alt="Toshiba" src="http://a2.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/5a6df23c40afa16749f503ddbfbdaa450710731e/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/microsoft"><img alt="Microsoft" src="http://a4.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/https://reviewed-production.s3.amazonaws.com/brand/103/microsoft.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/samsung"><img alt="Samsung" src="http://a4.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/6a99260e48a91b9ba0a3a44d81394f334ba168dc/logo.png" /></a>
+                </li>
+                <li>
+                    <a href="/brands/sony"><img alt="Sony" src="http://a5.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,q_85/http://reviewed-production.s3.amazonaws.com/brand/866214a4a4e682e93b4d99dd8b08da6213825d5b/logo.png" /></a>
+                </li>
+            </ul>
+
+              <p class="section">Reviews By Category</p>
+      <p class="section"><strong><a href="/types/ereader">eReader</a></strong></p>
+    <ul class="inline">
+    </ul>
+      <p class="section"><strong><a href="/types/tablet">Tablet</a></strong></p>
+    <ul class="inline">
+    </ul>
+
+
+              <p class="section">Reviews By Price</p>
+                <ul class="inline">
+                    <li><a href="/prices/min-100">$0 to $100</a></li>
+                    <li><a href="/prices/100-200">$100 to $200</a></li>
+                    <li><a href="/prices/200-300">$200 to $300</a></li>
+                    <li><a href="/prices/300-400">$300 to $400</a></li>
+                    <li><a href="/prices/400-500">$400 to $500</a></li>
+                    <li><a href="/prices/500-600">$500 to $600</a></li>
+                    <li><a href="/prices/600-700">$600 to $700</a></li>
+                    <li><a href="/prices/700-max">$700 or more</a></li>
+                </ul>
+          </div>
+        </li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/video/latest">Video</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slideout">
+    <ul class="unstyled">
+      <li>
+        <a href="http://www.reviewed.com">Reviewed.com</a>
+
+        <ul class="unstyled reviewed">
+          <li><a class="close-sidebar" href="http://www.reviewed.com/best-right-now">Best Right Now</a></li>
+          <li><a class="howtos" href="http://www.reviewed.com/how-to">How Tos</a></li>
+          <li><a href="http://www.reviewed.com/awards/editors-choice">Award Winners</a></li>
+          <li><a href="http://www.reviewed.com/how_we_test">How We Test</a></li>
+        </ul>
+      </li>
+        <li>
+          <a href="/">Tablets</a>
+
+          <ul class="unstyled category">
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/video/latest">Video</a></li>
+          </ul>
+        </li>
+      <li>
+        <span>Our Categories</span>
+
+        <ul class="unstyled categories">
+            <li><a href="http://televisions.reviewed.com">Televisions</a></li>
+            <li><a href="http://cameras.reviewed.com">Cameras</a></li>
+            <li><a href="http://lenses.reviewed.com">Lenses</a></li>
+            <li><a href="http://headphones.reviewed.com">Headphones</a></li>
+            <li><a href="http://smartphones.reviewed.com">Smartphones</a></li>
+            <li><a href="http://laptops.reviewed.com">Laptops</a></li>
+            <li><a href="http://camcorders.reviewed.com">Camcorders</a></li>
+            <li><a href="http://tablets.reviewed.com">Tablets</a></li>
+            <li><a href="http://wearables.reviewed.com">Wearables</a></li>
+            <li><a href="http://dishwashers.reviewed.com">Dishwashers</a></li>
+            <li><a href="http://refrigerators.reviewed.com">Refrigerators</a></li>
+            <li><a href="http://laundry.reviewed.com">Laundry</a></li>
+            <li><a href="http://ovens.reviewed.com">Ovens</a></li>
+            <li><a href="http://freezers.reviewed.com">Freezers</a></li>
+            <li><a href="http://microwaves.reviewed.com">Microwaves</a></li>
+            <li><a href="http://vacuums.reviewed.com">Vacuums</a></li>
+            <li><a href="http://robotvacuums.reviewed.com">Robot Vacuums</a></li>
+            <li><a href="http://smarthome.reviewed.com">Smart Home</a></li>
+            <li><a href="http://luxuryhome.reviewed.com">Luxury Appliances</a></li>
+            <li><a href="http://cars.reviewed.com">Cars</a></li>
+        </ul>
+      </li>
+  </div>
+</header>
+
+
+  <div class="panel">
+    <div class="panel-mask"></div>
+    <div id="ad_preheader" class="hidden-phone adwrap">  <div id='leaderboard_1' class='ad_leaderboard_1' data-placement="leaderboard" data-gad-mobile='false' data-gad-unit='true' data-gad-sizes='[[728,90],[970,250],[970,90]]'></div>
+</div>
+
+    <div class="main container">
+      <!--[if lte IE 9]>
+  <link rel="stylesheet" media="screen" href="/assets/outdated-73342abf666b6e013aa23888de522834ac5746d10e41e54c3620711b63f2e153.css" />
+  <div class="alert IE9"><strong></strong></div>
+<![endif]-->
+
+        <div class="xhr-include" data-src="/includes/notifications"></div>
+
+      <div class="row">
+          <div class="span16">
+            <div id="content" class="articles show">
+
+
+
+
+<span class="article feature" itemscope="itemscope" itemtype="http://schema.org/Article">
+  
+  <div class="row">
+    <div class="span left-column">
+      <meta itemprop="datePublished" content="November 25, 2013">
+      <div class="product_body">
+        <div class="header">
+  
+  
+
+<h1 itemprop="name">2013 Best of Year Tablet Awards</h1>
+
+
+
+
+  <h2 itemprop="headline">The year&#39;s top tablets</h2>
+
+</div>
+
+
+
+        
+  <div class="article-footer variant">
+      <span class="article-comments hidden-phone">
+        <a class="visible-desktop" href="#disqus_comments" data-disqus-identifier="/features/2013-best-of-year-tablet-awards">0 comments</a>
+      </span>
+
+    <span class="pull-right">
+<div class="social-icons">
+    <a class="addthis_counter" style="display:none"><span></span></a>
+    <span class="visible-desktop">Share:</span>
+
+  <span>
+    
+<span class="fa-stack facebook">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_facebook fa fa-facebook fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack twitter">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_twitter fa fa-twitter fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack visible-phone">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="fa fa-stack-1x fa-inverse sms-button"><strong>SMS</strong></a>
+</span>
+<span class="fa-stack pinterest">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_pinterest_share fa fa-pinterest fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack email">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_email fa fa-envelope-o fa-stack-1x fa-inverse"><span></span></a>
+</span>
+
+  </span>
+</div>
+</span>
+  </div>
+
+  
+
+
+
+        <div class="heropic">
+  <img alt="" class="heroimg" itemprop="image" src="http://a1.images.reviewed.com/image/fetch/s--sapLJwhG--/c_fill,cs_srgb,f_auto,fl_progressive.strip_profile,g_center,q_jpegmini,w_747/http://reviewed-production.s3.amazonaws.com/attachment/9cad151e88ff46e4/Hero3.jpg" />
+
+</div>
+
+
+
+
+        
+        
+        
+<div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a itemprop="url" href="/authors/virginia-barry"><img itemprop="image" alt="Virginia Barry" class="pull-left" src="http://a2.images.reviewed.com/image/fetch/c_fill,cs_srgb,f_auto,fl_strip_profile,g_center,h_48,q_85,w_48/https://reviewed-production.s3.amazonaws.com/authors/virginia-barry.jpeg" /></a>
+
+  <p class="pull-left">
+    <strong itemprop="name">
+      <a href="/authors/virginia-barry">Virginia Barry</a>
+    </strong><br />
+    November 25, 2013
+  </p>
+
+    <div class="social">
+    <a href="http://twitter.com/ReviewedTech">
+      <span class="fa-stack twitter">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+</a>    <a href="http://www.facebook.com/Reviewedcom">
+      <span class="fa-stack facebook">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+</a>    <a href="https://plus.google.com/109448612688960218142?rel=author">
+      <span class="fa-stack google">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+      </span>
+</a>    <a itemprop="email" href="mailto:virginia@reviewed.com">
+      <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+</a></div>
+
+</div>
+
+
+          <div class="read-more-external" itemprop="articleBody">
+
+              <a name="section_untitled-section"></a>
+<div class="page_section" id="section_85196">
+  <p>Americans love their electronics, and tablets have become a real favorite in recent years. The shiny machines are wanted for work, games, movie nights in bed, and even casual photography. Though it wasn&#39;t a breakthrough year in terms of tablet innovation—improvements came mostly in the form of subtle under-the-hood changes—the devices remain as popular as ever.</p>
+
+<p>Don&#39;t settle for just any old slate though: Screen quality, content availability, and user interface vary widely, so we tested a slew of tablets to help you find the right one. </p>
+
+<div class="embedded-video brightcove">  <object id="myPlayer-2860112271001" class="BrightcoveExperience" height='auto'>    <param name="bgcolor" value="#FFFFFF" />    <param name="width" value="100%" />    <param name="playerID" value="2146654412001" />    <param name="playerKey" value="AQ~~,AAABIWNF8ok~,25wC6kbaC7otwmOr4_A_-cxO66PewIXK" />    <param name="isVid" value="true" />    <param name="isUI" value="true" />    <param name="dynamicStreaming" value="true" />    <param name="@videoPlayer" value="2860112271001" />    <param name="additionalAdTargetingParams" value="&site_code=rvw&brand=" />    <param name="includeAPI" value="true" />    <param name="templateLoadHandler" value="videoLoadHandler" />    <param name="templateReadyHandler" value="videoReadyHandler" />  </object></div>
+
+<div class='clearfix'></div>
+
+<h3>Best Tablet of the Year - Apple iPad Air</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Apple_iPadAir_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/cb24c16ccaf74af9/Apple_iPadAir_150.jpg" />          </div>        <figcaption>Apple iPad Air</figcaption>  </figure>
+</div>
+
+<p>Content is King, and Apple wears the twinkling crown: The iPad Air has access to more content than any other tablet on the market, period. </p>
+
+<p>Amazon Instant Video, Netflix, Hulu, YouTube, the iStore, numerous Google services—there are just heaps of goodies waiting at your fingertips. Its content and beloved operating system earn this device the number one spot. If you&#39;re searching for ease of use, content galore, durable parts, and an ultra-thin profile, take a peek at Apple&#39;s iPad Air. (MSRP starting at $499) </p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/apple-ipad-air-tablet-review">Read the Full Review of the Apple iPad Air here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Google Nexus 7 (2nd Gen)</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Google_Nexus7_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/23907ade65584cc5/Google_Nexus7_150.jpg" />          </div>        <figcaption>Google Nexus 7 (2nd gen)</figcaption>  </figure>
+</div>
+
+<p>Google didn&#39;t mess around with this year&#39;s Nexus 7. These things are truly little beasts: The screens pack 320 pixels per inch; the insides host fast-and-furious Qualcomm Snapdragon processors and a whopping 16GB of ram; the palatable price tags undercut Apple by hundreds. Android fans and game lovers will find great companions in the powerful Nexus 7, our number two pick for Best Tablet. (MSRP Starting at $229)</p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/google-nexus-7-gen-2-review">Read the Full Review of the Google Nexus 7 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best eReader - Amazon Kindle Paperwhite</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Amazon_KindlePaperwhite_150.jpg" class="attachment" src="http://a3.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/b2503e45a9864bf7/Amazon_KindlePaperwhite_150.jpg" />          </div>        <figcaption>Amazon Kindle Paperwhite</figcaption>  </figure>
+</div>
+
+<p>For the bookworms of the world, Amazon offers the Kindle Paperwhite—our number one pick for eReaders. Touch a word you don&#39;t understand and a definition appears. Choose a favorite font or alter its size in the main menu. Tweet a quote from your favorite book by selecting the passage with the press of a finger. Buy a novel, rent a textbook, borrow a volume, lend one, cruise the <em>massive</em> Kindle Lending Library: all from the palm of your Paperwhite-laden hand. <br>
+(MSRP starting at $119)</p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/amazon-kindle-paperwhite-2013-ereader-review">Read the Full Review of the Amazon Kindle Paperwhite here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h3>Best Design - Samsung Galaxy Note 10.1</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Samsung_GalaxyNote101_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/93f2444860214883/Samsung_GalaxyNote101_150.jpg" />          </div>        <figcaption>Samsung Galaxy Note 10.1</figcaption>  </figure>
+</div>
+
+<p>Samsung&#39;s Galaxy Note 10.1 wins best dressed—and not just by a little. This tablet is far and away the best looking device we&#39;ve seen all year, with smart leather backing and careful stitching that sings a handsome tune. To top it all off, a beautiful stylus makes creative apps all the more fun.</p>
+
+<p>If you need a powerful slate in a sharp outfit, something with a snappy processor and a beautiful screen, the Note 10.1 is a solid choice. (MSRP starting at $549)</p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/samsung-galaxy-note-101-2014-edition-tablet-review">Read the Full Review of the Samsung Galaxy Note 10.1 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h4>Runner-up - Microsoft Surface 2</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Microsoft_Surface2_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/1e8392a5195a4cc7/Microsoft_Surface2_150.jpg" />          </div>        <figcaption>Microsoft Surface 2</figcaption>  </figure>
+</div>
+
+<p>Second place in this category goes to Microsoft&#39;s Surface 2. On the back of these machines you&#39;ll find a collapsable kickstand that allows the tablets to freestand, either vertically or horizontally. Sleek metal bodies make for handsome packages, and magnetic strips along the bottoms of the tablets mean you can attach a keyboard if you so desire.<br>
+(MSRP starting at $449)<br>
+<div class='clearfix'></div><br>
+<strong><a href="http://tablets.reviewed.com/content/microsoft-surface-2-tablet-review">Read the Full Review of the Microsoft Surface 2 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Innovation in Tablets</h3>
+
+<h3>Amazon Kindle Fire HDX for Mayday</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Amazon_KindleFireHDX89_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/25efd910395a4218/Amazon_KindleFireHDX89_150.jpg" />          </div>        <figcaption>Amazon Kindle Fire HDX</figcaption>  </figure>
+</div>
+
+<p>Novice users and tech-wary shoppers have every reason to love Amazon&#39;s latest innovation: a 24-hour video chat customer service app called <a href="http://www.youtube.com/user/kindle">Mayday</a>. If you&#39;re lost or confused, just launch the app and an actual person appears. You can see them, but they can&#39;t see you—though they do see your screen in order to help you through your times of tech difficulties. Night or day, a live person is there to help. <br>
+(MSRP starting at $229 for 7&quot;, $379 for 8.9&quot;)</p>
+
+<div class='clearfix'></div>
+
+<h4>Runner-up - Sony Xperia Z for weatherproofing</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Sony_XperiaZ_vanity_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/c43a1394aac148e0/Sony_XperiaZ_vanity_150.jpg" />          </div>        <figcaption>Sony Xperia Z</figcaption>  </figure>
+</div>
+
+<p>Sony&#39;s Xperia Z is equipped to withstand toddlers, rainy days, or afternoons by the pool. Parents need not fear the presence of a sippy cup, or the questionable grip of exuberant 5-year-olds. Thanks to Aqua-phobic nano-coating that protects this tablet from spills, as well as the rough and tough <a href="http://tablets.reviewed.com/news/protect-yourself-with-gorilla-glass-3-and-avoid-heartbreak.htm">Gorilla Glass</a> to prevent cracks, the Xperia Z tablets are likely to last. (MSRP starting at $499)<br>
+<div class='clearfix'></div></p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/sony-xperia-tablet-z-review">Read the Full Review of the Sony Xperia Z here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Value Tablet - Hisense Sero 7 Pro</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="HisenseSero7Pro150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/c168304d2ff44dc7/HisenseSero7Pro150.jpg" />          </div>        <figcaption>Hisense Sero 7 Pro</figcaption>  </figure>
+</div>
+
+<p>Value is always a favorite talking point among buyers, and nothing says &quot;deal&quot; quite like the Hisense Sero 7 Pro. It might not look like much, but it&#39;s a whole lot better than most of the knock-off junk you see in its price range. If you&#39;re a thrifty shopper in need of a slate for eReading, videos, and light web-browsing, give this Walmart exclusive a look. Don&#39;t expect the best screen or the quickest processing in town, but the Sero 7 Pro can satisfy beginners for a great price. (Online now for approx. $149)</p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/hisense-sero-7-pro-review">Read the Full Review of the Hisense Sero 7 Pro here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Google Nexus 7</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Google_Nexus7_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/23907ade65584cc5/Google_Nexus7_150.jpg" />          </div>        <figcaption>Google Nexus 7 (2nd gen)</figcaption>  </figure>
+</div>
+
+<p>Hot dog! Did you read that right? Yes: Our runner up for Best Tablet of the Year is also our runner up for Best Value: Google&#39;s powerhouse Nexus 7 offers a gorgeous, pixel-dense screen, a lightning-speed processor, and mountains of ram—and it&#39;s priced so fairly that we gave it the runner up spot for value. (MSRP Starting at $229)<br>
+<div class='clearfix'></div></p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/google-nexus-7-gen-2-review">Read the Full Review of the Google Nexus 7 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Large Tablet - Apple iPad Air</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Apple_iPadAir_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/cb24c16ccaf74af9/Apple_iPadAir_150.jpg" />          </div>        <figcaption>Apple iPad Air</figcaption>  </figure>
+</div>
+
+<p>It&#39;s no wonder that our Best Tablet of the Year is also the Best Large Tablet. Why does Apple&#39;s iPad Air take the cake? It offers the most content, one of the simplest and easiest-to-use operating systems, a razor-thin shape, and a beautiful screen—all in a durable package. When it comes to tablets, the iPad Air is as good as it gets. (MSRP starting at $499) <br>
+<div class='clearfix'></div></p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/apple-ipad-air-tablet-review">Read the Full Review of the Apple iPad Air here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Samsung Galaxy Note 10.1</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Samsung_GalaxyNote101_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/93f2444860214883/Samsung_GalaxyNote101_150.jpg" />          </div>        <figcaption>Samsung Galaxy Note 10.1</figcaption>  </figure>
+</div>
+
+<p>Samsung&#39;s beautifully made Galaxy Note 10.1 does more than just turn heads. The leather-backed beauty comes with serious guts, too. The formidable processor offers snappy performance while the screen displays images with some of the best color accuracy we&#39;ve ever seen on a tablet. Topping off this sharp machine is an accurate stylus that heightens the fun of creative apps. (MSRP starting at $549)</p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/samsung-galaxy-note-101-2014-edition-tablet-review">Read the Full Review of the Samsung Galaxy Note 10.1 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Small Tablet - Google Nexus 7 (2nd gen)</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Google_Nexus7_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/23907ade65584cc5/Google_Nexus7_150.jpg" />          </div>        <figcaption>Google Nexus 7 (2nd gen)</figcaption>  </figure>
+</div>
+
+<p>Like dynamite, the Google Nexus 7 packs a lot of <em>bang</em> into a small size: The screens are super sharp and jam-packed with pixels, Qualcomm Snapdragon processors deliver lightning-speed performance, and a 16GB-pile of ram offers storage galore. With its approachable price, likeable Android OS, excellent screen, and sheer strength, the Nexus 7 muscled its way to first place. (MSRP Starting at $229)<br>
+<div class='clearfix'></div></p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/google-nexus-7-gen-2-review">Read the Full Review of the Google Nexus 7 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h4>Runner-up - Apple iPad mini</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Apple_iPadmini_150.jpg" class="attachment" src="http://a1.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/662d4d714fd84ea9/Apple_iPadmini_150.jpg" />          </div>        <figcaption>Apple iPad mini with retina display</figcaption>  </figure>
+</div>
+
+<p>Apple launched the iPad mini with retina display, and this little guy is quite the performer. iPads offer more content than competitors, for one, but the minis also sport reliable hardware and sharp screens. In white and &quot;space gray&quot; varieties, the iPad minis are typically the right buy for shoppers already invested in Apple&#39;s app ecosystem. (MSRP Starting at $399)<br>
+<div class='clearfix'></div></p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/ipad-mini-with-retina-display-tablet-review">Read the Full Review of the Apple iPad mini with retina display here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best User Experience - Apple iPad Air</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Apple_iPadAir_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/cb24c16ccaf74af9/Apple_iPadAir_150.jpg" />          </div>        <figcaption>Apple iPad Air</figcaption>  </figure>
+</div>
+
+<p>Since many buyers only use tablets for simple tasks like watching shows and sharing photos, heavy-duty hardware isn&#39;t as paramount as you&#39;d think: That&#39;s why we chose a User Experience award winner, the Apple iPad Air. </p>
+
+<p>iOS7 uses a clean, minimal approach: The home screen is very clean and simple, and navigation is a cakewalk—swipe your finger to find menu shortcuts, turn pages, check notifications, and more. Whether it&#39;s zooming, scrolling, or tinkering with settings, Apple makes it all an easy breeze. Best of all, iPads currently offer users more apps, books, and video content than any other tablet. (MSRP starting at $499) </p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/apple-ipad-air-tablet-review">Read the Full Review of the Apple iPad Air here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Google Nexus 7 (2nd gen)</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Google_Nexus7_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/23907ade65584cc5/Google_Nexus7_150.jpg" />          </div>        <figcaption>Google Nexus 7 (2nd gen)</figcaption>  </figure>
+</div>
+
+<p>If you&#39;re looking for value on top of high performance, there&#39;s currently none better than the Google Nexus 7. With all the tasty features of the latest dessert-themed Android OS (KitKat), this pint-sized powerhouse hits all the performance superlatives—while keeping great battery life. </p>
+
+<p>What the Nexus 7 lacks in content, it more than makes up for with choice: Don&#39;t like something about the tablet? It&#39;s easy to customize it to your liking—even the keyboard can be replaced. Perks like that earn this slate the number two spot for User Experience. (MSRP starting at $229) </p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/google-nexus-7-gen-2-review">Read the Full Review of the Google Nexus 7 (2nd gen)   here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Screen - Apple iPad Air</h3>
+
+<p> </p>
+
+<div class="pull-left"><figure>  <div>    <img alt="Apple_iPadAir_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/cb24c16ccaf74af9/Apple_iPadAir_150.jpg" />          </div>        <figcaption>Apple iPad Air</figcaption>  </figure>
+</div>
+
+<p>Tablets have had a rough time advancing their screen technology, but Apple figured out the solution to the liquid-crystal conundrum. Sporting both great contrast and color, the screen of the iPad Air is the complete package.</p>
+
+<p>If you pick up the iPad Air, prepare your pupils for a bath of beauty. Winning our Best Screen of the year among a pack of standouts, the iPad Air very narrowly edged out the Kindle Fire HDX tablets with superior black and white accuracy—as well as build quality. (MSRP starting at $499) </p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/apple-ipad-air-tablet-review">Read the Full Review of the Apple iPad Air here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Sony Xperia Z</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Sony_XperiaZ_vanity_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/c43a1394aac148e0/Sony_XperiaZ_vanity_150.jpg" />          </div>        <figcaption>Sony Xperia Z</figcaption>  </figure>
+</div>
+
+<p>With the advent of new broadcast standards come new performance goals. Looking ahead to newer UHD guidelines is the Sony Xperia Z Tablet—the only slate you can buy with the newest, more-vibrant color standards. </p>
+
+<p>If that&#39;s not enough to entice you, the screen is also water-resistant thanks to a nano-coating that protects your new toy from water, hot chocolate, or clumsy kids. It can&#39;t withstand a wrecking ball, but accident-proofing is a major plus (MSRP starting at $499.99) </p>
+
+<p><strong><a href="http://tablets.reviewed.com/content/sony-xperia-tablet-z-review">Read the Full Review of the Sony Xperia Z here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<h3>Best Battery - Microsoft Surface 2</h3>
+
+<div class="pull-left"><figure>  <div>    <img alt="Microsoft_Surface2_150.jpg" class="attachment" src="http://a5.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/1e8392a5195a4cc7/Microsoft_Surface2_150.jpg" />          </div>        <figcaption>Microsoft Surface 2</figcaption>  </figure>
+</div>
+
+<p>For many, the devil is in the battery, so we tested each tablet in search of the longest-lasting charge. Microsoft&#39;s Surface 2 easily wins this award. Bring this slate along on planes, trains, and automobiles: Even with power-hungry settings, the Surface 2 sticks with it for 9 long hours and 30 minutes. (MSRP starting at $449) </p>
+
+<div class='clearfix'></div>
+
+<p><strong><a href="http://tablets.reviewed.com/content/microsoft-surface-2-tablet-review">Read the Full Review of the Microsoft Surface 2 here</a></strong><br>
+<div class='clearfix'></div></p>
+
+<h4>Runner-up - Samsung Galaxy Note 10.1</h4>
+
+<div class="pull-left"><figure>  <div>    <img alt="Samsung_GalaxyNote101_150.jpg" class="attachment" src="http://a4.images.reviewed.com/image/fetch/c_limit,cs_srgb,f_auto,fl_strip_profile,g_center,h_150,q_85,w_150/http://reviewed-production.s3.amazonaws.com/attachment/93f2444860214883/Samsung_GalaxyNote101_150.jpg" />          </div>        <figcaption>Samsung Galaxy Note 10.1</figcaption>  </figure>
+</div>
+
+<p>Runner up in the battery test is Samsung&#39;s Galaxy Note 10.1. Crank that screen as bright as you want, you&#39;ll still enjoy above-average battery life: This tablet runs for an average of 8 hours and 9 minutes before it needs another charge. (MSRP starting at $549) <br>
+<div class='clearfix'></div><br>
+<strong><a href="http://tablets.reviewed.com/content/samsung-galaxy-note-101-2014-edition-tablet-review">Read the Full Review of the Samsung Galaxy Note 10.1 here</a></strong></p>
+
+<div class='clearfix'></div>
+
+<div gallery      data-collection-path="/articles/15512/attachments.json?tags=champions"      data-layout=""      data-number-of-thumbs="5"      data-fullscreen=""> </div> 
+
+</div>
+
+
+            <div class="page_section">  <p><em>We’ve scoured the web to find you the best deals on good products. While Reviewed.com may receive a small share of the revenue from your purchase, editorial opinions are independent from any business sales.</em></p>
+</div>
+
+            <div class="via-and-source">
+
+</div>
+
+
+            
+            
+
+
+            <div class="mailchimp"><span>
+  <p><strong>Be in the know! Get Reviewed.com news and reviews straight to your inbox.</strong></p>
+</span>
+
+<span>
+  
+<form>
+  <input type="hidden" id="website_group_name" name="website_group_name" value="TabletReaderInfo.com"></input>
+  <input type="email" autocapitalize="off" autocorrect="off" name="email" id="email" placeholder="email address" size="25">
+  <button class="btn btn-primary list-conversion" type="submit">Sign Up</button>
+</form>
+
+
+  <p class="hide pull-left">Thanks for signing up!</p>
+</span>
+</div>
+            
+  <div id="disqus_comments" class="article-footer">
+
+    <span class="pull-right">
+<div class="social-icons">
+    <a class="addthis_counter" style="display:none"><span></span></a>
+    <span class="visible-desktop">Share:</span>
+
+  <span>
+    
+<span class="fa-stack facebook">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_facebook fa fa-facebook fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack twitter">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_twitter fa fa-twitter fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack visible-phone">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="fa fa-stack-1x fa-inverse sms-button"><strong>SMS</strong></a>
+</span>
+<span class="fa-stack pinterest">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_pinterest_share fa fa-pinterest fa-stack-1x fa-inverse"><span></span></a>
+</span>
+<span class="fa-stack email">
+  <i class="fa fa-square fa-stack-2x"></i>
+  <a class="addthis_button_email fa fa-envelope-o fa-stack-1x fa-inverse"><span></span></a>
+</span>
+
+  </span>
+</div>
+</span>
+  </div>
+
+  <div id='taboola-above-main-column-mix' class="hidden-phone"></div>
+<div id="taboola-below-our-paid-3x1"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({mode:'thumbs-1r', container:'taboola-above-main-column-mix', placement:'Top of page', target_type:'mix', tracking:'utm_source=taboola_recirc_top'});
+  _taboola.push({
+    mode: 'organic-thumbs-1r',
+    container: 'taboola-below-our-paid-3x1',
+    placement: 'Below our PAID 3x1',
+    target_type: 'mix'
+  });
+</script>
+
+    <div class="disqus-content">
+      
+    <div class="comments">
+      <a name="comments"></a>
+      <div data-disqus_url='http://tablets.reviewed.com/content/2013-best-of-year-tablet-awards' data-slug='/features/2013-best-of-year-tablet-awards' id='disqus_thread'></div>
+    </div>
+
+
+    </div>
+
+          </div>
+      </div>
+    </div>
+
+      <div class="span right-column">
+        
+<div class="article_sidebar">
+  
+<div class="adwrap ">
+  <div class="adlabel">Advertisement</div>
+  <div class="placeholder">
+    
+  <div id='rectangle_1' class='ad_rectangle_1' data-placement="rectangle" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[300,250],[300,600],[336,280],[468,60]]'></div>
+
+  </div>
+</div>
+
+
+  <div class="xhr-include" data-src="/includes/sidebar/trending_articles" data-breakpoint="all"></div><div class="xhr-include" data-src="/includes/sidebar/best_right_nows" data-breakpoint="all"></div>
+
+  
+<div class="adwrap ">
+  <div class="adlabel">Advertisement</div>
+  <div class="placeholder">
+    
+  <div id='rectangle_2' class='ad_rectangle_2' data-placement="rectangle" data-gad-mobile='false' data-gad-unit='true' data-gad-sizes='[[300,250],[300,600],[336,280],[468,60]]'></div>
+
+  </div>
+</div>
+
+
+  
+</div>
+
+      </div>
+  </div>
+</span>
+<a class="scrollToTop hide" href="#">
+  <i class="fa fa-chevron-up visible-desktop"></i>
+</a>
+
+</div>
+          </div>
+      </div>
+      <div class="ad-cubes">
+  <div class="adwrap">  <div id='cube_1' class='ad_cube_1' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+  <div class="adwrap">  <div id='cube_2' class='ad_cube_2' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+  <div class="adwrap">  <div id='cube_3' class='ad_cube_3' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+  <div class="adwrap">  <div id='cube_4' class='ad_cube_4' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+  <div class="adwrap">  <div id='cube_5' class='ad_cube_5' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+  <div class="adwrap">  <div id='cube_6' class='ad_cube_6' data-placement="cube" data-gad-mobile='true' data-gad-unit='true' data-gad-sizes='[[125,125]]'></div>
+</div>
+</div>
+
+    </div>
+
+    <footer>
+  <div class="row">
+    <div class="span4">
+      <p><strong>Copyright</strong></p>
+
+      <p><strong>Copyright &copy; 2016 Reviewed.com.</strong> All rights reserved. All trademarks and product names are the property of their respective owners. We make no guarantees regarding any of the advice offered on this web site or by its staff or users. User comments and postings are not the responsibility of Reviewed.com. </p>
+
+      <p>We’ve scoured the web to find you the best deals on good products. While Reviewed.com may receive a small share of the revenue from your purchase, editorial opinions are independent from any business sales.</p>
+    </div>
+
+    <div class="span7">
+      <div class="row">
+        <div class="span2">
+          <p><strong>About Us</strong></p>
+
+          <ul class="unstyled">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/advertising">Advertising</a></li>
+            <li><a href="/how_we_test">How We Test</a></li>
+            <li><a href="/how_we_score">How We Score</a></li>
+            <li><a href="/how_we_award">How We Award</a></li>
+            <li><a href="/ethics">Ethics</a></li>
+            <li><a href="http://www.reviewed.com/science">Science Blog</a></li>
+            <li><a href="http://static.usatoday.com/terms/">Terms of Service</a></li>
+            <li><a href="http://static.usatoday.com/privacy/">Privacy Policy</a></li>
+            <li><a href="http://static.usatoday.com/privacy/#adchoices">Ad Choices</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+            <li><a href="/send_feedback">Send Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="span5">
+          <p><strong>Our Sites</strong></p>
+
+          <div class="row">
+            <div class="span2">
+              <p><a class="col-head" href="http://www.reviewed.com/home-outdoors">Home &amp; Outdoors</a>
+</p>
+
+              <ul class="unstyled">
+                  <li><a href="http://dishwashers.reviewed.com">Dishwashers</a></li>
+                  <li><a href="http://refrigerators.reviewed.com">Refrigerators</a></li>
+                  <li><a href="http://laundry.reviewed.com">Laundry</a></li>
+                  <li><a href="http://ovens.reviewed.com">Ovens</a></li>
+                  <li><a href="http://freezers.reviewed.com">Freezers</a></li>
+                  <li><a href="http://microwaves.reviewed.com">Microwaves</a></li>
+                  <li><a href="http://vacuums.reviewed.com">Vacuums</a></li>
+                  <li><a href="http://robotvacuums.reviewed.com">Robot Vacuums</a></li>
+                  <li><a href="http://smarthome.reviewed.com">Smart Home</a></li>
+                  <li><a href="http://luxuryhome.reviewed.com">Luxury Appliances</a></li>
+              </ul>
+            </div>
+
+            <div class="span2">
+              <p><a class="col-head" href="http://www.reviewed.com/tech">Tech</a>
+</p>
+
+              <ul class="unstyled">
+                  <li><a href="http://televisions.reviewed.com">Televisions</a></li>
+                  <li><a href="http://cameras.reviewed.com">Cameras</a></li>
+                  <li><a href="http://lenses.reviewed.com">Lenses</a></li>
+                  <li><a href="http://headphones.reviewed.com">Headphones</a></li>
+                  <li><a href="http://smartphones.reviewed.com">Smartphones</a></li>
+                  <li><a href="http://laptops.reviewed.com">Laptops</a></li>
+                  <li><a href="http://camcorders.reviewed.com">Camcorders</a></li>
+                  <li><a href="http://tablets.reviewed.com">Tablets</a></li>
+                  <li><a href="http://wearables.reviewed.com">Wearables</a></li>
+              </ul>
+
+                <p><a href="http://cars.reviewed.com">Cars</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="span5 mailchimp">
+      <p><strong>Be in the know! Get Reviewed.com news and reviews straight to your inbox.</strong></p>
+      
+<form>
+  <input type="hidden" id="website_group_name" name="website_group_name" value="TabletReaderInfo.com"></input>
+  <input type="email" autocapitalize="off" autocorrect="off" name="email" id="email" placeholder="email address" size="25">
+  <button class="btn btn-primary list-conversion" type="submit">Sign Up</button>
+</form>
+
+      <p class="hide pull-left">Thanks for signing up!</p>
+
+      
+<div class="social-icons">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <a class="fa fa-facebook fa-stack-1x fa-inverse" href="https://www.facebook.com/Reviewedcom"></a>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <a class="fa fa-twitter fa-stack-1x fa-inverse" href="https://twitter.com/revieweddotcom"></a>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <a class="fa fa-youtube fa-stack-1x fa-inverse" href="http://www.youtube.com/revieweddotcom"></a>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <a class="fa fa-google-plus fa-stack-1x fa-inverse" href="https://plus.google.com/+Reviewedcom/"></a>
+  </span>
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    <a class="fa fa-pinterest fa-stack-1x fa-inverse" href="http://pinterest.com/revieweddotcom/"></a>
+  </span>
+</div>
+    </div>
+  </div>
+
+  <div>
+    <p>
+      <a href="http://www.reviewed.com">
+        <img width="168" height="19" srcset="/assets/categories/reviewed/logo-small-f5e89c29904cff551d3a76c136d9d06b34fe02afd1e10775ce87daf948e9e273.png 1x, /assets/categories/reviewed/logo-small-retina-ce23d78842729803e5eaf4872e5cf76b8b42015c9ae41961f544401d6150c7cb.png 2x" src="/assets/categories/reviewed/logo-small-f5e89c29904cff551d3a76c136d9d06b34fe02afd1e10775ce87daf948e9e273.png" alt="Logo small f5e89c29904cff551d3a76c136d9d06b34fe02afd1e10775ce87daf948e9e273" />
+        Part of USA TODAY Tech
+      </a>
+
+      <a href="http://www.usatoday.com/">
+        <img width="142" height="38" srcset="/assets/logo-usat-9226ac3ea2a0ee617e78ee862dfd0b270e1d68167824bbdd3e254b836c9e0e36.png 1x, /assets/logo-usat-retina-a0178713dd4e1cf11c0c180898af50da474c1e0612e0cc674d254da3118310d9.png 2x" src="/assets/logo-usat-9226ac3ea2a0ee617e78ee862dfd0b270e1d68167824bbdd3e254b836c9e0e36.png" alt="Logo usat 9226ac3ea2a0ee617e78ee862dfd0b270e1d68167824bbdd3e254b836c9e0e36" />
+      </a>
+    </p>
+  </div>
+</footer>
+
+  </div>
+
+      <div id="interstitial_1_modal" class="interstitial-modal modal hide" data-backdrop="static">
+        <div class="modal-header">
+          <div class="content">
+            <img width="209" height="35" srcset="/assets/logo-7f6a6351bd2870aac4df12431be42412b02dc71d9c9aec4460ae81a6081454de.png 1x, /assets/logo-retina-daf9af5af105baa2ea82ea3dcc3ffbe1a6b88ab3a67d55b7aff1af2c74696670.png 2x" src="/assets/logo-7f6a6351bd2870aac4df12431be42412b02dc71d9c9aec4460ae81a6081454de.png" alt="Logo 7f6a6351bd2870aac4df12431be42412b02dc71d9c9aec4460ae81a6081454de" />
+
+            <a id="skip-interstitial" class="close hidden" data-dismiss="modal" aria-hidden="true">
+              <i class="fa fa-times-circle"></i>
+              <span>Skip this ad</span>
+            </a>
+
+            <div class="adlabel">
+              <p><strong>Advertisement.</strong>
+              The page you requested will display in <span id="adtimer"></span> seconds.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body" data-gad-interstitial-name='interstitial_1'></div>
+        <div class="modal-unit">
+            <div id='interstitialtoggle_1' class='ad_interstitialtoggle_1' data-placement="interstitialtoggle" data-gad-mobile='false' data-gad-unit='true' data-gad-sizes='[[1,1]]'></div>
+
+        </div>
+          <div id='interstitialdirect_1' class='ad_interstitialdirect_1' data-placement="interstitialdirect" data-gad-mobile='false' data-gad-unit='true' data-gad-sizes='[[]]' data-gad-out-of-page='true' ></div>
+
+      </div>
+
+  <script>
+//<![CDATA[
+
+    window.phoneBreakpoint = function() { return document.documentElement.clientWidth < 767 }
+    window.tabletBreakpoint = function() { return document.documentElement.clientWidth < 979 }
+    window.desktopBreakpoint = function() { return document.documentElement.clientWidth >= 979 }
+
+//]]>
+</script>
+  <div class="modal hide fade email-modal"><div>
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+  <div class="modal-body">
+    <p>Be the first to know about</p>
+    <p>News, Reviews <span>&amp;</span> Deals</p>
+
+    
+<form>
+  <input type="hidden" id="website_group_name" name="website_group_name" value="TabletReaderInfo.com"></input>
+  <input type="email" autocapitalize="off" autocorrect="off" name="email" id="email" placeholder="your email" size="25">
+  <button class="btn btn-primary list-conversion" type="submit"><strong>Yes</strong> I want to be in the know!</button>
+</form>
+
+    <p data-dismiss="modal">No, I don't need to know</p>
+  </div>
+
+  <div class="fade hide thank-you clearfix">
+    <i class="fa fa-check-circle" aria-hidden="true"></i>
+    <p>Thank you for signing up!</p>
+    <p>Look for the latest news &amp; reviews<br /> in your inbox soon.</p>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div></div>
+
+
+  <script src="/assets/vendored-04324304db8897ed16244deb6a6b4457ea3e19a93079af3af0d2cc883e3fba69.js"></script>
+  <script src="/assets/application-cef4ab3fe5200d6a57f5946e289cd0343b535af00cddad839e61583744f5b8b7.js"></script>
+  
+  <script src="/assets/articles-fcb7e86684ac861d2f590af43fe98a4d599421489ee79e141f8f89d5ad89fb4d.js"></script>
+    <script type="text/javascript" async defer  data-pin-color="red" data-pin-hover="true" src="//assets.pinterest.com/js/pinit.js"></script>
+
+</body></html>

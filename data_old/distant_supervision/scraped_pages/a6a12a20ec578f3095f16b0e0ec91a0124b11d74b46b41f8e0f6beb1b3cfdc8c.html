@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="fb: http://www.facebook.com/2008/fbml content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="https://asmi.az.gov/sites/all/themes/az_gov/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="/aggregate-protection-guidance-document" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="/node/1191" />
+  <title>Aggregate Protection Guidance  | Arizona State Mine Inspector</title>
+  <link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_tGTNtRAsNJmcVz4r7F6YCijbrQGDbBmziHSrRd1Stqc.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_NxES2J1cO9S2eEYfbAjXUKuSn3r3PlOTKBzWCGLXLyI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_XyELJoL1qsdMTQdFrViNSLevfcrzPM23hhX_NrpUCh0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/event_calendar_colors/event_calendar_colors.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_PIlZbbZOdnpmWxD2ZsPUozPPkhowBbD-0cDGcDlyJNg.css" media="all" />
+<style>@media(min-width:768px){body{background:url("https://asmi.az.gov/sites/default/files/theme-settings/background_image_asmi.jpg") no-repeat center center fixed !important;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;}}
+</style>
+<link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_HgMBtvqt2Dif4D2XgDnxNhTE6xYtaPdxabToW__ji7s.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_EY-NPmtTVFQrR1KwOzl4KKAOrKVnLpafcrPSlqWDwuM.css" media="(min-width:600px)" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_JYdL4VrrHN51QWk22Pft5q9Hhu3p2WUdNTTpblqv5CI.css" media="(min-width:768px)" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_GclIRYO9mLEEA2Qzh1vwOcQ8crXFJdXzW9nffKwPrD0.css" media="(min-width:920px)" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_a6r0Z_j7LfcBY8pfA-m2JnlXfqNQuFBTjmb-REFi--8.css" media="(min-width:1240px)" />
+<link type="text/css" rel="stylesheet" href="https://asmi.az.gov/sites/default/files/css/css_eSvIEZzN1N_79QRRl0HH60EKpLAaz08jME3l8b8v2kg.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://asmi.az.gov/sites/default/files/js/js_B4AgzEyQ7uoH2MSa7RSsL4f9dv49phVARl2M0SjDj9U.js"></script>
+<script src="https://static.az.gov/sliver/sliver.js?oh4cdm"></script>
+<script src="https://asmi.az.gov/sites/default/files/js/js_9k9l6haqJ3dZ6codRtL8eMyNhiLgYLyVEkAGirRC8ZQ.js"></script>
+<script src="//cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="https://asmi.az.gov/sites/default/files/js/js_uvgUomgWRDecmOPO_7f75pcoYGSMgROXSc-zcnF9t5Y.js"></script>
+<script src="https://asmi.az.gov/sites/default/files/js/js_Fm3nIHM1zoNxWJQLXwVurhv7vvvv4a_GOOylI64G9Qs.js"></script>
+<script>jQuery(document).ready(function($) { 
+    $.expr[':'].regex = function(elem, index, match) {
+            var matchParams = match[3].split(','),
+            validLabels = /^(data|css):/,
+            attr = {
+                method: matchParams[0].match(validLabels) ? 
+                matchParams[0].split(':')[0] : 'attr',
+                property: matchParams.shift().replace(validLabels,'')
+            },
+            regexFlags = 'ig',
+            regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+            return regex.test(jQuery(elem)[attr.method](attr.property));
+        }
+    });</script>
+<script>window.CKEDITOR_BASEPATH = '/sites/all/libraries/ckeditor/'</script>
+<script src="https://asmi.az.gov/sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-50050513-1", {"cookieDomain":"auto"});ga("send", "pageview");</script>
+<script src="https://asmi.az.gov/sites/default/files/js/js_k8eWh1jUwEfQnBaJc67fOttyQOk7U5-YDUQpAWHs8I8.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"az_gov","theme_token":"69aG4lEiw4VsaTupjDZ7UAvi31s0sQfLApMEvDSmZEw","js":{"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"https:\/\/static.az.gov\/sliver\/sliver.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.button.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.draggable.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.position.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.resizable.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.dialog.min.js":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.2.0\/js\/bootstrap.min.js":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/event_calendar\/event_popup\/js\/event_popup.js":1,"sites\/all\/modules\/contrib\/event_calendar\/event_popup\/js\/event_popup_validate.js":1,"0":1,"1":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/az_gov\/js\/global.js":1},"css":{"modules\/system\/system.base.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.button.css":1,"misc\/ui\/jquery.ui.resizable.css":1,"misc\/ui\/jquery.ui.dialog.css":1,"sites\/all\/modules\/contrib\/comment_notify\/comment_notify.css":1,"sites\/all\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/contrib\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"https:\/\/asmi.az.gov\/sites\/default\/files\/event_calendar_colors\/event_calendar_colors.css":1,"sites\/all\/modules\/contrib\/event_calendar\/event_popup\/css\/event_popup.css":1,"sites\/default\/files\/css\/follow.css":1,"0":1,"\/\/cdn.jsdelivr.net\/bootstrap\/3.2.0\/css\/bootstrap.min.css":1,"sites\/all\/themes\/bootstrap\/css\/3.2.0\/overrides.min.css":1,"sites\/all\/themes\/az_gov\/css\/contextual.css":1,"sites\/all\/themes\/az_gov\/css\/colors.css":1,"sites\/all\/themes\/az_gov\/css\/reset.css":1,"sites\/all\/themes\/az_gov\/css\/global.css":1,"sites\/all\/themes\/az_gov\/css\/nodes.css":1,"sites\/all\/themes\/az_gov\/css\/min-600.css":1,"sites\/all\/themes\/az_gov\/css\/min-768.css":1,"sites\/all\/themes\/az_gov\/css\/min-920.css":1,"sites\/all\/themes\/az_gov\/css\/min-1240.css":1,"sites\/default\/files\/css_injector\/css_injector_1.css":1,"sites\/default\/files\/css_injector\/css_injector_12.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"event_popup":{"classes":"","defaults":"width:300;height:auto;position:[center,60]","selector":"content","content_type":"event_calendar","op":false},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extSubdomains":0,"extExclude":"","extInclude":"\\.pdf|\\.txt","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"urlIsAjaxTrusted":{"\/aggregate-protection-guidance-document":true},"bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-1191 node-type-document">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="page">
+  <div id="zone-branding" class="zone">
+  <div class="silhouette">
+    <div id="region-branding" class="clearfix">
+              <div class="site-details clearfix">
+                      <a class="logo" href="/">
+              <img src="https://asmi.az.gov/sites/default/files/logo_1_0.png"
+                   alt="Arizona State Mine Inspector Logo">
+            </a>
+          
+                      <div class="site-info">
+                              <div class="site-name">
+                    <a  href="/">
+                      Arizona State Mine Inspector                    </a>
+                </div>
+                                            <div class="site-slogan">
+                  Committed to Safety. Protecting the lives of Arizona Miners.                </div>
+                          </div>
+                  </div>
+                      <div class="region region-branding">
+    
+<div id="block-search-form" class="block block-search">
+<div class="block-inner clearfix">
+      
+  <div class="content" >
+    <form class="form-search content-search" action="/aggregate-protection-guidance-document" method="post" id="search-block-form" accept-charset="UTF-8"><div><div title = "Search">
+        <div class="input-group"><input title="Search" placeholder="Search" class="form-control form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><span class="input-group-btn"><button type="submit" class="btn btn-primary"><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span></button></span></div><div class="form-actions form-wrapper form-group" id="edit-actions"><button class="element-invisible btn btn-primary form-submit" type="submit" id="edit-submit" name="op" value="Search">Search</button>
+</div><input type="hidden" name="form_build_id" value="form-Af2slHr-Qh-NZLvgINNKxvWeiyr7L11RRP7tvhrg69I" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+</div>
+</div>  </div>
+          </div>
+    <div id="mobile-menu">
+    </div>
+            <div class="region region-menu">
+    
+<div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner clearfix">
+      
+  <div class="content" >
+    <ul class="menu nav"><li class="first leaf menu-li-home"><a href="/" title="">Home</a></li>
+<li class="expanded menu-li-about"><a href="/about" title="">About</a><ul class="menu nav"><li class="first leaf menu-li-documents/forms"><a href="/about/documents-forms" title="">Documents/Forms</a></li>
+<li class="last leaf menu-li-f.a.q."><a href="/about/faq" title="">F.A.Q.</a></li>
+</ul></li>
+<li class="leaf menu-li-mine-inspections"><a href="/mine-inspections" title="Information on Mine Inspections">Mine Inspections</a></li>
+<li class="expanded menu-li-services"><a href="/services" title="Information on our services">Services</a><ul class="menu nav"><li class="first leaf menu-li-msha-training"><a href="/services/msha-training/Phoenix" title="Information on MSHA training.">MSHA Training</a></li>
+<li class="leaf menu-li-reclamation"><a href="/services/reclamation" title="Information on reclamation.">Reclamation</a></li>
+<li class="last leaf menu-li-abandoned-mines"><a href="/services/abandoned-mines" title="Information on abandoned mines.">Abandoned Mines</a></li>
+</ul></li>
+<li class="last leaf menu-li-news-&amp;-events"><a href="/news-events" title="">News &amp; Events</a></li>
+</ul>  </div>
+</div>
+</div>  </div>
+      </div>
+</div><div id="zone-content" class="zone">
+  <a name="main-content"></a>
+
+
+  <div id="preface-group" class="clearfix">
+              </div>
+
+  
+  <div id="content-wrapper" class="clearfix">
+
+
+    
+
+    <div id="content" class="col-sm-8 col-md-8 main-region contextual-links-region ">
+      <div id="region-content" class="content">
+
+        <h1 id="page-title">
+          Aggregate Protection Guidance         </h1>
+
+        
+                  <div class="region region-content">
+    
+<div id="block-system-main" class="block block-system">
+<div class="block-inner clearfix">
+      
+  <div class="content" >
+    <div id="node-1191" class="node node-document">
+  <div class="node-inner node-content">
+
+    
+    <div class="content">
+                  <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>The passage of the Arizona Aggregate Protection Act (SB1598) established a framework and new requirements for the community planners and leaders to responsibly address one of the most critical elements affecting the viability of future development - the availability of affordable construction materials.</p>
+<p>SB 1598 creates a significant opportunity for counties, municipalities, and special districts to work productively with the mining industry to ensure the sustainable growth of our communities.</p>
+<p>This guidance document, preapared by Eric Mears, Vice President of Mining at Haley and Aldrich, for the Arizona Rock Products Association (ARPA), provides essential information for identifying aggregate resources in municipal or county planning areas, and offers practical guidance in developing strategies and policies for protecting those resources. It is a resource for planners amending general plans to conform to the requirements of DB 1598, as well as for planners working for state, county and municipal governments.  </p>
+</div></div></div><div class="field field-name-field-document-attachment field-type-file field-label-hidden"><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="https://asmi.az.gov/sites/default/files/documents/files/aggregate_protection_guidance.pdf0____0.pdf" type="application/pdf; length=2383900" title="aggregate_protection_guidance.pdf0___.pdf">Aggregate Protection Guidance (SB 1598)</a></span></div></div></div><div class="field field-name-field-blog-terms field-type-taxonomy-term-reference field-label-above"><div class="field-label">Related Terms:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="/blog-terms/aggregate-mined-land-reclamation" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Aggregate Mined Land Reclamation</a></div></div></div>          </div>
+
+    
+  </div>
+</div>  </div>
+</div>
+</div>  </div>
+
+      </div>
+    </div>
+
+
+          <aside id="sidebar-second" class="col-sm-4 col-md-4 main-region">
+          <div class="region region-sidebar-second">
+    
+<section id="block-views-resources-pages-blocks-block-2" class="block block-views">
+<div class="block-inner clearfix">
+        <h2 class="block-title">Related Links</h2>
+    
+  <div class="content" >
+    <div class="view view-resources-pages-blocks view-id-resources_pages_blocks view-display-id-block_2 resources-section view-dom-id-c8c4b584949f181b0d984240fb332980 total-results-12">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="https://asmi.az.gov/sites/default/files/editors_choice/attachments/Personnel_Rules_0.pdf">Arizona State Personnel System - Personnel Rules</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.azgs.az.gov/">Arizona Geological Survey </a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.msha.gov/">Mine Safety &amp; Health Administration</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.gpo.gov/fdsys/">Code of Federal Regulations</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.azdeq.gov/">AZ Dept of Environmental Quality</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="https://land.az.gov/">AZ State Land Department</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://azstateparks.com/SHPO/index.html">State Historic Preservation Office</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-8 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.lib.az.us/">AZ State Archives &amp; Public Records</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-9 views-row-odd">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.blm.gov/az/st/en.html">Bureau of Land Management</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-10 views-row-even">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://minerals.usgs.gov/">USGS Minerals Info - Arizona</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-11 views-row-odd">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.azinvestor.gov/">Considering Mining Investments</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+  <div class="views-row views-row-12 views-row-even views-row-last">
+      
+  <h4 class="views-field views-field-title">        <span class="field-content"><a href="http://www.azrra.gov/radon/index.html">AZ Radiation Reg Agency for Radon</a></span>  </h4>  
+  <div class="views-field views-field-edit-node">        <span class="field-content"></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+</section>  </div>
+      </aside>
+      </div>
+
+  <div id="postscript-group" class="single-postscript clearfix">
+                  </div>
+
+</div><div id="zone-footer" class="zone">
+        <div id="footer-first-contact" class="clearfix ">
+      <div id="footer-branding" class="content clearfix">
+      <div class="footer-wrapper">
+                  <img src="https://asmi.az.gov/sites/default/files/logo_1_0.png" alt="Arizona State Mine Inspector Logo">
+                <div class="site-info">
+          <div class="site-name footer-field">
+            Arizona State Mine Inspector          </div>
+          <div class="site-slogan footer-field">
+            Committed to Safety. Protecting the lives of Arizona Miners.          </div>
+        </div>
+      </div>
+    </div>
+  <!--  <div id="footer-spacer"></div>-->
+      <div id="footer-contact">
+
+              <div class="footer-title footer-field">
+          <a href="contact">
+            Contact Us          </a>
+        </div>
+      
+
+      <div class="footer-info clearfix">
+        <div class="footer-address clearfix">
+          <div class="footer-address-group footer-group">
+
+                          <div class="footer-agency footer-field">
+                Arizona State Mine Inspector              </div>
+            
+                          <div class="footer-address-1 footer-field">
+                1700 West Washington, 4th Floor              </div>
+            
+                          <div class="footer-address-2 footer-field">
+                Phoenix, AZ  85007              </div>
+            
+                          <div class="footer-map-link footer-field">
+                <a href="https://www.google.com/maps/place/1700+W+Washington+St/@33.449987,-112.095097,17z/data=!3m1!4b1!4m2!3m1!1s0x872b122d525ab32f:0x8">
+                  Find in Google Maps
+                </a>
+              </div>
+            
+          </div>
+          <div class="footer-phone-group footer-group">
+
+                          <div class="footer-phone footer-field">
+                <strong>Phone: </strong>602-542-5971              </div>
+            
+                          <div class="footer-fax footer-field">
+                <strong>Fax: </strong>602-542-5335              </div>
+            
+          </div>
+        </div>
+
+                  <div class="footer-map  footer-group">
+            <a href="https://www.google.com/maps/place/1700+W+Washington+St/@33.449987,-112.095097,17z/data=!3m1!4b1!4m2!3m1!1s0x872b122d525ab32f:0x8">
+              <img src="https://asmi.az.gov/sites/default/files/theme-settings/map_image_asmi.jpg" alt="Map Image">
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>        <div id="region-footer-second">
+        <div class="region region-footer-second">
+    
+<section id="block-menu-menu-footer-utility" class="block block-menu">
+<div class="block-inner clearfix">
+        <h2 class="block-title">Footer Utility</h2>
+    
+  <div class="content" >
+    <ul class="menu nav"><li class="first leaf menu-li-privacy-policy"><a href="/privacy-policy" title="View the privacy policy">Privacy Policy</a></li>
+<li class="leaf menu-li-statewide-policies"><a href="http://az.gov/policies" title="">Statewide Policies</a></li>
+<li class="leaf menu-li-site-map"><a href="/sitemap" title="">Site Map</a></li>
+<li class="last leaf menu-li-log-in"><a href="https://www.login.az.gov/login.aspx?ReturnURL=http://asmi.az.gov/contact.asp?login=true&amp;" title="Log In link">Log In</a></li>
+</ul>  </div>
+</div>
+</section>  </div>
+    </div>
+  </div></div>  <script src="https://asmi.az.gov/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f85a169f1f","applicationID":"15809165","transactionName":"Z1dRMRRRXRZYAk1YVl4dcgYSWVwLFg9WVVxvQlICA29FDFwW","queueTime":0,"applicationTime":405,"atts":"SxBSR1xLThg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

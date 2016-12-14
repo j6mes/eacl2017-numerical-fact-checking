@@ -3,7 +3,7 @@ import os
 import pickle
 import uuid
 
-from distant_supervision.query_generation import normalisequery
+from distant_supervision.normalisation import normalisequery
 from distant_supervision.strategy.bing import bing_query
 
 class Search:

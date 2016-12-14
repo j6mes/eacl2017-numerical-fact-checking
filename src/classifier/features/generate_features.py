@@ -10,7 +10,7 @@ from classifier.features.bow import BOW
 from classifier.features.linearise import flatten_without_labels
 from classifier.features.pseudo_multiclass import IDPerColumnMultiClass
 from distant_supervision.clean_html import has_text
-from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.normalisation import normalise_keep_nos
 from distant_supervision.scraper import url_hash
 from distant_supervision.search import Search
 from distant_supervision.synonyms import SynonymRegistry
@@ -185,7 +185,6 @@ class FeatureGenerator():
             tuples.extend(get_all_tuples(tables, obj))
             for synonym in get_synonyms(obj):
                 tuples.extend(get_all_tuples(tables, synonym))
-
 
 
         Xs = []

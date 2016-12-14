@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="alternate" type="application/rss+xml" title="Until the Last Dog Dies RSS" href="http://www.lastdogdies.com/rss/">
+        <meta http-equiv="Content-Type" content="text/html" />
+        <link rel="stylesheet" type="text/css" href="http://www.smackjeeves.com/templates/its_raining_outside/style.css" />
+        <link rel="stylesheet" type="text/css" href="/files/lastdog.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <title>Home :: Until the Last Dog Dies</title>
+    </head>
+    <body>
+        <div id="sj-navbar">
+            <a href="http://www.lastdogdies.com/rss/" class="rss"><img src="http://www.smackjeeves.com/templates/default/images/rss.gif" alt="RSS Feed" height="15" width="28" border="0" /></a>
+            <a href="http://www.smackjeeves.com/favorites.php?add=69423" class="favorite">Favorite this Comic</a>
+        </div>
+        <div id="content">
+            <div id="banner">
+                <img src="/files/TrophyRack.png" alt="" width="1000" height="405" usemap="#Map" />
+                <map name="Map" id="Map">
+                    <area alt="About" title="About" href="/About" shape="poly" coords="65,319,74,310,214,313,222,321,222,385,216,390,76,389,65,383" class="About" />
+                    <area alt="Cast" title="Cast" href="/Cast" shape="poly" coords="300,299,312,295,327,297,341,299,351,304,361,310,368,318,374,326,379,337,381,346,382,358,379,367,372,374,363,383,355,386,344,392,332,395,316,395,302,393,289,387,280,379,275,372,267,354,267,339,271,325,277,314,287,307" class="Cast" />
+                    <area alt="Archive" title="Archive" href="/archive" shape="poly" coords="458,312,471,306,485,301,498,297,512,296,525,296,544,300,561,305,577,309,590,316,602,327,608,333,610,346,606,357,595,367,580,375,567,380,553,385,535,387,513,386,498,385,478,380,464,377,452,369,439,361,435,351,433,339,443,324" class="Archive" />
+                    <area alt="Links" title="Links" href="/Links" shape="poly" coords="649,317,667,300,782,301,803,321,801,365,773,384,674,384,650,366" class="Links" />
+                    <area alt="FAQ" title="FAQ" href="/faq" shape="poly" coords="843,323,873,305,903,309,936,326,940,387,934,394,844,394" class="FAQ" />
+                </map>
+            </div>
+            <div class="body">
+                <style type="text/css">
+    #content {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    (function() {
+        function calculateSize(image, scale) {
+            var $img = $(image);
+                $img.css("width", "").css("height", "");
+            var orgWidth = $img.width(),
+                orgHeight = $img.height();
+
+            $img.css("width", (orgWidth * scale)).css("height", (orgHeight * scale));
+        }
+        function fitToScreen() {
+            var windowHeight = $(window).height(),
+                windowWidth = $(window).width(),
+                scale = (windowHeight / 1600);
+
+            calculateSize(".titleImage img", scale);
+            calculateSize(".logo", scale);
+            calculateSize(".first", scale);
+            calculateSize(".last", scale);
+            calculateSize(".about", scale);
+
+            $(".logoNav")
+                .css("top", (windowHeight - $(".logo").height()) / 2 - (windowHeight * 0.02))
+                .css("left", (windowWidth - $(".logo").width()) / 2 + (windowWidth * 0.1));
+            $(".titleImage img").css("margin-left", (windowWidth * 0.1));
+        }
+        $(document).ready(function() {
+            var bodyContent = $("#titleBody").html();
+
+            $("body")
+                .css("background", "#000")
+                .html(bodyContent);
+
+           fitToScreen();
+
+           $(window).resize(function() {
+                fitToScreen();
+            });
+        });
+
+    })();
+</script>
+<div id="titleBody">
+    <span class="titleImage">
+        <img src="/files/TitleImage.png" alt="" width="681" height="1600" />
+    </span>
+    <div class="logoNav" style="position: absolute;">
+        <a href="/comics/2337345/undetermined-hiatus/"><img src="/files/LogoTransparent.png" alt="" class="logo" width="800" height="759" /></a>
+        <ul>
+            <li>
+                <a href="/comics/2192684/lesson-one-speak/"><img src="/files/firstletters.png" alt="" class="first" width="225" height="104" /></a>
+            </li>
+            <li>
+                <a href="/comics/2337345/undetermined-hiatus/"><img src="/files/lastwords.png" alt="" class="last" width="225" height="104" /></a>
+            </li>
+            <li>
+                <a href="/About/"><img src="/files/about.png" alt="" class="about" width="240" height="104" /></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>
+
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['sj._setAccount', 'UA-2356418-1']);
+	  _gaq.push(['sj._setDomainName', 'smackjeeves.com']);
+	  _gaq.push(['sj._setAllowLinker', true]);
+	  _gaq.push(['sj._trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
+	<!-- Quantcast Tag -->
+	<script type="text/javascript">
+	var _qevents = _qevents || [];
+	
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+	
+	_qevents.push({
+	qacct:"p-taFz52bKnLXU3"
+	});
+	</script>
+	
+	<noscript>
+	<div style="display:none;">
+	<img src="//pixel.quantserve.com/pixel/p-taFz52bKnLXU3.gif" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+	</noscript>
+	<!-- End Quantcast tag -->
+	
+<!-- Page generated by Smack Jeeves in 0.010 seconds -->

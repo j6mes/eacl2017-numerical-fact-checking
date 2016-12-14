@@ -1,0 +1,1813 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="http://www.bled.si/en/" />
+    <meta content="text/html" charset="utf-8" http-equiv="content-type" />
+    <!-- meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" / -->
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /><meta name="apple-mobile-web-app-capable" content="yes" /><meta name="description" content="Bled Portal - a comprehensive overview of tourism Bled and its surroundings in one place." /><meta name="keywords" content="Bled, Slovenia,tourist offer, Last minute, events, activities, tourism, lake, island, church, slovenija, tic, offer, accommodation, hotel, Gorenjska, slovenian alps" /><link rel="alternate" href="http://www.bled.si/en/rss.ashx" type="application/rss+xml" title="Cardinal" />
+    <!-- css -->
+    <link rel="stylesheet" href="/en/styles/styles.css?ver=20160919101835" type="text/css" />
+
+    <!--[if lt IE 9]>        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>        <style>            @font-face
+            {
+            font-family: 'FontAwesome';
+            src: url(../bootstrap/font/fontawesome-webfont.eot);
+            src: url(../bootstrap/font/fontawesome-webfont.eot?#iefix) format('embedded-opentype'),
+            src: url(../bootstrap/font/fontawesome-webfont.eot) format('embedded-opentype'), url(../bootstrap/font/fontawesome-webfont.woff) format('woff'), url(../bootstrap/font/fontawesome-webfont.ttf) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }        </style>    <![endif]-->
+    <!--[if IE 8]>        <link rel="stylesheet" href="/en/styles/ie8.css" /></link>    <![endif]-->
+    <!--[if IE 7]>        <link rel="stylesheet" href="/en/styles/ie7.css" /></link>    <![endif]-->
+    <link rel="shortcut icon" href="/en/images/ico/favicon.ico" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/en/images/ico/apple-touch-icon-144-precomposed.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/en/images/ico/apple-touch-icon-114-precomposed.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/en/images/ico/apple-touch-icon-72-precomposed.png" /><link rel="apple-touch-icon-precomposed" href="/en/images/ico/apple-touch-icon-57-precomposed.png" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.2.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+    <!-- js -->
+    <script type="text/javascript" src="js/cache/29a5b887da980d36c2ccd8535f6d2a1c.js"></script><script type="text/javascript">var _jsScripts = new Array(); _jsScripts.push('js/jquery.scrollup.min.js');_jsScripts.push('js/common.js');_jsScripts.push('js/modernizr.js');_jsScripts.push('js/jquery.imagesloaded.min.js');_jsScripts.push('js/jquery.lazyload.js');_jsScripts.push('bootstrap/js/bootstrap-collapse.js');_jsScripts.push('bootstrap/js/bootstrap-dropdown.js');_jsScripts.push('bootstrap/js/bootstrap-alert.js');_jsScripts.push('js/jquery.cookies.js');_jsScripts.push('js/jquery.alerts.js');_jsScripts.push('js/jquery.cycle2.min.js');_jsScripts.push('js/jquery.cycle2.swipe.min.js');_jsScripts.push('js/jquery.cycle2.center.min.js');_jsScripts.push('js/jquery.cycle2.carousel.min.js');_jsScripts.push('js/featherlight.min.js');_jsScripts.push('js/jquery.easing.js');_jsScripts.push('js/myway.carousel.js');_jsScripts.push('mediaoverlay/prettyphoto/jquery.prettyphoto.js');</script><script type="text/javascript" language="javascript">var mediaOverlay='prettyPhoto';</script>
+
+    <script type="text/javascript">        function InitializeMediaOverlay() {
+            if (mediaOverlay == "prettyPhoto") {
+                $("a[rel^='mediaOverlay']").prettyPhoto({
+                    social_tools: ''
+                });
+            }            else {
+                jQuery(".mediaOverlay[data-group]").jackBox("init",					{
+					    deepLinking: false,              // choose to use the deep-linking feature ("true" will enhance social sharing!) true/false					    showInfoByDefault: false,       // show item info automatically when content loads, true/false					    preloadGraphics: false,          // preload the jackbox graphics for a faster jackbox					    fullscreenScalesContent: true,  // Choose to always scale content up in fullscreen, true/false					    defaultShareImage: "1.jpg",     // the default image to share for non-image items, only relevent to Pinterest					    autoPlayVideo: false,           // video autoplay default, this can also be set per video in the data-attributes, true/false					    flashVideoFirst: false,         // choose which technology has first priority for video, HTML5 or Flash, true/false					    defaultVideoWidth: 960,         // the default video width, can also be set per video in the data-attributes					    defaultVideoHeight: 540,        // the default video width, can also be set per video in the data-attributes					    useThumbs: true,                // choose to use thumbnails, true/false					    useThumbTooltips: true,         // choose to use thumbnail tooltips, true/false					    thumbsStartHidden: false,       // choose to initially hide the thumbnail strip, true/false					    thumbnailWidth: 75,             // the default video width, can also be set per video in the data-attributes					    thumbnailHeight: 50             // the default video height, can also be set per video in the data-attributes					}				);
+            }
+        }        $(document).ready(function () {
+            InitializeMediaOverlay();            // preserve session            window.setInterval("$.get('misc/preserveSession2.aspx?r=' + Math.random(), function (data) { });", 60 * 1000); // 60 seconds        });        var onLoadEvents = new Array();        var progressTimer = -1;        function OnBeginRequest(sender, args) {
+            progressTimer = window.setTimeout("$find('ctl00_ModalProgress').show();", 1000);
+		}		function OnEndRequest(sender, args) {
+		    window.clearTimeout(progressTimer);		    $find('ctl00_ModalProgress').hide();
+        }        function trackLink(e, o, category, action) {
+            if (typeof (ga) != 'undefined') {
+                ga('send', 'event', category, action);
+                var target = jQuery(o).attr('target') || '';
+                var href = jQuery(o).attr('href') || '';
+                if (target.toLowerCase() != '_blank') {
+                    setTimeout(function () {
+                        document.location = href;
+                    }, 200);
+                    e.preventDefault();
+                }
+            }
+        }        // typekit        (function () {
+            var config = {
+                kitId: 'zmk3hby',                scriptTimeout: 3000
+            };            var h = document.getElementsByTagName("html")[0]; h.className += " wf-loading"; var t = setTimeout(function () { h.className = h.className.replace(/(\s|^)wf-loading(\s|$)/g, " "); h.className += " wf-inactive" }, config.scriptTimeout); var tk = document.createElement("script"), d = false; tk.src = '//use.typekit.net/' + config.kitId + '.js'; tk.type = "text/javascript"; tk.async = "true"; tk.onload = tk.onreadystatechange = function () { var a = this.readyState; if (d || a && a != "complete" && a != "loaded") return; d = true; clearTimeout(t); try { Typekit.load(config) } catch (b) { } }; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(tk, s)
+        })();        var footerCarousel;	</script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-7860233-1', 'auto');
+  ga('send', 'pageview');
+
+</script><title>
+	Bled
+</title></head>
+<body onload="RunOnLoadEvents()" class="first-page">
+    <!-- GOCLICK KAMPANJA-->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5MF632"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5MF632');</script>
+<!-- End Google Tag Manager -->
+    <form name="aspnetForm" method="post" action="/en/" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkNDE0N2MyNGU0NWVkZGSKVRZA6NpzzgcKAB9VbW7H3IHB1Rujn7UFosfZ6ZVX9g==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script type="text/javascript" src="js/cache/axd-e31309037cea00884279302e999050bd.js"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () { 	$('#ctl00_PrimaryMenuMobileIcon_OpenPrimaryMenu').click(function() { 		$('#ctl00_PrimaryMenuMobile_Mobile').slideToggle('slow', function() { });	});});function createSlider(){
+    $('.slidingBanner').cycle({
+	   slides: '.slidingBanner-slide',
+    fx: 'scrollHorz',
+    timeout: 3000,
+    pagerActiveClass: 'slidingBanner-active',
+    pagerTemplate: '<a href=#><span> {{slideNum}} </span></a>',
+    pauseOnHover: true,
+    swipe: true,
+    centerHorz: false,
+    centerVert: true,
+    prev: '.slidingBanner-previous',
+    next: '.slidingBanner-next',
+    log: false
+    });
+}
+//]]>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8ADC9FA5" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABTBmTSJ0vihD0BFAyQajvnLoK3a2TOMxOH6H0uJBvelkcQU9LQUA+OPxO48/NNyZTmtoIb328kGwcMocrXN2xc728xZ0hffw20IAlTAWGS6vxv6LbSv6xhACNw7p6RJxSpTnWtMcIhW0E8RTaTCAADXZzWSZuhOKgbcIrn5K/CsCXL4X9o7ot9xAbEx+/qc5bQ72a0ZmyYHV9A7iTC67STbWd3ggoRVvA+nilLi061FgqDYqyWc8VpDk47cMiOh+NpJQ/Rk/UoVDQDIkTzy3h2HauZ8j8w6PEA3Gccmf8n8YWQDenVYthJFO/Kpm5b+a744djjffamPEwyuOAV6wI4vEKtf0LIdIFN5XXIgHuhGGmLsJ9eEreb3OqsabOVw6dxbAiqaAyXn38v9tXsrJ/1w3mRuQ5tzOPjKOe7w4SQcB1E1AcbktTEMxPK/TzoPvg6UrlGY/SdjS0B2n0pgY11B" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$SearchBox$UpdatePanel1','','tctl00$MobileSearchBox$UpdatePanel1','','tctl00$Footer$ctl00$NewsletterBoxUpdatePanel',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <script type="text/javascript">            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(OnBeginRequest);            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(OnEndRequest);		</script>
+        <div id="ctl00_panelUpdateProgress" class="updateProgress" style="display: none">
+	
+            <div id="ctl00_UpdateProg1" style="display:none;">
+		
+                    <div style="position: relative; top: 30%; text-align: center">
+                        <img src="/en/images/progress.gif" width="50" height="50" style="vertical-align: middle" alt="" />
+                        Please wait ...
+                    </div>
+                
+	</div>
+        
+</div>
+        
+        <!-- Header desktop container -->
+        <header class="header-desktop">
+            <div class="container-fluid">
+                <div class="header-logo">
+                    <a href='/en/'>
+                        <img src="files/default/bled-logo-en.png" />
+                    </a>
+                </div>
+                <div class="header-tools">
+                    					<a href="javascript:;" class="header-tools-link header-tools-link-spec-booking" id="lnk-booking"><i class="icon-ok-sign"></i>Inquiry</a>					<a href="javascript:;" class="header-tools-link header-tools-link-spec-booking res-active" id="lnk-bookingF"><i class="icon-bookmark"></i>Booking</a>
+                    <a href="web-camera" target="_self" class="header-tools-link first"><i class="icon-facetime-video"></i> Web camera</a>
+
+                    <a href="how-to-get-here" class="header-tools-link"><i class="icon-map-marker"></i> Map</a>
+
+                    
+
+<div class="siteSelector">
+    <div class="btn-group">
+        <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+            <i class="icon-globe"></i> EN <span class="caret "></span>
+
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="http://www.bled.si/si/">SI</a></li>
+<li><a href="http://www.bled.si/de/">DE</a></li>
+<li><a href="http://www.bled.si/it/">IT</a></li>
+<li><a href="http://www.bled.si/hu/">HU</a></li>
+<li><a href="http://www.bled.si/fr/">FR</a></li>
+
+        </ul>
+    </div>
+</div>
+
+
+                    <span id="ctl00_SearchBox_UpdatePanel1">
+    <div class="siteSelector searchBox-selector">
+        <div class="btn-group">
+            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                Search
+                <span class="caret"></span>    
+            </button>
+            <ul class="dropdown-menu dropdown-menu-search">
+                <li>
+					<div class="searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_SearchBox_GoSearch&#39;)">
+	
+                        <div class="input-append">
+                            <input name="ctl00$SearchBox$Search" type="text" id="ctl00_SearchBox_Search" class="searchBox-input" placeholder="Search" />
+		                    <span class="add-on"><a id="ctl00_SearchBox_GoSearchIcon" href="javascript:__doPostBack(&#39;ctl00$SearchBox$GoSearchIcon&#39;,&#39;&#39;)"><i class="icon-search"></i></a></span>
+	                    </div>	            
+                        <input type="submit" name="ctl00$SearchBox$GoSearch" value="" id="ctl00_SearchBox_GoSearch" value="Poišči" class="btn btn-search" style="display:none;" />
+					
+</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.searchBox-input').click(function(e){
+            e.stopPropagation(); // prevents search box dropdown to close when clicked
+         });
+    </script>
+</span>
+
+                    
+                </div>
+                <div class="header-menu">
+                    <div id="ctl00_PrimaryMenu_Desktop" class="navbar">
+    <div class="navbar-inner">
+        <nav>
+            <ul class="nav">
+                <li class="dropdown ">
+	<a class="dropdown-toggle" data-toggle="dropdown disabled" href="about-bled" target="_top">Bled<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+<li><a target="_top" href="about-bled/the-history-of-bled">The history of Bled</a></li>
+<li><a target="_top" href="about-bled/the-beginnings-of-tourism">The beginnings of tourism</a></li>
+<li><a target="_top" href="about-bled/publications">Publications</a></li>
+<li><a target="_top" href="about-bled/1191">E-postcards</a></li>
+<li><a target="_top" href="about-bled/1205">Video</a></li>
+<li><a target="_top" href="about-bled/panoramic-view">Panoramic view</a></li>
+<li><a target="_top" href="about-bled/tourist-agencies">Tourist agencies</a></li>
+<li><a target="_top" href="about-bled/contact">Contact</a></li>
+<li><a target="_top" href="about-bled/important-telephone-numbers">Important telephone numbers</a></li>
+	</ul>
+</li>
+<li class="dropdown ">
+	<a class="dropdown-toggle" data-toggle="dropdown disabled" href="what-to-see" target="_top">What to see<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+<li><a target="_top" href="what-to-see/natural-sights">Natural sights</a></li>
+<li><a target="_top" href="what-to-see/cultural-sights">Cultural sights</a></li>
+<li><a target="_top" href="what-to-see/symbols-of-bled">Symbols of Bled</a></li>
+	</ul>
+</li>
+<li class="dropdown ">
+	<a class="dropdown-toggle" data-toggle="dropdown disabled" href="what-to-do" target="_top">What to do<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+<li><a target="_top" href="what-to-do/summer-sports">Summer sports</a></li>
+<li><a target="_top" href="what-to-do/winter-sports">Winter sports</a></li>
+<li><a target="_top" href="what-to-do/culinary-">Culinary</a></li>
+<li><a target="_top" href="what-to-do/weddings">Weddings</a></li>
+<li><a target="_top" href="what-to-do/traditional-events">Events</a></li>
+<li><a target="_top" href="what-to-do/shopping">Shopping</a></li>
+<li><a target="_top" href="what-to-do/wellness---beauty">Wellness &amp; Beauty</a></li>
+<li><a target="_top" href="what-to-do/sightseeing">Sightseeing</a></li>
+<li><a target="_top" href="what-to-do/infocenter-triglavska-roza-bled">Infocenter Triglavska roža Bled</a></li>
+<li><a target="_top" href="what-to-do/tourist-train">Tourist train</a></li>
+<li><a target="_top" href="what-to-do/education-centers">Education centers</a></li>
+<li><a target="_top" href="what-to-do/highlights-of-slovenia">Highlights of Slovenia</a></li>
+<li><a target="_top" href="what-to-do/hop-on-hop-off">Hop on Hop Off</a></li>
+<li><a target="_top" href="what-to-do/1701">Rent a car</a></li>
+<li><a target="_top" href="what-to-do/winter-fairytale-in-bled">Winter Fairytale in Bled</a></li>
+<li><a target="_top" href="what-to-do/1815">Antimuseum</a></li>
+	</ul>
+</li>
+<li class="dropdown ">
+	<a class="dropdown-toggle" data-toggle="dropdown disabled" href="accommodation" target="_top">Accommodation<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+<li><a target="_top" href="accommodation/hotels">Hotels</a></li>
+<li><a target="_top" href="accommodation/pensions">Pensions</a></li>
+<li><a target="_top" href="accommodation/garni-hotels">Garni hotels and pensions</a></li>
+<li><a target="_top" href="accommodation/private-rooms-and-apartments">Private rooms and apartments</a></li>
+<li><a target="_top" href="accommodation/youth-hostels">Youth hostels</a></li>
+<li><a target="_top" href="accommodation/tourist-farms">Tourist farms</a></li>
+<li><a target="_top" href="accommodation/camping">Camping</a></li>
+<li><a target="_top" href="accommodation/accomodation-in-the-vicinity">Accomodation in the vicinity</a></li>
+	</ul>
+</li>
+<li class="dropdown ">
+	<a class="dropdown-toggle" data-toggle="dropdown disabled" href="meetings" target="_top">Meetings<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+<li><a target="_top" href="meetings/about-bled">About Bled</a></li>
+<li><a target="_top" href="meetings/meetings-in-bled">Meetings in Bled</a></li>
+<li><a target="_top" href="meetings/social-activities">Social Activities</a></li>
+<li><a target="_top" href="meetings/bled-convention-bureau-">Bled Convention Bureau </a></li>
+	</ul>
+</li>
+<li ><a target="_top" href="events">Events</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+
+
+
+                </div>
+            </div>
+        </header>
+        <!-- Header desktop container end -->
+        <!-- Header mobile container -->
+        <header class="header-mobile">
+            <div class="header-logo ">
+                <a href='/en/'>
+                    <img src="images/logoMain.png" />
+                    <!--Bled-->
+                </a>
+            </div>
+            <div class="header-tools">
+                <a href="web-camera" target="_self"><i class="icon-facetime-video"></i></a>
+
+                
+                <!---->
+                <a class="header-tools-link header-tools-link-spec-booking res-active" href="javascript:;" id="m-lnk-bookingF"><span><i class="icon-bookmark"></i></span></a><a class="header-tools-link header-tools-link-spec-booking" href="javascript:;" id="m-lnk-booking"><span><i class="icon-ok-sign"></i></span></a><a class="btn-menu-mobile-toggle" href="#"><i class="icon-reorder"></i>Menu</a>
+            </div>
+            
+
+
+
+<div id="ctl00_PrimaryMenuMobileIcon_MobileIcon" class="header-mobile-icon" style="display:none">
+	<a href="layouts/parts/primaryMenu/#" id="ctl00_PrimaryMenuMobileIcon_OpenPrimaryMenu" class="btn btn-default" onclick="return false"><i class="icon-align-justify icon-white"></i></a>
+</div>
+
+            <!-- <span id="ctl00_MobileSearchBox_UpdatePanel1">
+    <div class="siteSelector searchBox-selector">
+        <div class="btn-group">
+            <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+                Search
+                <span class="caret"></span>    
+            </button>
+            <ul class="dropdown-menu dropdown-menu-search">
+                <li>
+					<div class="searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_MobileSearchBox_GoSearch&#39;)">
+	
+                        <div class="input-append">
+                            <input name="ctl00$MobileSearchBox$Search" type="text" id="ctl00_MobileSearchBox_Search" class="searchBox-input" placeholder="Search" />
+		                    <span class="add-on"><a id="ctl00_MobileSearchBox_GoSearchIcon" href="javascript:__doPostBack(&#39;ctl00$MobileSearchBox$GoSearchIcon&#39;,&#39;&#39;)"><i class="icon-search"></i></a></span>
+	                    </div>	            
+                        <input type="submit" name="ctl00$MobileSearchBox$GoSearch" value="" id="ctl00_MobileSearchBox_GoSearch" value="Poišči" class="btn btn-search" style="display:none;" />
+					
+</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.searchBox-input').click(function(e){
+            e.stopPropagation(); // prevents search box dropdown to close when clicked
+         });
+    </script>
+</span>
+ -->
+            
+
+<div id="ctl00_PrimaryMenuMobile_Mobile" class="navbar-mobile">
+    <ul>
+        <li class="navbar-mobile-item-search">
+            <div class="input-prepend">
+				<a id="ctl00_PrimaryMenuMobile_GoSearchIcon" href="javascript:__doPostBack(&#39;ctl00$PrimaryMenuMobile$GoSearchIcon&#39;,&#39;&#39;)"><span class="add-on"><i class="icon-search"></i></span></a>
+				<input name="ctl00$PrimaryMenuMobile$Search" type="text" id="ctl00_PrimaryMenuMobile_Search" placeholder="Search" />
+            </div>
+        </li>
+        <li ><a href="about-bled" target="_top">Bled</a></li>
+<li ><a href="what-to-see" target="_top">What to see</a></li>
+<li ><a href="what-to-do" target="_top">What to do</a></li>
+<li ><a href="accommodation" target="_top">Accommodation</a></li>
+<li ><a href="meetings" target="_top">Meetings</a></li>
+<li ><a href="events" target="_top">Events</a></li>
+
+        <li class="navbar-mobile-item-alt"><a href="how-to-get-here"><i class="icon-map-marker"></i> Map</a></li>
+
+        <li class="navbar-mobile-item-alt"><a href="http://www.bled.si/si/">SI</a></li>
+<li class="navbar-mobile-item-alt selected"><a>EN</a></li>
+<li class="navbar-mobile-item-alt"><a href="http://www.bled.si/de/">DE</a></li>
+<li class="navbar-mobile-item-alt"><a href="http://www.bled.si/it/">IT</a></li>
+<li class="navbar-mobile-item-alt"><a href="http://www.bled.si/hu/">HU</a></li>
+<li class="navbar-mobile-item-alt"><a href="http://www.bled.si/fr/">FR</a></li>
+
+    </ul>
+	<script type="text/javascript">
+		var toggler = $('.btn-menu-mobile-toggle');
+		var togglerClose = $('.navbar-mobile-close');
+		var header = $('header');
+		var siteMenu = $('.navbar-mobile');
+
+		// open menu on click
+		$(document).ready(function ()
+		{
+			toggler.click(function (e)
+			{
+				e.preventDefault();
+				var siteContainer = $('.website');
+				$(this).toggleClass('toggler-opened');
+				header.toggleClass('website-offset');
+				siteContainer.toggleClass('website-offset overflow-hidden');
+				if (siteContainer.hasClass('website-offset')) {
+					siteContainer.css({
+						'height': $(window).height() - header.outerHeight(),
+						'marginTop': '70px'
+					});
+				} else {
+					siteContainer.css({
+						'height': 'auto',
+						'marginTop': '0'
+					});
+				}
+				siteMenu.toggleClass('navbar-mobile-open');
+			});
+		});
+
+		// reset to defaults on full screen desktop
+		$(window).resize(function ()
+		{
+			if ($(window).width() > 767) {
+				var siteContainer = $('.website');
+				toggler.removeClass('toggler-opened');
+				header.removeClass('website-offset');
+				siteContainer.removeClass('website-offset overflow-hidden');
+				siteContainer.css({
+					'height': 'auto',
+					'marginTop': '0'
+				});
+				siteMenu.removeClass('navbar-mobile-open');
+			}
+		});
+	</script>
+</div>
+
+
+
+        </header>
+        <!-- Header mobile container end -->
+        <div class="website">
+            
+
+<div class="booking-fluid">
+	<div class="reservations" id="reservations" style="display: none;">
+		<div class="container-fluid">
+			<a href="javascript:;" id="btnClose" class="reservations-close"><i class="icon-remove-sign"></i></a>
+			<div class="row-fluid">
+				<div class="span7">
+					<div class="form-horizontal">
+						<div class="control-group">
+							<label id="lblEmail" for="txtEmail" class="control-label">
+								E-mail*:</label>
+							<div class="controls">
+								<input type="text" id="txtEmail" maxlength="255" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label id="lblFullName" for="txtFullName" class="control-label">
+								First and last name*:</label>
+							<div class="controls">
+								<input type="text" id="txtFullName" maxlength="255" />
+							</div>
+						</div>
+						<div class="control-group">
+							<label id="lblAccommodationType" for="ddAccommodationType" class="control-label">
+								Accommodation type*:</label>
+							<div class="controls">
+								<select id="ddAccommodationType">
+									<option value="">---</option>
+									<option value="accomodation-vicinity">Accomodation in the vicinity</option><option value="hotel">Hotel</option><option value="garni_hotel_boarding_house">Garni hotel</option><option value="boarding_house">Boarding house</option><option value="private_rooms_apps">Apartments</option><option value="youth_hostel">Youth hostel / Hostel</option><option value="tourist_farm">Tourist farm</option><option value="camp">Camp</option>
+									<!--
+                                        <option value="1">ena</option>
+                                        <option value="2">dva</option>
+                                        <option value="3">tri</option>
+                                        -->
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label id="lblAccommodation" for="ddAccommodation" class="control-label">
+								Accommodation*:</label>
+							<div class="controls">
+								<select id="ddAccommodation">
+								</select>
+							</div>
+						</div>
+						<div class="control-group camp-type">
+							<label id="lblCampType" for="ddCampType" class="control-label">
+								Service type*:</label>
+							<div class="controls">
+								<select name="ctl00$BookingBox1$ddCampType" id="ctl00_BookingBox1_ddCampType" class="ddCampType">
+	<option value="">---</option>
+	<option value="accomodation_hikers_cyclists_bikers">Accomodation for hikers, cyclists, bikers</option>
+	<option value="glamping_families_mobile_homes">Glamping for families - mobile homes</option>
+	<option value="glamping_hut_bathroom_breakfast">Glamping hut, bathroom and breakfast</option>
+	<option value="glamping_hut_with_hot_tub">Glamping hut with hot tub</option>
+	<option value="glamping_hut_without_hot_tub">Glamping hut without a hot tub</option>
+	<option value="place_caravan">Place for Caravan</option>
+	<option value="place_mobile_home">Place for Mobile home</option>
+	<option value="place_tent">Place for tent</option>
+
+</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label id="lblComments" for="txtComments" class="control-label">
+								Comments:</label>
+							<div class="controls">
+								<textarea id="txtComments" rows="3" cols="20"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="span4">
+					<div class="row-fluid">
+						<div class="span6">
+							<div class="control-group date-group">
+								<label id="lblArrival" for="txtArrival" class="control-label">
+									Arrival*:</label>
+								<div class="controls">
+									<input type="text" id="txtArrival" class="datepicker" maxlength="10" />
+								</div>
+							</div>
+							<div class="control-group person-group">
+								<label id="lblAdults" for="ddAdults" class="control-label">
+									Adults:</label>
+								<div class="controls">
+									<select id="ddAdults" class="short-input">
+										<option value="1">1</option>
+										<option value="2" selected="selected">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="span6">
+							<div class="control-group date-group">
+								<label id="lblDeparture" for="txtDeparture" class="control-label">
+									Departure*:</label>
+								<div class="controls">
+									<input type="text" id="txtDeparture" class="datepicker" maxlength="10" />
+								</div>
+							</div>
+							<div class="control-group person-group">
+								<label id="lblChildren" for="ddChildren" class="control-label">
+									Chidren:</label>
+								<div class="controls">
+									<select id="ddChildren" class="short-input">
+										<option value="0">0</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<select id="ddChild_1" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+									<select id="ddChild_2" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+									<select id="ddChild_3" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+									<select id="ddChild_4" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+									<select id="ddChild_5" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+									<select id="ddChild_6" class="short-input child">
+										<option value="0">Age</option>
+										<option value="1">Age 1</option>
+										<option value="2">Age 2</option>
+										<option value="3">Age 3</option>
+										<option value="4">Age 4</option>
+										<option value="5">Age 5</option>
+										<option value="6">Age 6</option>
+										<option value="7">Age 7</option>
+										<option value="8">Age 8</option>
+										<option value="9">Age 9</option>
+										<option value="10">Age 10</option>
+										<option value="11">Age 11</option>
+										<option value="12">Age 12</option>
+										<option value="13">Age 13</option>
+										<option value="14">Age 14</option>
+										<option value="15">Age 15</option>
+										<option value="16">Age 16</option>
+										<option value="17">Age 17</option>
+										<option value="18">Age 18</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-actions">
+								<a href="javascript:;" id="btnSubmit" class="btn-inquiry">
+									Send inquiry</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" name="AntiSpam" id="AntiSpam" value="100" style="border: none; display: none; padding: none" />
+	<script type="text/javascript">
+		document.getElementById('Anti' + 'Spam').value = '1' + '0' + '1';
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function ()
+		{
+			var ddAccommodation = {
+				'': [['', '---', false]]
+				,'accomodation-vicinity': [['', '---', false], ['1484', 'Apartments and rooms with a view of Bled', false], ['1899', 'Tourist farm Tavčar', false], ['2384', 'Turist farmhouse Pr Trlej', false]],'hotel': [['', '---', false], ['621', 'Best Western Premier Hotel Lovec', false], ['625', 'Grand hotel Toplice', false], ['575', 'Hotel Astoria', false], ['622', 'Hotel Golf', false], ['567', 'Hotel Jadran', false], ['574', 'Hotel Jelovica', false], ['619', 'Hotel Kompas Bled', false], ['572', 'Hotel Krim', false], ['620', 'Hotel Park', false], ['618', 'Hotel Ribno', false], ['573', 'Hotel Savica', false], ['617', 'Hotel Triglav Bled', false], ['571', 'Hotel Trst', false]],'garni_hotel_boarding_house': [['', '---', false], ['562', 'B\u0026B Pletna', false], ['561', 'Boarding house Milena-Jan', false], ['610', 'Garni hotel Berc', false], ['1364', 'Penzion Kaps', false]],'boarding_house': [['', '---', false], ['2124', 'Alparti mini hotel', false], ['615', 'Boarding house Mayer', false], ['570', 'Pension Krek', false], ['569', 'Pension Mlino', false], ['1644', 'Penzion Zaka', false], ['611', 'Villa Prešeren', false]],'private_rooms_apps': [['', '---', false], ['2381', 'Anna house', false], ['1891', 'Apartment Anton', false], ['594', 'Apartment house Macesen', false], ['1893', 'Apartment Janša', false], ['2054', 'Apartment Klin', false], ['1898', 'Apartment Knaflič', false], ['555', 'Apartment Kobal', false], ['513', 'Apartment Torkar', false], ['547', 'Apartments Dolar', false], ['509', 'Apartments Gregorc', false], ['556', 'Apartments Kapus', false], ['1397', 'Apartments Maca Bled', false], ['1372', 'Apartments Rose in Winter', false], ['605', 'Apartments Špec', false], ['534', 'Apartments Trentelj', false], ['1392', 'B\u0026B apartments Bio-fit', false], ['1398', 'Holiday house Kristan', false], ['541', 'Pension  Tiffany', false], ['1389', 'Počitniška hiša Pr Klemuc', false], ['585', 'Poldi apartments Bled', false], ['538', 'Potočnik Darko - Apartment Alenka', false], ['1390', 'Pr\u0027 Ledrar', false], ['1399', 'Rooms and apartment Danica Legat', false], ['1391', 'Rooms and apartments Ajda', false], ['498', 'Rooms Golja', false], ['1895', 'Rooms Tina', false], ['1092', 'Villa Julija', false], ['1386', 'Villa Marjetica', false]],'youth_hostel': [['', '---', false], ['579', 'Hostel Bledec', false], ['477', 'Hostel Villa Victoria', false]],'tourist_farm': [['', '---', false], ['577', 'Tourist farm Dolinar-Krainer', false], ['578', 'Tourist farm Mulej Bled', false], ['988', 'Tourist farm Pri Biscu', false], ['1448', 'Tourist farm Žerovc', false]],'camp': [['', '---', false], ['624', 'Camping Bled', false], ['1813', 'Tourist Green Resort Garden Village Bled', false]]
+			}
+
+			var $ddAccommodation = $('#ddAccommodation');
+			$('#ddAccommodationType').change(function () {
+				var ddAccommodationType = $(this).val(), lcns = ddAccommodation[ddAccommodationType] || [];
+				var html = $.map(lcns, function(lcn){
+					var sel;
+					if (lcn[2]) sel = ' selected="selected"';
+					return '<option value="' + lcn[0] + '"' + sel + '>' + lcn[1] + '</option>'
+				}).join('');
+				$ddAccommodation.html(html)
+				if(ddAccommodationType == 'camp')
+				{
+					$('.ddCampType').val('');
+					$('.camp-type').show();
+				}
+				else
+				{
+					$('.ddCampType').val('');
+					$('.camp-type').hide();
+				}
+			});
+			$('#ddAccommodationType').change();
+
+			$('#ddAccommodation').change(function () {
+				if(ddAccommodationType != 'camp')
+				{
+					$('.ddCampType').val('');
+				}
+			});
+
+			$('#reservations .datepicker').datepicker({
+				dateFormat: 'dd.mm.yy',
+				minDate: '-0w'
+			});
+
+			var trigger = $('#lnk-booking, #m-lnk-booking');
+			var target = $('#reservations');
+			trigger.click(function (e)
+			{
+				e.preventDefault();
+
+				// close feratel
+				$('#lnk-bookingF, #m-lnk-bookingF span').toggleClass('active', false);
+
+				$('#reservationsF').slideUp(300, function(){
+					$('#lnk-booking, #m-lnk-booking span').toggleClass('active');
+					target.slideToggle(300);
+				});
+						
+			});
+
+			$('#btnClose').click(function ()
+			{
+				closeForm();
+			});
+
+			var buttonDisabled;
+			$('#btnSubmit').click(function ()
+			{
+				// validation
+				$('#reservations .control-label').removeClass('booking-error');
+				var formOk = true;
+				var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+				var txtEmail = $('#txtEmail').val();
+				var txtFullName = $('#txtFullName').val();
+				var ddAccommodationType = $('#ddAccommodationType').val();
+				var ddAccommodation = $('#ddAccommodation').val();
+				var ddCampType = $('.ddCampType').val();
+				var txtArrival = $('#txtArrival').val();
+				var txtDeparture = $('#txtDeparture').val();
+				var ddAdults = $('#ddAdults').val();
+				var ddChildren = $('#ddChildren').val();
+				var txtComments = $('#txtComments').val();
+
+				if (txtEmail.length == 0 || !emailReg.test(txtEmail)) { $('#lblEmail').addClass('booking-error'); formOk = false; }
+				if (txtFullName.length == 0) { $('#lblFullName').addClass('booking-error'); formOk = false; }
+				if (ddAccommodationType.length == 0) { $('#lblAccommodationType').addClass('booking-error'); formOk = false; }
+				if (ddAccommodation.length == 0) { $('#lblAccommodation').addClass('booking-error'); formOk = false; }
+				if (ddAccommodationType == 'camp' && ddCampType.length == 0) { $('#lblCampType').addClass('booking-error'); formOk = false; }
+				if (txtArrival.length == 0) { $('#lblArrival').addClass('booking-error'); formOk = false; }
+				if (txtDeparture.length == 0) { $('#lblDeparture').addClass('booking-error'); formOk = false; }
+				if (txtArrival.length > 0 && txtDeparture.length > 0)
+				{
+					if (jQuery.datepicker.parseDate("dd.mm.yy", txtDeparture) <= jQuery.datepicker.parseDate("dd.mm.yy", txtArrival))
+					{
+						$('#lblArrival').addClass('booking-error');
+						$('#lblDeparture').addClass('booking-error');
+						formOk = false;
+					}
+				}
+
+				var nc = "";
+				$(".child:visible").each(function () {
+					if (($(this).val() * 1) == 0)
+					{
+						$('#lblChildren').addClass('booking-error');
+						formOk = false;
+					}
+					else
+					{
+						nc += (nc.length > 0 ? "," : "") + $(this).val();
+					}
+				});
+
+				if (formOk)
+				{
+					// do submit
+					if (!buttonDisabled)
+					{
+						buttonDisabled = true;
+						var btnTitle = $("#btnSubmit").text();
+						$("#btnSubmit").text("Wait...");
+
+						$.post("bookingBox.ashx",
+									{
+										email: txtEmail,
+										fullName: txtFullName,
+										accommodationType: ddAccommodationType,
+										accommodation: ddAccommodation,
+										campType: ddCampType,
+										arrival: txtArrival,
+										departure: txtDeparture,
+										adults: ddAdults,
+										children: ddChildren + (ddChildren > 0 ? " (" + nc + ")" : ""),
+										comments: txtComments,
+										currentPageId: 442
+												},
+                        function(data, status){
+                        	if (data.length > 0 && status == 'success')
+                        	{
+                        		//ga('send', 'event', 'inquiry-end', '/' + data);
+                        		jAlert('Your inquiry was transferred successfully.\nYou will receive our reply as soon as possible.');
+                        		clearFields();
+                        		closeForm();
+                        	}
+                        	else
+                        	{
+                        		jAlert('Inquiry was not sent due to the system error.\nPlease, try again.');
+                        	}
+
+                        	$("#btnSubmit").text(btnTitle);
+                        	buttonDisabled = false;
+                        });
+											}
+										}
+										else
+										{
+											jAlert('Data input error.\nAll fields must be completed.\nCheck if the dates are reasonably selected.');
+        		}
+        	});
+
+			function closeForm()
+			{
+				$('#lnk-booking, #m-lnk-booking span').toggleClass('active', false);
+				$('#reservations').slideUp(300);
+			}
+
+			function clearFields()
+			{
+				$('#txtEmail').val('');
+				$('#txtFullName').val('');
+				$('#ddAccommodationType').val('');
+				$('#ddAccommodationType').change();
+				$('.ddCampType').val('');
+				$('#txtArrival').val('');
+				$('#txtDeparture').val('');
+				$('#ddAdults').val('');
+				$('#ddChildren').val('');
+				$('#txtComments').val('');
+			}
+
+			function SetChildrenDD(what) {
+				for (i = 1; i <= what ; i++) {
+					$("#ddChild_" + i).show();
+				}
+				for (j = (what + 1) ; j <= 6; j++) {
+					$("#ddChild_" + j).val(0).hide();
+				}
+			}
+
+			$("#ddChildren").change(function () {
+				var what = $(this).val() * 1;
+				SetChildrenDD(what);
+			});
+
+			// default-open
+			
+
+			SetChildrenDD(0);
+		});
+	</script>
+</div>
+
+            
+
+<div class="booking-fluid">
+	<div class="reservations" id="reservationsF" style="display: none;">
+		<div class="container-fluid">
+			<a href="javascript:;" id="btnCloseF" class="reservations-close"><i class="icon-remove-sign"></i></a>
+			<div class="row-fluid">
+				<div class="span12">
+						<div class="booking-left">Booking</div>
+						<div class="booking-right">
+						<div class="inp-field">
+							<select id="ddAccommodationTypeF" class="w150">
+								<option value="All">All</option>
+								<option value="Room">Room</option>
+								<option value="Apartment">Apartment</option>
+								<option value="Camping">Camp</option>
+								<option value="Packets">Packages</option>
+								<option value="Additional">Additional services</option>
+							</select>
+						</div>
+						<div class="inp-field date-group">
+							<input type="text" id="txtArrivalF" class="datepicker datepickerF" maxlength="10" placeholder='Arrival' />
+						</div>
+						<div class="inp-field date-group">
+							<input type="text" id="txtDepartureF" class="datepicker datepickerF" maxlength="10" placeholder='Departure' />
+						</div>
+						<div class="inp-field">
+							<select id="ddAdultsF" class="w100">
+								<option value="">Adults</option>
+								<option value="1">Adults 1</option>
+								<option value="2">Adults 2</option>
+								<option value="3">Adults 3</option>
+								<option value="4">Adults 4</option>
+								<option value="5">Adults 5</option>
+								<option value="6">Adults 6</option>
+								<option value="7">Adults 7</option>
+								<option value="8">Adults 8</option>
+								<option value="9">Adults 9</option>
+								<option value="10">Adults 10</option>
+							</select>
+						</div>
+						<div class="inp-field">
+							<select id="ddChildrenF" class="w90 sblock">
+								<option value="0">Kids</option>
+								<option value="1">Kids 1</option>
+								<option value="2">Kids 2</option>
+								<option value="3">Kids 3</option>
+								<option value="4">Kids 4</option>
+								<option value="5">Kids 5</option>
+								<option value="6">Kids 6</option>
+							</select>
+							<select id="ddChildF_1" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+							<select id="ddChildF_2" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+							<select id="ddChildF_3" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+							<select id="ddChildF_4" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+							<select id="ddChildF_5" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+							<select id="ddChildF_6" class="w90 sblock childF">
+								<option value="0">Age</option>
+								<option value="1">Age 1</option>
+								<option value="2">Age 2</option>
+								<option value="3">Age 3</option>
+								<option value="4">Age 4</option>
+								<option value="5">Age 5</option>
+								<option value="6">Age 6</option>
+								<option value="7">Age 7</option>
+								<option value="8">Age 8</option>
+								<option value="9">Age 9</option>
+								<option value="10">Age 10</option>
+								<option value="11">Age 11</option>
+								<option value="12">Age 12</option>
+								<option value="13">Age 13</option>
+								<option value="14">Age 14</option>
+								<option value="15">Age 15</option>
+								<option value="16">Age 16</option>
+								<option value="17">Age 17</option>
+								<option value="18">Age 18</option>
+							</select>
+						</div>
+						<div class="inp-field"><a href="javascript:;" id="btnSubmitF" class="btn-inquiry-f">Check the availability</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="asas"></a>
+	<input type="hidden" name="AntiSpam" id="AntiSpam" value="100" style="border: none; display: none; padding: none" />
+	<script type="text/javascript">
+		document.getElementById('Anti' + 'Spam').value = '1' + '0' + '1';
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.datepickerF').datepicker({
+				dateFormat: 'dd.mm.yy',
+				minDate: '-0w'
+			});
+
+			var trigger = $('#lnk-bookingF, #m-lnk-bookingF');
+			var target = $('#reservationsF');
+			trigger.click(function (e) {
+				e.preventDefault();
+
+				// close inquiry
+				$('#lnk-booking, #m-lnk-booking span').toggleClass('active', false);
+
+				$('#reservations').slideUp(300, function () {
+					$('#lnk-bookingF, #m-lnk-bookingF span').toggleClass('active');
+					target.slideToggle(300);
+				});
+			});
+
+			//    		$('#m-lnk-booking').click(function () {
+			//    			$('#m-lnk-bookingF span').removeClass('active');
+			//    		});
+
+			//$('#ddAccommodationTypeF').on("change", function () {
+			//    alert($('#ddAccommodationTypeF').val());
+			//});
+
+			$('#btnCloseF').click(function () {
+				closeForm();
+			});
+
+			var buttonDisabled;
+			$('#btnSubmitF').click(function () {
+				// validation
+
+				var formOk = true;
+				var ddAccommodationType = $('#ddAccommodationTypeF').val();
+				var txtArrival = $('#txtArrivalF').val();
+				var txtDeparture = $('#txtDepartureF').val();
+				var ddAdults = $('#ddAdultsF').val() * 1;
+				var url = "";
+
+				var selLang = 'en' || '';
+				if (selLang == 'si') selLang = 'sl';
+
+				switch (ddAccommodationType) {
+					case "Room":
+					case "Apartment":
+					case "Camping":
+					case "All":
+						{
+							var nds = "";
+							var at = "&selAccommodationTypeLine1=" + ddAccommodationType;
+
+							var d1 = parseDate(txtArrival);
+							var d2 = parseDate(txtDeparture);
+							if (d1 == null || d2 == null || (daydiff(d1, d2) < 1))
+							{
+								formOk = false;
+							}
+							else
+							{
+								var nd = txtArrival.split('.');
+								if (nd.length == 3) {
+									nds = "" + nd[2] + nd[1] + nd[0];
+								}
+								else
+								{
+									formOk = false;
+								}
+							}
+
+							if (ddAdults == 0) {
+								formOk = false;
+							}
+
+							var nc = "";
+							$(".childF:visible").each(function () {
+								if (($(this).val() * 1) == 0)
+								{
+									formOk = false;
+								}
+								else
+								{
+									nc += (nc.length > 0 ? "," : "") + $(this).val();
+								}
+							});
+
+							if (ddAccommodationType == "All") {
+								//url = "http://web4.deskline.net/bled/sl/accommodation/list";
+								//url = "http://web4.deskline.net/bled/" + selLang + "/accommodation/searchresult?selArrivalDate=" + nds + "&selNights=" + daydiff(d1, d2) + "&selNumberOfUnits=1&selAdultsSearchLine1=" + ddAdults + (nc.length > 0 ? "&selChildrenSearchLine1=" + nc : "");
+								url = "http://web4.deskline.net/bled/" + selLang + "/accommodation/qfind?selArrivalDate=" + nds + "&selNights=" + daydiff(d1, d2) + "&selNumberOfUnits=1&selAdultsSearchLine1=" + ddAdults + (nc.length > 0 ? "&selChildrenSearchLine1=" + nc : "");
+							}
+							else {
+								url = "http://web4.deskline.net/bled/" + selLang + "/accommodation/qfind?selLang=" + selLang + "&selArrivalDate=" + nds + "&selNights=" + daydiff(d1, d2) + "&selNumberofUnits=1&selAdultsSearchLine1=" + ddAdults + (nc.length > 0 ? "&selChildrenSearchLine1=" + nc : "") + at;
+							}
+							break;
+						}
+					case "Packets":
+						{
+							// old
+							//url = "http://web4.deskline.net/bledpackage/" + selLang + "/package/list";
+							url = "http://web4.deskline.net/bledpackagezl/" + selLang + "/package/list";
+							break;
+						}
+					case "Additional":
+						{
+							// old
+							//url = "http://web4.deskline.net/bled/" + selLang + "/addservices/list";
+							url = "http://web4.deskline.net/bledpackagezl/" + selLang + "/addservices/list";
+							break;
+						}
+					default:
+						{
+							formOk = false;
+							break;
+						}
+				}
+
+				if (formOk) {
+					// do submit
+					//if (!buttonDisabled) {
+					//	buttonDisabled = true;
+					//	var btnTitle = $("#btnSubmit").text();
+					//	$("#btnSubmit").text("Wait...");
+					//}
+					//alert(url);
+					fireLightBoxIframe(url);
+				}
+				else {
+					jAlert('Data input error.\nAll fields must be completed.\nCheck if the dates are reasonably selected.');
+    			}
+			});
+
+			function closeForm() {
+				$('#lnk-bookingF, #m-lnk-bookingF span').toggleClass('active', false);
+				$('#reservationsF').slideUp(300);
+			}
+
+			function clearFields() {
+				$('#ddAccommodationTypeF').val('');
+				$('#txtArrival').val('');
+				$('#txtDeparture').val('');
+				$('#ddAdults').val('');
+			}
+
+			function SetChildrenDDF(what) {
+				for (i = 1; i <= what ; i++) {
+					$("#ddChildF_" + i).show();
+				}
+				for (j = (what + 1) ; j <= 6; j++) {
+					$("#ddChildF_" + j).val(0).hide();
+				}
+			}
+
+			$("#ddChildrenF").change(function () {
+				var what = $(this).val() * 1;
+				SetChildrenDDF(what);
+			});
+
+			// default-open
+			$('#lnk-bookingF, #m-lnk-bookingF span').toggleClass('active');target.show();
+
+			SetChildrenDDF(0);
+		});
+	</script>
+</div>
+
+
+            <div id="Breadcrumbs" class="container-fluid">
+                
+            </div>
+            
+
+<div class="slidingBanner-container">    
+    <div class="slidingBanner-loader" style="visibility:hidden;">
+    <div class="slidingBanner-arrows">
+        <div class="slidingBanner-arrowsInner">
+            <a href="#" class="slidingBanner-previous">previous</a>
+            <a href="#" class="slidingBanner-next">next</a>
+        </div>
+    </div>
+    <div class="slidingBanner">
+<div class="slidingBanner-slide">
+<img src="files/default/banners/vstopna-stran/vstopni-banner-Matej-Vranic-Bled-1.jpg" /><div class="slidingBanner-caption"><div class="slidingBanner-title"><div class="titleInner">In the midst of the Alps …</div></div><div class="slidingBanner-description"><div class="descInner">… lies a town with the world renowned intact nature and idyllic formations it created.</div></div></div>
+</div>
+<div class="slidingBanner-slide">
+<img src="files/default/banners/vstopna-stran/vstopni-banner-border-Eva-fotke-344-2.jpg" /><div class="slidingBanner-caption"><div class="slidingBanner-title"><div class="titleInner">The intact nature invites you …</div></div><div class="slidingBanner-description"><div class="descInner">… to explore its hidden corners and with numerous outdoor sporting activities.</div></div></div>
+</div>
+<div class="slidingBanner-slide">
+<img src="files/default/banners/vstopna-stran/vstopni-banner-Bled-in-winter-3.jpg" /><div class="slidingBanner-caption"><div class="slidingBanner-title"><div class="titleInner">Unique views …</div></div><div class="slidingBanner-description"><div class="descInner">… represent the finishing touch for romantic moments, mountain climbs and playful experiences.</div></div></div>
+</div>
+</div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function calculateOffset() {
+        var $cont = $('.slidingBanner');
+        var $img = $('.slidingBanner img');
+        var ch = $cont.outerHeight();
+        var h = $img.height();
+        var oh = h - ch;
+        var topOffset = -oh / 2;
+        $img.css({ 'marginTop': topOffset + 'px' });
+    }
+
+    $('.slidingBanner-loader').imagesLoaded(function () {
+        createSlider();
+        $(this).hide().css('visibility', 'visible').fadeIn('slow');
+        calculateOffset();
+    });
+
+    $(window).resize(function () {
+        calculateOffset();
+    });
+
+
+
+</script>
+
+            <!--<div class="visible-desktop">                            </div>-->
+            
+            <div class="container-fluid bg-white">
+                <div class="row-fluid">
+                    
+                    <div id="ctl00_CenterColumn" class="span12 body-center">
+                        <div class="visible-desktop">
+                            
+                        </div>
+                        
+    <div id="firstPage">
+        
+	    
+    </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+            
+	
+
+<div class="container-fluid bg-white">
+    <div class="section-title-container"><h2>Premium packages</h2></div>
+    <div class="row-fluid"><div class="span4 myway-packets"><img class="lazy" src="http://www.bled.si/en/imagelib/13-land/default/slike/kaj-videti/Blejski-grad_jezero_1.jpg" data-original="http://www.bled.si/en/imagelib/13-land/default/slike/kaj-videti/Blejski-grad_jezero_1.jpg" alt="" title="" style="display: inline;"><h2>Bled Castle entry fee</h2><p>Perched atop a steep cliff rising 130 metres above the glacial Lake Bled is a symbol of Bled and Slovenia – Bled Castle.</p><div class="offer-bottom">	<div class="offer-left">from&nbsp;<span>5&nbsp;&euro;</span>	</div>	<div class="offer-right"><a href="javascript:;" onclick="fireLightBoxIframe('http://web4.deskline.net/bledpackagezl/en/addservices/list?limAdsServices=49f9675c-ea0d-4629-9c4f-5f46819c5294', true)" class="btn btn-default"><span class="icon-bookmark"></span>&nbsp;&nbsp;Check the availability</span></a>	</div></div></div><div class="span4 myway-packets"><img class="lazy" src="http://www.bled.si/en/imagelib/13-land/default/slike/kaj-poceti/Pokljuka_biatlon_2.jpg" data-original="http://www.bled.si/en/imagelib/13-land/default/slike/kaj-poceti/Pokljuka_biatlon_2.jpg" alt="" title="" style="display: inline;"><h2>Biathlon Pokljuka - PACKAGE FOR FANS </h2><p>Awesome atmosphere during IBU World Cup Biathlon races on Pokljuka requires fans which are of great help to the world’s best biathlon competitors in their efforts at the start of this year’s winter competition season.</p><div class="offer-bottom">	<div class="offer-left">from&nbsp;<span>70&nbsp;&euro;</span>	</div>	<div class="offer-right"><a href="javascript:;" onclick="fireLightBoxIframe('http://web4.deskline.net/bledpackagezl/en/package/detail/STO/a695cca2-515c-4c24-89a9-85413343bb90/biathlon_pokljuka_-_paket_za_navijače_2016', true)" class="btn btn-default"><span class="icon-bookmark"></span>&nbsp;&nbsp;Check the availability</span></a>	</div></div></div><div class="span4 myway-packets"><img class="lazy" src="http://www.bled.si/en/imagelib/13-land/default/dogodki/2016/CRT59406.jpg" data-original="http://www.bled.si/en/imagelib/13-land/default/dogodki/2016/CRT59406.jpg" alt="" title="" style="display: inline;"><h2>A DIFFERENT NEW YEAR'S EVE</h2><p>Join the chain that will be created around the lake on the penultimate day of the old year.
+You will warm up with a cup of hot tea or mulled wine on the Festive Promenade, where a rich programme of entertainment will be await you. The exciting...</p><div class="offer-bottom">	<div class="offer-left">from&nbsp;<span>92&nbsp;&euro;</span>	</div>	<div class="offer-right"><a href="javascript:;" onclick="fireLightBoxIframe('http://web4.deskline.net/bledpackagezl/en/package/detail/STO/705f80d6-7ca5-4772-90b9-30297504a829/a_different_new_years_eve', true)" class="btn btn-default"><span class="icon-bookmark"></span>&nbsp;&nbsp;Check the availability</span></a>	</div></div></div></div>
+</div>
+
+<div class="separator-spacer"><div class="separator-spacer-inner"></div></div>
+<div class="container-fluid bg-white"><div class="section-title-container section-title-container-events"><h2>Event calendar <span class="title-tip"><span>-</span> No matter when you arrive, you will never get bored!</span></h2><a href=events class="show-more"><i class="icon-calendar"></i>Events calendar</a></div><div class="row-fluid calendarContent"><div class="span3 calendarContent-item"><div class="calendarContent-itemInner"><a href="events/2016/11/24/2200-Taste-Bled-in-Bled-Restaurants"><div class="calendarContent-date">Bled Restaurants, 5.  - 30. 11. 2016</div><h3>Taste Bled in Bled Restaurants</h3><p>Feel invited to taste local delicacies.</p></a></div></div><div class="span3 calendarContent-item"><div class="calendarContent-itemInner"><a href="events/2016/11/24/2036-Bled-ice-rink-with-a-view"><div class="calendarContent-date">Hotel Park Coffee Shop terrace, 12. 11. 2016 - 3. 3. 2017, 9:00 - 21:00</div><h3>Bled ice rink with a view</h3><p>Join us at the events on the ice rink.</p></a></div></div><div class="span3 calendarContent-item"><div class="calendarContent-itemInner"><a href="events/2016/12/02/2274-Turning-on-the-lights-and-opening-of-the-Festive-Promenade"><div class="calendarContent-date">Lakeside promenade, 2. 12. 2016, 17:00</div><h3>Turning on the lights and opening of the Festive Promenade</h3></a></div></div><div class="span3 calendarContent-item"><div class="calendarContent-itemInner"><a href="events/2016/12/08/1356-BMW-IBU-World-Cup-Biathlon-Pokljuka"><div class="calendarContent-date">Sports Center Triglav Pokljuka, Rudno polje, 8.  - 11. 12. 2016</div><h3>BMW IBU World Cup Biathlon Pokljuka</h3></a></div></div></div></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        equalHeight($(".calendarContent-itemInner"));
+        $(window).resize(equalHeight($(".calendarContent-itemInner")));
+    });
+
+</script><div class="top5Sites"><div class="top5Sites-inner"><h2>Top <span class="top5Sites-num">5</span> sights</h2><div class="top5Sites-row clearfix"><div class="top5Sites-item first"><a href="what-to-see/natural-sights/lake-bled" target="_self" class="top5Sites-thumb"><img src="imagelib/top-5/default/slike/kaj-videti/Bled_barve_soncni_vzhod_01.jpg" alt="" /></a><h3><a href="what-to-see/natural-sights/lake-bled" target="_self">Lake Bled with an island</a></h3><p>Visit the lake island with its glorious Gothic church and the famous wishing bell.</p><a href="what-to-see/natural-sights/lake-bled" target="_self" class="top5Sites-readMore">Read more</a></div><div class="top5Sites-item "><a href="what-to-see/cultural-sights/the-bled-castle" target="_self" class="top5Sites-thumb"><img src="imagelib/top-5/default/slike/kaj-videti/Bled_grad_iz_zraka.jpg" alt="" /></a><h3><a href="what-to-see/cultural-sights/the-bled-castle" target="_self">The Bled castle</a></h3><p>Climb up to the Castle and enjoy the finest view of the lake with its island.</p><a href="what-to-see/cultural-sights/the-bled-castle" target="_self" class="top5Sites-readMore">Read more</a></div><div class="top5Sites-item "><a href="what-to-see/symbols-of-bled/pletna" target="_self" class="top5Sites-thumb"><img src="imagelib/top-5/default/slike/naslovna-stran/top-5/Pletna1.JPG_1.jpg" alt="" /></a><h3><a href="what-to-see/symbols-of-bled/pletna" target="_self">The Pletna boat</a></h3><p>Take a trip across the lake in the traditional Pletna boat and relax in the atmosphere.</p><a href="what-to-see/symbols-of-bled/pletna" target="_self" class="top5Sites-readMore">Read more</a></div><div class="top5Sites-item "><a href="what-to-see/symbols-of-bled/cream-cake" target="_self" class="top5Sites-thumb"><img src="imagelib/top-5/default/slike/naslovna-stran/top-5/Blejska_kremsnita_003_orig.jpg" alt="" /></a><h3><a href="what-to-see/symbols-of-bled/cream-cake" target="_self">Cream cake</a></h3><p>The only true cream cake is the Bled cream cake. Come taste it!</p><a href="what-to-see/symbols-of-bled/cream-cake" target="_self" class="top5Sites-readMore">Read more</a></div><div class="top5Sites-item last"><a href="what-to-see/natural-sights/the-vintgar-gorge" target="_self" class="top5Sites-thumb"><img src="imagelib/top-5/default/slike/kaj-videti/Bled_Soteska_Vintgar_2.jpg" alt="" /></a><h3><a href="what-to-see/natural-sights/the-vintgar-gorge" target="_self">The Vintgar gorge</a></h3><p>Experience the most intact nature of Bled in the first touristically arranged gorge in Slovenia.</p><a href="what-to-see/natural-sights/the-vintgar-gorge" target="_self" class="top5Sites-readMore">Read more</a></div></div></div></div>
+
+
+	<script type="text/javascript">
+        var fbox = $('#top5-floatbox');
+        var ft = $('.top5-floatbox-trigger');
+        ft.html(wrap(ft));
+        fbox.delay(1000).fadeIn(500);
+        ft.click(function () {
+            $(".top5Sites-item").css({ 'height': 'auto' });
+            if (fbox.hasClass('fbox-expanded')) {
+                fbox.animate({ 'right': '-940' });
+                fbox.removeClass('fbox-expanded');
+            } else {
+                fbox.animate({ 'right': 0 });
+                fbox.addClass('fbox-expanded');
+            }
+        });
+        $(".top5-floatbox-close").click(function (e) {
+            e.preventDefault();
+            fbox.animate({ 'right': '-940' });
+            fbox.removeClass('fbox-expanded');
+        });
+        $('.top5Sites').imagesLoaded(function () {
+            if ($(window).width() > 767) {
+                equalHeight($(".top5Sites-item"));
+            }
+        });
+        $(window).resize(function () {
+            if ($(window).width() > 767) {
+                equalHeight($(".top5Sites-item"));
+            }
+        });
+	</script>
+<div class="craftedActivities"><div class="container-fluid"><div class="section-title-container"><h2>Bled for everyone <span class="title-tip"><span>-</span> Discover Bled through these five activities carefully crafted for you</span></h2></div><div class="row-fluid"><div class="span3"><div class="craftedActivities-item"><a href="home-page/bled-for-active"><img src="images/for_active.png" alt="Bled for active visitors" /></a><a href="home-page/bled-for-active"><h4>Bled for active visitors</h4></a></div></div><div class="span3"><div class="craftedActivities-item"><a href="home-page/bled-for-businessmen"><img src="images/for_businessmen.png" alt="Bled for businessmen" /></a><a href="home-page/bled-for-businessmen"><h4>Bled for businessmen</h4></a></div></div><div class="span3"><div class="craftedActivities-item"><a href="home-page/bled-for-families"><img src="images/for_families.png" alt="Bled for families" /></a><a href="home-page/bled-for-families"><h4>Bled for families</h4></a></div></div><div class="span3 last"><div class="craftedActivities-item"><a href="home-page/bled-for-gourmets"><img src="images/for_gourmets.png" alt="Bled for gourmets" /></a><a href="home-page/bled-for-gourmets"><h4>Bled for gourmets</h4></a></div></div></div></div></div>
+<div id="ctl00_AdditionalContent_ctl05_phAdBanner" class="adBannerPlaceholder">
+	<div class="container-fluid">
+        <div class="adsCarousel">
+		    <span class="adsRow-item"><a href="http://www.vogel.si/summer" target="_blank"><img src="imagelib/ads-row/default/banners/banner_vogel_bled.jpg" alt="" /></a></span><span class="adsRow-item"><a href="files/default/banners/zgibanka%20A4%20elektricno%20potovanje%20ENG%20press.pdf" target="_blank"><img src="imagelib/ads-row/default/banners/elektro gorenjska.png" alt="" /></a></span><span class="adsRow-item"><a href="http://www.sava-hotels-resorts.com/en/bled/" target="_blank"><img src="imagelib/ads-row/default/images/pasica3_SHR_Bled_1512 14.jpg" alt="" /></a></span><span class="adsRow-item"><a href="http://www.budget.si/" target="_blank"><img src="imagelib/ads-row/default/banners/vstopna-stran/budget_ang.png" alt="" /></a></span>
+        </div>
+        <a href="#" class="adsRow-previous">Prev</a>
+        <a href="#" class="adsRow-next">Next</a>
+
+	</div>
+	<script type="text/javascript">
+		$(window).load(function () {
+	//        var adRow = $('.adsRow-inner'),
+	//        adRowWrap = $('.adsRow'),
+	//        adsRowInnerWidth = $('.adsRow-item').outerWidth(true) * $('.adsRow-item').length;
+	//        $('.adsRow-inner').css({ 'width': adsRowInnerWidth });
+
+			$('.adsCarousel').cycle({
+				fx: 'carousel',           
+				slides: '.adsRow-item',
+				timeout: 3000,
+				pauseOnHover: true,
+				swipe: true,
+				//carouselVisible: 6,
+				prev: '.adsRow-previous',
+				next: '.adsRow-next',
+				log: false
+			});
+		   if ($('.adsRow-item').length < 6) {
+				$('.adsRow-previous, .adsRow-next').hide();
+				$('.adsCarousel').cycle('stop');
+		   }
+
+			$('.adsCarousel .cycle-slide').click(function () {
+				var index = $('.adsCarousel').data('cycle.API').getSlideIndex(this);
+				ga('send', 'event', 'addCorouselClick', $('.adsCarousel .cycle-slide a').get(index).href);
+			});
+		});
+
+	</script>
+</div>
+
+
+
+            
+
+    <div class="myway-shim"></div>
+    <div class="myway-container">
+        <div class="container-fluid myway1">
+            <div class="row-fluid">
+                <div class="collapsibleMyway-trigger collapsibleMyway-close"></div>
+            </div>
+        </div>
+
+        <div class="collapsibleMyway-container"><!--style="display: none;"-->
+
+            <!-- myway-tut -->
+            <div class="myway-tut">
+                <div class="container-fluid">
+                    <div class="row-fluid"><div class="span12 myway-tut-row1"><P align=center>Bled MyWay enables you to select, review and book all the the activities offered by the service providers in one place.<BR><B>Shape your holidays in Bled to suit your needs.</B></P><a href="javascript:;" onclick="closeMywayTut();" class="myway-link-tut-close"></a></div></div>
+	                <div class="table">
+		                <div class="table-tr">
+			                <div class="table-td zpan1"><img src='http://www.bled.si/en/images/puscica-L.png' alt="" /></div>
+			                <div class="table-td zpan3"><div class="tut-img"><img src='http://www.bled.si/en/images/lupa.png' alt="" /></div><h2>Discover</h2><div><P align=center>Content is automatically added or can be added by clicking on them while browsing the website.</P></div></div>
+			                <div class="table-td zpan4"><div class="tut-img"><img src='http://www.bled.si/en/images/roka.png' alt="" /></div><h2>Select</h2><div><P align=center>Remove the activities that do not interest you by clicking x.</P></div></div>
+			                <div class="table-td zpan3"><div class="tut-img"><img src='http://www.bled.si/en/images/seznam.png' alt="" /></div><h2>View the offer</h2><div><P align=center>By clicking the button you are able to select the provider of the desired activity and book it in one place.</P></div></div>
+			                <div class="table-td zpan1"><img src='http://www.bled.si/en/images/puscica-D.png' alt="" /></div>
+		                </div>
+	                </div>
+                </div>
+            </div>
+            <!-- /myway-tut -->
+
+            <!-- myway-content -->
+            <div class="myway-content">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <div class="span10">
+                            <div id="thumb-tray">
+                                <div class="myway-container-articles"></div>
+                                <div id="thumb-prev"></div>
+                                <div id="thumb-next"></div>
+                            </div>
+                        </div>
+                        <div class="span2">
+                            <a href="myway/myway-offers" class="myway-button">View the offer</a>
+                            <a href="javascript:;" id="myway-link-tut-open-desktop" class="myway-link-tut-open" onclick="showMywayTut()" style="display:none;">What is Bled MyWay?</a>
+                            <a href="myway" id="myway-link-tut-open-mobile" class="myway-link-tut-open">What is Bled MyWay?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /myway-content -->
+
+        </div>
+
+    </div>
+    <div class="myway-trigger"></div>
+
+    <script type="text/javascript">
+        var dts = new Date();
+        var hideMyWayFooter = 'false';
+        var isCollapsibleOpened;
+        var isTutorialOpened;
+        var mywayAddFired = false;
+
+        $(document).ready(function () {
+            if (hideMyWayFooter == 'false') {
+                // collapsible
+                $('.collapsibleMyway-trigger').click(function () {
+                    $('.collapsibleMyway-container').slideToggle('fast');
+                    $(this).toggleClass('collapsibleMyway-close');
+                    $(this).toggleClass('collapsibleMyway-open');
+
+                    isCollapsibleOpened = !isCollapsibleOpened;
+                    $.cookie('EN/myway_collapsible', isCollapsibleOpened, { path: '/' });
+
+                    if (isCollapsibleOpened == true) {
+                        mywayUpdate();
+                    }
+                });
+
+                setTimeout(function () {
+                    $('.myway-container-articles').load('http://www.bled.si/en/layouts/parts/mywayFooter/mywayFooter.ashx?dts=' + dts.getTime() + '&mode=load', function () { mywayUpdate(); });
+                }, 200);
+
+                $(window).scroll(function () {
+                    checkMywayFooterPosition()
+                });
+                $(window).resize(function () {
+                    checkMywayFooterPosition()
+                    mywayUpdate();
+                });
+
+                isCollapsibleOpened = isCollapsibleOpened || false;
+                if ($.cookie('EN/myway_collapsible') == 'true') {
+                    isCollapsibleOpened = true;
+                    $.cookie('EN/myway_collapsible', isCollapsibleOpened, { path: '/' });
+                    $('.collapsibleMyway-trigger').removeClass('collapsibleMyway-close').addClass('collapsibleMyway-open');
+                } else {
+                    isCollapsibleOpened = false;
+                    $('.collapsibleMyway-container').hide();
+                    $('.collapsibleMyway-trigger').removeClass('collapsibleMyway-open').addClass('collapsibleMyway-close');
+                }
+
+                // tutorial
+                isTutorialOpened = isTutorialOpened || false;
+                if ($.cookie('EN/myway_tutorial') == 'true') {
+                        isTutorialOpened = true;
+                    $.cookie('EN/myway_tutorial', isTutorialOpened, { path: '/' });
+                }
+                else {
+                    isTutorialOpened = false;
+                    $('.myway-tut').hide();
+                    $('#myway-link-tut-open-desktop').show();
+                }
+
+                setTimeout(function () { checkMywayFooterPosition(); }, 0);
+
+                // swipe not implemented
+                //$('.myway-container-articles').on('swipe', function (e, Dx, Dy) {
+                //    if (Dx < 0) {
+                //        //alert('next');
+                //        if ($(thumbNext + ':visible')) $(thumbNext).trigger('click');
+                //    }
+                //    else if (Dx > 0) {
+                //        //alert('prev');
+                //        if (thumbPage > 0) $(thumbPrev).trigger('click');
+                //    }
+                //})
+
+            }
+            else {
+                $('.myway-container').hide();
+            }
+        });
+
+        function checkMywayFooterPosition() {
+            if ($('.myway-trigger').isOnScreen()) {
+                var mywayCategory = '';
+                if (mywayAddFired === false && mywayCategory.length > 0) {
+                    mywayAddFired = true;
+                    // add content;
+                    setTimeout(function () {
+                        $('.myway-container-articles').load('http://www.bled.si/en/layouts/parts/mywayFooter/mywayFooter.ashx?dts=' + dts.getTime() + '&mode=add&pid=442&cat=' + mywayCategory, function () { mywayUpdate(true); });
+                    }, 200);
+                }
+                $('.myway-shim').css('height', '0');
+                $('.myway-container').removeClass('myway-container-abs');
+            }
+            else {
+                $('.myway-shim').css('height', $('.myway-container').height());
+                $('.myway-container').addClass('myway-container-abs');
+            }
+        }
+
+        function removeThumb(mywayCategory) {
+            // remove content
+            setTimeout(function () {
+                $('.myway-container-articles').load('http://www.bled.si/en/layouts/parts/mywayFooter/mywayFooter.ashx?dts=' + dts.getTime() + '&mode=delete&pid=442&cat=' + mywayCategory, function () { mywayUpdate(); });
+            }, 200);
+        }
+
+        function mywayUpdate(forceOpen) {
+            var articles = $('#hdnArticles').val() || 0;
+            if (articles == 0) {
+                $('.myway-button').bind('click', false).attr('disabled', 'true').addClass('myway-button-disabled');
+            }
+            else {
+                $('.myway-button').unbind('click', false).removeAttr('disabled').removeClass('myway-button-disabled');
+            }
+            caruselInit();
+            if (forceOpen) {
+                if (isCollapsibleOpened == false) { $('.collapsibleMyway-trigger').trigger('click'); };
+            }
+        }
+
+        function caruselInit() {
+            var thumbTray = '#thumb-tray',
+            thumbList = '#thumb-list',
+            thumbNext = '#thumb-next',
+            thumbPrev = '#thumb-prev',
+            thumbInterval;
+            var thumbPage;
+
+            thumbPage = 0;
+            $(thumbList).stop().animate({ 'left': thumbPage }, { duration: 500, easing: 'easeOutExpo' });
+            if (thumbPage == 0) $(thumbPrev).fadeOut('fast');
+
+            $(thumbList).width($('> li', thumbList).length * $('> li', thumbList).outerWidth(true));
+
+            if ($(thumbList).width() > $(thumbTray).width()) {
+                if (thumbPage > 0) $(thumbPrev).fadeIn('fast');
+                $(thumbNext).fadeIn('fast');
+                $(thumbList).stop().animate({ 'left': 0 }, 200);
+            } else {
+                $(thumbPrev + "," + thumbNext).fadeOut('fast');
+            }
+
+            thumbInterval = Math.floor($(thumbTray).width() / $('> li', thumbList).outerWidth(true)) * $('> li', thumbList).outerWidth(true);
+
+            $(thumbNext).click(function () {
+                thumbPage = thumbPage - thumbInterval;
+                $(thumbList).stop().animate({ 'left': thumbPage }, { duration: 500, easing: 'easeOutExpo' });
+                $(thumbPrev).fadeIn(0);
+                if (thumbPage - thumbInterval <= -$(thumbList).width()) {
+                    $(thumbNext).fadeOut(0);
+                }
+            });
+
+            $(thumbPrev).click(function () {
+                thumbPage = thumbPage + thumbInterval;
+                $(thumbList).stop().animate({ 'left': thumbPage }, { duration: 500, easing: 'easeOutExpo' });
+                $(thumbNext).fadeIn(0);
+
+                if (thumbPage + thumbInterval > 0) {
+                    $(thumbPrev).fadeOut(0);
+                }
+            });
+        }
+
+        function closeMywayTut()
+        {
+            $('.myway-tut').slideUp('fast');
+            $('#myway-link-tut-open-desktop').show();
+            isTutorialOpened = false;
+            $.cookie('EN/myway_tutorial', isTutorialOpened, { path: '/' });
+        }
+
+        function showMywayTut() {
+            $('.myway-tut').slideDown('fast');
+            $('#myway-link-tut-open-desktop').hide();
+            isTutorialOpened = true;
+            $.cookie('EN/myway_tutorial', isTutorialOpened, { path: '/' });
+            $('.myway-tut .span1').height($('.myway-tut .span1').parent().height());
+        }
+    </script>
+
+
+
+<footer style="position: relative;">
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <section class="footerNewsbox">
+                    <div id="ctl00_Footer_ctl00_NewsletterBoxUpdatePanel">
+	
+	<h4>Subscribe to newsletter</h4>
+
+	<input name="ctl00$Footer$ctl00$Email" type="text" value="Enter your email" id="ctl00_Footer_ctl00_Email" onkeydown="if (event.keyCode == 13 &amp;&amp; $(this).val() != &quot;Enter your email&quot;) { if (this.value != &quot;&quot;) { __doPostBack(&quot;ctl00$Footer$ctl00$SignupButton&quot;, &quot;&quot;); } else { return false; } }" onfocus="if ($(this).val() == &quot;Enter your email&quot;) $(this).val(&quot;&quot;);" onblur="if ($(this).val() == &quot;&quot;) $(this).val(&quot;Enter your email&quot;);" />
+	<a id="ctl00_Footer_ctl00_SignupButton" class="footerNewsbox-submit" href="javascript:__doPostBack(&#39;ctl00$Footer$ctl00$SignupButton&#39;,&#39;&#39;)">Signup</a>
+    <div class="newsletter-info-box">
+	    
+	    
+    </div>
+	
+</div>
+                </section>
+                <section><h4>Information</h4><ul><li><a href="about-bled" target="_self">About Bled</a></li><li><a href="about-bled/publications" target="_self">Publications</a></li><li><a href="how-to-get-here" target="_self">Where are we</a></li><li><a href="about-bled/contact" target="_self">Contact</a></li><li><a href="news" target="_self">News</a></li></ul></section><section><h4>Bled</h4><ul><li><a href="accommodation" target="_self">Accommodation</a></li><li><a href="what-to-see" target="_self">What To See</a></li><li><a href="what-to-do" target="_self">What To do</a></li><li><a href="what-to-do/culinary-" target="_self">Culinary</a></li><li><a href="what-to-do/shopping" target="_self">Shopping</a></li></ul></section><section><h4>Special programs</h4><ul><li><a href="meetings" target="_self">Meetings</a></li><li><a href="what-to-do/weddings" target="_self">Weddings</a></li></ul></section>
+
+                <div class="socialmedia">
+<ul>
+<li><a href="rss.ashx" target="_self"><img src="files/default/_demo/socialmedia/rss.png" alt="">RSS</a>
+<li><a href="https://www.facebook.com/LakeBledSlovenia" target="_blank"><img src="files/default/_demo/socialmedia/facebook.png" alt="">Facebook</a>
+<li><a href="https://twitter.com/BledSlovenia" target="_blank"><img src="files/default/_demo/socialmedia/twitter.png" alt="">Twitter</a>
+<li><a href="http://instagram.com/bledslovenia" target="_blank"><img src="files/default/images/instagram.png" alt="">Instagram</a>
+</ul>
+</div>
+
+
+
+                <div class="footerLogos">
+                    <a href="http://www.slovenia.info/en" target="_blank"><img src="imagelib/footer-icon/default/images/logoRow.png" alt="" /></a><a href="http://www.slovenian-alps.com" target="_blank"><img src="imagelib/footer-icon/default/images/slovenian-alps-logo.png" alt="" /></a><a href="http://www.julijske-alpe.com" target="_blank"><img src="imagelib/footer-icon/default/images/julijske-alpe.png" alt="" /></a><a href="http://www.alpine-pearls.com/" target="_blank"><img src="imagelib/footer-icon/default/images/alpine-pearls-en.png" alt="" /></a><a href="http://www.slovenian-alps.com" target="_self"><img src="imagelib/footer-icon/default/banners/raster-separator.png" alt="" /></a><a href="http://www.slovenian-alps.com" target="_blank"><img src="imagelib/footer-icon/default/banners/raster-separator.png" alt="" /></a><a href="http://www.tripadvisor.com/bled" target="_blank"><img src="imagelib/footer-icon/default/images/tripadvisor.png" alt="" /></a><a href="http://bled.in3dview.com/" target="_blank"><img src="imagelib/footer-icon/default/banners/bled-3d-logo.png" alt="" /></a><a href="http://www.inyourpocket.com/slovenia/bled" target="_blank"><img src="imagelib/footer-icon/default/banners/bled-in-your-pocket-logo.png" alt="" /></a>
+                </div>
+
+                <div class="footerLegal">
+                    <p class="copy">Copyright @ 2013 Turizem Bled. Production: <a href="http://www.av-studio.si">AV studio</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="position: absolute; bottom: 0px; left: 0px; z-index: 10000; color: #fff;">..</div>
+</footer>
+
+            
+            <script src="http://cns.av-studio.si/notification.ashx?lang=en&services=own+goog+ga+yt+gmap+dc+issuu" type="text/javascript" defer="defer"></script>
+            <script type="text/javascript">                $(document).ready(function () {
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn"
+                    });                    $.scrollUp({ scrollName: 'backToTop' });
+
+                    // generic collapsible handler - even for collapsible renderer
+                    $('.collapsibleContent').click(function () {
+                        $(this).next('.collapsibleContent-container').slideToggle('fast');
+                        $(this).toggleClass('collapsibleContent-close');
+                        $(this).toggleClass('collapsibleContent-open');
+                    });
+                });                function OpenPostcard(o, q) {
+                    q += "&iframe=true&height=480&width=960";
+                    $(o).attr('href', q);
+                    //$('.pp_nav').html('');
+                    //$('.pp_description').html('');
+                    //$('.pp_social').html('');
+                }
+
+                //$(function () {
+                //    $.featherlight.contentFilters.iframe = {
+                //        process: function (url) {
+                //            return $('<iframe style="height:800px;width:1000px;" src="' + url + '"/>')
+                //        }
+                //    };
+                //    $('.feratel-link').featherlight({
+                //        loading: "Prosimo počakajte trenutek...",
+                //        afterOpen: function (event) {
+                //            $('body').css("position", "fixed");
+                //        },
+                //        afterClose: function (event) {
+                //            $('body').css("position", "relative");
+                //        }
+                //    });
+                //});
+
+                function fireLightBoxIframe(url, hasFooterCarousel) {
+                    // desktop-mobile
+                    hasFooterCarousel = hasFooterCarousel || false;
+                    footerCarousel = footerCarousel || '';
+
+                    if ($(window).width() >= 820) {
+
+                        
+
+			            $.featherlight($('' +
+                            '<div id="featherlightPreloader" style="position: absolute; top: 40%; left:50%; text-align: center">' +
+                            '   <img src="/en/images/progress.gif" width="50" height="50" style="vertical-align: middle" alt="" />' +
+                            '</div>' +
+                            (hasFooterCarousel ? '<div style="height:850px;width:1000px;margin:0;padding:0;">' : '') +
+                            '   <iframe id="featherIframe" style="height:' + (hasFooterCarousel ? '735' : '800') + 'px;width:1000px;" src="' + url + '" frameborder="0" onload="document.getElementById(\'featherlightPreloader\').style.display=\'none\';' + (hasFooterCarousel ? 'featherlightFooterCarousel()' : '') + '"/>' +
+                              footerCarousel +
+                            (hasFooterCarousel > 0 ? '</div>' : '')),
+                               {
+                                   afterOpen: function (event) {
+                                       $('body').css("position", "fixed");
+                                   },
+                                   afterClose: function (event) {
+                                       $('body').css("position", "relative");
+                                   }
+                               });
+
+                    }
+                    else {
+                        $('<a class=\'featherlightDummyMobileLink\' />').attr('href', url).attr('target', '_blank').appendTo('body').get(0).click();
+                        $('.featherlightDummyMobileLink').remove();
+                    }
+                }
+            </script>
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":1000,"dynamicLayout":true}, null, null, $get("ctl00_UpdateProg1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","PopupControlID":"ctl00_panelUpdateProgress","dynamicServicePath":"/en/layouts/pages/firstPage/firstPage.aspx","id":"ctl00_ModalProgress"}, null, null, $get("ctl00_panelUpdateProgress"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+

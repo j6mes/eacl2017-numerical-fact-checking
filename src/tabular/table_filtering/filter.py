@@ -1,6 +1,6 @@
 from _license import defaultdict
 
-from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.normalisation import normalise_keep_nos
 
 
 class Filter():

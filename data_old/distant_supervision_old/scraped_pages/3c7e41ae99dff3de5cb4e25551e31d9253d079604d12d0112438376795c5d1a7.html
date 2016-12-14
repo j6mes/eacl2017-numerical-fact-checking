@@ -1,0 +1,3254 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en-gb" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-gb" dir="ltr"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="en-gb">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vg8AVFJTGwcFVlhQDwQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script>
+<meta name="google-site-verification" content="XbHDFDo9cDSfBkKb6vVXSEJq8eSKgKuYBgWbA7YLI5A" >
+<meta property="wb: webmaster" content="a0659333f7c4b1fb" />
+<meta name="msvalidate.01" content="7943642544D92DAFD05F9E185EC93924" />
+<meta property="fb:pages" content="141300252852" />
+<meta name="context" content="team" />
+<meta name="context:teamId" content='675' />
+<meta name="context:type" content='tabs' />
+<meta name="context:competitionId" content='8' />
+<meta name="context:competitionSlug" content='premier-league' />
+<meta name="context:tab" content='squad' />
+<link rel="publisher" href="https://plus.google.com/103293707757222394794/"/>
+<title>Tottenham Hotspur News - Goal.com</title><meta name="page" content="team" >
+<meta name="description" content="The No.1 place for all Tottenham Hotspur News, transfer updates, rumours, including Tottenham Hotspur fixtures, results and player interviews all exclusive to Goal.co" ><link rel="alternate" href="http://m.goal.com/s/en-gb/team/105" media="only screen and (max-device-width: 660px)"/>
+<link rel="canonical" href="http://www.goal.com/en-gb/teams/england/tottenham-hotspur/675" />
+
+<script src="/static/js?files=%2Fjs%2Fredirects.js&version=2016.11.08-v1"></script><meta name="viewport" content="width=device-width, minimum-scale=0.1, initial-scale=1.0">
+
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbase.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fmodule.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fpage.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fsnippets.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbranding.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fmodule%2Fsmartbanner%2Fdesktop.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fdefault%2Flayout%2Fmodal.css%2C%2Fcss%2Fdefault%2Flayout%2Flogin.css%2C%2Fcss%2Fdefault%2Flayout%2Fgigyalogin.css%2C%2Fcss%2Fdefault%2Flayout%2Falert_message.css%2C%2Fcss%2Fdefault%2Frebrand-registration.css&version=2016.11.08-v1" type="text/css">
+<link rel="stylesheet" href="/static/css?files=%2Fcss%2Fbase%2Fcompetitions.css&version=2016.11.08-v1" type="text/css"><script type='text/javascript' src='http://c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+try {
+amznads.getAds('3117');
+} catch(e) {
+
+}
+</script>
+<script type='text/javascript'>
+var key='amznslots';
+window.amzValues="" + amznads.getTokens().join(':');
+</script>
+<script>
+var s_account="goalglobal";</script>
+
+<script src="/static/js?files=%2Fjs%2Fnormalize.js%2C%2Fjs%2Fexternal%2Fmodernizr.min.js%2C%2Fjs%2Fexternal%2Fjquery.min.js%2C%2Fjs%2Fjquery%2Fheader%2C%2Fjs%2Fomniture-icid.js%2C%2Fjs%2Fuser-country-code.js%2C%2Fjs%2Fs_code.js&version=2016.11.08-v1"></script><script type="text/javascript" src="http://cdns.gigya.com/JS/socialize.js?apikey=3_wCLJT75ffirrzBqqAJaHe1zYGgdpb9XFkjxEQfrxraM-xO_if-uM1uVBZZ5r4naE">
+{
+connectWithoutLoginBehavior: 'alwaysLogin',
+enabledProviders: 'facebook,google,yahoo,twitter',
+lang: 'en',
+cid: 'en-gb'
+}
+</script>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<!-- SiteCatalyst code version: H.25. Copyright 1996-2012 Adobe, Inc. All Rights Reserved More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript"><!--
+s.pageName="Team : England : Tottenham Hotspur : Tottenham Hotspur"
+s.channel="Team"
+s.prop1="Team : England"
+s.prop2="Team : England : Tottenham Hotspur"
+s.prop3="Team : England : Tottenham Hotspur"
+s.hier1="Team,England,Tottenham Hotspur"
+s.prop4="team page"
+s.prop5="Tottenham Hotspur"
+s.prop6=s.eVar10="675"
+s.server=""
+s.pageType=""
+s.prop11=
+s.prop12="Desktop"
+s.prop13="goalglobal,goaluk"
+s.prop14=""
+s.prop15=s.eVar6="http://www.goal.com/en-gb/teams/england/tottenham-hotspur/675"
+s.prop16=s.eVar5=""
+s.prop18=""
+s.prop19="Y"
+s.prop21=""
+s.prop22=""
+s.prop23="675"
+s.prop28="3652"
+s.prop29="3310"
+s.prop30="11562"
+s.prop31=""
+s.prop32=""
+s.prop33=""
+s.prop34=""
+s.prop40=""
+s.prop41="8"
+s.prop43=""
+s.prop44=""
+s.prop45=""
+s.prop46=""
+s.prop47=""
+s.prop48=""
+s.prop51=""
+s.eVar15=""
+s.events="event13"
+//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script> <script language="JavaScript" type="text/javascript">
+if(navigator.appVersion.indexOf('Opera Mini')>=0) {
+document.write('<img src="http://premiumtv.122.2o7.net/b/ss/goalglobal/1/H.25--NS/0?pageName=Team+%3A+England+%3A+Tottenham+Hotspur+%3A+Tottenham+Hotspur&g=%2Fen-gb%2Fteams%2Fengland%2Ftottenham-hotspur%2F675&ch=Team&c1=Team+%3A+England&c2=Team+%3A+England+%3A+Tottenham+Hotspur&c3=Team+%3A+England+%3A+Tottenham+Hotspur&c4=team+page&c5=Tottenham+Hotspur&c6=675&c12=Desktop&c13=goalglobal%2Cgoaluk&c14=&c15=http%3A%2F%2Fwww.goal.com%2Fen-gb%2Fteams%2Fengland%2Ftottenham-hotspur%2F675&c16=&v5=&c19=Y&c21=&c22=&c23=675&c28=3652&c29=3310&c30=11562&c31=&c32=&c33=&c34=&c51=&v15=" height="1" width="1" border="0" alt="" />');
+}
+</script>
+<noscript><img src="http://premiumtv.122.2o7.net/b/ss/goalglobal/1/H.25--NS/0?pageName=Team+%3A+England+%3A+Tottenham+Hotspur+%3A+Tottenham+Hotspur&g=%2Fen-gb%2Fteams%2Fengland%2Ftottenham-hotspur%2F675&ch=Team&c1=Team+%3A+England&c2=Team+%3A+England+%3A+Tottenham+Hotspur&c3=Team+%3A+England+%3A+Tottenham+Hotspur&c4=team+page&c5=Tottenham+Hotspur&c6=675&c12=Desktop&c13=goalglobal%2Cgoaluk&c14=&c15=http%3A%2F%2Fwww.goal.com%2Fen-gb%2Fteams%2Fengland%2Ftottenham-hotspur%2F675&c16=&v5=&c19=Y&c21=&c22=&c23=675&c28=3652&c29=3310&c30=11562&c31=&c32=&c33=&c34=&c51=&v15=" height="1" width="1" border="0" alt="" /></noscript><!-- End SiteCatalyst code version: H.25. -->
+<!-- Begin: Google Analytics analytics.js --><script>
+var browserVersion = window.navigator.userAgent.match(/(opera\smini|UCBrowser)\/([\w\.-]+)/i);
+if (browserVersion) {
+
+var currentDate = new Date();
+var currentTime = currentDate.getTime();
+var cookieExpireDays = 730;
+var generateUUID = function () {
+var d = currentTime;
+var uuid = 'xxxxxxxx-xxxx-yxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+var r = (d + Math.random() * 16) % 16 | 0;
+d = Math.floor(d / 16);
+return (c == 'x' ? r : (r&0x3|0x8)).toString(16);
+});
+return uuid;
+};
+var gaTrackingPixel = document.createElement('img');
+var gaTrackingPixelUrl = 'http://gaproxy.goal.com/collect?v=1&tid=UA-62411523-1&cid=1757f8a9-f368-4877-8bd4-36ccb624c309&t=pageview&dh=www.goal.com&dp=%2Fen-gb%2Fteams%2Fengland%2Ftottenham-hotspur%2F675&cd1=soccer&cd2=Desktop&cd10=English+-+United+Kingdom&cd9=teams&cd25=Opera+Mini';
+var gaTrackingPixelUUID = '';
+if (document.cookie.indexOf('_gaproxy') === -1) {
+gaTrackingPixelUUID = generateUUID();
+currentDate.setTime(currentTime + cookieExpireDays * 24 * 3600 * 1000);
+document.cookie = '_gaproxy=' + gaTrackingPixelUUID + '; expires=' + currentDate.toGMTString() + '; path=/';
+} else {
+var cookie = document.cookie.split('; ')
+.filter(function (value) {
+return value.indexOf('_gaproxy') !== -1;
+});
+gaTrackingPixelUUID = cookie[0].split('=')[1];
+}
+gaTrackingPixelUrl = gaTrackingPixelUrl.replace(/(opera\+mini)/i, browserVersion[1].replace(/(\s)/g, '+'));
+gaTrackingPixelUrl += '&uuid=' + gaTrackingPixelUUID;
+gaTrackingPixel.setAttribute('src', gaTrackingPixelUrl);
+document.onload = function() {
+document.getElementsByTagName('body')[0].appendChild(gaTrackingPixel);
+};
+} else {
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-62411523-1', 'auto', {'legacyHistoryImport': false});
+if (typeof Google_Analytics === 'undefined') {
+var Google_Analytics = {};
+Google_Analytics.pageviewExecute = function() {
+ga('set', 'dimension1', "soccer");
+ga('set', 'dimension2', "Desktop");
+ga('set', 'dimension9', "teams");
+ga('set', 'dimension10', "English - United Kingdom");
+ga('send', 'pageview');
+}
+}
+Google_Analytics.pageviewExecute();}</script> <!-- End: New Google Analytics analytics.js --><!-- Hotjar Tracking Code for www.goal.com -->
+<script>
+(function(h,o,t,j,a,r){
+h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+h._hjSettings={hjid:71354,hjsv:5};
+a=o.getElementsByTagName('head')[0];
+r=o.createElement('script');r.async=1;
+r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+a.appendChild(r);
+})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<!-- Begin: MoreVisibleAds -->
+<script type="text/javascript"
+src="//wfpscripts.webspectator.com/bootstrap/ws-B112A62E.js">
+</script>
+<!-- End: MoreVisibleAds -->
+<!-- BEGIN: Chartbeat tracking code header -->
+<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+<!-- END: Chartbeat tracking code header -->
+<!-- Facebook SDK -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Facebook SDK -->
+</head>
+<body class="page-team dir-ltr lang-en-GB en-gb lang-code-en context-undefined hour-format-24" data-omniture-icid="TP" data-user-country-code="">
+<script type="text/javascript">
+$.omnitureIcid({
+domain: 'goal.com'
+});
+</script>
+<!-- Begin: Lotame start tag -->
+<script type="text/javascript">
+var cc_client_id = 3376;
+
+document.write('<scr'+'ipt type="text/javascript" src="http://ad.crwdcntrl.net/5/c='+cc_client_id.toString()+'/pe=y/callback=processauds"></scr'+'ipt>');
+
+var adtechCCvals = "";
+function processauds(adtechccauds) {
+if (typeof(adtechccauds) != 'undefined') {
+for (var cci = 0; cci < adtechccauds.Profile.Audiences.Audience.length; cci++) {
+if (cci > 0) adtechCCvals += ":";
+adtechCCvals += adtechccauds.Profile.Audiences.Audience[cci].abbr;
+}
+}
+}
+</script>
+<!-- End: Lotame start tag -->
+<div class="page-wrapper">
+<div class="module module-cookie-info hidden" data-country-code="GB,UK" data-allowed-edition="en-gb">
+<div class="wrapper">
+<div class="message"></div>
+</div>
+<div class="cookie-content">
+<!--
+<span class="close img-rep"></span>
+<p>We use cookies on this web site... To find out more about cookies, please see our <a href="/en-gb/legal/privacy-policy">Privacy Policy</a>. If you continue using our website, we will assume that you consent to the cookies we set.</p>
+-->
+</div>
+</div>
+<div class="module-outdated-browsers hidden">
+<!--
+<div class="container">
+<p class="ob-msie-6 hidden">
+This website does not support Internet Explorer 6. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-7 hidden">
+This website does not support Internet Explorer 7. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-8 hidden">
+This website does not support Internet Explorer 8. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-9 hidden">
+You are using an outdated browser. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<p class="ob-msie-other hidden">
+You are using an outdated browser. To get the best experience when using Goal, please update your browser.<span class="ob-nl">Click <a href="http://www.whatbrowser.com/intl/en_uk/" target="_blank">here</a> to update your browser</span>
+</p>
+<span class="close-button"></span>
+</div>
+-->
+</div>
+<div class="module module-ad leaderboard" id="ad728x90">
+<div>
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|3555308|0|225|ADTECH;cookie=info;alias=en-gbTL;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|3555308|0|225|ADTECH;loc=300;alias=en-gbTL;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|3555308|0|225|ADTECH;loc=300;alias=en-gbTL;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+</div>
+
+<div class="module-edition-picker" data-module="editionpicker">
+<div class="clearfix">
+<ul>
+<li><a href="/en" class="flag-en">International</a></li>
+<li><a href="/en-us" class="flag-en-us">America</a></li>
+<li><a href="/es-ar" class="flag-es-ar">Argentina</a></li>
+<li><a href="/en-au" class="flag-en-au">Australia</a></li>
+<li><a href="/ba" class="flag-ba">Bosna i Hercegovina</a></li>
+<li><a href="/br" class="flag-br">Brasil</a></li>
+<li><a href="/en-ca" class="flag-en-ca">Canada</a></li>
+</ul>
+<ul>
+<li><a href="/es-cl" class="flag-es-cl">Chile</a></li>
+<li><a href="/es-co" class="flag-es-co">Colombia</a></li>
+<li><a href="/de" class="flag-de">Deutsch</a></li>
+<li><a href="/es" class="flag-es">España</a></li>
+<li><a href="/fr" class="flag-fr">Français</a></li>
+<li><a href="/en-gh" class="flag-en-gh">Ghana</a></li>
+<li><a href="/hr" class="flag-hr">Hrvatska</a></li>
+</ul>
+<ul>
+<li><a href="/en-india" class="flag-en-india">India</a></li>
+<li><a href="/id-ID" class="flag-id-ID">Indonesia</a></li>
+<li><a href="/en-ie" class="flag-en-ie">Ireland</a></li>
+<li><a href="/it" class="flag-it">Italia</a></li>
+<li><a href="/en-ke" class="flag-en-ke">Kenya</a></li>
+<li><a href="/en-my" class="flag-en-my">Malaysia</a></li>
+<li><a href="/es-mx" class="flag-es-mx">México</a></li>
+</ul>
+<ul>
+<li><a href="/nl" class="flag-nl">Nederlands</a></li>
+<li><a href="/en-ng" class="flag-en-ng">Nigeria</a></li>
+<li><a href="/en-sg" class="flag-en-sg">Singapore</a></li>
+<li><a href="/en-za" class="flag-en-za">South Africa</a></li>
+<li><a href="/en-tz" class="flag-en-tz">Tanzania</a></li>
+<li><a href="/tr" class="flag-tr">Türkçe</a></li>
+<li><a href="/en-gb" class="flag-en-gb">UK</a></li>
+</ul>
+<ul>
+<li><a href="/cn" class="flag-cn">简体中文</a></li>
+<li><a href="/hk" class="flag-hk">繁體中文</a></li>
+<li><a href="/kr" class="flag-kr">한국어</a></li>
+<li><a href="/jp" class="flag-jp">日本語</a></li>
+<li><a href="/th" class="flag-th">ภาษาไทย</a></li>
+<li><a href="/ar" class="flag-ar">العربية</a></li>
+<li><a href="/ar-eg" class="flag-ar-eg">المصرية</a></li>
+</ul>
+<ul>
+<li><a href="/ar-sa" class="flag-ar-sa">السعودية</a></li>
+<li><a href="/en-ar" class="flag-en-ar">Gulf English</a></li>
+<li><a href="/hu" class="flag-hu">Magyarország</a></li>
+</ul>
+</div>
+</div>
+<header class="module-header clearfix" data-module="header">
+<ul>
+<li class="edition-picker-trigger">
+<a href="#" class="flag-en-gb" data-role="edition-picker-opener"> <b>Edition</b>: United Kingdom</a>
+</li>
+<li>
+<div id="gigya-register-login-buttons" data-gigya-api-key="3_wCLJT75ffirrzBqqAJaHe1zYGgdpb9XFkjxEQfrxraM-xO_if-uM1uVBZZ5r4naE" data-gigya-screen-set-code="Default">
+<span class="gigya-register-login">
+<a class="gigya-account-register" href="#">Register</a>
+<span>/</span>
+<a class="gigya-account-login" href="#">Login</a>
+</span>
+<a href="#" class="gigya-account-logout">Sign out</a>
+<a class="gigya-account-icon"><span></span></a>
+</div>
+</li>
+<li class="social">
+<span>Follow us on</span>
+<a href="https://www.facebook.com/GoalUK" class="facebook img-rep" target="_blank">Facebook</a>
+<a href="http://twitter.com/GoalUK" class="twitter img-rep" target="_blank">Twitter</a>
+<a href="http://www.youtube.com/goal" class="youtube img-rep" target="_blank">YouTube</a>
+<a href="http://www.instagram.com/goalglobal" class="instagram img-rep" target="_blank">instagram</a>
+<a href="https://plus.google.com/+Goal" class="googleplus img-rep" target="_blank">Google+</a>
+<a href="/en-gb/feeds/team-news?id=675&fmt=rss" class="rss img-rep" target="_blank">RSS</a>
+</li>
+</ul>
+<div class="main-logo"><a href="/en-gb" class="img-rep">Goal.com - Home</a></div>
+<div class="user" data-user-state="logged-in">
+<a href="https://secure.goal.com/en-gb/account">
+<img data-user="thumbnail" src="" height="23" width="23" alt="thumbnail">
+</a>
+<span class="greeting">Hello,</span>
+<a href="https://secure.goal.com/en-gb/account" data-user="nickname"></a>
+</div>
+</header>
+
+<div class="module-navigation" data-module="navigation" data-omniture-icid="TN">
+<div>
+<ul class="main clearfix" data-navigation>
+<li data-omniture-icid="1">
+<a href="/en-gb">Home</a>
+</li>
+<li data-omniture-icid="2">
+<a href="/en-gb/news/archive/1">News</a>
+</li>
+<li data-omniture-icid="3">
+<a href="/en-gb/news/3310/goal-50">Goal 50</a>
+</li>
+<li data-omniture-icid="4">
+<a href="/en-gb/news/2896/premier-league">Premier League</a>
+<ul class="sub">
+<li>
+<span>Latest</span>
+<ul data-omniture-icid="1">
+<li><a href="/en-gb/news/2896/premier-league">News</a></li>
+<li><a href="/en-gb/fixtures/premier-league/8">Fixtures</a></li>
+<li><a href="/en-gb/results/premier-league/8">Results</a></li>
+<li><a href="/en-gb/results-standings/64/premier-league/table">League Table</a></li>
+<li><a href="/en-gb/news/5432/goal-fantasy-football/2015/09/11/15198502/play-goals-champions-league-fantasy-football">Fantasy Football</a></li>
+</ul>
+</li>
+<li>
+<span>Teams A - M</span>
+<ul data-omniture-icid="2">
+<li><a href="/en-gb/teams/england/arsenal/660">Arsenal</a></li>
+<li><a href="/en-gb/teams/england/afc-bournemouth/711">Bournemouth</a></li>
+<li><a href="/en-gb/teams/england/burnley/698">Burnley</a></li>
+<li><a href="/en-gb/teams/england/chelsea/661">Chelsea</a></li>
+<li><a href="/en-gb/teams/england/crystal-palace/679">Crystal Palace</a></li>
+<li><a href="/en-gb/teams/england/everton/674">Everton</a></li>
+<li><a href="/en-gb/teams/england/hull-city/725">Hull City</a></li>
+<li><a href="/en-gb/teams/england/leicester-city/682">Leicester City</a></li>
+<li><a href="/en-gb/teams/england/liverpool/663">Liverpool</a></li>
+<li><a href="/en-gb/teams/england/manchester-city/676">Manchester City</a></li>
+</ul>
+</li>
+<li>
+<span>Teams M - W</span>
+<ul data-omniture-icid="3">
+<li><a href="/en-gb/teams/england/manchester-united/662">Manchester United</a></li>
+<li><a href="/en-gb/teams/england/middlesbrough/671">Middlesbrough</a></li>
+<li><a href="/en-gb/teams/england/southampton/670">Southampton</a></li>
+<li><a href="/en-gb/teams/england/stoke-city/690">Stoke City</a></li>
+<li><a href="/en-gb/teams/england/sunderland/683">Sunderland</a></li>
+<li><a href="/en-gb/teams/wales/swansea-city/738">Swansea City</a></li>
+<li><a href="/en-gb/teams/england/tottenham-hotspur/675">Tottenham</a></li>
+<li><a href="/en-gb/teams/england/watford/696">Watford</a></li>
+<li><a href="/en-gb/teams/england/west-bromwich-albion/678">West Brom</a></li>
+<li><a href="/en-gb/teams/england/west-ham-united/684">West Ham</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="5">
+<a href="/en-gb/news/2885/europe">Europe</a>
+<ul class="sub">
+<li>
+<span>Spain</span>
+<ul data-omniture-icid="1">
+<li><a href="/en-gb/teams/spain/barcelona/2017">Barcelona</a></li>
+<li><a href="/en-gb/teams/spain/real-madrid/2016">Real Madrid</a></li>
+<li><a href="/en-gb/teams/spain/atl%C3%A9tico-madrid/2020">Atletico Madrid</a></li>
+<li><a href="/en-gb/news/3277/la-liga">La Liga</a></li>
+</ul>
+</li>
+<li>
+<span>Italy</span>
+<ul data-omniture-icid="2">
+<li><a href="/en-gb/teams/italy/juventus/1242">Juventus</a></li>
+<li><a href="/en-gb/teams/italy/internazionale/1244">Inter</a></li>
+<li><a href="/en-gb/teams/italy/roma/1241">Roma</a></li>
+<li><a href="/en-gb/news/3276/serie-a">Serie A</a></li>
+</ul>
+</li>
+<li>
+<span>Germany</span>
+<ul data-omniture-icid="3">
+<li><a href="/en-gb/teams/germany/bayern-münchen/961">Bayern Munich</a></li>
+<li><a href="/en-gb/teams/germany/borussia-dortmund/964">Borussia Dortmund</a></li>
+<li><a href="/en-gb/teams/germany/wolfsburg/968">Wolfsburg</a></li>
+<li><a href="/en-gb/news/3275/bundesliga">Bundesliga</a></li>
+</ul>
+</li>
+<li>
+<span>France</span>
+<ul data-omniture-icid="4">
+<li><a href="/en-gb/teams/france/psg/886">Paris Saint-Germain</a></li>
+<li><a href="/en-gb/teams/france/olympique-lyonnais/884">Olympique Lyonnais</a></li>
+<li><a href="/en-gb/teams/monaco/monaco/885">Monaco</a></li>
+<li><a href="/en-gb/news/3274/ligue-1">Ligue 1</a></li>
+</ul>
+</li>
+<li>
+<span>Competitions</span>
+<ul data-omniture-icid="5">
+<li><a href="/en-gb/news/2914/champions-league">Champions League</a></li>
+<li><a href="/en-gb/news/2915/europa-league">Europa League</a></li>
+<li><a href="/en-gb/news/4961/international-football">International football</a></li>
+<li><a href="/en-gb/news/24102/icc-2016">ICC 2016</a></li>
+</ul>
+</li>
+<li>
+<span>Domestic</span>
+<ul data-omniture-icid="6">
+<li><a href="/en-gb/news/2880/english-football">English Football</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="6">
+<a href="/en-gb/news/2892/transfer-zone">Transfers</a>
+<ul class="sub">
+<li>
+<a href="/en-gb/rumours/last/72">Transfer Talk</a>
+</li>
+<li>
+<a href="/en-gb/news/2892/transfer-zone/archive/1">Latest Transfer News</a>
+</li>
+<li>
+<a href="/en-gb/scores/transfer-zone">Done Deals</a>
+</li>
+</ul>
+</li>
+<li data-omniture-icid="7">
+<a href="/en-gb/live-scores">Live</a>
+</li>
+<li data-omniture-icid="8">
+<a href="/en-gb/news/2995/betting">Betting</a>
+</li>
+<li data-omniture-icid="9">
+<a href="/en-gb/news/5432/goal-gaming">Goal Gaming</a>
+</li>
+<li class="more"><a href="#">More</a></li>
+</ul>
+<div class="submenu-wrapper">
+<ul class="submenu clearfix" data-subnavigation>
+<li class="breadcrumb">
+<a href="#" class="arrow"></a>
+<ul>
+<li><a href="/en-gb/news/2896/premier-league">Premier League</a></li>
+<li><a href="/en-gb/news/2900/fa-cup">FA Cup</a></li>
+<li><a href="/en-gb/news/2897/championship">Championship</a></li>
+<li><a href="/en-gb/news/3268/league-one">League One</a></li>
+<li><a href="/en-gb/news/3269/league-two">League Two</a></li>
+<li><a href="/en-gb/news/3274/ligue-1">Ligue 1</a></li>
+<li><a href="/en-gb/news/3276/serie-a">Serie A</a></li>
+<li><a href="/en-gb/news/3275/bundesliga">Bundesliga</a></li>
+<li><a href="/en-gb/news/3277/la-liga">Primera División</a></li>
+<li><a href="/en-gb/news/2914/champions-league">UEFA Champions League</a></li>
+<li><a href="/en-gb/news/2915/europa-league">UEFA Europa League</a></li>
+<li><a href="/en-gb/news/5020/club-world-cup">FIFA Club World Cup</a></li>
+<li><a href="/en-gb/news/7134/euro-2016">European Championship</a></li>
+<li><a href="/en-gb/news/24102/icc-2016">International Champions Cup</a></li>
+</ul>
+<a href="/en-gb/news/2896/premier-league">Premier League</a>
+</li>
+<li>
+<a href="#" class="arrow"></a>
+<ul>
+<li><a href="/en-gb/teams/england/premier-league/8/afc-bournemouth/711">AFC Bournemouth</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/arsenal/660">Arsenal</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/burnley/698">Burnley</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/chelsea/661">Chelsea</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/crystal-palace/679">Crystal Palace</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/everton/674">Everton</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/hull-city/725">Hull City</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/leicester-city/682">Leicester City</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/liverpool/663">Liverpool</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/manchester-city/676">Manchester City</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/manchester-united/662">Manchester United</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/middlesbrough/671">Middlesbrough</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/southampton/670">Southampton</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/stoke-city/690">Stoke City</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/sunderland/683">Sunderland</a></li>
+<li><a href="/en-gb/teams/wales/premier-league/8/swansea-city/738">Swansea City</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/tottenham-hotspur/675">Tottenham Hotspur</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/watford/696">Watford</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/west-bromwich-albion/678">West Bromwich Albion</a></li>
+<li><a href="/en-gb/teams/england/premier-league/8/west-ham-united/684">West Ham United</a></li>
+</ul>
+<a href="/en-gb/teams/england/premier-league/8/tottenham-hotspur/675">Tottenham Hotspur</a>
+</li>
+<li>
+<a href="/en-gb/fixtures/team/tottenham-hotspur/675">Fixtures</a>
+</li>
+<li>
+<a href="/en-gb/results/team/tottenham-hotspur/675">Results</a>
+</li>
+<li>
+<a href="/en-gb/tables/premier-league/8">Table</a>
+</li>
+
+<li>
+<a href="https://challenge.deltapresents.com/?utm_source=Goal&utm_medium=Quicklink&utm_campaign=Delta" target="_blank">Win Flights to NYC</a>
+</li>
+</ul>
+</div>
+
+<div class="submenu-inner-module">
+</div>
+<span class="slide-left" data-role="submenu-slider"></span>
+<span class="slide-right" data-role="submenu-slider"></span>
+</div>
+<form action="/en-gb/search" method="get" class="form-search">
+<input type="search" name="q" placeholder="Search for team or player" class="keyword" required="required">
+<input type="submit" value="" class="submit">
+</form>
+</div>
+
+<div class="module module-ad header-strip">
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && "NAV" && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== "NAV") {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|5249175|0|16|ADTECH;cookie=info;alias=en-gbNAV;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|5249175|0|16|ADTECH;loc=300;alias=en-gbNAV;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|5249175|0|16|ADTECH;loc=300;alias=en-gbNAV;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+<section class="top-section top clearfix">
+<section class="team-badge" itemscope itemtype="http://schema.org/SportsTeam">
+<header>
+<h1>
+<span class="badge"><img itemprop="logo" src="http://secure.cache.images.core.optasports.com/soccer/teams/75x75/675.png" alt=""></span>
+<span class="team-name" itemprop="name">Tottenham Hotspur</span>
+<meta itemprop="url" content="http://www.goal.com/en-gb/teams/england/tottenham-hotspur/675">
+</h1>
+</header>
+</section>
+<div class="mainstage">
+<section class="module module-hero-news" data-module="heronews-news" data-omniture-icid="HN">
+<div class="main-stories" data-widget="carousel" data-slide-interval="8">
+<div class="slider">
+<article class="story active" itemscope itemtype="http://schema.org/Article" data-omniture-role="item">
+<header>
+<a class="image-wrapper" href="/en-gb/news/3652/video/2016/11/09/29345512/watch-poch-drills-freestyle-champs">
+<img itemprop="image" src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/b5/3/et-only-mauricio-pochettino-f2freestylers_v1lz7dqk952a1hb2a36vu14rb.png?t=1240223190&w=460&h=320" alt="WATCH: Poch drills freestyle champs" width="460" height="320">
+</a>
+<hgroup>
+<h4 itemprop="articleSection">
+<a href="/en-gb/news/3652/video">Video</a>
+</h4>
+<h3 itemprop="headline">
+<a href="/en-gb/news/3652/video/2016/11/09/29345512/watch-poch-drills-freestyle-champs"><span>WATCH: Poch drills freestyle champs</span></a>
+</h3>
+
+</hgroup>
+<div class="module module-social-share-icons "
+data-role="share-icons"
+data-url="http://www.goal.com/en-gb/news/3652/video/2016/11/09/29345512/watch-poch-drills-freestyle-champs"
+data-title="WATCH: Poch drills freestyle champs"
+data-description="The Argentine boss oversaw a training session with a difference alongside the renowned tricksters, but he ended up stealing the limelight himself with some top moves"
+data-image="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/b5/3/et-only-mauricio-pochettino-f2freestylers_v1lz7dqk952a1hb2a36vu14rb.png?t=1240223190&w=350&h=230"
+>
+<div
+id="unique-shareicon-1"
+data-provider="twitter"
+data-url-suffix=""
+class="twitter">
+</div>
+<div
+id="unique-shareicon-1"
+data-provider="facebook"
+data-url-suffix=""
+class="facebook">
+</div>
+</div>
+</header>
+<p><a href="/en-gb/news/3652/video/2016/11/09/29345512/watch-poch-drills-freestyle-champs">The Argentine boss oversaw a training session with a difference alongside the renowned tricksters, but he ended up stealing the limelight himself with some top moves</a></p>
+</article>
+<article class="story" itemscope itemtype="http://schema.org/Article" data-omniture-role="item">
+<header>
+<a class="image-wrapper" href="/en-gb/news/3310/goal-50/2016/11/08/29311232/kane-can-be-pl-top-scorer-again">
+<img itemprop="image" src="http://images.performgroup.com/di/library/goal_uk/4d/4d/hd-harry-kane-tottenham_1bfc1q2p3yrkk14vlsycmaiv70.jpg?t=265290687&w=460&h=320" alt="'Kane can be PL top scorer again'" width="460" height="320">
+</a>
+<hgroup>
+<h4 itemprop="articleSection">
+<a href="/en-gb/news/3310/goal-50">Goal 50</a>
+</h4>
+<h3 itemprop="headline">
+<a href="/en-gb/news/3310/goal-50/2016/11/08/29311232/kane-can-be-pl-top-scorer-again"><span>'Kane can be PL top scorer again'</span></a>
+</h3>
+
+</hgroup>
+<div class="module module-social-share-icons "
+data-role="share-icons"
+data-url="http://www.goal.com/en-gb/news/3310/goal-50/2016/11/08/29311232/kane-can-be-pl-top-scorer-again"
+data-title="'Kane can be PL top scorer again'"
+data-description="After being named the 35th best player in the world in the Goal 50, the Tottenham striker is backed to top the goalscoring charts again in 2016-17 as Spurs push for the title"
+data-image="http://images.performgroup.com/di/library/goal_uk/4d/4d/hd-harry-kane-tottenham_1bfc1q2p3yrkk14vlsycmaiv70.jpg?t=265290687&w=350&h=230"
+>
+<div
+id="unique-shareicon-2"
+data-provider="twitter"
+data-url-suffix=""
+class="twitter">
+</div>
+<div
+id="unique-shareicon-2"
+data-provider="facebook"
+data-url-suffix=""
+class="facebook">
+</div>
+</div>
+</header>
+<p><a href="/en-gb/news/3310/goal-50/2016/11/08/29311232/kane-can-be-pl-top-scorer-again">After being named the 35th best player in the world in the Goal 50, the Tottenham striker is backed to top the goalscoring charts again in 2016-17 as Spurs push for the title</a></p>
+</article>
+<article class="story" itemscope itemtype="http://schema.org/Article" data-omniture-role="item">
+<header>
+<a class="image-wrapper" href="/en-gb/news/11562/transfer-talk/2016/11/08/29305712/rumours-bayern-lead-isco-chase">
+<img itemprop="image" src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/83/ef/hd-isco-real-madrid_10qfm4c2q6uyd19i0rtdnmji8p.jpg?t=-500775641&w=460&h=320" alt="RUMOURS: Bayern lead Isco chase" width="460" height="320">
+</a>
+<hgroup>
+<h4 itemprop="articleSection">
+<a href="/en-gb/news/11562/transfer-talk">Transfer Talk</a>
+</h4>
+<h3 itemprop="headline">
+<a href="/en-gb/news/11562/transfer-talk/2016/11/08/29305712/rumours-bayern-lead-isco-chase"><span>RUMOURS: Bayern lead Isco chase</span></a>
+</h3>
+
+</hgroup>
+<div class="module module-social-share-icons "
+data-role="share-icons"
+data-url="http://www.goal.com/en-gb/news/11562/transfer-talk/2016/11/08/29305712/rumours-bayern-lead-isco-chase"
+data-title="RUMOURS: Bayern lead Isco chase"
+data-description="The German giants are reported to have edged ahead of Premier League top-four hopefuls in the battle to lure Spain international away from Real Madrid"
+data-image="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/83/ef/hd-isco-real-madrid_10qfm4c2q6uyd19i0rtdnmji8p.jpg?t=-500775641&w=350&h=230"
+>
+<div
+id="unique-shareicon-3"
+data-provider="twitter"
+data-url-suffix=""
+class="twitter">
+</div>
+<div
+id="unique-shareicon-3"
+data-provider="facebook"
+data-url-suffix=""
+class="facebook">
+</div>
+</div>
+</header>
+<p><a href="/en-gb/news/11562/transfer-talk/2016/11/08/29305712/rumours-bayern-lead-isco-chase">The German giants are reported to have edged ahead of Premier League top-four hopefuls in the battle to lure Spain international away from Real Madrid</a></p>
+</article>
+</div>
+<div class="pagination">
+<div class="selected"></div>
+<div></div>
+<div></div>
+</div>
+</div>
+<article class="story" itemscope itemtype="http://schema.org/Article" data-omniture-icid="HP_RI_0">
+<div class="image-wrapper">
+<a href="/en-gb/news/2892/transfer-zone/2016/11/09/29336332/meyer-confirms-spurs-interest">
+<img itemprop="image" src="http://images.performgroup.com/di/library/omnisport/78/e6/max-meyer-cropped_1w8mjw686l2r21dz1sq9lb5hh6.jpg?t=1217741880&w=140&h=130" alt="Meyer confirms Spurs interest" width="140" height="130">
+</a>
+<div class="module module-social-share-icons "
+data-role="share-icons"
+data-url="http://www.goal.com/en-gb/news/2892/transfer-zone/2016/11/09/29336332/meyer-confirms-spurs-interest"
+data-title="Meyer confirms Spurs interest"
+data-description="The Germany international admits that Spurs were interested in securing his services during the summer, but were met with a swift rebuttal from the Bundesliga club"
+data-image="http://images.performgroup.com/di/library/omnisport/78/e6/max-meyer-cropped_1w8mjw686l2r21dz1sq9lb5hh6.jpg?t=1217741880&w=350&h=230"
+>
+<div
+id="unique-shareicon-4"
+data-provider="twitter"
+data-url-suffix=""
+class="twitter">
+</div>
+<div
+id="unique-shareicon-4"
+data-provider="facebook"
+data-url-suffix=""
+class="facebook">
+</div>
+</div>
+</div>
+<h3 itemprop="headline">
+<a href="/en-gb/news/2892/transfer-zone/2016/11/09/29336332/meyer-confirms-spurs-interest">Meyer confirms Spurs interest</a>
+</h3>
+</article>
+<article class="story" itemscope itemtype="http://schema.org/Article" data-omniture-icid="HP_RI_1">
+<div class="image-wrapper">
+<a href="/en-gb/news/4961/international-football/2016/11/08/29315232/derby-expert-kane-targets-scotland">
+<img itemprop="image" src="http://images.performgroup.com/di/library/omnisport/8/64/harry-kane-cropped_y6tvctab8lth1xlpcc45zopd4.jpg?t=1147442864&w=140&h=130" alt="Derby expert Kane targets Scotland" width="140" height="130">
+</a>
+<div class="module module-social-share-icons "
+data-role="share-icons"
+data-url="http://www.goal.com/en-gb/news/4961/international-football/2016/11/08/29315232/derby-expert-kane-targets-scotland"
+data-title="Derby expert Kane targets Scotland"
+data-description="The Tottenham striker hopes scoring against north London rivals Arsenal proves to be the perfect preparation for England's World Cup qualifier against Scotland"
+data-image="http://images.performgroup.com/di/library/omnisport/8/64/harry-kane-cropped_y6tvctab8lth1xlpcc45zopd4.jpg?t=1147442864&w=350&h=230"
+>
+<div
+id="unique-shareicon-5"
+data-provider="twitter"
+data-url-suffix=""
+class="twitter">
+</div>
+<div
+id="unique-shareicon-5"
+data-provider="facebook"
+data-url-suffix=""
+class="facebook">
+</div>
+</div>
+</div>
+<h3 itemprop="headline">
+<a href="/en-gb/news/4961/international-football/2016/11/08/29315232/derby-expert-kane-targets-scotland">Derby expert Kane targets Scotland</a>
+</h3>
+</article>
+</section>
+<section class="module module-next-match" data-match-id="2241876" data-match-status="fixture" data-omniture-icid="NMW" data-omnituresection="Betting">
+<header class="widget-header">
+<h2>Next Match</h2>
+</header>
+<div class="widget-content" data-omniture-icid="ML">
+<table>
+<tbody>
+<tr class="next-match clickable">
+<td class="date">
+<time>
+19/11</time>
+</td>
+<td class="competition">
+PRL</td>
+<td class="vs">
+<div class="team team-a">
+<div class="team-name">
+TOT</div>
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/675.png" alt="" class="team-logo">
+</div>
+<div class="label">v</div>
+<div class="team team-b">
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/684.png" alt="" class="team-logo">
+<div class="team-name">
+WHU</div>
+</div>
+</td>
+<td>
+<a class="btn match-btn" href="/en-gb/match/tottenham-hotspur-vs-west-ham-united/2241876"></a>
+</td>
+</tr>
+<tr class="match-odds">
+<td colspan="2">Match Odds</td>
+<td colspan="2" data-role="odds-container">
+<script data-template="odds" type="text/template">
+<a href="<%= betLinkHome %>" target="_blank" data-omnitureevent="Next match"><span class="label">1</span><span class="btn"><%= home %></span></a>
+<a href="<%= betLinkDraw %>" target="_blank" data-omnitureevent="Next match"><span class="label">X</span><span class="btn"><%= draw %></span></a>
+<a href="<%= betLinkAway %>" target="_blank" data-omnitureevent="Next match"><span class="label">2</span><span class="btn"><%= away %></span></a>
+</script>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<footer class="widget-footer" data-omniture-icid="FT">
+<a class="btn btn-black" href="/en-gb/fixtures/team/tottenham-hotspur/675">View fixtures</a>
+</footer>
+</section>
+<section class="module module-last-matches" data-omniture-icid="LMW">
+<header class="widget-header">
+<h2>Last matches</h2>
+</header>
+<div class="widget-content" data-omniture-icid="ML">
+<table class="next-matches">
+<tbody>
+<tr class="clickable">
+<td class="status">
+<span>FT</span>
+</td>
+<td class="competition">
+PRL</td>
+<td class="vs">
+<div class="team team-a">
+<div class="team-name">
+ARS</div>
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/660.png" alt="" class="team-logo">
+</div>
+<div class="score">
+1 - 1</div>
+<div class="team team-b">
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/675.png" alt="" class="team-logo">
+<div class="team-name">
+TOT</div>
+</div>
+</td>
+<td><a href="/en-gb/match/arsenal-vs-tottenham-hotspur/2241860" class="btn match-btn"></a></td>
+</tr>
+<tr class="clickable">
+<td class="status">
+<span>FT</span>
+</td>
+<td class="competition">
+UCL</td>
+<td class="vs">
+<div class="team team-a">
+<div class="team-name">
+TOT</div>
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/675.png" alt="" class="team-logo">
+</div>
+<div class="score">
+0 - 1</div>
+<div class="team team-b">
+<img src="http://secure.cache.images.core.optasports.com/soccer/teams/150x150/963.png" alt="" class="team-logo">
+<div class="team-name">
+LEV</div>
+</div>
+</td>
+<td><a href="/en-gb/match/tottenham-hotspur-vs-bayer-leverkusen/2348368" class="btn match-btn"></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<footer class="widget-footer" data-omniture-icid="FT"><a href="/en-gb/results/team/tottenham-hotspur/675" class="btn btn-black">View results</a></footer>
+</section><div class="module module-page-navigation" data-omniture-icid="PN">
+<a class="arrow next" href="/en-gb/teams/england/premier-league/8/watford/696" title="Watford"><span>Next</span></a>
+<a class="arrow prev" href="/en-gb/teams/wales/premier-league/8/swansea-city/738" title="Swansea City"><span>Previous</span></a>
+
+
+<a class="label label-next" href="/en-gb/teams/england/premier-league/8/watford/696">
+<div class="badge"><img src="http://secure.cache.images.core.optasports.com/soccer/teams/30x30/696.png" alt="Watford"></div>
+<div class="page-title">Watford</div>
+</a>
+<a class="label label-prev" href="/en-gb/teams/wales/premier-league/8/swansea-city/738">
+<div class="badge"><img src="http://secure.cache.images.core.optasports.com/soccer/teams/30x30/738.png" alt="Swansea City"></div>
+<div class="page-title">Swansea City</div>
+</a>
+</div>
+</div>
+</section>
+<section class="main-content" role="main">
+<div class="inner-main-content inner">
+<div class="module module-ad mpu-620x50">
+<script language="javascript">
+
+(function(dispatch) {
+if ("" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4618327|0|16|ADTECH;cookie=info;alias=en-gbST;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|4618327|0|16|ADTECH;loc=300;alias=en-gbST;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|4618327|0|16|ADTECH;loc=300;alias=en-gbST;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+<section class="module module-team-news" data-omniture-icid="TNM">
+<header class="widget-header" data-omniture-icid="HDR">
+<a href="/en-gb/teams/england/premier-league/8/tottenham-hotspur/675/team-news" class="view-all-news">View all news</a>
+<h2>Tottenham Hotspur news</h2>
+</header>
+<div class="widget-content">
+<ul class="links" data-omniture-icid="ART">
+<li class="link"><a href="/en-gb/news/2896/premier-league/2016/11/08/29299022/crisis-at-spurs-dont-make-me-laugh-says-dier">Crisis? Don't make me laugh - Dier</a></li>
+<li class="link even"><a href="/en-gb/news/2995/betting/2016/11/07/29285422/betting-bradley-already-under-pressure-at-swansea-city-as">Betting: Premier League Sack Race</a></li>
+<li class="link"><a href="/en-gb/news/2896/premier-league/2016/11/07/29274102/left-field-approach-fails-to-steal-derby-success-for-arsenal">Iwobi focus pays no dividend for Arsenal</a></li>
+<li class="link even"><a href="/en-gb/news/2995/betting/2016/11/07/29273102/betting-manchester-city-still-title-favourites-as-liverpool">Betting: Liverpool 11/4 for PL title</a></li>
+<li class="link"><a href="/en-gb/news/7182/galleries/2016/11/07/29272152/alexis-drinkwater-and-the-premier-league-worst-team-of-the">Premier League Worst Team of the Week</a></li>
+<li class="link even"><a href="/en-gb/news/2896/premier-league/2016/11/07/29266312/soft-penalty-gave-spurs-equaliser-wenger">Spurs penalty was soft - Wenger</a></li>
+</ul>
+</div>
+</section>
+<nav class="team-menu" data-omniture-icid="TT">
+<ul class="tabs">
+<li data-name="squad" class="tab active"><a href="/en-gb/teams/england/premier-league/8/tottenham-hotspur/675/squad">Squad</a></li>
+
+
+<li data-name="honours" class="tab"><a href="/en-gb/teams/england/premier-league/8/tottenham-hotspur/675/honours">Honours</a></li>
+</ul>
+</nav>
+<div class="tab-contents clearfix">
+<table class="tab-squad tab-squad-players" data-omniture-icid="TST">
+<thead>
+<tr>
+<th class="role" colspan="3">Players</th>
+<th class="nationality">Nationality</th>
+<th class="position">Position</th>
+<th>Age</th>
+
+<th>Games</th>
+<th><span class="icon-goal"></span></th>
+<th><span class="icon-assist"></span></th>
+<th><span class="icon-yellow-card"></span></th>
+<th><span class="icon-yellow-red-card"></span></th>
+<th><span class="icon-red-card"></span></th>
+</tr>
+</thead>
+
+<tbody>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/1255.png" alt=" " itemprop="image">
+</td>
+<td>
+1</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/france/25603/hugo-lloris">H. Lloris</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-76" title="France"></span>
+</td>
+<td>
+Goalkeeper</td>
+<td>
+29</td>
+
+<td>
+9</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/280411.png" alt=" " itemprop="image">
+</td>
+<td>
+30</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/spain/108084/pau-l%C3%B3pez">Pau López</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-176" title="Spain"></span>
+</td>
+<td>
+Goalkeeper</td>
+<td>
+21</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/2476.png" alt=" " itemprop="image">
+</td>
+<td>
+13</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/netherlands/16783/michel-vorm">M. Vorm</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-138" title="Netherlands"></span>
+</td>
+<td>
+Goalkeeper</td>
+<td>
+33</td>
+
+<td>
+3</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/424596.png" alt=" " itemprop="image">
+</td>
+<td>
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/264262/alfie-whiteman">A. Whiteman</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Goalkeeper</td>
+<td>
+18</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/146650.png" alt=" " itemprop="image">
+</td>
+<td>
+27</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/austria/53839/kevin-wimmer">K. Wimmer</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-20" title="Austria"></span>
+</td>
+<td>
+Defender</td>
+<td>
+23</td>
+
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/207547.png" alt=" " itemprop="image">
+</td>
+<td>
+33</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/wales/61643/ben-davies">B. Davies</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-209" title="Wales"></span>
+</td>
+<td>
+Defender</td>
+<td>
+23</td>
+
+<td>
+4</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/450521.png" alt=" " itemprop="image">
+</td>
+<td>
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/255392/luke-amos">L. Amos</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Defender</td>
+<td>
+19</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/393436.png" alt=" " itemprop="image">
+</td>
+<td>
+38</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/united-states/165542/cameron-carter-vickers">C. Carter-Vickers</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-203" title="USA"></span>
+</td>
+<td>
+Defender</td>
+<td>
+18</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/97354.png" alt=" " itemprop="image">
+</td>
+<td>
+16</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/34723/ktrippier">K.Trippier</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Defender</td>
+<td>
+26</td>
+
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/68532.png" alt=" " itemprop="image">
+</td>
+<td>
+2</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/29528/kyle-walker">K. Walker</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Defender</td>
+<td>
+26</td>
+
+<td>
+11</td>
+<td>
+0</td>
+<td>
+2</td>
+<td>
+2</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/2190.png" alt=" " itemprop="image">
+</td>
+<td>
+5</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/belgium/16549/jan-vertonghen">J. Vertonghen</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-27" title="Belgium"></span>
+</td>
+<td>
+Defender</td>
+<td>
+29</td>
+
+<td>
+11</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+4</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/70508.png" alt=" " itemprop="image">
+</td>
+<td>
+4</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/belgium/25746/toby-alderweireld">T. Alderweireld</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-27" title="Belgium"></span>
+</td>
+<td>
+Defender</td>
+<td>
+27</td>
+
+<td>
+8</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/16050.png" alt=" " itemprop="image">
+</td>
+<td>
+3</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/30642/danny-rose">D. Rose</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Defender</td>
+<td>
+26</td>
+
+<td>
+7</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+4</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/274470.png" alt=" " itemprop="image">
+</td>
+<td>
+29</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/105279/harry-winks">H. Winks</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+20</td>
+
+<td>
+4</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/13622.png" alt=" " itemprop="image">
+</td>
+<td>
+17</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/france/17898/moussa-sissoko">M. Sissoko</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-76" title="France"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+27</td>
+
+<td>
+6</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/2197.png" alt=" " itemprop="image">
+</td>
+<td>
+19</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/belgium/13937/mousa-dembele">M. Dembélé</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-27" title="Belgium"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+29</td>
+
+<td>
+5</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/95871.png" alt=" " itemprop="image">
+</td>
+<td>
+23</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/denmark/38515/christian-eriksen">C. Eriksen</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-61" title="Denmark"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+24</td>
+
+<td>
+10</td>
+<td>
+0</td>
+<td>
+3</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/450522.png" alt=" " itemprop="image">
+</td>
+<td>
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/255382/anton-walkes">A. Walkes</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+19</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/245831.png" alt=" " itemprop="image">
+</td>
+<td>
+15</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/49135/eric-dier">E. Dier</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+22</td>
+
+<td>
+10</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+2</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/53437.png" alt=" " itemprop="image">
+</td>
+<td>
+12</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/kenya/57998/victor-wanyama">V. Wanyama</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-105" title="Kenya"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+25</td>
+
+<td>
+11</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+3</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/173621.png" alt=" " itemprop="image">
+</td>
+<td>
+28</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/42989/thomas-carroll">T. Carroll</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+24</td>
+
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/81992.png" alt=" " itemprop="image">
+</td>
+<td>
+11</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/argentina/30986/erik-lamela">E. Lamela</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-16" title="Argentina"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+24</td>
+
+<td>
+9</td>
+<td>
+1</td>
+<td>
+1</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/217739.png" alt=" " itemprop="image">
+</td>
+<td>
+20</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/66242/d-alli">B. Alli</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+20</td>
+
+<td>
+10</td>
+<td>
+3</td>
+<td>
+0</td>
+<td>
+2</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/387385.png" alt=" " itemprop="image">
+</td>
+<td>
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/255422/marcus-edwards">M. Edwards</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Midfielder</td>
+<td>
+17</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/450524.png" alt=" " itemprop="image">
+</td>
+<td>
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/255402/shayon-harrison">S. Harrison</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+19</td>
+
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/158575.png" alt=" " itemprop="image">
+</td>
+<td>
+10</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/36762/harry-kane">H. Kane</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+23</td>
+
+<td>
+6</td>
+<td>
+3</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/103043.png" alt=" " itemprop="image">
+</td>
+<td>
+7</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/south-korea/41017/heung-min-son">Heung-Min Son</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-107" title="Korea Republic"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+24</td>
+
+<td>
+8</td>
+<td>
+4</td>
+<td>
+2</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/274469.png" alt=" " itemprop="image">
+</td>
+<td>
+25</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/england/209842/josh-onomah">J. Onomah</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-68" title="England"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+19</td>
+
+<td>
+2</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/303286.png" alt=" " itemprop="image">
+</td>
+<td>
+9</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/netherlands/99841/vincent-janssen">V. Janssen</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-138" title="Netherlands"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+22</td>
+
+<td>
+11</td>
+<td>
+1</td>
+<td>
+1</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/306873.png" alt=" " itemprop="image">
+</td>
+<td>
+14</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/france/102674/g-nkoudou">G. N'Koudou</a>
+</td>
+<td class="nationality">
+<span class="area-flag-24-76" title="France"></span>
+</td>
+<td>
+Attacker</td>
+<td>
+21</td>
+
+<td>
+3</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+<td>
+0</td>
+</tr>
+</tbody>
+</table>
+
+<table class="tab-squad tab-squad-manager">
+<thead>
+<tr>
+<th colspan="2" class="role">
+Manager</th>
+</tr>
+</thead>
+
+<tbody>
+<tr itemscope itemtype="http://schema.org/Person">
+<td class="photo">
+<img src="http://cache.images.globalsportsmedia.com/soccer/players/50x50/104084.png" alt=" " itemprop="image">
+</td>
+<td class="name" itemprop="name">
+<a href="/en-gb/people/argentina/1781/mauricio-pochettino">M. Pochettino</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<aside>
+<div class="module module-eplayer ">
+<script type="text/javascript">var params = { wmode: 'opaque' };</script>
+
+<ad><script src="http://player.performgroup.com/eplayer.js#e85a440fac1716d9bfd5de04fe.r4lvn28jkqnw13l43y1upde5k" async></script></ad></div>
+<div class="module module-ad mpu-300x250">
+<script language="javascript">
+
+(function(dispatch) {
+if ("mpu" === 'mpu' && null && ($(window).width() > 1020 ? 'desktop' : 'tablet') !== null) {
+return false;
+}
+else if ("mpu" === 'floating') {
+if ($.cookie('goal_no_ad_floating_bar')) return false;
+}
+dispatch.call();
+})(function() {
+window.adgroupid = window.adgroupid || Math.round(Math.random() * 1000);document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|3555309|0|170|ADTECH;cookie=info;alias=en-gbTM;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');
+
+});
+</script>
+<noscript>
+<a href="http://adserver.adtech.de/adlink|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbTM;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;" target="_blank">
+<img src="http://adserver.adtech.de/adserv|3.0|327.0|3555309|0|170|ADTECH;loc=300;alias=en-gbTM;key=team:index+L64;kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;cookie=info;">
+</a>
+</noscript></div>
+
+<section class="module module-competitions" data-plugin="tabs" data-omniture-icid="CO">
+<header class="widget-header">
+<span class="ticketbis-header-branding hidden">
+<img src="/images/ticketbis/ticketbis.png" alt=""/>
+</span>
+<h2>Competitions</h2>
+</header>
+<ul class="tabs">
+<li class="tab" data-tab="schedule"><a href="#">Schedule</a></li>
+<li class="tab" data-tab="table"><a href="#">Table</a></li>
+<li class="tab hidden" data-tab="ticketbis"><a href="#">Tickets</a></li>
+</ul>
+<div class="selector">
+<select id="clubs-league-list" data-plugin="customDropdown">
+<option selected="selected" data-country-code="ENG" data-area-id="68" value="8">
+Premier League</option>
+<script type="text/template" data-role="branding" data-competition="8">
+</script>
+<option data-country-code="ESP" data-area-id="176" value="7">
+Primera División</option>
+<script type="text/template" data-role="branding" data-competition="7">
+</script>
+<option data-country-code="ITA" data-area-id="100" value="13">
+Serie A</option>
+<script type="text/template" data-role="branding" data-competition="13">
+</script>
+<option data-country-code="DEU" data-area-id="80" value="9">
+Bundesliga</option>
+<script type="text/template" data-role="branding" data-competition="9">
+</script>
+<option data-country-code="FRA" data-area-id="76" value="16">
+Ligue 1</option>
+<script type="text/template" data-role="branding" data-competition="16">
+</script>
+<option data-country-code="" data-area-id="7" value="10">
+UEFA Champions League</option>
+<script type="text/template" data-role="branding" data-competition="10">
+</script>
+<option data-country-code="" data-area-id="7" value="18">
+UEFA Europa League</option>
+<script type="text/template" data-role="branding" data-competition="18">
+</script>
+<option data-country-code="ENG" data-area-id="68" value="70">
+Championship</option>
+<script type="text/template" data-role="branding" data-competition="70">
+</script>
+<option data-country-code="" data-area-id="1" value="1148">
+International Champions Cup</option>
+<script type="text/template" data-role="branding" data-competition="1148">
+</script>
+<option data-country-code="" data-area-id="7" value="25">
+European Championship</option>
+<script type="text/template" data-role="branding" data-competition="25">
+</script>
+<option data-country-code="ENG" data-area-id="68" value="15">
+League One</option>
+<script type="text/template" data-role="branding" data-competition="15">
+</script>
+<option data-country-code="ENG" data-area-id="68" value="32">
+League Two</option>
+<script type="text/template" data-role="branding" data-competition="32">
+</script>
+<option data-country-code="" data-area-id="7" value="224">
+WC Qualification Europe</option>
+<script type="text/template" data-role="branding" data-competition="224">
+</script>
+</select>
+</div>
+<section class="tab-content schedule" data-omniture-icid="SC" data-tabcontent="schedule" data-competitionid="8">
+
+<header>
+<div class="matchday-selector">
+<div class="btn arrow left" data-gameweek="10" data-roundId="35992"></div>
+<div class="btn arrow right" data-gameweek="12" data-roundId="35992"></div>
+<div class="matchday-name">
+Matchday 11</div>
+</div>
+</header>
+<div class="wrapper">
+<ul class="games">
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/afc-bournemouth/711" title="BOR">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-711" width="20" height="20">
+<span>BOR</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/afc-bournemouth-vs-sunderland/2241859">
+
+1&#8202;-&#8202;2
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/sunderland/683" title="Sunderland AFC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-683" width="20" height="20">
+<span>SUN</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/burnley/698" title="BUR">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-698" width="20" height="20">
+<span>BUR</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/burnley-vs-crystal-palace/2241861">
+
+3&#8202;-&#8202;2
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/crystal-palace/679" title="Crystal Palace FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-679" width="20" height="20">
+<span>CRY</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-city/676" title="MCI">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-676" width="20" height="20">
+<span>MCI</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/manchester-city-vs-middlesbrough/2241866">
+
+1&#8202;-&#8202;1
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/middlesbrough/671" title="Middlesbrough FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-671" width="20" height="20">
+<span>MID</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-ham-united/684" title="WHU">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-684" width="20" height="20">
+<span>WHU</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/west-ham-united-vs-stoke-city/2241868">
+
+1&#8202;-&#8202;1
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/stoke-city/690" title="Stoke City FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-690" width="20" height="20">
+<span>STO</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/chelsea/661" title="CHE">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-661" width="20" height="20">
+<span>CHE</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/chelsea-vs-everton/2241862">
+
+5&#8202;-&#8202;0
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/everton/674" title="Everton FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-674" width="20" height="20">
+<span>EVE</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/arsenal/660" title="ARS">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-660" width="20" height="20">
+<span>ARS</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/arsenal-vs-tottenham-hotspur/2241860">
+
+1&#8202;-&#8202;1
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/tottenham-hotspur/675" title="Tottenham Hotspur FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-675" width="20" height="20">
+<span>TOT</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/hull-city/725" title="HUL">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-725" width="20" height="20">
+<span>HUL</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/hull-city-vs-southampton/2241863">
+
+2&#8202;-&#8202;1
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/southampton/670" title="Southampton FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-670" width="20" height="20">
+<span>SOT</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/liverpool/663" title="LIV">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-663" width="20" height="20">
+<span>LIV</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/liverpool-vs-watford/2241865">
+
+6&#8202;-&#8202;1
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/watford/696" title="Watford FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-696" width="20" height="20">
+<span>WAT</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/wales/swansea-city/738" title="SWA">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-738" width="20" height="20">
+<span>SWA</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/swansea-city-vs-manchester-united/2241867">
+
+1&#8202;-&#8202;3
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/manchester-united/662" title="Manchester United FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-662" width="20" height="20">
+<span>MUN</span>
+</a>
+</div>
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/leicester-city/682" title="LEI">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-682" width="20" height="20">
+<span>LEI</span>
+</a>
+</div>
+
+<a class="info" href="/en-gb/match/leicester-city-vs-west-bromwich-albion/2241864">
+
+1&#8202;-&#8202;2
+</a>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/west-bromwich-albion/678" title="West Bromwich Albion FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-678" width="20" height="20">
+<span>WBA</span>
+</a>
+</div>
+</li>
+</ul>
+</div>
+
+</section>
+<section class="tab-content table" data-omniture-icid="TA" data-tabcontent="table" data-competitionid="8">
+<header>
+<b class="title">Team</b>
+<b class="title">P</b>
+<b class="title">Pts</b>
+</header>
+<div class="wrapper">
+<table>
+<tbody>
+<tr data-omniture-role="item">
+<td>1</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/liverpool/663" title="Liverpool FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-663" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Liverpool FC" href="http://www.goal.com/en-gb/teams/england/liverpool/663">
+Liverpool FC</a>
+</td>
+<td>11</td>
+<td>26</td>
+</tr>
+<tr data-omniture-role="item">
+<td>2</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/chelsea/661" title="Chelsea FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-661" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Chelsea FC" href="http://www.goal.com/en-gb/teams/england/chelsea/661">
+Chelsea FC</a>
+</td>
+<td>11</td>
+<td>25</td>
+</tr>
+<tr data-omniture-role="item">
+<td>3</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-city/676" title="Manchester City FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-676" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Manchester City FC" href="http://www.goal.com/en-gb/teams/england/manchester-city/676">
+Manchester City FC</a>
+</td>
+<td>11</td>
+<td>24</td>
+</tr>
+<tr data-omniture-role="item">
+<td>4</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/arsenal/660" title="Arsenal FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-660" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Arsenal FC" href="http://www.goal.com/en-gb/teams/england/arsenal/660">
+Arsenal FC</a>
+</td>
+<td>11</td>
+<td>24</td>
+</tr>
+<tr data-omniture-role="item">
+<td>5</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/tottenham-hotspur/675" title="Tottenham Hotspur FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-675" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Tottenham Hotspur FC" href="http://www.goal.com/en-gb/teams/england/tottenham-hotspur/675">
+Tottenham Hotspur FC</a>
+</td>
+<td>11</td>
+<td>21</td>
+</tr>
+<tr data-omniture-role="item">
+<td>6</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-united/662" title="Manchester United FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-662" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Manchester United FC" href="http://www.goal.com/en-gb/teams/england/manchester-united/662">
+Manchester United FC</a>
+</td>
+<td>11</td>
+<td>18</td>
+</tr>
+<tr data-omniture-role="item">
+<td>7</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/everton/674" title="Everton FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-674" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Everton FC" href="http://www.goal.com/en-gb/teams/england/everton/674">
+Everton FC</a>
+</td>
+<td>11</td>
+<td>18</td>
+</tr>
+<tr data-omniture-role="item">
+<td>8</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/watford/696" title="Watford FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-696" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Watford FC" href="http://www.goal.com/en-gb/teams/england/watford/696">
+Watford FC</a>
+</td>
+<td>11</td>
+<td>15</td>
+</tr>
+<tr data-omniture-role="item">
+<td>9</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/burnley/698" title="Burnley FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-698" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Burnley FC" href="http://www.goal.com/en-gb/teams/england/burnley/698">
+Burnley FC</a>
+</td>
+<td>11</td>
+<td>14</td>
+</tr>
+<tr data-omniture-role="item">
+<td>10</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/southampton/670" title="Southampton FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-670" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Southampton FC" href="http://www.goal.com/en-gb/teams/england/southampton/670">
+Southampton FC</a>
+</td>
+<td>11</td>
+<td>13</td>
+</tr>
+<tr data-omniture-role="item">
+<td>11</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-bromwich-albion/678" title="West Bromwich Albion FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-678" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="West Bromwich Albion FC" href="http://www.goal.com/en-gb/teams/england/west-bromwich-albion/678">
+West Bromwich Albion FC</a>
+</td>
+<td>11</td>
+<td>13</td>
+</tr>
+<tr data-omniture-role="item">
+<td>12</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/stoke-city/690" title="Stoke City FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-690" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Stoke City FC" href="http://www.goal.com/en-gb/teams/england/stoke-city/690">
+Stoke City FC</a>
+</td>
+<td>11</td>
+<td>13</td>
+</tr>
+<tr data-omniture-role="item">
+<td>13</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/afc-bournemouth/711" title="AFC Bournemouth">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-711" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="AFC Bournemouth" href="http://www.goal.com/en-gb/teams/england/afc-bournemouth/711">
+AFC Bournemouth</a>
+</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr data-omniture-role="item">
+<td>14</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/leicester-city/682" title="Leicester City FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-682" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Leicester City FC" href="http://www.goal.com/en-gb/teams/england/leicester-city/682">
+Leicester City FC</a>
+</td>
+<td>11</td>
+<td>12</td>
+</tr>
+<tr data-omniture-role="item">
+<td>15</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/middlesbrough/671" title="Middlesbrough FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-671" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Middlesbrough FC" href="http://www.goal.com/en-gb/teams/england/middlesbrough/671">
+Middlesbrough FC</a>
+</td>
+<td>11</td>
+<td>11</td>
+</tr>
+<tr data-omniture-role="item">
+<td>16</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/crystal-palace/679" title="Crystal Palace FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-679" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Crystal Palace FC" href="http://www.goal.com/en-gb/teams/england/crystal-palace/679">
+Crystal Palace FC</a>
+</td>
+<td>11</td>
+<td>11</td>
+</tr>
+<tr data-omniture-role="item">
+<td>17</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-ham-united/684" title="West Ham United FC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-684" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="West Ham United FC" href="http://www.goal.com/en-gb/teams/england/west-ham-united/684">
+West Ham United FC</a>
+</td>
+<td>11</td>
+<td>11</td>
+</tr>
+<tr data-omniture-role="item">
+<td>18</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/hull-city/725" title="Hull City AFC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-725" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Hull City AFC" href="http://www.goal.com/en-gb/teams/england/hull-city/725">
+Hull City AFC</a>
+</td>
+<td>11</td>
+<td>10</td>
+</tr>
+<tr data-omniture-role="item">
+<td>19</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/wales/swansea-city/738" title="Swansea City AFC">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-738" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Swansea City AFC" href="http://www.goal.com/en-gb/teams/wales/swansea-city/738">
+Swansea City AFC</a>
+</td>
+<td>11</td>
+<td>5</td>
+</tr>
+<tr data-omniture-role="item">
+<td>20</td>
+<td>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/sunderland/683" title="Sunderland AFC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-683" width="20" height="20">
+<span></span>
+</a>
+</div>
+</td>
+<td class="team-name">
+<a title="Sunderland AFC" href="http://www.goal.com/en-gb/teams/england/sunderland/683">
+Sunderland AFC</a>
+</td>
+<td>11</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="tab-content ticketbis" data-tabcontent="ticketbis" data-competitionid="8">
+
+<div data-is-ticketbis-competition="1" data-ticketbis-view-more-url="http://www.ticketbis.net/premier-league-tickets/ca667?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=competition-goal-uk" data-restricted-geo-codes="DZ,AO,SH,BJ,BW,BF,BI,CM,CV,CF,TD,KM,CG,DJ,EG,GQ,ER,ET,GA,GM,GH,GW,GN,CI,KE,LS,LR,LY,MG,MW,ML,MR,MU,YT,MA,MZ,NA,NE,NG,ST,RE,RW,ST,SN,SC,SL,SO,ZA,SH,SD,SZ,TZ,TG,TN,UG,CD,ZM,TZ,ZW,SS,CD"></div>
+
+<header>
+<div class="matchday-selector">
+<div class="btn arrow left" data-gameweek="10" data-roundId="35992"></div>
+<div class="btn arrow right" data-gameweek="12" data-roundId="35992"></div>
+<div class="matchday-name">
+Matchday 11</div>
+</div>
+</header>
+
+<div class="no-tickets-message">
+Sorry, there are no tickets available for these matches</div>
+
+<div class="wrapper">
+<ul class="games">
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/afc-bournemouth/711" title="BOR">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-711" width="20" height="20">
+<span>BOR</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/sunderland/683" title="Sunderland AFC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-683" width="20" height="20">
+<span>SUN</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/burnley/698" title="BUR">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-698" width="20" height="20">
+<span>BUR</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/crystal-palace/679" title="Crystal Palace FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-679" width="20" height="20">
+<span>CRY</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/manchester-city/676" title="MCI">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-676" width="20" height="20">
+<span>MCI</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/middlesbrough/671" title="Middlesbrough FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-671" width="20" height="20">
+<span>MID</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/west-ham-united/684" title="WHU">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-684" width="20" height="20">
+<span>WHU</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/stoke-city/690" title="Stoke City FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-690" width="20" height="20">
+<span>STO</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/chelsea/661" title="CHE">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-661" width="20" height="20">
+<span>CHE</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/everton/674" title="Everton FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-674" width="20" height="20">
+<span>EVE</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/arsenal/660" title="ARS">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-660" width="20" height="20">
+<span>ARS</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/tottenham-hotspur/675" title="Tottenham Hotspur FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-675" width="20" height="20">
+<span>TOT</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/hull-city/725" title="HUL">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-725" width="20" height="20">
+<span>HUL</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/southampton/670" title="Southampton FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-670" width="20" height="20">
+<span>SOT</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/liverpool/663" title="LIV">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-663" width="20" height="20">
+<span>LIV</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/watford/696" title="Watford FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-696" width="20" height="20">
+<span>WAT</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/wales/swansea-city/738" title="SWA">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-738" width="20" height="20">
+<span>SWA</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/manchester-united/662" title="Manchester United FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-662" width="20" height="20">
+<span>MUN</span>
+</a>
+</div>
+
+
+</li>
+<li class="game" data-omniture-role="item">
+<span class="date-state">
+FT</span>
+<div class="module module-team home">
+<a href="/en-gb/teams/england/leicester-city/682" title="LEI">
+<img src="http://i1.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-682" width="20" height="20">
+<span>LEI</span>
+</a>
+</div>
+
+<div class="module module-team away">
+<a href="/en-gb/teams/england/west-bromwich-albion/678" title="West Bromwich Albion FC">
+<img src="http://i2.goal.com/web/goal/2016.11.08-v1/images/blank.png" alt="blank" class="team-logo competition-8 team-678" width="20" height="20">
+<span>WBA</span>
+</a>
+</div>
+
+
+</li>
+</ul>
+</div>
+
+
+
+
+</section>
+<footer data-omniture-icid="FX" class="widget-footer" data-role="view-all-schedule"><a href="/en-gb/live-scores/fixtures?tab=all" class="btn">view all</a></footer>
+<footer data-omniture-icid="ST" class="widget-footer" data-role="view-all-table"><a href="/en-gb/live-scores/standings" class="btn">view all</a></footer>
+<footer class="widget-footer " data-role="view-all-ticketbis"><a href="http://www.ticketbis.net/premier-league-tickets/ca667?afl=1P663E8YRX&utm_source=perform-group&utm_medium=affiliate&utm_campaign=premierleague-teams&utm_content=competition-goal-uk" class="btn">More Tickets</a></footer>
+</section>
+<section class="module module-popular-now" data-plugin="tabs" data-omniture-icid="PN">
+<header class="widget-header">
+<h2>Popular Now</h2>
+</header>
+<ul class="tabs">
+<li class="tab" data-tab="most-read"><a href="#">Most Read</a></li>
+<li class="tab" data-tab="most-discussed"><a href="#">Most Discussed</a></li>
+</ul>
+<div class="tab-content read" data-tabcontent="most-read">
+<ol>
+<li itemscope itemtype="http://schema.org/Article">
+<a class="clearfix" href="/en-gb/news/4961/international-football/2016/11/08/29318562/injured-alexis-sanchez-limps-out-of-chile-training" itemprop="url">
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/99/d2/alexis-sanchez-arsenal-premier-league_1p9vqq1dsts0d1pf0zoxpeuizb.jpg?t=-317164609&w=40&h=40" width="38" height="38" class="icon" alt="">
+<span class="title" itemprop="headline">Alexis injured in Chile training</span>
+</a>
+</li>
+<li itemscope itemtype="http://schema.org/Article">
+<a class="clearfix" href="/en-gb/news/2885/europe/2016/11/06/29259522/van-persie-suffers-gruesome-eye-injury-in-fenerbahce-match" itemprop="url">
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/b2/fb/robin-van-persie-eye-injury-hp-size_zu6ag7n8rez51bc1f9hzl90av.jpg?t=1000563848&w=40&h=40" width="38" height="38" class="icon" alt="">
+<span class="title" itemprop="headline">Van Persie suffers horrific eye injury</span>
+</a>
+</li>
+<li itemscope itemtype="http://schema.org/Article">
+<a class="clearfix" href="/en-gb/news/2896/premier-league/2016/11/07/29266912/we-have-players-with-problems-mourinho-appears-to-attack" itemprop="url">
+<img src="http://images.performgroup.com/di/library/omnisport/4c/f5/josemourinho-cropped_7167mn4ahkbi1gk2pq74an403.jpg?t=1008562520&w=40&h=40" width="38" height="38" class="icon" alt="">
+<span class="title" itemprop="headline">Has Mou attacked Shaw & Smalling?!</span>
+</a>
+</li>
+<li itemscope itemtype="http://schema.org/Article">
+<a class="clearfix" href="/en-gb/news/2896/premier-league/2016/11/08/29317522/ozil-would-not-get-anywhere-near-chelseas-squad" itemprop="url">
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/7f/8f/mesut-ozil-arsenal-premier-league_1gzq6xwkjgezm11f4vh3rf6bjz.jpg?t=-918107025&w=40&h=40" width="38" height="38" class="icon" alt="">
+<span class="title" itemprop="headline">'Ozil wouldn't get near Chelsea squad'</span>
+</a>
+</li>
+<li itemscope itemtype="http://schema.org/Article">
+<a class="clearfix" href="/en-gb/news/2896/premier-league/2016/11/07/29292012/ozil-arsenal-always-my-first-choice-when-leaving-real-madrid" itemprop="url">
+<img src="http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/1f/6c/arsene-wenger-mesut-ozil_gekzz7zhqo8l1w4n7m93eaojp.jpg?t=1073833344&w=40&h=40" width="38" height="38" class="icon" alt="">
+<span class="title" itemprop="headline">Ozil: Arsenal always my first choice</span>
+</a>
+</li>
+</ol>
+</div>
+<div class="tab-content discussed" data-tabcontent="most-discussed">
+<ol
+data-plugin="most-discussed"
+data-stream-tag=""
+data-max-stream-age="7"
+data-limit="5"
+data-category-id="en_gb"
+>
+<!--
+<li class="clearfix" itemscope itemtype="http://schema.org/Article">
+<a class="comments" href="<%= url %>#article-comments">
+<span class="comment-ico img-rep">comments:</span>
+<span class="comment-count"><%= counts %></span>
+</a>
+<a href="<%= url %>" itemprop="url"><span class="title" itemprop="headline"><%= title %></span></a>
+</li>
+-->
+</ol></div>
+</section>
+</aside>
+</section>
+<div class="clearfix module module-footer" data-module="footer">
+<nav class="navigation">
+<header class="widget-header">
+<h2>Goal <span class="current-edition">United Kingdom</span></h2>
+</header>
+<ul class="common-links">
+<li><a href="/en-gb/legal/privacy-policy">Privacy Policy</a></li>
+<li><a href="/en-gb/legal/terms-conditions">Terms of Service</a></li>
+<li><a href="/en-gb/contact/about">About Us</a></li>
+<li class="line-spacer"><a href="/en-gb/contact">Contact Us</a></li>
+<li>
+<a href="/en-gb/info/683/main/2009/09/16/1505389/visit-mgoalcom-on-your-mobile">Mobile</a>
+</li>
+<li>
+<a href="/en-gb/news/2995/goal-com-betting">Betting</a>
+</li>
+<li>
+<a href="/en-gb/news/7119/commercial/2016/01/01/24330962/new-goal-app">Goal App</a>
+</li>
+<li>
+<a href="/en-gb/news/5432/gaming/2016/04/02/24476452/goal-live-scores">Goal Live Scores</a>
+</li>
+<li>
+<a href="/en-gb/news/5432/goal-fantasy-football/2014/07/29/4973670/play-the-new-goal-fantasy-football-game">Fantasy Football</a>
+</li>
+</ul>
+</nav>
+<section class="editions">
+<header class="widget-header">
+<h2>Editions</h2>
+</header>
+
+<ul>
+<li><a href="/en/" class="flag-en">International</a></li>
+<li><a href="/en-us/" class="flag-en-us">America</a></li>
+<li><a href="/es-ar/" class="flag-es-ar">Argentina</a></li>
+<li><a href="/en-au/" class="flag-en-au">Australia</a></li>
+<li><a href="/ba/" class="flag-ba">Bosna i Hercegovina</a></li>
+<li><a href="/br/" class="flag-br">Brasil</a></li>
+<li><a href="/en-ca/" class="flag-en-ca">Canada</a></li>
+<li><a href="/es-cl/" class="flag-es-cl">Chile</a></li>
+<li><a href="/es-co/" class="flag-es-co">Colombia</a></li>
+<li><a href="/de/" class="flag-de">Deutsch</a></li>
+<li><a href="/es/" class="flag-es">España</a></li>
+<li><a href="/fr/" class="flag-fr">Français</a></li>
+<li><a href="/en-gh/" class="flag-en-gh">Ghana</a></li>
+</ul>
+<ul>
+<li><a href="/hr/" class="flag-hr">Hrvatska</a></li>
+<li><a href="/en-india/" class="flag-en-india">India</a></li>
+<li><a href="/id-ID/" class="flag-id-ID">Indonesia</a></li>
+<li><a href="/en-ie/" class="flag-en-ie">Ireland</a></li>
+<li><a href="/it/" class="flag-it">Italia</a></li>
+<li><a href="/en-ke/" class="flag-en-ke">Kenya</a></li>
+<li><a href="/en-my/" class="flag-en-my">Malaysia</a></li>
+<li><a href="/es-mx/" class="flag-es-mx">México</a></li>
+<li><a href="/nl/" class="flag-nl">Nederlands</a></li>
+<li><a href="/en-ng/" class="flag-en-ng">Nigeria</a></li>
+<li><a href="/en-sg/" class="flag-en-sg">Singapore</a></li>
+<li><a href="/en-za/" class="flag-en-za">South Africa</a></li>
+<li><a href="/en-tz/" class="flag-en-tz">Tanzania</a></li>
+</ul>
+<ul>
+<li><a href="/tr/" class="flag-tr">Türkçe</a></li>
+<li><a href="/en-gb/" class="flag-en-gb">UK</a></li>
+<li><a href="/cn/" class="flag-cn">简体中文</a></li>
+<li><a href="/hk/" class="flag-hk">繁體中文</a></li>
+<li><a href="/kr/" class="flag-kr">한국어</a></li>
+<li><a href="/jp/" class="flag-jp">日本語</a></li>
+<li><a href="/th/" class="flag-th">ภาษาไทย</a></li>
+<li><a href="/ar/" class="flag-ar">العربية</a></li>
+<li><a href="/ar-eg/" class="flag-ar-eg">المصرية</a></li>
+<li><a href="/ar-sa/" class="flag-ar-sa">السعودية</a></li>
+<li><a href="/en-ar/" class="flag-en-ar">Gulf English</a></li>
+<li><a href="/hu/" class="flag-hu">Magyarország</a></li>
+</ul>
+
+</section>
+<footer itemscope itemtype="http://schema.org/WPFooter">
+<small>Copyright &copy; <span itemprop="copyrightYear">2016</span> <span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Goal.com</span></span> All rights reserved. The information contained in Goal.com may not be published, broadcast, rewritten, or redistributed without the prior written authority of Goal.com</small>
+</footer>
+</div>
+</div>
+<!--[if IE]>
+
+<script src="/static/js?files=%2Fjs%2Fexternal%2Fplugins%2Fexcanvas.compiled.js&version=2016.11.08-v1"></script><![endif]-->
+
+
+<script src="/static/js?files=%2Fjs%2Fexternal%2Flodash.min.js%2C%2Fjs%2Fexternal%2Funderscore.string.min.js%2C%2Fjs%2Fexternal%2Fcallbacks.lodash.js%2C%2Fjs%2Fexternal%2Fjstorage.js%2C%2Fjs%2Fglobals.js%2C%2Fjs%2Fhelpers.js%2C%2Fjs%2Fevents.js%2C%2Fjs%2Fexternal%2Fplugins%2C%2Fjs%2Finternal%2Fplugins%2C%2Fjs%2Finternal%2Flibraries%2C%2Fjs%2Fjquery%2Ffooter%2C%2Fjs%2Fexternal%2Fmoments.js&version=2016.11.08-v1"></script>
+<script src="/static/js?files=%2Fjs%2Fsettings.js%2C%2Fjs%2Fapplication.js&locale=en-gb&version=2016.11.08-v1"></script>
+<script src="/static/js?files=%2Fjs%2Finternal%2Fplugins%2Fsmartbanner%2Fjquery.smartbanner.js&version=2016.11.08-v1"></script><script type="text/javascript">
+/*global namespace, Goal, jQuery, _*/
+(function (window, document, $, _, undefined) {
+'use strict';
+
+var pluginNamespace = 'smartbanner';
+
+namespace(Goal.fmt('Goal.settings.%@', pluginNamespace));
+namespace(Goal.fmt('Goal.events.%@', pluginNamespace));
+
+Goal.settings[pluginNamespace] = {"Goal":{"author":"Goal.com","title":"Goal.com","id":{"iOS":"518026818","Android":"com.freerange360.mpp.GOAL"},"url":"http:\/\/smarturl.it\/goalsmartbanrs","price":"FREE","appStoreLanguage":"us","layer":"absolute","icon":"\/apple-touch-icon-114x114.png","daysHidden":2,"daysReminder":2,"button":"VIEW","iconGloss":false},"GoalLiveScores":{"author":"Goal.com","title":"Goal LiveScores","id":{"iOS":"687276446","Android":"com.kokteyl.goal"},"url":"http:\/\/hyperurl.co\/GoalLS","price":"FREE","appStoreLanguage":"us","layer":"absolute","icon":"\/images\/module\/live-scores\/icon57x57.png","daysHidden":2,"daysReminder":2,"button":"VIEW","iconGloss":false},"GoalFantasyFootball":{"author":"Goal.com","title":"Goal Fantasy Football","id":{"iOS":"873273187","Android":"com.fantasyiteam.goalus"},"url":"https:\/\/34ui.app.link\/SB","price":"Play for free","appStoreLanguage":"us","layer":"absolute","icon":"\/images\/rumour\/icon114x114.png","daysHidden":2,"daysReminder":2,"button":"Play Now","iconGloss":false}};
+Goal.events[pluginNamespace] = {
+init: function () {
+Goal.log(Goal.fmt('Goal:events:%@:init ', pluginNamespace));
+var $head = $('head'),
+$meta = $('<meta>'),
+appCookies = {
+closed : $.cookie('sb-closed-apps') ? $.cookie('sb-closed-apps').split(',') : [],
+installed : $.cookie('sb-installed-apps') ? $.cookie('sb-installed-apps').split(',') : []
+},
+config = Goal.settings.smartbanner,
+args = Object.keys(config).map(function (key) {return config[key];}),
+UA = window.navigator.userAgent;
+
+if(!$.fn.on) {
+$.fn.on = $.fn.bind;
+}
+
+args = args.filter(function (arg) {
+return ( ( -1 === appCookies.closed.indexOf(arg.id.Android) ) || ( -1 === appCookies.closed.indexOf(arg.id.iOS) ) ) &&
+( ( -1 === appCookies.installed.indexOf(arg.id.Android) ) || ( -1 === appCookies.installed.indexOf(arg.id.iOS) ) );
+});
+
+config = args[ Math.floor( Math.random() * args.length ) ];
+
+if (config && $.smartbanner) {
+if (config.id.iOS) {
+$head.append($meta.clone()
+.attr('name', 'apple-itunes-app-smart')
+.attr('content', 'app-id=' + config.id.iOS)
+);
+}
+
+if (config.id.Android && !($head.find('[name="google-play-app"]').length)) {
+$head.append($meta.clone()
+.attr('name', 'google-play-app')
+.attr('content', 'app-id=' + config.id.Android)
+);
+}
+
+$.cookie('sb-closed', null, {path: '/'});
+$.cookie('sb-installed', null, {path: '/'});
+
+if ( UA.match(/iPhone|iPod|iPad/i) ) {
+config.force = 'ios';
+}
+
+
+if (UA.toLowerCase().indexOf('ucbrowser') < 0) {
+$.smartbanner(config);
+}
+
+$('.sb-close', '#smartbanner').on('click', function() {
+appCookies.closed.push(config.id.Android);
+appCookies.closed.push(config.id.iOS);
+$.cookie('sb-closed-apps', appCookies.closed.join(','), {expires: config.daysHidden ,path: '/'});
+});
+
+$('.sb-button', '#smartbanner').on('click', function() {
+appCookies.installed.push(config.id.Android);
+appCookies.installed.push(config.id.iOS);
+$.cookie('sb-installed-apps', appCookies.installed.join(','), {expires: config.daysReminder ,path: '/'});
+});
+}
+}
+};
+}(window, document, jQuery, _));
+</script>
+
+<script src="/static/js?files=%2Fjs%2Fslimcut.js&version=2016.11.08-v1"></script><div class="tracking-codes">
+<!-- Begin: Google Analytics dc.js -->
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3459197-19']);
+_gaq.push(['_setDomainName', '.goal.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!-- End: Google Analytics dc.js --><!-- BEGIN EFFECTIVE MEASURE CODE -->
+<!-- COPYRIGHT EFFECTIVE MEASURE -->
+<script type="text/javascript">
+var _em_survey_rate = 0;
+</script>
+<script type="text/javascript">
+(function() {
+var em = document.createElement('script'); em.type = 'text/javascript'; em.async = true;
+em.src = ('https:' == document.location.protocol ? 'https://za-ssl' : 'http://za-cdn') + '.effectivemeasure.net/em.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(em, s);
+})();
+</script>
+<noscript>
+<img src="https://s.effectivemeasure.net/d/6/i?pu=http%3A%2F%2Fwww.goal.com%2Fnoscript" alt="" style="position:absolute; left:-5px;" />
+</noscript>
+<!--END EFFECTIVE MEASURE CODE --><!-- Begin: William Hill -->
+<img src="http://serve.williamhill.com/promoLoadDisplay?member=goalcom&amp;campaign=DEFAULT&amp;channel=widget&amp;zone=593986973&amp;lp=0" height="1" width="1" style="width:1px;height:1px" />
+<!-- End: William Hill --><!-- Begin: Tribes Tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-94wNw88f65Rhk",
+labels:"MTVN Digital Tribes"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-94wNw88f65Rhk.gif?labels=MTVN%20Digital%20Tribes" style="display: none;" height="1" width="1" alt="Quantcast"/>
+</noscript>
+<!-- End: Tribes Tag --><!-- Begin: Comscore Beacon -->
+<img id="comscore-beacon-img" height="1" width="1" alt="">
+<script type="text/javascript">
+var randnum = Math.floor(Math.random()*99999999);
+var p_url = escape(window.location.href);
+var p_title = escape(document.title);
+document.getElementById("comscore-beacon-img").src="http://beacon.securestudies.com/scripts/beacon.dll?C1=2&C2=6153249&C3=6153249&C4=www.goal.com&C5=Sports-Soccer&C6=Sports-Soccer&C7=" + p_url + "&C8=" + p_title + "&rn=" + randnum;
+</script>
+<!-- End: Comscore Beacon --><!-- Begin: Nielsen Tag -->
+<script type="text/javascript">
+var _nol = { pvar: { cid: 'sportal-goal', content: "0", server: 'secure-au'} };
+(function () {
+var s = document.createElement('script');
+s.type = 'text/javascript';
+s.async = true;
+s.src = '//secure-au.imrworldwide.com/v60a.js';
+var x = document.getElementsByTagName('script')[0];
+x.parentNode.insertBefore(s, x);
+})();
+</script>
+<noscript>
+<div>
+<img src="//secure-au.imrworldwide.com/cgi-bin/m?ci=sportal-goal&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" />
+</div>
+</noscript>
+<!-- End: Nielsen Tag --><!-- Begin: Lotame SmartTag audience-extraction.js -->
+<script type="text/javascript">
+// Lotame Solutions, Inc. JavaScript snippet for making audience extraction
+// calls using SmartTag and/or first party domains.
+// By: Ryan Chapin
+// Since: 2013-11-08
+var cc_client_id = 3376;
+
+// Callback method that will be invoked and passed the JSON payload from the
+// JSONP extraction call.
+var cc_extr_callback = 'ccauds';
+
+// Optional port number. If calls are being made to the Lotame servers on
+// a custom port, uncomment and set.
+// var portNumber = '8080';
+
+/**
+* Will generate the proper audience extraction URL to be used in a
+* JSONP call on the client page.
+*/
+function get_cc_extr_url() {
+var domain = '.crwdcntrl.net';
+
+// Look for a domain cookie first
+
+var noDomainCookie = true;
+var start = document.cookie.indexOf('_cc_domain');
+if (start > -1) {
+var valStartDc = document.cookie.indexOf('=', start);
+if (valStartDc > 0) {
+noDomainCookie = false;
+valStartDc++;
+var valEndDc = document.cookie.indexOf(';', valStartDc);
+valEndDc = valEndDc > 0 ? valEndDc : document.cookie.length;
+domain = document.cookie.slice(valStartDc, valEndDc);
+}
+}
+
+// If there was no domain cookie then check to see if there is an id cookie.
+
+var idCookie = false;
+if (noDomainCookie) {
+var id;
+start = document.cookie.indexOf('_cc_id');
+if (start > -1) {
+var valStartId = document.cookie.indexOf('=', start);
+if (valStartId > 0) {
+idCookie = true;
+valStartId++;
+var valEndId = document.cookie.indexOf(';', valStartId);
+valEndId = valEndId > 0 ? valEndId : document.cookie.length;
+id = document.cookie.slice(valStartId, valEndId);
+}
+}
+}
+var cc_url = 'http://ad' + domain;
+if (typeof(portNumber) != 'undefined' && portNumber != null) {
+cc_url = cc_url + ':' + portNumber;
+}
+cc_url = cc_url + '/5/c=' + cc_client_id + '/pe=y/callback=' + cc_extr_callback;
+if(idCookie) {
+cc_url = cc_url + '/pid=' + id;
+}
+return cc_url;
+}
+
+function ccauds(data) {
+var audiencesString = JSON.stringify(data, undefined, 2);
+
+// Do something with the audiences. This just prints it out in the DOM.
+var divTag = document.createElement('div');
+divTag.style.display = 'none';
+divTag.innerHTML = '<strong>Audiences:</strong> ' + audiencesString + '<br/><br/>';
+document.body.appendChild(divTag);
+}
+
+(function () {
+// get the correct URL to call based on the existing cookies
+var url = get_cc_extr_url();
+
+// Make the JSONP call
+var divTag = document.createElement('div');
+divTag.style.display = 'none';
+divTag.innerHTML = '<strong>Loading audience extraction url:</strong> ' + url +'<br/><br/>';
+document.body.appendChild(divTag);
+
+var tempScriptTag = document.createElement('script');
+tempScriptTag.type = 'text/javascript';
+tempScriptTag.src = url;
+document.body.appendChild(tempScriptTag);
+})();
+</script>
+<!-- End: Lotame SmartTag audience-extraction.js -->
+<!-- Begin: Lotame end tag -->
+<script type="text/javascript" src="http://tags.crwdcntrl.net/c/3376/cc.js?ns=_cc3376" id="LOTCC_3376"></script>
+<script type="text/javascript" language="javascript">_cc3376.bcp();</script>
+<!-- End: Lotame end tag -->
+<script language="javascript" type="text/javascript" src="//js.revsci.net/gateway/gw.js?csid=F09828&auto=t&bpid=performgroup"></script>
+<!-- Begin: Sentinel -->
+<script async="async" type="text/javascript" src="http://d3avqv6zaxegeu.cloudfront.net/sentinel.js" data-client-id="tBdOzZizJrxtncD"></script>
+<!-- End: Sentinel --><!-- BEGIN: Chartbeat tracking code -->
+<script type='text/javascript'>
+var _sf_async_config = _sf_async_config || {};
+/** CONFIGURATION START **/
+_sf_async_config.uid = 22788;
+_sf_async_config.domain = 'goal.com';
+_sf_async_config.useCanonical = true;
+_sf_async_config.sections = '';
+_sf_async_config.authors = '';
+/** CONFIGURATION END **/
+(function() {
+function loadChartbeat() {
+window._sf_endpt = (new Date()).getTime();
+var e = document.createElement('script');
+e.setAttribute('language', 'javascript');
+e.setAttribute('type', 'text/javascript');
+e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+document.body.appendChild(e);
+}
+var oldonload = window.onload;
+window.onload = (typeof window.onload != 'function') ?
+loadChartbeat : function() {
+oldonload();
+loadChartbeat();
+};
+})();
+</script>
+<!-- END: Chartbeat tracking code -->
+</div>
+
+<div class="module module-ad floatingbar" data-adtech="adtech-floating">
+<div class="floatingbar-wrapper desktop">
+<script language="javascript">
+(function(){
+var cookieName = 'goal_no_ad_floating_bar';
+if (!$.cookie(cookieName) && Goal.is('desktop')) {
+document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4633655|0|16|ADTECH;cookie=info;alias=en-gbFB;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');}
+})();
+</script>
+<span class="close">&nbsp;</span>
+</div>
+<div class="floatingbar-wrapper tablet">
+<script language="javascript">
+(function(){
+var cookieName = 'goal_no_ad_floating_bar';
+if (!$.cookie(cookieName) && Goal.is('tablet')) {
+document.write('<scr'+'ipt language="javascript1.1" ' +' src="http://adserver.adtech.de/addyn|3.0|327.0|4633655|0|16|ADTECH;cookie=info;alias=en-gbFB;key=team:index+L64;kvcampaign=' + ((typeof $.getCampaignName == 'function') ? $.getCampaignName() : '') + ';kvlayout=' + (($(window).width() > 1020) ? 'wide' : 'narrow') + ';kvskin=' + (($(window).width() > 1024) ? 'yes' : 'no') + ';kvabbr=' + (window.adtechCCvals || '') + ';kvenv=production;kvpagetype=team:index;kvpagetag=;kvarticleid=;kvoteamid=675;kvamz=' + window.amzValues + ';kvmatchid=;kvsectionid=L64;kvcompetitionid=64;kvocompid=8;loc=100;target=_blank;sub1=[subst];grp=' + window.adgroupid +';misc=' + window.adgroupid + '"></scri'+'pt>');}
+})();
+</script>
+<span class="close">&nbsp;</span>
+</div>
+</div><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"dddd82eb94","applicationID":"4529285","transactionName":"MQEBYhRVXkAEVEJZDghLIlUSXV9dSnlZfQ4CEQ9TSUBVUggYX14FAxw=","queueTime":0,"applicationTime":561,"atts":"HUYCFFxPTU4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

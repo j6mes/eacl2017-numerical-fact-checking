@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- INSERT BY TRANSFORMER. SELECTOR=head,LOCATION=prepend --><script>
+
+(function(h,N){N(h)})('undefined'!==typeof window?window:this,function(h,N){function Z(a,b,c,e){if(f.sequenceWrites&&'script'==a.nodeName.toLowerCase()){for(var g in y)if(0<y[g].length&&e.writeLocation!=y[g][0].getWriteSelector())return d.def(e.writeLocation)&&(a.yo_writeSelector=e.writeLocation),y[g][0].addScript(a),!1;g=null;f&&(g=d.select(e.writeLocation));if(null!=g){a.write_context=new r(g,a,e.writeLocation);var p=y[e.writeLocation];d.undef(p)&&(p=y[e.writeLocation]=[]);p.push(a.write_context); H=function(){var a=Array.prototype.slice.call(arguments,0,-1).join('');0<p.length&&p[p.length-1].collectDocumentWrite(a)};a.original_onload=a.onload;a.original_onreadystatechange=a.onreadystatechange;a.onload=a.onreadystatechange=null;var l=!1;a.onerror=a.onload=function(){l||this.readyState&&'loaded'!==this.readyState&&'complete'!==this.readyState||(d.log('loading ',this,this.write_context.getId()),l=!0,this.original_onload?this.original_onload.call(arguments):k.publish({topic:'sequence/afterloaded/'+ a.src,message:a}),this.write_context.finalizeWriteOverride(),this.original_onload=this.write_context=this.onload=this.onreadystatechange=null)};a.onreadystatechange=function(){l||this.readyState&&'loaded'!==this.readyState&&'complete'!==this.readyState||(d.log('loading ',this,this.write_context.getId()),l=!0,this.original_onload||k.publish({topic:'sequence/afterloaded/'+a.src,message:a}),this.write_context.finalizeWriteOverride(),this.original_onload=this.write_context=this.onload=this.onreadystatechange= null);this.original_onreadystatechange&&this.original_onreadystatechange.call(arguments)}}}return!0}function O(a,b){for(;a.firstChild;)a.removeChild(a.firstChild);d.writeHTML(a,b)}function $(){for(var a=0;a<f.delayed.length;a++)if('none'!=f.delayed[a].delayType)return;null!=f.intervalID&&(clearInterval(f.intervalID),f.intervalID=null,d.log('Turning off response timer all objects are loaded.'))}function P(a){f.sequenceWrites&&d.undef(a.yo_write)&&(a.yo_write=a.write,H=aa,a.writeln=a.write=function(){var b= Array.prototype.slice.call(arguments).join('');H(b,a)})}function aa(a,b){for(var c=!1,e=0;e<f.write.length;e++){var g=f.write[e];if(a.match(g.start)||1==g.state){var e={document:b},p;for(p in g)e[p]=g[p];c=!0;g.string&&!1==Q?g.string+=a:(g.state=1,g.string=a);if(d.undef(g.end)||a.match(g.end)){if(d.undef(e.delayType)||'none'==e.delayType){g.config=e;if(d.def(e.onBefore))e.onBefore(g,b);d.undef(e.selector)||null==e.selector?e.selector=b:e.selector=d.select(e.selector);e.selector.yo_write?(Q=!0,e.selector.yo_write(g.string)): d.writeHTML(e.selector,g.string,e.how);if(d.def(e.onAfter))e.onAfter(g,b)}else d.undef(e.selector)?(e.selector='yo_write_'+Math.floor(1E9*Math.random()),d.undef(e.how)&&(e.how='append'),d.undef(e.delayValue)&&(e.delayValue=e.selector),document.yo_write('<di'+'v id='+e.selector+' style=width:0px;height:0px></di'+'v>'),e.selector=d.select(e.selector).parentNode):e.selector=d.select(e.selector),p=Yo.sequence.resource(''),d.def(e.onBefore)&&p.beforeLoading(e.onBefore),d.def(e.onLoad)&&p.afterLoaded(e.onLoad), p.type='inner',p.how=g.how,p.newNode=a,p.before=e.selector,p.me=e.selector,f.delayed.push(p),domCompleteTriggered&&p.execute();g.state=2;g.string=''}break}}!1==c&&b.yo_write(a);d.log('write hander = '+a)}function O(a,b){for(;a.firstChild;)a.removeChild(a.firstChild);ba(a,b)}function ba(a,b,c){var e=document.createElement('div');e.innerHTML='string'===typeof b?b:b.innerHTML;for(b=e.childNodes;0<b.length;)'insert'==c?a.parentNode.insertBefore(e.removeChild(b[0]),a):a.appendChild(e.removeChild(b[0])); return this}function R(a){for(var b=0;b<f.srcAttrs.length;b++){var c=a.getAttribute(f.srcAttrs[b]);if(null!=c)return c}c=a.getAttribute('src');return null!=c&&0<c.indexOf('/src:')?(a=c.indexOf('/src:')+5,b=c.indexOf(';base64'),c.substring(a,b)):null}function ca(a){a='string'===typeof a?d.select(a):a;var b=content=d.select(a.getAttribute('data-yo-location')),c=a.getAttribute('data-yo-how'),e=new (_delayed()),g=a.nodeName.toLowerCase(),p=a;'eval'==c?(content=a.innerHTML,e=Yo.sequence.script(a.innerHTML)): null==c&&(c='replace');var l=a.getAttribute('data-yo-delayType'),k=a.getAttribute('data-yo-delayValue'),n=a.getAttribute('src'),u=R(a),q=u&&0<u.length?'src':'inner',n=a.getAttribute('data-yo-animator'),m=a.getAttribute('data-yo-onbefore');null!=m&&d.isFunction(h[m])&&e.beforeLoading(h[m]);var t=a.getAttribute('data-yo-onLoad');null!=t&&d.isFunction(h[t])&&e.afterLoaded(h[t]);null==content&&(content=a,c='insert');if(-1===d.inArray(a,f.targets)){e.animator=n;if('img'==g)null==l&&(l='lazy'),null==b&& (b=a);else if('script'==g){g=a.getAttribute('type');null!=g&&(g=g.split('/'),2<g.length&&(l=g[2],k=g[3]));n=a.getAttribute('data-yo-src');if(null!=n)return null==l&&(l='none'),e=Yo.sequence.script(n)[l](k),null!=m&&d.isFunction(h[m])&&e.beforeLoading(h[m]),t=a.getAttribute('data-yo-onLoad'),null!=t&&d.isFunction(h[t])&&e.afterLoaded(h[t]),m=a.getAttribute('data-yo-writeLocation'),null!=m&&e.writeLocation(m),e.load(),e;null==b&&(b=a);m=a.getAttribute('data-yo-writeLocation');null!=m&&(e.writeLocation= m)}null==l&&(l='none');e[l](k);e.before=b;e.me=p;e.type=q;e.srcAttr=u;e.how=c;e.match=!1;e.newNode='eval'==c?content:a;return e}}function S(a){return function(b,c){var e=F[(a?'on':'')+b];if(e)e.triggered?setTimeout(function(){c.call(e.object,e.event)},0):e.listeners.push(arguments[1]);else return(a?this.yo_addEventListener:this.yo_attachEvent).apply(this,arguments)}}function da(a,b,c){function e(a){d.log('Loading '+c.before.src+' via event handler '+c.delayValue);c.afterShock();var f=null;d.def(a.currentTarget)? f=a.currentTarget:d.def(a.srcElement)&&(f=a.srcElement);d.removeEvent(f,b[0],e)}d.log('Adding event ',b[0],b[1]);d.addEvent(a,b[0],e)}function ea(a,b){return T(this,a,b,'insert')}function fa(a){return T(this,a,a,'append')}function T(a,b,c,e){k.publish({topic:'sequence/captured',message:{parentNode:a,newNode:b,before:c,captureType:e}});if(!1==U(b,a,function(a,d){var l=a.clone();l.type=e;l.newNode=b;l.before=c;l.me=d;f.delayed.push(l);b.setAttribute(f.srcAttr,b.getAttribute(f.srcAttr))}))return G.safeWriteInsert(b, c,a,I(b),'append'==e);a=f.delayed[f.delayed.length-1];(domCompleteTriggered||'none'==a.delayType)&&a.execute()}function U(a,b,c){var e=a.nodeName.toLowerCase(),g=null,f=!1;if('script'==e||'iframe'==e){g=I(a);c(g,b);var f=!0,l=!1;a.onload&&(a.onloadOriginal=a.onload);a.onreadystatechange&&(a.onreadystatechangeOriginal=a.onreadystatechange);a.onreadystatechange=a.onload=null;a.onreadystatechange=function(){l||this.readyState&&'loaded'!==this.readyState&&'complete'!==this.readyState||(k.publish({topic:'sequence/afterloaded/'+ g.key,message:g}),l=!0);this.onreadystatechangeOriginal&&this.onreadystatechangeOriginal.apply(this,arguments)};a.onload=function(){!1==l&&(k.publish({topic:'sequence/afterloaded/'+g.key,message:g}),l=!0);this.onloadOriginal&&this.onloadOriginal.apply(this,arguments)}}else if(g=I(b),null==g||'none'!=g.delayType)c(g,b),g.before=b,f=!0;d.log(a.nodeName+' '+a.src+' is'+(f?' ':' NOT ')+'sequenced.');!1==f&&k.publish({topic:'sequence/beforeloading/'+g.key,message:g});return f}function I(a){var b=a.src; !0==d.def(a.yo_src)&&(b=a.yo_src);if(null==b||0==b.length)return b=new (_delayed()),b.delayType='none',b;for(var c=0;c<f.resources.length;c++){var e=f.resources[c],g;if(g=!0==e.match){g=e.url;var p=b;null==g||null==p?g=!1:(d.log('Match src',p,'and url',g),g='string'===typeof g&&-1!=p.indexOf(g)||null!=p.match(g));g=!0==g}if(g)return d.log('Found configuration for '+b+' delayType '+e.delayType),'empty'==e.delayType&&(a.src=null==e.delaySrc?'data:text/javascript;plain,//':e.delaySrc,e.delayType='none'), e}d.log('Did NOT find configuration for '+b+' checking local configuration. ');b=new (_delayed());if(null!=a.delayType)'empty'==a.delayType&&(a.src=null==a.delaySrc?'data:text/javascript;plain,//':a.delaySrc,a.delayType='none'),b[a.delayType](a.delayValue);else b[f.defaultType](f.defaultDelay);b.before=a;return b}function V(){for(var a=0;a<f.resources.length;a++){var b=f.resources[a];if(!b.isConfig){var c=new (_delayed());c.key=c.url=b.url;c.match=!0;c.local=!0;c[b.delayType](b.delayValue);f.resources[a]= c}}}var f={defaultDelay:5E3,defaultType:'none',log:!1,throttle:20,sequenceXHR:!1,sequenceWrites:!1,sendTimingData:!1,timingDataURL:'',offset:100,scan:['script','img'],resources:[],abTesting:[],write:[],intervalID:null,lazyCheckSize:!0,srcAttrs:['data-yo-src'],afterShockLoaded:!1},d={},D=h;d.log=function(){if(f.log&&d.def(D.console)&&d.def(D.console.log)){for(var a='',b=0;b<arguments.length;b++){var c=arguments[b],e='';'object'===typeof c&&c&&d.def(c.nodeName)?(e=c.yo_src?'yo_src '+c.yo_src:c.src? 'src '+c.src:'id '+c.id,a+='['+c.nodeName+', '+e+'] '):a+=c+' '}D.console.log('yo_AfterShocK: '+a)}};d.def=function(a){return'undefined'!=typeof a};d.undef=function(a){return!d.def(a)};d.isFunction=function(a){return!!(a&&a.constructor&&a.call&&a.apply)};d.addEvent=function(a,b,c){a.attachEvent?a.attachEvent('on'+b,c):a.addEventListener&&a.addEventListener(b,c,!1)};d.removeEvent=function(a,b,c){a.detachEvent?a.detachEvent('on'+b,c):a.removeEventListener(b,c,!1)};d.inArray=function(a,b,c){var e;if(b){if(Array.prototype.indexOf)return Array.prototype.indexOf.call(b, a,c);e=b.length;for(c=c?0>c?Math.max(0,e+c):c:0;c<e;c++)if(c in b&&b[c]===a)return c}return-1};d.metaDataValue=function(a,b){var c=document.getElementsByName(a);return null!=c&&1==c.length?1==arguments.length?c[0].getAttribute('content'):c[0].setAttribute('content',b):null};d.rewrite=function(a){version=d.metaDataValue('resource.version');cdn=d.metaDataValue('cdn.hostname');adnId=d.metaDataValue('adn.id');return location.protocol+cdn+'/'+adnId+'/'+location.hostname+'/'+version+(0!=a.indexOf('/')? '/':'')+a};d.select=function(a){var b=-1;if(null==a||1==a.length)return null;if('document'==a)return document;if('window'==a)return h;if(d.def(a.nodeName)||d.def(a.nodeName))return a;if('.'==a[0])return a=document.getElementsByClassName(a.substring(1)),0<a.length?a[0]:null;if(-1!=(b=a.indexOf('['))){var c=a.substring(0,b),e=a.substring(b+1),g=e.indexOf(']'),f=e.indexOf('['),e=e.substring(0,g),l=0,g=-1,k=[],n=null;if(-1!=(l=e.indexOf('~')))g=2;else if(-1!=(l=e.indexOf('*')))g=1;else if(-1!=(l=e.indexOf('=')))g= 0;else return null;if(-1!=f){f=a.substring(b+1+f+1);b=f.indexOf(']');try{f=parseInt(f.substring(0,b))}catch(u){}}var q=e.substring(0,l),l=e.substring(l+1);2==g&&(n=new RegExp(l));c=document.getElementsByTagName(c);for(b=0;b<c.length;b++){var m=0<q.length?c[b].getAttribute(q):c[b].innerHTML;0==g&&m==l?k.push(c[b]):1==g&&null!=m&&-1!=m.indexOf(l)?k.push(c[b]):2==g&&null!=m&&-1!=m.search(n)&&k.push(c[b])}d.log(a,e,q,l,0==k.length?k.length:k[0]);return-1!=f?f<k.length?k[f]:null:k[0]}'#'==a[0]&&(a=a.substring(1)); return document.getElementById(a)};d.writeHTML=function(a,b,c){var e=document.createElement('div');e.innerHTML='string'===typeof b?b:b.innerHTML;for(b=e.childNodes;0<b.length;)'insert'==c?a.parentNode.insertBefore(e.removeChild(b[0]),a):a.appendChild(e.removeChild(b[0]))};d.getCookie=function(a){for(var b=document.cookie.split(';'),c=0;c<b.length;c++){var e=b[c];if(-1!=e.indexOf(a)){for(;' '==e.charAt(0);)e=e.substring(1,e.length);return e.substring(a.length+1,e.length)}}return null};d.setCookie= function(a,b,c){var e='';c&&(e=new Date,e=new Date(e.getTime()+1E3*c),e='; expires='+e.toGMTString());document.cookie=a+'='+b+e+'; path=/';return!0};d.contains=document.documentElement.compareDocumentPosition?function(a,b){return!!(a.compareDocumentPosition(b)&16)}:document.documentElement.contains?function(a,b){return a!==b&&(a.contains?a.contains(b):!1)}:function(a,b){for(;b=b.parentNode;)if(b===a)return!0;return!1};var k={},A={},ha=1,W={},J=[];_executeCallback=function(a,b){setTimeout(function(){a.callback.call(a.context, b.message,b.topic)},0)};_addWildcards=function(a,b){for(var c=0;c<J.length;c++){var e=J[c];null!=b.topic.match(e.topic)&&a.push(e)}};k.subscribe=function(a){a.id=++ha;d.undef(a.priority)&&(a.priority=0);d.undef(a.priority)&&(a.priority=0);'string'===typeof a.topic&&-1!=a.topic.indexOf('*')&&(a.topic=new RegExp(a.topic.replace(/\*/g,'.*')));if('string'===typeof a.topic){a.topic=a.topic.toLowerCase();!0==d.undef(A[a.topic])&&(A[a.topic]=[]);A[a.topic].push(a);A[a.topic].sort(function(a,b){return b.priority- a.priority});var b=W[a.topic];d.def(b)&&b.callback.call(b.context,b.message,b.topic)}else J.push(a);d.log('_pubsub.subscribe',a.topic,a.id);return a.id};k.publish=function(a){a.topic=a.topic.toLowerCase();var b=A[a.topic];!0==d.undef(b)&&(b=[]);_addWildcards(b,a);a.persistent&&(W[a.topic]=a);if(!0==d.def(b)){for(var c=0;c<b.length;c++){var e=b[c];if(!0==a.async)_executeCallback(e,a);else var g=e.callback.call(e.context,a.message,a.topic);d.log('_pubsub.publish',e.topic,e.id);if(!1==g&&!0===a.cancellable)break}return b.length}d.log('_pubsub.publish', a.topic,'no callbacks');return 0};k.unsubscribe=function(a){for(var b in A)for(var c=A[b],e=0;e<c.length;e++)if(c[e].id==a)return c.splice(e,1),d.log('_pubsub.unsubscribe','found'),!0;d.log('_pubsub.unsubscribe','not found');return!1};var C=document,D=h;_loadCookieConfig=function(){var a=Yo.utils.getCookie('yo-aftershock-config');if(null!=a&&0<a.length)try{a=eval(a),Yo.configure(a)}catch(b){}};_domready=function(){function a(a){b(a)}function b(a){('poll'===a||'readystatechange'===a.type)&&'complete'!== C.readyState||e||(e=!0,f.afterShockLoaded=!0,k.publish({topic:'core/load',async:!0,message:Yo,persistent:!0}))}function c(){try{C.documentElement.doScroll('left')}catch(a){setTimeout(c,50);return}b('poll')}var e=!1,g=!0;if('complete'===C.readyState)f.afterShockLoaded=!0,k.publish({topic:'core/load',async:!0,message:Yo,persistent:!0});else{if(C.createEventObject&&C.documentElement.doScroll){try{g=!D.frameElement}catch(p){}g&&c()}d.addEvent(document,'DOMContentLoaded',b);d.addEvent(document,'readystatechange', b);d.addEvent(h,'load',a)}};k.subscribe({topic:'core/start',callback:function(){_loadCookieConfig();_domready()}});var G={},y={},r=function(a,b,c){this.writeContent='';this.writeLocation=a;this.writeSelector=c;this.offScreenDom=null;this.node=b;this.scripts=[];this.id='yo_write_'+Math.floor(1E9*Math.random());d.log('creating WriteContext',this.id,this.node.src);r.prototype.getId=function(a){return this.id};r.prototype.collectDocumentWrite=function(a){this.writeContent+=a;d.log('write override',this.getId(), this.node.src,a)};r.prototype.addScript=function(a){this.scripts.push(a)};r.prototype.getWriteSelector=function(a){return this.writeSelector};r.prototype.executeDeferredScripts=function(){for(var a=0;a<this.scripts.length;a++){var b=this.scripts[a].getAttribute('src');d.def(this.scripts[a].yo_src)&&(b=this.scripts[a].yo_src);Yo.sequence.script(b).none().writeLocation(this.scripts[a].yo_writeSelector).load()}};r.prototype.finalizeWriteOverride=function(){null==this.writeLocation?d.log('write location is null, content ignored', this.getId(),this.node.src):0<this.writeContent.length?(d.log('creating off screen DOM',this.getId(),this.node.src),this.offScreenDom=C.createElement('div'),this.offScreenDom.innerHTML=this.writeContent):d.log('no content, just continue',this.getId(),this.node.src);this.continueWrite()};r.prototype.insertContent=function(){for(;0<this.offScreenDom.childNodes.length;){var a=this.offScreenDom.childNodes[0],b=a.nodeName.toLowerCase();if('script'==b){b=a.getAttribute('language');if(null==b||'vbscript'!= b.toLowerCase()){y[this.writeSelector].push(this);try{this.offScreenDom.removeChild(a)}catch(c){}Yo.sequence.script(a.getAttribute('src')).none().writeLocation(this.writeSelector).load();return!1}try{eval(a.innerHTML),this.offScreenDom.removeChild(a)}catch(d){}this.writeLocation.parentNode.insertBefore(a,this.writeLocation)}else if('link'==b&&'stylesheet'==a.getAttribute('rel').toLowerCase()){document.getElementsByTagName('head')[0].appendChild(a);try{this.offScreenDom.removeChild(a)}catch(f){}}else this.writeLocation.parentNode.insertBefore(a, this.writeLocation)}this.offScreenDom.innerHTML='';return!0};r.prototype.continueWrite=function(){for(var a=y[this.writeSelector],b=a.pop();b;){d.log('Continue writing ',b.getId());if(b.offScreenDom&&!1==b.insertContent())break;0==a.length&&b.executeDeferredScripts();b=a.pop()}}};G.safeWriteInsert=function(a,b,c,e,g){if(!0==Z(a,b,c,e)){var f;a:{try{!0==d.def(a.yo_src)&&(a.src=a.yo_src);f=!0==g?c.yo_ac(a):c.yo_ib(a,b);break a}catch(h){d.log('ERROR adding node into dom',a,h)}f=void 0}return f}};f.delayed= [];f.targets=[];var v=function(){this.executed=!1};v.prototype.afterLoaded=function(a){k.subscribe({topic:'sequence/afterloaded/'+this.key,callback:a,context:this});return this};v.prototype.beforeLoading=function(a){k.subscribe({topic:'sequence/beforeloading/'+this.key,callback:a,context:this});return this};v.prototype.execute=function(){this.afterShock()};v.prototype.clone=function(){var a=new v,b;for(b in this)a[b]=this[b];return a};v.prototype.key=null;v.prototype.isConfig=function(a){return this.delayType== a};v.prototype.afterShock=function(){if(!0!=this.loaded){this.delayType='none';this.loaded=!0;d.log('Injecting ',this.newNode,', by ',this.type,' into the DOM now.');k.publish({topic:'sequence/beforeloading/'+this.key,message:this});var a=this.newNode,b=this.type,c=this.before;if('insert'==b)G.safeWriteInsert(a,c,this.me,this,!1);else if('append'==b)G.safeWriteInsert(a,null,this.me,this,!0);else if('replace'==b)this.me.replaceChild(a,c);else if('src'==b)d.def(this.animator)&&null!=this.animator?animator(c, this.animator):d.def(f.animator)&&animator(c,f.animator),c.src=this.srcAttr;else if('style'==b)a.setAttribute('style',a.getAttribute('data-yo-style'));else if('inner'==b){d.log(this.how+' -> '+a);if('replace'==this.how)O(c,a);else if('eval'==this.how)try{h.eval(a.replace('<scri'+'ipt>','').replace('\x3c/scri'+'ipt>',''))}catch(e){d.log('Error eval',e)}else d.writeHTML(c,a,this.how);k.publish({topic:'sequence/afterloaded/'+this.key,message:this})}else if('xhr'==b){this.xhr.onreadystatechange&&(this.xhr.original_oonreadystatechange= this.xhr.onreadystatechange);var g=this;this.xhr.onreadystatechange=function(a){4==g.xhr.readyState&&k.publish({topic:'sequence/afterloaded/'+g.key,message:arguments});g.xhr.original_oonreadystatechange&&g.xhr.original_oonreadystatechange.call(arguments)};K.apply(this.xhr,this.xhr._yo.send_args)}else'image'==b&&document.createElement('img').setAttribute('src',a.src);$()}};_delayed=function(){return v};var L=function(a){var b=new (_delayed());b.key=b.url=a;b.match=!0;d.undef(f.resources)&&(f.resources= []);for(var c=-1,e=0;e<f.resources.length;e++){var g=f.resources[e].url;if('string'===typeof a&&'string'===typeof g&&-1!=a.indexOf(g)||'string'!==typeof g&&'string'===typeof a&&null!=a.match(g)){c=e;break}}b.writeLocation=function(a){this.writeLocation=a;return this};-1==c?f.resources.push(b):f.resources.splice(c,0,b);return b},H=null,Q=!1;k.subscribe({topic:'core/configure',callback:function(){P(document)}});var ia=XMLHttpRequest.prototype.open,K=XMLHttpRequest.prototype.send,ja=XMLHttpRequest.prototype.abort; _xhrOpen=function(a,b,c,e,g){this._yo={open_args:arguments,async:!1===c?!1:!0};d.log('xhr open = '+b+', async '+c);k.publish({topic:'sequence/captured',message:this._yo});return ia.apply(this,arguments)};_xhrSend=function(a){if(d.undef(this._yo)||!0!==this._yo.async)return K.apply(this,arguments);var b=this,c={src:this._yo.open_args[1],nodeName:'xhr'};if(!1==U(c,c,function(a,c){var d=a.clone();d.type='xhr';d.xhr=b;d.newNode=c;f.delayed.push(d);!0==f.afterShockLoaded&&d.execute()}))return d.log('xhr send is NOT defered, '+ c.src),K.apply(this,arguments);this._yo.send_args=arguments;d.log('xhr send is defered, '+c.src+', '+f.delayed[f.delayed.length-1].delayType)};_xhrAbort=function(){if(d.undef(this._yo)||d.undef(this._yo.send_args)||!0!==this._yo.async)return ja.apply(this,arguments);d.log('Abort to the xhr object is called',' async true')};k.subscribe({topic:'core/configure',callback:function(){!0==f.sequenceXHR&&!0==d.def(XMLHttpRequest)&&(XMLHttpRequest.prototype.open=_xhrOpen,XMLHttpRequest.prototype.send=_xhrSend, XMLHttpRequest.prototype.abort=_xhrAbort)}});_findTags=function(a){var b=document.getElementsByTagName(a),c;d.log('Find all '+a+' tags in the document.');for(var e=0,g=b.length;e<g;e+=1){c=b[e];var f=yoSrc=R(c),h=c.getAttribute('data-yo-style');f?(d.log('Found src ',a,', src = '+f+' tag to handle with AfterShocK.'),Yo.sequence.content(c).load()):'script'==a?(f=c.getAttribute('type'),c.getAttribute('data-yo-src'),f&&-1<f.indexOf('yo/sequence')?(d.log('Found a '+a+', yo/sequence tag to handle with AfterShocK.'), Yo.sequence.content(c).load()):'yo/abtest'==f&&_abTestScript(c)):h&&(d.log('Found style ',a,', src = '+f+' tag to handle with AfterShocK.'),c=Yo.sequence.content(c),c.type='style',c.load())}};k.subscribe({topic:'core/load',callback:function(){Yo.sequence.scanTags(!1)}});var w={},F={};_trackEvent=function(a,b,c){d.def(F[b])||(F['on'+b]={object:a,name:b,triggered:!1,event:null,listeners:[]},d.addEvent(a,b,function(a){var c=F['on'+b],d=c.listeners;c.event=a;for(var f=0;f<d.length;f++)d[f].call(c.object, a);c.triggered=!0}),!a.yo_addEventListener&&a.addEventListener&&c&&(a.yo_addEventListener=a.addEventListener,a.addEventListener=S(!0)),!a.yo_attachEvent&&a.attachEvent&&c&&(a.yo_attachEvent=a.attachEvent,a.attachEvent=S(!1)))};w.loadEvents=function(){_trackEvent(h,'load',!0);_trackEvent(document,'readystatechange',!1);_trackEvent(document,'DOMContentLoaded',!1);_trackEvent(document,'DOMFrameContentLoaded',!0)};k.subscribe({topic:'core/load',callback:function(){}});_delayed().prototype.defer=function(a){this.delayType= 'defer';this.delayValue=a;this.execute=function(){if(!1!=f.afterShockLoaded&&!0!=this.executed){this.executed=!0;d.log('Loading ',this.newNode,' via timer event. It will load in ',this.delayValue);var a=this;setTimeout(function(){a.afterShock()},1*this.delayValue);return this}};return this};_delayed().prototype.event=function(a){this.delayType='event';this.delayValue=a;this.execute=function(){if(!1!=f.afterShockLoaded&&!0!=this.executed){this.executed=!0;d.log('Event handling '+this.before.src+' '+ this.delayValue);var a=this.delayValue.split(' '),c=a[0].toLowerCase();'beforeloading'==c||'afterloaded'==c?k.subscribe({topic:'sequence/'+c+'/'+a[1],context:this,callback:function(a){d.log('Loading '+this.before.src+' via event handler '+this.delayValue);this.afterShock()}}):da(d.select(a[1]),a,this);return this}};return this};k.subscribe({topic:'core/load',callback:function(){}});var B={},z={top:0-f.offset,left:0-f.offset,height:0,width:0,right:0,bottom:0};_throttle=function(a,b){var c=0;return function(){var e= +new Date;e-c<b||(c=e,a.apply(this,arguments))}};_saveViewport=function(){z.height=h.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;z.bottom=z.height;z.width=h.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;z.right=z.width};_showIfVisible=function(a,b,c){if(!0==d.contains(document.documentElement,c)){if(a=_getBoundingClientRect(c),!1==_advancedDetectionMode(c)&&a.top<z.height+f.offset||!0==_advancedDetectionMode(c)&&(!f.lazyCheckSize||0< a.width&&0<a.height)&&!0==_inViewPort(a,z)&&!0==_notClipped(c,a))return d.log('showIfVisible is visible ',b,', ',c),f.delayed[b].afterShock(),!0}else return!1};_advancedDetectionMode=function(a){return null!=f.intervalID&&d.def(a.getBoundingClientRect)};_getBoundingClientRect=function(a){a=a.getBoundingClientRect();d.undef(a.width)&&(a={top:a.top,left:a.left,right:a.right,bottom:a.bottom,width:a.right-a.left,height:a.bottom-a.top});return a};_inViewPort=function(a,b){return a.top>b.top-a.height&& a.bottom<b.bottom+f.offset+2*a.height&&a.left>b.left-a.width&&a.right<b.right+f.offset+2*a.width};_notClipped=function(a,b){if(!0==d.undef(a.yo_clipped)){for(var c=a.parentNode;null!=c&&1==c.nodeType;){var e=ka(c,'overflow');if(e&&'hidden'==e.toLowerCase()){a.yo_clipped=c;break}c=c.parentNode}!0==d.undef(a.yo_clipped)&&(a.yo_clipped=!1)}return!1!=a.yo_clipped?_inViewPort(b,_getBoundingClientRect(a.yo_clipped)):!0};var E,X;document.defaultView&&document.defaultView.getComputedStyle&&(E=function(a, b){var c,e;if(e=a.ownerDocument.defaultView){if(e=e.getComputedStyle(a,null))c=e.getPropertyValue(b),''!==c||contains(a.ownerDocument.documentElement,a)||(c=a.style[b]);return c}});document.documentElement.currentStyle&&(X=function(a,b){var c=a.currentStyle&&a.currentStyle[b];return''===c?'auto':c});var ka=E||X;document.getElementsByClassName||(document.getElementsByClassName=function(a){return this.querySelectorAll('.'+a)});B.scrollHandler=function(a){_saveViewport();if(d.undef(document.documentElement.getBoundingClientRect))return!0; for(var b=a=0;b<f.delayed.length;b++)if(f.delayed[b].isConfig('lazy')){var c=b,e=f.delayed[c],g=e.delayValue;if('string'===typeof g)g=d.select(g);else if(null==g||def(g))g=e.before;null!=g&&_showIfVisible(e.before,c,g);a++}};B.delayed=function(a){this.delayType='lazy';this.delayValue=a;this.execute=function(a){return this};return this};E=_throttle(B.scrollHandler,20);d.addEvent(h,'scroll',E);d.addEvent(h,'resize',E);k.subscribe({topic:'core/load',callback:function(){B.scrollHandler()}});_delayed().prototype.lazy= B.delayed;k.subscribe({topic:'core/configure',callback:function(a){0<a.lazyTimer&&null==f.intervalID&&(f.intervalID=setInterval(B.scrollHandler,a.lazyTimer))}});_delayed().prototype.none=function(){this.delayType='none';this.execute=function(){this.afterShock()};return this};_delayed().prototype.remove=function(){this.delayType='remove';this.execute=function(){return this};return this};var n={};domCompleteTriggered=!1;n.node=function(a){if(a=d.select(a))a.yo_ac=d.def(a.yo_ac)?a.yo_ac:a.appendChild, a.yo_ib=d.def(a.yo_ib)?a.yo_ib:a.insertBefore,a.appendChild=fa,a.insertBefore=ea};n.clearNode=function(a){d.def(a.yo_ib)&&(me.insertBefore=me.yo_ib);d.def(a.yo_ac)&&(me.appendChild=me.yo_ac)};n.addScanner=function(a){f.scan||(f.scan=[]);-1===d.inArray(a,f.scan)&&f.scan.push(a)};n.displayNow=function(){d.log('Handle the display of all visible tags up to now.');n.scanTags(!0);B.scrollHandler({})};n.createTimer=function(a,b){Yo.configure({lazyTimer:a});b&&Yo.configure({lazyCheckSize:b})};n.resource= L;n.script=function(a){var b=L(a);b.src=a;b.newNode=a;b.before={src:a};b.load=function(){var a=document.createElement('script');a.type='text/javascript';a.async=!0;a.yo_src=this.url;document.getElementsByTagName('script')[0].parentNode.appendChild(a);return this};b.eval=function(){f.delayed.push(this);this.how='eval';this.type='inner';this.execute();return this};b.writeLocation=function(a){this.writeLocation=a;return this};return b};n.xhr=function(a){return L(a)};n.content=function(a){delayed=ca(a); delayed.load=function(){d.log('Sequence a script = '+a.id+', type '+this.type);null==this.delayType||'none'==this.delayType?d.log('Content found that needs to be loaded immediately'):d.log('Content found that needs to be sequenced',this.delayType,this.delayValue);this.execute(f.delayed.length-1);f.delayed.push(this)};return delayed};n.event=w;n.scanTags=function(a){if(f.scan){for(var b=0,c=f.scan.length;b<c;b++)_findTags(f.scan[b]);!0!==a&&(f.scan=[])}};n.cloakImages=function(a,b){for(var c=0,e=a.length;c< e;c+=1){var f=a[c],h=document.getElementsByTagName(f);d.log('Cloak '+f);for(var k=0,n=h.length;k<n;k+=1)for(var r=h[k],u=0,q=b.length;u<q;u+=1){var m=b[u],t=r.getAttribute(m);null!=t&&(d.log('Cloak '+f,m,t),r.setAttribute(m,'data:image/gif/src:'+t+';base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='))}}};n.document=P;n.node(document.getElementsByTagName('script')[0].parentNode);n.node(document.getElementsByTagName('head')[0]);k.subscribe({topic:'core/start',callback:function(){V()}});k.subscribe({topic:'core/configure', callback:function(){V()}});k.subscribe({topic:'core/load',callback:function(){domCompleteTriggered=!0;for(var a=0;a<f.delayed.length;a++)f.delayed[a].execute()}});k.subscribe({topic:'core/load',callback:function(){if(d.def(f.rum)&&d.def(f.rum.beaconUrl)){var a=document.createElement('img'),b=f.rum.beaconUrl+'?v=1&url='+document.location.href+'&time='+(new Date).getTime();if(d.def(h.performance))for(key in start=h.performance.timing.navigationStart,timing=h.performance.timing,timing)(time=timing[key])&& (b+='&'+key+'='+(time-start));d.log('Sending timing data to ',b);var c=d.metaDataValue('X-Yottaa-Optimizations');c&&(b+='&'+c.replace(/ /g,'&').replace(/\//g,'='));a.src=b}}});var x={},w={};_abTest=function(a,b,c,e,f,k,l,n){return Yo.sequence.resource(e).none().beforeLoading(function(){d.log('adding the google segmentation using a custom (dimension'+a+', '+b+', '+c+')',f,k);Yo.stats().errors.has&&(c+='_error');if('universal'==f){var e=!1;h.ga=function(){if(d.def(a)&&2<arguments.length&&0<=arguments[0].indexOf('set')&& arguments[1]!='dimension'+a){if((h.ga.q=h.ga.q||[]).push(arguments),ga(arguments[0],'dimension'+a,c),e=!0,!0==d.def(l)){for(var b=[],f=0;f<h.ga.q.length;f++)if(3!=h.ga.q[f].length||h.ga.q[f][1]!='dimension'+l)b[b.length]=h.ga.q[f];h.ga.q=b}}else(h.ga.q=h.ga.q||[]).push(arguments),!0==d.undef(l)&&!1==e&&((h.ga.q=h.ga.q||[]).push(['set','dimension'+a,c]),e=!0);_abTestAnalyticsUniversal(arguments)}}else if(d.def(_gaq)){for(var r=1,q=[],m=0;m<_gaq.length;m++)d.def(_gaq[m])&&2<_gaq[m].length&&-1!=_gaq[m][0].indexOf('_setCustomVar')? (!0!=d.undef(a)&&_gaq[m][1]==a||!0!=d.undef(l)&&_gaq[m][1]==l||(q[q.length]=_gaq[m]),r=m):q[q.length]=_gaq[m];_gaq=q;d.def(a)&&(q='_setCustomVar',0<_gaq.length&&0<_gaq[0].length&&(m=_gaq[0][0].indexOf('.'),-1!=m&&(q=_gaq[0][0].substring(0,m+1)+q)),d.def(n)&&(a=n),_gaq.splice(r,0,[q,a,b,c,d.undef(k)?2:k]));d.log('abTestAnalyticsClassic()');_abTestAnalyticsClassic()}else d.log('Error creating ga information, no selected version',f)})};_getCookieVariant=function(a){testName='yo_abtesting_'+a.name+'v'+ a.version;return d.getCookie(testName)};_setCookieVariant=function(a,b,c){testName='yo_abtesting_'+a.name+'v'+a.version;d.setCookie(testName,b,c)};_configureAbTestAnalytics=function(){var a=config.abTestingAnalytics;d.def(a)&&d.undef(a.loaded)&&(_abTest(void 0,void 0,void 0,a.url,a.gaVersion),d.log('Registering analytics',a.url,a.gaVersion),a.loaded=!0)};_executeAllAbTest=function(){d.undef(f.abTestingAnalytics)?d.log('Analytics for ab testing not properly defined'):'classic'==f.abTestingAnalytics.gaVersion? _executeAllAbTestClassic():_executeAllAbTestUniversal()};_executeAllAbTestUniversal=function(){for(var a in f.abTesting){var b=f.abTesting[a];_executeAbTest(b);ga('set','dimension'+b.analytics.index,b.valuePrefix+b.name+'_v'+b.version+'_'+b.chosenVariant)}!0==x.delayedTrack&&ga('send','pageview')};_executeAllAbTestClassic=function(){var a=null;if(d.def(h._gat)&&d.def(x.uaCode))for(var b=h._gat._getTrackers(),c=0;c<b.length;c++)b[c]._getAccount()==x.uaCode&&(a=b[c]);for(var e in f.abTesting)b=f.abTesting[e], _executeAbTest(b),c=2,'hit'==b.analytics.stickiness?c=3:'visitor'==b.analytics.stickiness&&(c=1),null!=a?a._setCustomVar(b.analytics.index,b.analytics.name,b.valuePrefix+b.name+'_v'+b.version+'_'+b.chosenVariant,c):d.def(h._gaq)&&h._gaq.push(['_setCustomVar',b.analytics.index,b.analytics.name,b.valuePrefix+b.name+'_v'+b.version+'_'+b.chosenVariant,c]);!0==x.delayedTrack&&(null!=a?(a._trackPageview(),d.log('pageTracker._trackPageview()')):d.def(h._gaq)?(h._gaq.push(['_trackPageview']),d.log("window._gaq.push(['_trackPageview'])")): d.log('Did not find the UA code so we can not track'))};_executeAbTest=function(a){var b=_getCookieVariant(a);null==b&&(b=_chooseVariant(a));'hit'!=a.stickiness&&_setCookieVariant(a,b,'visitor'==a.stickiness?864E5:60*(d.undef(a.sessionTime)?30:a.sessionTime));d.log('Variant',b,'was chooen for test',a.name);a.chosenVariant=b;a=a.variants[b];if(d.undef(a))'original'!=b&&d.log('Using original content as the variant',b,'was not found');else for(b=0;b<a.targets.length;b++){var c=a.targets[b];'function'== typeof c?c():Yo.sequence.content(c).load()}};_abTestScript=function(a){var b=a.getAttribute('data-yo-abtestname'),c=f.abTesting[b];if(d.undef(c))d.log('Found variant script for test',b,"but doesn't exist");else if(b=a.getAttribute('data-yo-variant'),d.def(c.variants[b]))d.log('Variant script with existing name',b,'already exists. This variant will be excluded');else{var b=a.getAttribute('data-yo-variantname'),e=a.getAttribute('data-yo-splitcondition');d.undef(c.variants[b])?c.variants[b]={splitCondition:e, targets:[a]}:c.variants[b].targets.push(a);d.log('Found script variant',b,'with splitCondition',e)}};_chooseVariant=function(a){var b=a.variants;if('percentage'==a.splitBy){var c=0,e;for(e in b){a=b[e];var f=c;a.splitCondition*=1;c+=a.splitCondition;a.splitCondition+=f}100<b[b.length-1]&&d.log('Total percentage of variants is greater than 100, test will always leave out some variants');c=100*Math.random();for(e in b)if(a=b[e],c<a.splitCondition)return e;return'original'}d.log('Unsupported splitType', a.splitBy,'for test',a.name)};_abTestAnalyticsUniversal=function(a){'send'==a[0]&&d.def(x.delayedTrack)&&(h.ga.q.pop(),x.delayedTrack=!0)};_abTestAnalyticsClassic=function(a){if(d.def(x.delayedTrack)){a=[];for(var b=0;b<_gaq.length;b++)d.undef(_gaq[b])||1>_gaq[b].length||'_trackPageview'!=_gaq[b][0]?('_setAccount'==_gaq[b][0]&&(x.uaCode=_gaq[b][1]),a[a.length]=_gaq[b]):x.delayedTrack=!0;_gaq=a}};w.universal=function(a,b,c,e){return _abTest(a,void 0,b,c,'universal',void 0,e)};w.classic=function(a, b,c,e,d,f){return _abTest(a,b,c,e,'classic',d,f)};w.omniture=function(a,b,c,e){var d=s.t;s.t=function(){c&&(s[c]=e+s[c]);s['eVar'+a]=b;return d.apply(this,arguments)}};w.abTesting=function(a){d.undef(a.variants)&&(a.variants={});d.undef(a.splitBy)&&(a.splitBy='percentage');d.undef(a.stickiness)&&(a.stickiness='session');d.undef(a.version)&&(a.version='0');d.undef(a.analytics)&&(a.analytics={});d.undef(a.analytics.valuePrefix)&&(a.analytics.valuePrefix='yo_abtesting_');d.undef(a.analytics.name)&&(a.analytics.name= 'yottaa_abtest');d.undef(a.valuePrefix)&&(a.valuePrefix='');f.abTesting[a.name]=a};w.abVariant=function(a,b){var c=f.abTesting[name];d.undef(c)&&d.log('Test',name,'was not defined');c.variants.push(b)};k.subscribe({topic:'core/load',callback:function(){_executeAllAbTest()}});var Y={releaseDate:'2015-12-28',errors:{has:!1},config:f},M=function(){return Y};k.subscribe({topic:'core/configure',callback:function(a){M.config=f}});k.subscribe({topic:'core/start',callback:function(){M.config=f}});d.addEvent(h, 'error',function(a,b,c){d.log('errorCapture',a,b,c);Y.errors={has:!0}});h.Yo||(h.Yo={});_Yo={utils:d,pubsub:k,configure:function(a){for(var b in a)'resources'==b?f.resources=f.resources.concat(a.resources):f[b]=a[b];k.publish({topic:'core/configure',message:f})},sequence:n,rum:function(a){f.rum={beaconUrl:a}},abTesting:w,stats:M};h.Yo=_Yo;k.publish({topic:'core/start',message:_Yo});h.yo_addScaner=Yo.sequence.addScanner;h.yo_createTimer=Yo.sequence.createTimer;h.yo_displayNow=Yo.sequence.displayNow; h.yo_configureAfterShock=Yo.configure;h.yo_afterShockStats=Yo.stats;h.yo_nodeWatch=Yo.sequence.node;h.yo_addResource=function(a,b,c,e,d,f){a=Yo.sequence.resource(a);a[b](c);e&&a.beforeLoading(e);d&&a.afterLoaded(d);f&&a.writeLocation(f)};h.yo_scriptLoader=function(a,b,c,e,d,f){a=Yo.sequence.script(a);a[b](c);e&&a.beforeLoading(e);d&&a.afterLoaded(d);f&&a.writeLocation(f);a.load()};h.yo_deferLoadResource=function(a,b,c,d,f){yo_addResource(a,'defer',b,c,d,f)};h.yo_lazyLoadResource=function(a,b,c,d, f){yo_addResource(a,'lazy',b,c,d,f)};return h.Yo}); 
+
+</script><!-- INSERT BY TRANSFORMER. SELECTOR=head,LOCATION=prepend --><script>Yo.sequence.createTimer(20);</script><!-- INSERT BY TRANSFORMER. SELECTOR=head,LOCATION=prepend --><script>Yo.sequence.resource('widget.js').defer(5000);</script>
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a7d8c26b86","applicationID":"3303157","transactionName":"YVZVZEoDDREEAUBbVlgcemZ7TTALEQdXXUtTcFheTBAMDgkHRh1wWFdSSA==","queueTime":1,"applicationTime":244,"ttGuid":"FB4C71B30816DA93","agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgQPUlBUGwADVFJTAgY="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noodp">
+    
+
+
+<title>Home - U.S. Soccer</title>
+<meta name="description" content="The official site of U.S. Soccer and the United States National Soccer Teams - the USMNT &amp; USWNT.">
+<meta name="keywords" content="U.S. Soccer, United States Soccer Federation, USA Soccer, U.S. National Teams, U.S. MNT, USMNT, U.S. WNT, USWNT, Men&#39;s National Team, Women&#39;s National Team, World Cup, FIFA World Cup, Olympic Soccer, Team USA, us soccer, ussoccer, us soccer federation">
+
+<meta property="og:title" content="Home"/>
+<meta property="og:url" content="/"/>
+<meta property="og:description" content="The official site of U.S. Soccer and the United States National Soccer Teams - the USMNT &amp; USWNT."/>
+<meta property="og:image" content=""/>
+<meta property="fb:pages" content="32421823940" />
+    
+    
+<meta name="VIcurrentDateTime" content="636153192862547959" />
+<script type="text/javascript" src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/layouts/system/VisitorIdentification.js?yocs=b_&amp;yoloc=eu"></script>
+
+
+    <link rel="shortcut icon" href="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/favicon.ico?v=2&amp;yocs=b_&amp;yoloc=eu" type="image/x-icon">
+    <link rel="icon" href="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/favicon.ico?v=2&amp;yocs=b_&amp;yoloc=eu" type="image/x-icon">
+    <link rel="apple-touch-icon" href="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/apple-touch-icon.png?v=2&amp;yocs=6_b_&amp;yoloc=eu">
+    <link href="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/css/fonts.Y$DU.css?v=BahXvppo749C8oiPzEVPMdsRPsPCWY-DG7RRWmKOavI1&amp;yocs=b_&amp;yoloc=eu" type="text/css" rel="stylesheet" async />
+
+
+    <script type='text/javascript'>var _sf_startpt = (new Date()).getTime()</script>
+    <script type="text/javascript">
+        
+        var gaAccountId = "UA-49072922-1", gaDomain = "ussoccer.com"; !function () { var a = document.createElement("script"); a.async = !0, a.type = "text/javascript"; var b = "https:" == document.location.protocol; a.src = (b ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js"; var c = document.getElementsByTagName("script")[0]; c.parentNode.insertBefore(a, c) }(), function (a, b, c, d, e, f, g) { a.GoogleAnalyticsObject = e, a[e] = a[e] || function () { (a[e].q = a[e].q || []).push(arguments) }, a[e].l = 1 * new Date, f = b.createElement(c), g = b.getElementsByTagName(c)[0], f.async = 1, f.src = d, g.parentNode.insertBefore(f, g) }(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"), ga("create", gaAccountId, gaDomain), ga("require", "displayfeatures"), ga("send", "pageview"), window.twttr = function (a, b, c) { var d, e, f = a.getElementsByTagName(b)[0]; if (!a.getElementById(c)) return e = a.createElement(b), e.id = c, e.async = !0, e.src = "https://platform.twitter.com/widgets.js", f.parentNode.insertBefore(e, f), window.twttr || (d = { _e: [], ready: function (a) { d._e.push(a) } }) }(document, "script", "twitter-wjs"); var _comscore = _comscore || []; _comscore.push({ c1: "2", c2: "6036539" }), function () { var a = document.createElement("script"), b = document.getElementsByTagName("script")[0]; a.async = !0, a.src = ("https:" == document.location.protocol ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js", b.parentNode.insertBefore(a, b) }();
+    </script>
+<script type="text/javascript">
+    //adRoll
+    var adroll_custom_data = {
+        "Teams": "",
+        "Players": "",
+        "Tournament": "",
+        "Matches": ""
+    ,"Targets": "Homepage"
+    };
+    var adroll_adv_id = "SCW673BVRFHO7O7RCBNV5M"; var adroll_pix_id = "3EXI3HXQWRGXDJXDVQSGBJ"; (function () { var oldonload = window.onload; window.onload = function () { __adroll_loaded = true; var scr = document.createElement("script"); scr.async = true; var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com"); scr.setAttribute('async', 'true'); scr.type = "text/javascript"; scr.src = host + "/j/roundtrip.js"; ((document.getElementsByTagName('head') || [null])[0] || document.getElementsByTagName('script')[0].parentNode).appendChild(scr); if (oldonload) { oldonload() } }; }());
+</script>
+
+    <link href="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/css/bundle.Y$DU.css?v=Zz85RGj3aiXUYIMtc5zvS0jUgurmPMTCr0ufi6DLdpA1&amp;yocs=b_&amp;yoloc=eu" type="text/css" rel="stylesheet" async />
+
+    <script src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/js/modernizr.min.js?yocs=b_&amp;yoloc=eu"></script>
+
+</head>
+
+<body class=" aggregate-page">
+    <script>
+    
+    var versaTag={};versaTag.id="250",versaTag.sync=1,versaTag.dispType="js",versaTag.ptcl="",versaTag.bsUrl="bs.serving-sys.com/BurstingPipe",versaTag.activityParams={},versaTag.retargetParams={},versaTag.conditionalParams={};
+</script>
+<script id="ebOneTagUrlId" src="http://ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
+<noscript>
+    <iframe src="http://bs.serving-sys.com/BurstingPipe?cn=ot&amp;onetagid=250&amp;ns=1&amp;activityValues=$$Value=[Revenue]&amp;OrderID=[OrderID]&amp;ProductID=[ProductID]&amp;ProductInfo=[ProductInfo]&amp;Quantity=[Quantity]$$" style="display:none;width:0px;height:0px"></iframe>
+</noscript>
+
+
+
+    <script>
+    // UDO
+    var utag_data = {};
+        utag_data["page_name"] = "home";
+        utag_data["page_type"] = "aggregate page";
+        utag_data["site_section"] = "home";
+
+    // UTag
+    (function (a, b, c, d) {
+        a = '//tags.tiqcdn.com/utag/ussoccer/main/prod/utag.js';
+        b = document; c = 'script'; d = b.createElement(c); d.src = a;
+        d.type = 'text/java' + c; d.async = true;
+        a = b.getElementsByTagName(c)[0];
+        a.parentNode.insertBefore(d, a);
+    })();
+</script>
+
+    <div id="crest-bar">
+        <div class="row">
+            <a id="brand" href="/" title="U.S. Soccer - Home">
+            <div id="crest"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-yo-delayType="lazy" data-yo-src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/upload/us-soccer-logo.png?yocs=6_b_&amp;yoloc=eu"/>
+            </div>
+            <div id="logotype">U.S. Soccer</div>
+</a>
+<div id="search-wrap">
+    <a href="#" id="mobile-search-toggle"></a>
+    <form id="search-form" action="/search" method="get">
+        <button class="search-button icon-search" type="submit">Search</button>
+        <input class="search-box" type="text" placeholder="Search..." name="q"/>
+    </form>
+</div>
+<div id="utility">
+    <ul>
+            <li class="has-dropdown">
+                <a href="#">
+                    Membership
+                    <span class="icon-down"></span>
+                </a>
+                <ul class="dropdown" style="display: none;">
+                        <li><a href="http://www.ussoccerstore.com/us00x999916ba.html">Join Now</a></li>
+                        <li><a href="http://www.ussoccermembership.com">About Membership</a></li>
+                </ul>
+            </li>
+    </ul>
+</div>
+
+        </div>
+    </div>
+
+    <nav class="top-bar">
+        <div id="nav-bar">
+            <div class="row">
+                <div id="team-nav">
+    <a href="">All Teams <span class="icon-down"></span></a>
+</div>
+
+<div id="main-nav">
+    <ul class="loading">
+
+                    <li class="nav-anchored has-dropdown">
+                        <a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+vdsJaN+index.html " class="nav-item-center"><span class="align">Store</span> <span class="icon-down"></span></a>
+                            <ul class="dropdown">
+                                    <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+vdsJaN+index.html ">Store Home</a></li>
+                                    <li><a href="http://www.ussoccerstore.com/categories-jerseys.html">Men&#39;s Jerseys</a></li>
+                                    <li><a href="http://www.ussoccerstore.com/categories-jerseys.html">Women&#39;s Jerseys</a></li>
+                                    <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+n5b2FJ+categories-outerwear-mens.html ">Men&#39;s Apparel</a></li>
+                                    <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+kQVMtD+categories-outerwear-womens.html ">Women&#39;s Apparel</a></li>
+                                    <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+vHUXac+categories-accessories.html ">Accessories</a></li>
+                                    <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+2Aypar+categories-exclusives.html">Exclusives</a></li>
+                            </ul>
+                    </li>
+        <li class="nav-more has-dropdown">
+            <a href="#"><span class="align">More</span> <span class="icon-down"></span></a>
+            <ul class="dropdown">
+                        <li class="active">
+                            <a href="/"><span class="nav-item-center">Stories</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/schedule-tickets"><span class="nav-item-center">Schedule &amp; Tickets</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/results-statistics"><span class="nav-item-center">Results</span></a>
+                        </li>
+                        <li class="">
+                            <a href="http://developmentfund.ussoccer.com/#homepage"><span class="nav-item-center">Development Fund</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/lamar-hunt-us-open-cup"><span class="nav-item-center">U.S. Open Cup</span></a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.ussoccerda.com/"><span class="nav-item-center">Development Academy</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/about/affiliates"><span class="nav-item-center">Affiliate Members</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/coaching-education"><span class="nav-item-center">Coaching Education</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/referees"><span class="nav-item-center">Referee Program</span></a>
+                        </li>
+                        <li class="">
+                            <a href="http://www.recognizetorecover.org/#us-soccers-comprehensive-player-health-and-safety-program"><span class="nav-item-center">Recognize to Recover</span></a>
+                        </li>
+                        <li class="">
+                            <a href="/espanol/noticias"><span class="nav-item-center">En Espa&#241;ol</span></a>
+                        </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div id="mega-menu">
+        <div id="mega-menu-wrap">
+            <div class="row">
+                    <div class="mega-menu-column">
+        <div class="menu-header">Men&#39;s</div>
+        <div class="mega-list-wrap">
+            <ul class="mega-list">
+                <li><a href="/mens-national-team">MNT</a></li>
+                <li><a href="/us-under23-mens-national-team">U-23 MNT</a></li>
+                <li><a href="/us-under20-mens-national-team">U-20 MNT</a></li>
+                <li><a href="/us-under19-mens-national-team">U-19 MNT</a></li>
+                <li><a href="/us-under18-mens-national-team">U-18 MNT</a></li>
+                <li><a href="/us-under17-mens-national-team">U-17 MNT</a></li>
+                <li><a href="/us-under16-boys-national-team">U-16 BNT</a></li>
+                <li><a href="/us-under15-boys-national-team">U-15 BNT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mega-menu-column">
+        <div class="menu-header">Women&#39;s</div>
+        <div class="mega-list-wrap">
+            <ul class="mega-list">
+                <li><a href="/womens-national-team">WNT</a></li>
+                <li><a href="/us-under23-womens-national-team">U-23 WNT</a></li>
+                <li><a href="/us-under20-womens-national-team">U-20 WNT</a></li>
+                <li><a href="/us-under19-womens-national-team">U-19 WNT</a></li>
+                <li><a href="/us-under18-womens-national-team">U-18 WNT</a></li>
+                <li><a href="/us-under17-womens-national-team">U-17 WNT</a></li>
+                <li><a href="/us-under16-girls-national-team">U-16 GNT</a></li>
+                <li><a href="/us-under15-girls-national-team">U-15 GNT</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mega-menu-column">
+        <div class="menu-header">More Teams</div>
+        <div class="mega-list-wrap">
+            <ul class="mega-list">
+                <li><a href="/us-under14-national-development-program">U-14 NDP</a></li>
+                <li><a href="/beach-soccer-national-team">Beach Soccer</a></li>
+                <li><a href="/futsal-national-team">Futsal</a></li>
+                <li><a href="/paralympic-national-team">Paralympic Soccer</a></li>
+            </ul>
+        </div>
+    </div>
+<div class="mega-menu-column last">
+    <ul class="menu-callout">
+        <li><a href="/">View all teams</a></li>
+    </ul>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <div id="team-menu-off-canvas-wrap" class="off-canvas-wrap">
+        <a href="#" id="nav-close"></a>
+        <div id="main-container" class="inner-wrap">
+
+            <div id="content-wrap" class="left-sidebar">
+
+<div class="text-center ad-header-banner">
+    <div id="ad-809c6162-8667-4989-af5f-bb598298e624" class="ad-banner-container">
+        <script type="text/javascript">
+            var googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+                var mapping = googletag.sizeMapping()
+                        .addSize([750, 300], [728, 90])
+                        .addSize([1000, 400], [[728, 90], [924, 56], [970, 90], [970, 66], [970, 250]])
+                        .addSize([320, 200], [320, 50])
+                    .build();
+
+                googletag.defineSlot("/52612984/ussoccer_atf_leaderboard_home", [728, 90], "ad-809c6162-8667-4989-af5f-bb598298e624")
+                    .defineSizeMapping(mapping)
+                    .addService(googletag.pubads())
+                                                                    .setTargeting("Targets", ["Homepage"])
+                ;
+
+                googletag.enableServices();
+            });
+
+            googletag.cmd.push(function () {
+                googletag.display("ad-809c6162-8667-4989-af5f-bb598298e624");
+            });
+        </script>
+    </div>
+</div>
+
+    
+    <div class="row content-column-wrap mobile-flex">
+
+        <div id="sidebar-first" data-fixed-outer="">
+            <div class="team-image" itemscope itemtype="http://schema.org/SportsTeam">
+        <span>
+            <img itemprop="image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-yo-delayType="lazy" data-yo-src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/upload/team-image-default.jpg?h=100&amp;yocs=6_b_&amp;yoloc=eu" />
+        </span>
+</div>
+            <div class="inner" data-fixed-inner="">
+                <div class="sidebar-pod">
+            <div class="list-feature show-for-small-only">
+                <a href="http://www.ussoccer.com/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/mnt/gallery-images/2016/11/161111-mnt-v-mex/161111-mnt-v-mex-christian-pulisic.jpg?yocs=6_b_&amp;yoloc=eu');" class="pod-img full"></a>
+
+                <div class="pod-text">
+                    <h2><a href="http://www.ussoccer.com/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization">U.S. Soccer to Auction Game-Worn, Autographed Jerseys to Benefit Veterans&#39; Service Organization</a></h2>
+                    <div class="pod-info">
+                                <span class="team-label blue">MNT</span>
+                                                    <span class="time-stamp">Nov 16 2016</span>
+                    </div>
+                </div>
+            </div>
+    <h2>Top Stories</h2>
+        <div class="text-list">
+            <ul>
+                        <li><a href="http://www.ussoccer.com/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization">U.S. Soccer to Auction Game-Worn, Autographed Jerseys to Benefit Veterans&#39; Service Organization</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/11/14/14/21/161114-u20wnt-opens-2016-u20-world-cup-with-0-0-draw-vs-france">USA Opens 2016 U-20 Women&#39;s World Cup with 0-0 Draw vs. France</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/11/13/02/01/161108-u20wnt-arrives-in-papua-new-guinea-for-u20-womens-world-cup-opener">U.S. U-20 WNT Arrives in Papua New Guinea</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/11/13/00/13/161112-wnt-v-romania-8-1-win-san-jose-nov-10-2016-highlights">Highlights: WNT Drops Romania 8-1 in San Jose</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/10/24/21/24/161024-2016-nike-international-friendlies-and-da-winter-showcase-to-take-place-nov-30-dec-5">2016 Nike International Friendlies and Development Academy Winter Showcase to Take Place Nov. 30-Dec. 5</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/11/14/18/48/161114-peay-names-48-player-u14-bnt-roster-for-november-training-camp">Peay Names 48-Player U-14 BNT Roster for November Training Camp</a></li>
+                        <li><a href="http://www.ussoccer.com/stories/2016/10/27/18/53/161027-r2r-us-soccer-recognize-to-recover-program-releases-compelling-video-concussion-awareness">U.S. Soccer&#39;s Recognize to Recover Program, presented by Thorne, Releases Compelling Video on Concussion Awareness</a></li>
+            </ul>
+        </div>
+</div>
+
+
+<div id="ad-f6e7927e-93cd-4f71-9244-36dce3e28db7" class="pod-1x1 text-center ad-1x1 aggregate-item">
+        <script type="text/javascript">
+            var googletag = window.googletag || { cmd: [] };
+            googletag.cmd.push(function () {
+                var mapping = googletag.sizeMapping()
+                    .addSize([0, 0], [[300, 250]])
+                    .addSize([321, 300], [[300, 250]])
+                .build();
+
+                googletag.defineSlot("/52612984/ussoccer_atf_300x250", [300, 250], "ad-f6e7927e-93cd-4f71-9244-36dce3e28db7")
+                    .defineSizeMapping(mapping)
+                    .addService(googletag.pubads())
+                                                    .setTargeting("Targets", ["Homepage"])
+                ;
+
+                googletag.enableServices();
+            });
+
+            googletag.cmd.push(function () {
+                googletag.display("ad-f6e7927e-93cd-4f71-9244-36dce3e28db7");
+            });
+        </script>
+</div>
+
+            </div>
+        </div>
+
+        <div id="main-column">
+<div class="aggregate-content">
+    <div class="aggregate-spacer"></div>
+    
+
+<div class="aggregate-item pod-2x3">
+        <a href="/stories/2016/11/17/12/07/161117-u20wnt-goes-top-of-2016-womens-world-cup-group-c-with-3-1-win-vs-new-zealand" style="background-image: url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/u20-wnt/2016/2016-world-cup/161117-u20wnt-v-nzl/161117-u20wnt-v-nzl-mal-goal.jpg?h=510&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img"></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/17/12/07/161117-u20wnt-goes-top-of-2016-womens-world-cup-group-c-with-3-1-win-vs-new-zealand">USA Goes Top of 2016 Women&#39;s World Cup Group C with 3-1 Win vs. New Zealand</a></h2>
+        <div class="pod-summary">
+            <span>
+<p>PORT MORESBY, Papua New Guinea (Nov. 17, 2016) &ndash; The U.S. Under-20 Women&rsquo;s National Team earned a 3-1 win against a tough New Zealand side in the second Group C match for both teams at the 2016 FIFA Under-20 Women&rsquo;s World Cup. </p>
+<p>The USA (1-0-1, 4 pts) now leads a tight Group C followed by New Zealand (1-1-0, 3 pts) and France (0-0-2, 2pts), which needed a last-second goal to draw 2-2 with Ghana (0-1-1, 1 pt) in the first Group C match of the day. The USA will face Ghana in its final Group C match on Nov. 21 at Sir John Guise Stadium (1 a.m. ET on FS1 and NBC Universo), while New Zealand takes on France at the same time at Bava Park. </p>
+<p>A win or draw against Ghana will qualify the U.S. for the knockout stage while a win would ensure that the USA goes through to the quarterfinals in first place in Group C. The USA would also advance with a 1-0 loss to Ghana no matter the result of the France-New Zealand game. </p>
+<p>U.S. head coach Michelle French made three changes from the starting lineup that faced France in the first game. Katie Cousins and Savannah DeMelo got the nod in central midfield, while Emily Fox began on the right flank and Ashley Sanchez moved into a more advanced role up top.<br />
+<br />
+The moves paid off in just the third minute as Sanchez stole the ball from a New Zealand defender and finished easily. Five minutes later, captain Mallory Pugh to put the USA ahead 2-0 with a brilliant individual effort and finish. </p>
+<p>The early goals quieted the pro-New Zealand crowd that was cheering for their team playing a World Cup in their own Oceania Confederation.<br />
+<br />
+The early lead also put the U.S. in the driver&rsquo;s seat for the rest of the game as the team amassed 13 shots (seven on goal) and 12 corner kicks to New Zealand&rsquo;s five shots and two corners, both of which came late in the game. The USA controlled possession for the lion&rsquo;s share of the game and created numerous chances to put the game away earlier. Sanchez hit the outside of the left post with a blast in the second half. The U.S. back line was once again stellar, allowing the lone goal of the game off a set play sequence. </p>
+<p>The young <em>Football Ferns</em> drew to within 2-1 in the 76th minute after Isabella Coombes scored during penalty box scramble that came from her team&rsquo;s first corner kick of the game, but the USA bagged a third soon after. </p>
+<p>Second half substitutes Jessie Scarpa and Ally Watt reinstated the USA&rsquo;s two-goal advantage in the 82nd minute when Scarpa played the speedy Watt through behind the defense and she finished for the final 3-1 margin. Watt had entered the match in the 79th minute. </p>
+<p><strong>Goal Scoring Rundown:<br />
+USA &ndash; Ashley Sanchez, 3rd minute:</strong> As the U.S. pressured New Zealand deep in their own end, Sanchez read a pass to Kiwis&rsquo; center back Elizabeth Anton and closed her down quickly, forcing a turnover at the top of the New Zealand penalty area. Sanchez raced in one-on-one and with only goalkeeper Nadia Olla to beat, easily snapped a quick shot into the lower right corner from eight yards out to become the first U.S. Women&rsquo;s player to score in both a U-17 and U-20 Women&rsquo;s World Cup in the same year. <strong>USA 1, NZL 0 (</strong><a href="https://twitter.com/TelemundoSports/status/799177012606693377'"><strong>SEE GOAL</strong></a><strong>)</strong> </p>
+<p><strong>USA &ndash; Mallory Pugh, 8th minute:</strong> An interception at midfield from Pugh got her moving at pace down the left flank. With one defender to beat, Pugh cut inside past her marker, gaining the necessary separation to unleash a dipping blast from the left side of the penalty box sizzled past the diving New Zealand goalkeeper. <strong>USA 2, NZL 0 (</strong><a href="https://twitter.com/TelemundoSports/status/799179018134122496"><strong>SEE GOAL</strong></a><strong>)</strong> </p>
+<p><strong>NZL &ndash; Isabella Coombes, 76th minute:</strong> After the USA twice failed to clear after a corner kick a headed clearance fell to Coombes at the top center of the penalty box. With a U.S. defender rushing at her, Coombes hit a first -time volley over a goal mouth crowed with players that dipped just underneath the crossbar and into the back of the net. <strong>USA 2, NZL 1 (</strong><a href="https://twitter.com/TelemundoSports/status/799200134101749761"><strong>SEE GOAL</strong></a><strong>)</strong> </p>
+<p><strong>USA &ndash; Ally Watt (Jessie Scarpa), 82nd minute: </strong>Scarpa won control of the ball in a crowd of New Zealand players near the midfield center circle then slipped a perfect pass down the right flank for Watt. With the New Zealand defense caught and unable to recover against the speedy Watt, she raced into the right side of the penalty area before placing a firm shot into the lower left corner to ice the game. <strong>USA 3, NZL 1 (</strong><a href="https://twitter.com/TelemundoSports/status/799201653480009728"><strong>SEE GOAL</strong></a><strong>) FINAL <br />
+</strong></p>
+<p><strong>Social:</strong> <a href="http://www.facebook.com/ussoccer">Facebook</a>; Twitter (<a href="http://www.twitter.com/ussoccer_wnt">@ussoccer_ynt</a>; <a href="http://twitter.com/ussoccer_esp">@ussoccer_esp</a>); <a href="http://instagram.com/ussoccer_wnt">Instagram</a>; Snapchat (ussoccer_wnt)<strong> <br />
+</strong></p>
+<p><strong>Additional Notes:</strong></p>
+<ul>
+    <li>Neither team made a change at halftime in the hot conditions that hovered around 80 degrees, but the USA made all three of its subs in the second half as head coach Michelle French brought on attackers Jessie Scarpa in the 57th minute, Ally Watt in the 79th and defender Natalie Jacobs in the 90th. </li>
+    <li>With the game&rsquo;s opening goal, Ashley Sanchez became the first U.S. Youth Women&rsquo;s National Team player to score in both a FIFA U-17 and U-20 World Cup in the same year. She also scored against Paraguay and twice against Japan in group play of the 2016 FIFA U-17 Women&rsquo;s World Cup held in Jordan this past October. Kristie Mewis is the only other U.S. player to score in both a U-17 and U-20 World Cup, but she did it two years apart. Her two goals in the FIFA U-17 Women&rsquo;s World Cup came in 2008 in New Zealand and her goal in the FIFA U-20 Women&rsquo;s World Cup came in Germany in 2010.</li>
+    <li>Sanchez&rsquo;s goal vs. New Zealand was her fifth at the U-20 level, while Mallory Pugh&rsquo;s strike was her 18th for the U-20 WNT in 25 caps.</li>
+    <li>Ally Watt&rsquo;s goal was her sixth at the U-20 level.</li>
+    <li>This was the first meeting between the USA and New Zealand in the FIFA U-20 Women&rsquo;s World Cup. </li>
+</ul>
+<p style="text-align: center;"><strong>-U.S. Under-20 Women&rsquo;s National Team Match Report-</strong></p>
+<p><strong>Match:</strong> U.S. U-20 Women&rsquo;s National Team vs. New Zealand U-20 Women&rsquo;s National Team<strong><br />
+Date:</strong> Nov. 17, 2016<strong><br />
+Competition:</strong> 2016 FIFA U-20 Women&rsquo;s World Cup &ndash; Group C<strong><br />
+Venue:</strong> PNG Football Stadium; Port Moresby, Papua New Guinea<strong><br />
+Kickoff:</strong> 4 a.m. ET<strong><br />
+Attendance:</strong> 2,399<strong><br />
+Weather:</strong> 80 degrees; windy&nbsp; </p>
+<p><strong>Scoring Summary:&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; F</strong><br />
+USA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br />
+NZL&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp; </p>
+<p>USA &ndash; Ashley Sanchez&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3rd minute<br />
+USA &ndash; Mallory Pugh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+NZL &ndash; Isabella Coombes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 76<br />
+USA &ndash; Ally Watt (Jessie Scarpa)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 82&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p><strong>Lineups:</strong><span style="text-decoration: underline;"><br />
+USA:</span> 1-Casey Murphy; 5-Madeline Elliston, 6-Taylor Otto, 3-Kaleigh Riehl, 14-Ellie Jean; 16-Emily Fox (11-Ally Watt, 79), 10-Emily Ogle, 20-Katie Cousins, 7-Savannah DeMelo (15-Jessie Scarpa, 57), 9-Mallory Pugh (capt.) (19-Natalie Jacobs, 90); 18-Ashley Sanchez<em><br />
+Subs Not Used: 2-Parker Roberts, 4-Sabrina Flores, 8-Courtney Petersen, 12-Rose Chandler, 13-Marley Canales, 17-Kelcie Hedge, 21-Brooke Heinsohn</em><em><br />
+Head Coach: Michelle French</em> </p>
+<p><span style="text-decoration: underline;">NZL:</span> 21-Nadia Olla; 2-Sarah Morton, 3-Sophie Stewart-Hobbs, 4-Elizabeth Anton, 6-Meikayla Moore (capt.); 7-Isabella Coombes, 10-Daisy Cleverley, 18-Grace Jale (16-Tayla Christensen, 69); 8-Jasmine Pereira, 9-Martine Puketapu (11-Emma Rolston, 80), 13-Paige Satchell (19-Jacqui Hand, 87)<em><br />
+Subs Not Used: 1-Tessa Nicol, 5-Samantha Murrell, 12-Malia Steinmetz, 14-Jade Parris, 15-Hannah Blake, 17-Eileish Hayes, 20-Emily Couchman<br />
+Head Coach: Leon Birnie</em>&nbsp; </p>
+<p><strong>Stats Summary: USA / NZL<br />
+</strong>Shots: 13 / 5<br />
+Shots on Goal: 4 / 2<br />
+Saves: 1 / 3<br />
+Corner Kicks: 12 / 2<br />
+Fouls: 10 / 4<br />
+Offside: 2 / 0&nbsp; </p>
+<p><strong>Misconduct Summary:</strong><br />
+None </p>
+<p><strong>Officials:</strong><br />
+Referee: Therese Neguel (CMR)<br />
+Assistant Referee 1: Tempa Ndah (BEN)<br />
+Assistant Referee 2: Mona Mahmoud (EGY)<br />
+4th Official: Marina Sbardella (ITA)&nbsp; </p>
+<p><strong>ussoccer.com Player of the Match: </strong>Mallory Pugh<strong></strong></p>            </span>
+            <a href="/stories/2016/11/17/12/07/161117-u20wnt-goes-top-of-2016-womens-world-cup-group-c-with-3-1-win-vs-new-zealand" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-20 WNT</span>
+                            <span class="time-stamp">
+                    Nov 17, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/10/22/27/161110-u20wnt-mallory-pugh-from-the-olympics-to-the-u20-world-cup" style="background-image:url('http://cf.c.ooyala.com/FvaTVpNzE6fspWuImxrOdKWvhjSludYs/MGngRNnbuHoiqTJH4xMDoxOjBzMTt2bJ?h=250');" class="pod-img full icon-play"></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/10/22/27/161110-u20wnt-mallory-pugh-from-the-olympics-to-the-u20-world-cup">Mallory Pugh: From the Olympics to the U-20 World Cup</a></h2>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-20 WNT</span>
+                            <span class="time-stamp">
+                    Nov 10, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="aggregate-item pod-1x2">
+        <a href="/stories/2016/11/16/22/48/161116-u20wnt-5-things-to-know-usa-and-2016-fifa-u20-womens-world-cup" style="background-image: url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/u20-wnt/2016/2016-world-cup/161114-u20wnt-v-fra/161114-u20wnt-v-fra-starting-xi.jpg?h=510&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img"></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/16/22/48/161116-u20wnt-5-things-to-know-usa-and-2016-fifa-u20-womens-world-cup">Five Things to Know: U-20 WNT and the 2016 FIFA U-20 Women&#39;s World Cup</a></h2>
+        <div class="pod-summary">
+            <span>
+                The U.S. U-20 Women&rsquo;s National Team will look to win its fourth U-20 Women&rsquo;s World Cup at the 2016 FIFA U-20 Women&rsquo;s World Cup in Port Moresby, Papua New Guinea. After a scoreless draw against France to kick off the tournament on Monday, Nov. 14, the U-20s will now face group leader, New Zealand on Thursday, Nov. 17 at 4 a.m. ET and then wrap up group play against Ghana on Monday
+            </span>
+            <a href="/stories/2016/11/16/22/48/161116-u20wnt-5-things-to-know-usa-and-2016-fifa-u20-womens-world-cup" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-20 WNT</span>
+                            <span class="time-stamp">
+                    Nov 16, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/08/17/53/161108-u20wnt-gk-casey-murphy-qa" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/u20-wnt/2016/2016-world-cup/161108-casey-murphy-1.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/08/17/53/161108-u20wnt-gk-casey-murphy-qa">11 Questions with U.S. U-20 WNT Goalkeeper Casey Murphy</a></h2>
+        <div class="pod-summary">
+            <span>ussoccer.com: The team trained for eight days in Cairns, Australia before heading to Papua New Guinea. How was that experience?
+Casey Murphy: &ldquo;It&rsquo;s was just great to get back together as the World Cup Team. The time away was nice and refreshing mentally and physically, but once we got to Australia we hit the ground running and the week of training in Cairns was really focused, competit</span>
+            <a href="/stories/2016/11/08/17/53/161108-u20wnt-gk-casey-murphy-qa" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-20 WNT</span>
+                            <span class="time-stamp">
+                    Nov 8, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/09/28/03/35/160927-u17wnt-sanchez-qa" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/u17-wnt/2016/160927_u17wntvbra_sanchez.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/09/28/03/35/160927-u17wnt-sanchez-qa">11 Questions With U-17 WNT Forward Ashley Sanchez</a></h2>
+        <div class="pod-summary">
+            <span>ussoccer.com: This has been a long cycle and you are finally at the World Cup. Can you talk about how the team has grown over the past two years?
+Ashley Sanchez: &ldquo;Off the field, we&rsquo;ve become more professional, whether it be eating better, improving our fitness or taking our preparation more seriously. I feel like at the beginning of the cycle, I was just a kid, and our coaches and staf</span>
+            <a href="/stories/2016/09/28/03/35/160927-u17wnt-sanchez-qa" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-17 WNT</span>
+                            <span class="time-stamp">
+                    Sep 27, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/13/17/30/161113-u20wnt-ellie-jean-feature-wwc" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/u20-wnt/2016/2016-world-cup/161113-ellie-jean-game.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/13/17/30/161113-u20wnt-ellie-jean-feature-wwc">Perseverance Got Ellie Jean to the World Cup</a></h2>
+        <div class="pod-summary">
+            <span>Five years might not seem like a long time in the grand scheme of things, but when you&rsquo;re not yet 20-years-old, it&rsquo;s a solid quarter of your life.
+ 
+ 
+That&rsquo;s how long Ellie Jean has been waiting to play in a World Cup, dating back to when she first started getting called into U.S. Under-17 WNT training camps and the prospect of representing her country on the word&rsquo;s stage c</span>
+            <a href="/stories/2016/11/13/17/30/161113-u20wnt-ellie-jean-feature-wwc" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red-border">U-20 WNT</span>
+                            <span class="time-stamp">
+                    Nov 13, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/mnt/gallery-images/2016/11/161111-mnt-v-mex/161111-mnt-v-mex-christian-pulisic.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization">U.S. Soccer to Auction Game-Worn, Autographed Jerseys to Benefit Veterans&#39; Service Organization</a></h2>
+        <div class="pod-summary">
+            <span>CHICAGO (Nov. 15, 2016) &ndash; U.S. Soccer, in conjunction with the U.S. Men&rsquo;s National Team Players Association, is auctioning autographed, game-worn jerseys of from last Friday&rsquo;s Hex opener against Mexico, the proceeds from which will benefit Veteran&rsquo;s Service Organization Team Red, White and Blue. 
+As part of an extensive plan to involve the servicemen and women of all five b</span>
+            <a href="/stories/2016/11/16/18/15/161116-mnt-us-soccer-auction-game-worn-autographed-usa-jerseys-benefit-veterans-service-organization" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label blue">MNT</span>
+                            <span class="time-stamp">
+                    Nov 16, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/17/20/20/161117-5-things-to-know-about-lynden-gooch" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/mnt/players/gooch/161115-mntvcrc-lynden-gooch/161109-mnt-training-lynden-gooch.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/17/20/20/161117-5-things-to-know-about-lynden-gooch">5 Things to Know About U.S. MNT Midfielder Lynden Gooch</a></h2>
+        <div class="pod-summary">
+            <span>
+
+During the past few months, Lynden Gooch has become one of the most intriguing prospects for the U.S. Men&rsquo;s National Team. Here are five things to know about the rising MNT winger.
+Where It All Started
+Born on Christmas Eve 1995 to an English father and Irish mother in Santa Cruz, Calif., Gooch has said he was kicking a soccer ball from the moment he could walk. 
+A long-time supporter of T</span>
+            <a href="/stories/2016/11/17/20/20/161117-5-things-to-know-about-lynden-gooch" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label blue">MNT</span>
+                            <span class="time-stamp">
+                    Nov 17, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="pod-1x1 aggregate-item">
+    <a href="/stories/2016/11/16/02/00/161115-usa-suffers-4-0-world-cup-qualifying-defeat-away-to-costa-rica" style="background-image:url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/mnt/gallery-images/2016/11/161115-mnt-v-crc/161115-mntvcrc-michael-bradley.jpg?h=250&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img "></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/16/02/00/161115-usa-suffers-4-0-world-cup-qualifying-defeat-away-to-costa-rica">USA Suffers 4-0 World Cup Qualifying Defeat Away to Costa Rica</a></h2>
+        <div class="pod-summary">
+            <span>
+
+
+
+
+
+SAN JOSE, Costa Rica (Nov. 15, 2016) &ndash; The U.S. Men&rsquo;s National Team battled through a physical and feisty match but ultimately succumbed to a 4-0 defeat to Costa Rica in its first away qualifier of the Final Round of 2018 FIFA World Cup Qualifying. 
+An even first half saw both teams carve out chances, but it was Costa Rica forward Johan Venegas whose header broke the deadlock in </span>
+            <a href="/stories/2016/11/16/02/00/161115-usa-suffers-4-0-world-cup-qualifying-defeat-away-to-costa-rica" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label blue">MNT</span>
+                            <span class="time-stamp">
+                    Nov 15, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="aggregate-item pod-1x2">
+        <a href="/stories/2016/11/16/16/11/161116-wnt-november-camp-and-games-end-2016-on-a-high-note-for-usa" style="background-image: url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/wnt/gallery-images/2016/11/161113-wnt-v-rou-match-gallery/161113-wntvrou-match-gallery-13.jpg?h=510&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img"></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/16/16/11/161116-wnt-november-camp-and-games-end-2016-on-a-high-note-for-usa">November Camp and Games End 2016 on a High Note for USA</a></h2>
+        <div class="pod-summary">
+            <span>
+                The U.S. Women&rsquo;s National Team wrapped up its 2016 schedule with a pair of big results against Romania, winning 8-1 on Nov. 10 and 5-0 on Nov. 13 to finish the year with a 22-0-3 record. Since the penalty kick loss to Sweden at the Olympics officially counts as a tie, 2016 marks only the third time that the WNT has finished a year unbeaten in regulation when it has played 10 or more matches.
+            </span>
+            <a href="/stories/2016/11/16/16/11/161116-wnt-november-camp-and-games-end-2016-on-a-high-note-for-usa" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red">WNT</span>
+                            <span class="time-stamp">
+                    Nov 16, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="aggregate-item pod-1x2">
+        <a href="/ooyala/play?playerId=MzA3Y2QyZTc2MGNjN2U3ODgxNmNmNzVj&amp;embedCode=5qZmFsNzE67t-_KDwP93ubEF7tOY_VY4" style="background-image: url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/wnt/gallery-images/2016/11/161113-wnt-v-rou-press-goal.jpg?h=510&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img icon-play media-video" data-reveal-id="video-overlay" data-reveal></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/14/04/21/161113-wnt-takes-down-romania-in-carson-in-final-game-to-go-unbeaten-in-2016">WNT Caps Off Unbeaten 2016 with 5-0 Win vs. Romania</a></h2>
+        <div class="pod-summary">
+            <span>
+                 CARSON, Calif. (Nov. 13, 2016) &ndash; The U.S. Women&rsquo;s National Team finished strong in 2016 with a 5-0 win vs. Romania in front of 20,336 fans at StubHub Center. 
+ With the win, the WNT completes 2016 with a 22-0-3 record, marking the third time the team has gone unbeaten in regulation in a calendar year in which it has played 10 or more matches. The USA went 18-0-4 in 2006 and 13-0-3 in 
+            </span>
+            <a href="/stories/2016/11/14/04/21/161113-wnt-takes-down-romania-in-carson-in-final-game-to-go-unbeaten-in-2016" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red">WNT</span>
+                            <span class="time-stamp">
+                    Nov 13, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="aggregate-item pod-1x2">
+        <a href="/stories/2016/11/15/19/48/161113-wnt-v-rou-match-gallery" style="background-image: url('//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/~/media/images/wnt/gallery-images/2016/11/161113-wnt-v-rou-match-gallery/161113-wntvrou-match-gallery-18.jpg?h=510&amp;yocs=6_b_&amp;yoloc=eu');" class="pod-img"></a>
+    <div class="pod-text">
+        <h2><a href="/stories/2016/11/15/19/48/161113-wnt-v-rou-match-gallery">Gallery: U.S. WNT Wraps Up 2016 with 5-0 Victory vs. Romania</a></h2>
+        <div class="pod-summary">
+            <span>
+                Photos from the U.S. Women's National Team 5-0 win against Romania on Nov. 13 at StubHub Center in Carson, Calif. A Romania own goal opened up the score, and Crystal Dunn, Christen Press, Morgan Brian, and Samantha Mewis rounded out the 5-0 victory in the WNT's last match of 2016.    
+            </span>
+            <a href="/stories/2016/11/15/19/48/161113-wnt-v-rou-match-gallery" class="pod-read-more">Read more</a>
+        </div>
+        <div class="pod-info">
+                    <span class="team-label red">WNT</span>
+                            <span class="time-stamp">
+                    Nov 15, 2016
+                </span>
+        </div>
+    </div>
+</div>
+
+</div>
+
+        </div>
+
+    </div>
+
+
+    
+</div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="row">
+            <div class="large-12 column">
+                <ul class="small-block-grid-2 medium-block-grid-5 large-block-grid-5">
+                    <li>
+                        <ul class="side-nav">
+                            <li>
+                                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="logo" width="78" height="91" data-yo-delayType="lazy" data-yo-src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/images/us-soccer-logo.png?yocs=6_b_&amp;yoloc=eu">
+                            </li>
+                            <div id="footer-social">
+                                <h4 class="social-text">Follow Us</h4>
+                                <ul class="social-list-inline social-wrapper" data-fixed-inner="">
+                                        <li class="social-list-item"><a href="https://www.facebook.com/officialussoccer" target="" class="icon icon-facebook"></a></li>
+    <li class="social-list-item"><a href="http://instagram.com/ussoccer" target="" class="icon icon-instagram"></a></li>
+    <li class="social-list-item"><a href="https://twitter.com/ussoccer" target="" class="icon icon-twitter"></a></li>
+    <li class="social-list-item"><a href="http://www.youtube.com/ussoccerdotcom" target="_blank" class="icon icon-youtube"></a></li>
+    <li class="social-list-item"><a href="https://foursquare.com/ussoccer" target="_blank" class="icon icon-foursquare"></a></li>
+    <li class="social-list-item"><a href="https://plus.google.com/+ussoccer/posts" target="_blank" class="icon icon-googleplus"></a></li>
+    <li class="social-list-item"><a href="https://vine.co/u/930648372476518400" target="_blank" class="icon icon-vine"></a></li>
+
+                                    <li class="footer-supporters-club">
+                                        <form id="formLogin" name="formLogin" method="post" target="_blank" action="/email-subscriptions">
+                                            <div class="sign-up row collapse">
+                                                <div class="small-10 columns">
+                                                    <input type="text" name="Email_Address" placeholder="Enter Email Address" value="">
+                                                </div>
+                                                <div class="small-2 columns">
+                                                    <button class="postfix icon-right" type="submit"></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+            <li><a href="http://store.yahoo.com/cgi-bin/clink?yhst-96316601417599+vdsJaN+index.html " target="_blank">Store</a>
+
+        </li>
+        <li><a href="http://www.ussoccermembership.com" target="_blank">Membership</a>
+
+        </li>
+        <li><a href="http://developmentfund.ussoccer.com" target="_blank">Development Fund</a>
+
+        </li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="side-nav">
+            <li><a href="/mens-national-team" target="">MNT</a>
+
+    <ul>
+            <li><a href="/mens-national-team/latest-roster" target="">Latest Roster</a>
+            
+
+                </li>
+            <li><a href="/mens-national-team/schedule-tickets" target="">Schedule &amp; Tickets</a>
+            
+
+                </li>
+            <li><a href="/mens-national-team/results-statistics" target="">Results</a>
+            
+
+                </li>
+            <li><a href="/mens-national-team/mnt-stats" target="">Stats</a>
+            
+
+                </li>
+            <li><a href="/mens-national-team/tournaments" target="">Tournaments</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/womens-national-team" target="">WNT</a>
+
+    <ul>
+            <li><a href="/womens-national-team/latest-roster" target="">Latest Roster</a>
+            
+
+                </li>
+            <li><a href="/womens-national-team/schedule-tickets" target="">Schedule &amp; Tickets</a>
+            
+
+                </li>
+            <li><a href="/womens-national-team/results-statistics" target="">Results</a>
+            
+
+                </li>
+            <li><a href="/womens-national-team/stats" target="">Stats</a>
+            
+
+                </li>
+            <li><a href="/womens-national-team/tournaments" target="">Tournaments</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/about/sponsors" target="">Sponsors &amp; Corporate Partners</a>
+
+        </li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="side-nav">
+            <li><a href="/youth-national-team" target="">YNT</a>
+
+    <ul>
+            <li><a href="/us-under23-mens-national-team/about-the-team" target="">U-23 MNT</a>
+            
+
+                </li>
+            <li><a href="/us-under23-womens-national-team/about-the-team" target="">U-23 WNT</a>
+            
+
+                </li>
+            <li><a href="/us-under20-mens-national-team/about-the-team" target="">U-20 MNT</a>
+            
+
+                </li>
+            <li><a href="/us-under20-womens-national-team/about-the-team" target="">U-20 WNT</a>
+            
+
+                </li>
+            <li><a href="/us-under18-mens-national-team/about-the-team" target="">U-18 MNT</a>
+            
+
+                </li>
+            <li><a href="/us-under18-womens-national-team/about-the-team" target="">U-18 WNT</a>
+            
+
+                </li>
+            <li><a href="/us-under17-mens-national-team/about-the-team" target="">U-17 MNT</a>
+            
+
+                </li>
+            <li><a href="/us-under17-womens-national-team/about-the-team" target="">U-17 WNT</a>
+            
+
+                </li>
+            <li><a href="/us-under15-boys-national-team/about-the-team" target="">U-15 Boys</a>
+            
+
+                </li>
+            <li><a href="/us-under15-girls-national-team/about-the-team" target="">U-15 Girls</a>
+            
+
+                </li>
+            <li><a href="/us-under14-national-development-program" target="">U-14 NDP</a>
+            
+
+                </li>
+            <li><a href="/development-academy/training-centers" target="">U.S. Soccer Training Centers</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/beach-soccer-national-team/about-beach-soccer" target="">Beach Soccer</a>
+
+        </li>
+        <li><a href="/futsal-national-team/futsal" target="">Futsal</a>
+
+        </li>
+        <li><a href="/paralympic-national-team/about-the-pnt" target="">Paralympic Soccer</a>
+
+        </li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="side-nav">
+            <li><a href="http://www.ussoccerda.com/" target="">Development Academy</a>
+
+    <ul>
+            <li><a href="http://www.ussoccerda.com/calendar" target="">Calendar</a>
+            
+
+                </li>
+            <li><a href="http://www.ussoccerda.com/overview" target="">Club Admissions</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/lamar-hunt-us-open-cup" target="">Lamar Hunt U.S. Open Cup</a>
+
+        </li>
+        <li><a href="/referees" target="">Referee Program</a>
+
+    <ul>
+            <li><a href="/referees/laws-of-the-game" target="">Laws of the Game</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/coaching-education" target="">Coaching Education</a>
+
+    <ul>
+            <li><a href="/coaching-education/licenses" target="">Licenses</a>
+            
+
+                </li>
+            <li><a href="/coaching-education/national-coaching-schools" target="">National Coaching Schools</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/about/media-services" target="">Media Services</a>
+
+    <ul>
+            <li><a href="/about/media-services/credentials" target="">Credentials</a>
+            
+
+                </li>
+    </ul>
+        </li>
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="side-nav">
+            <li><a href="/about/about-us-soccer" target="">About U.S. Soccer</a>
+
+    <ul>
+            <li><a href="/about/affiliates" target="">Affiliates</a>
+            
+
+                </li>
+            <li><a href="/about/federation-services" target="">Federation Services</a>
+            
+
+                </li>
+            <li><a href="/about/governance" target="">Governance</a>
+            
+
+                </li>
+            <li><a href="/about/federation-services/international-games" target="">International Games</a>
+            
+
+                </li>
+            <li><a href="http://www.recognizetorecover.org/#us-soccers-comprehensive-player-health-and-safety-program" target="">Recognize to Recover</a>
+            
+
+                </li>
+            <li><a href="/integrity-hotline" target="Custom">Integrity Hotline</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/about/history" target="">History</a>
+
+    <ul>
+            <li><a href="/about/hall-of-fame" target="">National Soccer Hall of Fame</a>
+            
+
+                </li>
+    </ul>
+        </li>
+        <li><a href="/about/about-us-soccer/jobs-at-us-soccer" target="">Jobs</a>
+
+    <ul>
+            <li><a href="/about/about-us-soccer/jobs-at-us-soccer" target="">Current Job Openings</a>
+            
+
+                </li>
+            <li><a href="https://www.linkedin.com/company/united-states-soccer-federation" target="_blank">LinkedIn</a>
+            
+
+                </li>
+    </ul>
+        </li>
+
+
+                        </ul>
+                        <p class="powered-by">
+                            Website powered by
+                            <br />
+                            <img src="/Content/images/sitecore-logo.png" alt="SiteCore" width="102" height="28" />
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row footer-inline-links">
+            <div class="large-12 column">
+                <ul class="inline-list">
+                    <li>Copyright U.S. Soccer 2016</li>
+                    <li>All Rights Reserved</li>
+                    <li><a href="/terms-of-use">Terms of Use</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-overlay" class="reveal-modal medium" data-reveal>
+        <div class="video-target" style="height: inherit;">
+        </div>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+    <noscript>
+        <img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6036539&amp;cv=2.0&amp;cj=1" />
+    </noscript>
+        <div><script src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/js/jQuery?v=M6dmVkrHVhoZ1gfOtvVDZbgBcQTsbWxoLsRizcGkbPk1&amp;yocs=b_&amp;yoloc=eu"></script>
+</div>
+    <script src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/js/bundle?v=YL_S2mO3GuyV7jzm69xNVu2nqlcdnhsaoSxn5h9AVnM1&amp;yocs=b_&amp;yoloc=eu"></script>
+
+    <script src="//cdn-eu-ec.yottaa.net/5682eca20b534438800014b5/www.ussoccer.com/v~13.1d/Content/js/ussoccer?v=LnlH4pIwreiAzNuWqRDdNXYEhaJanxFn-NqTZd1gRW01&amp;yocs=b_&amp;yoloc=eu"></script>
+
+        <script id="chartbeat" type='text/javascript' async>
+            chartbeatInit();
+            
+            //var _sf_async_config = {}; _sf_async_config.uid = 61646, _sf_async_config.domain = "ussoccer.com", _sf_async_config.useCanonical = !0, _sf_async_config.sections = "Sports,Sports News,Soccer,Soccer News", _sf_async_config.authors = "", _sf_async_config.playerdomain = "www.ussoccer.com", function () { function a() { window._sf_endpt = (new Date).getTime(); var a = document.createElement("script"); a.setAttribute("language", "javascript"), a.setAttribute("type", "text/javascript"), a.setAttribute("src", "//static.chartbeat.com/js/chartbeat.js"), a.setAttribute("async", "async"), document.body.appendChild(a) } var b = window.onload; window.onload = "function" != typeof window.onload ? a : function () { b(), a() } }();
+        </script>
+<input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="110D559FDEA542EA9C1C8A5DF7E70EF9">
+</body>
+</html>

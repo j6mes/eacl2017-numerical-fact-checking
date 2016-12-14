@@ -1,0 +1,1224 @@
+<html>
+
+<div class="header">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>AFC Cleveland Royals</title>
+
+<link rel="icon" 
+      type="image/ico" 
+      href="http://www.afccleveland.com/images/favicon1.ico">
+  		<link rel="stylesheet" href="http://www.afccleveland.com/dist/css/superfish.css" media="screen">
+  		<link rel="stylesheet" type="text/css" href="http://www.afccleveland.com/style.css" />
+
+		<script src="http://www.afccleveland.com/dist/js/jquery.js"></script>
+		<script src="http://www.afccleveland.com/dist/js/hoverIntent.js"></script>
+		<script src="http://www.afccleveland.com/dist/js/superfish.js"></script>
+
+
+
+
+		<script>
+
+		(function($){ //create closure so we can safely use $ as alias for jQuery
+
+			$(document).ready(function(){
+
+				// initialise plugin
+				var example = $('#example').superfish({
+					//add options here if required
+				});
+
+				// buttons to demonstrate Superfish's public methods
+				$('.destroy').on('click', function(){
+					example.superfish('destroy');
+				});
+
+				$('.init').on('click', function(){
+					example.superfish();
+				});
+
+				$('.open').on('click', function(){
+					example.children('li:first').superfish('show');
+				});
+
+				$('.close').on('click', function(){
+					example.children('li:first').superfish('hide');
+				});
+			});
+
+		})(jQuery);
+
+
+		</script>
+  
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(function(){
+    $('#header_nav').data('size','big');
+});
+
+$(window).scroll(function(){
+    if($(document).scrollTop() > 0)
+    {
+        if($('#header_nav').data('size') == 'big')
+        {
+            $('#header_nav').data('size','small');
+            $('#header_nav').stop().animate({
+                height:'51px'
+            },0);
+                 $('#logo-img img')
+                .css({'width':'106px','height':'43px'})
+                .attr('src','http://www.afccleveland.com/view/images/norm-lion.png');
+        }
+    }
+    else
+    {
+        if($('#header_nav').data('size') == 'small')
+        {
+            $('#header_nav').data('size','big');
+            $('#header_nav').stop().animate({
+                height:'80px'
+            },0);
+            $('#logo-img img')
+            .css({'width':'106px','height':'132px'})    
+            .attr('src','http://www.afccleveland.com/view/images/norm-shield.png');
+        }  
+    }
+});
+});//]]>  
+
+</script>
+<script type='text/javascript'>
+// via http://return-true.com/2010/04/jquery-pop-up-footer-version-2/
+
+jQuery(function($) {
+		var open = false;
+		$('#footerSlideButton').click(function () {
+			if(open === false) {
+				$('#footerSlideContent').animate({ height: '300px' });
+				$(this).css('backgroundPosition', 'bottom left');
+				open = true;
+			} else {
+				$('#footerSlideContent').animate({ height: '0px' });
+				$(this).css('backgroundPosition', 'top left');
+				open = false;
+			}
+		});		
+	});
+</script>
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$(function(){
+    $('#header_nav_alert').data('size','big');
+});
+
+$(window).scroll(function(){
+    if($(document).scrollTop() > 0)
+    {
+        if($('#header_nav_alert').data('size') == 'big')
+        {
+            $('#header_nav_alert').data('size','small');
+            $('#header_nav_alert').stop().animate({
+                height:'51px'
+            },0);
+                 $('#logo-img img')
+                .css({'width':'106px','height':'43px'})
+                .attr('src','http://www.afccleveland.com/view/images/norm-lion.png');
+        }
+    }
+    else
+    {
+        if($('#header_nav_alert').data('size') == 'small')
+        {
+            $('#header_nav_alert').data('size','big');
+            $('#header_nav_alert').stop().animate({
+                height:'80px'
+            },0);
+            $('#logo-img img')
+            .css({'width':'106px','height':'132px'})    
+            .attr('src','http://www.afccleveland.com/view/images/norm-shield.png');
+        }  
+    }
+});
+});//]]>  
+
+</script>
+
+<script>
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $('.scrollup');
+        } else {
+            $('.scrollup');
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
+</script>
+  <style type='text/css'>
+														
+    body {
+    width:100%;
+}
+   html { 
+  background: url('http://www.afccleveland.com/images/background-tile.png'); 
+ background-attachment: fixed;
+    background-position: center; 
+}
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:600px;
+  height:600px;
+  display:none;
+  z-index:9999;
+  padding:0px;
+}
+#boxes #dialog {
+  width:600px; 
+  height:600px;
+  padding:10px;
+  background-color:#ffffff;
+}
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+
+ .modalDialog-lg {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+
+
+}
+.modalDialog-lg:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog-lg > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #FFFFFF;
+	border: 10px solid;
+    border-radius: 25px;
+    border-color: #CCCCCC;
+        box-shadow: 10px 10px 5px #000000;
+
+}
+
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+
+.number_box {
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    padding: 5px;
+    box-shadow: 0 0 2px 2px #888;
+-moz-box-shadow: 0 0 2px 2px #888;
+-webkit-box-shadow: 0 0 2px 2px #888;
+box-shadow: 0 0 2px 2px #888;
+}
+h3 { font-family: 'myFirstFont'; font-size: 45px; }
+h2 { font-family: 'mySecondFont'; font-size: 60px; }
+h1 { font-family: 'mySecondFont'; font-size: 10px; }
+h4 { font-family: 'myThirdFont'; font-size: 13px; }
+h5 { font-family: 'myThirdFont'; font-size: 17px; }
+h6 { font-family: 'mySecondFont'; margin-top: 0; margin-bottom: 0; font-size: 12px; }
+h7 { font-family: 'myFirstFont'; margin-top: 2; margin-bottom: 0; font-size: 12px; }
+h8 { font-family: 'myFirstFont'; margin-top: 2; margin-bottom: 0; font-size: 24px; }
+h9 { font-family: 'myThirdFont'; font-size: 10px; }
+h10 { font-family: 'myThirdFont'; font-size: 12px; font-style: italic; }
+h11 { font-family: 'myThirdFont'; font-size: 14px; }
+h12 { font-family: 'myFirstFont'; font-size: 24px; }
+h13 { font-family: 'myFirstFont'; font-size: 14px; }
+h14 { font-family: 'myFourthFont'; font-size: 12px; }
+h15 { font-family: 'myThirdFont'; font-size: 12px; font-style: bold; }
+h16 { font-family: 'myFirstFont'; font-size: 11px; }
+h17 { font-family: 'myThirdFont'; font-size: 10px; }
+h18 { font-family: 'myFirstFont'; font-size: 15px; color: #FFFFFF;}
+h19 { font-family: 'myThirdFont'; font-size: 10px; color: #1D24AB; }
+h20 { font-family: 'myFirstFont'; font-size: 20px; color: #1D24AB; font-style: bold; }
+h21 { font-family: 'myFirstFont'; font-size: 25px; color: #FFFFFF; font-style: bold; }
+h22 { font-family: 'myFourthFont'; font-size: 9px; color: #FFFFFF; font-style: italics; }
+h22 { font-family: 'myThirdFont'; font-size: 11px; color: #FFFFFF; }
+h23{ font-family: 'myFirstFont'; font-size: 16px; color: #FFFFFF; font-style: bold; }
+h24 { font-family: 'myThirdFont'; font-size: 11px; color: #000000; }
+h25 { font-family: 'myThirdFont'; font-size: 11px; color: #1D24AB; font-style: italics;}
+h26 { font-family: 'myThirdFont'; font-size: 9px; color: #000000; }
+h27 { font-family: 'myThirdFont'; font-size: 9px; color: #FFFFFF; }
+h28 { font-family: 'myThirdFont'; font-size: 9px; color: #F00; }
+h29 { font-family: 'myFirstFont'; font-size: 20px; font-style: italics; }
+
+h30 { font-family: 'myThirdFont'; font-size: 12px; color: #FF0000; }
+h31 { font-family: 'myThirdFont'; font-size: 12px; color: #339933; }
+h32 { font-family: 'myThirdFont'; font-size: 9px; color: #46523C; }
+h36 { font-family: 'mySecondFont'; margin-top: 0; margin-bottom: 0; font-size: 12px; color: #CCCCCC}
+h101 { font-family: 'myFirstFont'; font-size: 75px; color: #000000; }
+h90 { font-family: 'myThirdFont'; font-size: 9px; color: #1D24AB; }
+h91 { font-family: 'myThirdFont'; font-size: 12px; }
+h92 { font-family: 'myThirdFont'; font-size: 12px; color: #1D24AB; font-style: bold;}
+h93 { font-family: 'myThirdFont'; font-size: 12px; color: #CCCCCC; font-style: bold;}
+h94 { font-family: 'myThirdFont'; font-size: 10px; color: #1D24AB; font-style: italics;}
+h95 { font-family: 'myFirstFont'; font-size: 12px; color: #1D24AB; font-style: bold; }
+h96 { font-family: 'myThirdFont'; font-size: 10px; color: red; }
+h97 { font-family: 'myFirstFont'; font-size: 30px; }
+h98 { font-family: 'myThirdFont'; font-size: 9px; color: #CCCCCC; font-style: bold;}
+h99 { font-family: 'myThirdFont'; font-size: 12px; color: #00CC00; }
+h100 { font-family: 'bttf'; font-size: 12px; color: #00CC00; }
+h111 { font-family: 'myFirstFont'; color: #FFFFFF; text-shadow: 2px 2px 6px #000000; font-size: 400%; font-style: bold;}
+h112 { font-family: 'myFirstFont'; color: #CCCCCC; text-shadow: 2px 2px 6px #FFFFFF; font-size: 25pt; font-style: bold;}
+
+
+
+
+
+
+
+
+
+
+@font-face {
+   font-family: bttf;
+   src: url(BTTF.ttf);
+}
+@font-face {
+   font-family: myFirstFont;
+   src: url(MYRIADPRO-BOLD.woff);
+}
+@font-face {
+   font-family: mySecondFont;
+   src: url(MYRIADPRO-SEMIBOLD.woff);
+}
+
+@font-face {
+   font-family: myThirdFont;
+   src: url(MYRIADPRO-REGULAR.woff);
+}  
+
+@font-face {
+   font-family: myFourthFont;
+   src: url(MYRIADPRO-COND.woff);
+}  
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {	
+
+		var id = '#dialog';
+	
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		//transition effect
+		$(id).fadeIn(2000); 	
+	
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});		
+	
+});
+
+</script>
+
+</head>
+
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+							
+<div align="center">
+
+	<table border="0" width="100%" cellspacing="0" cellpadding="0" height="100%" >
+		<tr>
+
+																															
+
+	<tr>
+			<td height="90">
+			
+<div id="header_nav">
+		<div align="center">
+		<table border="0" width="1000 px" cellspacing="0" cellpadding="0">
+
+			<tr>
+				<td width="106" valign="top"> 
+        		<a id="logo-img" title="AFC Cleveland Royals" href="http://www.afccleveland.com/index.html">
+        <img src="http://www.afccleveland.com/view/images/norm-shield.png" title="AFC Cleveland Logo" alt="AFC Cleveland Royals" border="0" align="right">		
+				</a>		
+	</td>
+				<td>
+				<table border="0" width="100%" cellspacing="0" cellpadding="0" height="20">
+														<tr>
+															
+															<td height="25" align="left" width="90%">
+<ul class="sf-menu" id="example">
+			<li class="current">
+				<a href="#" style="cursor: default; "><b><font face="Myriad Web Pro"><h5>CLUB</h5></font></b></a>
+				<ul>
+					<li>
+						<a href="http://www.afccleveland.com/club/roster.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">Team Roster</span></h5></font></a> 
+					</li>
+					<li class="current">
+						<a href="http://www.afccleveland.com/club/staff.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">Coaching Staff</span></h5></font></a>
+					</li>
+					<li>
+						<a href="http://www.afccleveland.com/club/office.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">Front Office</span></h5></font></a>
+					</li>
+					<li>
+						<a href="http://www.afccleveland.com/club/history.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">History</span></h5></font></a>
+					</li>
+					<li>
+						<a href="http://www.afccleveland.com/club/internships.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">Internships</span></h5></font></a>
+					</li>
+					<li>
+						<a href="http://www.afccleveland.com/club/volunteers.html"><font face="Myriad Web Pro"><h5>
+						<span style="font-weight: 400">Event Volunteers</span></h5></font></a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" style="cursor: default; "><b><font face="Myriad Web Pro"><h5>
+				NEWS</h5></font></b></a> 
+				<ul>
+					<li><h5>
+					<span style="font-weight: 400"><a href="http://www.afccleveland.com/news/index.html">
+					Current Stories</a></span></h5>
+					</li>
+					<li><a href="http://www.afccleveland.com/news/archived.html"><h5>
+					<span style="font-weight: 400">Archived Stories</span></h5></a>
+					</li>
+					<li><a target="_blank" href="https://afcclevelandesp.wordpress.com/"><h5>
+					<span style="font-weight: 400">Blog en Espa&ntilde;ol</span></h5></a>
+					</li>
+				</ul>
+				<p></p>
+			</li>
+
+			</li>
+<li>
+				<a href="#" style="cursor: default; "><b><font face="Myriad Web Pro"><h5>
+				SCHEDULE</h5></font></b></a>
+				<ul>
+					<li><a href="http://www.afccleveland.com/schedule/index.html"><h5>
+					<span style="font-weight: 400">Season Schedule</span></h5></a>
+</li>
+					<li><a href="http://www.afccleveland.com/schedule/standings.html"><h5>
+					<span style="font-weight: 400">Standings</span></h5></a>
+</li>
+
+				</ul>
+			</li>
+			<li>
+				<a href="http://www.afccleveland.com/stadium/index.html"><b><font face="Myriad Web Pro"><h5>
+				STADIUM</h5></font></b></a>
+			</li>	
+<li>
+				<a href="#" style="cursor: default; "><b><font face="Myriad Web Pro"><h5>
+				FANS</h5></font></b></a>
+				<ul>
+					<li><a href="http://www.afccleveland.com/fans/supporters.html"><h5>
+					<span style="font-weight: 400">Supporters Group</span></h5></a>
+</li>
+					<li><a href="http://www.afccleveland.com/fans/downloads.html"><h5>
+					<span style="font-weight: 400">Downloads</span></h5></a>
+</li>
+					<li><a href="http://www.afccleveland.com/fans/events.html"><h5>
+					<span style="font-weight: 400">Activities & Events</span></h5></a>
+</li>
+
+				</ul>
+			</li>
+
+			<li>
+				<a href="http://www.afccleveland.com/tickets/index.html"><b><font face="Myriad Web Pro"><h5>
+				TICKETS</h5></font></b></a> 
+			</li>
+			<li>
+				<a target="_blank" href="http://www.afccleveland.com/e-store"><b><font face="Myriad Web Pro"><h5>
+				SHOP</h5></font></b></a>
+			</li>
+			<li>
+				<a href="http://www.afccleveland.com/sponsors/index.html"><b><font face="Myriad Web Pro"><h5>
+				SPONSORS</h5></font></b></a></li>
+		</ul>
+					</li>
+				</ul>
+			</li>
+</td>
+														</tr>
+														<tr>
+															<td height="25" colspan="2"></td>
+														</tr>
+													</table>
+</td>
+				<td>
+												<div align="center">
+													<table border="0" width="100%" cellspacing="0" cellpadding="0" height="50">
+														<tr>
+															<td height="25">
+												<a target="_blank" title="AFC Cleveland Facebook" href="https://www.facebook.com/afccle">
+												<img border="0" src="http://www.afccleveland.com/images/fb.png" width="26" height="25"></a></td>
+														</tr>
+														<tr>
+															<td height="25"></td>
+														</tr>
+													</table>
+												</div>
+				</td>
+				<td valign="top">
+				&nbsp;</td>
+				<td>
+												<div align="center">
+													<table border="0" width="100%" cellspacing="0" cellpadding="0" height="50">
+														<tr>
+															<td height="25">
+												<a target="_blank" title="AFC Cleveland Twitter" href="https://twitter.com/afccleveland">
+												<img border="0" src="http://www.afccleveland.com/images/tw.png" width="26" height="25"></a></td>
+														</tr>
+														<tr>
+															<td height="25"></td>
+														</tr>
+													</table>
+												</div>
+				</td>
+				<td valign="top">
+				&nbsp;</td>
+				<td>
+												<div align="center">
+													<table border="0" width="100%" cellspacing="0" cellpadding="0" height="50">
+														<tr>
+															<td height="25">
+												<a target="_blank" title="AFC Cleveland Instagram" href="http://www.instagram.com/afccleveland">
+												<img border="0" src="http://www.afccleveland.com/images/ins.png" width="26" height="25"></a></td>
+														</tr>
+														<tr>
+															<td height="25"></td>
+														</tr>
+													</table>
+												</div>
+				</td>
+				<td valign="top">
+				&nbsp;</td>
+				<td>
+												<div align="center">
+													<table border="0" width="100%" cellspacing="0" cellpadding="0" height="50">
+														<tr>
+															<td height="25">
+												<a target="_blank" title="AFC Cleveland Youtube" href="https://www.youtube.com/channel/UCUwrFBR1pi7zA8PTJT8aZyw">
+												<img border="0" src="http://www.afccleveland.com/images/yt.png" width="26" height="25"></a></td>
+														</tr>
+														<tr>
+															<td height="25"></td>
+														</tr>
+													</table>
+												</div>
+				</td>
+			</tr>
+		</table></div>
+			</div></td>
+		</tr><div id="season_sponsor">
+
+<td height="18">
+			<div align="center">
+				<table border="0" width="1000" cellspacing="0" cellpadding="0">
+		<tr>
+						<td width="136">
+						&nbsp;</td>
+						<td width="152" valign="bottom">
+						<p style="margin-top: 6px">
+<img border="0" src="http://www.afccleveland.com/images/nat-champs-plain-web-left.png" width="162" height="36" align="left">
+						</td>
+	<td width="82">
+						<p align="right" style="margin-top: 6px">&nbsp;</td>
+						<td width="629"><p style="margin-top: 6px">
+						<img border="0" src="http://www.afccleveland.com/images/nova-care-season-sponsor.png" width="155" height="36" align="right"></td>
+					</tr>
+
+				</table>
+			</div>
+			</td></div></div>
+			</tr>
+</div>
+
+		<tr>
+<td height="13" valign="bottom">
+<div align="center">
+	<table border="0" width="1000" cellspacing="0" cellpadding="0" height="100%">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</div>
+</td>		</tr>
+		<tr>
+			<td valign="top" height="420">
+			<div align="center">
+				<table border="0" width="1000" cellspacing="0" cellpadding="0">
+					<tr>
+						<td><table border="0" width="1000" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="20" height="420">&nbsp;</td>
+									
+														<td class="main_story" height="420" valign="bottom" style="border: 3px solid #FFFFFF">
+<div class="container_main" data-link="http://google.com" style="background-image:url(http://www.afccleveland.com/images/2016-NPSL-Champs.jpg);">
+<div>
+		<a id="box-link" href="news/story.php?id=149"></a>
+		</div>
+<div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -327px; height: 93px">
+<div class="story_details" style="position: relative; left: 14px; bottom: 0px; height:93px; width:936px">
+	
+	
+	<table border="0" width="100%" height="83">
+<tr>
+<td><a class="mainstorylink" href="news/story.php?id=149"><h8>Kings of the NPSL: The Royals Rise to Earn Their First Star</h8></a></b>
+</td>
+</tr>
+<tr>
+<td>		
+<h4 style="display:inline;">
+<font color="#FFFFFF">
+<span style="font-weight: 400">Before a sold out crowd of 2,205 fans, AFC Cleveland twice rallied from being a goal down to defeat Sonoma County Sol and win the NPSL National Championship on Saturday night. Braces by Varnadore and Vinny Bell kept the team level for most of the match before ...&nbsp;&nbsp;&nbsp;</span></font></h4> <a class="continuereadinglink" href="news/story.php?id=149"><h1 style="display:inline;">Continue Reading ></h1></div></a></font>
+</td>
+</tr>
+</table>
+</div>
+</div>
+				<p>&nbsp;</div>
+				</td>														<td width="20" height="420">&nbsp;</td>
+								</tr>
+
+
+								</table></td>
+					</tr>
+				</table>
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td height="320">
+			<div align="center">
+				<table border="0" width="1000" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="20">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+						<div align="center">
+							<table border="0" width="1000" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="25" rowspan="2">&nbsp;</td>
+																																			
+									<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+												<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/image-story-148.jpg);">
+												<div>
+		<a id="box-link-sm" href="news/story.php?id=148"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="news/story.php?id=148"><font color="#FFFFFF">AFC Cleveland to Host 2016 NPS&nbsp;</font>... ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>
+										</table>
+									</div>
+									</td>
+									<td width="18" rowspan="2">&nbsp;</td>
+																																												
+									<td width="307" rowspan="2" valign="bottom"><div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+												<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/2016-supporters-XI.jpg);">
+												<div>
+		<a id="box-link-sm" href="news/story.php?id=146"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="news/story.php?id=146"><font color="#FFFFFF">NPSL Supporters' XI Announced&nbsp;</font>... ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>
+										</table>
+									</div>
+									</td>								
+									<td width="18" rowspan="2">&nbsp;</td>
+																																												
+									<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+											<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/match-48-cover.JPG);">
+											<div>
+		<a id="box-link-sm" href="news/story.php?id=145"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="news/story.php?id=145"><font color="#FFFFFF">Royals grind out a victory ove&nbsp;</font>... ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>
+										</table>
+									</div>
+									</td>
+									
+									<td width="25" rowspan="2">&nbsp;</td>
+								</tr>
+																																			
+								<tr>
+																																																																																																										</tr>
+							</table>
+						</div>
+						</td>
+					</tr>
+																			<tr>
+<td height="20">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>
+						<div align="center">
+							<table border="0" width="1000" cellspacing="0" cellpadding="0">
+								<tr>
+<td width="25" rowspan="2">&nbsp;</td>
+																																			
+									<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+											<!-- Next Game Box data STARTS Here -->
+												<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF" bgcolor="#FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/Website_NextMatch_FINAL.jpg);">
+										 	<!-- Next Game Box data ENDS Here -->
+
+							 												<div>
+		<a id="box-link-sm" href="schedule/index.html"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="schedule/index.html"><font color="#FFFFFF">Season Schedule&nbsp; ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>																								</table>
+									</div>
+									</td>
+
+									<td width="18" rowspan="2">&nbsp;</td>
+																																												
+									<td width="307" rowspan="2" valign="bottom"><div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+											<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF" bgcolor="#FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/standings-holder.jpg);">
+																					 									 												<div>
+		<a id="box-link-sm" href="schedule/standings.html"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="schedule/standings.html"><font color="#FFFFFF">
+		2016 Standings&nbsp; ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>
+										</table>
+									</div></td>									
+									<td width="18" rowspan="2">&nbsp;</td>
+	
+																																																					<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+												<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF" bgcolor="#FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/small-joma.jpg);">
+										 												<div>
+		<a id="box-link-sm" href="http://afccleveland.com/e-store/15-joma"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" href="http://afccleveland.com/e-store/15-joma"><font color="#FFFFFF">Shop Now!&nbsp; ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+																						</tr>
+										</table>
+									</div></td>
+									
+							
+<td width="25" rowspan="2">&nbsp;</td>								</tr>
+							</table>
+						</div>
+						</td>
+					</tr>
+					<tr>
+						<td height="20">&nbsp;</td>					</tr>
+					<tr>
+						<td height="20">
+						<div align="center">
+							<table border="0" width="1000" cellspacing="0" cellpadding="0">
+								<tr>
+
+<td width="25" rowspan="2">&nbsp;</td>
+
+																																											
+									<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+												<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/ChampsShirt_store_website.jpg);">
+										 									 												<div>
+		<a id="box-link-sm" target="_blank" href="http://afccleveland.com/e-store/apparel/86-afc-cleveland-champions-tee.html#"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" target="_blank" href="http://afccleveland.com/e-store/apparel/86-afc-cleveland-champions-tee.html#"><font color="#FFFFFF">Get Your Championship Gear!&nbsp;</font>... ></h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>														
+										</table>
+									</div>
+									</td>
+
+									<td width="18" rowspan="2">&nbsp;</td>
+																																			
+
+									<td width="307" rowspan="2" valign="bottom"><div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+											<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF" bgcolor="#FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/scarf-champ.jpg);">
+										 										 												<div>
+		<a id="box-link-sm" target="_blank" href="http://afccleveland.com/e-store/novelties/89-afc-cleveland-champions-scarf.html"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" target="_blank" href="http://afccleveland.com/e-store/novelties/89-afc-cleveland-champions-scarf.html"><font color="#FFFFFF">Get Yours Today!&nbsp;</font>... 
+		&gt;</h6></a></td>
+
+	</tr>
+	</table></div>
+											</div></div></td>
+											</tr>
+										</table>
+									</div></td>									
+									<td width="18" rowspan="2">&nbsp;</td>
+
+																																												<td width="307" rowspan="2" valign="bottom">
+									<div align="center">
+										<table border="0" width="307px" cellspacing="0" cellpadding="0" height="130">
+											<tr>
+											<td class="sub_story" valign="bottom" style="border: 3px solid #FFFFFF" bgcolor="#FFFFFF"><div class="small_container" style="background-image:url(http://www.afccleveland.com/images/plaque-champ.jpg);">
+										 												<div>
+		<a id="box-link-sm" target="_blank" href="http://afccleveland.com/e-store/novelties/90-afc-cleveland-champions-commemorative-plaque.html"></a>
+		</div>
+										 <div class="bottom_pic_wrapper" style="position: relative; left: 0px; bottom: -100px; width: 307px">
+											<div align="center">
+												<table border="0" width="281" cellpadding="5">
+	<tr>
+		<td><h6><a class="continuereadinglink" target="_blank" href="http://afccleveland.com/e-store/novelties/90-afc-cleveland-champions-commemorative-plaque.html"><font color="#FFFFFF">Get Yours Today!&nbsp;</font>... 
+		&gt;</h6></a></td>
+	</tr>
+	</table></div>
+											</div></div></td>
+										
+											</tr>
+										</table>
+									</div></td>
+																		
+							
+<td width="25" rowspan="2">&nbsp;</td>								</tr>
+							</table>
+						</div>
+						</td>					</tr>
+					<tr>
+						<td height="20">&nbsp;</td>					</tr>
+					</table>
+			</div>
+			</td>
+		</tr>
+<tr>
+			<td height="58">
+		<div id="footer">	
+		<div align="center">
+			<table border="0" width="1000" cellspacing="0" cellpadding="0" height="100%">
+				<tr>
+					<td>&nbsp;</td>
+					<td width="45">
+					<p align="center">
+					<a target="_blank" title="The National Premier Soccer League" href="http://www.npsl.com/">
+					<img border="0" src="images/npsl-sm-footer.png" width="29" height="35"></a></td>
+					<td width="45">
+					<p align="center">
+					<img border="0" src="images/footer-team-crest.jpg" width="29" height="35"></td>
+					<td width="45">
+					<p align="center">
+					<a target="_blank" title="US Soccer" href="http://www.ussoccer.com/">
+					<img border="0" src="images/us-soccer-logo-sm.png" width="29" height="35"></a></td>
+					<td>&nbsp;</td>
+</tr>
+			</table>
+		</div>
+</div></td>
+		</tr>
+
+<tr>
+			<td bgcolor="#1B1B1B" valign="top">
+			&nbsp;</td>
+		</tr>
+
+<tr>
+			<td bgcolor="#1B1B1B" valign="top">
+			<div align="center">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center"><table border="0" width="134" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://www.joma-sport.com/en"><div class="footer_logo_container">
+<img border="0" src="http://www.afccleveland.com/images/Joma_box.png"></div></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="https://www.drinknooma.com/"><div class="footer_logo_container">
+<img border="0" src="http://www.afccleveland.com/images/Nooma_box.png"></div></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://www.novacare.com"><div class="footer_logo_container">
+<img border="0" src="http://www.afccleveland.com/images/NovaCare_box.png"></div></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://steelcityanesthesia.com/"><div class="footer_logo_container">
+<img border="0" src="http://www.afccleveland.com/images/Steel-City-Anesthesia_box.png"></div></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>		</tr>
+	</table></td>
+					</tr></div>
+			</td>
+		</tr>
+
+<tr>
+			<td bgcolor="#1B1B1B" valign="top">
+			&nbsp;</td>
+		</tr>
+
+<tr>
+			<td bgcolor="#1B1B1B" valign="top">
+			<p align="center"><font face="Myriad Pro" size="1" color="#FFFFFF">
+						<h1 align="center"><span style="font-weight: 400">
+						<a class="mainstorylink" href="index.html">
+						<u><h9>HOME</h9></u></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="club/index.html"><h9>
+						CLUB</h9></a>&nbsp; |&nbsp;
+						<a class="mainstorylink" href="news/index.html"><h9>
+						NEWS</h9></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="schedule/index.html"><h9>
+						SCHEDULE</h9></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="stadium/index.html"><h9>
+						STADIUM</h9></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="fans/index.html"><h9>
+						FANS</h9></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="tickets/index.html"><h9>
+						TICKETS</h9></a>&nbsp; |&nbsp; 
+						<a class="mainstorylink" target="_blank" href="http://www.afccleveland.com/e-store"><h9>
+						SHOP</a></h9>&nbsp; |&nbsp; 
+						<a class="mainstorylink" href="sponsors/index.html"><h9>
+						SPONSORS</a></h9></span></h1>
+						</font></td>
+		</tr>
+
+<tr>
+			<td bgcolor="#1B1B1B" valign="top">
+			<div align="center">
+<table border="0" width="1000" cellspacing="0" cellpadding="0">
+					<tr>
+						<td align="center">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center"><table border="0" width="134" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://www.joma-sport.com/en"></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="https://www.drinknooma.com/"></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://www.novacare.com"></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center">
+			<a target="_blank" href="http://steelcityanesthesia.com/"></a></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>		</tr>
+	</table></td>
+					</tr><table>
+					<tr>
+						<td align="center">
+						&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center">
+						<font face="Myriad Pro" size="1" color="#FFFFFF">
+						<p align="center">
+						<h9>&copy; 2016 AFC Cleveland&nbsp; |&nbsp; 
+						All Rights Reserved&nbsp; |&nbsp; PO Box 347363, 
+						Cleveland, OH 44134
+</h9>
+						<p align="center">
+						<h9>Last Updated: August 08, 2016 21:52:14</h9></font></td>
+					</tr>
+					<tr>
+						<td align="center"><table border="0" width="134" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width="26">
+			<p align="center"><div class="footer_logo_container">
+&nbsp;</div></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center"><div class="footer_logo_container">
+&nbsp;</div></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center"><div class="footer_logo_container">
+&nbsp;</div></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="26">
+			<p align="center"><div class="footer_logo_container">
+&nbsp;</div></p></td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>
+			<td width="36">
+			&nbsp;</td>		</tr>
+	</table></td>
+					</tr>
+					<tr>
+						<td align="center">&nbsp;</td>
+					</tr>
+					</table>				
+			</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+
+</html>

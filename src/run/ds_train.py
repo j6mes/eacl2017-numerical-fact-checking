@@ -10,7 +10,7 @@ from classifier.features.bow import BOW
 from classifier.features.linearise import flatten_with_labels, flatten_without_labels
 from classifier.features.pseudo_multiclass import IDPerColumnMultiClass
 from distant_supervision.clean_html import get_text, has_text
-from distant_supervision.query_generation import normalise_keep_nos
+from distant_supervision.normalisation import normalise_keep_nos
 from distant_supervision.scraper import url_hash
 from distant_supervision.search import Search
 from distant_supervision.utterance_detection import find_utterances_for_tuple, matches_to_features, threshold_match, \

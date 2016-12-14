@@ -80,7 +80,6 @@ def text_from_html(tag,original_html):
                     for repl in i.select("a"):
                         text = text.replace(repl.__str__(),"")
 
-                    print (i.getText())
                     if len(i.getText()) > 5 and len(BeautifulSoup(text,"lxml").getText().strip()) is not 0 and len(BeautifulSoup(text,"lxml").getText().split(" ")) > 5:
                         out.append(i.getText().strip())
                 elif len(i.getText()) > 5 and len(i.getText().split(" ")) > 5:

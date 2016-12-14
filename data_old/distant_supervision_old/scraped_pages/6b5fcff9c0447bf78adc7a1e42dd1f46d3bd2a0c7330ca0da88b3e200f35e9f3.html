@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>   <html class="ie6 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>      <html class="ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>      <html class="ie8 ie" lang="en"> <![endif]-->
+<!--[if IE]>        <html class="ie" lang="en">     <![endif]-->
+<!--[if !IE]><!-->  <html lang="en">              <!--<![endif]-->
+
+<head><script type="text/javascript"><!--
+
+var ua = navigator.userAgent;
+window.isIOS = (ua.match(/iPhone/i) || ua.match(/iPad/i));
+window.isiPhone = (ua.match(/iPhone/i));
+window.isiPad = (ua.match(/iPad/i));
+window.isMobile = ua.match(/ipad/i)
+	|| ua.match(/ipod/)
+	|| ua.match(/iphone/i)
+	|| ua.match(/android/i)
+	|| ua.match(/opera mini/i)
+	|| ua.match(/blackberry/i)
+	|| ua.match(/(pre\/|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine)/i)
+	|| ua.match(/(iris|3g_t|windows ce|opera mobi|windows ce; smartphone;|windows ce; iemobile)/i)
+	|| ua.match(/(mini 9.5|vx1000|lge |m800|e860|u940|ux840|compal|wireless| mobi|ahong|lg380|lgku|lgu900|lg210|lg47|lg920|lg840|lg370|sam-r|mg50|s55|g83|t66|vx400|mk99|d615|d763|el370|sl900|mp500|samu3|samu4|vx10|xda_|samu5|samu6|samu7|samu9|a615|b832|m881|s920|n210|s700|c-810|_h797|mob-x|sk16d|848b|mowser|s580|r800|471x|v120|rim8|c500foma:|160x|x160|480x|x640|t503|w839|i250|sprint|w398samr810|m5252|c7100|mt126|x225|s5330|s820|htil-g1|fly v71|s302|-x113|novarra|k610i|-three|8325rc|8352rc|sanyo|vx54|c888|nx250|n120|mtk |c5588|s710|t880|c5005|i;458x|p404i|s210|c5100|teleca|s940|c500|s590|foma|samsu|vx8|vx9|a1000|_mms|myx|a700|gu1100|bc831|e300|ems100|me701|me702m-three|sd588|s800|8325rc|ac831|mw200|brew |d88|htc\/|htc_touch|355x|m50|km100|d736|p-9521|telco|sl74|ktouch|m4u\/|me702|8325rc|kddi|phone|lg |sonyericsson|samsung|240x|x320|vx10|nokia|sony cmd|motorola|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|psp|treo)/i);
+window.isTablet =window.isiPad
+    || ua.match(/tablet/)
+	|| ua.match(/^.*Android.*Nexus(((?:(?!Mobile))|(?:(\s(7|10).+))).)*$/)
+	|| ua.match(/SAMSUNG.*Tablet|Galaxy.*Tab|SC-01C|GT-P1000|GT-P1003|GT-P1010|GT-P3105|GT-P6210|GT-P6800|GT-P6810|GT-P7100|GT-P7300|GT-P7310|GT-P7500|GT-P7510|SCH-I800|SCH-I815|SCH-I905|SGH-I957|SGH-I987|SGH-T849|SGH-T859|SGH-T869|SPH-P100|GT-P3100|GT-P3108|GT-P3110|GT-P5100|GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|GT-P7501|GT-N5100|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925/)
+	|| ua.match(/Kindle|Silk.*Accelerated|Android.*\b(KFTT|KFOTE)\b/)
+	|| ua.match(/Windows NT [0-9.]+; ARM;/)
+	|| ua.match(/Transformer|TF101|PadFone|ME301T|ME371MG/)
+	|| ua.match(/PlayBook|RIM Tablet/)
+	|| ua.match(/HTC Flyer|HTC Jetstream|HTC-P715a|HTC EVO View 4G|PG41200/)
+    || ua.match(/xoom|sholest|MZ615|MZ605|MZ505|MZ601|MZ602|MZ603|MZ604|MZ606|MZ607|MZ608|MZ609|MZ615|MZ616|MZ617/)
+	|| ua.match(/Android.*Nook|NookColor|nook browser|BNRV200|BNRV200A|BNTV250|BNTV250A|LogicPD Zoom2/)
+	|| ua.match(/Android.*\b97D\b|Tablet(?!.*PC)|ViewPad7|BNTV250A|MID-WCDMA|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|hp-tablet|rk30sdk/);
+
+
+function readcookie (key, options)
+{
+    // key and possibly options given, get cookie...
+    options = options || {};
+    var result, decode = options.raw ? function (s) { return s; } : decodeURIComponent;
+    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null;
+};
+
+var mobswitchingdisabled = readcookie('mobswitchingdisabled');
+
+if (window.isMobile && !window.isTablet && !mobswitchingdisabled) {
+    location.href = 'http://m.tottenhamhotspur.com/news/everton-1-spurs-1-man-of-the-match-result-040116/';
+}
+
+//--></script><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta property="fb:pages" content="351687753504" /><link rel="stylesheet" type="text/css" media="all" href="/WorkArea/FrameworkUI/css/ektron.stylesheet.ashx?id=587725940+-299988140+975973089+1514748663+-1759591071+395185562+-164328284+-893698887+903749141+1772379047+351309724+-527374634+674828443+137309523+-491600734+87512790+-29775248" /><link rel="stylesheet" type="text/css" media="print" href="/WorkArea/FrameworkUI/css/ektron.stylesheet.ashx?id=107513038" /><script type="text/javascript" src="/WorkArea/FrameworkUI/js/ektron.javascript.ashx?id=-1028355414+1948574407+702653030+-2102521468+-10828826+1328095523+-744922478+1077454793+289526501+-1884344366+-930413265+1617524923+1025286258+287753462"></script><script type="text/javascript" src="/components/handlers/share.ashx"></script><script type="text/javascript" src="/components/handlers/koreandatacapture.ashx"></script><script type="text/javascript" src="/components/handlers/geotarget.ashx"></script><script type="text/javascript" src="/WorkArea/FrameworkUI/js/ektron.javascript.ashx?id=463609706+2090682459+-469630245+-1767578931+407784638+-862595292"></script><script type="text/javascript" src="http://static.apester.com/js/sdk/latest/apester-sdk.min.js"></script><script type="text/javascript" src="/WorkArea/FrameworkUI/js/ektron.javascript.ashx?id=-1572948616+1208878718"></script><script type="text/javascript" src="http://imagesrv.adition.com/js/adition.js"></script><script type="text/javascript" src="/WorkArea/FrameworkUI/js/ektron.javascript.ashx?id=659787066+-1965253052"></script>
+    <link rel="stylesheet" data-photoslurp-css-id="widgetContainerID" href="css/custom.css">
+<link rel="canonical" href="http://www.tottenhamhotspur.com/news/everton-1-spurs-1-man-of-the-match-result-040116/"/>
+<meta name="description" content="Dele Alli has been voted Man of the Match by fans after his performance in our 1-1 draw at Everton on Sunday." />
+<meta name="keywords" content="" />
+<meta name="news_keywords" content="" />
+<link rel="alternate" hreflang="en" href="/news/everton-1-spurs-1-man-of-the-match-result-040116/" /><link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<!-- Begin BlockAdBlock plugin https://github.com/sitexw/BlockAdBlock -->
+<script type="text/javascript" src="/Components/js/plugins/BlockAdBlock/blockadblock.js"></script>
+<script type="text/javascript" src="/Components/js/plugins/BlockAdBlock/blockadblock-ui.js"></script>
+
+    <style type="text/css">
+        .bab_banner-wrapper .bab_btn.bab_btn_accept_all
+        {
+            background-color: #021F5B;
+            color: #fff;
+        }
+        
+        .bab_banner-wrapper .bab_btn:hover.bab_btn_accept_all
+        {
+            background-color: #021F5B;
+            color: #fff;
+        }
+    </style>
+    <!-- End BlockAdBlock plugin -->
+
+
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    
+    
+    <style>
+    .cc_banner-wrapper .cc_btn.cc_btn_accept_all
+    {
+        background-color:#42B5E6;
+        color:#fff;
+        }
+        
+        .cc_banner-wrapper .cc_btn:hover.cc_btn_accept_all
+    {
+        background-color:#42B5E6;
+        color:#fff;
+        }
+    
+    </style>
+
+        <script type="text/javascript">
+        var message = "This website uses cookies to ensure you get the best experience on our website";
+        var dismiss = "Got it!";
+        var learnMore = "More info";
+    
+        window.cookieconsent_options = {"message":message,"dismiss":dismiss,"learnMore":learnMore,"link":"/information/privacy-policy/#cookies","theme":"light-floating"};
+        </script>
+        <script type="text/javascript" src="/components/usercontrols/cookiepolicynew/cookieconsent.js"></script>
+        <!-- End Cookie Consent plugin -->
+    <title>
+	Everton 1-1 Spurs - MOTM result 4 January 2016 - News - tottenhamhotspur.com
+</title></head>
+<body id="ctl00_body" style="background-image:url(/uploadedImages/Shared_Assets/Images/Backgrounds/2013-2014_Season/flags-new.jpg?n=7787);" class="langDef lang-en">
+    
+    
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PD3H6N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)
+[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+'//www.googletagmanager.com/gtm.js?id=' + i
++ dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PD3H6N');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push ({
+	'event': 'bannerImpressions',
+	'campaignType': 'Splash/Leaderboard/Skyscraper/MPU/Mobile Banners',
+	'campaignName': 'Spurs Tickets'
+});
+</script>
+    <script type="text/javascript">
+global_domain = 'members.tottenhamhotspur.com';
+global_homeUrl = '/home/';
+global_languagePrefixUrl = '';
+global_cultureCode = 'en';
+global_languageCode = 'en';
+global_ekpageId = 6442506868;
+global_eklanguageId = 2057;
+global_facebookPage = 'http://www.facebook.com/TottenhamHotspur';
+global_translations = { 'Hello':'Hi', 'Menu':'Menu', 'Close':'Close', 'Expand':'Expand', 'Hide':'Hide', 'MoreInfo':'More Info', 'HideInfo':'Hide Info', 'HideInfo_WithAbbriv':'Hide <abbr title="Information">info</abbr>', 'ReadMore':'Read more', 'Month_1': 'January', 'Month_2': 'February', 'Month_3': 'March', 'Month_4': 'April', 'Month_5': 'May', 'Month_6': 'June', 'Month_7': 'July', 'Month_8': 'August', 'Month_9': 'September', 'Month_10': 'October', 'Month_11': 'November', 'Month_12': 'December', 'MinutesPlayed':'Minutes played', 'GoalsConceded':'Goals Conceded', 'Saves':'Saves', 'PassingAccuracy':'Passing Accuracy', 'Clearances':'Clearances', 'GoalKicks':'GoalKicks', 'Goals':'Goals', 'Assists':'Assists', 'Tackles':'Tackles', 'ShootingAccuracy':'Shooting Accuracy', 'ShotsOnTarget':'Shots on target', 'ViewMatchReport':'View match report', 'SeasonStart':'Season Start', 'SeasonEnd':'Season End', 'LastMatchStatsUnavailable':'Last match stats are not available for this player.', 'StatsForSeasonWillBeAvailableOnceTheSeasonHasBegun':'Stats for the 2013/2014 Season will be available once the season has begun.', 'SeasonStatsAreNotAvailableForThisPlayer':'Sorry, season stats are not available for this player', 'PresentedBy':'Presented by', 'OtherMatchesToday':'Other Matches Today', 'Match':'Match', 'Score':'Score', 'ThereAreCurrentlyNoOtherGamesTakingPlace':'There are currently no other games taking place', 'ViewFullStatsAndCompare':'View full stats and compare', 'Team':'Team', 'Player':'Player', 'TotalShots':'Total Shots', 'Offside':'Offside', 'Fouls':'Fouls', 'Corners':'Corners', 'YellowCards':'Yellow cards', 'RedCards':'Red cards', 'UnusedSubs':'Unused subs', 'Minutes':'minutes', 'LoginForAudioCommentary':'Login for audio commentary', 'Player':'Player', 'AdvancedSearch':'Advanced search', 'SearchSite':'Search site', 'Return_To_Homepage':'Return to home page' };
+var addthis_config = addthis_config || {};
+addthis_config.ui_language = 'en';
+</script>
+
+    <form method="post" action="/news/everton-1-spurs-1-man-of-the-match-result-040116/" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="EktronClientManager" id="EktronClientManager" value="587725940,702653030,1948574407,-1028355414,-299988140,975973089,-2102521468,-10828826,1328095523,-744922478,1077454793,289526501,-1884344366,1514748663,-930413265,-1759591071,395185562,-164328284,-893698887,903749141,1617524923,1025286258,287753462,-1659806399,18868366,-1739686092,463609706,2090682459,-469630245,-1767578931,407784638,1772379047,351309724,-527374634,674828443,137309523,-491600734,87512790,-862595292,-834918457,-1146173262,-29775248,-1572948616,1208878718,107513038,-1161329711,659787066,-1965253052" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjAyNTI2NjIxZBgCBTdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJFNvY2lhbEljb25zQm90dG9tJHNvY2lhbFZpZXdzDw9kAgNkBTRjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJFNvY2lhbEljb25zVG9wJHNvY2lhbFZpZXdzDw9kAgNk+noI+zQxgUGgJKAIm4/HQh2iptHPLMJ5PchGWHL+MCI=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=OL7fiolIY1Ehsr6xJ-VwyVpfGy435Ofa-hkJiUtO0QdlM8QAvy7h1qJJofC4r2WmRDsvcLoZSshdXOugRmWvynyDNCmHCiXcncrlb8Ou7sU1&amp;t=635802997220000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=epIv-sL1JN74bVpWom2r8ni1SXqfR4x2-uxlJRFAwf32cNbSrM6RByGe6tXdVyxWRSWoswj7HlCK_aj7osNOrPh7j1EjCvtbmSPiG8YrAYKZn5zc9KuHRQMPWqjF0ZUU7UhPlOg1z6vbFLe_qN65vvq0T8mt1Dm9SMBBASwhVhs1&amp;t=62fc1f78" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=Ka6fYzxGtpHc2TBQaoECh1bs1py11uSUag-l4iWSNiBi4dynewhE1ca3YbCu0e_0YQGAtN4atjLiBe3XORkTcquxSG2x888rAodUf6lwTljbu1o5V_6eZgmj5J3_Pz_2AxVfNVmC3hLwQYCY9DAplu_pC8_vDIYD4CMbUw3hslc1&amp;t=5f9d5645" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=B_zva86CZmSNOzv2iQVJcdUyyITs5aLG4dCL89CVuCXAgJm0zl2ugTRLdji1P-gmCYG4BI5RUyT33fDb6677zXdQVkO7JIa7DW7f4c-vq5x3ajQju9Y58s_xeQa1J_MvOiKvNiLDVoYZFVR2SWjdpcNOvY14T6ZugrVstRjJcVk-wznLeNQHMuOj4RDOK4_30&amp;t=5f9d5645" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BA7F59B1" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$scptmgr', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    
+    <img src="/Components/images/logo-spurs-print.png" alt="Tottenham Hotspur" width="90"
+        height="185" class="print-logo" />
+    <a href="#content-panel" class="skiplinks">
+        Skip to main content</a>
+    
+
+<div id="headContainer">
+    
+    
+    
+    <div id="advertContainer">
+        <div width="991px" height="39px" style="position:relative">
+            <!-- BEGIN ADITIONTAG Website tag -->
+            <script type="text/javascript" src="http://imagesrv.adition.com/js/adition.js"></script>
+            <script type="text/javascript" src="http://adfarm1.adition.com/js?wp_id=3616328"></script> 
+            <!-- END ADITIONTAG-->
+        </div>
+    </div>
+    
+    <div id="head">
+        <div class="menus">
+            <div id="logo">
+                <a href="/home/" id="ctl00_ctlHeader_logolink">
+                    <img id="ctl00_ctlHeader_imgLogo" class="logo-img" src="/uploadedImages/Segments/Spurs/poppy-logov4.png" alt="Tottenham Hotspur" />
+                </a>
+            </div>
+     	    <div>
+                
+                <ul id="ctl00_ctlHeader_accountToobar" class="account-toolbar toolbar">
+                    <li id="ctl00_ctlHeader_Li1"><a href="../../Components/UserControls/Header/#" id="ctl00_ctlHeader_test"><span class="icon ic-login"></span> Test</a></li>
+                    <li id="ctl00_ctlHeader_login" class="login"><a id="ctl00_ctlHeader_lnkLogin" href="javascript:__doPostBack(&#39;ctl00$ctlHeader$lnkLogin&#39;,&#39;&#39;)"><span class="icon ic-login"></span> Login</a></li>
+                    <li id="ctl00_ctlHeader_register"><a id="ctl00_ctlHeader_lnkRegister" href="javascript:__doPostBack(&#39;ctl00$ctlHeader$lnkRegister&#39;,&#39;&#39;)">Register</a></li>
+                    <li id="ctl00_ctlHeader_welcome"></li>
+                    <li id="logout" class="my-account"><a id="ctl00_ctlHeader_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$ctlHeader$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                </ul>
+                <ul class="social-toolbar toolbar">
+                    <li class="qqtencent"><a href="//t.qq.com/tottenhamhotspur"><img src="/components/images/icons/social/tencent.gif" alt="Tencent" /></a></li>
+                    <li class="weibo"><a href="//weibo.com/tottenhamhotspur"><img src="/components/images/icons/social/weibo.gif" alt="Sina Weibo" /></a></li>
+                    <li class="youku"><a href="//i.youku.com/tottenhamhotspur"><img src="/components/images/icons/social/youku.gif" alt="Youku" /></a></li>
+                    <li class="weixin"><img src="/components/images/icons/social/weixin.gif" alt="Weixin ID: TottenhamHotspur" title="Weixin ID: TottenhamHotspur" /></li>
+                    <li id="ctl00_ctlHeader_facebookItem" class="like">
+                        <a href="http://www.facebook.com/TottenhamHotspur" id="ctl00_ctlHeader_facebookLink" class="social-facebook" target="_blank">
+                            <img src="/components/images/clear.gif" alt="Facebook" width="25" height="25" />
+                        </a>
+                    </li>
+                    <li class="twitFollow">
+                        <a href="//twitter.com/SpursOfficial" id="ctl00_ctlHeader_twitterLink" class="social-twitter" target="_blank">
+                            <img src="/components/images/clear.gif" alt="Twitter" width="25" height="25" />
+                        </a>
+                    </li>
+                    <li id="ctl00_ctlHeader_gplusItem" class="gplus">
+                        <a href="//plus.google.com/109368880984358777249?prsrc=3" id="ctl00_ctlHeader_gplusLink" class="social-googleplus" target="_blank" rel="publisher">
+                            <img src="/components/images/clear.gif" alt="Google+" width="25" height="25" />
+                        </a>
+                    </li>
+			        <li id="ctl00_ctlHeader_ytubeItem" class="ytube">
+                        <a href="http://www.youtube.com/user/spursofficial" id="ctl00_ctlHeader_ytubeLink" class="social-youtube" target="_blank">
+                            <img src="/components/images/clear.gif" alt="YouTube" width="25" height="25" />
+                        </a>
+                    </li>
+                    <li id="ctl00_ctlHeader_igramItem" class="igram">
+                        <a href="http://instagram.com/spursofficial?ref=badge" id="ctl00_ctlHeader_igramLink" class="social-instagram" target="_blank">
+                            <img src="/components/images/clear.gif" alt="Instagram" width="25" height="25" />
+                        </a>
+                    </li>
+                    <li id="search">
+                        <fieldset class="search">
+                            <div id="ctl00_ctlHeader_searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_ctlHeader_searchSubmit&#39;)">
+	
+                                <span id="ctl00_ctlHeader_searchTextRegExpHtml" class="error-inline" style="display:none;">Html is not allowed</span>
+                                <input name="ctl00$ctlHeader$searchInput" type="text" value="Search site" id="ctl00_ctlHeader_searchInput" class="box searchInput" title="Search site" />
+                                <input type="submit" name="ctl00$ctlHeader$searchSubmit" value="" onclick="return $(&quot;.searchInput&quot;).val() != &quot;&quot; &amp;&amp; $(&quot;.searchInput&quot;).val() != getGlobalTranslation(&quot;SearchSite&quot;, &quot;Search site&quot;);WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$ctlHeader$searchSubmit&quot;, &quot;&quot;, true, &quot;headerSearch&quot;, &quot;&quot;, false, false))" id="ctl00_ctlHeader_searchSubmit" class="btn" />
+                            
+</div>
+                        </fieldset>
+                    </li>
+                    <li id="ctl00_ctlHeader_LanguageChangerWrapper" class="languageSelectorWrapper">
+                        <div class="languageSelector nojs"><ul><li class="selected" onclick="toggleGlobalLinks(0)"><span class="text"><img src="/uploadedImages/Shared_Assets/Images/Flags/ukFlag.png?n=5143" alt="English" />English</span><span class="arrow"> </span></li></ul></div>
+                    </li>
+                </ul>
+                
+                    <a class="newsletter-signup" href="/newsletter/?ics=header&icn=sign-up" title="Newsletter Signup">
+                        <img src="/Components/images/sign-up-button_2016.png"/>
+                    </a>
+                
+     	    </div>
+        </div>
+        <div class="globalLinks"></div>
+        
+        <div class="menus">
+            <ul class="nav limit">
+      
+      <li><a href="/news/" class="&#xA;              top-nav-link active "><span>News</span></a><ul><li><a href="/news/" class="">Latest News</a></li><li><a href="/news/spurs-media-watch/" class="">Spurs Media Watch</a></li><li><a href="/news-archive/" class="">News Archive</a></li> </ul></li><li><a href="http://shop.tottenhamhotspur.com" class="&#xA;              top-nav-link "><span>Shop</span></a><ul><li><a href="http://shop.tottenhamhotspur.com/branch/kit" class="">Replica Kit</a></li><li><a href="http://shop.tottenhamhotspur.com/branch/mens" class="">Mens</a></li><li><a href="http://shop.tottenhamhotspur.com/branch/womens?TRE00000" class="">Ladies</a></li><li><a href="http://shop.tottenhamhotspur.com/branch/kids" class="">Kids</a></li><li><a href="http://shop.tottenhamhotspur.com/branch/souvenirs" class="">Souvenirs</a></li><li><a href="http://shop.tottenhamhotspur.com/branch/home-and-garden" class="">Home</a></li><li><a href="/programme-subscription/" class="">Programme Subscription</a></li><li><a href="http://i.tottenhamhotspur.com/hc/en-us/categories/200961851-Spurs-Shop" class="">Shop FAQs</a></li> </ul></li><li><a href="/tickets/" class="&#xA;              top-nav-link "><span>Tickets</span></a><ul><li><a href="https://www.eticketing.co.uk/tottenhamhotspur/default.aspx?utm_source=top-navigation&amp;utm_medium=thfc-site-new&amp;utm_campaign=buy-tickets" class="">Buy Tickets</a></li><li><a href="/tickets/" class="">Ticket news</a></li><li><a href="/tickets/ticket-prices/" class="">Ticket prices</a></li><li><a href="/tickets/application-dates/" class="">Ticket application dates</a></li><li><a href="/hospitality/matchday/" class="">Hospitality Packages</a></li><li><a href="http://www.thomascooksport.com/Football/Premier-League/Tottenham-Hotspur?utm_source=tottenhamhotspur.com&amp;utm_medium=Club%2BWebsite%2BLink%2C%2BDrop%2BDown%2BMenu%2BLink&amp;utm_campaign=Football%2C%2BTottenham%2BHotspur" class="" target="_blank">Ticket &amp; Hotel Packages</a></li><li><a href="/tickets/stubhub/" class="">StubHub Tickets</a></li><li><a href="/tickets/stubhub/on-sale-dates/" class="">Stubhub On Sale Dates</a></li><li><a href="/junior/matchday-experience/" class="">Junior Matchday Experience</a></li><li><a href="http://i.tottenhamhotspur.com/hc/en-us/categories/200899061-Ticketing" class="">Ticket FAQs</a></li><li><a href="/tickets/stadium-seating/" class="">Stadium Seating</a></li> </ul></li><li><a href="/hospitality/" class="&#xA;              top-nav-link "><span>Hospitality</span></a><ul><li><a href="/hospitality/matchday-packages/" class="">Premier League Matchday Hospitality</a></li><li><a href="http://www.tottenhamhotspur.com/hospitality/champions-league/" class="">Champions League Hospitality</a></li><li><a href="/hospitality/executive-lounges/" class="">Seasonal Lounges</a></li><li><a href="/hospitality/executive-away-trips/" class="">Executive Away Trips</a></li><li><a href="/hospitality/executive-boxes/" class="">Seasonal Boxes</a></li><li><a href="/hospitality/members-area/" class="">Members Area</a></li><li><a href="/hospitality/virtual-tour/" class="">Virtual Tour</a></li><li><a href="/hospitality-and-events-video/" class="">Contact Us</a></li> </ul></li><li><a href="/membership/" class="&#xA;              top-nav-link "><span>Membership</span></a><ul><li><a href="https://www.eticketing.co.uk/tottenhamhotspur/memberships.aspx" class="" target="_blank">Join membership</a></li><li><a href="/membership/bronze-lilywhite/" class="">Bronze &amp; Lilywhite membership</a></li><li><a href="/membership/junior/" class="">Junior membership</a></li><li><a href="/membership/season-tickets/" class="">Season Tickets</a></li><li><a href="/hospitality/" class="" target="_blank">Hospitality membership</a></li><li><a href="/membership/my-account/" class="">My Account</a></li><li><a href="/membership/loyalty-points/" class="">Loyalty Points</a></li><li><a href="/membership/terms-and-conditions/" class="">Terms and Conditions</a></li><li><a href="http://i.tottenhamhotspur.com/hc/en-us/categories/200828475-Membership" class="">Membership FAQs</a></li> </ul></li><li><a href="/matches/" class="&#xA;              top-nav-link "><span>Matches</span></a><ul><li><a href="/matches/" class="">Fixtures &amp; Results</a></li><li><a href="/matchcentre/tottenham-hotspur-vs-west-ham-united-19112016/" class="">Next Match: <span style="text-transform: none;">vs</span> West Ham</a></li><li><a href="/matches/calendar/" class="">Download Calendar</a></li><li><a href="/matches/league-table/" class="">Premier League Table</a></li><li><a href="/matches/champions-league-tables/" class="">Champions League Tables</a></li><li><a href="/matches/spurs-on-tv/" class="">Matches on TV</a></li><li><a href="/programme/" class="">Matchday Programme</a></li><li><a href="http://i.tottenhamhotspur.com/hc/en-us/categories/200939922-Matchday" class="">Matchday FAQs</a></li> </ul></li><li><a href="/first-team-profiles/" class="&#xA;              top-nav-link "><span>Team</span></a><ul><li><a href="/first-team-profiles/" class="">First Team Profiles</a></li><li><a href="/first-team-statistics/" class="">First Team Statistics</a></li><li><a href="/first-team/coaching-staff/" class="">Coaching Staff</a></li><li><a href="/development-squad/" class="">Development Squad</a></li> </ul></li><li><a href="/academy/second-year-profiles" class="&#xA;              top-nav-link "><span>Academy</span></a><ul><li><a href="/academy/second-year-profiles/" class="">The Team</a></li><li><a href="/academy/premier-league-2/" class="">Premier League 2 Fixtures &amp; Results</a></li><li><a href="/academy/premier-league-2-table/" class="">Premier League 2 Table</a></li><li><a href="/academy/under-18-premier-league" class="">Under 18 Premier League Fixtures and Results</a></li><li><a href="/academy/u18-premier-league-table/" class="">Under 18 Premier League Table</a></li><li><a href="/academy/uefa-youth-league-fixtures/" class="">UEFA Youth League Fixtures and Results</a></li><li><a href="/academy/development-centre/" class="">Development Centre</a></li><li><a href="/academy/about-the-academy/" class="">About the Academy</a></li><li><a href="/academy/trials/" class="">Trials</a></li> </ul></li><li><a href="/spurs-tv/" class="&#xA;              top-nav-link "><span>Spurs TV</span></a><ul><li><a href="/spurs-tv/highlights/" class="">Highlights</a></li><li><a href="/spurs-tv/interviews/" class="">Interviews</a></li><li><a href="/spurs-tv/features/" class="">Features</a></li><li><a href="/kane50/" class="">KANE50</a></li><li><a href="/spurs-tv/vault/top-20-premier-league/" class="">The Vault</a></li><li><a href="/spurs-tv/extra-time/" class="">Extra Time</a></li><li><a href="/audio-commentary/" class="">Live Audio Commentary</a></li><li><a href="/king-of-the-lane/" class="">Ledley King Testimonial</a></li><li><a href="/spurs-tv/help/" class="">Spurs TV Help</a></li><li><a href="/spurs-tv/ipb-broadcasters/" class="">IPB Broadcasters</a></li> </ul></li><li><a href="/junior/" class="&#xA;              top-nav-link "><span>Junior</span></a><ul><li><a href="/membership/junior/" class="">Join Junior Membership</a></li><li><a href="/junior/spurs-family-feedback/" class="">Spurs Family Feedback</a></li><li><a href="/junior/competitions/" class="">Competitions</a></li><li><a href="http://www.tottenhamturfies.com/" class="" target="_blank">Tottenham Turfies</a></li><li><a href="/junior/matchday-experience/" class="">Matchday Experience</a></li><li><a href="/junior/become-a-mascot/" class="">Become A Mascot</a></li><li><a href="/junior/photos/" class="">Junior Galleries</a></li><li><a href="/junior/videos/" class="">Junior Videos</a></li> </ul></li><li><a href="/fans/" class="&#xA;              top-nav-link "><span>Fans</span></a><ul><li><a href="http://i.tottenhamhotspur.com/hc/en-us" class="override-case "><span class="override-case">iSPURS Information Hub</span></a></li><li><a href="/myspurs/" class="">MySpurs</a></li><li><a href="/passionate-about-tottenham/" class="">Passionate about Tottenham</a></li><li><a href="/white-hart-lane-gigapixel-panorama/#/scene0/" class="">White Hart Lane 360 Panorama</a></li><li><a href="/hotspur-heroes/" class="">Hotspur Heroes</a></li><li><a href="/goal-of-the-season/2015-2016/" class="">Goal of the Season</a></li><li><a href="/gotm/" class="">Goal of the Month</a></li><li><a href="/spurs-tv/vault/top-20-premier-league/" class="">The Vault</a></li> </ul></li><li><a href="http://i.tottenhamhotspur.com" class="&#xA;              top-nav-link " target="_blank"><span class="override-case ">iSPURS</span></a><ul><li><a href="/news/club/community/introducing-ispurs-190716/" class="override-case "><span class="override-case">What is iSPURS?</span></a></li> </ul></li><li class="last"><a href="/new-scheme/" class="&#xA;              top-nav-link "><span>New Scheme</span></a></li> </ul>
+        </div>
+    </div>
+</div><script id="EktronScriptBlockhoocn" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+
+             $(document).ready(function () {
+                setUpSearchAutocomplete('#ctl00_ctlHeader_searchInput');               
+            });
+});
+
+
+</script><script id="EktronScriptBlockfglfe" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+try {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function(){ setUpSearchAutocomplete('#ctl00_ctlHeader_searchInput'); });
+            } catch(e) {}
+});
+
+
+</script>
+    <div id="content">
+        
+    <div id="crumb" class="cf2">
+        <div class="component"><h2 class="spurs-font">News</h2></div><div class="home-link"><a href="/home/"><img src="/components/images/furniture/icon-home.png" alt="Home" /></a></div><div class="component"><ul><li itemtype="http://data-vocabulary.org/Breadcrumb"><a title="News" itemprop="url" href="/news/"><span itemprop="title">News</span></a></li><li>Everton 1 Spurs 1 Man of the Match result</li></ul></div><a href="/application/iphone/latestnews.xml?langId=2057" class="rss-link">Subscribe to newsfeed <span class="icon ic-rss"> </span></a>
+    </div>
+    <div class="pageContainer cf2">
+        <div id="nav-panel">
+            <div class="component">
+                <map id="inside-nav" name="inside-nav"><ul>
+<li class=" first"><a title="Latest News" href="/news/" class=""><span>Latest News</span></a></li>
+<li><a title="Spurs Media Watch" href="/news/spurs-media-watch/" class=""><span>Spurs Media Watch</span></a></li>
+<li class="active last"><em><a title="News Archive" href="/news-archive/" class="active"><span>News Archive</span></a></em></li>
+		  </ul>
+		  </map>
+            </div>
+            <div id="ctl00_ContentPlaceHolder1_shopcontainer" class="shopcontainer">
+                <span id="ctl00_ContentPlaceHolder1_RealiseUberDisplay"><!-- Start XSLT: /Components/Layouts/ShopCarousel/ShopCarousel.xslt --><div class="shopcarousel"><div class="slide"><div class="price">
+        £55.00</div><img src="/Components/images/loading.gif" alt="Home Kit 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/home-kit-16-17.jpg?n=7251&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-home-shirt-2016%2F2017/mhss16?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £26.00</div><img src="/Components/images/loading.gif" alt="Home Shorts 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/home-kit-shorts-16-17.jpg?n=7689&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-home-shorts-2016/2017/mhsh16">Buy now</a></div><div class="slide"><div class="price">
+        £55.00</div><img src="/Components/images/loading.gif" alt="Away Kit 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/away-kit-16-17.jpg?n=2708&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-away-shirt-2016%2F2017/mass16?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £26.00</div><img src="/Components/images/loading.gif" alt="Away Shorts 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/away-kit-shorts-16-17.jpg?n=6696&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-away-shorts-2016/2017/mash16">Buy now</a></div><div class="slide"><div class="price">
+        £55.00</div><img src="/Components/images/loading.gif" alt="Third Kit 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/third-kit-16-17.jpg?n=4912&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-third-shirt-2016%2F2017/mtss16?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £26.00</div><img src="/Components/images/loading.gif" alt="Third Kit Shorts 2016/2017" data-src="/uploadedImages/Shared_Assets/Images/shop/third-kit-shorts-16-17.jpg?n=9425&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/mens-third-shorts-2016/2017/mtsh16?TRE00000/">Buy now</a></div><div class="slide"><div class="price">
+        £40.00</div><img src="/Components/images/loading.gif" alt="Mens Polo 2016/2017" data-src="/uploadedImages/Products/Training_Kit_2016-2017/Spurs-Mens-Under-Armour-Polo.jpg?targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-polo-2016%2F2017/uat2016?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £55.00</div><img src="/Components/images/loading.gif" alt="Mens Tracksuit Jacket 2016/2017" data-src="/uploadedImages/Products/Training_Kit_2016-2017/Spurs-Mens-Under-Armour-Tracksuit-Jacket.jpg?targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-tracksuit-jacket-2016%2F2017/uat1816?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £28.00</div><img src="/Components/images/loading.gif" alt="Kids T-Shirt 2016/2017" data-src="/uploadedImages/Products/Training_Kit_2016-2017/Spurs-Kids-Under-Armour-T-Shirt.jpg?targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-kids-under-armour-t-shirt-2016%2F2017/uat0816?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £60.00</div><img src="/Components/images/loading.gif" alt="Mens Zipper Jumper 2016/17" data-src="/uploadedImages/Shared_Assets/Images/Shop_Products/Training_Wear_2016-17/UAT0516-navy-front.jpg?n=6962&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-zipper-jumper-2016%2F2017/uat0516?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £70.00</div><img src="/Components/images/loading.gif" alt="Mens Track Jacket 2016/17" data-src="/uploadedImages/Shared_Assets/Images/Shop_Products/Training_Wear_2016-17/UAT0416-White-Front.jpg?n=4312&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-track-jacket-2016%2F2017/uat0416?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £45.00</div><img src="/Components/images/loading.gif" alt="Mens Tracksuit Bottoms 2016/17" data-src="/uploadedImages/Shared_Assets/Images/Shop_Products/Training_Wear_2016-17/UAT1916-front.jpg?n=7875&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-tracksuit-bottoms-2016%2F2017/uat1916?TRE00011">Buy now</a></div><div class="slide"><div class="price">
+        £55.00</div><img src="/Components/images/loading.gif" alt="Mens Track Top 2016/17" data-src="/uploadedImages/Shared_Assets/Images/Shop_Products/Training_Wear_2016-17/UAT0716-capri-front.jpg?n=2749&amp;targetTypeID=ShopCarousel&#xA;            " /><a class="action secondary" href="http://shop.tottenhamhotspur.com/product/spurs-mens-under-armour-track-top-2016%2F2017/uat0716?TRE00011">Buy now</a></div> </div><!-- End XSLT: /Components/Layouts/ShopCarousel/ShopCarousel.xslt --></span>
+            <script id="EktronScriptBlockjfscf" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+
+                                ShopCarouselInit('#' + 'ctl00_ContentPlaceHolder1_RealiseUberDisplay'); 
+                            
+});
+
+
+</script></div>
+            
+<div id="ctl00_ContentPlaceHolder1_rlLeftPanel_pnlJsAditionWp_Id" class="ad-panel">
+	  
+    <div class="component">
+        <div class="nav-panel-banner">
+            
+            <script type='text/javascript' src='http://adfarm1.adition.com/js?wp_id=3143978'></script>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+        </div>
+        <div id="content-panel">
+            
+<div id="ctl00_ContentPlaceHolder1_rlTop_pnlJsAditionWp_Id" class="ad-panel">
+	  
+    <div class="component">
+        <div class="nav-panel-banner">
+            
+            <script type='text/javascript' src='http://adfarm1.adition.com/js?wp_id=3141181'></script>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+            <div id="copy" class="fullwidth">
+                
+                
+<div id="newsPageHeadline"><div class="newsHeader"><h1>Everton 1-1 Spurs - MOTM result</h1><p>Posted on 4 January 2016
+     - 10:55</p></div><h2 class="newsHeader "><FirstParagraph>Dele Alli has been voted Man of the Match by fans after his performance in our 1-1 draw at Everton on Sunday.
+</FirstParagraph></h2><p><img alt="ev730h" src="/uploadedImages/Shared_Assets/Images/News_images/SEASON_15-16/All_matches/First_team/Everton_A_3_January_2016/ev730i.jpg?n=4003&amp;targetTypeID=HighResNewsImage" title="ev730h" /></p></div>
+                
+                <div class="content-panel-2col cf">
+                    <div>
+                        
+<div class="social">
+    
+    <!-- AddThis Button BEGIN -->
+    <div id="ctl00_ContentPlaceHolder1_SocialIconsTop_socialBorderTop" class="social-bordertop">
+        &nbsp;</div>
+    <div class="addthis_toolbox addthis_default_style">
+        
+                <a class="icon-facebook-large addthis_button_facebook ic11540" title="Share this story on Facebook">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Facebook" /></a>
+                <a class="icon-twitter-large addthis_button_twitter ic11540" title="Share this story on Twitter">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Twitter" /></a>
+                <a class="icon-googleplus-large addthis_button_google_plusone_share ic40" title="Share this story on Google+">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Google+" /></a>
+                <a class="icon-email-large addthis_button_email ic40" title="Email this story">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Email this story" /></a>
+                <a class="icon-share-large addthis_button_compact ic40">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this" /></a>
+            
+    </div>
+    <div id="ctl00_ContentPlaceHolder1_SocialIconsTop_socialBorderBottom" class="social-borderbottom">
+        &nbsp;</div>
+    <!-- AddThis Button END -->
+</div>
+
+                        
+  <p>The young midfielder scored an outstanding equaliser at Goodison Park, taking Toby Alderweireld's pinpoint pass on his chest before volleying home.</p>
+  <p>That was Dele's fifth goal in the Premier League this term.</p>
+  <p>He registered over 65% of almost 15,000 votes cast on Twitter, Facebook and the Match Centre.</p>
+  <blockquote lang="en" class="twitter-tweet">
+    <p lang="en" dir="ltr">Delighted to get the goal today, however disappointed we're not leaving with all 3 points! Another strong performance from the team <a href="https://twitter.com/hashtag/COYS?src=hash">#COYS</a></p>
+— Dele Alli (@Dele_Alli) <a href="https://twitter.com/Dele_Alli/status/683730650030043141">January 3, 2016</a></blockquote>
+  <script type="text/javascript" async="async" charset="utf-8" src="//platform.twitter.com/widgets.js"></script>
+  <p>
+    <strong>MAN OF THE MATCH RESULT - EVERTON AWAY</strong>
+  </p>
+  <p>
+    <strong>Dele Alli - 65.25%</strong>
+  </p>
+  <p>Toby Alderweireld - 28.22%</p>
+  <p>Erik Lamela 6.53%</p>
+  <p>Thanks for voting!</p>
+  <p>
+    <strong>
+      <a target="_blank" title="MATCH CENTRE" href="http://www.tottenhamhotspur.com/matchcentre/everton-vs-tottenham-hotspur-03012016/">MATCH CENTRE</a>
+    </strong>
+  </p>
+  <p>
+    <em>
+      <strong>Below: Dele speaks to Spurs TV at Goodison Park</strong>
+    </em>
+  </p>
+  <div class="video-new">
+    <script type="text/javascript" src="http://open.http.mp.streamamg.com/p/2000012/sp/200001200/embedIframeJs/uiconf_id/30011550/partner_id/2000012"></script>
+    <div class="video-class" id="kaltura_player_1451905043"></div>
+    <script type="text/javascript">
+      <!--
+
+kWidget.embed({
+  "targetId": "kaltura_player_1451905043",
+  "wid": "_2000012",
+  "uiconf_id": 30011550,
+  "flashvars": {
+    "streamerType": "auto"
+  },
+  "cache_st": 1451905043,
+  "entry_id": "0_jtkj058x"
+});
+
+//-->
+    </script>
+  </div>
+
+                        
+                        
+                        <div class="social">
+                            
+<div class="social">
+    
+        <h3>
+            Share this story
+        </h3>
+    
+    <!-- AddThis Button BEGIN -->
+    
+    <div class="addthis_toolbox addthis_default_style">
+        
+                <a class="icon-facebook-large addthis_button_facebook ic11540" title="Share this story on Facebook">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Facebook" /></a>
+                <a class="icon-twitter-large addthis_button_twitter ic11540" title="Share this story on Twitter">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Twitter" /></a>
+                <a class="icon-googleplus-large addthis_button_google_plusone_share ic40" title="Share this story on Google+">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this story on Google+" /></a>
+                <a class="icon-email-large addthis_button_email ic40" title="Email this story">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Email this story" /></a>
+                <a class="icon-share-large addthis_button_compact ic40">
+                    <img src="/components/images/clear.gif" width="40" height="40" alt="Share this" /></a>
+            
+    </div>
+    
+    <!-- AddThis Button END -->
+</div>
+
+                        </div>
+                    </div>
+                    <div id="ctl00_ContentPlaceHolder1_panelRelated" class="last">
+	
+                        <div id="divRelatedVideos" class="component">
+                            <div class="related-video"><h2><a href="/spurs-tv/">Latest videos</a></h2><div class="video video-gb" data-player="small" data-playerid="30011550" data-video-url="https://open.http.mp.streamamg.com/" data-video-type="Freemium" data-partner-id="2000012" data-contentid="6442521798"><div class="player"> </div><div class="poster"><span class="icon ic-playrelated"> </span><span class="sash Freemium">EHotspur</span></div></div><ul><li><a href="/Spurs-TV/Highlights/Premier-League-2016-2017/ARSENAL-1-1-SPURS/" data-videoid="0_mrpyz11m" data-video-type="Freemium" data-title="ARSENAL 1-1 SPURS" data-contentid="6442521798"><span class="icon ic-playrelated"> </span><span class="videoDescription"><span class="video-title">ARSENAL 1-1 SPURS<br /><em class="video-date">6 November 2016</em></span><span class="video-length">6:46</span></span></a></li><li><a href="/Spurs-TV/Interviews/THE-MESSAGE-WAS-‘KEEP-GOING’-–-MAURICIO/" data-videoid="0_qt1yd05m" data-video-type="Free" data-title="THE MESSAGE WAS ‘KEEP GOING’ – MAURICIO" data-contentid="6442521782"><span class="icon ic-playrelated"> </span><span class="videoDescription"><span class="video-title">THE MESSAGE WAS ‘KEEP GOING’ – MAURICIO<br /><em class="video-date">6 November 2016</em></span><span class="video-length">2:11</span></span></a></li><li class="last"><a href="/Spurs-TV/Interviews/EVERY-DERBY-GOAL-FEELS-SWEETER---HARRY/" data-videoid="0_8myzrw6v" data-video-type="Free" data-title="EVERY DERBY GOAL FEELS SWEETER - HARRY" data-contentid="6442521774"><span class="icon ic-playrelated"> </span><span class="videoDescription"><span class="video-title">EVERY DERBY GOAL FEELS SWEETER - HARRY<br /><em class="video-date">6 November 2016</em></span><span class="video-length">2:03</span></span></a></li></ul></div>
+                        </div>
+                        
+<div id="ctl00_ContentPlaceHolder1_rlBottom_pnlJsAditionWp_Id" class="ad-panel">
+		  
+    <div class="component">
+        <div class="nav-panel-banner">
+            
+            <script type='text/javascript' src='http://adfarm1.adition.com/js?wp_id=3141206'></script>
+        </div>
+    </div>
+
+	</div>
+
+
+
+
+
+                    
+</div>
+                </div>
+                <div class="component">
+                    <div class="related-article-wide"><h2>More from Spurs</h2><a href="/news/first-team/match/man-of-the-match/dele-alli-wins-man-of-the-match-vote-west-brom-v-spurs-161016/"><dl class="relatedItem last"><dt><div class="image-wrap"><img alt="wb730i" src="/uploadedImages/Shared_Assets/Images/News_images/SEASON_16-17/All_matches/First_team/WBA_A_Oct_15/wb730j.jpg?n=5258&amp;targetTypeID=MediumResNewsImage" title="wb730i" /></div></dt><dd><h3>Dele takes Man of the Match vote v West Brom</h3><p class="posted-date"><span>16 October 2016 
+    11:45</span></p><p class="article-teaser">Dele Alli polled 60% of almost 10,000 votes to claim our fans' Man of the Match award after Saturday's 1-1 draw at West Brom.</p></dd></dl></a><a href="/news/first-team/match/player-reaction/dele-alli-looks-back-at-his-goal-and-west-brom-1-1-spurs-161016/"><dl class="relatedItem last"><dt><div class="image-wrap"><img alt="wba_a_dele730" src="/uploadedImages/Shared_Assets/Images/News_images/SEASON_16-17/All_matches/First_team/WBA_A_Oct_15/wba_a_dele730.jpg?n=593&amp;targetTypeID=MediumResNewsImage" title="wba_a_dele730" /></div></dt><dd><h3>'We had belief - we didn't give up' - Dele on WBA draw</h3><p class="posted-date"><span>16 October 2016 
+    10:30</span></p><p class="article-teaser">Dele Alli’s attitude to football epitomises this team - and rescued a deserved point at West Brom.</p></dd></dl></a><a href="/news/club/announcement/dele-alli-signs-new-deal-190916/"><dl class="relatedItem last"><dt><div class="image-wrap"><img alt="dele_contract730a" src="/uploadedImages/Shared_Assets/Images/News_images/SEASON_16-17/All_players/First_team/Dele_Alli/dele_contract730a.jpg?n=2773&amp;targetTypeID=MediumResNewsImage" title="dele_contract730a" /></div></dt><dd><h3>Dele signs new deal</h3><p class="posted-date"><span>19 September 2016 
+    10:00</span></p><p class="article-teaser">We are delighted to announce that Dele Alli has signed a new contract with the Club which will run until 2022.</p></dd></dl></a></div><!-- 2721 -->    
+
+                </div>
+                <!-- Start Photoslurp Embed Code -->
+                
+            </div>
+        </div>
+    </div>
+
+    </div>
+    
+
+<div id="footer" class="white-link">
+    <div id="sponsors">
+        
+<table><tr><td rowspan="3"><p><a title="AIA" target="_blank" href="http://www.aia.com/" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/The_Club/Partners/aia-logo-update-v1.jpg?n=5775" alt="AIA" title="AIA" /></a><a title="Under Armour" target="_blank" href="https://www.underarmour.co.uk/en-gb/?cid=PA|THS|UK|Homepagelink" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/Sponsors_Logos/Footer_Logos/under-armour-logo-new.png?n=8716" alt="Under Armour" title="Under Armour" /></a></p></td><td><p><a title="William Hill" target="_blank" href="http://sports.williamhill.com/bet/en-gb/betting/y/5/Football.html" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Content/williamhill-logo-eu.png?n=6946" alt="William Hill" /></a><a title="EZTrader" target="_blank" href="http://newaffsystem.optionaffiliates.com/Handler.ashx?AffiliateID=100165&amp;utm_content=JOIN_THE_BEST&amp;utm_medium=JOIN_THE_BEST&amp;utm_source=oa&amp;utm_campaign=DavidR&amp;AppType=na&amp;af_sub1=SPURS1" class="sponsor-leave-footer"><img title="EZTrader" alt="EZTrader" src="/uploadedImages/Shared_Assets/Content/eztrader-2016-march.jpg" /></a><a title="Kumho Tyre" target="_blank" href="http://kumhotyre.co.uk/" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Content/kumho-tyre-footer-web.jpg" alt="Kumho Tyre" title="Kumho Tyre" /></a><a title="StubHub" target="_blank" href="http://www.stubhub.co.uk/tottenham-hotspur-tickets/" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/The_Club/Partners/stubhub-2016.jpg?n=7619" alt="Stubhub" title="Stubhub" /></a></p></td></tr><tr><td class="shadow"> </td></tr><tr><td><p><a title="Carlsberg" target="_blank" href="/uploadedImages/Shared_Assets/Images/Sponsors_Logos/Footer_Logos/carlsberg-logo.png?n=2349" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/Sponsors_Logos/Footer_Logos/carlsberg-logo.png?n=2349" alt="Carlsberg" title="Carlsberg" /></a><a title="MBNA" target="_blank" href="https://apply.mbna.co.uk/UKNeoCCapp/entry?sc=1OASTFCIGD00787&amp;mc=OAGTFC00930&amp;utm_source=tottenhamhotspur.com&amp;utm_medium=referral&amp;utm_campaign=Homepage&amp;utm_content=TS1617" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/The_Club/Partners/mbna-footer-logo.jpg" alt="MBNA" title="MBNA" /></a><a title="Aquascutum" target="_blank" href="http://www.aquascutum.com/?utm_source=Spurs&amp;utm_medium=display&amp;utm_campaign=Home%20Page%20tracking" class="sponsor-leave-footer"><img alt="Aquascutum" src="/uploadedImages/Shared_Assets/Images/The_Club/aquascutum-logo.jpg?n=2539" /></a><a title="Thomas Cook Sport" target="_blank" href="http://www.thomascooksport.com/Football/Premier-League/Tottenham-Hotspur?utm_source=tottenhamhotspur.com&amp;utm_medium=Club%2BWebsite%2BLink%2C%2BTCS%2BLogo%2Bon%2BFooter&amp;utm_campaign=Football%2C%2BTotte" class="sponsor-leave-footer"><img width="44" height="34" src="/uploadedImages/Shared_Assets/Images/Sponsors_Logos/Footer_Logos/thomas-cook-logo.png?n=8926" alt="Thomas Cook Sport" style="width: 44px; height: 34px;" title="Thomas Cook Sport" /></a><a title="Premier League" target="_blank" href="http://www.premierleague.com/en-gb.html" class="sponsor-leave-footer"><img src="/uploadedImages/Shared_Assets/Images/Competition_Logos/Premier-League-2017.jpg" alt="Premier League" title="Premier League" /></a></p></td></tr></table>
+    </div>    
+        
+    <div id="housekeeping-container">
+        <div id="housekeeping">
+            <ul class="cf">
+<li><a title="Contact Us" href="/information/contact-us/" class="">Contact Us</a></li>
+<li><a title="Cookie Policy" href="/information/privacy-policy/#cookies" class="">Cookie Policy</a></li>
+<li><a title="My Account Help" href="/information/my-account-help/" class="">My Account Help</a></li>
+<li><a title="Privacy Policy" href="/information/privacy-policy/" class="">Privacy Policy</a></li>
+<li class="last"><a title="Terms and Conditions" href="/information/terms-and-conditions/" class="">Terms and Conditions</a></li></ul>
+            <div class="mobileswitcher"><p id="ctl00_RealiseFooter_mobswitcher_fullfat" class="fullfat">
+    <a id="ctl00_RealiseFooter_mobswitcher_btnMobileSite"><span class="icon ic20 ic-mobile"></span>View mobile site</a>
+    
+    
+</p><script id="EktronScriptBlocksmbnw" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+window['mobswitcher']=new MobileSwitcher('www.tottenhamhotspur.com', 'm.tottenhamhotspur.com', false, '/news/everton-1-spurs-1-man-of-the-match-result-040116/')
+});
+
+
+</script></div>
+        </div>
+        <div id="copyright">
+            <div class="component">
+<span><p>© Tottenham Hotspur Ltd 2016. All rights reserved.</p>
+<p>All photography copyright Getty Images (unless otherwise stated)</p>
+</span></div>
+        </div>
+    </div>
+</div>
+
+<div id="sticky-footer" class="white-link"><div id="sub-nav"><ul class="cf2">
+<li><a href="/spurs-go-app/" class="bottom-nav-link ">Mobile</a><ul>
+    <li><a href="/spurs-go-app/" class="">Spurs Go App</a></li>
+
+    <li><a href="/mobile/spurs-shop-app/" class="">Spurs Shop App</a></li>
+</ul></li>
+<li><a href="/soccer-schools/" class="bottom-nav-link ">Soccer Schools</a><ul>
+    <li><a href="https://soccerschools.tottenhamhotspur.com/soccerschools/index.htm" class="">Book Now</a></li>
+
+    <li><a href="/soccer-schools/global/" class="">Global</a></li>
+
+    <li><a href="/soccer-schools/our-philosophy/" class="">Our Philosophy</a></li>
+
+    <li><a href="/youth-partner/" class="">Youth Team Partners</a></li>
+
+    <li><a href="/soccer-schools/residential/" class="">Residential Programme</a></li>
+
+    <li><a href="/soccer-schools/uk-courses/" class="">UK Courses</a></li>
+</ul></li>
+<li><a href="/stadium-tours/" class="bottom-nav-link ">Stadium Tours</a><ul>
+    <li><a href="http://shop.tottenhamhotspur.com/category/gift-cards-and-tours?utm_source=bottom-nav&amp;utm_medium=thfc-site&amp;utm_campaign=vouchers" class="">Tour Vouchers</a></li>
+
+    <li><a href="/stadium-tours/classic-tours/?utm_source=bottom-nav&amp;utm_medium=thfc-site&amp;utm_campaign=classic-tours" class="">Classic Tours</a></li>
+
+    <li><a href="/stadium-tours/legend-tours/?utm_source=bottom-nav&amp;utm_medium=thfc-site&amp;utm_campaign=legend-tours" class="">Legend Tours</a></li>
+
+    <li><a href="/stadium-tours/group-tours/?utm_source=bottom-nav&amp;utm_medium=thfc-site&amp;utm_campaign=group-tours" class="">Group Tours</a></li>
+
+    <li><a href="/stadium-tours/kids-tours/?utm_source=bottom-nav&amp;utm_medium=thfc-site&amp;utm_campaign=kids-tours" class="">Kids Tours</a></li>
+</ul></li>
+<li><a href="/supporters-club/" class="bottom-nav-link ">Supporters Club</a><ul>
+    <li><a href="/supporters-club/news/" class="">Latest News</a></li>
+
+    <li><a href="/supporters-club/club-finder/" class="">Club Finder</a></li>
+
+    <li><a href="/supporters-club/galleries/" class="">Galleries</a></li>
+
+    <li><a href="/supporters-club/toolkit/" class="">Toolkit</a></li>
+
+    <li><a href="/spurs-tv/ipb-broadcasters/" class="">IPB Broadcasters</a></li>
+
+    <li><a href="/supporters-club/contact-us/" class="">Contact Us</a></li>
+</ul></li>
+<li><a href="/events" class="bottom-nav-link ">Events</a><ul>
+    <li><a href="/events/conferences/" class="">Meetings and Events</a></li>
+
+    <li><a href="/events/private-hire/" class="">Special Occasions</a></li>
+
+    <li><a href="/events/special-events/" class="">Club Social Events</a></li>
+
+    <li><a href="/events/brochure/" class="">Brochure</a></li>
+
+    <li><a href="/events/virtual-tour/" class="">Virtual Tour</a></li>
+
+    <li><a href="/events/social-events-calendar/" class="">What’s On</a></li>
+
+    <li><a href="/events/contact/" class="">Contact Us</a></li>
+</ul></li>
+<li><a href="/the-club/" class="bottom-nav-link ">The Club</a><ul>
+    <li><a href="/the-club/partners/" class="">Partners</a></li>
+
+    <li><a href="/the-club/new-training-centre/" class="">New Training Centre</a></li>
+
+    <li><a href="/the-club/charities/" class="">Charities</a></li>
+
+    <li><a href="/the-club/safeguarding/" class="">Safeguarding</a></li>
+
+    <li><a href="/the-club/environmental-policy/" class="">Environmental Policy</a></li>
+
+    <li><a href="/jobs/" class="">Jobs</a></li>
+
+    <li><a href="/the-club/tottenham-tribute-trust/" class="">Tottenham Tribute Trust</a></li>
+
+    <li><a href="/the-club/brand-protection/" class="">Brand Protection</a></li>
+
+    <li><a href="/the-club/investor-relations/" class="">Investor Relations</a></li>
+
+    <li><a href="/information/contact-us/" class="">Contact Us</a></li>
+
+    <li><a href="/the-club/Modern-Slavery-Act-Transparency-Statement/" class="">Modern Slavery Act Transparency Statement</a></li>
+</ul></li>
+<li><a href="/history/honours/" class="bottom-nav-link ">History</a><ul>
+    <li><a href="/history/honours/" class="">Club Honours</a></li>
+
+    <li><a href="/history/year-by-year/" class="">Year By Year</a></li>
+</ul></li>
+<li><a href="/matchday-travel/latest-news/" class="bottom-nav-link ">Travel</a><ul>
+    <li><a href="/matchday-travel/latest-news/" class="">Travel News</a></li>
+
+    <li><a href="/matchday-travel/rail-season-ticket/" class="">Rail Season Ticket</a></li>
+
+    <li><a href="/matchday-travel/away-travel/" class="">Away Travel</a></li>
+
+    <li><a href="/matchday-travel/club-statement/" class="">Traffic Management</a></li>
+
+    <li><a href="/matchday-travel/travel-feedback/" class="">Travel Feedback</a></li>
+
+    <li><a href="/matchday-travel/accessibility-directions" class="">Accessibility directions</a></li>
+</ul></li>
+<li><a href="/foundation/" class="bottom-nav-link ">Foundation</a></li>
+<li><a href="/the-stadium/" class="bottom-nav-link ">Stadium</a><ul>
+    <li><a href="/the-stadium" class="">Route To The Ground</a></li>
+
+    <li><a href="/the-stadium/directions/" class="">Directions</a></li>
+
+    <li><a href="/new-scheme/" class="">New Stadium Plans</a></li>
+
+    <li><a href="/stadium-tours/" class="">Stadium Tours</a></li>
+
+    <li><a href="/the-stadium/history/" class="">History</a></li>
+
+    <li><a href="/hospitality/virtual-tour/" class="">Virtual 360 Tour</a></li>
+
+    <li><a href="/the-stadium/safety-at-the-lane/" class="">Safety At The Lane</a></li>
+
+    <li><a href="/the-stadium/accessibility/" class="">Accessibility</a></li>
+</ul></li>
+<li><a href="/spursladies/" class="bottom-nav-link ">Spurs Ladies</a><ul>
+    <li><a href="/spursladies/news/" class="">Latest News</a></li>
+
+    <li><a href="/spursladies/first-team/" class="">Player Profiles</a></li>
+
+    <li><a href="/spursladies/fixtures-results/" class="">Fixtures and Results</a></li>
+
+    <li><a href="/spursladies/tickets/" class="">Matchday Tickets</a></li>
+
+    <li><a href="/spursladies/venue/" class="">Find the veune</a></li>
+
+    <li><a href="/spursladies/ladies-tv/" class="">Videos</a></li>
+
+    <li><a href="/spursladies/gallery/" class="">Gallery</a></li>
+
+    <li><a href="/spursladies/contact-us/" class="">Contact us</a></li>
+</ul></li>
+<li><a href="http://ads2.williamhill.com/redirect.aspx?pid=191304896&amp;lpid=1487414164&amp;bid=1487414606" class="bottom-nav-link " target="_blank">Betting</a></li>
+          </ul></div></div>
+
+    
+    
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("ctl00_ctlHeader_searchTextRegExpHtml"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_ctlHeader_searchTextRegExpHtml = document.all ? document.all["ctl00_ctlHeader_searchTextRegExpHtml"] : document.getElementById("ctl00_ctlHeader_searchTextRegExpHtml");
+ctl00_ctlHeader_searchTextRegExpHtml.controltovalidate = "ctl00_ctlHeader_searchInput";
+ctl00_ctlHeader_searchTextRegExpHtml.errormessage = "Html is not allowed";
+ctl00_ctlHeader_searchTextRegExpHtml.display = "Dynamic";
+ctl00_ctlHeader_searchTextRegExpHtml.validationGroup = "headerSearch";
+ctl00_ctlHeader_searchTextRegExpHtml.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+ctl00_ctlHeader_searchTextRegExpHtml.validationexpression = "^[^<>]+$";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var bettingLinkUrl = 'http://sports.williamhill.com/bet/en-gb';var sponsorFooterBettingUrl = 'http://spurs.to/WHLP';var bettingNavBettingUrl = 'http://spurs.to/WHLP';var bettingLinkAsiaUrl = 'http://www.fun88.com';var sponsorFooterBettingAsiaUrl = 'http://www.fun88.com';var bettingNavBettingAsiaUrl = 'http://www.fun88.com';
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('ctl00_ctlHeader_searchTextRegExpHtml').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('ctl00_ctlHeader_searchTextRegExpHtml'));
+}
+//]]>
+</script>
+</form>
+    
+    
+<script id="EktronScriptBlockptjsj" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+try {
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function(){pageWidgetInit()});
+            } catch(e) {}
+});
+
+
+</script></body>
+</html><script id="EktronScriptBlockfbwlf" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+
+             // Invoke Sarah's carousel
+              $(window).load(function(){
+                $('.galleryImages').realiseGallery({
+                        'transitionSpeed':'500', 
+                        height:'410', 
+                        width:'730',
+                        thumbs:{
+                                thumbWidth: 134,
+								thumbHeight: 75
+                        }
+});
+              });
+});
+
+
+</script><script id="EktronScriptBlocktmnmv" type="text/javascript">
+
+Ektron.ready(function(event, eventName){
+ RelatedVideosInit('#divRelatedVideos');
+});
+
+
+</script>

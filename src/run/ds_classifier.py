@@ -24,7 +24,7 @@ def fact_check(q):
                     dstrs = set()
                     for d in question.dates:
                         dstrs.add(str(d))
-                    if not len(set(tuple[1]['date']).intersection(dstrs)):
+                    if len(set(tuple[1]['date']).intersection(dstrs)):
                         skip = True
 
             if skip:
@@ -35,7 +35,7 @@ def fact_check(q):
                 features = q_features[i]
 
                 if prediction == 1:
-                    print(str(tuple) + "\t\t" + ("Possible Match" if prediction else "No match"))
+                    print(str(tuple) + "\t\t" + ("Match" if prediction else "No match"))
                     for number in question.numbers:
                         value = num(tuple[1]['value'])
 
@@ -43,7 +43,7 @@ def fact_check(q):
                             continue
 
                         if f_threshold_match(number, value, 0.05):
-                            print(str(tuple) + "\t\t" + "Threshold Match to 5%")
+                            print("Value matches question to within 5%")
                             q_match = True
 
                     for number in question.dates:

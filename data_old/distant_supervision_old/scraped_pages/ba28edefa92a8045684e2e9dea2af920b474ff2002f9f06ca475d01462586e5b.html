@@ -1,0 +1,904 @@
+
+<!doctype html>
+<html>
+	<head>
+<!--
+
+	This website is powered by Contao Open Source CMS :: Licensed under GNU/LGPL
+	Copyright ©2005-2016 by Leo Feyer :: Extensions are copyright of their respective owners
+	Visit the project website at http://www.contao.org for more information
+
+//-->
+		<meta charset="utf-8">
+		<base href="https://geert-hofstede.com/">
+		<title>United States - Geert Hofstede</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content="https://geert-hofstede.com/tl_files/images/thc-logo-text-square.png" /> 
+		<meta name="robots" content="index,follow" />
+
+		<!--[if lt IE 9 ]><link rel="stylesheet" href="/plugins/at_custom/css/ie.css"><![endif]-->
+		<link rel="stylesheet" href="/plugins/at_custom/css/frontend.css?v=4">
+		<link href="/plugins/at_custom/css/bootstrap.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/plugins/at_custom/css/style.css?v=16">
+	
+		<script src="/plugins/at_custom/jquery-1.7.min.js"></script>
+		<script async src="/plugins/at_custom/slides.min.jquery.js"></script>
+		<script async src="/plugins/at_custom/bootstrap.min.js"></script>
+		<script async src="/plugins/at_custom/modernizr-1.6.min.js"></script>
+		<script async src="/plugins/at_custom/iframeResizer.js"></script>
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-36498667-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		  
+		</script>
+
+		<script type="text/javascript">
+		
+			$( document ).ready(function() {
+				
+								
+				$("button").click( function(){
+					if (!$(this).attr('target') || $(this).attr('target') != '_blank') {
+						if ($(this).attr('href'))
+							window.location = $(this).attr('href');
+					}
+					else {
+						if ($(this).attr('href')) {
+							/*window.open($(this).attr("href"), "popupWindow", "scrollbars=yes,fullscreen=yes");*/
+							 var win = window.open($(this).attr('href'), '_blank'); win.focus();
+						}
+					}
+				});
+				
+				window.setTimeout( function() {					$('#courses_promo').slides({
+						preload: true,
+						play: 5000,
+						pause: 2500,
+						hoverPause: true					
+				});}, 700 );
+				//if(typeof slides == 'function') {   
+
+				//}
+				
+				$("#navigation-button img").click( function() {
+					if ($('.mod_navigation ul').css('display') != 'block') {
+						$('.mod_navigation ul').css('display', 'block'); 
+						$('.mod_navigation').css('height', 'inherit'); 
+					}
+					else
+					{
+						$('.mod_navigation ul').css('display', 'none'); 
+						$('.mod_navigation').css('height', '0'); 
+					}
+				});
+				
+				/*if(typeof iFrameResize == 'function') {   
+					$('iframe.autosize').iFrameResize();
+				}*/
+			});
+			
+		</script>
+
+		<script type='text/javascript'>
+			do_iFrameResize();
+			function do_iFrameResize() {
+				if( window.$ && typeof iFrameResize == 'function') {
+					$('iframe.autosize').iFrameResize();
+				} else {
+					
+					window.setTimeout( do_iFrameResize, 50 );
+				}
+			}
+		</script> 		
+		
+		<script type="text/javascript" src="system/modules/at_dimension_charts/html/js/libs/highcharts.js"></script>
+<script type="text/javascript" src="system/modules/at_dimension_charts/html/js/libs/apprise-1.5.min.js"></script>
+<script type="text/javascript" src="system/modules/at_dimension_charts/html/js/dimension.js"></script>
+		
+	</head>
+	<body>
+								
+
+				<div class="page-container">
+						<div id="pre-header" class="hidden-sm hidden-xs">
+				<div class="container">
+					<div id="itim-top" class="row">
+						<span>Operated by</span> <a href="http://www.itim.org" title="itim International"><img src="tl_files/images/itim-logo.png" width="70px" height="41px" alt="itim International"></a>
+						<span class="push-right">
+							<span class="border-right">Arabiankatu 12 00560 Helsinki, Finland</span>
+							<span class="border-right"><a href="mailto:info@hofstedecentre.com">info@hofstedecentre.com</a></span>
+							<span class="padding-right">+358 923 163 043</span>
+							<span id="social-top" class="border-left">
+								<a href="https://www.facebook.com/HOFSTEDEinsight?_rdr" title="Facebook"><img src="tl_files/images/social-fb-grey-small.png" width="24px" height="24px" /></a>
+								<a href="https://twitter.com/hofstedeinsight" title="Twitter"><img src="tl_files/images/social-twitter-grey-small.png" width="24px" height="24px" /></a>
+								<a href="http://www.linkedin.com/groups?about=&gid=52063&report%2Esuccess=8VTqEOvzemg2q5tU_gTLisv1S9WzmZk2QZEUc2VkKupdaeDg54XemY16SsXOrqD0HS3hWZFuvWkVve_w9lpwv4zCZLGfZPBJgNpY_JSE_O5pmqsjTIpTaZFuvWXIbVBJImXebPVyw9WdaF_uExnMmSIEo8kXhZss6i3Mi-S0GLHVn1kJT33DiIFux9Q31H_ytPLMmSIgNGXVNdksX1Xa1zVuiKpVYZDJkI5MvBdTYWQoMOuaMU" title="LinkedIn"><img src="tl_files/images/social-linkedin-grey-small.png" width="24px" height="24px" /></a>
+							</span>
+						</span>
+					</div>
+				
+				</div>
+			</div>			<div class="container">
+								<header class="row">
+					<div class="gh-box col-md-12" id="header" style="/*background: none;*/ height: 161px;">
+						<div class="row">
+							<h1 class="col-md-12 uppercase" style="border-bottom: none; margin-top: 1.6em;">
+								<a title="The hofstede centre" href="/" style="color: rgb(191, 196, 198); position: static;">
+									Geert Hofstede					
+								</a>
+							</h1>
+													</div>
+					</div>
+					<div class="gh-box">
+						<div id="navigation-button" class="col-xs-12 visible-sm visible-xs">
+							<img src="/tl_files/images/navigation-button.png" alt="Main menu"></a>
+						</div>
+						
+<!-- indexer::stop -->
+<div class="mod_navigation row block">
+
+<ul class="level_1">
+						<li class="submenu first hofstede"><a href="geert-hofstede.html" title="Geert Hofstede" class="submenu first"><span class="menu-bullet">&bull;</span>Geert Hofstede ▼</a><ul class="level_2 hofstede">
+						<li class="first"><a href="research.html" title="Research" class="first">Research</a></li>
+								<li class=""><a href="documentary.html" title="Documentary">Documentary</a></li>
+								<li class="last"><a href="books.html" title="Books" class="last">Books</a></li>
+			</ul></li>
+								<li class="submenu hofstede"><a href="cultural-dimensions.html" title="Cultural Dimensions" class="submenu"><span class="menu-bullet">&bull;</span>Cultural Dimensions ▼</a><ul class="level_2 hofstede">
+						<li class="first"><a href="national-culture.html" title="Dimensions" class="first">National Culture</a></li>
+								<li class="last"><a href="organisational-culture.html" title="Organisational Culture" class="last">Organisational Culture</a></li>
+			</ul></li>
+								<li class="submenu"><a href="the-hofstede-centre.html" title="Cultural Insights" class="submenu"><span class="menu-bullet">&bull;</span>The hofstede centre ▼</a><ul class="level_2">
+						<li class="first"><a href="about-us.html" title="About Us" class="first">About Us</a></li>
+								<li class="last"><a href="academic-world.html" title="Info for the academic world" class="last">Info for the academic world</a></li>
+			</ul></li>
+								<li class="submenu"><a href="certifications.html" title="Certification courses" class="submenu"><span class="menu-bullet">&bull;</span>Certification courses ▼</a><ul class="level_2">
+						<li class="first"><a href="intercultural-management-certification.html" title="Certification in Intercultural Management" class="first">Intercultural Management</a></li>
+								<li class=""><a href="organisational-culture-certification.html" title="Certification in Organisational Culture">Organisational Culture</a></li>
+								<li class=""><a href="cross-cultural-research-methods.html" title="How to Do Good-quality Cross-cultural Research in Psychology and Culture">Cross-cultural Research Methods</a></li>
+								<li class=""><a href="cultural-ambassador.html" title="Cultural Ambassador">Cultural Ambassador</a></li>
+								<li class="last"><a href="info-webinar.html" title="Info Webinars" class="last">Info Webinars</a></li>
+			</ul></li>
+								<li class="trail last"><a href="tools.html" title="Tools" class="trail last"><span class="menu-bullet">&bull;</span>Tools</a></li>
+			</ul> 
+
+</div>
+<!-- indexer::continue -->
+					</div>
+				</header>				
+				<div class="row">
+					<section id="main" class="col-md-9 gh-box">
+						<div class="main-container">
+							<!-- indexer::stop -->
+<div class="mod_quicknav" id="countrySelection">
+
+<form action="united-states.html" method="post">
+<div class="formbody">
+<input type="hidden" name="FORM_SUBMIT" value="tl_quicknav" />
+<select name="target" class="select span-5">
+  <option value="">Select a Country</option>
+  <option value="albania.html">Albania</option>
+  <option value="angola.html">Angola</option>
+  <option value="argentina.html">Argentina</option>
+  <option value="australia.html">Australia</option>
+  <option value="austria.html">Austria</option>
+  <option value="bangladesh.html">Bangladesh</option>
+  <option value="belgium.html">Belgium</option>
+  <option value="bhutan.html">Bhutan</option>
+  <option value="brazil.html">Brazil</option>
+  <option value="bulgaria.html">Bulgaria</option>
+  <option value="Burkina_Faso.html">Burkina Faso</option>
+  <option value="canada.html">Canada</option>
+  <option value="Cape_Verde.html">Cape Verde</option>
+  <option value="chile.html">Chile</option>
+  <option value="china.html">China</option>
+  <option value="colombia.html">Colombia</option>
+  <option value="costa-rica.html">Costa Rica</option>
+  <option value="croatia.html">Croatia</option>
+  <option value="czech-republic.html">Czech Republic</option>
+  <option value="denmark.html">Denmark</option>
+  <option value="Dominican_Republic.html">Dominican Republic</option>
+  <option value="ecuador.html">Ecuador</option>
+  <option value="egypt.html">Egypt</option>
+  <option value="el-salvador.html">El Salvador</option>
+  <option value="estonia.html">Estonia</option>
+  <option value="ethiopia.html">Ethiopia</option>
+  <option value="Fiji.html">Fiji</option>
+  <option value="finland.html">Finland</option>
+  <option value="france.html">France</option>
+  <option value="germany.html">Germany</option>
+  <option value="ghana.html">Ghana</option>
+  <option value="greece.html">Greece</option>
+  <option value="guatemala.html">Guatemala</option>
+  <option value="Honduras.html">Honduras</option>
+  <option value="hong-kong.html">Hong Kong</option>
+  <option value="hungary.html">Hungary</option>
+  <option value="iceland.html">Iceland</option>
+  <option value="india.html">India</option>
+  <option value="indonesia.html">Indonesia</option>
+  <option value="iran.html">Iran</option>
+  <option value="iraq.html">Iraq</option>
+  <option value="ireland.html">Ireland</option>
+  <option value="israel.html">Israel</option>
+  <option value="italy.html">Italy</option>
+  <option value="jamaica.html">Jamaica</option>
+  <option value="japan.html">Japan</option>
+  <option value="jordan.html">Jordan</option>
+  <option value="kenya.html">Kenya</option>
+  <option value="kuwait.html">Kuwait</option>
+  <option value="latvia.html">Latvia</option>
+  <option value="lebanon.html">Lebanon</option>
+  <option value="libya.html">Libya</option>
+  <option value="lithuania.html">Lithuania</option>
+  <option value="luxemburg.html">Luxembourg</option>
+  <option value="malawi.html">Malawi</option>
+  <option value="malaysia.html">Malaysia</option>
+  <option value="malta.html">Malta</option>
+  <option value="mexico.html">Mexico</option>
+  <option value="morocco.html">Morocco</option>
+  <option value="mozambique.html">Mozambique</option>
+  <option value="Namibia.html">Namibia</option>
+  <option value="nepal.html">Nepal</option>
+  <option value="netherlands.html">Netherlands</option>
+  <option value="new-zealand.html">New Zealand</option>
+  <option value="nigeria.html">Nigeria</option>
+  <option value="norway.html">Norway</option>
+  <option value="pakistan.html">Pakistan</option>
+  <option value="panama.html">Panama</option>
+  <option value="peru.html">Peru</option>
+  <option value="philippines.html">Philippines</option>
+  <option value="poland.html">Poland</option>
+  <option value="portugal.html">Portugal</option>
+  <option value="romania.html">Romania</option>
+  <option value="russia.html">Russia</option>
+  <option value="saudi-arabia.html">Saudi Arabia</option>
+  <option value="senegal.html">Senegal</option>
+  <option value="serbia.html">Serbia</option>
+  <option value="sierra-leone.html">Sierra Leone</option>
+  <option value="singapore.html">Singapore</option>
+  <option value="slovakia.html">Slovakia</option>
+  <option value="slovenia.html">Slovenia</option>
+  <option value="south-africa.html">South Africa</option>
+  <option value="south-korea.html">South Korea</option>
+  <option value="spain.html">Spain</option>
+  <option value="sri_lanka.html">Sri Lanka</option>
+  <option value="surinam.html">Suriname</option>
+  <option value="sweden.html">Sweden</option>
+  <option value="switzerland.html">Switzerland</option>
+  <option value="syria.html">Syria</option>
+  <option value="taiwan.html">Taiwan</option>
+  <option value="tanzania.html">Tanzania</option>
+  <option value="thailand.html">Thailand</option>
+  <option value="trinidad.html">Trinidad and Tobago</option>
+  <option value="turkey.html">Turkey</option>
+  <option value="ukraine.html">Ukraine</option>
+  <option value="arab-emirates.html">United Arab Emirates</option>
+  <option value="united-kingdom.html">United Kingdom</option>
+  <option value="united-states.html">United States</option>
+  <option value="uruguay.html">Uruguay</option>
+  <option value="venezuela.html">Venezuela</option>
+  <option value="vietnam.html">Vietnam</option>
+  <option value="zambia.html">Zambia</option>
+</select>
+<noscript>
+<br>
+	<input type="submit" value="Go" />
+</noscript>
+</div>
+</form>
+</div>
+<!-- indexer::continue -->
+<!-- indexer::stop -->
+<div class="mod_quicknav" id="comparisonSelection">
+
+<form action="united-states.html" method="post">
+<div class="formbody">
+<input type="hidden" name="FORM_SUBMIT" value="tl_quicknav" />
+<select name="target" class="select span-5">
+  <option value="">Comparison Country</option>
+  <option value="albania.html">Albania</option>
+  <option value="angola.html">Angola</option>
+  <option value="argentina.html">Argentina</option>
+  <option value="australia.html">Australia</option>
+  <option value="austria.html">Austria</option>
+  <option value="bangladesh.html">Bangladesh</option>
+  <option value="belgium.html">Belgium</option>
+  <option value="bhutan.html">Bhutan</option>
+  <option value="brazil.html">Brazil</option>
+  <option value="bulgaria.html">Bulgaria</option>
+  <option value="Burkina_Faso.html">Burkina Faso</option>
+  <option value="canada.html">Canada</option>
+  <option value="Cape_Verde.html">Cape Verde</option>
+  <option value="chile.html">Chile</option>
+  <option value="china.html">China</option>
+  <option value="colombia.html">Colombia</option>
+  <option value="costa-rica.html">Costa Rica</option>
+  <option value="croatia.html">Croatia</option>
+  <option value="czech-republic.html">Czech Republic</option>
+  <option value="denmark.html">Denmark</option>
+  <option value="Dominican_Republic.html">Dominican Republic</option>
+  <option value="ecuador.html">Ecuador</option>
+  <option value="egypt.html">Egypt</option>
+  <option value="el-salvador.html">El Salvador</option>
+  <option value="estonia.html">Estonia</option>
+  <option value="ethiopia.html">Ethiopia</option>
+  <option value="Fiji.html">Fiji</option>
+  <option value="finland.html">Finland</option>
+  <option value="france.html">France</option>
+  <option value="germany.html">Germany</option>
+  <option value="ghana.html">Ghana</option>
+  <option value="greece.html">Greece</option>
+  <option value="guatemala.html">Guatemala</option>
+  <option value="Honduras.html">Honduras</option>
+  <option value="hong-kong.html">Hong Kong</option>
+  <option value="hungary.html">Hungary</option>
+  <option value="iceland.html">Iceland</option>
+  <option value="india.html">India</option>
+  <option value="indonesia.html">Indonesia</option>
+  <option value="iran.html">Iran</option>
+  <option value="iraq.html">Iraq</option>
+  <option value="ireland.html">Ireland</option>
+  <option value="israel.html">Israel</option>
+  <option value="italy.html">Italy</option>
+  <option value="jamaica.html">Jamaica</option>
+  <option value="japan.html">Japan</option>
+  <option value="jordan.html">Jordan</option>
+  <option value="kenya.html">Kenya</option>
+  <option value="kuwait.html">Kuwait</option>
+  <option value="latvia.html">Latvia</option>
+  <option value="lebanon.html">Lebanon</option>
+  <option value="libya.html">Libya</option>
+  <option value="lithuania.html">Lithuania</option>
+  <option value="luxemburg.html">Luxembourg</option>
+  <option value="malawi.html">Malawi</option>
+  <option value="malaysia.html">Malaysia</option>
+  <option value="malta.html">Malta</option>
+  <option value="mexico.html">Mexico</option>
+  <option value="morocco.html">Morocco</option>
+  <option value="mozambique.html">Mozambique</option>
+  <option value="Namibia.html">Namibia</option>
+  <option value="nepal.html">Nepal</option>
+  <option value="netherlands.html">Netherlands</option>
+  <option value="new-zealand.html">New Zealand</option>
+  <option value="nigeria.html">Nigeria</option>
+  <option value="norway.html">Norway</option>
+  <option value="pakistan.html">Pakistan</option>
+  <option value="panama.html">Panama</option>
+  <option value="peru.html">Peru</option>
+  <option value="philippines.html">Philippines</option>
+  <option value="poland.html">Poland</option>
+  <option value="portugal.html">Portugal</option>
+  <option value="romania.html">Romania</option>
+  <option value="russia.html">Russia</option>
+  <option value="saudi-arabia.html">Saudi Arabia</option>
+  <option value="senegal.html">Senegal</option>
+  <option value="serbia.html">Serbia</option>
+  <option value="sierra-leone.html">Sierra Leone</option>
+  <option value="singapore.html">Singapore</option>
+  <option value="slovakia.html">Slovakia</option>
+  <option value="slovenia.html">Slovenia</option>
+  <option value="south-africa.html">South Africa</option>
+  <option value="south-korea.html">South Korea</option>
+  <option value="spain.html">Spain</option>
+  <option value="sri_lanka.html">Sri Lanka</option>
+  <option value="surinam.html">Suriname</option>
+  <option value="sweden.html">Sweden</option>
+  <option value="switzerland.html">Switzerland</option>
+  <option value="syria.html">Syria</option>
+  <option value="taiwan.html">Taiwan</option>
+  <option value="tanzania.html">Tanzania</option>
+  <option value="thailand.html">Thailand</option>
+  <option value="trinidad.html">Trinidad and Tobago</option>
+  <option value="turkey.html">Turkey</option>
+  <option value="ukraine.html">Ukraine</option>
+  <option value="arab-emirates.html">United Arab Emirates</option>
+  <option value="united-kingdom.html">United Kingdom</option>
+  <option value="united-states.html">United States</option>
+  <option value="uruguay.html">Uruguay</option>
+  <option value="venezuela.html">Venezuela</option>
+  <option value="vietnam.html">Vietnam</option>
+  <option value="zambia.html">Zambia</option>
+</select>
+<noscript>
+<br>
+	<input type="submit" value="Go" />
+</noscript>
+</div>
+</form>
+</div>
+<!-- indexer::continue -->
+<div class="row">
+	<div id="chart_container" class="col-md-8">
+	</div>
+	<div class="col-md-4">
+		<div style="border: 1px solid #D1E3E3; background-color: #EBF4F8; padding: 10px;">
+			Compare your personal cultural preferences to a country of your interest — take the <a href="https://geert-hofstede.com/cultural-survey.html" title="Cultural Survey">Culture&nbsp;Compass</a>
+			<div class="text-center top-space">
+				<button href="/tools.html" class="text-center btn bckg-itim-blue">See all tools</button>
+			</div>
+		</div>
+	</div>
+</div>
+<hr class="space">
+
+<script>
+
+	/**
+	 * Get Data from Template and call displayDimensionChart function
+	 */
+	var data = {
+		country		: 'United States',
+		pdi    		:  40,
+		idv    		:  91,
+		mas    		:  62,
+		uai    		:  46,
+		lto    		:  26,
+		ind    		:  68	};
+	
+	displayDimensionChart(data);
+	
+</script>
+<div class="mod_article block" id="united-states">
+
+<div class="ce_text block">
+
+<h1>What about the USA?</h1>
+
+<p class="itim-Copytext" style="text-align: justify;">If we explore the US
+culture through the lens of the 6-D Model©, we can get a good overview of the
+deep driving factors of American culture relative to other cultures in our
+world. By supplying you with this information please realise that culture
+describes a central tendency in society. Everybody is unique, yet social
+control ensures that most people will not deviate too much from the norm.
+Moreover, within every country regional cultural differences exist, also in the
+States. Americans, however, don’t need to go to a cultural briefing before
+moving to another state successfully.</p>
+
+<p style="text-align: justify;"><span style="color: #5f9ea0;"><strong>Power Distance</strong></span></p>
+
+<p class="itim-Copytext" style="text-align: justify;">The fact that everybody
+is unique implies that we are all unequal. One of the most salient aspects of
+inequality is the degree of power each person exerts or can exert over other
+persons; power being defined as the degree to which a person is able to
+influence other people’s ideas and behavior.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">This dimension deals with
+the fact that all individuals in societies are not equal, and it expresses <em><span style="color: #5f9ea0;"><strong>the attitude of the culture
+toward these power inequalities amongst us</strong></span></em>.&nbsp; Power
+distance is defined as the extent to which the less powerful members of
+institutions and organisations within a country expect and accept that power is
+distributed unequally. It has to do with the fact that a society’s inequality
+is endorsed by the followers as much as by the leaders.</p>
+
+<p style="text-align: justify;"><span style="color: #5f9ea0;"><strong>Individualism</strong></span></p>
+
+<p class="itim-Copytext" style="text-align: justify;">The fundamental issue
+addressed by this dimension is<em><span style="color: #5f9ea0;"> <strong>the degree of interdependence a society maintains among its
+members</strong></span></em>. It has to do with
+whether people´s self-image is defined in terms of “I” or “We”. In
+Individualist societies people are only supposed to look after themselves and
+their direct family. In Collectivist societies people belong to “in groups” that
+take care of them in exchange for unquestioning loyalty.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">The fairly low score on
+<span style="color: #5f9ea0;">Power Distance</span>(40) in combination with one of the the most <span style="color: #5f9ea0;">Individualist</span>&nbsp;(91) cultures in the
+world reflects itself in the following:</p>
+
+<ul style="text-align: justify;">
+<li>The American
+premise of “liberty and justice for all.” This is evidenced by an explicit
+emphasis on equal rights in all aspects of American society and government.</li>
+<li>Within American
+organisations, hierarchy is established for convenience, superiors are accessible
+and managers rely on individual employees and teams for their expertise.&nbsp;</li>
+<li>Both managers and
+employees expect to be consulted and information is shared frequently.&nbsp; At the same time, communication is informal,
+direct and participative to a degree.</li>
+<li>The society is
+loosely-knit in which the expectation is that people look after themselves and
+their immediate families only and should not rely (too much) on authorities for
+support.&nbsp;</li>
+<li>There is also a
+high degree of geographical mobility in the United States. Americans are the
+best joiners in the world; however it is often difficult, especially among men,
+to develop deep friendships.</li>
+<li>Americans are
+accustomed to doing business or interacting with people they don’t know well.
+Consequently, Americans are not shy about approaching their prospective
+counterparts in order to obtain or seek information. In the business world,
+employees are expected to be self-reliant and display initiative.&nbsp; Also, within the exchange-based world of work
+we see that hiring, promotion and decisions are based on merit or evidence of
+what one has done or can do.</li>
+</ul>
+<p style="text-align: justify;"><span style="color: #5f9ea0;"><strong>Masculinity</strong></span></p>
+
+<p class="itim-Copytext" style="text-align: justify;">A high score (Masculine) on this dimension indicates that the society will be driven by competition, achievement and success, with success being defined by the “winner” or “best-in-the-field”. This value system starts in childhood and continues throughout one’s life – both in work and leisure pursuits.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">A low score (Feminine) on the dimension means that the dominant values in society are caring for others and quality of life. A Feminine society is one where quality of life is the sign of success and standing out from the crowd is not admirable.&nbsp;<em><span style="color: #5f9ea0;"><strong>The fundamental issue here is what motivates people, wanting to be the best (Masculine) or liking what you do (Feminine)</strong></span></em><strong>.</strong></p>
+
+<p class="itim-Copytext" style="text-align: justify;">The score of the US on
+<span style="color: #5f9ea0;">Masculinity</span> is high at 62, and this can be seen in the typical American
+behavioral patterns. This can be explained by the the combination of&nbsp; a high Masculinity drive together with the
+most Individualist drive in the world. In other words, Americans, so to
+speak,&nbsp; all show their Masculine drive
+individually. The British, however, have the same culture in this respect. The
+question, therefore, should be: is the same drive not normally to be seen on
+the surface? This difference is a reflection of the higher score of the US on
+Uncertainty Avoidance than of the UK. In other words, in both societies we find
+the same drive, but Americans show it up-front whereas the British will take
+you by surprise. </p>
+
+<p class="itim-Copytext" style="text-align: justify;">This American combination
+reflects itself in the following:</p>
+
+<ul style="text-align: justify;">
+<li>Behavior in
+school, work, and play are based on the shared values that people should
+“strive to be the best they can be” and that “the winner takes all”. As a
+result, Americans will tend to display and talk freely about their “successes”
+and achievements in life. Being successful per se is not the great motivator in
+American society, but being able to show one’s success</li>
+<li>Many American
+assessment systems are based on precise target setting, by which American
+employees can show how well a job they did.</li>
+<li>There exists a
+“can-do” mentality which creates a lot of dynamism in the society, as it is
+believed that there is always the possibility to do things in a better way</li>
+<li>Typically, Americans
+“live to work” so that they can obtain monetary rewards and as a consequence
+attain higher status based on how good one can be.&nbsp; Many white collar workers will move to a more
+fancy neighborhood after each and every substantial promotion.</li>
+<li>It is believed
+that a certain degree of conflict will bring out the best of people, as it is
+the goal to be “the winner”. As a consequence, we see a lot of polarisation and
+court cases. This mentality nowadays undermines the American premise of
+“liberty and justice for all.” Rising inequality is endangering democracy,
+because a widening gap among the classes may slowly push Power Distance up and
+Individualism down.</li>
+</ul>
+<p style="text-align: justify;"><span><span style="color: #5f9ea0;"><strong>Uncertainty Avoidance</strong></span></span></p>
+
+<p class="itim-Copytext" style="text-align: justify;">The dimension Uncertainty Avoidance has to do with&nbsp;<strong><em><span style="color: #5f9ea0;">the way that a society deals with the fact that the future can never be known</span></em></strong>: should we try to control the future or just let it happen? This ambiguity brings with it anxiety and different cultures have learnt to deal with this anxiety in different ways.&nbsp; The extent to which the members of a culture feel threatened by ambiguous or unknown situations and have created beliefs and institutions that try to avoid these is reflected in the score on Uncertainty Avoidance.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">The US
+scores below average, with a low score of 46, on the <span style="color: #5f9ea0;">Uncertainty Avoidance</span>
+dimension. . As a consequence, the perceived context in which Americans find
+themselves will impact their behaviour more than if the culture would have
+either scored higher or lower. Thus, this cultural pattern reflects itself as
+follows:</p>
+
+<ul style="text-align: justify;">
+<li>There is a fair
+degree of acceptance for new ideas, innovative products and a willingness to
+try something new or different, whether it pertains to technology, business
+practices or food.&nbsp; Americans tend to be
+more tolerant of ideas or opinions from anyone and allow the freedom of
+expression.&nbsp; At the same time, Americans
+do not require a lot of rules and are less emotionally expressive than
+higher-scoring cultures.&nbsp;</li>
+<li>At the same time,
+9/11 has created a lot of fear in the American society culminating in the
+efforts of government to monitor everybody through the NSA and other security
+organisations</li>
+</ul>
+<p style="text-align: justify;"><span><strong><span style="color: #5f9ea0;">Long Term Orientation</span></strong></span></p>
+
+<p class="itim-copytext0" style="text-align: justify;">This dimension describes&nbsp;<span style="color: #5f9ea0;"><strong><em>how every society has to maintain some links with its own past while dealing with the challenges of the present and future,</em></strong></span>&nbsp;and societies prioritise these two existential goals differently. Normative societies. which score low on this dimension, for example, prefer to maintain time-honoured traditions and norms while viewing societal change with suspicion. Those with a culture which scores high, on the other hand, take a more pragmatic approach: they encourage thrift and efforts in modern education as a way to prepare for the future.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">The United States scores <span style="color: #5f9ea0;">normative</span> on the fifth dimension with a low score of 26. This is reflected by the following:</p>
+
+<ul style="text-align: justify;">
+<li>Americans are
+prone to analyse new information to check whether it is true. Thus, the culture
+doesn’t make most Americans pragmatic, but this should not be confused with the
+fact that Americans are very practical, being reflected by the “can-do”
+mentallity mentioned above.</li>
+<li>The polarisation
+mentioned above is, so to speak, strengthened by the fact that many Americans
+have very strong ideas about what is “good” and “evil”. This may concern issues
+such as abortion, use of drugs, euthanasia, weapons or the size and rights of
+the government versus the States and versus citizens.</li>
+<li>The US is the one
+of the only “Caucasian” countries in the world where, since the beginning of
+the 20<sup>th</sup> century, visiting church has increased. This increase is
+also evident in some post-Soviet republics such as Russia.</li>
+<li>American
+businesses measure their performance on a short-term basis, with profit and
+loss statements being issued on a quarterly basis. This also drives individuals
+to strive for quick results within the work place.&nbsp;</li>
+</ul>
+<p style="text-align: justify;"><span style="color: #5f9ea0;"><strong>Indulgence</strong></span></p>
+
+<p style="text-align: justify;">One challenge that confronts humanity, now and in the past, is the degree to which small children are socialised. Without socialisation we do not become “human”. This&nbsp;dimension is defined as&nbsp;<span><strong><em>t<span style="color: #5f9ea0;">he extent to which people try to control their desires and impulses</span></em></strong></span>, based on the way they were raised. A tendency toward a relatively weak control over their impulses is called “Indulgence”, whereas a relatively strong control over their urges is called “Restraint”. Cultures can be described as Indulgent or Restrained.</p>
+
+<p class="itim-Copytext" style="text-align: justify;">The United States scores as an<span style="color: #5f9ea0;">
+Indulgent</span> (68) society on the sixth dimension. This, in combination with a normative
+score, is reflected by the following contradictory attitudes and behaviour:</p>
+
+<ul>
+<li style="text-align: justify;">Work hard and
+play hard.</li>
+<li style="text-align: justify;">The States has
+waged a war against drugs and is still very busy in doing so, yet drug
+addiction in the States is higher than in many other wealthy countries.</li>
+<li style="text-align: justify;">It is a prudish
+society yet even some well-known televangelists appear to be immoral.</li>
+</ul>
+</div>
+
+</div>
+
+<div class="mod_article block">
+
+<div class="ce_text block">
+
+<p><strong><em>
+Scores of countries marked with an asterisk (*) are  - partially or fully - <span style="text-decoration: underline;">not</span> from Geert Hofstede but have been added through research projects of other researchers or have been derived from data representing similar countries in combination with our practitioner experience. For the official scores check Hofstede`s books or his <a target="_blank" href="http://geerthofstede.nl/research--vsm">private website</a>
+</em>
+</strong>
+</p>
+</div>
+</div>
+														<!--<div class="row">
+								<div class="col-md-12">
+									<small style="font-size: 80%; margin-top: 20px;">Last updated: </small>
+								</div>
+							</div>
+							-->
+						</div>
+						
+					</section>
+					
+									<aside id="right" class="col-md-3">
+						<div class="gh-box">
+							
+				
+			<span style="display: none;">united-states.html</span>
+				 
+						
+				<div id="courses_promo" class="sidebar-container">
+									<h4 class="text-left" >Upcoming Events</h4>
+					<div class="slides_container">
+						
+						<div class="text-left">
+								
+							<h4>
+								<a href="https://geert-hofstede.com/organisational-culture-certification.html#organisational-culture-courses-calendar" target="_blank">
+								Certification in Organisational Culture
+								 </a>
+							</h4>
+							<p class="location">Helsinki, Finland</p>
+							<p class="date">January 23-27 2017</p>
+						</div>	
+						
+						<div class="text-left">
+							<h4>
+								<a href="https://geert-hofstede.com/intercultural-management-certification.html#intercultural-management-courses-calendar" target="_blank">
+								Certification in Intercultural Management
+								 </a>
+							</h4>
+							<p class="location">Helsinki, Finland</p>
+							<p class="date">March 6-10 2017</p>
+						</div>
+	
+						<div class="text-left">
+							<h4>
+								<a href="https://geert-hofstede.com/cultural-ambassador.html#cultural-ambassador-calendar" target="_blank">
+								Hybrid Ambassadors' Course
+								</a>
+							</h4>
+							<p class="location">Boston, USA</p>
+							<p class="date">February 22 - 24 2017</p>
+						</div>	
+
+					</div>
+				</div>
+			
+				<!--
+				<div class="sidebar-container">
+					<div class="row hr-right">
+					</div>
+					<h5 class="text-left">Project Management and Culture</h5>
+					<h4 class="text-left">Research Survey</h4>
+					<div class="row">
+						<div class="col-md-12">
+							<img src="tl_files/images/research-survey.png" />
+							<button href="https://surveys.feedbackdialog.com/a?kw=generated1427696063638&rk=Ne42095445260" class="btn full-width bckg-itim-orange">Participate</button>
+						</div>
+					</div>
+
+				</div>		
+				-->
+
+
+				<div class="sidebar-container">
+										</div>	
+<!--
+				<div class="sidebar-container">
+					<div class="row hr-right">
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 class="text-left">Latest book</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<a href="http://www.amazon.com/gp/product/9529358512/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=9529358512&linkCode=as2&tag=wwwgeerthofst-20&linkId=L5HB43N7QFMSGOIJ"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=9529358512&Format=_SL250_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=wwwgeerthofst-20" ></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=wwwgeerthofst-20&l=as2&o=1&a=9529358512" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+							<script type="text/javascript" src="http://wms-na.amazon-adsystem.com/20070822/US/js/link-enhancer-common.js?tag=wwwgeerthofst-20&linkId=ZAOW43MGWI7ZNAIX">
+							</script>
+							<noscript>
+								<img src="http://wms-na.amazon-adsystem.com/20070822/US/img/noscript.gif?tag=wwwgeerthofst-20&linkId=ZAOW43MGWI7ZNAIX" alt="" />
+							</noscript>
+						</div>
+					</div>				
+				</div>
+-->				
+<!--
+				<div class="sidebar-container">
+					<div class="row hr-right">
+					</div>
+					<h4 class="text-left">#WhatsYourStory</h4>
+					<a href="/whatsyourstory.html" title="#WhatsYourStory">
+						<img style="max-width: 100%;" src="/tl_files/images/whatsyourstory-sidebar.png" alt="#WhatsYourStory" />
+					</a>
+				 </div>
+				 
+				 -->
+							<div class="sidebar-container">
+									<div class="row hr-right">
+					</div>
+													<h4 class="text-left">Upcoming Free Webinars</h4>
+					<iframe src="https://www.eventbrite.com/calendar-widget?eid=12174870365" frameborder="0" height="420" width="195" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true">
+					</iframe>
+								 </div>	
+						
+				<div class="sidebar-container">
+					<div class="row hr-right">
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h4 class="text-left">Newsletter</h4>
+							<p class="text-left">Get our latest info delivered to your inbox.</p>
+						</div>
+					</div>
+
+					<div id="mc_embed_signup" class="row">
+						<form action="https://geert-hofstede.us7.list-manage.com/subscribe/post?u=8cba23df5a8a1d58ca5872da5&id=1830bfc240" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+							<div class="col-md-12">
+								<input type="email" value="" name="EMAIL" class="email form-control full-width" id="mce-EMAIL" placeholder="Your e-mail" required>
+							</div>
+							<div class="col-md-12" style="margin-top: 5px;">
+								<button type="submit" name="subscribe" id="mc-embedded-subscribe" href="/cultural-survey.html" class="btn full-width bckg-itim-blue">Subscribe</button>
+							</div>
+						</form>
+					</div>
+
+				</div>				
+	
+<!--
+				<div class="sidebar-container">
+					<h4 class="text-left">Get Certified</h4>
+					<div class="row rounded-corners">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-8">
+									<button href="/certifications.html" class="btn full-width bckg-itim-green">Apply now</button>
+								</div>
+								<div class="col-md-4">
+									<img src="tl_files/images/ribbon.png"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<img src="tl_files/images/hofstede_centre_logo_small.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row hr-right">
+					</div>
+				</div>	
+-->				
+
+			
+			
+
+
+				 
+
+			
+
+				
+
+	<!--
+				<div class="sidebar-container">
+					<div class="row hr-right">
+					</div>
+				</div>
+			
+				
+					
+				<div class="sidebar-container">
+					<a href="http://itim.org/blog/newsletter-2014-3" title="Build Global Business">
+						<img src="tl_files/images/site_2/badge-after.png" width="160px"/><br />
+					</a>
+				</div>
+	-->
+
+
+										<div class="sidebar-container">				
+								&nbsp;							</div>
+						</div>
+					</aside>
+					
+				</div>
+								<div class="row hr-right visible-sm visible-xs">
+				</div>
+				<div id="footer" class="visible-sm visible-xs">
+					<div id="itim-bottom" class="row">
+						<span class="col-sm-4 col-xs-12">Arabiankatu 12 00560 Helsinki, Finland</span>
+						<span class="col-sm-3 col-xs-12"><a href="mailto:info@hofstedecentre.com">info@hofstedecentre.com</a></span>
+						<span class="col-sm-3 col-xs-12">+358 923 163 043</span>
+						<span id="social-top" class="col-sm-2 col-xs-12">
+							<a href="https://www.facebook.com/HOFSTEDEinsight?_rdr" title="Facebook"><img src="tl_files/images/social-fb-grey-small.png" width="24px" height="24px" /></a>
+							<a href="https://twitter.com/hofstedeinsight" title="Twitter"><img src="tl_files/images/social-twitter-grey-small.png" width="24px" height="24px" /></a>
+							<a href="http://www.linkedin.com/groups?about=&gid=52063&report%2Esuccess=8VTqEOvzemg2q5tU_gTLisv1S9WzmZk2QZEUc2VkKupdaeDg54XemY16SsXOrqD0HS3hWZFuvWkVve_w9lpwv4zCZLGfZPBJgNpY_JSE_O5pmqsjTIpTaZFuvWXIbVBJImXebPVyw9WdaF_uExnMmSIEo8kXhZss6i3Mi-S0GLHVn1kJT33DiIFux9Q31H_ytPLMmSIgNGXVNdksX1Xa1zVuiKpVYZDJkI5MvBdTYWQoMOuaMU" title="LinkedIn"><img src="tl_files/images/social-linkedin-grey-small.png" width="24px" height="24px" /></a>
+						</span>
+					</div>
+				</div>
+				
+				<!-- Google Code for Remarketing Tag -->
+				<!--------------------------------------------------
+				Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+				--------------------------------------------------->
+				<script type="text/javascript">
+				/* <![CDATA[ */
+				var google_conversion_id = 964440393;
+				var google_custom_params = window.google_tag_params;
+				var google_remarketing_only = true;
+				/* ]]> */
+				</script>
+				<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+				</script>
+				<noscript>
+				<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/964440393/?value=0&amp;guid=ON&amp;script=0"/>
+				</div>
+				</noscript>			</div>
+
+		</div>
+
+		<!--[if lt IE 7 ]>
+		  <script src="plugins/at_custom/dd_belatedpng.js"></script>
+		  <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+		<![endif]-->
+		
+		<!-- Go to www.addthis.com/dashboard to customize your tools -->
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54fea0b2053b797b" async="async"></script>
+
+		<script src="plugins/at_custom/chili-1.7.pack.js"></script>
+		<script src="plugins/at_custom/jquery.dimensions.js"></script>
+		<script src="plugins/at_custom/jquery.color.js"></script>
+		<script src="plugins/at_custom/jquery.accordion.js"></script>
+		<script src="plugins/at_custom/frontend.js?v=1"></script>
+			
+		
+		<script type="text/javascript">			
+						
+		</script>
+	</body>
+</html>

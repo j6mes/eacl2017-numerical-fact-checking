@@ -1,0 +1,1166 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"d955319030","applicationID":"17278508","transactionName":"b1MBMEsEC0UHVxFZX1YZIjdpShZCCUYcHlFLRhs=","queueTime":0,"applicationTime":162,"ttGuid":"C282CA86D2DF131F","agent":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><link type="image/png" rel="apple-touch-icon" href="/images/logos/site/site.png" /><link type="text/css" rel="Stylesheet" title="Core_CSS" href="//s3.amazonaws.com/assets.sidearmsports.com/common/css/default/5/core_compressed.css" /><link type="application/rss+xml" rel="alternate" title="RSS Feed" href="/rss.aspx?path=msoc" /><link type="text/css" rel="stylesheet" href="/less/story-templates.less" /><link rel="image_src" href="http://wingatebulldogs.com/images/2016/10/5/Evans_Nate_01.jpg" /><link id="ctl00_lnkStyleSheet" rel="stylesheet" type="text/css" href="/site/site.css?0.8080861" /><link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon" /><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.aspx" />
+	<script type="text/javascript" src="http://assets.sidearmsports.com.s3.amazonaws.com/plugins/modernizr.js"></script>
+	
+	<script type="text/javascript" src="/site/stepcarousel.js">
+		/***********************************************
+		* Step Carousel Viewer script- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+		* Visit http://www.dynamicDrive.com for hundreds of DHTML scripts
+		* This notice must stay intact for legal use
+		***********************************************/
+	</script>
+<meta property="twitter:card" content="summary_large_image" /><meta property="twitter:creator" content="@wingatesoccer" /><meta property="twitter:description" content="Wingate, N.C.----The fourth-ranked Wingate University Bulldogs got a 96th-minute game-winner from sophomore forward Nate Evans (Greenville, N.C.) Saturday night, staying perfect on the season with a 2-1 overtime victory over visiting Carson-Newman University. The Bulldogs move to 11-0 on the year and 8-0 in the SAC, while the Eagles fall to 6-7 overall and 2-5 in the conference. Wingate is one of only two NCAA Division II men's soccer teams without a loss or a tie this season.
+ " /><meta property="twitter:image" content="http://wingatebulldogs.com/images/2016/10/5/Evans_Nate_01.jpg" /><meta property="og:image" content="http://wingatebulldogs.com/images/2016/10/5/Evans_Nate_01.jpg" /><meta property="og:image:width" content="1729" /><meta property="og:image:height" content="1200" /><meta property="og:description" content="Wingate, N.C.----The fourth-ranked Wingate University Bulldogs got a 96th-minute game-winner from sophomore forward Nate Evans (Greenville, N.C.) Saturday night, staying perfect on the season with a 2-1 overtime victory over visiting Carson-Newman University. The Bulldogs move to 11-0 on the year and 8-0 in the SAC, while the Eagles fall to 6-7 overall and 2-5 in the conference. Wingate is one of only two NCAA Division II men's soccer teams without a loss or a tie this season.
+ " /><meta property="og:title" content="Evans nets overtime game-winner to keep fourth-ranked Wingate unbeaten "></meta><meta property="og:type" content="sports_team"></meta><meta property="og:url" content="http://wingatebulldogs.com/news/2016/10/15/mens-soccer-evans-nets-overtime-game-winner-to-keep-fourth-ranked-wingate-unbeaten.aspx"></meta><meta name="twitter:card" content="summary_large_image"></meta><meta name="twitter:title" content="Evans nets overtime game-winner to keep fourth-ranked Wingate unbeaten "></meta><meta name="twitter:description" content="Wingate, N.C.----The fourth-ranked Wingate University Bulldogs got a 96th-minute game-winner from sophomore forward Nate Evans (Greenville, N.C.) Saturday night, staying perfect on the season with a 2-1 overtime victory over visiting Carson-Newman University. The Bulldogs move to 11-0 on the year and 8-0 in the SAC, while the Eagles fall to 6-7 overall and 2-5 in the conference. Wingate is one of only two NCAA Division II men's soccer teams without a loss or a tie this season."></meta><meta property="og:site_name" content="Wingate University"></meta><meta property="fb:admins" content="67301573,100000950707343"></meta><script>window.client_hostname = "wingatebulldogs.com";window.server_name = "DS38166";window.client_division = "DII";window.targetting_criteria = {"page_template":"story","sport_name":"msoc","sport_name_custom":"msoc","site":"wingate","content_id":"story-7110","sect":"msoccer"};window.client_shortname = "wingate";window.dfp_network_code = "";window.img_dfp_unit_name = "";</script><title>
+	Wingate University Athletics - Evans nets overtime game-winner to keep fourth-ranked Wingate unbeaten 
+</title></head>
+
+<body>
+
+    <h1>Wingate University Athletics</h1>
+
+	<form name="aspnetForm" method="post" action="/news/2016/10/15/mens-soccer-evans-nets-overtime-game-winner-to-keep-fourth-ranked-wingate-unbeaten.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTM4MjcwMDA0MWQYEAUnY3RsMDAkY3RsMzEkcnB0QWRzJGN0bDAwJG1lZGlhQWQkbW9WaWV3Dw9kZmQFJ2N0bDAwJGN0bDI2JHJwdEFkcyRjdGwwMCRtZWRpYUFkJG1vVmlldw8PZGZkBSdjdGwwMCRjdGwxMCRycHRBZHMkY3RsMDAkbWVkaWFBZCRtb1ZpZXcPD2RmZAUnY3RsMDAkY3RsMjMkcnB0QWRzJGN0bDAwJG1lZGlhQWQkbW9WaWV3Dw9kZmQFJ2N0bDAwJGN0bDI1JHJwdEFkcyRjdGwwMCRtZWRpYUFkJG1vVmlldw8PZGZkBSdjdGwwMCRjdGwyNyRycHRBZHMkY3RsMDAkbWVkaWFBZCRtb1ZpZXcPD2RmZAUnY3RsMDAkY3RsMzMkcnB0QWRzJGN0bDAwJG1lZGlhQWQkbW9WaWV3Dw9kZmQFJ2N0bDAwJGN0bDMyJHJwdEFkcyRjdGwwMCRtZWRpYUFkJG1vVmlldw8PZGZkBSdjdGwwMCRjdGwyOSRycHRBZHMkY3RsMDAkbWVkaWFBZCRtb1ZpZXcPD2RmZAUnY3RsMDAkY3RsMzAkcnB0QWRzJGN0bDAwJG1lZGlhQWQkbW9WaWV3Dw9kZmQFJ2N0bDAwJGN0bDA2JHJwdEFkcyRjdGwwMCRtZWRpYUFkJG1vVmlldw8PZGZkBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUSY3RsMDAkSW1hZ2VCdXR0b24xBSdjdGwwMCRjdGwyOCRycHRBZHMkY3RsMDAkbWVkaWFBZCRtb1ZpZXcPD2RmZAU2Y3RsMDAkY3BsaE1haW5Db250ZW50JGN0bDAwJGN0bDAwJG1lZGlhX2NvbnRyb2wkbW9WaWV3Dw9kAgFkBSdjdGwwMCRjdGwzNCRycHRBZHMkY3RsMDAkbWVkaWFBZCRtb1ZpZXcPD2RmZAUnY3RsMDAkY3RsMjQkcnB0QWRzJGN0bDAwJG1lZGlhQWQkbW9WaWV3Dw9kZmT4nw83D0NLmgaBQQf/3eQZsI4Juw==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=qfdtbrJNjltonLE0tgcYLWe8cp_6OAPrktBn9KIVHPcoayUgSCkuYwbppSo_RBWDXAC5mY1oPPOwaT1OHcRH5PO9lCk1&amp;t=635589219467565191" type="text/javascript"></script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
+<script src="//s3.amazonaws.com/assets.sidearmsports.com/common/js/default/14/master_compressed_v5.js" type="text/javascript"></script><script type='text/javascript'>$(function () {setTimeout('moveIt()', 100);});function moveIt(){var $fbLike = $('.fb_like_container');var $addThis = $('a[href*="http://www.addthis.com"]'); if ($addThis.length > 0) { $addThis.parent().append($fbLike); } else { $('body').append($fbLike) }}</script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1" type="text/javascript"></script><script type='text/javascript'>$(function () {setTimeout('moveTwitter()', 200);});function moveTwitter(){var $twitterShare = $('.story_tweet_button');var $addThis = $('a[href*="http://www.addthis.com"]'); if ($addThis.length > 0) { $addThis.parent().append($twitterShare); } else { $('body').append($twitterShare) }}</script>
+<script src="/ScriptResource.axd?d=LOlVn4cMdjc7FmJgJgwG6-n3zbOVfaRg8VjSaJhU_lByvRho18-TZ_IgZS8lfQy3bcs8uYsZD3Wy2-XwY6b2JIctYgnR9tS-CPl7v8sIhp-c_hpuEWTh6FVxfOzlQQAOzb9qZ9fFDfFj2_eJDNybP1L2ZIs1&amp;t=ffffffffbcb9b94a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=2OwoPf1qdLIAzgY9U714WIVtHrChyVjWEI6hPae832y_573Ys6Iq0Zzoj7FPiBeaoCex-d0Q-9FtELQt76XHT3jvQnGcbKf1Xs3qn_zlKZNO3e9ZqU2Enyfd0I9YnMupFDeZoC_NtV8RWNhAVv6UzrD7dFklROYdfHPcQaXuoVD2c02t0&amp;t=ffffffffbcb9b94a" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B37EEB7D" />
+</div>
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$sManager', document.getElementById('aspnetForm'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls([], [], [], 90);
+//]]>
+</script>
+
+	<script type="text/javascript" src="/site/mega.js"></script>
+	<script type="text/javascript" src="/site/additional_links.js"></script>
+	
+	    <div id="mainDiv" class="inner">
+	        <div class="skip"><a href="#content">Skip Navigation Links</a></div>
+			
+			<header id="header" class="cf">
+				<div class="left">
+					<div class='' rev='HeaderFacts1'><p><a href="http://www.wingatebulldogs.com/sports/2013/3/5/GEN_0305132920.aspx"><span>10 Consecutive SAC Athletic Excellence Awards</span></a></p>
+
+<p><a href="http://wingatebulldogs.com/sports/2013/2/26/GEN_0226133412.aspx"><span>95 Academic All-America® Honorees</span></a></p>
+
+<p><a href="http://www.wingatebulldogs.com/sports/2013/3/5/GEN_0305133013.aspx"><span>130 Conference Championships</span></a></p>
+</div>
+    
+    
+    
+
+
+
+
+  
+
+
+
+    
+
+				</div>
+				<div class="right">
+					<div class='' rev='HeaderFacts2'><p><a href="http://wingatebulldogs.com/sports/2013/2/26/GEN_0226134007.aspx"><span>67 South Atlantic Conference Scholar Athletes</span></a></p>
+
+<p><a href="http://wingatebulldogs.com/sports/2013/2/5/GEN_0205135346.aspx"><span>391 NCAA Division II All-Americans</span></a></p>
+
+<p><a href="http://www.wingatebulldogs.com/sports/2013/3/4/GEN_0304130805.aspx"><span>37 NCAA National Champions</span></a></p>
+</div>
+    
+    
+    
+
+
+
+
+  
+
+
+
+    
+
+				</div>
+			
+				<a class="logo" href="/index.aspx"><img src="/images/topnav_logo.png" alt="Wingate University Athletics" /></a> 
+				<img class="cap" alt="" src="/images/header_leftcap.png" />
+				<img class="cap" alt="" src="/images/header_rightcap.png" />
+			</header>
+			
+			<nav id="main-navigation" class="cf">
+				<div class="left">
+					
+
+<h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'sports',true);return false" onfocus="mega_drop(this,'sports',true);return false"  onmouseout="mega_drop(this,'sports',false);return false" onblur="mega_drop(this,'sports',false);return false" >Sports</h2><div class="megaMenu_dropdown" id="sports">
+<div class="megaMenu_dropdown_inside" id="sports_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">NCAA Men's Sports</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=baseball&amp;path=baseball" class="nav_link" >Baseball</a><a href="/roster.aspx?path=baseball" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=baseball" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=baseball" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/WingateBaseball" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=basketball&amp;path=mbball" class="nav_link" >Basketball</a><a href="/roster.aspx?path=mbball" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mbball" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mbball" class="nav_link nav_link_srn" >News</a><a href="http://www.facebook.com/Wingatembb" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/WingateMBB" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?path=cross&amp;tab=crosscountry" class="nav_link" >Cross Country</a><a href="/roster.aspx?path=cross" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=cross" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=cross" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/twitter.com/WingateTrack" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=football&amp;path=football" class="nav_link" >Football</a><a href="/roster.aspx?path=football" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=football" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=football" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/WingateFootball" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=golf&amp;path=mgolf" class="nav_link" >Golf</a><a href="/roster.aspx?path=mgolf" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mgolf" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mgolf" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/WUDOGSGOLF" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=lacrosse&amp;path=mlax" class="nav_link" >Lacrosse</a><a href="/roster.aspx?path=mlax" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mlax" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mlax" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/WingateLacrosse" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=soccer&amp;path=msoc" class="nav_link" >Soccer</a><a href="/roster.aspx?path=msoc" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=msoc" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=msoc" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/pages/Wingate-International-Soccer-Academy/151324411608946?ref=ts&fref=ts" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/wingatesoccer" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=swimming&amp;path=mswim" class="nav_link" >Swimming</a><a href="/roster.aspx?path=mswim" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mswim" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mswim" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/WingateUniversitySwimming" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/https://twitter.com/WingateSwimming" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=tennis&amp;path=mten" class="nav_link" >Tennis</a><a href="/roster.aspx?path=mten" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mten" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mten" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/bulldogstennis" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/@WingateTennis" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?path=mens_tack_and_field&amp;tab=trackfield" class="nav_link" >Track &amp; Field</a><a href="/roster.aspx?path=mens_tack_and_field" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=mens_tack_and_field" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=mens_tack_and_field" class="nav_link nav_link_srn" >News</a><a href="http://www.facebook.com/WUTFXC" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/twitter.com/WingateTrack" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+</ul><ul class="megaMenu_column column_2"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">NCAA Women's Sports</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=basketball2&amp;path=wbball" class="nav_link" >Basketball</a><a href="/roster.aspx?path=wbball" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wbball" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wbball" class="nav_link nav_link_srn" >News</a><a href="http://www.facebook.com/wingate.wbb" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/WingateWBBALL" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=crosscountry2&amp;path=wcross" class="nav_link" >Cross Country</a><a href="/roster.aspx?path=wcross" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wcross" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wcross" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/twitter.com/WingateTrack" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=golf2&amp;path=wgolf" class="nav_link" >Golf</a><a href="/roster.aspx?path=wgolf" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wgolf" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wgolf" class="nav_link nav_link_srn" >News</a><a href="www.facebook.com/WUWGOLF" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/twitter.com/Wingate_WGolf" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?path=wlax&amp;tab=lacrosse2" class="nav_link" >Lacrosse</a><a href="/roster.aspx?path=wlax" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wlax" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wlax" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/Wingate_WLax" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=soccer2&amp;path=wsoc" class="nav_link" >Soccer</a><a href="/roster.aspx?path=wsoc" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wsoc" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wsoc" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/pages/Wingate-International-Soccer-Academy/151324411608946?ref=ts&fref=ts" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/wusoc_women" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=softball&amp;path=softball" class="nav_link" >Softball</a><a href="/roster.aspx?path=softball" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=softball" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=softball" class="nav_link nav_link_srn" >News</a><a class="nav_link nav_link_social facebook"></a><a href="//twitter.com/WingateSoftball" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=swimming2&amp;path=wswim" class="nav_link" >Swimming</a><a href="/roster.aspx?path=wswim" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wswim" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wswim" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/WingateUniversitySwimming" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/https://twitter.com/WingateSwimming" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=tennis2&amp;path=wten" class="nav_link" >Tennis</a><a href="/roster.aspx?path=wten" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wten" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wten" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/bulldogstennis" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/WingateTennis" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?path=w_tf&amp;tab=trackfield2" class="nav_link" >Track &amp; Field</a><a href="/roster.aspx?path=w_tf" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=w_tf" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=w_tf" class="nav_link nav_link_srn" >News</a><a href="https://www.facebook.com/WUTFXC" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/twitter.com/WingateTrack" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/index.aspx?tab=volleyball&amp;path=wvball" class="nav_link" >Volleyball</a><a href="/roster.aspx?path=wvball" class="nav_link nav_link_srn" >Roster</a><a href="/schedule.aspx?path=wvball" class="nav_link nav_link_srn" >Schedule</a><a href="/archives.aspx?path=wvball" class="nav_link nav_link_srn" >News</a><a href="http://www.facebook.com/WingateVolleyball" class="nav_link nav_link_social facebook" >Facebook</a><a href="//twitter.com/WingateVB" class="nav_link nav_link_social twitter" >Twitter</a><a class="nav_link nav_link_social instagram"></a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'athletic_dept',true);return false" onfocus="mega_drop(this,'athletic_dept',true);return false"  onmouseout="mega_drop(this,'athletic_dept',false);return false" onblur="mega_drop(this,'athletic_dept',false);return false" >Athletic Dept</h2><div class="megaMenu_dropdown" id="athletic_dept">
+<div class="megaMenu_dropdown_inside" id="athletic_dept_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Athletic Department</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/staff.aspx?tab=athleticdirectory" class="nav_link" >Athletic Directory</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/11/10/Bulldog Club.aspx?tab=bulldogclub" class="nav_link" >Bulldog Club</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatecampuslife.orgsync.com/Campus_Rec" class="nav_link" >Campus Recreation</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/11/9/GEN_1109094839.aspx?tab=compliance" class="nav_link" >Compliance</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/calendar.aspx" class="nav_link" >Composite Schedule</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com" class="nav_link" >Contact Us</a></li>
+</ul><ul class="megaMenu_column column_2"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2013/1/29/GEN_0129130748.aspx?tab=directions" class="nav_link" >Directions</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/7/8/GEN_0708092115.aspx?tab=facilities" class="nav_link" >Facilities</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/archives.aspx?path=general&amp;tab=generalreleases" class="nav_link" >General Releases</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2013/3/25/GEN_0325132002.aspx?tab=missionstatement" class="nav_link" >Mission Statement</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/19/GEN_0219131307.aspx" class="nav_link" >Quick Facts</a></li>
+</ul><ul class="megaMenu_column column_3"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/19/GEN_0219132806.aspx" class="nav_link" >SAAC</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/hof.aspx?tab=sportshalloffame" class="nav_link" >Sports Hall of Fame</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2011/8/10/GEN_0810112301.aspx?tab=sportsinformation" class="nav_link" >Sports Information</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/10/16/GEN_1016094836.aspx?tab=sportsmedicine" class="nav_link" >Sports Medicine</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/7/27/GEN_0727090016.aspx?tab=sportsnetwork" class="nav_link" >Sports Network</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate.edu/about-wingate/title-ix" class="nav_link" >Title IX</a></li>
+</ul><ul class="megaMenu_column column_4"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/7/25/14_WU_campus_map.pdf?tab=universitymap" class="nav_link" >University Map</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate.edu" class="nav_link" >University Website</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2015/9/18/2015_visiting_team_travel_guide.pdf?tab=visitingteamsandfans" class="nav_link" >Visiting Teams and Fans</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2014/4/3/GEN_0403141248.aspx?tab=wuspys" class="nav_link" >WUSPYS</a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'multimedia',true);return false" onfocus="mega_drop(this,'multimedia',true);return false"  onmouseout="mega_drop(this,'multimedia',false);return false" onblur="mega_drop(this,'multimedia',false);return false" >Multimedia</h2><div class="megaMenu_dropdown" id="multimedia">
+<div class="megaMenu_dropdown_inside" id="multimedia_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Live Coverage</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://espn.go.com/watchespn/index" class="nav_link" >ESPN3</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://portal.stretchinternet.com/wingate" class="nav_link" >Live Audio</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/8/24/GEN_0824093213.aspx?tab=livestats" class="nav_link" >Live Stats</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2009/7/27/GEN_0727090016.aspx?tab=sportsnetwork" class="nav_link" >Broadcast Schedule</a></li>
+</ul><ul class="megaMenu_column column_4"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Social Media</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.facebook.com/WingateBulldogs" class="nav_link" >Facebook</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.twitter.com/WU_Bulldogs" class="nav_link" >Twitter</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.instagram.com/wingatebulldogs" class="nav_link" >Instagram</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2013/1/18/GEN_0118130505.aspx" class="nav_link" >Social Media Directory</a></li>
+</ul><ul class="megaMenu_column column_7"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Images</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx" class="nav_link" >Photo Galleries</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2014/9/11/GEN_0911141530.aspx" class="nav_link" >Desktop Wallpapers</a></li>
+</ul><ul class="megaMenu_column column_10"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.youtube.com/wingatebulldogs" class="nav_link" >YouTube</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Video</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://client.stretchinternet.com/client/wingate.portal#" class="nav_link" >On Demand Broadcasts</a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'fan_zone',true);return false" onfocus="mega_drop(this,'fan_zone',true);return false"  onmouseout="mega_drop(this,'fan_zone',false);return false" onblur="mega_drop(this,'fan_zone',false);return false" >Fan Zone</h2><div class="megaMenu_dropdown" id="fan_zone">
+<div class="megaMenu_dropdown_inside" id="fan_zone_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Spirit Teams</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/22/CHEER_0222131036.aspx" class="nav_link" >Cheerleading</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/22/GEN_0222135241.aspx" class="nav_link" >Dance Team</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/22/GEN_0222134331.aspx" class="nav_link" >Mascot</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/22/GEN_0222135656.aspx" class="nav_link" >Pep Band</a></li>
+</ul><ul class="megaMenu_column column_5"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">For Fans</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2012/12/12/Browser_Theme.aspx" class="nav_link" >Browser Theme</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2011/8/25/GEN_0825115542.aspx?tab=blogs" class="nav_link" >Bulldog Blogs</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2014/7/28/GEN_0728140127.aspx" class="nav_link" >Buy Tickets</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2010/5/12/GEN_0512105803.aspx?tab=camps" class="nav_link" >Camps</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate.edu/campus-map/" class="nav_link" >Campus Map</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2014/9/24/GEN_0924140812.aspx" class="nav_link" >Desktop Wallpapers</a></li>
+</ul><ul class="megaMenu_column column_6"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2013/1/29/GEN_0129130748.aspx?tab=directions2" class="nav_link" >Directions</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sb_output.aspx?form=12" class="nav_link" >Email Sign-Up</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="https://itunes.apple.com/us/app/wingate-university-mobile/id463625315?mt=8" class="nav_link" >iPhone App</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2013/8/9/GEN_0809131014.aspx?tab=niketeamstore" class="nav_link" >Nike Team Store</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx" class="nav_link" >Photo Galleries</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2014/4/3/GEN_0403141248.aspx?tab=wuspys2" class="nav_link" >WUSPYS</a></li>
+</ul><ul class="megaMenu_column column_9"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Bulldog History</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2013/2/5/GEN_0205135346.aspx?tab=all-americans" class="nav_link" >All-Americans</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/hof.aspx" class="nav_link" >Hall of Fame</a></li>
+</ul></div></div>
+
+
+
+
+
+
+
+
+				</div>
+				<div class="right">
+					
+
+<h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'bulldog_club',true);return false" onfocus="mega_drop(this,'bulldog_club',true);return false"  onmouseout="mega_drop(this,'bulldog_club',false);return false" onblur="mega_drop(this,'bulldog_club',false);return false" >Bulldog Club</h2><div class="megaMenu_dropdown" id="bulldog_club">
+<div class="megaMenu_dropdown_inside" id="bulldog_club_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2009/11/10/Bulldog%20Club.aspx?tab=bulldogclub" class="nav_link" >Bulldog Club</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate-alumni.org/s/1354/index.aspx?sid=1354&amp;pgid=354&amp;gid=1&amp;cid=935&amp;ecid=935&amp;post_id=0" class="nav_link" >Give Now</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/25/GEN_0225134433.aspx" class="nav_link" >Mission Statement</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/25/GEN_0225134715.aspx" class="nav_link" >Events</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Bulldog Club</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2009/11/9/GEN_1109090858.aspx?id=96" class="nav_link" >NCAA Compliance</a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'for_athletes',true);return false" onfocus="mega_drop(this,'for_athletes',true);return false"  onmouseout="mega_drop(this,'for_athletes',false);return false" onblur="mega_drop(this,'for_athletes',false);return false" >For Athletes</h2><div class="megaMenu_dropdown" id="for_athletes">
+<div class="megaMenu_dropdown_inside" id="for_athletes_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Current Recruits</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate.edu/admissions" class="nav_link" >Admissions</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.diicommunity.org" class="nav_link" >Division II Community</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate.edu/financial-planning" class="nav_link" >Financial Planning</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/10/16/14_15_Guide_for_the_College_Bound_SA.pdf?tab=guideforcollegeboundsa" class="nav_link" >Guide for College Bound SA</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2016/5/19/2016_Incoming_Student_Athlete_Checklist.doc?tab=incomingstudent-athletechecklist" class="nav_link" >Incoming Student-Athlete Checklist</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2015/11/5/ISCBCA1516.pdf?tab=internationalacademicstandards" class="nav_link" >International Academic Standards</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.ncaaeligibilitycenter.org" class="nav_link" >NCAA Eligibility Center</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/25/GEN_0225130322.aspx" class="nav_link" >NCAA Recruiting Rules</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/8/1/Proof_of_Physical.pdf?tab=proofofphysical" class="nav_link" >Proof of Physical</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/9/3/Tryout_Waiver_and_SST_Revised_9_3_14.pdf?tab=psatryoutwaivers" class="nav_link" >PSA Tryout Waivers</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/26/GEN_0226134111.aspx" class="nav_link" >Transferring to Wingate</a></li>
+</ul><ul class="megaMenu_column column_2"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Current Athletes</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/sports/2009/11/9/GEN_1109094839.aspx?tab=compliance" class="nav_link" >Compliance</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/9/3/Student_Athlete_Complimentary_Tickets.pdf?tab=complimentaryticketinstructions" class="nav_link" >Complimentary Ticket Instructions</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/8/1/NCAA_Banned_Substances.pdf?tab=ncaabannedsubstances" class="nav_link" >NCAA Banned Substances</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2014/8/1/NCAA_Regulations_Summary.pdf?tab=ncaaregulationssummary" class="nav_link" >NCAA Regulations Summary</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.orgsync.com/" class="nav_link" >OrgSync</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2013/3/7/Release_of_Responsibility.pdf?tab=releaseofresponsibility" class="nav_link" >Release of Responsibility</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/26/GEN_0226135144.aspx" class="nav_link" >Reporting Practice Hours</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/26/GEN_0226130954.aspx" class="nav_link" >Rules Regarding Practice Hours</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sports/2013/2/19/GEN_0219132806.aspx" class="nav_link" >SAAC</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com" class="nav_link" >Summer Leagues Participation</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="/documents/2016/8/15/Student_Athlete_Handbook_2016_17_w_new_logos.pdf?tab=studentathletehandbook" class="nav_link" >Student Athlete Handbook</a></li>
+</ul><ul class="megaMenu_column column_7"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Alumni Athletes</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingate-alumni.org/s/1354/index.aspx?sid=1354&amp;pgid=354&amp;gid=1&amp;cid=935&amp;ecid=935&amp;post_id=0" class="nav_link" >Donate to Athletics</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/sports/2009/11/10/Bulldog%20Club.aspx?tab=bulldogclub" class="nav_link" >Join the Bulldog Club</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://wingatebulldogs.com/sb_output.aspx?form=4" class="nav_link" >Update Your Information</a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'facilities',true);return false" onfocus="mega_drop(this,'facilities',true);return false"  onmouseout="mega_drop(this,'facilities',false);return false" onblur="mega_drop(this,'facilities',false);return false" >Facilities</h2><div class="megaMenu_dropdown" id="facilities">
+<div class="megaMenu_dropdown_inside" id="facilities_inside">
+<ul class="megaMenu_column column_1"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><span class="nav_separator">Athletic Facilities</span></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=8" class="nav_link" >Cuddy Arena</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=5" class="nav_link" >Irwin Belk Stadium</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com" class="nav_link" >Irwin Belk Track</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=6" class="nav_link" >Ron Christopher Stadium</a></li>
+</ul><ul class="megaMenu_column column_2"><li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=8" class="nav_link" >Wingate Natatorium</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=10" class="nav_link" >WU Soccer Complex</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=7" class="nav_link" >WU Softball Complex</a></li>
+<li class="nav_item_container nav_container_depth_1 nav_item_container_off nav_item_1" onmouseover="className='nav_item_container nav_container_depth_1 nav_item_container_on';" onmouseout="className='nav_item_container nav_container_depth_1 nav_item_container_off';"><a href="http://www.wingatebulldogs.com/photo_gallery.aspx?gallery=9" class="nav_link" >WU Tennis Facility</a></li>
+</ul></div></div><h2 class="nav_sectionheader"  onmouseover="mega_drop(this,'tickets',true);return false" onfocus="mega_drop(this,'tickets',true);return false"  onmouseout="mega_drop(this,'tickets',false);return false" onblur="mega_drop(this,'tickets',false);return false" ><a href="http://wingatebulldogs.com/tickets" >TICKETS</a></h2>
+
+
+
+
+
+
+
+
+				</div>
+			</nav>
+			
+			<div id="ctl00_contentDiv_container" class="contentDiv_container" role="main">
+				<div id="ctl00_innerPage" class="innerpage" style="background:url(/images/sportslink_msoc.png) no-repeat left center;">
+					<div id="divSidebars">
+						
+
+<ul class="sidebar_links"><li class='sport_home'><a href='/index.aspx?path=msoc'>Men's Soccer</a></li><li><a href="/schedule.aspx?path=msoc&amp;">Schedule</a></li><li><a href="/roster.aspx?path=msoc&amp;">Roster</a></li><li><a href="/sports/2009/7/8/MSOC_0708091514.aspx?path=msoc">Statistics</a></li><li><a href="/archives.aspx?path=msoc">Archived Stories</a></li><li><a href="http://www.wingatesoccer.com">Camps</a></li><li><a href="http://www.wingate-alumni.org/s/1354/index.aspx?sid=1354&amp;gid=1&amp;pgid=324">Donate Now</a></li><li id="additional_parent" class="sidebar_links_more" onmouseover="additional_drop(this, 'additional_menu', true);return false"  onmouseout="additional_drop(this, 'additional_menu', false);return false">Additional Links</li><div id="additional_menu" class="additional_dropdown" style="display:none"><ul><li><a href="/sports/2013/12/11/MSOC_1211135548.aspx?path=msoc">Nike Team Store</a></li><li><a href="http://www.wingatebulldogs.com/photo_gallery.aspx">Photo Galleries</a></li><li><a href="/sports/2009/7/6/MSOC_0706095454.aspx?path=msoc">Media Guides</a></li><li><a href="/documents/2013/1/4/Soccer_Where_Are_They_Now.doc?path=msoc">Where are they now?</a></li><li><a href="http://my.armssoftware.com/arms/public/questionnaire/1a1d42eb8d2b">Alumni Questionnaire</a></li><li><a href="http://my.armssoftware.com/arms/public/questionnaire/dae156ee513b">Recruit Questionnaire</a></li></ul></div></ul>
+
+
+
+
+
+
+
+
+					</div>
+				</div>
+				
+				<a name="content"></a>
+				
+				
+				<div id="ctl00_contentDiv" class="contentDiv">				
+					
+    
+    <article class="story-wrapper post-1 post cf">
+        <div class="left story-column">
+        
+            <figure class="story-media">                
+                <div class="story-media-wrap">
+                    <div class="boxscore-links">
+                        <ul>
+                            
+                                <li><a href="/boxscore.aspx?path=msoc&id=3748" target="_blank">Box Score</a></li>                                    
+                            
+                        </ul>                        
+                    </div>                
+                    
+        <div id="ctl00_cplhMainContent_ctl00_ctl00_media_control_divImage" class="media_object_image" style="width:auto;">
+        
+            
+                <img id="ctl00_cplhMainContent_ctl00_ctl00_media_control_imgPrimary" alt="" src="/common/controls/image_handler.aspx?thumb_prefix=rp_primary&amp;image_path=/images/2016/10/5/Evans_Nate_01.jpg" style="border-width:0px;z-index:1" />
+            
+            
+            
+            <div style="clear:both"></div>
+            
+        </div>
+         
+    
+                </div>
+                
+<figcaption class="game-summary">
+    
+<div class="game-result">
+	<div class="game-result-row">
+		<div class="team-record">
+			<img src="/images/logos/Carson-Newman.png" alt="Carson-Newman Logo" />
+		</div>
+		<div class="team-score">
+			1
+		</div>
+		<div class="team-name loser">
+			<i class="fa fa-caret-right"></i> Carson-Newman
+			<span>(6-7; 2-5 SAC)</span>
+		</div>
+	</div>
+	<div class="game-result-row">
+		<div class="team-record">
+			<img src="/images/logos/site/site.png" alt="Wingate Logo" />
+		</div>
+		<div class="team-score">
+			2
+		</div>
+		<div class="team-name winner">
+			<i class="fa fa-caret-right"></i> Wingate
+			<span>(11-0; 8-0 SAC)</span>
+		</div>
+	</div>
+</div>
+
+    <table>
+        <caption>Score By Periods</caption>    
+        <thead>
+            <tr>
+                <th scope="col">Team</th>
+				
+                    <th>1 </th>
+                
+                    <th>2 </th>
+                
+                    <th>OT 1 </th>
+                
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Carson-Newman</th>
+                
+                    <td>0 </td>
+                
+                    <td>1 </td>
+                
+                    <td>0 </td>
+                
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">Wingate</th>
+                
+                    <td>1 </td>
+                
+                    <td>0 </td>
+                
+                    <td>1 </td>
+                
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</figcaption>
+
+            </figure>
+            
+
+<div class="noprint story_email">
+    <a href="http://www.addthis.com/bookmark.php?v=250&pub=xa-4a7320e7645958d0" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()">
+        <img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border: 0" /></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js?pub=xa-4a7320e7645958d0"></script>
+</div>
+            <header class="story-header">
+                <p>Game Recap: Men's Soccer | <time pubdate datetime="10/15/2016 9:43:00 PM">10/15/2016 9:43:00 PM</time> | </p>
+                <hgroup>
+                    <h1>Evans nets overtime game-winner to keep fourth-ranked Wingate unbeaten </h1>                
+                    <h2></h2>
+                </hgroup>
+            </header>
+    
+    
+            <div class="story-text">           
+                <div class="right column">
+                    
+                
+                    
+                    <div class="schedule-widget">
+                        
+    <div class="next-game">
+        <img src="/images/logos/Catawba-College.png" alt="Catawba" />
+        <p>Next Game:</p>
+        <div>
+            <p>at Catawba</p>
+            <p>10/19/2016 - 7:30 p.m.</p>
+        </div>
+        <p><a href='/news/2016/10/19/mens-soccer-n-for-scores-twice-to-lead-1-bulldogs-to-2-0-win-at-catawba.aspx'>Preview</a></p>
+                        
+            <p><a href='http://gocatawbaindians.athleticsite.net/livestats/ms/xlive.htm'>Live Stats</a></p>
+            
+	        
+            
+            <p><a href='https://portal.stretchinternet.com/catawba/#live'>Watch Live</a></p>
+        
+    </div>
+                    
+                        <ul>
+                            <li><a href="/schedule.aspx?path=msoc">Full Schedule</a></li>
+                            <li><a href="/roster.aspx?path=msoc">Roster</a></li>                            
+                        </ul>
+                    </div>
+                </div>
+                
+                <strong>Wingate, N.C.----</strong>The fourth-ranked Wingate University Bulldogs got a 96th-minute game-winner from sophomore forward <strong>Nate Evans</strong> (Greenville, N.C.) Saturday night, staying perfect on the season with a 2-1 overtime victory over visiting Carson-Newman University. The Bulldogs move to 11-0 on the year and 8-0 in the SAC, while the Eagles fall to 6-7 overall and 2-5 in the conference. Wingate is one of only two NCAA Division II men's soccer teams without a loss or a tie this season.<br />
+<br />
+Wingate jumped on the board just 2:42 into the opening half. All-Region midfielder <strong>Aksel Juul</strong> (Newcastle, England) sent in a perfect cross off a free kick, where All-Region defender <strong>Alex Nelson</strong> (Newcastle, England) headed home his fourth goal of the season to make it 1-0.<br />
+<br />
+Carson-Newman got the equalizer with 26 minutes remaining in the second half, when <strong>Dionysis</strong> <strong>Stergiotis</strong> took a rebound off a <strong>Pablo Jara</strong> (Santiago, Chile) save and found the back of the net for the first time this year, making it 1-1.<br />
+<br />
+Neither team would score in the final 26 minutes of regulation, despite Wingate holding a dominant 17-4 advantage in shots in the second half. The Bulldogs also took all four shots in overtime.<br />
+<br />
+The Bulldogs got the winner six minutes into the first overtime. All-SAC midfielder <strong>Callum Ross</strong> (Newcastle, England) fired a low cross through a crowded box, finding Evans who scored his second goal of the season to give the Bulldogs their 11th win of the year.<br />
+<br />
+The Bulldogs outshot Carson-Newman 26-6 on the night, with an 11-3 edge in shots on goal. Ross and <strong>Elma N'For</strong> (Yaound&eacute;, Cameroon) had five shots each for the Bulldogs. Jara collected a pair of saves, while <strong>Joe Boyd</strong> had nine saves for the Eagles.<br />
+<br />
+Wingate is back in action Wednesday, traveling to Catawba for a 7:30 p.m. start.<br />
+ <div class='print-friendly-story-button'><a onclick='window.open(this.href,"_blank");return false;' href='/news/2016/10/15/mens-soccer-evans-nets-overtime-game-winner-to-keep-fourth-ranked-wingate-unbeaten.aspx?print=true'>Print Friendly Version</a></div>
+
+            </div>  
+            
+        </div>
+        
+        <aside class="right story-column">
+            
+            <section class="story-sponsors">
+                <h2 class="hide">Sponsors</h2>
+                
+    
+    
+    
+
+
+
+
+  
+
+
+
+    
+
+				
+                
+    
+    
+    
+
+
+
+
+  
+
+
+
+    
+
+            </section>
+            
+                
+<section class="team-stats stats table-stats">
+    <h2 class="hide">Team Statistics</h2>
+    
+    <table>
+        <caption>Team Statistics</caption>  
+        <thead>
+            <tr>
+                <th scope="col">Game Stats</th>
+                <th scope="col">C-N</th>
+                <th scope="col">WU</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Goals</th>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th scope="row">Shots</th>
+                <td>6</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <th scope="row">Shots on Goal</th>
+                <td>3</td>
+                <td>11</td>
+            </tr>            
+            <tr>
+                <th scope="row">Saves</th>
+                <td>9</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th scope="row">Corners</th>
+                <td>4</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <th scope="row">Offsides</th>
+                <td>0</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th scope="row">Fouls</th>
+                <td>17</td>
+                <td>15</td>
+            </tr>                                    
+        </tbody>
+    </table>
+	
+    <br/>
+    <table id="soccer_scoring_summary">
+        <caption>Scoring Summary</caption>
+        <thead>
+            <tr>
+                <th scope="col">Time</th>
+                <th scope="col" style="text-align:left; background-color:#fff;">Play Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr>
+            	<td>
+                    <span>2:42</span>
+                    <img style='display:inline;' src='/images/logos/site/site.png?width=30' alt='WU'/> 
+            	</td>
+                <td>
+                    <strong>Alex Nelson (4)</strong>
+                    <br/>Assisted By: Aksel Juul
+                    <br/>
+                    Crossed from free kick, headed into corn
+                </td>
+            </tr>
+        
+            <tr>
+            	<td>
+                    <span>64:00</span>
+                    <img style='display:inline;' src='/images/logos/Carson-Newman.png?width=30' alt='C-N'/> 
+            	</td>
+                <td>
+                    <strong>Dionysis Stergiotis (1)</strong>
+                    
+                    <br/>
+                    Took rebound off save, into corner
+                </td>
+            </tr>
+        
+            <tr>
+            	<td>
+                    <span>96:03</span>
+                    <img style='display:inline;' src='/images/logos/site/site.png?width=30' alt='WU'/> 
+            	</td>
+                <td>
+                    <strong>Nate Evans (2)</strong>
+                    <br/>Assisted By: Callum Ross
+                    <br/>
+                    Cross in front of net to Evans, beat kee
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+	
+</section>
+            
+                
+    <section class="player-stats stats">
+        <h2>Game Stat Leaders</h2>
+        
+<div class="stats-chooser">
+    <label class="hide" for="stats-categories">Choose a category:</label>
+        <select id="stats-categories" class="stats-categories">
+        <option value="players" selected="selected">Players</option>
+        <option value="goalies">Goalies</option>
+    </select>   
+</div>
+<div class="stats-leaders players">
+    
+        <article class="leader">
+            <img src="/services/stat_handler.aspx?rp_id=4619&path=msoc&name=NELSON,ALEX" alt="NELSON,ALEX" />
+            <h3><span>#2</span> <a href='/roster.aspx?rp_id=4619' class='boxscore_player_link'>Alex Nelson</a></h3>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>Shots</dt>
+                        <dd>3</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>SOG</dt>
+                        <dd>3</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Goals</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Assists</dt>
+                        <dd>0</dd>
+                    </dl>
+                </li>
+            </ul>
+        </article>
+       
+        <article class="leader">
+            <img src="/services/stat_handler.aspx?rp_id=4613&path=msoc&name=EVANS,NATE" alt="EVANS,NATE" />
+            <h3><span>#22</span> <a href='/roster.aspx?rp_id=4613' class='boxscore_player_link'>Nate Evans</a></h3>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>Shots</dt>
+                        <dd>2</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>SOG</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Goals</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Assists</dt>
+                        <dd>0</dd>
+                    </dl>
+                </li>
+            </ul>
+        </article>
+       
+        <article class="leader">
+            <img src="/services/stat_handler.aspx?rp_id=4620&path=msoc&name=ROSS,CALLUM" alt="ROSS,CALLUM" />
+            <h3><span>#4</span> <a href='/roster.aspx?rp_id=4620' class='boxscore_player_link'>Callum Ross</a></h3>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>Shots</dt>
+                        <dd>5</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>SOG</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Goals</dt>
+                        <dd>0</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Assists</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+            </ul>
+        </article>
+       
+        <article class="leader">
+            <img src="/services/stat_handler.aspx?rp_id=4617&path=msoc&name=JUUL,AKSEL" alt="JUUL,AKSEL" />
+            <h3><span>#6</span> <a href='/roster.aspx?rp_id=4617' class='boxscore_player_link'>Aksel Juul</a></h3>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>Shots</dt>
+                        <dd>2</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>SOG</dt>
+                        <dd>2</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Goals</dt>
+                        <dd>0</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Assists</dt>
+                        <dd>1</dd>
+                    </dl>
+                </li>
+            </ul>
+        </article>
+       
+</div>
+<div class="stats-leaders goalies" style="display: none;">
+    
+        <article class="leader">
+            <img src="/services/stat_handler.aspx?rp_id=4616&path=msoc&name=JARA,PABLO" alt="JARA,PABLO" />
+            <h3><span>#1</span> <a href='/roster.aspx?rp_id=4616' class='boxscore_player_link'>Pablo Jara</a></h3>
+            <ul>
+                <li>
+                    <dl>
+                        <dt>Saves</dt>
+                        <dd>2</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>SF</dt>
+                        <dd>6</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>Minutes</dt>
+                        <dd>96:03</dd>
+                    </dl>
+                </li>                
+            </ul>
+        </article>
+       
+</div>                
+    </section>
+    <script>
+        $('.stats-categories').on('change', function () {
+            var $parent_div = $(this).parent().parent();
+            $parent_div.find('.stats-leaders').hide();
+            var selected_value = $(this).find("option:selected").val();
+            $parent_div.find('.stats-leaders.' + selected_value).show();
+        });
+    </script>
+
+
+            
+                 
+        </aside>
+    </article>
+    
+<script type="text/javascript">
+    $(function () {
+      var $tabs = $('.story-wrapper .has_tabs');
+      $tabs.tabs({
+              select: function (evt, ui) {                
+                  var $this_tabs = $(ui.panel).parent();
+                  if (ui.index == $this_tabs.data("index"))
+                    return;
+                  $tabs.each(function(){ $(this).data("index",ui.index); });; 
+                  var other_tabs = $tabs.not('#'+evt.target.id);
+                  other_tabs.tabs("select",ui.index);
+          }
+        });
+    });
+</script>
+    <div id="ctl00_cplhMainContent_fan_interaction_controls">
+	<div id='fb-root'></div><script type='text/javascript'>window.fbAsyncInit = function() {FB.init({appId: '291243702517', status: true, cookie: true, xfbml: true});}</script><div class='fb_like_container'><fb:like href='http://wingatebulldogs.com/news/2016/10/15/mens-soccer-evans-nets-overtime-game-winner-to-keep-fourth-ranked-wingate-unbeaten.aspx' send='false' colorscheme='dark' show_faces='false'  font='arial' layout='button_count'></fb:like></div><div class='story_tweet_button'><a href='http://twitter.com/share' class='twitter-share-button' data-count='horizontal'>Tweet</a><script type='text/javascript' src='http://platform.twitter.com/widgets.js'></script></div>
+</div>
+    
+
+				</div>
+				
+				
+				
+			</div>				
+			<footer class="no_print">
+				<p style="text-align:right;">
+					
+    
+    
+    
+
+
+
+
+  
+
+
+
+    
+
+				</p>
+				
+    
+    
+    
+            <a href="http://www.ncaa.com" id="ctl00_ctl23_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=49&amp;target=http://www.ncaa.com', '_blank'); return false;" rel="nofollow" class=" left" rev="Footer1">
+                
+        <img id="ctl00_ctl23_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/NCAAAndMakeItYours_Horiz.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/NCAAAndMakeItYours_Horiz.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/NCAAAndMakeItYours_Horiz.png" alt="NCAA Logo" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.wingate.edu" id="ctl00_ctl24_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=50&amp;target=http://www.wingate.edu', '_blank'); return false;" rel="nofollow" class=" left" rev="Footer2">
+                
+        <img id="ctl00_ctl24_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_wingate.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_wingate.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_wingate.png" alt="Wingate University" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://thesac.com/landing/index" id="ctl00_ctl25_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=51&amp;target=http://thesac.com/landing/index', '_blank'); return false;" rel="nofollow" class=" left" rev="Footer3">
+                
+        <img id="ctl00_ctl25_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/sac_logo_18.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/sac_logo_18.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2015/10/29/sac_logo_18.png" alt="SAC Logo" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.bluegrassmountainconference.com/" id="ctl00_ctl26_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=52&amp;target=http://www.bluegrassmountainconference.com/', '_blank'); return false;" rel="nofollow" class=" left" rev="Footer4">
+                
+        <img id="ctl00_ctl26_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_bluegrass.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_bluegrass.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/footer_bluegrass.png" alt="Bluegrass Mountain Conference" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				<a class="left" href="//sidearmsports.com" target="_blank"><img src="/images/footer_sidearm.png" alt="SIDEARM Sports" /></a>
+				<div class="clear"></div>
+				<p>
+					Copyright &copy; 2016 Wingate University Athletics | P.O. Box 159, Wingate, North Carolina 28174<br />
+					1.800.755.5550 | 704.233.8000 | <a href="//wingate.edu">wingate.edu</a> | <a href="/index.aspx">Athletics Home</a>
+<div class="clear"></div>
+					<div id='sidearm_copyright'><a href='//www.sidearmsports.com/privacypolicy/' target='_blank'>Privacy Policy </a><a href='//www.sidearmsports.com/terms-of-service/' target='_blank'>Terms of Service</a></div>
+				</p>
+			</footer>
+        </div>
+		
+		<div id="stickybar" class="no_print">
+            <div class="inner">
+				<img class="logo left relative" src="/images/sticky_logo.png" alt="Wingate University Athletics" />
+				<div class="left" id="scoreboard"></div>
+				
+    
+    
+    
+            <a href="http://www.facebook.com/WingateBulldogs" id="ctl00_ctl27_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=53&amp;target=http://www.facebook.com/WingateBulldogs', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 1">
+                
+        <img id="ctl00_ctl27_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/sticky_social_fb_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/sticky_social_fb.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/14/sticky_social_fb.png" alt="Facebook" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.twitter.com/WU_Bulldogs" id="ctl00_ctl28_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=54&amp;target=http://www.twitter.com/WU_Bulldogs', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 2">
+                
+        <img id="ctl00_ctl28_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_twitter_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_twitter.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_twitter.png" alt="Twitter" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.youtube.com/user/WingateBulldogs" id="ctl00_ctl29_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=55&amp;target=http://www.youtube.com/user/WingateBulldogs', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 3">
+                
+        <img id="ctl00_ctl29_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_youtube_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_youtube.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_youtube.png" alt="YouTube" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.instagram.com/wingatebulldogs" id="ctl00_ctl30_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=56&amp;target=http://www.instagram.com/wingatebulldogs', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 4">
+                
+        <img id="ctl00_ctl30_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_instagram_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_instagram.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_instagram.png" alt="Instagram" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://wingatebulldogs.com/sports/2014/7/28/GEN_0728140127.aspx" id="ctl00_ctl31_rptAds_ctl00_hlAdSpot" onclick="window.open('/common/controls/adhandler.aspx?ad_id=57&amp;target=http://wingatebulldogs.com/sports/2014/7/28/GEN_0728140127.aspx', '_self'); return false;" rel="nofollow" class=" left" rev="Stickybar 5">
+                
+        <img id="ctl00_ctl31_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_tickets_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_tickets.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_tickets.png" alt="Tickets" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.wingatebulldogs.com/sb_output.aspx?form=12" id="ctl00_ctl32_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=58&amp;target=http://www.wingatebulldogs.com/sb_output.aspx?form=12', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 6">
+                
+        <img id="ctl00_ctl32_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_enews_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_enews.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_enews.png" alt="E-Newsletter" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.wingatebulldogs.com/sports/2013/8/9/GEN_0809131014.aspx?tab=niketeamstore" id="ctl00_ctl33_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=59&amp;target=http://www.wingatebulldogs.com/sports/2013/8/9/GEN_0809131014.aspx?tab=niketeamstore', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 7">
+                
+        <img id="ctl00_ctl33_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_shop_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_shop.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_shop.png" alt="Shop" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				
+    
+    
+    
+            <a href="http://www.wingatebulldogs.com/photo_gallery.aspx" id="ctl00_ctl34_rptAds_ctl00_hlAdSpot" target="_blank" onclick="window.open('/common/controls/adhandler.aspx?ad_id=60&amp;target=http://www.wingatebulldogs.com/photo_gallery.aspx', '_blank'); return false;" rel="nofollow" class=" left" rev="Stickybar 8">
+                
+        <img id="ctl00_ctl34_rptAds_ctl00_mediaAd_imgPrimary_LS" onmouseover="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_photo_b.png'" onmouseout="this.src = '//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_photo.png'" src="//s3.amazonaws.com/wingatebulldogs.com/images/2013/2/15/sticky_social_photo.png" alt="Photos" style="border-width:0px;z-index:1;display:block;" />
+    
+            </a>
+        
+
+
+
+
+  
+
+
+
+    
+
+				<div id="search" class="left">
+					<div class="left">
+						<label for="ctl00_txtSearch">Search Text</label>
+						<input name="ctl00$txtSearch" type="text" value="Search" id="ctl00_txtSearch" onfocus="this.value=''" style="border-style:None;" />
+					</div>
+					<div class="left">
+						<label for="ctl00_ImageButton1">Search Button</label>
+						<input type="image" name="ctl00$ImageButton1" id="ctl00_ImageButton1" src="/images/sticky_social_searchbox_icon.png" alt="Search" style="border-width:0px;" />
+					</div>
+				</div>
+			</div>
+        </div>
+    
+<script type="text/javascript">addLoadEvent(count_ad_master);</script><script type="text/javascript">checkVersion;</script><script type="text/javascript">fkey = '8360c33c3cd5e09e0af'</script><script type="text/javascript">video_skin_color = '#F3B900';</script><script type="text/javascript">count_ad(62);</script><script type="text/javascript">launch_ads ('HeaderFacts1',true,8000)</script><script type="text/javascript">count_ad(63);</script><script type="text/javascript">launch_ads ('HeaderFacts2',true,8000)</script>
+<script type="text/javascript">
+//<![CDATA[
+var rollover_array = new Array();var rollover_array_b = new Array();//]]>
+</script>
+<script type="text/javascript">count_ad(48);</script><script type="text/javascript">launch_ads ('BottomCarousel_Pnl1_1',true,8000)</script><script type="text/javascript">count_ad(66);</script><script type="text/javascript">launch_ads ('BottomCarousel_Pnl3_1',true,8000)</script><script type="text/javascript">count_ad(49);</script><script type="text/javascript">launch_ads ('Footer1',true,8000)</script><script type="text/javascript">count_ad(50);</script><script type="text/javascript">launch_ads ('Footer2',true,8000)</script><script type="text/javascript">count_ad(51);</script><script type="text/javascript">launch_ads ('Footer3',true,8000)</script><script type="text/javascript">count_ad(52);</script><script type="text/javascript">launch_ads ('Footer4',true,8000)</script><script type="text/javascript">count_ad(53);</script><script type="text/javascript">launch_ads ('Stickybar 1',true,8000)</script><script type="text/javascript">count_ad(54);</script><script type="text/javascript">launch_ads ('Stickybar 2',true,8000)</script><script type="text/javascript">count_ad(55);</script><script type="text/javascript">launch_ads ('Stickybar 3',true,8000)</script><script type="text/javascript">count_ad(56);</script><script type="text/javascript">launch_ads ('Stickybar 4',true,8000)</script><script type="text/javascript">count_ad(57);</script><script type="text/javascript">launch_ads ('Stickybar 5',true,8000)</script><script type="text/javascript">count_ad(58);</script><script type="text/javascript">launch_ads ('Stickybar 6',true,8000)</script><script type="text/javascript">count_ad(59);</script><script type="text/javascript">launch_ads ('Stickybar 7',true,8000)</script><script type="text/javascript">count_ad(60);</script><script type="text/javascript">launch_ads ('Stickybar 8',true,8000)</script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.initialize();
+//]]>
+</script>
+</form>
+    
+	<script type="text/javascript">
+		$("#scoreboard").scoreboard({
+			"width":528, // container width
+			"height":60, // container width
+			"btmskin": "/images/sticky_score.png", // container background
+			"btns": "http://assets.sidearmsports.com/common/images/scoreboard_buttons_white", // button set, optional defaults to white
+			"bx": 80, // button left offset
+			"by": 28, // button top offset
+			"tx": 130, // ticker left offset
+			"ty": 28, // ticker top offset
+			"th": 15, // ticker height
+			"tw": 380 // ticker width
+		});
+		
+		stepcarousel.setup({
+			galleryid: 'mygallery2', //id of carousel DIV
+			beltclass: 'belt2', //class of inner "belt" DIV containing all the panel DIVs
+			panelclass: 'panel2', //class of panel DIVs each holding content
+			appendDiv: 'carousel-container',
+			autostep: {enable:true, moveby:1, pause:10000},
+			panelbehavior: {speed:500, wraparound:true, persist:true},
+			defaultbuttons: {enable: true, moveby: 1, leftnav: ['/images/sponsorbar_left.png', 0,30], rightnav: ['/images/sponsorbar_right.png', 0,30]},
+			statusvars: ['statusA', 'statusB', 'statusC'], //register 3 variables that contain current panel (start), current panel (last), and total panels
+			contenttype: ['inline'] //content setting ['inline'] or ['ajax', 'path_to_external_file']
+		});
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-9570647-5']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+  
+	</script>
+</body>
+</html>
+

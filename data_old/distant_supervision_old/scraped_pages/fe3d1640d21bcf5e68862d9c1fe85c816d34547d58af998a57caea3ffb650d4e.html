@@ -1,0 +1,952 @@
+<!DOCTYPE HTML><html lang="en-US">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<script>(function(html){ html.className = html.className.replace(/\bno-js\b/,'js'); if (html.classList) { html.classList.add( 'js' ); } else { html.className += ' js'; } })(document.documentElement);</script><style type="text/css">.js.csstransitions .module.wow, .js.csstransitions .themify_builder_content .themify_builder_row.wow, .js.csstransitions .module_row.wow, .js.csstransitions .builder-posts-wrap > .post.wow, .js.csstransitions .fly-in > .post, .js.csstransitions .fly-in .row_inner > .tb-column, .js.csstransitions .fade-in > .post, .js.csstransitions .fade-in .row_inner > .tb-column, .js.csstransitions .slide-up > .post, .js.csstransitions .slide-up .row_inner > .tb-column { visibility:hidden; }</style>
+<!-- Title -->
+<title>Big Job Fair in Allen | KLIF-AM</title><link rel='dns-prefetch' href='//www.klif.com' />
+<link rel='dns-prefetch' href='//see-p-elb-01.tritondigital.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="canonical" href="http://www.klif.com/2016/09/28/big-job-fair-in-allen/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/www.klif.com\/wp-includes\/js\/wp-emoji.js?ver=4.6.1","twemoji":"http:\/\/www.klif.com\/wp-includes\/js\/twemoji.js?ver=4.6.1"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "simple", "flag", "diversity" or "unicode8" emoji.
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var canvas = document.createElement( 'canvas' ),
+			context = canvas.getContext && canvas.getContext( '2d' ),
+			stringFromCharCode = String.fromCharCode,
+			flag, flag2, tonedata, tone, tone2;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * This works because the image will be one of three things:
+				 * - Two empty squares, if the browser doesn't render emoji
+				 * - Two squares with 'A' and 'U' in them, if the browser doesn't render flag emoji
+				 * - The Australian flag
+				 *
+				 * The first two will encode to small images (1-2KB data URLs), the third will encode
+				 * to a larger image (4-5KB data URL).
+				 */
+				context.fillText( stringFromCharCode( 55356, 56806, 55356, 56826 ), 0, 0 );
+				if ( canvas.toDataURL().length < 3000 ) {
+					return false;
+				}
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				/*
+				 * Test for rainbow flag compatibility. As the rainbow flag was added out of sequence with
+				 * the usual Unicode release cycle, some browsers support it, and some don't, even if their
+				 * Unicode support is up to date.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + rainbow emoji).
+				 */
+				context.fillText( stringFromCharCode( 55356, 57331, 65039, 8205, 55356, 57096 ), 0, 0 );
+				flag = canvas.toDataURL();
+
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				context.fillText( stringFromCharCode( 55356, 57331, 55356, 57096 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				return flag !== flag2;
+			case 'diversity':
+				/*
+				 * This tests if the browser supports the Emoji Diversity specification, by rendering an
+				 * emoji with no skin tone specified (in this case, Santa). It then adds a skin tone, and
+				 * compares if the emoji rendering has changed.
+				 */
+				context.fillText( stringFromCharCode( 55356, 57221 ), 0, 0 );
+				tonedata = context.getImageData( 16, 16, 1, 1 ).data;
+				tone = tonedata[0] + ',' + tonedata[1] + ',' + tonedata[2] + ',' + tonedata[3];
+
+				context.fillText( stringFromCharCode( 55356, 57221, 55356, 57343 ), 0, 0 );
+				// Chrome has issues comparing arrays, and Safari has issues converting arrays to strings.
+				// So, we create our own string and compare that, instead.
+				tonedata = context.getImageData( 16, 16, 1, 1 ).data;
+				tone2 = tonedata[0] + ',' + tonedata[1] + ',' + tonedata[2] + ',' + tonedata[3];
+
+				return tone !== tone2;
+			case 'simple':
+				/*
+				 * This creates a smiling emoji, and checks to see if there is any image data in the
+				 * center pixel. In browsers that don't support emoji, the character will be rendered
+				 * as an empty square, so the center pixel will be blank.
+				 */
+				context.fillText( stringFromCharCode( 55357, 56835 ), 0, 0 );
+				return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+			case 'unicode8':
+				/*
+				 * To check for Unicode 8 support, let's try rendering the most important advancement
+				 * that the Unicode Consortium have made in years: the burrito.
+				 */
+				context.fillText( stringFromCharCode( 55356, 57135 ), 0, 0 );
+				return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+			case 'unicode9':
+				/*
+				 * Do Unicode 9 emoji render?
+				 * ¯\_(ツ)_/¯
+				 */
+				context.fillText( stringFromCharCode( 55358, 56631 ), 0, 0 );
+				return context.getImageData( 16, 16, 1, 1 ).data[0] !== 0;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'simple', 'flag', 'unicode8', 'diversity', 'unicode9' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		
+
+<!-- Stylesheets -->
+<link rel='stylesheet' id='headway-google-fonts' href='//fonts.googleapis.com/css?family=Oswald' type='text/css' media='all' />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='m2g-bar-css'  href='http://www.klif.com/wp-content/plugins/m2g-wp-fbar/css/m2g-bar.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bxslider-style-css'  href='http://www.klif.com/wp-content/plugins/shared/js/bxslider/jquery.bxslider.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-promo-reel-widget-style-css'  href='http://www.klif.com/wp-content/plugins/amp-promo-reel/includes/../css/widget.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='headway-general-css'  href='http://www.klif.com/wp-content/uploads/sites/262/headway/cache/general-05a8c65.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='headway-layout-single-css'  href='http://www.klif.com/wp-content/uploads/sites/262/headway/cache/layout-single-8a15185.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='headway-responsive-grid-css'  href='http://www.klif.com/wp-content/uploads/sites/262/headway/cache/responsive-grid-d2119e4.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='themify-builder-style-css'  href='http://www.klif.com/wp-content/plugins/themify-builder/css/themify-builder-style.css?ver=1.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-breaking-news-css'  href='http://www.klif.com/wp-content/plugins/amp-breaking-news/public/css/public.css?ver=0.1.17' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-style-css'  href='http://www.klif.com/wp-content/plugins/shared/css/animate.css?ver=0.1.17' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-styles-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-styles/css/public.css?ver=1.2.9' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-events-calendar-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-events/css/calendar.css?ver=1.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-events-export-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-events/css/public.css?ver=1.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='amp_feed-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-feeds/css/public.css?ver=0.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-image-rotator-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-image-rotator/public/assets/css/public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-listen-live-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-listen-live/public/assets/css/public.css?ver=1.4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-onair-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-onair/public/assets/css/public.css?ver=1.5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='AMPPromoReel-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-promo-reel/css/public.css?ver=1.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css'  href='http://www.klif.com/wp-includes/js/mediaelement/mediaelementplayer.min.css?ver=2.22.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css'  href='http://www.klif.com/wp-includes/js/mediaelement/wp-mediaelement.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-tabs-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-tabs/public/assets/css/public.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-header-rotator-css'  href='http://www.klif.com/wp-content/themes/Headway-AMP_CMS/css/amp-header-rotator.css?ver=1.1.4' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" media="all" href="http://www.klif.com/wp-content/themes/Headway-AMP_CMS/style.css" />
+
+<!-- Scripts -->
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/themes/headway/library/blocks/navigation/js/selectnav.js?ver=1478025558'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/themes/headway/library/media/js/jquery.hoverintent.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/themes/headway/library/blocks/navigation/js/jquery.superfish.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/uploads/sites/262/headway/cache/block-dynamic-js-layout-single-769a883.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/shared/js/bxslider/jquery.bxslider.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-promo-reel/includes/../js/widget.js?ver=1.3.0'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/themes/headway/library/media/js/jquery.fitvids.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/uploads/sites/262/headway/cache/responsive-grid-js-e6e6939.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _ampconfig = {"site_url":"http:\/\/www.klif.com","site_id":"262","tz":"America\/Chicago","tz_offset":"-6","version":"2.39.1","env":"prod","ts":"1478025558","settings":{"tenant_id":"see_10514","vidible_company_key":"06125e55709b3c4ffdfe3c3f8a9ed8bd","client_name":"","nielsen_provider":"cumulus"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/shared/js/amp-common.js?ver=1478025558'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-breaking-news/public/js/public.js?ver=0.1.17'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-styles/js/public.js?ver=1.2.9'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var dates = {"start_of_week":"1","moment_date_format":"MMMM D, YYYY","moment_time_format":"h:mm a","calendar_date_format":"MMMM d, yyyy","calendar_time_format":"h:mm tt","date_format":"MM d, yy","time_format":"h:mm tt"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-events/js/calendar.js?ver=1.1.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-events/js/public.js?ver=1.1.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-feeds/js/jquery.totemticker.min.js?ver=0.3.7'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-feeds/js/amp-feed.js?ver=0.3.7'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-feeds/js/public.js?ver=0.3.7'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-feeds/js/date.js?ver=0.3.7'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _amplistenlive = {"blog_id":"262","callsign":"","mount_name":"KLIFAM","provider":"stream_the_world","gmt_offset":"-21600"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-listen-live/public/assets/js/public.js?ver=1.4.4'></script>
+<script type='text/javascript' src='//see-p-elb-01.tritondigital.net/widget/see_10514/see.js?ver=1.2.0'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/themes/Headway-AMP_CMS/js/amp-theme.js?ver=1.1.4'></script>
+
+<!--[if lt IE 9]>
+<script src="http://www.klif.com/wp-content/themes/headway/library/media/js/html5shiv.js"></script>
+<![endif]-->
+
+<!--[if lt IE 8]>
+<script src="http://www.klif.com/wp-content/themes/headway/library/media/js/ie8.js"></script>
+<![endif]-->
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+
+var leaderboardSizeMap = googletag.sizeMapping()
+ .addSize([750, 200], [[728, 90], [970, 90]])
+ .addSize([0, 0], [[320, 50], [300, 50]])
+ .build();
+
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 250], [300, 600]], 'div-gpt-ad-1418849849333-0').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","mid");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[728, 90], [970, 90]], 'div-gpt-ad-1418849849333-1').addService(googletag.pubads())
+.defineSizeMapping(leaderboardSizeMap).setCollapseEmptyDiv(true).setTargeting("pos","top");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[728, 90], [970, 90]], 'div-gpt-ad-1418849849333-2').addService(googletag.pubads())
+.defineSizeMapping(leaderboardSizeMap).setCollapseEmptyDiv(true).setTargeting("pos","bot");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 250], [300, 600]], 'div-gpt-ad-1418849849333-3').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","mid2");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[160, 600]], 'div-gpt-ad-1418849849333-4').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","left");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[160, 600]], 'div-gpt-ad-1418849849333-5').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","right");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[654, 70]], 'div-gpt-ad-1418849849333-6').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","rdioplayer");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 100]], 'div-gpt-ad-1418849849333-7').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","contest1");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 100]], 'div-gpt-ad-1418849849333-8').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","contest2");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 100]], 'div-gpt-ad-1418849849333-9').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","contest3");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[100, 51]], 'div-gpt-ad-1418849849333-10').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","rdiobutton");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[113, 23]], 'div-gpt-ad-1418849849333-11').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","feedsponsor1");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[113, 23]], 'div-gpt-ad-1418849849333-12').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","feedsponsor2");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[113, 23]], 'div-gpt-ad-1418849849333-13').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","feedsponsor3");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[113, 23]], 'div-gpt-ad-1418849849333-14').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","feedsponsor4");
+googletag.defineSlot('/6717/cd.KLIF.AM', [[1, 1]],'div-gpt-ad-1418849849333-16').addService(googletag.pubads())
+.setTargeting("pos","wallpaper-ad");
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+googletag.defineSlot('/6717/cd.KLIF.AM', [[300, 250], [300, 600]], 'div-gpt-ad-1418849849333-18').setCollapseEmptyDiv(true).addService(googletag.pubads())
+.setTargeting("pos","midresponsive");
+googletag.defineSlot('/6717/cd.WBAP.AF', [[300, 250], [300, 600]], 'div-gpt-ad-1418849849333-19').addService(googletag.pubads())
+.setCollapseEmptyDiv(true).setTargeting("pos","dallasweather");
+});
+</script>
+
+<!--ONESTAT SCRIPTCODE START Embed Player-->
+  <script type="text/javascript">
+  <!--
+  jQuery(document).ready(function(){
+    var d=document;
+    var sid="klif-am.cumulus";
+    var CONTENTSECTION="";
+    var osp_URL=d.URL;
+    var osp_Title=d.title;
+    var t=new Date();
+    var p="http"+(d.URL.indexOf('https:')==0?'s':'')+"://stat.onestat.com/stat.aspx?tagver=2&sid="+sid;
+    p+="&url="+escape(osp_URL);
+    p+="&ti="+escape(osp_Title);
+    p+="&section="+escape(CONTENTSECTION);
+    p+="&rf="+escape(parent==self?document.referrer:top.document.referrer);
+    p+="&tz="+escape(t.getTimezoneOffset());
+    p+="&ch="+escape(t.getHours());
+    p+="&js=1";
+    p+="&ul="+escape(navigator.appName=="Netscape"?navigator.language:navigator.userLanguage);
+    if(osp_URL!=d.URL) p+="&ol="+escape(d.URL);
+    if(typeof(screen)=="object"){
+       p+="&sr="+screen.width+"x"+screen.height;p+="&cd="+screen.colorDepth;
+       p+="&jo="+(navigator.javaEnabled()?"Yes":"No");
+    }
+
+    var imgTag = '<img border="0" height="0" width="0" id="ONESTAT_TAG" src="' + p + '">'
+    jQuery('body').append(imgTag);
+
+  })
+  //-->
+  </script> 
+<!--ONESTAT SCRIPTCODE END-->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','corpDataLayer','GTM-PPH9WV');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Extras -->
+<link rel="alternate" type="application/rss+xml" href="http://www.klif.com/feed/" title="KLIF-AM" />
+<link rel="pingback" href="http://www.klif.com/xmlrpc.php" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<link rel="alternate" type="application/rss+xml" title="KLIF-AM &raquo; Feed" href="http://www.klif.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="KLIF-AM &raquo; Comments Feed" href="http://www.klif.com/comments/feed/" />
+<link rel='https://api.w.org/' href='http://www.klif.com/wp-json/' />
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel='shortlink' href='http://www.klif.com/?p=476724' />
+<link rel="alternate" type="application/json+oembed" href="http://www.klif.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.klif.com%2F2016%2F09%2F28%2Fbig-job-fair-in-allen%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.klif.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.klif.com%2F2016%2F09%2F28%2Fbig-job-fair-in-allen%2F&#038;format=xml" />
+			<script type="text/javascript">
+				var _gaq = _gaq || [];
+
+				
+									_gaq.push(['b._setAccount', 'UA-55276308-5']);
+					_gaq.push(['b._trackPageview']);
+				
+				(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                                    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+			</script>
+
+        
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','gaplusu');
+
+                                                            gaplusu('create', 'UA-1686524-24', 'auto');
+                                        gaplusu('send', 'pageview');
+                
+                            </script>
+
+		<meta property="og:site_name" content="KLIF-AM" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="ALLEN (WBAP/KLIF News) - The Cumulus &quot;Putting Texans Back to Work&quot; job fair is Wednesday in Allen." />
+<meta property="og:url" content="http://www.klif.com/2016/09/28/big-job-fair-in-allen/" />
+<meta property="og:title" content="Big Job Fair in Allen" />
+
+					<!-- equalcolumn-ie-fix.js -->
+					<!--[if IE 9]>
+						<script src="http://www.klif.com/wp-content/plugins/themify-builder/js/equalcolumn-ie-fix.js"></script>
+					<![endif]-->
+					<script type="text/javascript">                    function isSupportTransition() {
+                    var b = document.body || document.documentElement,
+                    s = b.style,
+                    p = 'transition';
+
+                    if (typeof s[p] == 'string') { return true; }
+
+                    // Tests for vendor specific prop
+                    var v = ['Moz', 'webkit', 'Webkit', 'Khtml', 'O', 'ms'];
+                    p = p.charAt(0).toUpperCase() + p.substr(1);
+
+                    for (var i=0; i<v.length; i++) {
+                        if (typeof s[v[i] + p] == 'string') { return true; }
+                        }
+                        return false;
+                        }
+                        if ( isSupportTransition() ) {
+                        document.documentElement.className += " csstransitions";	
+                        }
+                        </script><script type="text/javascript">var ajaxurl = "http://www.klif.com/wp-admin/admin-ajax.php"</script><script type="text/javascript">var ajaxurl = "http://www.klif.com/wp-admin/admin-ajax.php"</script>
+<!-- AMP CMS DFP custom tags -->
+<script type='text/javascript'>
+  googletag.cmd.push(function() {
+      googletag.pubads().setTargeting('cms-sname', 'KLIFAM');
+      googletag.pubads().setTargeting('cms-sgroup', ['All Sites', 'Format  NewsTalk', 'Market  DallasFort Worth TX']);
+      googletag.pubads().setTargeting('cms-ptitle', 'Big Job Fair in Allen');
+      googletag.pubads().setTargeting('cms-pcat', ['247 Newsroom News', 'WBAP 247 News']);
+  });
+</script>
+
+</head><!-- End <head> -->
+
+<body class="single single-post postid-476724 single-format-standard custom responsive-grid-enabled responsive-grid-active layout-single-post-476724 layout-using-single" itemscope itemtype="http://schema.org/WebPage">
+
+
+<div id="whitewrap">
+
+
+<div id="wrapper-48" class="wrapper wrapper-fluid wrapper-fixed-grid grid-fluid-24-32-10 responsive-grid wrapper-mirroring-8 wrapper-first wrapper-header" data-alias="Wrapper Header">
+
+<div class="grid-container clearfix">
+
+<section class="row row-1">
+
+<section class="column column-1 grid-left-0 grid-width-24">
+<div id="block-27" class="leaderboard-ad block block-type-custom-code block-fluid-height" data-alias="728x90 Leaderboard Ad">
+<div class="block-content">
+<div align="center">
+<div id='div-gpt-ad-1418849849333-1'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-1'); });
+</script>
+</div>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-27 -->
+
+</section><!-- .column -->
+
+</section><!-- .row -->
+
+
+<section class="row row-2">
+
+<section class="column column-1 grid-left-0 grid-width-5">
+<figure id="block-31" class="logo block block-type-image block-fixed-height" data-alias="Logo" itemscope="" itemtype="http://schema.org/ImageObject">
+<div class="block-content">
+<a href="/" class="image" ><img src="http://cumulus.pro.poolb.tritondigitalcms.com/klif-am/wp-content/uploads/sites/262/2015/02/site-logo.png" alt="" title="" itemprop="contentURL"/></a>
+</div><!-- .block-content -->
+
+</figure><!-- #block-31 -->
+<div id="block-bkj54a2b9912881a" class="takeover-left block block-type-custom-code block-fluid-height" data-alias="Skyscraper - Left">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-4'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-4'); });
+</script>
+</div>
+
+
+</div><!-- .block-content -->
+
+</div><!-- #block-bkj54a2b9912881a -->
+
+</section><!-- .column -->
+
+<section class="column column-2 grid-left-0 grid-width-19">
+<section id="block-30" class="social-nav block block-type-social block-fixed-height" data-alias="Social Navigation">
+<div class="block-content">
+<div class="social-icons-container"><ul class="social-icons"><li><a href="#"><img src="http://www.klif.com/wp-content/uploads/sites/262/2016/01/listen-live.png" title="Listen Live!!" class="img-1"  /></a></li><li><a href="http://www.facebook.com/570KLIF" target="_blank"><img src="http://cumulus.pro.poolb.tritondigitalcms.com/klif-am/wp-content/uploads/sites/262/2014/12/facebook1.png" alt="Like us on Facebook" title="Like us on Facebook" class="img-2"  /></a></li><li><a href="https://twitter.com/570KLIF" target="_blank"><img src="http://cumulus.pro.poolb.tritondigitalcms.com/klif-am/wp-content/uploads/sites/262/2014/12/twitter1.png" alt="Follow us on Twitter" title="Follow us on Twitter" class="img-3"  /></a></li><li><a href="http://klif.listenernetwork.com/" target="_blank"><img src="http://cumulus.pro.poolb.tritondigitalcms.com/klif-am/wp-content/uploads/sites/262/2015/01/cumulus-vip-red.png" alt="VIP" title="VIP" class="img-4"  /></a></li></ul></div><!-- .social-icons-container -->
+</div><!-- .block-content -->
+
+</section><!-- #block-30 -->
+
+<section class="sub-column sub-column-1 column column-1 grid-width-17 grid-left-0">
+<nav id="block-32" class="main-nav block block-type-navigation block-fluid-height" data-alias="Main Navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+<div class="block-content">
+<div class="nav-horizontal nav-align-left"><ul id="menu-main-navigation" class="menu"><li id="menu-item-42149" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-42149"><a href="http://www.klif.com/on-air-schedule/">Shows</a>
+<ul class="sub-menu">
+	<li id="menu-item-40706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40706"><a href="http://www.klif.com/news-information-in-the-morning/">5a-8a:  News &amp; Information in the Morning</a></li>
+	<li id="menu-item-40721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40721"><a href="http://www.klif.com/the-glenn-beck-show/">8a-11a:  The Glenn Beck Show</a></li>
+	<li id="menu-item-227998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227998"><a href="http://www.klif.com/laura-ingraham/">11a-2p: Laura Ingraham</a></li>
+	<li id="menu-item-228001" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-228001"><a href="http://www.klif.com/2016/01/04/the-savage-nation-has-moved-to-klif/">2p-5p: “The Savage Nation”</a></li>
+	<li id="menu-item-44333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44333"><a href="http://www.klif.com/the-stinchfield-report/">5p-8p:  The Stinchfield Report</a></li>
+	<li id="menu-item-40703" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40703"><a href="http://www.klif.com/john-batchelor/">8p-9p:  John Batchelor</a></li>
+	<li id="menu-item-206503" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-206503"><a href="http://www.klif.com/2013/12/31/jim-bohannon-keeps-you-informed-in-the-middle-of-the-night/">9p-12a: Jim Bohannon</a></li>
+	<li id="menu-item-228004" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-228004"><a href="http://www.klif.com/2016/01/04/coast-to-coast-is-returning-to-klif-2/">12a-5a: Coast to Coast</a></li>
+	<li id="menu-item-40712" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40712"><a href="http://www.klif.com/wheels-with-ed-wallace/">Sat 8a-11a:   Wheels with Ed Wallace</a></li>
+	<li id="menu-item-40700" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40700"><a href="http://www.klif.com/weekend-shows/">Weekend Shows</a></li>
+</ul>
+</li>
+<li id="menu-item-110088" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-110088"><a href="http://www.klif.com/category/news-room-news/">News</a>
+<ul class="sub-menu">
+	<li id="menu-item-40856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40856"><a href="http://www.klif.com/news-staff/">News Staff</a></li>
+	<li id="menu-item-40859" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40859"><a href="http://www.klif.com/newsroom-blog/">Newsroom Blog</a></li>
+	<li id="menu-item-46181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46181"><a href="http://www.klif.com/traffic/">Traffic</a></li>
+	<li id="menu-item-40865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40865"><a href="http://www.wfaa.com/closings/">Weather Closings</a></li>
+	<li id="menu-item-40862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40862"><a href="http://www.klif.com/pump-watch/">Pump Watch Dallas</a></li>
+	<li id="menu-item-41051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41051"><a href="http://www.klif.com/pump-watch-ft-worth/">Pump Watch Ft. Worth</a></li>
+</ul>
+</li>
+<li id="menu-item-36926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36926"><a href="http://www.klif.com/weather/">Weather</a>
+<ul class="sub-menu">
+	<li id="menu-item-40874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40874"><a href="http://www.klif.com/interactive-weather/">Interactive Weather</a></li>
+	<li id="menu-item-40871" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40871"><a href="http://www.wfaa.com/closings/">Weather Closings</a></li>
+</ul>
+</li>
+<li id="menu-item-147762" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-147762"><a href="http://www.klif.com/news-information-in-the-morning/">Podcasts</a>
+<ul class="sub-menu">
+	<li id="menu-item-144120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144120"><a href="http://www.klif.com/news-information-in-the-morning/">News &amp; Information in the Morning</a></li>
+	<li id="menu-item-144612" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144612"><a href="http://www.klif.com/stinchfield-report-podcast/">The Stinchfield Report</a></li>
+	<li id="menu-item-44600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44600"><a href="http://www.klif.com/podcasts/">Texas Lending Podcasts</a></li>
+</ul>
+</li>
+<li id="menu-item-40889" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40889"><a>Features</a>
+<ul class="sub-menu">
+	<li id="menu-item-40895" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40895"><a href="http://www.insideautomotive.com/newvehicles.htm">New Car Profiles</a></li>
+	<li id="menu-item-40898" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40898"><a target="_blank" href="http://www.txlottery.org/export/sites/lottery/index.html">Lotto</a></li>
+	<li id="menu-item-40892" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40892"><a href="http://www.klif.com/community-resources/">Community Resources</a></li>
+</ul>
+</li>
+<li id="menu-item-40877" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40877"><a href="http://klif.listenernetwork.com/asp2/contests.aspx">Contests</a></li>
+<li id="menu-item-45593" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-45593"><a href="http://www.klif.com/station-appearances/">Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-40907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40907"><a href="http://www.puttingtexansbacktowork.com">Cumulus Job Fair</a></li>
+	<li id="menu-item-45590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45590"><a href="http://www.klif.com/station-appearances/">Station Appearances</a></li>
+</ul>
+</li>
+<li id="menu-item-81729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81729"><a href="http://www.klif.com/free-apps/">Apps</a></li>
+<li id="menu-item-474924" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-474924"><a href="http://games.klif.com">Games</a></li>
+</ul></div><!-- .nav-horizontal nav-align-left -->
+</div><!-- .block-content -->
+
+</nav><!-- #block-32 -->
+
+</section><!-- .sub-column -->
+
+<section class="sub-column sub-column-2 column column-2 grid-width-1 grid-left-0">
+<nav id="block-94" class="search-box block block-type-navigation block-fluid-height" data-alias="Navigation Search" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+<div class="block-content">
+<div class="nav-horizontal nav-align-right nav-search-active nav-search-position-right"><div class="nav-search">
+		<form method="get" id="searchform" action="http://www.klif.com/">
+			<label for="s" class="assistive-text">Search</label>
+			<input type="text" class="field" name="s" id="s" value="Type to search, then press enter" onclick="if(this.value=='Type to search, then press enter')this.value='';" onblur="if(this.value=='')this.value='Type to search, then press enter';" />
+			<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
+		</form>
+	</div></div><!-- .nav-horizontal nav-align-right nav-search-active nav-search-position-right -->
+</div><!-- .block-content -->
+
+</nav><!-- #block-94 -->
+
+</section><!-- .sub-column -->
+
+<section class="sub-column sub-column-3 column column-3 grid-width-1 grid-left-0">
+<div id="block-by855660ce317cb7" class="search-icon block block-type-custom-code block-fluid-height" data-alias="Search Icon">
+<div class="block-content">
+<script>
+jQuery(function($){
+$(".show-search").click(function(){
+$(".search-box").toggle(200); 
+});
+});
+</script>
+<img class="show-search" src="/wp-content/uploads/sites/262/2015/05/search_small.png">
+</div><!-- .block-content -->
+
+</div><!-- #block-by855660ce317cb7 -->
+
+</section><!-- .sub-column -->
+
+<section class="sub-column sub-column-1 column column-1 grid-width-5 grid-left-0">
+<div id="block-b7x54a2b9912b304" class="takeover-right block block-type-custom-code block-fluid-height" data-alias="Skyscraper - Right">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-5'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-5'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-b7x54a2b9912b304 -->
+
+</section><!-- .sub-column -->
+
+</section><!-- .column -->
+
+</section><!-- .row -->
+
+
+</div><!-- .grid-container -->
+
+</div><!-- .wrapper -->
+
+<div id="wrapper-49" class="wrapper wrapper-fluid wrapper-fixed-grid grid-fluid-24-32-10 responsive-grid wrapper-content" data-alias="Wrapper Content">
+
+<div class="grid-container clearfix">
+
+<section class="row row-1">
+
+<section class="column column-1 grid-left-0 grid-width-16">
+<div id="block-132" class="block block-type-content block-fluid-height" data-alias="">
+<div class="block-content">
+<div class="loop"><article id="post-476724" class="post-476724 post type-post status-publish format-standard hentry category-news-room-news category-wbap-247-news author-cwade " itemscope itemtype="http://schema.org/BlogPosting"><header><h1 class="entry-title" itemprop="headline">Big Job Fair in Allen</h1><div class="entry-meta entry-meta-above">Posted on <time class="entry-date published updated" itemprop="datePublished" datetime="2016-09-28T06:45:16+00:00">September 28, 2016</time></div><!-- .entry-meta --></header><div class="entry-content" itemprop="text"><p>ALLEN (WBAP/KLIF News) &#8211; The Cumulus &#8220;Putting Texans Back to Work&#8221; job fair is Wednesday in Allen.</p>
+<p>It will take place from 9:00 a.m. to 2:00 p.m. at the Allen Event Center at Highway 75 and Stacy.</p>
+<p>About 40 employers will be in attendance.</p>
+<p>Copyright 2016.  WBAP/KLIF News.  All Rights Reserved.</p>
+<div id="themify_builder_content-476724" data-postid="476724" class="themify_builder_content themify_builder_content-476724 themify_builder themify_builder_front">
+
+	</div>
+<!-- /themify_builder_content --></div><!-- .entry-content --><footer class="entry-utility entry-utility-below entry-meta">Filed Under: <a href="http://www.klif.com/category/news-room-news/" rel="category tag">24/7 Newsroom News</a>, <a href="http://www.klif.com/category/wbap-247-news/" rel="category tag">WBAP 24/7 News</a></footer><!-- .entry-utility --></article><!-- #post-476724 --></div>
+</div><!-- .block-content -->
+
+</div><!-- #block-132 -->
+
+</section><!-- .column -->
+
+<section class="column column-2 grid-left-0 grid-width-8">
+<div id="block-34" class="300x250-ad-1 block block-type-custom-code block-fluid-height responsive-block-hiding-device-smartphones block-mirrored block-mirroring-bb25499e64d5bce0 block-original-66" data-alias="300x250 Ad 1">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-0'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-0'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-34 -->
+<div id="block-36" class="vip-club-ad block block-type-custom-code block-fluid-height block-mirrored block-mirroring-b5n5499e64d5e75f block-original-68" data-alias="VIP Club Ad">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-7'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-7'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-36 -->
+<aside id="block-bwb56670fb98fc55" class="headlines block block-type-widget-area block-fluid-height block-mirrored block-mirroring-bwb56670fb98fc55 block-original-bpq56670fdf49eca" data-alias="Right Rail Widget Area" itemscope="" itemtype="http://schema.org/WPSideBar">
+<div class="block-content">
+<ul class="widget-area"><li id="simpleimage-2" class="widget widget_simpleimage">
+
+
+	<p class="simple-image">
+		<img width="300" height="152" src="http://www.klif.com/wp-content/uploads/sites/262/2016/05/KLIF_call-in_300x1521.jpg" class="attachment-full size-full" alt="KLIF_call-in_300x152" />	</p>
+
+
+</li><!-- .widget -->
+	
+<div class="js-amp-poll" data-post-id="497784" data-poll-id="poll_widget-2" data-max-choices="1">
+
+
+<!-- @brian.crigler: before widget, but shouldn't be outside of main container, right? not sure how/why this is necessarsy -->
+<li id="poll_widget-2" class="widget widget_poll_widget">
+
+<!--  before title info -->
+<h3 class="widget-title"><span class="widget-inner">
+<!--  rendered title -->
+KLIF LIstener Poll
+<!--  after title text -->
+</span></h3>
+
+<!--  sponsor, if it's on top -->
+
+<!--  rendered question -->
+<div class="question">Will you vote early?</div>
+
+<form class="js-amp-poll-answers"></form>
+
+
+</li><!-- .widget -->
+</div>
+</ul>
+</div><!-- .block-content -->
+
+</aside><!-- #block-bwb56670fb98fc55 -->
+<div id="block-bge553147d6a7413" class="headlines block block-type-custom-code block-fluid-height" data-alias="Video">
+<div class="block-content">
+<p>There is no custom code to display.</p>
+</div><!-- .block-content -->
+
+</div><!-- #block-bge553147d6a7413 -->
+<div id="block-42" class="facebook-ad block block-type-custom-code block-fluid-height block-mirrored block-mirroring-b4u5499e64d6fc9b block-original-73" data-alias="Facebook Ad">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-8'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-8'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-42 -->
+<figure id="block-bs95531447918a00" class="iheartradio block block-type-image block-fixed-height block-mirrored block-mirroring-bs95531447918a00 block-original-bq5553147d6abee2" data-alias="Farm Bureau" itemscope="" itemtype="http://schema.org/ImageObject">
+<div class="block-content">
+<a href="#" class="image" target="_blank"><img src="http://cumulus.pro.poolb.tritondigitalcms.com/klif-am/wp-content/uploads/sites/262/2015/04/FB-Insurance-2.jpg" alt="" title="" itemprop="contentURL"/></a>
+</div><!-- .block-content -->
+
+</figure><!-- #block-bs95531447918a00 -->
+<div id="block-44" class="twitter-ad block block-type-custom-code block-fluid-height block-mirrored block-mirroring-bav5499e64d7435f block-original-79" data-alias="Twitter Ad">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-9'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-9'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-44 -->
+<aside id="block-45" class="free-apps block block-type-widget-area block-fluid-height block-mirrored block-mirroring-bso5499e64d75758 block-original-81" data-alias="Home - Free Apps" itemscope="" itemtype="http://schema.org/WPSideBar">
+<div class="block-content">
+<h1 class="block-title"><span>Free Apps</span></h1><ul class="widget-area"><li id="text-3" class="widget widget_text">
+			<div class="textwidget"><div align="center">
+<a href="https://itunes.apple.com/us/app/570-klif/id798572579?mt=8&amp;ign-mpt=uo=4" target="_blank"><img src="/wp-content/uploads/sites/262/2014/10/appstore.png" border="0"></a>&nbsp;<a href="https://play.google.com/store/apps/details?id=com.airkast.KLIFAM" target="_blank"><img src="/wp-content/uploads/sites/262/2014/10/googleplay.png" border="0"></a>&nbsp;<a href="http://www.amazon.com/dp/B00IW101W6" target="_blank"><img src="/wp-content/uploads/sites/262/2014/10/amazon.png" border="0"></a>
+</div></div>
+		</li><!-- .widget -->
+</ul>
+</div><!-- .block-content -->
+
+</aside><!-- #block-45 -->
+<div id="block-46" class="300x250-ad-2 block block-type-custom-code block-fluid-height block-mirrored block-mirroring-box5499e64d77392 block-original-124" data-alias="300x250 Ad 2">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-19'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-19'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-46 -->
+
+</section><!-- .column -->
+
+</section><!-- .row -->
+
+
+</div><!-- .grid-container -->
+
+</div><!-- .wrapper -->
+
+<div id="wrapper-50" class="wrapper wrapper-fluid wrapper-fixed-grid grid-fluid-24-32-10 responsive-grid wrapper-mirroring-10 wrapper-last wrapper-footer" data-alias="Wrapper Footer">
+
+<div class="grid-container clearfix">
+
+<section class="row row-1">
+
+<section class="column column-1 grid-left-0 grid-width-6">
+<nav id="block-50" class="footer-nav block block-type-navigation block-fluid-height" data-alias="Footer Navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+<div class="block-content">
+<div class="nav-vertical nav-align-left"><ul id="menu-footer-navigation" class="menu"><li id="menu-item-175923" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-175923"><a href="/1111/11/11/privacy-policy">Privacy Policy</a></li>
+<li id="menu-item-175926" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-175926"><a href="/1111/11/11/terms-of-service">Terms of Service</a></li>
+<li id="menu-item-175929" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-175929"><a href="/1111/11/11/contest-rules">Contest Rules</a></li>
+<li id="menu-item-46133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46133"><a href="http://www.klif.com/advertise-with-us/">Advertise with Us</a></li>
+<li id="menu-item-46142" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46142"><a href="http://www.cumulus.com/careers/">Employment Opportunites</a></li>
+<li id="menu-item-46136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46136"><a href="http://www.klif.com/station-information/">Station Information</a></li>
+</ul></div><!-- .nav-vertical nav-align-left -->
+</div><!-- .block-content -->
+
+</nav><!-- #block-50 -->
+<div id="block-bdq55f17765ba7b5" class="block block-type-custom-code block-fluid-height" data-alias="Wallpaper Ad">
+<div class="block-content">
+<div id='div-gpt-ad-1418849849333-16'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-16'); });
+</script>
+</div>
+</div><!-- .block-content -->
+
+</div><!-- #block-bdq55f17765ba7b5 -->
+
+</section><!-- .column -->
+
+<section class="column column-2 grid-left-0 grid-width-18">
+<div id="block-51" class="728x90-ad-2 block block-type-custom-code block-fluid-height" data-alias="728x90 Ad 2">
+<div class="block-content">
+<div class="footer-728x90-ad" align="right">
+<div id='div-gpt-ad-1418849849333-2'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1418849849333-2'); });
+</script>
+</div>
+</div>
+
+</div><!-- .block-content -->
+
+</div><!-- #block-51 -->
+<footer id="block-52" class="copyright block block-type-footer block-fluid-height" data-alias="Copyright" itemscope="" itemtype="http://schema.org/WPFooter">
+<div class="block-content">
+
+<div class="footer-container">
+
+<div class="footer">
+<p class="copyright footer-copyright">Copyright Cumulus Media / Cumulus Media is an equal opportunity employer / AA</p><p class="footer-responsive-grid-link-container footer-responsive-grid-link-disable-container"><a href="http://www.klif.com/2016/09/28/big-job-fair-in-allen/?full-site=true" rel="nofollow" class="footer-responsive-grid-link footer-responsive-grid-disable footer-link">View Full Site</a></p>
+</div><!-- .footer -->
+</div><!-- .footer-container -->
+</div><!-- .block-content -->
+
+</footer><!-- #block-52 -->
+
+</section><!-- .column -->
+
+</section><!-- .row -->
+
+
+</div><!-- .grid-container -->
+
+</div><!-- .wrapper -->
+
+
+
+<script>_AMP.theme.init();</script>
+
+<script>
+	jQuery(window).load(function(){ jQuery(window).resize(); jQuery( 'body' ).addClass( 'page-loaded' ); });
+</script>
+<link rel='stylesheet' id='media_library_assistant-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/media-library-assistant/includes/../css/prettyPhoto.css?ver=1.61' type='text/css' media='all' />
+<link rel='stylesheet' id='media_library_assistant-widget-styles-css'  href='http://www.klif.com/wp-content/plugins/media-library-assistant/includes/../css/widget.css?ver=1.61' type='text/css' media='all' />
+<link rel='stylesheet' id='amp-polls-plugin-styles-css'  href='http://www.klif.com/wp-content/plugins/amp-polls/css/widget.css?ver=4.6.1' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var themify_vars = {"version":"1.8.1","url":"http:\/\/www.klif.com\/wp-content\/plugins\/themify-builder\/themify","TB":"1"};
+var tbLocalScript = {"isAnimationActive":"1","isParallaxActive":"1","animationInviewSelectors":[".module.wow",".themify_builder_content .themify_builder_row.wow",".module_row.wow",".builder-posts-wrap > .post.wow",".fly-in > .post",".fly-in .row_inner > .tb-column",".fade-in > .post",".fade-in .row_inner > .tb-column",".slide-up > .post",".slide-up .row_inner > .tb-column"],"createAnimationSelectors":[],"backgroundSlider":{"autoplay":5000,"speed":2000},"animationOffset":"100","videoPoster":"http:\/\/www.klif.com\/wp-content\/plugins\/themify-builder\/img\/blank.png","backgroundVideoLoop":"yes","builder_url":"http:\/\/www.klif.com\/wp-content\/plugins\/themify-builder","framework_url":"http:\/\/www.klif.com\/wp-content\/plugins\/themify-builder\/themify","version":"1.8.1","fullwidth_support":"","fullwidth_container":"body","loadScrollHighlight":"1"};
+var themifyScript = {"lightbox":{"lightboxSelector":".themify_lightbox","lightboxOn":true,"lightboxContentImages":false,"lightboxContentImagesSelector":".post-content a[href$=jpg],.page-content a[href$=jpg],.post-content a[href$=gif],.page-content a[href$=gif],.post-content a[href$=png],.page-content a[href$=png],.post-content a[href$=JPG],.page-content a[href$=JPG],.post-content a[href$=GIF],.page-content a[href$=GIF],.post-content a[href$=PNG],.page-content a[href$=PNG],.post-content a[href$=jpeg],.page-content a[href$=jpeg],.post-content a[href$=JPEG],.page-content a[href$=JPEG]","theme":"pp_default","social_tools":false,"allow_resize":true,"show_title":false,"overlay_gallery":false,"screenWidthNoLightbox":600,"deeplinking":false,"contentImagesAreas":".post, .type-page, .type-highlight, .type-slider","gallerySelector":".gallery-icon > a[href$=jpg],.gallery-icon > a[href$=gif],.gallery-icon > a[href$=png],.gallery-icon > a[href$=JPG],.gallery-icon > a[href$=GIF],.gallery-icon > a[href$=PNG],.gallery-icon > a[href$=jpeg],.gallery-icon > a[href$=JPEG]","lightboxGalleryOn":true},"lightboxContext":"body"};
+var tbScrollHighlight = {"fixedHeaderSelector":"","speed":"900","navigation":"#main-nav","scrollOffset":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/themify-builder/themify/js/main.js?ver=1.8.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/wp-embed.js?ver=4.6.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Download File":"Download File","Download Video":"Download Video","Play":"Play","Pause":"Pause","Captions\/Subtitles":"Captions\/Subtitles","None":"None","Time Slider":"Time Slider","Skip back %1 seconds":"Skip back %1 seconds","Video Player":"Video Player","Audio Player":"Audio Player","Volume Slider":"Volume Slider","Mute Toggle":"Mute Toggle","Unmute":"Unmute","Mute":"Mute","Use Up\/Down Arrow keys to increase or decrease volume.":"Use Up\/Down Arrow keys to increase or decrease volume.","Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds."}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=2.22.0'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-includes/js/mediaelement/wp-mediaelement.js?ver=4.6.1'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/media-library-assistant/includes/../js/jquery.prettyPhoto.js?ver=1.61'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/media-library-assistant/includes/../js/widget-front-end.js?ver=1478025558'></script>
+<script type='text/javascript' src='http://www.klif.com/wp-content/plugins/amp-polls/js/widget-front-end.js?ver=4.6.1'></script>
+            <script type="text/javascript">
+                if ('object' === typeof tbLocalScript) {
+                    tbLocalScript.transitionSelectors = ".js.csstransitions .module.wow, .js.csstransitions .themify_builder_content .themify_builder_row.wow, .js.csstransitions .module_row.wow, .js.csstransitions .builder-posts-wrap > .post.wow, .js.csstransitions .fly-in > .post, .js.csstransitions .fly-in .row_inner > .tb-column, .js.csstransitions .fade-in > .post, .js.csstransitions .fade-in .row_inner > .tb-column, .js.csstransitions .slide-up > .post, .js.csstransitions .slide-up .row_inner > .tb-column";
+                }
+            </script>
+            <script>
+window.tgmplibs='cumulus';
+      window===top && document.write('<script id="tgmpjs" src="http://mpl.tunegenie.com/js/loader.min.js?'+Math.random()+'"><\/script>');
+</script>
+<script id="tgmpjs">
+      top.tgmp?top.tgmp.onload():window.tgmp=new TuneGenieMediaPlayer('playerbar',
+    { brand: 'klifam',
+      zindex: '5000',
+      theme: ["#000000"],
+      position: 'top',
+      debug: true,
+      ios_frame: 3,
+      autostart: false,
+      infoTrayOnLoad: true,
+      useTritonPlayer: true,
+      promptZag: false,
+      delayed_frame: true,
+      refreshGoogleBannerAds:true}
+);
+var tgmp_rc=top.tgmp_rc||new TuneGenieRC(tgmp);
+tgmp_rc.recentSongWidget(document.getElementById('tgrecent'),{});
+tgmp_rc.nowPlayingWidget(document.getElementById('tgnowplaying'),{});
+</script>
+
+</div><!-- #whitewrap -->
+
+<!-- TGMP PLUGIN ENABLED 2016-08-05T02:56:29.741Z -->
+<!-- DISABLE TGMP INFO TRAY -->
+<!-- ADDED 2016-08-05T02:56:29.741Z -->
+<script>
+	if (window.top.tgmp) {
+		window.top.tgmp.updateOption('infoTrayOnLoad',false);
+	}
+</script>
+<!-- END DISABLE TGMP INFO TRAY -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=2977d8d74f63d7f8fedbea018b7a1d05&ns=1';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+
+
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using memcached
+Database Caching 81/93 queries in 0.163 seconds using memcached
+Object Caching 2204/2260 objects using memcached
+
+ Served from: www.1460wrad.com @ 2016-11-09 10:34:42 by W3 Total Cache -->

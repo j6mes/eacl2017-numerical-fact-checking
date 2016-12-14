@@ -1,0 +1,945 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie7 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js ie8 lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US" prefix="og: http://ogp.me/ns#" class="no-js"> <!--<![endif]-->
+<head>
+
+<!-- utf-8 -->
+<meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+
+<!-- set mobile viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- wp_head -->
+<title>Rugby World Cup Dates / Fixtures 2015 - Rugby World</title>
+<style type="text/css">
+@font-face {
+	font-family: "keystone";
+	font-weight: normal;
+	font-style: normal;
+	src: local('Open Sans'), local('OpenSans'),
+	url("//www.rugbyworld.com/wp-content/themes/keystone-theme/assets/fonts/hippocrates.woff2?v=1478260838") format("woff2"),
+	url("//www.rugbyworld.com/wp-content/themes/keystone-theme/assets/fonts/hippocrates.woff?v=1478260838") format("woff");
+}
+.icon-spinner {
+	background-image: url("//www.rugbyworld.com/wp-content/themes/keystone-theme/assets/images/spinner.gif");
+}
+.ie7 input {
+	behavior:url("//www.rugbyworld.com/wp-content/themes/keystone-theme/assets/js/ext/boxsizing.htc");
+}
+</style>		<script type="text/javascript">
+		window.ipcTags = {"site":"rugbyworld","section":"rugby_fixtures","type":"staticpage","cplatform":"keystone","dfp_config":{"required_tags":["type","section","site","subsection","tagging","pub","author","contentId","subtype"],"available_criteria":{"mobile":{"criteria":{"window_greater_than":{"width_minimum":0},"window_less_than_equal_to":{"width_maximum":689}},"display_mode":"mobile"},"tablet":{"criteria":{"window_greater_than":{"width_minimum":690},"window_less_than_equal_to":{"width_maximum":1019}},"display_mode":"mobile"},"desktop":{"criteria":{"window_greater_than":{"width_minimum":1020}},"display_mode":"desktop"}},"slots":{"col-3-plus":{"name":"billboard01","inview":false,"criteria":["desktop"],"sizes":[[970,250],[970,90],[728,90],[728,1]]},"col-2":{"name":"leaderboard01","inview":true,"criteria":["tablet"],"sizes":[[320,50],[320,1]]},"col-1":{"criteria":["mobile"],"inview":true,"name":"mobilebanner01","sizes":[[320,50],[320,1]]},"dfpad-mpu-1":{"name":"mpu01","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[[300,250],[300,600],[300,1050],[300,1]]},"dfpad-mpu-2":{"name":"mpu02","inview":true,"criteria":["desktop","tablet","mobile"],"sizes":[[300,250],[300,600],[300,1050],[300,1]]},"instream-1":{"name":"instream01","inview":true,"criteria":["mobile"],"sizes":[[300,250],[300,1]]},"instream-2":{"name":"instream02","inview":true,"criteria":["mobile"],"sizes":[[300,250],[300,1]]},"dfpad-overlay":{"name":"overlay","sizes":[1,1]},"sharethrough-article-page":{"name":"sharethrougharticlepage","targeting":{"strnativekey":"aK3mV8AhNHZKf68W5zDSa5kG"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,1],[6,1]]},"sharethrough-right-rail":{"name":"sharethroughrightrail","targeting":{"strnativekey":"Rp2mjrWsKPCSed9QcQwSwRQ4"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,5],[6,5]]},"sharethrough-listing-small":{"name":"sharethroughlistingsmall","targeting":{"strnativekey":"hhivQmiRBgsFKxkhGaEfETrs"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,2],[6,2]]},"sharethrough-listing-large":{"name":"sharethroughlistinglarge","targeting":{"strnativekey":"VaR59gF3BsAHjidsgQqtRD7M"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,3],[6,3]]},"sharethrough-listing-grid":{"name":"sharethroughlistinggrid","targeting":{"strnativekey":"cuuPpvbA7xzWqTYsDwZf6q7r"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,4],[6,4]]},"sharethrough-listing-generic":{"name":"sharethroughlistinggeneric","targeting":{"strnativekey":"HsnoD3Mbrb8pSA9v3bUsbhfz"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,7],[6,7]]},"sharethrough-listing-generic-2":{"name":"sharethroughlistinggeneric2","targeting":{"strnativekey":"PhR6n5H8tCMhWVZWxbSwv6it"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,8],[6,8]]},"sharethrough-listing-generic-3":{"name":"sharethroughlistinggeneric3","targeting":{"strnativekey":"mP1W4xpV9MXUNmetQYsTKesi"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,9],[6,9]]},"sharethrough-listing-generic-4":{"name":"sharethroughlistinggeneric4","targeting":{"strnativekey":"iKsEe8qKpinhSHCzems5KYvy"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,10],[6,10]]},"sharethrough-listing-generic-5":{"name":"sharethroughlistinggeneric5","targeting":{"strnativekey":"MpYWJgNJbMyLdjKByrQTgFpx"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,11],[6,11]]},"sharethrough-home-generic":{"name":"sharethroughhomegeneric","targeting":{"strnativekey":"7KVqEZzoa9GDCacjhtXpLrc1"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,12],[6,12]]},"sharethrough-home-generic-2":{"name":"sharethroughhomegeneric2","targeting":{"strnativekey":"WTpXtAG1R3Bfgvtenbphrzph"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,13],[6,13]]},"sharethrough-home-generic-3":{"name":"sharethroughhomegeneric3","targeting":{"strnativekey":"fqDTzQcdXFXJBRrrCfgmUaEQ"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,14],[6,14]]},"sharethrough-home-generic-4":{"name":"sharethroughhomegeneric4","targeting":{"strnativekey":"2hcXm8BrUBnfB3uhArn8w4C3"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,15],[6,15]]},"sharethrough-home-generic-5":{"name":"sharethroughhomegeneric5","targeting":{"strnativekey":"EFqsDHPY7kZguRghpg7JM9Mb"},"criteria":["desktop","mobile"],"inview":true,"sizes":[[6,16],[6,16]]},"gumgum":{"name":"gumgum","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[8,2]},"vibrant":{"name":"vibrant","inview":false,"criteria":["desktop","tablet","mobile"],"sizes":[9,2]}}},"env":"prod","skimlinks_enabled":true,"contentId":29466,"subtype":"image","tagging":["author:basprey"],"author":"basprey","authorName":"Beatrice Asprey","datePublished":"20150502","hourPublished":"13","minPublished":"08","dateUpdated":"20151019","hourUpdated":"16","minUpdated":"40","subsection":"rugby_world_cup_fixtures_","pub":"rugby_world","template":"page"};
+		</script>
+
+<!-- This site is optimized with the Yoast SEO plugin v3.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Here are the fixtures for the 2015 Rugby World Cup, but which two teams will reach the final?"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" />
+<link rel="publisher" href="https://plus.google.com/112295894332891232218"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Rugby World Cup Dates / Fixtures 2015 - Rugby World" />
+<meta property="og:description" content="Here are the fixtures for the 2015 Rugby World Cup, but which two teams will reach the final?" />
+<meta property="og:url" content="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" />
+<meta property="og:site_name" content="Rugby World" />
+<meta property="article:publisher" content="https://www.facebook.com/rugbyworldmagazine" />
+<meta property="og:image" content="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/08/GettyImages-476521948.jpg" />
+<meta property="og:image:width" content="500" />
+<meta property="og:image:height" content="751" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Here are the fixtures for the 2015 Rugby World Cup, but which two teams will reach the final?" />
+<meta name="twitter:title" content="Rugby World Cup Dates / Fixtures 2015 - Rugby World" />
+<meta name="twitter:site" content="@rugbyworldmag" />
+<meta name="twitter:image" content="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/08/GettyImages-476521948.jpg" />
+<meta name="twitter:creator" content="@rugbyworldmag" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//keyassets.timeincuk.net' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Rugby World &raquo; Feed" href="http://www.rugbyworld.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Rugby World &raquo; Comments Feed" href="http://www.rugbyworld.com/comments/feed" />
+		<script type="text/javascript">
+			(function() {
+				/* Include required screen size functions right here */
+				var getDisplayWidth=function(){var e=0;if(typeof window.innerWidth!="undefined"){e=window.innerWidth}else if(typeof document.documentElement!="undefined"&&typeof document.documentElement.clientWidth!="undefined"&&document.documentElement.clientWidth!=0){e=document.documentElement.clientWidth}else{e=document.getElementsByTagName("body")[0].clientWidth}return Number(e)};
+				var getWindowSize = getDisplayWidth();
+				window.ipcTags = window.ipcTags || {};
+				/* Pageskin targeting stuff */
+				if(getWindowSize >= 1350) {
+					window.ipcTags['pageskin'] = 'yes';
+				} else {
+					window.ipcTags['pageskin'] = 'no';
+				}
+
+				
+				if(getWindowSize >= 690) {
+					window.ipcTags.platform = 'desktop';
+				} else {
+					window.ipcTags.platform = 'mobile';
+				}
+
+				
+				window.ipcTags['dfp_config']['required_tags'].push('pageskin');
+			})();
+		</script>
+		<style type='text/css' media='screen'>.echo-loading{ background: #fff url('http://www.rugbyworld.com/wp-content/plugins/echo-js-lazy-load/img/ajax.gif') no-repeat center center; } </style>		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.rugbyworld.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=NC42LjE"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='brightcove-public-css'  href='http://www.rugbyworld.com/wp-content/plugins/media-explorer-brightcove/css/mexp-brightcove-public.css?ver=NC42LjE' type='text/css' media='all' />
+<link rel='stylesheet' id='ipc-digital-edition-plugin-styles-css'  href='http://www.rugbyworld.com/wp-content/plugins/ipc-wordpress-digital-editions/public/assets/css/public.css?ver=2.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=Bitter%3Anormal%7CAlfa+Slab+One%3Anormal%7CGentium+Book+Basic%3Anormal&#038;ver=2923612961147283456' type='text/css' media='all' />
+<link rel='stylesheet' id='keystone-css'  href='https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/e104cb653828656cf3eea918dce4b92a/keystone.css' type='text/css' media='all' />
+<!-- IE icons  -->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='keystone-ie-icons-css'  href='http://www.rugbyworld.com/wp-content/themes/keystone-theme/assets/less/keystone-ie-icons.css?ver=2923612961147283456' type='text/css' media='screen' />
+<![endif]-->
+<link rel='stylesheet' id='ipc-keystone-countdown-widget-styles-css'  href='http://www.rugbyworld.com/wp-content/plugins/keystone-countdown/css/widget.css?ver=NC42LjE' type='text/css' media='all' />
+<link rel='stylesheet' id='ipc-keystone-countdown-countdown-styles-css'  href='http://www.rugbyworld.com/wp-content/plugins/keystone-countdown/js/countdown/jquery.countdown.css?ver=NC42LjE' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<link rel='https://api.w.org/' href='http://www.rugbyworld.com/wp-json/' />
+<link rel='shortlink' href='http://www.rugbyworld.com/?p=29466' />
+<link rel="alternate" type="application/json+oembed" href="http://www.rugbyworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rugbyworld.com%2Frugby-fixtures%2Frugby-world-cup-fixtures-2015" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.rugbyworld.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.rugbyworld.com%2Frugby-fixtures%2Frugby-world-cup-fixtures-2015&#038;format=xml" />
+<meta property="fb:pages" content="89255851548" />		<script type="text/javascript" charset="utf-8">
+			var protocol = ("https:" == document.location.protocol) ? "https://" : "http://";
+
+			var url = ("https:" == document.location.protocol) ? "secure.assets.ipcdigital.co.uk/js/e1462451750_b339eb7/min/tealium/utils-min.js" : "assets.ipcdigital.co.uk/js/e1462451750_b339eb7/min/tealium/utils-min.js",
+				f = unescape("%3Cscript src='" + protocol + url + "' type='text/javascript'%3E%3C/script%3E");
+			document.write(f);
+		</script>
+	<style type="text/css"> body.custom-background { -webkit-background-size: auto; -moz-background-size: auto; background-size: auto; } </style>
+
+		<!-- allow pinned app in ie9+ / windows 8 -->
+		<meta name="application-name" content="Rugby World" />
+		<meta name="msapplication-tooltip" content="The World&#039;s Best-Selling Rugby Magazine"/>
+		<meta name="msapplication-starturl" content="http://www.rugbyworld.com"/>
+				
+		<!-- icons -->
+		<link rel="shortcut icon" type="image/x-icon" href="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/05/favicon.png" />
+		<link rel="apple-touch-icon-precomposed" href="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/05/rw-ios.png" />
+
+					<meta name="msapplication-TileImage" content="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/05/rw-ios.png">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #e1dcdc; }
+</style>
+		<script>
+			(function(){
+				var n='scr'+'ipt',p=document.getElementsByTagName(n)[0],s=document.createElement(n),cb=Math.floor((new Date()).getTime() / 900000);//15 min
+				s.async=true;
+				cb = cb + 'abcdefghijk'[(cb+'')[(cb+'').length-1]]; // akamai cache bust
+				s.src=(('https:'==document.location.protocol)?'https://secure.':'http://')+'assets.ipcdigital.co.uk/js/ipccore/ipccore.1.9.0.min.js?cb=' + cb;
+				p.parentNode.insertBefore(s,p);
+			})();
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			window.IPCCoreQueue = window.IPCCoreQueue || [];
+			window.IPCCoreQueue.push(function(){
+				IPCCore.promise (IPCCore.P_ADMANAGER_CONFIG_IS_DEFINED).resolve ({
+					revsci      : {
+						placements : ["wL98l3","8U90Lq","qq4g5z","a1Qufv","hp5ueu"]					},
+					accountId   : '18711560',
+					environment : 'live',
+					googleTag   : googletag,
+					ipcTags     : window.ipcTags
+				});
+			});
+		</script>
+		<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-content/themes/keystone-theme/assets/js/ext/respond.js'></script>
+<![endif]-->
+<script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+
+</head>
+
+<body class="page page-id-29466 page-parent page-child parent-pageid-18906 page-template-default custom-background has-adverts site-7 child-site y2016 m11 d07 h11 section-rugby-fixtures rugby-world-cup-fixtures-2015 hippocrates">
+	<!-- Start keystone_after_body -->
+			<!-- Loading script asynchronously -->
+		<script type="text/javascript">
+			(function (a, b, c, d) {
+				a = '//tags.tiqcdn.com/utag/ipc/rugbyworld/prod/utag.js';
+				b = document;
+				c = 'script';
+				d = b.createElement(c);
+				d.src = a;
+				d.type = 'text/java' + c;
+				d.async = true;
+				a = b.getElementsByTagName(c)[0];
+				a.parentNode.insertBefore(d, a);
+			})();
+		</script>
+		<!-- Loading tealum for rugbyworld -->
+		<!-- end keystone after body -->
+	
+	<div id="accessibility" class="sr-only">
+		<a href="#content" class="skip-link">Skip to content &raquo;</a>
+	</div><!-- #accessibility -->
+	<div id="wrapper" class="hfeed container palette-a">
+
+		<header id="header" role="banner" class="style-strong-underline">
+						<div class="row extended-header palette-a" id="extended-header-split">
+				<div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="extended-header-left">
+									</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 hidden-xs" id="extended-header-middle">
+					<section id="keystone_logo_widget-2" class=" widget widget-area-2-col keystone_logo_widget-class"><h1 itemtype="http://schema.org/Organization" class="vcard site-title-new desktop-template text-center">
+				  <a itemprop="url" href="http://www.rugbyworld.com" title="Rugby World" class="url">
+				    <span class="sr-only fn org nickname" itemprop="name">Rugby World</span>
+				    <img itemprop="logo" class="logo photo non-retina" src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/06/RWLogo-120.jpg?v=2923612961147283456" alt="Rugby World" />
+				    <img src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/06/RWLogo-240.jpg?v=2923612961147283456" alt="Rugby World" class="retina"/>
+				  </a>
+				</h1></section><!-- .widget -->				</div>
+				<div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="extended-header-right">
+					<section id="keystone-magazine-header-3" class=" widget widget-area-1-col keystone-magazine-header-class">
+	<div class="full magazine-widget clearfix">
+
+		
+			<div class="magazine-widget-text pull-left">
+				<ul class="magazine-widget-links">
+									</ul>
+			</div>
+			<div class="magazine-widget-image pull-right">
+				<a href="http://www.rugbyworld.com/publication/rugby-world" title="Latest Issue of Rugby World"
+				   class="magazine-cover-link">
+					<img width="207" height="300" src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-207x300.jpg" class="magazine-cover " alt="Rugby World cover" srcset="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-207x300.jpg 207w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-93x135.jpg 93w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-310x450.jpg 310w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-344x500.jpg 344w" sizes="(max-width: 207px) 100vw, 207px" />				</a>
+			</div>
+
+			</div>
+
+	</section><!-- .widget -->				</div>
+			</div>
+		
+<div class="row branding palette-a">
+	<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+		<h1 itemtype="http://schema.org/Organization" class="vcard site-title-new mobile-template ">
+				  <a itemprop="url" href="http://www.rugbyworld.com" title="Rugby World" class="url">
+				    <span class="sr-only fn org nickname" itemprop="name">Rugby World</span>
+				    <img itemprop="logo" class="logo photo non-retina" src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/05/rw-logo-sml.png?v=2923612961147283456" alt="Rugby World" />
+				    <img src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/05/rw-logo-sml@2x.png?v=2923612961147283456" alt="Rugby World" class="retina"/>
+				  </a>
+				</h1>	</div>
+</div>
+
+			<nav id="navigation" role="navigation" class="row">
+
+				<div class="menu-tools menu-item-has-children">
+					<a href="#" class="menu-toggle menu-icon-link">
+						<span class="icon-menu"></span>
+					</a>
+					<ul class="menu-stash hidden-xs main-menu sub-menu"></ul>
+				</div>
+
+				<div class="menu-search menu-item-has-children">
+					<a href="#" class="menu-toggle-search menu-icon-link">
+						<span class="icon-search"></span>
+					</a>
+					<div class="sub-menu">
+						<form role="search" method="get" class="search-form form-inline" action="http://www.rugbyworld.com/">
+	<div class="input-group">
+		<input type="search" value="" name="s" class="input-sm search-field form-control" placeholder="Search Rugby World">
+		<label class="sr-only">Search for:</label>
+		<span class="input-group-btn">
+			<button type="submit" class="search-submit btn btn-primary btn-sm">Search</button>
+		</span>
+	</div>
+</form>					</div>
+				</div>
+
+				<div class="menu-navigation"><ul id="menu-navigation" class="main-menu"><li id="menu-item-35582" class="menu-item menu-item-type-post_type menu-item-object-page menu-icon-home first-menu-item menu-item-35582"><a href="http://www.rugbyworld.com/"><span class="menu-icon-item icon-home"></span></a></li>
+<li id="menu-item-35801" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-35801"><a href="https://subscription.rugbyworld.com/subscriptions/rugby-world-subscriptions"><span>Subscribe</span></a></li>
+<li id="menu-item-35756" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children no-icon menu-item-35756"><a href="http://www.rugbyworld.com/news"><span>News</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-35757" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35757"><a href="http://www.rugbyworld.com/news/blogs"><span>Blogs</span></a></li>
+</ul>
+</li>
+<li id="menu-item-73664" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-icon menu-item-73664"><a href="http://rugbyworld.com/tag/lions-2017"><span>Lions 2017</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-73668" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-73668"><a href="http://www.rugbyworld.com/rugby-fixtures/british-irish-lions-fixtures-2017"><span>Lions 2017 fixtures</span></a></li>
+</ul>
+</li>
+<li id="menu-item-73685" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-73685"><a href="http://www.rugbyworld.com/rugby-player-positions"><span>Legends</span></a></li>
+<li id="menu-item-37204" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children no-icon menu-item-37204"><a href="http://www.rugbyworld.com/tournaments"><span>Tournaments</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-37207" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37207"><a href="http://www.rugbyworld.com/tournaments/world-cup"><span>Rugby World Cup 2015</span></a></li>
+	<li id="menu-item-37206" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37206"><a href="http://www.rugbyworld.com/tournaments/six-nations"><span>Six Nations</span></a></li>
+	<li id="menu-item-37209" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37209"><a href="http://www.rugbyworld.com/tournaments/challenge-cup"><span>Challenge Cup</span></a></li>
+	<li id="menu-item-37205" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37205"><a href="http://www.rugbyworld.com/tournaments/aviva-premiership"><span>Aviva Premiership</span></a></li>
+	<li id="menu-item-37210" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37210"><a href="http://www.rugbyworld.com/tournaments/european-champions-cup"><span>European Champions Cup</span></a></li>
+	<li id="menu-item-37208" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37208"><a title="Guinness Pro12" href="http://www.rugbyworld.com/tournaments/guinness-pro12"><span>Guinness Pro12</span></a></li>
+	<li id="menu-item-53441" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-53441"><a href="http://www.rugbyworld.com/tournaments/sevens-world-series"><span>Sevens World Series</span></a></li>
+	<li id="menu-item-37212" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37212"><a href="http://www.rugbyworld.com/tournaments/superrugby"><span>Super Rugby</span></a></li>
+	<li id="menu-item-37213" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37213"><a href="http://www.rugbyworld.com/tournaments/the-championship"><span>The Championship</span></a></li>
+	<li id="menu-item-37214" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-37214"><a href="http://www.rugbyworld.com/tournaments/top-14"><span>Top 14</span></a></li>
+</ul>
+</li>
+<li id="menu-item-35769" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children no-icon menu-item-35769"><a href="http://www.rugbyworld.com/countries"><span>Countries</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-35770" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35770"><a href="http://www.rugbyworld.com/countries/argentina-countries"><span>Argentina</span></a></li>
+	<li id="menu-item-35771" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35771"><a href="http://www.rugbyworld.com/countries/australia-countries"><span>Australia</span></a></li>
+	<li id="menu-item-35772" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35772"><a href="http://www.rugbyworld.com/countries/england-countries"><span>England</span></a></li>
+	<li id="menu-item-35773" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35773"><a href="http://www.rugbyworld.com/countries/france-countries"><span>France</span></a></li>
+	<li id="menu-item-35774" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35774"><a href="http://www.rugbyworld.com/countries/ireland-countries"><span>Ireland</span></a></li>
+	<li id="menu-item-35775" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35775"><a href="http://www.rugbyworld.com/countries/italy"><span>Italy</span></a></li>
+	<li id="menu-item-35776" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35776"><a href="http://www.rugbyworld.com/countries/new-zealand-countries"><span>New Zealand</span></a></li>
+	<li id="menu-item-35777" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35777"><a href="http://www.rugbyworld.com/countries/rest-of-the-world"><span>Rest of the World</span></a></li>
+	<li id="menu-item-35778" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35778"><a href="http://www.rugbyworld.com/countries/scotland"><span>Scotland</span></a></li>
+	<li id="menu-item-35779" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35779"><a href="http://www.rugbyworld.com/countries/south-africa-countries"><span>South Africa</span></a></li>
+	<li id="menu-item-35780" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35780"><a href="http://www.rugbyworld.com/countries/wales-countries"><span>Wales</span></a></li>
+</ul>
+</li>
+<li id="menu-item-39367" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children no-icon menu-item-39367"><a href="http://www.rugbyworld.com/rugby-fixtures"><span>Fixtures</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-39368" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39368"><a href="http://www.rugbyworld.com/rugby-fixtures/premiership"><span>Aviva Premiership Fixtures</span></a></li>
+	<li id="menu-item-39369" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39369"><a href="http://www.rugbyworld.com/rugby-fixtures/pro12"><span>Guinness Pro12 Fixtures</span></a></li>
+	<li id="menu-item-39370" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39370"><a href="http://www.rugbyworld.com/rugby-fixtures/top-14-fixtures"><span>Top 14 Fixtures</span></a></li>
+	<li id="menu-item-67686" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-67686"><a href="http://www.rugbyworld.com/rugby-fixtures/six-nations"><span>Six Nations Fixtures</span></a></li>
+	<li id="menu-item-39371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children no-icon menu-item-39371"><a href="http://www.rugbyworld.com/rugby-fixtures/european-champions-cup-fixtures"><span>European Champions Cup Fixtures</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-39375" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39375"><a href="http://www.rugbyworld.com/rugby-fixtures/six-nations/womens-six-nations"><span>Women&#8217;s Six Nations</span></a></li>
+		<li id="menu-item-39372" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39372"><a href="http://www.rugbyworld.com/rugby-fixtures/european-champions-cup-fixtures/european-challenge-cup-fixtures"><span>European Challenge Cup Fixtures</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-39376" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39376"><a href="http://www.rugbyworld.com/rugby-fixtures/internationals"><span>International Rugby Fixtures</span></a></li>
+	<li id="menu-item-39411" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-29466 current_page_item no-icon menu-item-39411"><a href="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Rugby World Cup Dates / Fixtures 2015</span></a></li>
+	<li id="menu-item-39424" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-39424"><a href="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015/womens-world-cup-fixtures"><span>Women&#8217;s World Cup Fixtures</span></a></li>
+	<li id="menu-item-40910" class="menu-item menu-item-type-post_type menu-item-object-page no-icon menu-item-40910"><a href="http://www.rugbyworld.com/rugby-fixtures/lv-cup-rugby-fixtures"><span>LV= Cup rugby fixtures</span></a></li>
+</ul>
+</li>
+<li id="menu-item-39382" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children no-icon menu-item-39382"><a href="http://www.rugbyworld.com/takingpart"><span>Taking Part</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom no-icon menu-item-54115"><a href="http://www.rugbyworld.com/reviews/"><span>Reviews</span></a></li>
+	<li id="menu-item-39384" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-39384"><a href="http://www.rugbyworld.com/takingpart/fitness-takingpart"><span>Fitness</span></a></li>
+	<li id="menu-item-39385" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-39385"><a href="http://www.rugbyworld.com/takingpart/mini-rugby"><span>Mini Rugby</span></a></li>
+	<li id="menu-item-39386" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-39386"><a href="http://www.rugbyworld.com/takingpart/pros-playbook"><span>Pro&#8217;s Playbook</span></a></li>
+</ul>
+</li>
+<li id="menu-item-35785" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children no-icon menu-item-35785"><a href="http://www.rugbyworld.com/in-the-mag"><span>In The Mag</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-35786" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35786"><a href="http://www.rugbyworld.com/in-the-mag/30-minutes"><span>30 Minutes</span></a></li>
+	<li id="menu-item-35787" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35787"><a href="http://www.rugbyworld.com/in-the-mag/in-the-mag-columns"><span>Columns</span></a></li>
+	<li id="menu-item-35789" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35789"><a href="http://www.rugbyworld.com/in-the-mag/hotshots"><span>Hotshots</span></a></li>
+	<li id="menu-item-35790" class="menu-item menu-item-type-taxonomy menu-item-object-category no-icon menu-item-35790"><a href="http://www.rugbyworld.com/in-the-mag/rugby-rant"><span>Rugby Rant</span></a></li>
+</ul>
+</li>
+<li id="menu-item-35800" class="menu-item menu-item-type-post_type menu-item-object-page no-icon last-menu-item menu-item-35800"><a href="http://www.rugbyworld.com/competitions"><span>Competitions</span></a></li>
+</ul></div>
+			</nav><!--  #navigation -->
+		
+		</header><!-- #header -->
+		<aside class="row advert header-advert">
+			<div class="section-content">
+				<div class="hidden-xs hidden-sm">
+					<div id="col-3-plus" class="ipc-advert"></div>				</div>
+				<div class="hidden-xs hidden-md hidden-lg">
+					<div id="col-2" class="ipc-advert"></div>				</div>
+				<div class="hidden-md hidden-lg">
+					<div id="col-1" class="ipc-advert"></div>				</div>
+			</div>
+		</aside>
+				
+		<div id="content" role="main">
+ 	<div class="row">
+
+		<div class="primary col-xs-12 col-md-8 col-lg-6">
+
+							
+								
+				<article class="post-29466 page type-page status-publish has-post-thumbnail hentry loop loop-first loop-last loop-odd loop-1 featured-image" role="article">
+
+	<header class="page-header">
+		
+		<h1 class="entry-title heading">Rugby World Cup Dates / Fixtures 2015</h1>
+		
+				<div class="pw-widget keystone-social  hidden-xs ">
+							<a class="share-button pw-button-facebook " target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Share</span></a>
+							<a class="share-button pw-button-twitter " target="_blank" href="https://twitter.com/intent/tweet?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&text=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Tweet</span></a>
+							<a class="share-button pw-button-pinterest last" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&description=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Pin</span></a>
+						<span class="share-count"><span class="pw-box-counter" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015">0</span>shares</span>
+			<div class="clearfix"></div>
+		</div>
+			<div class="pw-widget keystone-social  visible-xs ">
+							<a class="share-button pw-button-facebook " target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Share</span></a>
+							<a class="share-button pw-button-twitter " target="_blank" href="https://twitter.com/intent/tweet?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&text=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Tweet</span></a>
+							<a class="share-button pw-button-pinterest last" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&description=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Pin</span></a>
+						<span class="share-count"><span class="pw-box-counter" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015">0</span>shares</span>
+			<div class="clearfix"></div>
+		</div>
+	
+	</header>
+	
+	<div class="entry-content">
+		
+		<div class="featured-media hide-secondary-pages">
+	</div>
+
+		<p><img class="echo-image echo-loading aligncenter wp-image-39434 size-full" src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/11/rw-placeholder.png" data-echo="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2013/05/167888395.jpg" alt="webb ellis cup" width="594" height="349" /><br />
+<strong>Rugby World Cup 2015 Dates &#8211; </strong>Visit our <a href="http://www.rugbyworld.com/tournaments/world-cup">Rugby World Cup 2015 </a>page for all the latest news. Visit our Rugby <a title="Rugby World Cup results" href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-results-49118" target="_blank">World Cup Results</a> page for all the latest results and match reports.</p>
+<h3><strong>Friday 18th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/england-countries"><span style="color: #000080">England</span></a> <a href="www.rugbyworld.com/countries/england-countries/world-cup-2015-england-35-11-fiji-48776" target="_blank"><span style="color: #ff0000">35-11</span></a> <a href="http://www.rugbyworld.com/tag/fiji"><span style="color: #000080">Fiji</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/england-countries/world-cup-highlights-england-35-11-fiji-49836" target="_blank">Highlights</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 19th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>12.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/tag/tonga"><span style="color: #000080">Tonga</span></a> <a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-tonga-10-17-georgia-48784" target="_blank"><span style="color: #ff0000">10-17</span></a> <a href="http://www.rugbyworld.com/tag/georgia"><span style="color: #000080">Georgia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/world-cup-highlights-tonga-10-17-georgia-49922" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/ireland-countries"><span style="color: #000080">Ireland</span></a> <a href="http://www.rugbyworld.com/countries/ireland-countries/world-cup-2015-ireland-50-7-canada-48803" target="_blank"><span style="color: #ff0000">50-7</span></a> <a href="http://www.rugbyworld.com/tag/canada"><span style="color: #000080">Canada</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/ireland-countries/world-cup-highlights-ireland-50-7-canada-49930" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/south-africa-countries"><span style="color: #000080">South Africa</span></a> <a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-2015-south-africa-32-34-japan-48817" target="_blank"><span style="color: #ff0000">32-34</span></a> <a href="http://www.rugbyworld.com/tag/japan"><span style="color: #000080">Japan</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-highlights-south-africa-32-34-japan-49880" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/france-countries"><span style="color: #000080">France</span></a> <a href="http://www.rugbyworld.com/countries/italy/world-cup-2015-france-32-10-italy-48815" target="_blank"><span style="color: #ff0000">32-10</span></a> <a href="http://www.rugbyworld.com/countries/italy"><span style="color: #000080">Italy</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 20th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>12.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/tag/samoa"><span style="color: #000080">Samoa</span></a> <a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-samoa-25-16-usa-48855" target="_blank"><span style="color: #ff0000">25-16</span></a> <a href="http://www.rugbyworld.com/tag/usa"><span style="color: #000080">USA</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/world-cup-highlights-samoa-25-16-usa-49885" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/wales-countries">Wales</a> </span><a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-wales-54-9-uruguay-48843" target="_blank"><span style="color: #ff0000">54-9</span></a> <a href="http://www.rugbyworld.com/tag/uruguay"><span style="color: #000080">Uruguay</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/wales-countries/world-cup-highlights-wales-54-9-uruguay-49861" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/new-zealand-countries">New Zealand</a> </span><a href="http://www.rugbyworld.com/countries/argentina-countries/world-cup-2015-new-zealand-26-16-argentina-48882" target="_blank"><span style="color: #ff0000">26-16</span></a> <a href="http://www.rugbyworld.com/countries/argentina-countries"><span style="color: #000080">Argentina</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Wembley</a></li>
+</ul>
+</div>
+<h3><strong>Wednesday 23rd September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/scotland"><span style="color: #000080">Scotland</span></a> <a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-scotland-45-10-japan-49212" target="_blank"><span style="color: #ff0000">45-10</span></a> <a href="http://www.rugbyworld.com/tag/japan"><span style="color: #000080">Japan</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/scotland/world-cup-highlights-scotland-45-10-japan-49893" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/australia-countries">Australia</a> </span><a href="http://www.rugbyworld.com/countries/australia-countries/world-cup-2015-australia-28-13-fiji-49274" target="_blank"><span style="color: #ff0000">28-13</span></a> <a href="http://www.rugbyworld.com/tag/fiji"><span style="color: #000080">Fiji</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/wales-countries/world-cup-highlights-australia-28-13-fiji-49866" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/france-countries">France</a> </span><a title="World Cup 2015: France 38-11 Romania" href="http://www.rugbyworld.com/countries/france-countries/world-cup-2015-france-38-11-romania-49288"><span style="color: #ff0000">38-11</span></a> <a href="http://www.rugbyworld.com/tag/romania"><span style="color: #000080">Romania</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Olympic Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Thursday 24th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/new-zealand-countries"><span style="color: #000080">New Zealand</span></a> <a href="http://www.rugbyworld.com/countries/new-zealand-countries/world-cup-2015-new-zealand-58-14-namibia-49392" target="_blank"><span style="color: #ff0000">58-14</span></a> <a href="http://www.rugbyworld.com/tag/namibia"><span style="color: #000080">Namibia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Olympic Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Friday 25th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/argentina-countries"><span style="color: #000080">Argentina</span></a> <a href="http://www.rugbyworld.com/countries/argentina-countries/world-cup-2015-argentina-54-9-georgia-49384" target="_blank"><span style="color: #ff0000">54-9</span></a> <a href="http://www.rugbyworld.com/tag/georgia"><span style="color: #000080">Georgia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Kingsholm</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 26th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/italy"><span style="color: #000080">Italy</span></a> <a href="http://www.rugbyworld.com/countries/italy/world-cup-2015-italy-23-18-canada-49483" target="_blank"><span style="color: #ff0000">23-18</span></a> <a href="http://www.rugbyworld.com/tag/canada"><span style="color: #000080">Canada</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Elland Road</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/south-africa-countries">South Africa</a> </span><a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-2015-south-africa-46-6-samoa-49494" target="_blank"><span style="color: #ff0000">46-6</span></a> <a href="http://www.rugbyworld.com/tag/samoa"><span style="color: #000080">Samoa</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-highlights-south-africa-46-6-samoa-49899" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/england-countries"><span style="color: #000080">England</span></a> <a href="http://www.rugbyworld.com/countries/wales-countries/world-cup-2015-england-25-28-wales-49509" target="_blank"><span style="color: #ff0000">25-28</span></a> <a href="http://www.rugbyworld.com/countries/wales-countries"><span style="color: #000080">Wales</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/wales-countries/england-25-28-wales-highlights-49827" target="_blank">Highlights</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 27th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>12.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/australia-countries">Australia</a> </span><a href="http://www.rugbyworld.com/countries/australia-countries/world-cup-2015-australia-65-3-uruguay-49528" target="_blank"><span style="color: #ff0000">65-3</span></a> <a href="http://www.rugbyworld.com/tag/uruguay"><span style="color: #000080">Uruguay</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/australia-countries/world-cup-highlights-australia-65-3-uruguay-49872" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/scotland">Scotland</a> </span><a href="http://www.rugbyworld.com/countries/scotland/world-cup-2015-scotland-39-16-usa-49533" target="_blank"><span style="color: #ff0000">39-16</span></a> <a href="http://www.rugbyworld.com/tag/usa"><span style="color: #000080">USA</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/countries/scotland/world-cup-highlights-scotland-39-16-usa-49904" target="_blank">Highlights</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/ireland-countries">Ireland</a> </span><a href="http://www.rugbyworld.com/countries/ireland-countries/world-cup-2015-ireland-44-10-romania-49565" target="_blank"><span style="color: #ff0000">44-10</span></a> <a href="http://www.rugbyworld.com/tag/romania"><span style="color: #000080">Romania</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Wembley</a></li>
+</ul>
+</div>
+<h3><strong>Tuesday 29th September</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/tonga">Tonga</a> </span><a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-tonga-35-21-namibia-49656" target="_blank"><span style="color: #ff0000">35-21</span></a> <a href="http://www.rugbyworld.com/tag/namibia"><span style="color: #000080">Namibia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Sandy Park</a></li>
+</ul>
+</div>
+<h3><strong>Thursday 1st October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/wales-countries">Wales</a> </span><a href="http://www.rugbyworld.com/countries/wales-countries/world-cup-2015-wales-23-13-fiji-49938" target="_blank"><span style="color: #ff0000">23-13</span></a> <a href="http://www.rugbyworld.com/tag/fiji"><span style="color: #000080">Fiji</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Millennium Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/france-countries"><span style="color: #000080">France</span></a> <a href="http://www.rugbyworld.com/countries/france-countries/world-cup-2015-france-41-18-canada-49949" target="_blank"><span style="color: #ff0000">41-18</span></a> <a href="http://www.rugbyworld.com/tag/canada"><span style="color: #000080">Canada</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Stadiummk</a></li>
+</ul>
+</div>
+<h3><strong>Friday 2nd October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/new-zealand-countries">New Zealand</a> </span><a href="http://www.rugbyworld.com/countries/new-zealand-countries/world-cup-2015-new-zealand-43-10-georgia-50103" target="_blank"><span style="color: #ff0000">43-10</span></a> <a href="http://www.rugbyworld.com/tag/georgia"><span style="color: #000080">Georgia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Millennium Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 3rd October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/samoa">Samoa</a> </span><a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-japan-26-5-samoa-50121" target="_blank"><span style="color: #ff0000">5-26</span></a> <a href="http://www.rugbyworld.com/tag/japan"><span style="color: #000080">Japan</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Stadiummk</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/south-africa-countries">South Africa</a> </span><a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-2015-south-africa-34-16-scotland-50127" target="_blank"><span style="color: #ff0000">34-16</span></a> <a href="http://www.rugbyworld.com/countries/scotland"><span style="color: #000080">Scotland</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">St James’ Park</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/england-countries">England</a> </span><a href="http://www.rugbyworld.com/countries/australia-countries/world-cup-2015-england-13-33-australia-50098" target="_blank"><span style="color: #ff0000">13-33</span></a> <a href="http://www.rugbyworld.com/countries/australia-countries"><span style="color: #000080">Australia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 4th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/argentina-countries">Argentina</a> </span><a href="http://www.rugbyworld.com/countries/argentina-countries/world-cup-2015-argentina-45-16-tonga-50166" target="_blank"><span style="color: #ff0000">45-16</span></a> <a href="http://www.rugbyworld.com/tag/tonga"><span style="color: #000080">Tonga</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Leicester City Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/ireland-countries">Ireland</a> </span><a href="http://www.rugbyworld.com/countries/italy/world-cup-2015-ireland-16-9-italy-50169" target="_blank"><span style="color: #ff0000">16-9</span></a> <a href="http://www.rugbyworld.com/countries/italy"><span style="color: #000080">Italy</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Olympic Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Tuesday 6th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/canada">Canada</a> </span><a href="http://www.rugbyworld.com/countries/rest-of-the-world/world-cup-2015-canada-15-17-romania-50219" target="_blank"><span style="color: #ff0000">15-17</span></a> <a href="http://www.rugbyworld.com/tag/romania"><span style="color: #000080">Romania</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Leicester City Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/fiji">Fiji</a> </span><a href="http://www.rugbyworld.com/tournaments/world-cup/world-cup-2015-fiji-47-15-uruguay-50353" target="_blank"><span style="color: #ff0000">47-15</span></a> <a href="http://www.rugbyworld.com/tag/uruguay"><span style="color: #000080">Uruguay</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Stadiummk</a></li>
+</ul>
+</div>
+<h3><strong>Wednesday 7th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/south-africa-countries">South Africa</a> </span><a href="http://www.rugbyworld.com/countries/south-africa-countries/world-cup-2015-south-africa-64-0-usa-50466" target="_blank"><span style="color: #ff0000">64-0</span></a> <a href="http://www.rugbyworld.com/tag/usa"><span style="color: #000080">USA</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Olympic Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/namibia">Namibia</a> </span><a href="http://www.rugbyworld.com/tournaments/world-cup/world-cup-2015-namibia-16-17-georgia-50485" target="_blank">16-17</a> <a href="http://www.rugbyworld.com/tag/georgia"><span style="color: #000080">Georgia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Sandy Park</a></li>
+</ul>
+</div>
+<h3><strong>Friday 9th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/new-zealand-countries"><span style="color: #000080">New Zealand</span></a> <a href="http://www.rugbyworld.com/countries/new-zealand-countries/world-cup-2015-new-zealand-47-9-tonga-50747" target="_blank"><span style="color: #ff0000">47-9</span></a> <a href="http://www.rugbyworld.com/tag/tonga"><span style="color: #000080">Tonga</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">St James’ Park</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 10th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/samoa">Samoa</a> </span><a href="http://www.rugbyworld.com/countries/scotland/world-cup-2015-scotland-36-33-samoa-50759" target="_blank"><span style="color: #ff0000">33-36</span></a> <a href="http://www.rugbyworld.com/countries/scotland"><span style="color: #000080">Scotland</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">St James’ Park</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/australia-countries">Australia</a> </span><a href="http://www.rugbyworld.com/countries/australia-countries/world-cup-2015-wales-6-15-australia-50755" target="_blank"><span style="color: #ff0000">15-6</span></a> <a href="http://www.rugbyworld.com/countries/wales-countries"><span style="color: #000080">Wales</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/england-countries">England</a> </span><a href="http://www.rugbyworld.com/countries/england-countries/world-cup-2015-england-60-3-uruguay-50769" target="_blank"><span style="color: #ff0000">60-3</span></a> <a href="http://www.rugbyworld.com/tag/uruguay"><span style="color: #000080">Uruguay</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool A</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Manchester City Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 11th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>12.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/argentina-countries">Argentina</a> </span><span style="color: #ff0000">64-19</span> <a href="http://www.rugbyworld.com/tag/namibia"><span style="color: #000080">Namibia</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool C</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Leicester City Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>14.30</strong></li>
+<li class="col-xs-6 col-sm-4"><a href="http://www.rugbyworld.com/countries/italy"><span style="color: #000080">Italy</span></a> <span style="color: #ff0000">32-22</span> <a href="http://www.rugbyworld.com/tag/romania"><span style="color: #000080">Romania</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Sandy Park</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>16.45</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/countries/france-countries">France</a> </span><span style="color: #ff0000">9-24</span> <a href="http://www.rugbyworld.com/countries/ireland-countries"><span style="color: #000080">Ireland</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool D</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Millennium Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-2"><strong>20.00</strong></li>
+<li class="col-xs-6 col-sm-4"><span style="color: #000080"><a style="color: #000080" href="http://www.rugbyworld.com/tag/usa">USA</a> </span><span style="color: #ff0000">18-28</span> <a href="http://www.rugbyworld.com/tag/japan"><span style="color: #000080">Japan</span></a></li>
+<li class="col-xs-6 col-sm-2">Pool B</li>
+<li class="col-xs-6 col-sm-4" style="padding-bottom: 25px"><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Kingsholm</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 17th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">QF1</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">South Africa </span><a href="http://www.rugbyworld.com/videos/world-cup-highlights-south-africa-23-19-wales-51358" target="_blank"><span style="color: #ff0000">23-19</span></a> <span style="color: #000080">Wales</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>16.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">QF2</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">New Zealand </span><a title="World Cup 2015: New Zealand 62-13 France" href="http://www.rugbyworld.com/videos/world-cup-highlights-new-zealand-62-13-france-51347" target="_blank"><span style="color: #ff0000">62-13</span></a> <span style="color: #000080">France</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>20.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Millennium Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 18th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">QF3</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">Ireland </span><a title="World Cup 2015: Ireland 20-43 Argentina" href="http://www.rugbyworld.com/videos/world-cup-highlights-ireland-20-43-argentina-51369" target="_blank"><span style="color: #ff0000">20-43</span></a> <span style="color: #000080">Argentina</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>13.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Millennium Stadium</a></li>
+</ul>
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">QF4</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">Australia </span><a title="World Cup Highlights: Australia 35-34 Scotland" href="http://www.rugbyworld.com/videos/world-cup-highlights-australia-35-34-scotland-51292" target="_blank"><span style="color: #ff0000">35-34</span></a> <span style="color: #000080">Scotland</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>16.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 24th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">SF1</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">South Africa </span><span style="color: #ff0000">v</span> <span style="color: #000080">New Zealand<br />
+</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>16.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+<h3><strong>Sunday 25th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">SF2</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">Argentina </span><span style="color: #ff0000">vs</span> <span style="color: #000080">Australia</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>16.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+<h3><strong>Friday 30th October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">Bronze final</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">Runner-up SF1</span> <span style="color: #ff0000">vs</span> <span style="color: #000080">Runner-up SF2</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>20.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Olympic Stadium</a></li>
+</ul>
+</div>
+<h3><strong>Saturday 31st October</strong></h3>
+<div class="container" style="border-bottom: solid 1px #B6BEBE;margin: 0;padding: 0 0 25px 0">
+<ul class="list-inline" style="text-align: left;letter-spacing: 1.5px;font-size: 16px;font-family: Cabin">
+<li class="col-xs-6 col-sm-3">Final</li>
+<li class="col-xs-6 col-sm-9"><span style="color: #000080">Winner SF1</span> <span style="color: #ff0000">vs</span> <span style="color: #000080">Winner SF2</span></li>
+<li class="col-xs-6 col-sm-3"></li>
+<li class="col-xs-6 col-sm-9" style="padding-bottom: 25px"><strong>16.00 </strong><a href="http://www.rugbyworld.com/tournaments/world-cup/rugby-world-cup-2015-venues-48060">Twickenham, London</a></li>
+</ul>
+</div>
+		
+		
+	</div>
+	
+	<footer>
+		
+				<div class="pw-widget keystone-social  hidden-xs ">
+							<a class="share-button pw-button-facebook " target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Share</span></a>
+							<a class="share-button pw-button-twitter " target="_blank" href="https://twitter.com/intent/tweet?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&text=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Tweet</span></a>
+							<a class="share-button pw-button-pinterest last" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&description=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Pin</span></a>
+						<span class="share-count"><span class="pw-box-counter" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015">0</span>shares</span>
+			<div class="clearfix"></div>
+		</div>
+			<div class="pw-widget keystone-social  visible-xs ">
+							<a class="share-button pw-button-facebook " target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Share</span></a>
+							<a class="share-button pw-button-twitter " target="_blank" href="https://twitter.com/intent/tweet?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&text=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Tweet</span></a>
+							<a class="share-button pw-button-pinterest last" target="_blank" href="http://pinterest.com/pin/create/button/?url=http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015&description=Rugby World Cup Dates / Fixtures 2015" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015"><span>Pin</span></a>
+						<span class="share-count"><span class="pw-box-counter" data-url="http://www.rugbyworld.com/rugby-fixtures/rugby-world-cup-fixtures-2015">0</span>shares</span>
+			<div class="clearfix"></div>
+		</div>
+	
+	</footer>
+	
+</article>				
+							
+			
+		</div><!-- .primary -->
+
+		<aside class="secondary col-xs-12 col-md-4 col-lg-6">
+
+	<div class="row">
+
+				<div class="col-xs-12 col-sm-6 col-md-12 col-lg-6 sidebar sidebar-secondary">
+			<section id="keystone-query-widget-id-2" class="palette-a  widget widget-area-1-col keystone-query-widget"><h1 class="widgettitle heading">Latest Issue</h1><div class="sections"><div class="section section-style-list-large">
+
+				<article class="loop post-73428 issue type-issue status-publish has-post-thumbnail hentry publication_name-rugby-world loop-even loop-0 featured-image" role="article">
+
+				<header class="entry-header">
+
+					<div class="entry-media">
+
+						<a href="http://www.rugbyworld.com/publication/rugby-world/december-2016" rel="bookmark"><img width="207" height="300" src="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/11/rw-placeholder.png" data-echo="http://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-207x300.jpg" class="echo-image echo-loading attachment-medium size-medium wp-post-image" alt="4covers_dec16" data-echo-srcset="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-207x300.jpg 207w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-93x135.jpg 93w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-310x450.jpg 310w, https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2016/10/4COVERS_Dec16-344x500.jpg 344w" sizes="(max-width: 207px) 100vw, 207px" /></a>
+					</div>
+
+					<h2 class="entry-title sub-heading media-heading"><a href="http://www.rugbyworld.com/publication/rugby-world/december-2016" rel="bookmark">December 2016</a></h2>
+
+					<ul class="entry-meta">
+																													</ul>
+
+					
+				</header>
+				
+				<div class="entry-content">
+
+					
+									</div>
+
+			</article>
+		</div></div></section><!-- .widget --><!-- Served from db in 0.06948 seconds. Generated at 2016-11-07 11:44:59 --><section id="embed_code-3" class=" widget widget-area-1-col widget_embed_code"><a href="http://www.magazinesdirect.com/subscription/rugby-world/32188701/rugby-world.thtml?utm_medium=Banner&utm_source=BRAND+WEBSITE&utm_campaign=YRW+Brandsite+other" target="_blank"><img class="aligncenter size-full wp-image-42828" src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/7/2015/02/RW-Feb15-STATIC-300x300.gif" alt="RW-Feb15-STATIC-300x300" width="300" height="300" /></a></section><!-- .widget --><section id="keystone-newsletter-2" class="palette-b  panel panel-default widget widget-area-1-col keystone-newsletter-class"><div class="palette-b panel-body"><div class="widget_newsletter"><h1 class="widgettitle heading">Subscribe to our newsletter</h1>
+<div class="newsletter-container">
+	<div class="widget-intro-text clearfix">
+		<p>Enter your email address below to receive a monthly email newsletter from Rugby World.</p>
+	</div>
+	<form method="post" target="ipcsignup" class="newsletter-form exacttarget-form form-inline" id="newsletter-form_keystone_newsletter_-2" name="newsletter-form_keystone_newsletter_-2" action="https://pages.email.timeincuk.co.uk/page.aspx?QS=5c591a8916642e7386e8f5ecd7ba9ccce4c874c4cc6af747" >
+		<div class="newsletter-form-container">
+			<input type="hidden" name="Magazine_Code" value="YRW">
+			<input type="hidden" name="Newsletter_Code" value="YRW-X">
+			<input type="hidden" name="Source_Code" value="RRL"/>
+			<input type="hidden" name="RedirectURL" value="http://pages.email.timeincuk.co.uk/rugbyworld/newsletters"/>
+			<input type="hidden" name="IPC_Email_Opt_In_mc" value="TUK" />
+			<input type="hidden" name="IPC_Email_Opt_In_nc" value="TUK-M" />
+			<input type="hidden" name="3rdParty_Email_Opt_In_mc" value="TUK" />
+			<input type="hidden" name="3rdParty_Email_Opt_In_nc" value="TUK-T" />
+
+			<div class="input-group">
+				<input type="email" class="input-sm form-control signup-email-address" id="keystone_newsletter_-2_input_email" placeholder="Your email address" name="EmailAddress" required />
+				<label class="sr-only">Your email address:</label>
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-primary btn-sm signup-submit" id="keystone_newsletter_-2_submit">Sign up</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="widget-footer-text">
+			
+							<div class="terms-container">
+					<div class="collapse terms-container-collapsible" id="keystone_newsletter_-2_collapseTerms">
+						<p>By submitting your details, you will also receive emails from <a href="http://www.timeincuk.com/" target="_blank">Time Inc. UK</a>, publisher of Rugby World and other <a href="http://www.timeincuk.com/brands/" target="_blank">iconic brands</a> about its goods and services, and those of its carefully selected third parties. Please tick here if you’d prefer not to hear about:</p>
+						<div class="row checkbox-newsletter">
+							<input class="col-xs-1" type="checkbox" id="keystone_newsletter_-2_byemail" name="byemail"/>
+							<label class="col-xs-11" for="keystone_newsletter_-2_byemail">Time Inc.'s goods &amp; services, including all the latest news, great deals and offers</label>
+						</div>
+						<div class="row checkbox-newsletter">
+							<input class="col-xs-1" type="checkbox" id="keystone_newsletter_-2_thirdparty" name="thirdparty"/>
+							<label class="col-xs-11" for="keystone_newsletter_-2_thirdparty">Third party goods &amp; services</label>
+						</div>
+						<p><a href='http://www.timeincuk.com/terms-and-conditions/' target='_blank'>Terms and Conditions</a> | <a href='http://www.timeincuk.com/privacy/' target='_blank'>Privacy Policy</a></p>
+					</div>
+					<a class="icon-down collapse-terms newsletter-show-more" data-text-open="Show Less" data-text-close="Show More" data-toggle="collapse" href="#keystone_newsletter_-2_collapseTerms" aria-expanded="false" aria-controls="keystone_newsletter_-2_collapseTerms">
+						Show More					</a>
+				</div>
+					</div>
+	</form>
+</div></div></div></section><!-- .widget -->					
+		</div>
+				
+				
+	</div>
+
+</aside>
+
+
+
+	</div><!-- .row -->
+		
+				
+		</div><!-- #content -->
+
+		<footer id="footer" role="contentinfo" class="row palette-b">
+
+			<aside class="col-xs-12 col-sm-6 col-md-4 col-lg-3 sidebar sidebar-footer" role="complementary">
+							</aside>
+			
+			<aside class="hidden-xs col-sm-6 col-md-4 col-lg-3 sidebar sidebar-footer" role="complementary">
+							</aside>
+
+			<aside class="hidden-xs hidden-sm col-md-4 col-lg-3 sidebar sidebar-footer" role="complementary">
+							</aside>
+
+			<aside class="hidden-xs hidden-sm hidden-md col-lg-3 sidebar sidebar-footer" role="complementary">
+							</aside>
+
+			<div class="clearfix"></div>
+
+			<aside class="col-xs-12 sidebar sidebar-footer-required" role="complementary">
+							</aside>
+
+		</footer><!-- #footer -->
+		
+	</div><!-- #wrapper .hfeed -->
+
+	<div id="wp-footer">
+		        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'rugbyworld';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type='text/javascript'>
+/* <![CDATA[ */
+var echo_js_lazy_load = {"offset":"500","throttle":"250","debounce":"false","unload":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-content/plugins/echo-js-lazy-load/js/echo.min.js?ver=1.1.0'></script>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-content/plugins/ipc-wordpress-digital-editions/public/assets/js/public.js?ver=2.2.2'></script>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-content/themes/keystone-theme/assets/js/scripts.min.js?ver=1478260838'></script>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-content/plugins/keystone-newsletter/widget/js/widget.js?ver=1.1.2'></script>
+<script type='text/javascript' src='http://www.rugbyworld.com/wp-includes/js/wp-embed.min.js?ver=NC42LjE'></script>
+<script type="text/javascript">
+				echo_js_lazy_load.debounce = (echo_js_lazy_load.debounce === "true");
+				echo_js_lazy_load.unload = (echo_js_lazy_load.unload === "true");
+				echo_js_lazy_load.callback = function ( elem, op ) {
+						   if( op === "load" ) {
+						        if ( elem.getAttribute("data-echo-srcset") !== null ) {
+						            elem.setAttribute("srcset", elem.getAttribute("data-echo-srcset"));
+						            elem.removeAttribute("data-echo-srcset");
+						        }
+								elem.classList.remove("echo-loading");
+								elem.classList.add("echo-loaded");
+						   }
+						}
+				echo.init(echo_js_lazy_load);
+			  </script>
+<div id="dfpad-overlay" class="ipc-advert"></div><div id="gumgum" class="ipc-advert"></div><div id="vibrant" class="ipc-advert"></div>	</div><!-- #wp-footer -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aaccaa7fff","applicationID":"4734859,9562757,14552354","transactionName":"YgNVYEcAXhJYBUQNXFtJYkZcTlkPXQNISkNdFg==","queueTime":0,"applicationTime":21,"atts":"TkRWFg8aTRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

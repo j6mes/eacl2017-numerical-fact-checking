@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><meta name="ROBOTS" content="INDEX, FOLLOW" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="description" content="Release Notes" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="keywords" content="BashOnWindows, bash, wsl, windows, windowssubsystem, ubuntu" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="search.ms_sitename" content="MSDN" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="search.ms_docsetname" content="MSFT_commandline" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="version" content="0" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.contentlang" content="en-us" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.sitename" content="MSDN" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="search.ms_product" content="MSDN" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.depotname" content="MSDN.MSFT_commandline" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.publishtime" content="2016-11-03 06:21 PM" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.gitcommit" content="https://github.com/Microsoft/CommandLine-Documentation/blob/5c6df95878a784ea0537bf76d194ddcb107a7ef7/commandline/WSL/release_notes.md" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.giturl" content="https://github.com/Microsoft/CommandLine-Documentation/blob/live/commandline/WSL/release_notes.md" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.documentid" content="39dee4d3-79f3-a495-9925-a8438268c887" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.opspagetype" content="Conceptual" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="pdf_url_template" content="https://opbuildstorageprod.blob.core.windows.net/output-pdf-files/en-us/MSDN.MSFT_commandline/{branchName}/WSL.pdf" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="canonical_url" content="https://msdn.microsoft.com/en-us/commandline/wsl/release_notes" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="content_type" content="text/html" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="content_uri" content="https://opdhsblobprod02-secondary.blob.core.windows.net/contents/40beaa88e8334337922b868fc5640038/c666088f94574218908046a729ac0327" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta>
+<meta name="ms.contentsource" content="OP" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"></meta><link rel="canonical" href="https://msdn.microsoft.com/en-us/commandline/wsl/release_notes" />
+    <title>Bash on Ubuntu on Windows - Release Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:false,&quot;AmbientContextId&quot;:&quot;B2728B85-21F9-4531-8910-DD4356AEF722&quot;,&quot;display.use_large_font&quot;:true,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{&quot;LogTrace&quot;:false},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}" />
+
+<meta name="MN" content="FB361392-6:01:01 AM" />
+
+<meta name="ms.locale" content="en-us" />
+
+<meta name="ms.lang" content="EN" />
+
+<meta name="ms.loc" content="US" />
+
+<meta name="ms.assetid" content="36ea641e-4d49-4881-84eb-a9ca85b1cdf4" />
+
+<meta name="ms.auth" content="0" />
+
+<meta name="ms.author" content="russalex" />
+
+<meta name="ms.topic" content="article" />
+
+<meta name="ms.service" content="windows-subsystem-for-linux" />
+
+<meta name="ms.date" content="9/6/2016" />
+
+<meta name="ms.prod" content="windows-subsystem-for-linux" />
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function () {
+            var root = (function () { return this; }).call(null);
+
+            var GetCookie = function (name) {
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos))) {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function (content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch (ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+    
+    
+<link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" /><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:MSDNOP,0:OverridesForBootstrap,0:vs,0:OverridesForHighlightJs,1:Tables.MediaQueries,2:OALayout,3:OP_Msdn,4:Header,4:HeaderFooterSprite,4:Header.MediaQueries,5:Banner.MediaQueries,0:OpenPublishingMobileMenu,2:OpenPublishingTopic,0:ImageSprite,4:Footer,4:Footer.MediaQueries,2:NewFooterSock,2:NewFooterSock.MediaQueries,2:LinkList,2:OpenPublishingTopic.MediaQueries;/Areas/Epx/Content/Css:0,/Areas/Library/Content:1,/Areas/Epx/Themes/Base/Content:2,/Areas/Library/Themes/Msdn/Content:3,/Areas/Centers/Themes/StandardDevCenter/Content:4,/Areas/Epx/Shared/Content:5&amp;amp;v=B343CDDDE75636B6F7D7B0458C2203F6" /></head>
+<body class="Chrome">
+    <div id="page">
+
+        
+
+        
+    
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+        
+    <input type="hidden" id="isHeaderBleeding" value="true" />
+    <div id="ux-header" dir="ltr" class="ltr msdn" ms.pgarea="header">
+        
+
+      <header>
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow" role="banner">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" title="MSDN home" ms.cmpgrp="mslogo">
+                  <div class="clip70x15">
+                    <img alt="Microsoft Logo" id="msft-logo" class="msft-logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636136299672485549" />
+                  </div>
+                </a>
+                <div class="GrayPipeDiv clip1x18">
+                  <img alt="Gray Pipe" class="GrayPipe" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636136299672485549" />
+                </div>
+                  <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">Developer</a>
+              </div>
+              <div class="right" ms.cmpgrp="aux nav">
+                <div id="signIn" tabindex="0" aria-label="Profile button">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1478527261&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fcommandline%2fwsl%2frelease_notes&amp;lc=1033&amp;id=254354&amp;mkt=en-us">Sign in</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentName="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">MSDN subscriptions</a>
+</div>
+                    <div data-fragmentName="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="http://go.microsoft.com/fwlink/?LinkId=309297&amp;clcid=0x409&amp;slcid=0x409&amp;campaign=o~msft~msdn~gettools-header~dn308572" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_default">
+          <div class="row buttomRow bg_default">
+            <div class="bottom">
+              <div class="left" role="navigation" aria-label="header toc" ms.cmpgrp="main nav">
+                <a id="grip" class="menu-icon" href="javascript:void(0)" role="button" aria-label="navigation menu"></a>
+                
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Downloads</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+
+                                                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">Visual Studio</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/subscriptions" role="link" title="MSDN subscription access">MSDN subscription access</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">SDKs</a>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Trial software" role="button" aria-expanded="false">Trial software</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/evalcenter" title="Free downloads" role="link">Free downloads</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/officeevaluationresources" title="Office resources" role="link">Office resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sharepoint2013resources" title="SharePoint Server 2013 resources" role="link">SharePoint Server 2013 resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sqlserver2014expressresources" title="SQL Server 2014 Express resources" role="link">SQL Server 2014 Express resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/windowsserver2012r2resources" title="Windows Server 2012 resources" role="link">Windows Server 2012 resources</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Programs</a>
+                                <ul class="navL2">
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Subscriptions" role="button" aria-expanded="false">Subscriptions</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" title="Overview" role="link">Overview</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" title="Administrators" role="link">Administrators</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Students" role="button" aria-expanded="false">Students</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/imagine/imagine-home" title="Microsoft Imagine" role="link">Microsoft Imagine</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/microsoftstudentpartners" title="Microsoft Student Partners" role="link">Microsoft Student Partners</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">ISV</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">Startups</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://rewards.msdn.microsoft.com/" role="link" title="TechRewards">TechRewards</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="http://events.msdn.microsoft.com/" role="link" title="Events">Events</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Community</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">Magazine</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">Forums</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">Blogs</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="http://channel9.msdn.com/" role="link" title="Channel 9">Channel 9</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Documentation</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">APIs and reference</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">Dev centers</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">Samples</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">Retired content</a>
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right" ms.title="search" role="search">
+                <div data-fragmentName="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button" role="button" aria-label="search finder">
+        <div id="search-finder-div" class="clip16x20">
+          <img alt="search finder" id="search-finder" class="search-finder" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636136299672485549" />
+        </div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIconDiv" class="clip16x20" tabindex="0">
+        <img alt="search clear" id="searchCloseIcon" class="search-clear-x" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636136299672485549" />
+      </div>
+      <div id="searchTextContainer" style="width: 0;">
+        <input id="HeaderSearchTextBox" name="query" type="text" aria-label="search edit textbox" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" />
+      </div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    </div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.</div>
+
+
+
+
+
+
+<div id="mobileMenu" data-spy="affix">
+    <div id="tocDropdownMenuButton">
+        <div class="tocLabel" role="button" tabindex="0">Table of contents<div class="dropDownIcon"></div></div>
+        <div id="tocDropdownMenu">
+        </div>
+    </div>
+    <div id="functionDropdownMenuButton">
+        <div class="moreToolIcon" aria-label="function area" role="button" tabindex="0"></div>
+        <div id="functionDropdownMenu">
+        </div>
+    </div>
+</div>
+<div id="mobileMenuSpaceHolder"></div>
+<div class="modal fade" id="mobileSocialShareModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h2 class="modal-title">Shared to</h2>
+            <div class="modal-body" id="mobileSocialShare">
+            </div>
+            <div class="mobileSocialShareModalDialogFooter">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mobileBranchSelectorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="mobileBranchSelector">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="tabletContainerWithoutBreadcrumbs"></div>
+
+        <div id="body" ms.pgarea="body">
+            
+
+
+
+
+
+
+<div id="threeColumns">
+    <div id="leftColumn" class="left" ms.cmpgrp="left toc">
+        <div id="tocNav">
+    <div class="tocRootContainer">
+        <a href="#" class="tocRoot" title="Table of contents">Table of contents</a> 
+        <a href="#" class="tocRootIcon" title="Table of contents">+</a>
+    </div>
+    <div class="tocData">
+                <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about" title="About Bash on Ubuntu on Windows">About Bash on Ubuntu on Windows</a>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" title="Installation Guide">Installation Guide</a>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/reference" title="Command Reference">Command Reference</a>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/user_support" title="Linux User Account and Permissions">Linux User Account and Permissions</a>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/interop" title="Interoperability">Interoperability</a>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/faq" title="Frequently Asked Questions">Frequently Asked Questions</a>
+        </div>
+
+        </div>
+        <div class="tocSelected tocLevel1">
+                    <div class="tocLevel current">
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/release_notes" title="Release Notes">Release Notes</a>
+        </div>
+
+        </div>
+
+    </div>
+    <a id="tocMenuToggler" href="javascript:void(0);">
+        <span id="tocMenuTogglerIcon" role="button" aria-expanded="true" aria-label="Table of contents menu"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>
+
+
+
+        <div style="display:none">
+            <div id="CollapseLocalizeString">Collapse the table of content</div>
+            <div id="ExpandLocalizeString">Expand the table of content</div>
+        </div>
+    </div>
+    <div class="main" ms.cmpgrp="content body">
+        <div id="oaContent" class="row"><div class="col-md-9" id="api-doc-contents"><h1 id="release-notes">Release Notes</h1><span><div class="gitContributors"><span class="author-bio"><a target="_blank" href="https://github.com/russalex" aria-label="Russ Alexander"><span class="author-img" style="background-image:url('https://avatars.githubusercontent.com/u/17343422?v=3&amp;s=50')"></span></a></span><span class="username"><a target="_blank" href="https://github.com/russalex">Russ Alexander</a></span><span class="contributorSplitter">|</span><span class="contributorsLabel">Last Updated: 11/3/2016</span><div id="contributorList"><span class="contributorSplitter">|</span><div class="contributors"><span class="contributorsLabel">1 Contributor</span><ul><li><a target="_blank" href="https://github.com/jackchammons" aria-label="Jack Hammons"><span class="contributor-img" style="background-image:url('https://avatars.githubusercontent.com/u/2711825?v=3&amp;s=25')"></span></a></li></ul></div></div></div></span><h2 id="build-14959">Build 14959</h2><p>For general Windows information on build 14959 visit the <a href="https://blogs.windows.com/windowsexperience/2016/11/03/announcing-windows-10-insider-preview-build-14959-for-mobile-and-pc/#iI82GufJxMF3POU1.97">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed">Fixed</h3><ul><li>Improved Pico Process notification for Windows.  Additional information found on the <a href="https://blogs.msdn.microsoft.com/wsl/2016/11/01/wsl-antivirus-and-firewall-compatibility/">WSL Blog</a>.</li><li>Improved stability with Windows interoperability </li><li>Fixed error 0x80070057 when launching bash.exe when Enterprise Data Protection (EDP) is enabled</li><li>Additional bugfixes and improvements</li></ul><h3 id="ltp-results">LTP Results:</h3><p>Number of Passing Test: 665 <br>
+Number of non-Passing (failing, skipped, etc…): 263 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14959">LTP Test Run Logs</a><br /></p><p><br /><br /></p><h2 id="build-14955">Build 14955</h2><p>For general Windows information on build 14955 visit the <a href="https://blogs.windows.com/windowsexperience/2016/10/25/announcing-windows-10-insider-preview-build-14955-for-mobile-and-pc/#guGXQzKVFrZIDUYR.97">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-1">Fixed</h3><ul><li>Due to circumstances beyond our control there are no updates in this build for the Windows Subsystem for Linux.  Regularly scheduled updates will resume on the next release.</li></ul><h3 id="ltp-results-1">LTP Results:</h3><p>Number of Passing Test: 665 <br>
+Number of non-Passing (failing, skipped, etc…): 263 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14955">LTP Test Run Logs</a><br /></p><p><br /><br /></p><h2 id="build-14951">Build 14951</h2><p>For general Windows information on build 14951 visit the <a href="https://blogs.windows.com/windowsexperience/2016/10/19/announcing-windows-10-insider-preview-build-14951-for-mobile-and-pc/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="new-feature-windows--ubuntu-interoperability">New Feature: Windows / Ubuntu Interoperability</h3><p>Windows binaries can now be invoked directly from the WSL command line.  This gives users the ability to interact with their Windows environment and system in a way that has not been possible.  As a quick example, it is now possible for users to run the following commands:</p><pre><code>```
+$ export PATH=$PATH:/mnt/c/Windows/System32
+$ notepad.exe
+$ ipconfig.exe | grep IPv4 | cut -d: -f2
+$ ls -la | findstr.exe foo.txt
+$ cmd.exe /c dir
+```
+</code></pre><p>More information can be found at:</p><ul><li><a href="https://blogs.msdn.microsoft.com/wsl/2016/10/19/windows-and-ubuntu-interoperability/">WSL Team Blog for Interop</a><br /></li><li><a href="https://msdn.microsoft.com/en-us/commandline/wsl/interop">MSDN Interop Documentation</a><br /></li></ul><h3 id="fixed-2">Fixed</h3><ul><li>Ubuntu 16.04 (Xenial) is now installed for all new WSL instances.  Users with existing 14.04 (Trusty) instances will not be automatically upgraded.</li><li>Locale set during install is now displayed</li><li>Terminal improvements including bug where redirecting a WSL process to a file does not always work</li><li>Console lifetime should be tied to bash.exe lifetime</li><li>Console window size should use visible size, not buffer size</li><li>Additional bugfixes and improvements</li></ul><h3 id="ltp-results-2">LTP Results:</h3><p>Number of Passing Test: 665 <br>
+Number of non-Passing (failing, skipped, etc…): 263 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14951">LTP Test Run Logs</a><br /></p><p><br /><br /></p><h2 id="build-14946">Build 14946</h2><p>For general Windows information on build 14946 visit the <a href="https://blogs.windows.com/windowsexperience/2016/10/13/announcing-windows-10-insider-preview-build-14946-for-pc-and-mobile/#xj8GdVooEqo4H7H7.97">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-3">Fixed</h3><ul><li>Fixed an issue that prevented creating WSL user accounts for users with NT usernames that contain spaces or quotes. </li><li>Change VolFs and DrvFs to return 0 for directory's link count in stat</li><li>Support IPV6_MULTICAST_HOPS socket option.</li><li>Limit to a single console I/O loop per tty. Example: the following command is possible:<ul><li>bash -c "echo data" | bash -c "ssh user@example.com 'cat &gt; foo.txt'"</li></ul></li><li>replace spaces with tabs in /proc/cpuinfo (GH #1115)</li><li>DrvFs now appears in mountinfo with a name that matches mounted Windows volume</li><li>/home and /root now appear in mountinfo with correct names</li><li>Additional bugfixes and improvements</li></ul><h3 id="ltp-results-3">LTP Results:</h3><p>Number of Passing Test: 665 <br>
+Number of non-Passing (failing, skipped, etc…): 263 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14946">LTP Test Run Logs</a><br /></p><p><br /><br /></p><h2 id="build-14942">Build 14942</h2><p>For general Windows information on build 14942 visit the <a href="https://aka.ms/onefourninefourtwoooooo">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-4">Fixed</h3><ul><li>A number of bugchecks addressed, including the “ATTEMPTED EXECUTE OF NOEXECUTE MEMORY” networking crash which was blocking SSH</li><li>inotifiy support for notifications generated from Windows applications on DrvFs is now in</li><li>Implement TCP_KEEPIDLE and TCP_KEEPINTVL for mongod. (GH #695)</li><li>Implement the pivot_root system call</li><li>Implement socket option for SO_DONTROUTE</li><li>Additional bugfixes and improvements</li></ul><h3 id="ltp-results-4">LTP Results:</h3><p>Number of Passing Test: 665 <br>
+Number of non-Passing (failing, skipped, etc…): 263 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14942">LTP Test Run Logs</a><br /></p><h3 id="syscall-support">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>pivot_root</code><br /></p><p><br /><br /></p><h2 id="build-14936">Build 14936</h2><p>For general Windows information on build 14936 visit the <a href="https://blogs.windows.com/windowsexperience/2016/09/28/announcing-windows-10-insider-preview-build-14936-for-pc/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><p>Note: WSL will install Ubuntu version 16.04 (Xenial) instead of Ubuntu 14.04 (Trusty) in an upcoming release.  This change will apply to Insiders installing new instances (lxrun.exe /install or first run of bash.exe).  Existing instances with Trusty will not be upgraded automatically. Users can upgrade their Trusty image to Xenial using the do-release-upgrade command.</p><h3 id="known-issue">Known Issue</h3><p>WSL is experiencing an issue with some socket implementations.  The bugcheck manifests itself as a crash with the error “ATTEMPTED EXECUTE OF NOEXECUTE MEMORY”.  The most common manifestation of this issue is a crash when using ssh.  The root cause is fixed on internal builds and will be pushed to Insiders at the earliest opportunity.</p><h3 id="fixed-5">Fixed</h3><ul><li>Implemented the chroot system call</li><li>Improvements in inotify <del>including support for notifications generated from Windows applications on DrvFs</del><ul><li>Correction: Inotify support for changes originating from Windows applications not available at this time.</li></ul></li><li>Socket binding to IPV6::<port n=""> now supports IPV6_V6ONLY  (GH #68, #157, #393, #460, #674, #740, #982, #996)</port></li><li>WNOWAIT behavior for waitid systemcall implemented (GH #638)</li><li>Support for IP socket options IP_HDRINCL and IP_TTL</li><li>Zero-length read() should return immediately (GH #975)</li><li>Correctly handle filenames and filename prefixes that don't include a NULL terminator in a .tar file.</li><li>epoll support for /dev/null</li><li>Fix /dev/alarm time source</li><li>Bash -c now able to redirect to a file</li><li>Additional bugfixes and improvements</li></ul><h3 id="ltp-results-5">LTP Results:</h3><p>Number of Passing Test: 664 <br>
+Number of non-Passing (failing, skipped, etc…): 264 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14936">LTP Test Run Logs</a><br /></p><h3 id="syscall-support-1">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>chroot</code><br /></p><p><br /><br /></p><h2 id="build-14931">Build 14931</h2><p>For general Windows information on build 14931 visit the <a href="https://blogs.windows.com/windowsexperience/2016/09/21/announcing-windows-10-insider-preview-build-14931-for-pc/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-6">Fixed</h3><ul><li>Due to circumstances beyond our control there are no updates in this build for the Windows Subsystem for Linux.  Regularly scheduled updates will resume in the next release.</li></ul><p><br /><br /></p><h2 id="build-14926">Build 14926</h2><p>For general Windows information on build 14926 visit the <a href="https://blogs.windows.com/windowsexperience/2016/09/14/announcing-windows-10-insider-preview-build-14926-for-pc-and-mobile/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-7">Fixed</h3><ul><li>Ping now works in consoles which do not have administrator privileges</li><li>Ping6 now supported, also without administrator privileges</li><li>Inotify support for files modified through WSL. (GH #216)  <ul><li>Flags supported:<ul><li>inotify_init1: LX_O_CLOEXEC, LX_O_NONBLOCK</li><li>inotify_add_watch events: LX_IN_ACCESS, LX_IN_MODIFY, LX_IN_ATTRIB, LX_IN_CLOSE_WRITE, LX_IN_CLOSE_NOWRITE, LX_IN_OPEN, LX_IN_MOVED_FROM, LX_IN_MOVED_TO, LX_IN_CREATE, LX_IN_DELETE, LX_IN_DELETE_SELF, LX_IN_MOVE_SELF</li><li>inotify_add_watch attributes: LX_IN_DONT_FOLLOW, LX_IN_EXCL_UNLINK, LX_IN_MASK_ADD, LX_IN_ONESHOT, LX_IN_ONLYDIR</li><li>read output: LX_IN_ISDIR, LX_IN_IGNORED</li></ul></li><li>Known issue: Modifying files from Windows applications does not generate any events</li></ul></li><li>Unix socket now supports SCM_CREDENTIALS </li></ul><h3 id="ltp-results-6">LTP Results:</h3><p>Number of Passing Test: 651 <br>
+Number of non-Passing (failing, skipped, etc…): 258 </br><a href="https://github.com/Microsoft/CommandLine-Documentation/tree/live/LTP_Results/14926">LTP Test Run Logs</a><br /></p><p><br /><br /></p><h2 id="build-14915">Build 14915</h2><p>For general Windows information on build 14915 visit the <a href="https://blogs.windows.com/windowsexperience/2016/08/31/announcing-windows-10-insider-preview-build-14915-for-pc-and-mobile">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-8">Fixed</h3><ul><li>Socketpair for unix datagram sockets (GH #262)</li><li>Unix socket support for SO_REUSEADDR</li><li>UNIX socket support for SO_BROADCAST (GH #568)</li><li>Unix socket support for SOCK_SEQPACKET (GH #758, #546)</li><li>Adding support for unix datagram socket send, recv and shutdown</li><li>Fix bugcheck due to invalid mmap parameter validation for non-fixed addresses. (GH #847)</li><li>Support for suspend / resume of terminal states</li><li>Support for TIOCPKT ioctl to unblock the Screen utility (GH #774) <ul><li>Known issue: Function keys not operational</li></ul></li><li>Corrected a race in TimerFd that could cause a freed member 'ReaderReady' to be accessed by LxpTimerFdWorkerRoutine (GH #814)         </li><li>Enable restartable system call support for futex, poll, and clock_nanosleep</li><li>Added bind mount support</li><li>unshare for mount namespace support<ul><li>Known issue: When creating a new mount namespace with <code>unshare(CLONE_NEWNS)</code> the current working directory will continue to point to the old namespace</li></ul></li><li>Additional improvements and bug fixes</li></ul><p><br /><br /></p><h2 id="build-14905">Build 14905</h2><p>For general Windows information on build 14905 visit the <a href="https://blogs.windows.com/windowsexperience/2016/08/17/announcing-windows-10-insider-preview-build-14905-for-pc-mobile/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-9">Fixed</h3><ul><li>Restartable system calls are now supported (GH #349, GH #520)</li><li>Symlinks to directories ending in / now operational (GH #650)</li><li>Implemented RNDGETENTCNT ioctl for /dev/random</li><li>Implemented the /proc/[pid]/mounts, /proc/[pid]/mountinfo and /proc/[pid]/mountstats files</li><li>Additional bugfixes and improvements</li></ul><p><br /></p><h2 id="build-14901">Build 14901</h2><p>First Insider build for the post Windows 10 Anniversary Update release.</p><p>For general Windows information on build 14901 visit the <a href="https://blogs.windows.com/windowsexperience/2016/08/11/announcing-windows-10-insider-preview-build-14901-for-pc/">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-10">Fixed</h3><ul><li>Fixed trailing slash issue<ul><li>Commands such as <code>$ mv a/c/ a/b/</code> now work</li></ul></li><li>Installing now prompts if Ubuntu locale should be set to Windows locale</li><li>Procfs support for ns folder</li><li>Added mount and unmount for tmpfs, procfs and sysfs file systems</li><li>Fix mknod[at] 32-bit ABI signature</li><li>Unix sockets moved to dispatch model</li><li>INET socket recv buffer size set using the setsockopt should be honored</li><li>Implement MSG_CMSG_CLOEXEC unix socket receive message flag</li><li>Linux process stdin/stdout pipe redirection (GH #2)<ul><li>Allows for piping of bash -c commands in CMD.  Example:  &gt;dir | bash -c "grep foo"</li></ul></li><li>Bash can now be installed on systems with multiple pagefiles (GH #538, #358) </li><li>Default INET Socket buffer size should match that of default Ubuntu setup</li><li>Align xattr syscalls to listxattr</li><li>Only return interfaces with a valid IPv4 address from SIOCGIFCONF</li><li>Fix signal default action when injected by ptrace</li><li>implement /proc/sys/vm/min_free_kbytes</li><li>Use machine context register values when restoring context in sigreturn<ul><li>This resolves the issue where java and javac were hanging for some users</li></ul></li><li>Implement /proc/sys/kernel/hostname</li></ul><h3 id="syscall-support-2">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>waitid</code><br /><code>epoll_pwait</code><br /></p><p><br /><br /></p><h2 id="build-14388-to-windows-10-anniversary-update">Build 14388 to Windows 10 Anniversary Update</h2><p>For general Windows information on build 14388 visit the <a href="https://aka.ms/14388wip">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-11">Fixed</h3><ul><li>Fixes to prepare for the Windows 10 Anniversary Update on 8/2<ul><li>More information about WSL in the Anniversary Update can be found on our <a href="https://blogs.msdn.microsoft.com/wsl/">blog</a></li></ul></li></ul><p><br /><br /></p><h2 id="build-14376">Build 14376</h2><p>For general Windows information on build 14376 visit the <a href="https://blogs.windows.com/windowsexperience/2016/06/28/announcing-windows-10-insider-preview-build-14376-for-pc-and-mobile/">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-12">Fixed</h3><ul><li>Removed some instances where apt-get hangs (GH #493)</li><li>Fixed an issue where empty mounts were not handled correctly</li><li>Fixed an issue where ramdisks were not mounted correctly</li><li>Change unix socket accept to support flags (partial GH #451)</li><li>Fixed common network related bluescreen</li><li>Fixed bluescreen when accessing /proc/[pid]/task (GH #523)</li><li>Fixed high CPU utilization for some pty scenarios (GH #488, #504)</li><li>Additional bugfixes and improvements</li></ul><p><br /><br /></p><h2 id="build-14371">Build 14371</h2><p>For general Windows information on build 14371 visit the <a href="https://blogs.windows.com/windowsexperience/2016/06/22/announcing-windows-10-insider-preview-build-14371-for-pc/">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-13">Fixed</h3><ul><li>Corrected timing race with SIGCHLD and wait() when using ptrace</li><li>Corrected some behavior when paths have a trailing /  (GH #432)</li><li>Fixed issue with rename/unlink failing due to open handles to children</li><li>Additional bugfixes and improvements</li></ul><p><br /><br /></p><h2 id="build-14366">Build 14366</h2><p>For general Windows information on build 14366 visit the <a href="https://blogs.windows.com/windowsexperience/2016/06/14/announcing-windows-10-insider-preview-build-14366-mobile-build-14364/">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-14">Fixed</h3><ul><li>Fix in file creation through symlinks</li><li>Added listxattr for Python (GH 385)</li><li>Additional bugfixes and improvements</li></ul><h3 id="syscall-support-3">Syscall Support</h3><ul><li>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</li></ul><p><code>listxattr</code><br /><br /></p><h2 id="build-14361">Build 14361</h2><p>For general Windows information on build 14361 visit the <a href="http://aka.ms/wip14361">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-15">Fixed</h3><ul><li>DrvFs is now case sensitive when running in Bash on Ubuntu on Windows.<ul><li>Users may case.txt and CASE.TXT on their /mnt/c drives</li><li>Case sensitivity is only supported within Bash on Ubuntu on Windows. When outside of Bash NTFS will report the files correctly, but unexpected behavior may occur interacting with the files from Windows.</li><li>The root of each volume (i.e. /mnt/c) is not case sensitive</li><li>More information on handling these files in Windows can be found <a href="https://support.microsoft.com/en-us/kb/100625">here</a>.</li></ul></li><li>Greatly enhanced pty / tty support.  Applications like TMUX now supported (GH #40)</li><li>Fixed install issue where user accounts not always created</li><li>Optimized command line arg structure allowing for extremely long argument list. (GH #153)</li><li>Now able to delete and chmod read_only files from DrvFs</li><li>Fixed some instances where the terminal hangs on disconnect (GH #43)</li><li>chmod and chown now work on tty devices</li><li>Allow connection to 0.0.0.0 and :: as localhost (GH #388)</li><li>Sendmsg/recvmsg now handle an IO vector length of &gt;1 (partial GH #376)</li><li>Users can now opt-out of auto-generated hosts file (GH #398)</li><li>Automatically match Linux locale to the NT locale during install (GH #11)</li><li>Added the /proc/sys/vm/swappiness file (GH #306)</li><li>strace now exits correctly</li><li>Allow pipes to be reopened through /proc/self/fd (GH #222)</li><li>Hide directories under %LOCALAPPDATA%\lxss from DrvFs (GH #270)</li><li>Better handling of bash.exe ~.  Commands like “bash ~ -c ls” now supported (GH #467)</li><li>Sockets now notify epoll read available during shutdown (GH #271)</li><li>lxrun /uninstall does a better job of deleting the files and folders</li><li>Corrected ps -f (GH #246)</li><li>Improved support for x11 apps such as xEmacs (GH #481)</li><li>Updated initial thread stack size to match default Ubuntu setting and reporting the size correctly to the get_rlimit syscall (GH #172, #258)</li><li>Improved reporting of pico process image names (e.g., for auditing)</li><li>Implemented /proc/mountinfo for df command</li><li>Fixed symlink error code for child name . and ..</li><li>Additional improvements bugfixes and improvements</li></ul><h3 id="syscall-support-4">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>GETTIMER</code><br /><code>MKNODAT</code><br /><code>RENAMEAT</code><br /><code>SENDFILE</code><br /><code>SENDFILE64</code><br /><code>SYNC_FILE_RANGE</code><br /><br /></p><h2 id="build-14352">Build 14352</h2><p>For general Windows information on build 14352 visit the <a href="http://aka.ms/wip14352">Windows Blog</a>.<br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-16">Fixed</h3><ul><li>Fixed issue where large files were not downloaded / created correctly.  This should unblock npm and other scenarios (GH #3, GH #313)</li><li>Removed some instances where sockets hang</li><li>Corrected some ptrace errors</li><li>Fixed issue with WSL allowing filenames longer than 255 characters</li><li>Improved support for non-English characters</li><li>Add current Windows timezone data and set as default</li><li>Unique device id’s for each mount point (jre fix – GH #49)</li><li>Correct issue with paths containing “.” and “..”</li><li>Added Fifo support (GH #71)</li><li>Updated format of resolv.conf to match native Ubuntu format</li><li>Some procfs cleanup</li><li>Enabled ping for Administrator consoles (GH #18)</li></ul><h3 id="syscall-support-5">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>FALLOCATE</code><br /><code>EXECVE</code><br /><code>LGETXATTR</code><br /><code>FGETXATTR</code><br /><br /></p><h2 id="build-14342">Build 14342</h2><p>For general Windows information on build 14342 the <a href="http://aka.ms/wip14342">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br />
+Information on VolFs and DriveFs can be found on the <a href="https://blogs.msdn.microsoft.com/wsl">WSL Blog</a>. <br /></p><h3 id="fixed-17">Fixed</h3><ul><li>Fixed install issue when the Windows user had Unicode characters in the username</li><li>The apt-get update udev workaround in the FAQ is now provided by default on first run</li><li>Enabled symlinks in DriveFs (/mnt/<drive>) directories</drive></li><li>Symlinks now work between DriveFs and VolFs</li><li>Addressed top level path parsing issue: ls .// will now work as expected</li><li>npm install on DriveFs and the -g options are now working</li><li>Fixed issue preventing PHP server from launching</li><li>Updated default environment values, such as $PATH to closer match native Ubuntu</li><li>Added a weekly maintenance task in Windows to update the apt package cache</li><li>Fixed issue with ELF header validation, WSL now supports all Melkor options</li><li>Zsh shell is functional</li><li>Precompiled Go binaries are now supported</li><li>Prompting on Bash.exe first run is now localized correctly</li><li>/proc/meminfo now returns correct information</li><li>Sockets now supported in VFS</li><li>/dev now mounted as tempfs</li><li>Fifo now supported</li><li>Multi-core systems now showing correctly in /proc/cpuinfo</li><li>Additional improvements and error messages downloading during first run</li><li>Syscall improvements and bugfixes. Supported syscall list below.</li><li>Additional bugfixes and improvements</li></ul><h3 id="known-issues">Known Issues</h3><ul><li>Not resolving ‘..’ correctly on DriveFs in some cases</li></ul><h3 id="syscall-support-6">Syscall Support</h3><p>Below are a list of new or enhanced syscalls that have some implementation in WSL. The syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>FCHOWNAT</code><br /><code>GETEUID</code><br /><code>GETGID</code><br /><code>GETRESUID</code><br /><code>GETXATTR</code><br /><code>PTRACE</code><br /><code>SETGID</code><br /><code>SETGROUPS</code><br /><code>SETHOSTNAME</code><br /><code>SETXATTR</code><br /><br /></p><h2 id="build-14332">Build 14332</h2><p>For general Windows information on build 14332 visit the <a href="http://aka.ms/wip14332">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="fixed-18">Fixed</h3><ul><li>Better resolv.conf generation including prioritizing DNS entries</li><li>Issue with moving files and directories between /mnt and non-/mnt drives </li><li>Tar files can now be created with symlinks</li><li>Added default /run/lock directory on instance creation</li><li>Update /dev/null to return proper stat info</li><li>Additional errors when downloading during first run</li><li>Syscall improvements and bugfixes. Supported syscall list below.</li><li>Additional improvements bugfixes and improvements</li></ul><h3 id="syscall-support-7">Syscall Support</h3><p>Below is the new syscall that has some implementation in WSL. The syscall on this list is supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>READLINKAT</code><br /><br /></p><h2 id="build-14328">Build 14328</h2><p>For general Windows information on build 14332 visit the <a href="http://aka.ms/wip14328">Windows Blog</a>. <br />
+To track or report an issue visit our <a href="https://github.com/Microsoft/BashOnWindows/issues">Github page</a>. <br /></p><h3 id="new-features">New Features</h3><ul><li>Now support Linux users.  Installing Bash on Ubuntu on Windows will prompt for creation of a Linux user.  For more information, visit <a href="http://aka.ms/wslusers">http://aka.ms/wslusers</a></li><li>Hostname is now set to the Windows computer name, no more @localhost</li><li>For more information on build 14328, visit: <a href="http://aka.ms/wip14328">http://aka.ms/wip14328</a></li></ul><h3 id="fixed-19">Fixed</h3><ul><li>Symlink improvements for non /mnt/<drive> files<ul><li>npm install now works</li><li>jdk / jre now installable using instructions found <a href="http://xubuntugeek.blogspot.com/2012/09/how-to-install-oracle-jdk-7-manually-in.html">here</a>.</li><li>known issue: symlinks do not work for Windows mounts.  Functionality will be available in a later build</li></ul></drive></li><li>top and htop now display</li><li>Additional error messages for some install failures</li><li>Syscall improvements and bugfixes.  Supported syscall list below.</li><li>Additional improvements bugfixes and improvements</li></ul><h3 id="syscall-support-8">Syscall Support</h3><p>Below is a list of syscalls that have some implementation in WSL.  Syscalls on this list are supported in at least one scenario, but may not have all parameters supported at this time.</p><p><code>ACCEPT</code><br /><code>ACCEPT4</code><br /><code>ACCESS</code><br /><code>ALARM</code><br /><code>ARCH_PRCTL</code><br /><code>BIND</code><br /><code>BRK</code><br /><code>CAPGET</code><br /><code>CAPSET</code><br /><code>CHDIR</code><br /><code>CHMOD</code><br /><code>CHOWN</code><br /><code>CLOCK_GETRES</code><br /><code>CLOCK_GETTIME</code><br /><code>CLOCK_NANOSLEEP</code><br /><code>CLONE</code><br /><code>CLOSE</code><br /><code>CONNECT</code><br /><code>CREAT</code><br /><code>DUP</code><br /><code>DUP2</code><br /><code>DUP3</code><br /><code>EPOLL_CREATE</code><br /><code>EPOLL_CREATE1</code><br /><code>EPOLL_CTL</code><br /><code>EPOLL_WAIT</code><br /><code>EVENTFD</code><br /><code>EVENTFD2</code><br /><code>EXECVE</code><br /><code>EXIT</code><br /><code>EXIT_GROUP</code><br /><code>FACCESSAT</code><br /><code>FADVISE64</code><br /><code>FCHDIR</code><br /><code>FCHMOD</code><br /><code>FCHMODAT</code><br /><code>FCHOWN</code><br /><code>FCHOWNAT</code><br /><code>FCNTL64</code><br /><code>FDATASYNC</code><br /><code>FLOCK</code><br /><code>FORK</code><br /><code>FSETXATTR</code><br /><code>FSTAT64</code><br /><code>FSTATAT64</code><br /><code>FSTATFS64</code><br /><code>FSYNC</code><br /><code>FTRUNCATE</code><br /><code>FTRUNCATE64</code><br /><code>FUTEX</code><br /><code>GETCPU</code><br /><code>GETCWD</code><br /><code>GETDENTS</code><br /><code>GETDENTS64</code><br /><code>GETEGID</code><br /><code>GETEGID16</code><br /><code>GETEUID</code><br /><code>GETEUID16</code><br /><code>GETGID</code><br /><code>GETGID16</code><br /><code>GETGROUPS</code><br /><code>GETPEERNAME</code><br /><code>GETPGID</code><br /><code>GETPGRP</code><br /><code>GETPID</code><br /><code>GETPPID</code><br /><code>GETPRIORITY</code><br /><code>GETRESGID</code><br /><code>GETRESGID16</code><br /><code>GETRESUID</code><br /><code>GETRESUID16</code><br /><code>GETRLIMIT</code><br /><code>GETRUSAGE</code><br /><code>GETSID</code><br /><code>GETSOCKNAME</code><br /><code>GETSOCKOPT</code><br /><code>GETTID</code><br /><code>GETTIMEOFDAY</code><br /><code>GETUID</code><br /><code>GETUID16</code><br /><code>GETXATTR</code><br /><code>GET_ROBUST_LIST</code><br /><code>GET_THREAD_AREA</code><br /><code>INOTIFY_ADD_WATCH</code><br /><code>INOTIFY_INIT</code><br /><code>INOTIFY_RM_WATCH</code><br /><code>IOCTL</code><br /><code>IOPRIO_GET</code><br /><code>IOPRIO_SET</code><br /><code>KEYCTL</code><br /><code>KILL</code><br /><code>LCHOWN</code><br /><code>LINK</code><br /><code>LINKAT</code><br /><code>LISTEN</code><br /><code>LLSEEK</code><br /><code>LSEEK</code><br /><code>LSTAT64</code><br /><code>MADVISE</code><br /><code>MKDIR</code><br /><code>MKDIRAT</code><br /><code>MKNOD</code><br /><code>MLOCK</code><br /><code>MMAP</code><br /><code>MMAP2</code><br /><code>MOUNT</code><br /><code>MPROTECT</code><br /><code>MREMAP</code><br /><code>MSYNC</code><br /><code>MUNLOCK</code><br /><code>MUNMAP</code><br /><code>NANOSLEEP</code><br /><code>NEWUNAME</code><br /><code>OPEN</code><br /><code>OPENAT</code><br /><code>PAUSE</code><br /><code>PERF_EVENT_OPEN</code><br /><code>PERSONALITY</code><br /><code>PIPE</code><br /><code>PIPE2</code><br /><code>POLL</code><br /><code>PPOLL</code><br /><code>PRCTL</code><br /><code>PREAD64</code><br /><code>PROCESS_VM_READV</code><br /><code>PROCESS_VM_WRITEV</code><br /><code>PSELECT6</code><br /><code>PTRACE</code><br /><code>PWRITE64</code><br /><code>READ</code><br /><code>READLINK</code><br /><code>READV</code><br /><code>REBOOT</code><br /><code>RECV</code><br /><code>RECVFROM</code><br /><code>RECVMSG</code><br /><code>RENAME</code><br /><code>RMDIR</code><br /><code>RT_SIGACTION</code><br /><code>RT_SIGPENDING</code><br /><code>RT_SIGPROCMASK</code><br /><code>RT_SIGRETURN</code><br /><code>RT_SIGSUSPEND</code><br /><code>RT_SIGTIMEDWAIT</code><br /><code>SCHED_GETAFFINITY</code><br /><code>SCHED_GETPARAM</code><br /><code>SCHED_GETSCHEDULER</code><br /><code>SCHED_GET_PRIORITY_MAX</code><br /><code>SCHED_GET_PRIORITY_MIN</code><br /><code>SCHED_SETAFFINITY</code><br /><code>SCHED_SETPARAM</code><br /><code>SCHED_SETSCHEDULER</code><br /><code>SCHED_YIELD</code><br /><code>SELECT</code><br /><code>SEND</code><br /><code>SENDMMSG</code><br /><code>SENDMSG</code><br /><code>SENDTO</code><br /><code>SETDOMAINNAME</code><br /><code>SETGID</code><br /><code>SETGROUPS</code><br /><code>SETHOSTNAME</code><br /><code>SETITIMER</code><br /><code>SETPGID</code><br /><code>SETPRIORITY</code><br /><code>SETREGID</code><br /><code>SETRESGID</code><br /><code>SETRESUID</code><br /><code>SETREUID</code><br /><code>SETRLIMIT</code><br /><code>SETSID</code><br /><code>SETSOCKOPT</code><br /><code>SETTIMEOFDAY</code><br /><code>SETUID</code><br /><code>SETXATTR</code><br /><code>SET_ROBUST_LIST</code><br /><code>SET_THREAD_AREA</code><br /><code>SET_TID_ADDRESS</code><br /><code>SHUTDOWN</code><br /><code>SIGACTION</code><br /><code>SIGALTSTACK</code><br /><code>SIGPENDING</code><br /><code>SIGPROCMASK</code><br /><code>SIGRETURN</code><br /><code>SIGSUSPEND</code><br /><code>SOCKET</code><br /><code>SOCKETCALL</code><br /><code>SOCKETPAIR</code><br /><code>SPLICE</code><br /><code>STAT64</code><br /><code>STATFS64</code><br /><code>SYMLINK</code><br /><code>SYMLINKAT</code><br /><code>SYNC</code><br /><code>SYSINFO</code><br /><code>TEE</code><br /><code>TGKILL</code><br /><code>TIME</code><br /><code>TIMERFD_CREATE</code><br /><code>TIMERFD_GETTIME</code><br /><code>TIMERFD_SETTIME</code><br /><code>TIMES</code><br /><code>TKILL</code><br /><code>TRUNCATE</code><br /><code>TRUNCATE64</code><br /><code>UMASK</code><br /><code>UMOUNT</code><br /><code>UMOUNT2</code><br /><code>UNLINK</code><br /><code>UNLINKAT</code><br /><code>UNSHARE</code><br /><code>UTIME</code><br /><code>UTIMENSAT</code><br /><code>UTIMES</code><br /><code>VFORK</code><br /><code>WAIT4</code><br /><code>WAITPID</code><br /><code>WRITE</code><br /><code>WRITEV</code><br /></p></div><div id="right-nav-wrapper" class="col-md-3"><div id="right-nav-area" class="bs-sidebar affix"><ul id="task-nav-list" class="nav bs-sidenav" ms.cmpgrp="indoc toc"><li class="nav-header">IN THIS ARTICLE</li><li><a class="" href="#build-14959">Build 14959</a></li><li><a class="" href="#build-14955">Build 14955</a></li><li><a class="" href="#build-14951">Build 14951</a></li><li><a class="" href="#build-14946">Build 14946</a></li><li><a class="" href="#build-14942">Build 14942</a></li><li><a class="" href="#build-14936">Build 14936</a></li><li><a class="" href="#build-14931">Build 14931</a></li><li><a class="" href="#build-14926">Build 14926</a></li><li><a class="" href="#build-14915">Build 14915</a></li><li><a class="" href="#build-14905">Build 14905</a></li><li><a class="" href="#build-14901">Build 14901</a></li><li><a class="" href="#build-14388-to-windows-10-anniversary-update">Build 14388 to Windows 10 Anniversary Update</a></li><li><a class="" href="#build-14376">Build 14376</a></li><li><a class="" href="#build-14371">Build 14371</a></li><li><a class="" href="#build-14366">Build 14366</a></li><li><a class="" href="#build-14361">Build 14361</a></li><li><a class="" href="#build-14352">Build 14352</a></li><li><a class="" href="#build-14342">Build 14342</a></li><li><a class="" href="#build-14332">Build 14332</a></li><li><a class="" href="#build-14328">Build 14328</a></li></ul></div></div></div>
+        
+
+<input type="hidden" id="proxyUrl" value="https://apiexproxy.azurewebsites.net/svc" />
+<input type="hidden" id="playgroundUrl" value="https://apisandbox.msdn.microsoft.com/" />
+<input type="hidden" id="ajaxTimeout" value="10000" />
+<input type="hidden" id="supportedLanguagesForPlayground" value="javascript;c#" />
+<input type="hidden" id="authorizationHeader" value="Bearer {token:{resourceName}}" />
+
+
+
+
+    </div>
+    <div id="rightColumn" class="right" ms.cmpgrp="right nav">
+            <div id="right-nav-wrapper">
+        <div id="right-nav-area" class="bs-sidebar affix">
+            <div id="navigationButtons">
+                <a id="isdSmile" title="Feedback" href="#">
+                    <ins class="smile"></ins>
+                    Feedback
+                </a>
+
+                    <a id="isdContribute" target="_blank" title="Contribute" href="https://github.com/Microsoft/CommandLine-Documentation/blob/live/commandline/WSL/release_notes.md">
+                        <ins class="contribute"></ins>
+                        Contribute
+                    </a>
+
+                <a id="isdShare" title="Share" href="#" role="button" aria-expanded="false">
+                    <ins class="share"></ins>
+                    Share
+                </a>
+                <div id="socials" style="display: none">
+                    <a class="isdFacebook" title="Share on Facebook" href="#" data-sitename="Facebook" aria-label="Share on Facebook">
+                        <ins class=" facebook"></ins>
+                    </a>
+                    <a class="isdTwitter" title="Share on Twitter" href="#" data-sitename="Twitter" aria-label="Share on Twitter">
+                        <ins class="twitter"></ins>
+                    </a>
+                    <a class="isdGooglePlus" title="Share on Google+" href="#" data-sitename="Google+" aria-label="Share on Google+">
+                        <ins class="googlePlus"></ins>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+
+                
+                <div id="openFeedbackContainer" style="z-index:220; position:relative;" ms.pgarea="body" ms.cmpgrp="feedbackform"></div>
+                
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet" />
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr" ms.pgarea="footer">
+            
+                
+            <div id="footerSock" class="">
+                <div id="footerSockInner">
+
+                        <div class="footerSockLeft"><div data-fragmentName="SocialLinks" id="Fragment_SocialLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <div class="linkListTitle">Follow us</div>
+    <ul class="links">
+      <li>
+        <a href="http://www.facebook.com/microsoftdeveloper" target="_blank" id="SocialLinks_2151_19" class="facebook" xmlns="http://www.w3.org/1999/xhtml">http://www.facebook.com/microsoftdeveloper</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/msdev" target="_blank" id="SocialLinks_2151_20" class="twitter" xmlns="http://www.w3.org/1999/xhtml">https://twitter.com/msdev</a>
+      </li>
+      <li>
+        <a href="http://plus.google.com/111221966647232053570/" target="_blank" id="SocialLinks_2151_21" class="googlePlus" xmlns="http://www.w3.org/1999/xhtml">http://plus.google.com/111221966647232053570/</a>
+      </li>
+    </ul>
+  </div>
+</div></div>
+
+                        <div class="footerSockRight"><div data-fragmentName="Newsletter" id="Fragment_Newsletter" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/flashnewsletter" title="Sign up for the MSDN Newsletter" id="Newsletter_2148_19" xmlns="http://www.w3.org/1999/xhtml">Sign up for the MSDN Newsletter</a>
+</div></div>
+                    <div class="footerSockCenter">
+                            <a name="feedback"></a>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Is this page helpful?
+        </div>
+        <div class="description">
+            Your feedback about this content is important.<br />Let us know what you think.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes" aria-label="Yes, this page was helpful">Yes</button>
+            <button class="button" id="ratingNo" aria-label="No, this page was not helpful">No</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="" />
+    </div>
+    <div id="ratingSection2">
+        <div class="title left">
+            Additional feedback?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="right">
+            <div class="counter">
+                <span id="feedbackTextCounter">1500</span> characters remaining
+            </div>
+            <div class="buttons">
+                <button class="button" id="ratingSubmit" aria-label="Submit my additional feedback">Submit</button>
+                <button class="button" id="ratingSkipThis" aria-label="Skip additional feedback">Skip this</button>
+            </div>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Thank you!
+        </div>
+        <div class="description">
+            We appreciate your feedback.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                                            </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            
+
+        <footer class="top" role="navigation" aria-label="footer">
+            <div data-fragmentName="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Dev centers</h4>
+    <ul class="links">
+      <li>
+        <a href="https://dev.windows.com" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="http://dev.office.com" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/vstudio" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="http://azure.microsoft.com/en-us/documentation/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                <div data-fragmentName="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Learning resources</h4>
+    <ul class="links">
+      <li>
+        <a href="http://www.microsoftvirtualacademy.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="http://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Community</h4>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+      </li>
+      <li>
+        <a href="http://blogs.msdn.com/b/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+      </li>
+      <li>
+        <a href="http://www.codeplex.com" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Support</h4>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentName="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Programs</h4>
+    <ul class="links">
+      <li>
+        <a href="https://www.microsoft.com/bizspark/" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+      </li>
+      <li>
+        <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">Microsoft Imagine (for students)</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </footer>
+
+        <footer class="bottom" role="contentinfo">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/en-us/selectlocale-dmc">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2fcommandline%2fwsl%2frelease_notes" />
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentName="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/newsletter.aspx" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logoSpan clip67x13" role="img" tabindex="0" aria-label="microsoft logo">
+                    <img alt="logo" class="logo" src="https://i-msdn.sec.s-msft.com/Areas/Centers/Themes/StandardDevCenter/Content/HeaderFooterSprite.png?v=636136299672485549" />
+                </span>
+                <span class="copyright">© 2016 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2016 Microsoft</div>
+        </div>
+
+        
+    
+
+
+<![CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]>
+
+
+    </div>
+
+    
+    
+
+    
+    
+
+<![CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]>
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ url: "https://open-rating.azureedge.net/open-rating.entry.min.js" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:OpenPublishingResponsiveTable,0:OpenPublishingResponsiveVideo,1:Layout,2:Header,2:Footer,3:ResponsiveSupport,0:AppInsightsPerf,0:Telemetry,0:InteractionTracker,0:ABTestControl,4:WEDCS;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4\u0026amp;hashKey=D0ABB4107A6BB7737C16A92884B4DDAD\u0026amp;v=0DE9F275B3E5AF651D836CA374391917" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,0:highlight.min,0:OACodeSnippet,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1\u0026amp;hashKey=C7F72D22C1493509C08A2EF882BC5CFB\u0026amp;v=0DE9F275B3E5AF651D836CA374391917" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:JumpRedirect,1:OpenPublishingMobileMenu,1:apiRunner,1:OpenPublishingTopic,0:API.1;/Areas/Epx/Themes/Base/Content:0,/Areas/Epx/Content/Scripts:1\u0026amp;hashKey=6AA0E355388FF63137AAA69428334BE6\u0026amp;v=0DE9F275B3E5AF651D836CA374391917" },
+	{ txt: "//\n                    // Load metadata into map to speed up reading later.\n                    var metadataMap = {};\n                    var metadataElements = document.getElementsByTagName(\"meta\");\n                    for (var i = 0; i \u003c metadataElements.length; ++i)\n                    {\n                        var meta = metadataElements[i];\n                        var name = meta.getAttribute(\"name\");\n                        if (name)\n                        {\n                            metadataMap[name.toLowerCase()] = meta.getAttribute(\"content\");\n                        }\n                    }\n\n                    window.openFeedbackOptions =\n                    {\n                        environment: \"prod\",\n                        anonUserCookieName:\"A\",\n                        documentMetaName: \"ms.documentid\",\n                        documentSnapIdMetaName: \"ms.gitcommit\",\n                        localeMetaName: \"ms.locale\",\n                        propertyBag:\n                        {\n                            \"ms.depotname\": metadataMap[\"ms.depotname\"],\n                            \"ms.contentsource\": metadataMap[\"ms.contentsource\"]\n                        }\n                    };\n                    //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Rating,0:NewFooterSock,1:Breadcrumbs;/Areas/Epx/Themes/Base/Content:0,/Areas/Library/Content:1\u0026amp;hashKey=334FAE2293484FCEA90D9690DCA122F8\u0026amp;v=0DE9F275B3E5AF651D836CA374391917" }
+]);
+
+/*]]>*/
+</script></body>
+</html>

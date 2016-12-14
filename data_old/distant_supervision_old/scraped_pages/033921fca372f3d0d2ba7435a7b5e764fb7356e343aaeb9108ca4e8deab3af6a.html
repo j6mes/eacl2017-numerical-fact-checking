@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+  <!--[if IEMobile 7]><html class="no-js ie iem7" lang="en" dir="ltr"><![endif]-->
+  <!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7" lang="en" dir="ltr"><![endif]-->
+  <!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8" lang="en" dir="ltr"><![endif]-->
+  <!--[if IE 8]><html class="no-js ie lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#"><![endif]-->
+  <!--[if !IE]><!--><html class="no-js" lang="en" dir="ltr" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile# video: http://ogp.me/ns/video# product: http://ogp.me/ns/product#"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta http-equiv="cleartype" content="on" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="apple-touch-icon-precomposed" href="http://www.oscars.org/sites/all/themes/guide/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<link rel="apple-touch-icon-precomposed" href="http://www.oscars.org/sites/all/themes/guide/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="http://www.oscars.org/sites/all/themes/guide/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="http://www.oscars.org/sites/all/themes/guide/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.oscars.org/oscars/ceremonies/2014" />
+<link rel="shortlink" href="http://www.oscars.org/oscars/ceremonies/2014" />
+<meta property="og:description" content="The Best Actor winner for Dallas Buyers Club cuts up in the audience" />
+<meta property="og:image" content="http://www.oscars.org/sites/oscars/files/actor_mcconaughey.jpg" />
+<meta property="og:site_name" content="Oscars.org | Academy of Motion Picture Arts and Sciences" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.oscars.org/oscars/ceremonies/2014" />
+<meta property="og:title" content="The 86th Academy Awards | 2014" />
+<meta name="twitter:description" content="The Best Actor winner for Dallas Buyers Club cuts up in the audience" />
+<meta name="twitter:image" content="http://www.oscars.org/sites/oscars/files/actor_mcconaughey.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="http://www.oscars.org/oscars/ceremonies/2014" />
+<meta name="twitter:title" content="The 86th Academy Awards | 2014" />
+  <title>2014 | Oscars.org | Academy of Motion Picture Arts and Sciences</title>
+  <link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_756PY8WlbaPVzX_vEkp2MBpPuKF-A9UCoaG5BKU5kSg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_h_0iWN8xsZoKIW6yU6ySL0fCRbee_G7W-YhcdnK4oZs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_0y7GLSByoVvWPkClVRE6Iy2vLyNbiJzQeS2E0mAPnE4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_IY68SGQ3nBUOWgWRc517tsDpJiKsaar4dcYc9cB7exM.css" media="print" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_YYLxhNAZOoaZ7zkQljHt51RqMKu357LImWPma9f61LI.css" media="all" />
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="http://www.oscars.org/sites/oscars/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" media="all" />
+<![endif]-->
+  <script src="http://www.oscars.org/sites/oscars/files/js/js_wMKOC6q3D7Fj1bxBv98cAxj-LscIJ3DcZgX8LUWLfZQ.js"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_THcwq4G882w3Eb1HklHrvzGAKa_-1g_0QbuBqjMhaV4.js"></script>
+<script src="http://www.oscars.org/sites/all/libraries/mediaelement/build/mediaelement-and-player.min.js?v=2.1.6"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_3MIfep-CFS8i9E9-ffR-tJrxjWdeJuanpsmBcMIfiuA.js"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_bLq17ZcbGt8zUyxl-zMYnSjei7L88j0UeCH3zW437Zs.js"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_os8wuG-imJJ96uSUM2_GlXpGOA2vWTIVwlmLKy2GM1M.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-33598486-1", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("set", "page", location.pathname + location.search + location.hash);ga("send", "pageview");</script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_AJeOk7XNmqaDXSQtyI6FyX1YyO3z7i21q0iZ1vr0K3A.js"></script>
+<script src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;appId=282376008552807&amp;version=v2.2"></script>
+<script defer="defer" src="//platform.instagram.com/en_US/embeds.js"></script>
+<script src="//platform.twitter.com/widgets.js"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_9G0qHD1sZQQQFZLnojgTfcZ5TZAFZ3FtFECQMHedAhY.js"></script>
+<script src="http://www.oscars.org/sites/oscars/files/js/js_OWW3nPKgwK2iqErEVhnd8nUBwRapw_o1uAnOFmFDZco.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"oscar","theme_token":"BLoRm9sVPEaN5_1JTpJ79-e5uyTaGQXAOeVyMxQIs5k","jquery_version":"1.8","js":{"sites\/oscars\/modules\/features\/ampas_ceremonies\/js\/ceremonies.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/contrib\/omega\/omega\/js\/no-js.js":1,"sites\/oscars\/modules\/contrib\/equalheights\/jquery.equalheights.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/libraries\/mediaelement\/build\/mediaelement-and-player.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.tabs.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery.form\/3\/jquery.form.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/oscars\/modules\/contrib\/equalheights\/equalheights.js":1,"sites\/oscars\/modules\/contrib\/media_colorbox\/media_colorbox.js":1,"sites\/oscars\/modules\/custom\/social_drawer\/js\/social_drawer.js":1,"misc\/progress.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/mediaelement\/mediaelement.js":1,"sites\/oscars\/modules\/contrib\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/contrib\/views\/js\/base.js":1,"sites\/all\/modules\/contrib\/ctools\/js\/auto-submit.js":1,"sites\/all\/modules\/contrib\/views\/js\/ajax_view.js":1,"sites\/oscars\/modules\/contrib\/views_ajax_get\/views_ajax_get.js":1,"sites\/all\/libraries\/imagesloaded\/jquery.imagesloaded.min.js":1,"sites\/all\/libraries\/jquery.localScroll\/jquery.localScroll.min.js":1,"sites\/all\/libraries\/jquery.scrollTo\/jquery.scrollTo.min.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/oscars\/modules\/contrib\/quicktabs\/js\/quicktabs.js":1,"\/\/connect.facebook.net\/en_US\/sdk.js#xfbml=1\u0026appId=282376008552807\u0026version=v2.2":1,"\/\/platform.instagram.com\/en_US\/embeds.js":1,"\/\/platform.twitter.com\/widgets.js":1,"sites\/oscars\/modules\/contrib\/jquery_localscroll\/jquery_localscroll.js":1,"sites\/oscars\/modules\/custom\/ajax_error_suppress\/js\/ajax.js":1,"sites\/oscars\/modules\/contrib\/colorbox_node\/colorbox_node.js":1,"sites\/all\/themes\/guide\/js\/libs\/jquery-easing\/jquery.easing.min.js":1,"sites\/all\/themes\/guide\/js\/libs\/jquery-swiper\/dist\/js\/swiper.jquery.min.js":1,"sites\/all\/themes\/guide\/js\/libs\/jquery-lazyload\/jquery.lazyload.min.js":1,"sites\/all\/themes\/guide\/js\/libs\/history.js\/scripts\/bundled\/html4+html5\/jquery.history.js":1,"sites\/all\/themes\/guide\/js\/guide.facebook-pixel.js":1,"sites\/all\/themes\/guide\/js\/guide.scripts.js":1,"sites\/all\/themes\/oscarbase\/js\/libs\/modernizr\/modernizr.custom.min.js":1,"sites\/all\/themes\/oscarbase\/js\/libs\/jquery-dotdotdot\/src\/js\/jquery.dotdotdot.min.js":1,"sites\/all\/themes\/oscarbase\/js\/libs\/jquery-waypoints\/lib\/jquery.waypoints.min.js":1,"sites\/all\/themes\/oscarbase\/js\/libs\/jquery-waypoints\/lib\/shortcuts\/sticky.min.js":1,"sites\/all\/themes\/oscarbase\/js\/oscarbase.facebook-pixel.js":1,"sites\/all\/themes\/oscarbase\/js\/oscarbase.colorbox.js":1,"sites\/all\/themes\/oscarbase\/js\/oscarbase.scripts.js":1,"sites\/all\/themes\/oscar\/js\/oscar.scripts.js":1},"css":{"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/oscars\/modules\/features\/ampas_wysiwyg\/css\/ampas_wysiwyg.css":1,"sites\/oscars\/modules\/contrib\/calendar\/css\/calendar_multiday.css":1,"sites\/oscars\/modules\/contrib\/colorbox_node\/colorbox_node.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/node\/node.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/libraries\/mediaelement\/build\/mediaelementplayer.min.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.tabs.css":1,"misc\/ui\/jquery.ui.accordion.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/oscars\/modules\/contrib\/social-share\/icons\/social-share-icons-16.css":1,"sites\/oscars\/modules\/contrib\/custom_search\/custom_search.css":1,"sites\/oscars\/modules\/contrib\/quicktabs\/css\/quicktabs.css":1,"sites\/all\/themes\/guide\/css\/guide.normalize.css":1,"sites\/all\/themes\/guide\/js\/libs\/jquery-swiper\/dist\/css\/swiper.min.css":1,"sites\/all\/themes\/guide\/css\/guide.hacks.css":1,"sites\/all\/themes\/guide\/css\/guide.styles.css":1,"sites\/all\/themes\/oscarbase\/css\/oscarbase.hacks.css":1,"sites\/all\/themes\/oscarbase\/css\/oscarbase.styles.css":1,"sites\/all\/themes\/oscar\/css\/oscar.hacks.css":1,"sites\/all\/themes\/oscar\/css\/oscar.styles.css":1,"sites\/all\/themes\/guide\/css\/guide.print.css":1,"sites\/all\/themes\/guide\/css\/guide.no-query.css":1,"sites\/all\/themes\/oscarbase\/css\/oscarbase.no-query.css":1,"sites\/all\/themes\/oscar\/css\/oscar.no-query.css":1,"all:0":1,"sites\/all\/themes\/oscar\/..\/oscarbase\/css\/layouts\/generic\/oscar-generic.layout.css":1,"all:1":1}},"colorbox":{"transition":"elastic","speed":"350","opacity":"0.85","slideshow":false,"slideshowAuto":true,"slideshowSpeed":"2500","slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"maxWidth":"100%","maxHeight":"100%","initialWidth":"100%","initialHeight":"100%","fixed":true,"scrolling":true,"mobiledetect":false,"mobiledevicewidth":"480px"},"mediaelementAll":true,"custom_search":{"form_target":"_self","solr":1},"ampas_ceremonies":{"min_year":"2016","current_year":"2016","selected_year":"2014"},"better_exposed_filters":{"views":{"awards_ceremonies":{"displays":{"oscars":{"filters":[]}}},"awards":{"displays":{"osc_honoree_by_cat":{"filters":{"field_award_category_tid":{"required":false}}},"osc_honoree_by_film":{"filters":[]}}}}},"urlIsAjaxTrusted":{"\/":true,"\/oscars\/ceremonies\/2014":true},"viewsAjaxGet":["awards","awards"],"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:90f2edbe71c25662ff603c22699de2a6":{"view_name":"awards","view_display_id":"osc_honoree_by_cat","view_args":"2014","view_path":"oscars\/ceremonies\/2014","view_base_path":null,"view_dom_id":"90f2edbe71c25662ff603c22699de2a6","pager_element":0},"views_dom_id:e790f2ce896bb8664ee5745c45ea48bd":{"view_name":"awards","view_display_id":"osc_honoree_by_film","view_args":"2014\/all","view_path":"oscars\/ceremonies\/2014","view_base_path":null,"view_dom_id":"e790f2ce896bb8664ee5745c45ea48bd","pager_element":0}}},"equalHeightsModule":{"classes":[{"selector":".theme-oscar .view-collection.view-display-id-playlist .view-grouping, .theme-oscartablet .view-collection.view-display-id-playlist .view-grouping","mediaquery":"","minheight":"","maxheight":"","overflow":"auto"}],"imagesloaded_ie8":1},"jquery_localscroll":{"global":0,"ids":{"academy-story-scrollto":"academy-story-scrollto","mth_events":"mth_events"},"hash":0,"duration":"500","offset":"0"},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackUrlFragments":1},"quicktabs":{"qt_honorees":{"name":"honorees","tabs":[{"vid":"awards","display":"osc_honoree_by_cat","args":"%2","view_path":"oscars%2Fceremonies%2F2014","view_dom_id":1,"ajax_args":"2014","actual_args":["2014"]},{"vid":"awards","display":"osc_honoree_by_film","args":"%2","view_path":"oscars%2Fceremonies%2F2014","view_dom_id":2,"ajax_args":"2014","actual_args":["2014"]}],"ajaxPageState":{"jquery_version":"1.8"}}},"colorbox_node":{"width":"600px","height":"600px"}});</script>
+</head>
+<body class="html not-front not-logged-in page-oscars page-oscars-ceremonies page-oscars-ceremonies- page-oscars-ceremonies-2014 section-oscars theme-oscar group-oscars section-ceremonies page-2014">
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <div class="layout-generic l-page">
+  <header class="l-header" role="banner">
+    <div id="mobile-menu">
+      <a id="mobile-menu-btn" href="#">
+        <span>Menu</span>
+      </a>
+    </div>
+
+          <div id="site-logo">
+        <a href="/" title="Home" rel="home" class="site-logo">
+          <img src="http://www.oscars.org/sites/all/themes/oscar/logo.png" alt="Home" />
+        </a>
+      </div>
+    
+          <div id="site-search">
+          <div class="l-region l-region--search">
+    <div id="block-search-form" role="search" class="block block--search block--search-form ">
+        <div class="block__content">
+    <form class="search-form search-block-form" role="search" action="/oscars/ceremonies/2014" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search this site </label>
+ <input title="" class="custom-search-box form-text" placeholder="" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="10" maxlength="128" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" class="custom-search-button form-submit" type="image" id="edit-submit" name="op" src="/sites/all/themes/guide/images/icon.search.png" /></div><input type="hidden" name="form_build_id" value="form-F2pvf-EpST-1dw8053nL-Nzs2SKjvOszkIomg55putg" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+</div>
+  </div>
+      </div>
+    
+          <div id="site-login">
+          <div class="l-region l-region--members">
+    <div id="block-block-16" class="block block--block block--block-16 members-login">
+        <div class="block__content">
+    <p><a href="https://members.oscars.org/" target="_blank">Members Login</a></p>
+  </div>
+</div>
+  </div>
+      </div>
+    
+    <a id="mobile-search-btn" href="#">
+      <span>Search</span>
+    </a>
+
+      <div class="l-region l-region--navigation">
+    <nav id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu ">
+      
+  <ul class="menu"><li class="first leaf level-1 menu-home only-phone only-tablet"><span class="menu-item-span"><a href="/" class="only-phone only-tablet">Home</a></span></li>
+<li class="expanded active-trail level-1 menu-awards has-sub-menu"><span class="menu-item-span"><span class="active-trail nolink">Awards</span></span><ul class="menu"><li class="first leaf active-trail level-2 menu-oscars"><span class="menu-item-span"><a href="/oscars" class="active-trail">Oscars</a></span></li>
+<li class="leaf level-2 menu-governors-awards"><span class="menu-item-span"><a href="/governors">Governors Awards</a></span></li>
+<li class="leaf level-2 menu-sci-tech-awards"><span class="menu-item-span"><a href="/sci-tech">Sci-Tech Awards</a></span></li>
+<li class="leaf level-2 menu-student-academy-awards"><span class="menu-item-span"><a href="/saa">Student Academy Awards</a></span></li>
+<li class="last leaf level-2 menu-academy-nicholl-fellowships"><span class="menu-item-span"><a href="/nicholl">Academy Nicholl Fellowships</a></span></li>
+</ul></li>
+<li class="expanded level-1 menu-museum has-sub-menu"><span class="menu-item-span"><span class="nolink">Museum</span></span><ul class="menu"><li class="first last leaf level-2 menu-about-the-museum"><span class="menu-item-span"><a href="/museum">About the Museum</a></span></li>
+</ul></li>
+<li class="expanded level-1 menu-events has-sub-menu"><span class="menu-item-span"><span class="nolink">Events</span></span><ul class="menu"><li class="first last leaf level-2 menu-calendar"><span class="menu-item-span"><a href="/events">Calendar</a></span></li>
+</ul></li>
+<li class="expanded level-1 menu-explore has-sub-menu"><span class="menu-item-span"><span class="nolink">Explore</span></span><ul class="menu"><li class="first leaf level-2 menu-collection-highlights"><span class="menu-item-span"><a href="/collection-highlights">Collection Highlights</a></span></li>
+<li class="leaf level-2 menu-academy-originals"><span class="menu-item-span"><a href="/videos-photos/academy-originals">Academy Originals</a></span></li>
+<li class="leaf level-2 menu-academy-story"><span class="menu-item-span"><a href="/academy-story">Academy Story</a></span></li>
+<li class="leaf level-2 menu-news"><span class="menu-item-span"><a href="/news">News</a></span></li>
+<li class="last leaf level-2 menu-videos--photos"><span class="menu-item-span"><a href="/videos-photos">Videos &amp; Photos</a></span></li>
+</ul></li>
+<li class="expanded level-1 menu-learn has-sub-menu"><span class="menu-item-span"><span class="nolink">Learn</span></span><ul class="menu"><li class="first leaf level-2 menu-about-membership"><span class="menu-item-span"><a href="/about/become-new-member">About Membership</a></span></li>
+<li class="leaf level-2 menu-academy-film-archive"><span class="menu-item-span"><a href="/film-archive">Academy Film Archive</a></span></li>
+<li class="leaf level-2 menu-margaret-herrick-library"><span class="menu-item-span"><a href="/library">Margaret Herrick Library</a></span></li>
+<li class="leaf level-2 menu-oral-history"><span class="menu-item-span"><a href="/oral-history">Oral History</a></span></li>
+<li class="leaf level-2 menu-science--technology"><span class="menu-item-span"><a href="/science-technology">Science &amp; Technology</a></span></li>
+<li class="last leaf level-2 menu-education--grants"><span class="menu-item-span"><a href="/education-grants">Education &amp; Grants</a></span></li>
+</ul></li>
+<li class="last leaf level-1 menu-member-login only-phone"><span class="menu-item-span"><a href="https://members.oscars.org" class="only-phone" target="_blank">Member Login</a></span></li>
+</ul></nav>
+  </div>
+  </header>
+
+        <div class="l-region l-region--social-drawer">
+    <div id="block-social-drawer-social-drawer" class="block block--social-drawer block--social-drawer-social-drawer ">
+        <div class="block__content">
+    
+<div id="social-drawer-tab">
+	<a href="#"></a>
+</div>
+
+<div id="social-drawer-menu">
+	<div id="social-drawer-menu-btn">
+		Open / Close	</div>
+	<div id="social-drawer-menu-toggle">
+		<a href="#social-drawer-social" id="social-drawer-social-btn">Social</a>
+		<a href="#social-drawer-spotlight" id="social-drawer-spotlight-btn">Spotlight</a>
+		<a href="#social-drawer-collections" id="social-drawer-collections-btn">Videos &amp; Photos</a>
+	</div>
+</div>
+
+<div id="social-drawer-content">
+	<div id="social-drawer-social" class="social-section unloaded">
+		<h3 class="social-header">
+			<a href="#">
+				<span class="social-header-icon"></span>
+				<span class="social-header-title">Social</span>
+				<span class="social-header-expand">+</span>
+			</a>
+		</h3>
+		<div class="social-content">
+			<div id="social-toggle">
+				<a href="#social-drawer-social-twitter" id="social-toggle-twitter" class="social-toggle-btn is-selected">
+					<span>Twitter</span>
+				</a>
+				<a href="#social-drawer-social-instagram" id="social-toggle-instagram" class="social-toggle-btn">
+					<span>Instagram</span>
+				</a>
+				<a href="#social-drawer-social-facebook" id="social-toggle-facebook" class="social-toggle-btn">
+					<span>Facebook</span>
+				</a>
+				<a href="#social-drawer-social-tumblr" id="social-toggle-tumblr" class="social-toggle-btn">
+					<span>Tumblr</span>
+				</a>
+				<a href="#social-drawer-social-more" id="social-toggle-more" class="social-toggle-btn">
+					<span>More</span>
+				</a>
+			</div>
+			<div class="social-panel is-selected" id="social-drawer-social-twitter"><div id="twitter-feed" class="feed"></div><div class="loading-feed">Loading Tweets...</div></div><div class="social-panel" id="social-drawer-social-instagram"><div id="instagram-feed" class="feed"></div><div class="loading-feed">Loading Instagram Posts...</div></div><div class="social-panel" id="social-drawer-social-facebook"><div id="facebook-feed" class="feed"></div><div class="loading-feed">Loading Facebook Posts...</div></div><div class="social-panel" id="social-drawer-social-tumblr"><div id="tumblr-feed" class="feed"></div><div class="loading-feed">Loading Tumblr Posts...</div></div>			<div id="social-drawer-social-more" class="social-panel">
+				<ul>
+					<li class="more-email"><a href="http://www.oscars.org/insider/"><div class="more-label">Join Our Oscar Insider Newsletter</div>Join our Oscar insider email list to get the latest news on all things Academy Awards</a></li><li class="more-youtube"><a href="http://www.youtube.com/user/Oscars"><div class="more-label">The Oscars YouTube Channel</div>Check out some highlights from our YouTube channel.</a></li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="social-drawer-spotlight" class="social-section unloaded">
+		<h3 class="social-header">
+			<a href="#">
+				<span class="social-header-icon"></span>
+				<span class="social-header-title">Spotlight</span>
+				<span class="social-header-expand">+</span>
+			</a>
+		</h3>
+		<div id="spotlight-loading" class="loading-feed">Loading Spotlight...</div>
+		<!-- spotlight ajax content appends here -->
+	</div>
+	<div id="social-drawer-collections" class="social-section unloaded">
+		<h3 class="social-header">
+			<a href="#">
+				<span class="social-header-icon"></span>
+				<span class="social-header-title">Photos & Videos</span>
+				<span class="social-header-expand">+</span>
+			</a>
+		</h3>
+		<div id="collections-loading" class="loading-feed">Loading Photos & Videos...</div>
+		<!-- collections ajax content appends here -->
+	</div>
+</div>  </div>
+</div>
+  </div>
+  
+  <div class="l-main">
+    <div class="l-content" role="main">
+      <div class="l-region l-region--content">
+                <div class="breadcrumb"><h2 class="element-invisible">You are here</h2><a href="/">Home</a> / <a href="/oscars">Oscars</a> / <a href="/oscars/ceremonies">Oscars® Ceremonies</a> / 2014</div>        <a id="main-content"></a>
+
+        
+                          <h1 id="page-title" class="title">2014</h1>
+                
+                
+                
+        <div class="view view-awards-ceremonies view-id-awards_ceremonies view-display-id-oscars view-dom-id-ef7e72ce4254d8a86d8493f1367e71c0">
+        
+  
+      <div class="attachment attachment-before">
+      <h1 class="title ceremony-title">Oscars<sup>®</sup> Ceremonies</h1><br/><h1 class="subtitle">Experience over eight decades of the Oscars from 1927 to 2016</h1><br/><div id="ceremonies-decade-scroller" class="decade-scroller">
+      <div class="decades">
+      <ul class="links"><li class="decade-1920 first"><a href="/oscars/ceremonies/1920" class="decade">1920s</a></li>
+<li class="decade-1930"><a href="/oscars/ceremonies/1930" class="decade">1930s</a></li>
+<li class="decade-1940"><a href="/oscars/ceremonies/1940" class="decade">1940s</a></li>
+<li class="decade-1950"><a href="/oscars/ceremonies/1950" class="decade">1950s</a></li>
+<li class="decade-1960"><a href="/oscars/ceremonies/1960" class="decade">1960s</a></li>
+<li class="decade-1970"><a href="/oscars/ceremonies/1970" class="decade">1970s</a></li>
+<li class="decade-1980"><a href="/oscars/ceremonies/1980" class="decade">1980s</a></li>
+<li class="decade-1990"><a href="/oscars/ceremonies/1990" class="decade">1990s</a></li>
+<li class="decade-2000"><a href="/oscars/ceremonies/2000" class="decade">2000s</a></li>
+<li class="decade-2010 last"><a href="/oscars/ceremonies/2010" class="decade active">2010s</a></li>
+</ul>      <div class="decades-nav decade-scroller-nav">
+        <a href="/oscars/ceremonies/1929" class="prev">previous</a>        <a href="/oscars/ceremonies/2016" class="next">next</a>      </div>
+    </div>
+        <div class="years">
+      <ul class="links"><li class="year-1929 decade-1920 first"><a href="/oscars/ceremonies/1929" class="year">1929</a></li>
+<li class="year-1930 decade-1930"><a href="/oscars/ceremonies/1930" class="year">1930</a></li>
+<li class="year-1931 decade-1930"><a href="/oscars/ceremonies/1931" class="year">1931</a></li>
+<li class="year-1932 decade-1930"><a href="/oscars/ceremonies/1932" class="year">1932</a></li>
+<li class="year-1933 decade-1930"><a href="/oscars/ceremonies/1933" class="year">1933</a></li>
+<li class="year-1934 decade-1930"><a href="/oscars/ceremonies/1934" class="year">1934</a></li>
+<li class="year-1935 decade-1930"><a href="/oscars/ceremonies/1935" class="year">1935</a></li>
+<li class="year-1936 decade-1930"><a href="/oscars/ceremonies/1936" class="year">1936</a></li>
+<li class="year-1937 decade-1930"><a href="/oscars/ceremonies/1937" class="year">1937</a></li>
+<li class="year-1938 decade-1930"><a href="/oscars/ceremonies/1938" class="year">1938</a></li>
+<li class="year-1939 decade-1930"><a href="/oscars/ceremonies/1939" class="year">1939</a></li>
+<li class="year-1940 decade-1940"><a href="/oscars/ceremonies/1940" class="year">1940</a></li>
+<li class="year-1941 decade-1940"><a href="/oscars/ceremonies/1941" class="year">1941</a></li>
+<li class="year-1942 decade-1940"><a href="/oscars/ceremonies/1942" class="year">1942</a></li>
+<li class="year-1943 decade-1940"><a href="/oscars/ceremonies/1943" class="year">1943</a></li>
+<li class="year-1944 decade-1940"><a href="/oscars/ceremonies/1944" class="year">1944</a></li>
+<li class="year-1945 decade-1940"><a href="/oscars/ceremonies/1945" class="year">1945</a></li>
+<li class="year-1946 decade-1940"><a href="/oscars/ceremonies/1946" class="year">1946</a></li>
+<li class="year-1947 decade-1940"><a href="/oscars/ceremonies/1947" class="year">1947</a></li>
+<li class="year-1948 decade-1940"><a href="/oscars/ceremonies/1948" class="year">1948</a></li>
+<li class="year-1949 decade-1940"><a href="/oscars/ceremonies/1949" class="year">1949</a></li>
+<li class="year-1950 decade-1950"><a href="/oscars/ceremonies/1950" class="year">1950</a></li>
+<li class="year-1951 decade-1950"><a href="/oscars/ceremonies/1951" class="year">1951</a></li>
+<li class="year-1952 decade-1950"><a href="/oscars/ceremonies/1952" class="year">1952</a></li>
+<li class="year-1953 decade-1950"><a href="/oscars/ceremonies/1953" class="year">1953</a></li>
+<li class="year-1954 decade-1950"><a href="/oscars/ceremonies/1954" class="year">1954</a></li>
+<li class="year-1955 decade-1950"><a href="/oscars/ceremonies/1955" class="year">1955</a></li>
+<li class="year-1956 decade-1950"><a href="/oscars/ceremonies/1956" class="year">1956</a></li>
+<li class="year-1957 decade-1950"><a href="/oscars/ceremonies/1957" class="year">1957</a></li>
+<li class="year-1958 decade-1950"><a href="/oscars/ceremonies/1958" class="year">1958</a></li>
+<li class="year-1959 decade-1950"><a href="/oscars/ceremonies/1959" class="year">1959</a></li>
+<li class="year-1960 decade-1960"><a href="/oscars/ceremonies/1960" class="year">1960</a></li>
+<li class="year-1961 decade-1960"><a href="/oscars/ceremonies/1961" class="year">1961</a></li>
+<li class="year-1962 decade-1960"><a href="/oscars/ceremonies/1962" class="year">1962</a></li>
+<li class="year-1963 decade-1960"><a href="/oscars/ceremonies/1963" class="year">1963</a></li>
+<li class="year-1964 decade-1960"><a href="/oscars/ceremonies/1964" class="year">1964</a></li>
+<li class="year-1965 decade-1960"><a href="/oscars/ceremonies/1965" class="year">1965</a></li>
+<li class="year-1966 decade-1960"><a href="/oscars/ceremonies/1966" class="year">1966</a></li>
+<li class="year-1967 decade-1960"><a href="/oscars/ceremonies/1967" class="year">1967</a></li>
+<li class="year-1968 decade-1960"><a href="/oscars/ceremonies/1968" class="year">1968</a></li>
+<li class="year-1969 decade-1960"><a href="/oscars/ceremonies/1969" class="year">1969</a></li>
+<li class="year-1970 decade-1970"><a href="/oscars/ceremonies/1970" class="year">1970</a></li>
+<li class="year-1971 decade-1970"><a href="/oscars/ceremonies/1971" class="year">1971</a></li>
+<li class="year-1972 decade-1970"><a href="/oscars/ceremonies/1972" class="year">1972</a></li>
+<li class="year-1973 decade-1970"><a href="/oscars/ceremonies/1973" class="year">1973</a></li>
+<li class="year-1974 decade-1970"><a href="/oscars/ceremonies/1974" class="year">1974</a></li>
+<li class="year-1975 decade-1970"><a href="/oscars/ceremonies/1975" class="year">1975</a></li>
+<li class="year-1976 decade-1970"><a href="/oscars/ceremonies/1976" class="year">1976</a></li>
+<li class="year-1977 decade-1970"><a href="/oscars/ceremonies/1977" class="year">1977</a></li>
+<li class="year-1978 decade-1970"><a href="/oscars/ceremonies/1978" class="year">1978</a></li>
+<li class="year-1979 decade-1970"><a href="/oscars/ceremonies/1979" class="year">1979</a></li>
+<li class="year-1980 decade-1980"><a href="/oscars/ceremonies/1980" class="year">1980</a></li>
+<li class="year-1981 decade-1980"><a href="/oscars/ceremonies/1981" class="year">1981</a></li>
+<li class="year-1982 decade-1980"><a href="/oscars/ceremonies/1982" class="year">1982</a></li>
+<li class="year-1983 decade-1980"><a href="/oscars/ceremonies/1983" class="year">1983</a></li>
+<li class="year-1984 decade-1980"><a href="/oscars/ceremonies/1984" class="year">1984</a></li>
+<li class="year-1985 decade-1980"><a href="/oscars/ceremonies/1985" class="year">1985</a></li>
+<li class="year-1986 decade-1980"><a href="/oscars/ceremonies/1986" class="year">1986</a></li>
+<li class="year-1987 decade-1980"><a href="/oscars/ceremonies/1987" class="year">1987</a></li>
+<li class="year-1988 decade-1980"><a href="/oscars/ceremonies/1988" class="year">1988</a></li>
+<li class="year-1989 decade-1980"><a href="/oscars/ceremonies/1989" class="year">1989</a></li>
+<li class="year-1990 decade-1990"><a href="/oscars/ceremonies/1990" class="year">1990</a></li>
+<li class="year-1991 decade-1990"><a href="/oscars/ceremonies/1991" class="year">1991</a></li>
+<li class="year-1992 decade-1990"><a href="/oscars/ceremonies/1992" class="year">1992</a></li>
+<li class="year-1993 decade-1990"><a href="/oscars/ceremonies/1993" class="year">1993</a></li>
+<li class="year-1994 decade-1990"><a href="/oscars/ceremonies/1994" class="year">1994</a></li>
+<li class="year-1995 decade-1990"><a href="/oscars/ceremonies/1995" class="year">1995</a></li>
+<li class="year-1996 decade-1990"><a href="/oscars/ceremonies/1996" class="year">1996</a></li>
+<li class="year-1997 decade-1990"><a href="/oscars/ceremonies/1997" class="year">1997</a></li>
+<li class="year-1998 decade-1990"><a href="/oscars/ceremonies/1998" class="year">1998</a></li>
+<li class="year-1999 decade-1990"><a href="/oscars/ceremonies/1999" class="year">1999</a></li>
+<li class="year-2000 decade-2000"><a href="/oscars/ceremonies/2000" class="year">2000</a></li>
+<li class="year-2001 decade-2000"><a href="/oscars/ceremonies/2001" class="year">2001</a></li>
+<li class="year-2002 decade-2000"><a href="/oscars/ceremonies/2002" class="year">2002</a></li>
+<li class="year-2003 decade-2000"><a href="/oscars/ceremonies/2003" class="year">2003</a></li>
+<li class="year-2004 decade-2000"><a href="/oscars/ceremonies/2004" class="year">2004</a></li>
+<li class="year-2005 decade-2000"><a href="/oscars/ceremonies/2005" class="year">2005</a></li>
+<li class="year-2006 decade-2000"><a href="/oscars/ceremonies/2006" class="year">2006</a></li>
+<li class="year-2007 decade-2000"><a href="/oscars/ceremonies/2007" class="year">2007</a></li>
+<li class="year-2008 decade-2000"><a href="/oscars/ceremonies/2008" class="year">2008</a></li>
+<li class="year-2009 decade-2000"><a href="/oscars/ceremonies/2009" class="year">2009</a></li>
+<li class="year-2010 decade-2010"><a href="/oscars/ceremonies/2010" class="year">2010</a></li>
+<li class="year-2011 decade-2010"><a href="/oscars/ceremonies/2011" class="year">2011</a></li>
+<li class="year-2012 decade-2010"><a href="/oscars/ceremonies/2012" class="year">2012</a></li>
+<li class="year-2013 decade-2010"><a href="/oscars/ceremonies/2013" class="year">2013</a></li>
+<li class="year-2014 decade-2010 active"><a href="/oscars/ceremonies/2014" class="year active">2014</a></li>
+<li class="year-2015 decade-2010"><a href="/oscars/ceremonies/2015" class="year">2015</a></li>
+<li class="year-2016 decade-2010 last"><a href="/oscars/ceremonies/2016" class="year">2016</a></li>
+</ul>      <div class="years-nav decade-scroller-nav">
+        <a href="/oscars/ceremonies/1929" class="prev">previous</a>        <a href="/oscars/ceremonies/2016" class="next">next</a>      </div>
+    </div>
+  </div>
+    </div>
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last clearfix">
+      
+  <div class="views-field views-field-title">        <span class="field-content">The 86th Academy Awards | <span class="date-display-single">2014</span></span>  </div>  
+  <div class="views-field views-field-field-location-name">        <div class="field-content"> Dolby Theatre at the Hollywood &amp; Highland Center</div>  </div>  
+  <div class="views-field views-field-field-date">        <div class="field-content"><span class="date-display-single">Sunday, March 2, 2014</span></div>  </div>  
+  <div class="views-field views-field-field-honoring-line">        <div class="field-content">Honoring movies released in 2013</div>  </div>  
+  <div class="views-field views-field-social-share">        <span class="field-content"><div class="social-share clearfix"><span class="share-label">Share </span><a href="https://twitter.com/share?url=http%3A%2F%2Fwww.oscars.org%2Foscars%2Fceremonies%2F2014&amp;via=TheAcademy" class="social-share-twitter" title="Twitter" target="_blank">Twitter</a><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.oscars.org%2Foscars%2Fceremonies%2F2014" class="social-share-facebook" title="Facebook" target="_blank">Facebook</a></div></span>  </div>  
+  <div class="views-field views-field-field-highlights">    <span class="views-label views-label-field-highlights">Highlights</span>    <div class="field-content"><ul><li><div class="field-collection-view clearfix view-mode-full"><div class="entity entity-field-collection-item field-collection-item-field-highlights clearfix" class="entity entity-field-collection-item field-collection-item-field-highlights">
+  <div class="content">
+    <div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Documentary Feature </div></div></div><div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image video"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/vef/load/e5fc0a1d5fbb843f0d0fb8daa3b68b17?width=640&amp;height=365&amp;iframe=true" class="colorbox-load" title="20 Feet from Stardom" data-youtube="http://www.youtube.com/watch?v=sPYyCRqUOVk" data-title="20 Feet from Stardom" data-description=" Janet Friesen, Morgan Neville, Darlene Love and Caitrin Rogers" data-type="youtube" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/file/20-feet-stardom-winning-best-documentary-feature" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/file/20-feet-stardom-winning-best-documentary-feature&amp;via=TheAcademy" rel="highlights-gallery"><noscript><style>.lazy-load{display:none;}</style><img alt="&quot;20 Feet from Stardom&quot; winning Best Documentary Feature" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/sPYyCRqUOVk.jpg?itok=VY1UGizA" class="lazy-load" /></noscript><img alt="&quot;20 Feet from Stardom&quot; winning Best Documentary Feature" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/sPYyCRqUOVk.jpg?itok=VY1UGizA" class="lazy-load" /></a></div></div></div><div class="field field--name-field-film-title field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">20 Feet from Stardom</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even"> Janet Friesen, Morgan Neville, Darlene Love and Caitrin Rogers</div></div></div>  </div>
+</div>
+</div></li>
+<li><div class="field-collection-view clearfix view-mode-full"><div class="entity entity-field-collection-item field-collection-item-field-highlights clearfix" class="entity entity-field-collection-item field-collection-item-field-highlights">
+  <div class="content">
+    <div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Best Directing</div></div></div><div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image video"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/vef/load/1183bd72836c4de49076f2812f3444f6?width=640&amp;height=365&amp;iframe=true" class="colorbox-load" title="Gravity" data-youtube="http://www.youtube.com/watch?v=9f8B49XuaBY" data-title="Gravity" data-description="Alfonso Cuarón" data-type="youtube" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/file/alfonso-cuaron-wins-best-directing-2014-oscars" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/file/alfonso-cuaron-wins-best-directing-2014-oscars&amp;via=TheAcademy" rel="highlights-gallery"><noscript><style>.lazy-load{display:none;}</style><img alt="Alfonso Cuarón Wins Best Directing: 2014 Oscars" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/9f8B49XuaBY.jpg?itok=n0_8iYG4" class="lazy-load" /></noscript><img alt="Alfonso Cuarón Wins Best Directing: 2014 Oscars" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/9f8B49XuaBY.jpg?itok=n0_8iYG4" class="lazy-load" /></a></div></div></div><div class="field field--name-field-film-title field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Gravity</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even">Alfonso Cuarón</div></div></div>  </div>
+</div>
+</div></li>
+<li><div class="field-collection-view clearfix view-mode-full field-collection-view-final"><div class="entity entity-field-collection-item field-collection-item-field-highlights clearfix" class="entity entity-field-collection-item field-collection-item-field-highlights">
+  <div class="content">
+    <div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Original Song</div></div></div><div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image video"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/vef/load/a1f53ae30c568ead0eb4220c6587edcd?width=640&amp;height=365&amp;iframe=true" class="colorbox-load" title="&amp;quot;Let It Go&amp;quot; from Frozen" data-youtube="http://www.youtube.com/watch?v=gbeSPgiVXGU" data-title="&amp;quot;Let It Go&amp;quot; from Frozen" data-description="Kristen Anderson-Lopez and Robert Lopez" data-type="youtube" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/file/let-it-go-frozen-winning-best-original-song" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/file/let-it-go-frozen-winning-best-original-song&amp;via=TheAcademy" rel="highlights-gallery"><noscript><style>.lazy-load{display:none;}</style><img alt="&quot;Let It Go&quot; from &quot;Frozen&quot; winning Best Original Song" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/gbeSPgiVXGU.jpg?itok=xLyQbjdE" class="lazy-load" /></noscript><img alt="&quot;Let It Go&quot; from &quot;Frozen&quot; winning Best Original Song" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_high_default/public/media-youtube/gbeSPgiVXGU.jpg?itok=xLyQbjdE" class="lazy-load" /></a></div></div></div><div class="field field--name-field-film-title field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">&quot;Let It Go&quot; from Frozen</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even">Kristen Anderson-Lopez and Robert Lopez</div></div></div>  </div>
+</div>
+</div></li>
+</ul></div>  </div>  
+  <div class="views-field views-field-field-more-highlights">        <div class="field-content"><a href="http://www.oscars.org/videos-photos/86th-oscars-highlights" class="btn-link">View More Highlights</a></div>  </div>  
+  <div class="views-field views-field-field-memorable-moments">    <span class="views-label views-label-field-memorable-moments">Memorable Moments</span>    <div class="field-content"><ul><li><div class="field-collection-view clearfix view-mode-full"><div class="entity entity-field-collection-item field-collection-item-field-memorable-moments clearfix" class="entity entity-field-collection-item field-collection-item-field-memorable-moments">
+  <div class="content">
+    <div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image photo"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/sites/oscars/files/actor_mcconaughey.jpg" alt="Matthew McConaughey" title="Matthew McConaughey" class="colorbox" rel="memorable-gallery" data-type="image" data-title="Matthew McConaughey" data-description="The Best Actor winner for Dallas Buyers Club cuts up in the audience" data-colorbox-fid="11706" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/oscars/ceremonies/2014?fid=11706" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/oscars/ceremonies/2014?fid=11706&amp;via=TheAcademy" data-poster-date="" data-poster-nicholl="" data-poster-credit=""><noscript><style>.lazy-load{display:none;}</style><img alt="Matthew McConaughey" title="Matthew McConaughey" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/actor_mcconaughey.jpg?itok=18YhX2Di" class="lazy-load" /></noscript><img alt="Matthew McConaughey" title="Matthew McConaughey" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/actor_mcconaughey.jpg?itok=18YhX2Di" class="lazy-load" /></a></div></div></div><div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Matthew McConaughey</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even">The Best Actor winner for Dallas Buyers Club cuts up in the audience</div></div></div>  </div>
+</div>
+</div></li>
+<li><div class="field-collection-view clearfix view-mode-full"><div class="entity entity-field-collection-item field-collection-item-field-memorable-moments clearfix" class="entity entity-field-collection-item field-collection-item-field-memorable-moments">
+  <div class="content">
+    <div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image photo"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/sites/oscars/files/mcqueen_pitt.jpg" alt="Steve McQueen, Brad PItt" title="Brad Pitt and Steve McQueen" class="colorbox" rel="memorable-gallery" data-type="image" data-title="Brad Pitt and Steve McQueen" data-description="Best Picture winners for 12 Years a Slave" data-colorbox-fid="19236" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/oscars/ceremonies/2014?fid=19236" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/oscars/ceremonies/2014?fid=19236&amp;via=TheAcademy" data-poster-date="" data-poster-nicholl="" data-poster-credit=""><noscript><style>.lazy-load{display:none;}</style><img alt="Steve McQueen, Brad PItt" title="Steve McQueen, Brad PItt" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/mcqueen_pitt.jpg?itok=mOzrfEd4" class="lazy-load" /></noscript><img alt="Steve McQueen, Brad PItt" title="Steve McQueen, Brad PItt" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/mcqueen_pitt.jpg?itok=mOzrfEd4" class="lazy-load" /></a></div></div></div><div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Brad Pitt and Steve McQueen</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even">Best Picture winners for 12 Years a Slave</div></div></div>  </div>
+</div>
+</div></li>
+<li><div class="field-collection-view clearfix view-mode-full field-collection-view-final"><div class="entity entity-field-collection-item field-collection-item-field-memorable-moments clearfix" class="entity entity-field-collection-item field-collection-item-field-memorable-moments">
+  <div class="content">
+    <div class="field field--name-field-ceremonies-media field--type-image field--label-hidden media-thumbnail-image photo"><div class="field-items"><div class="field-item even"><a href="http://www.oscars.org/sites/oscars/files/actress_lupita.jpg" alt="Lupita Nyong&amp;#039;o" title="Lupita Nyong&amp;#039;o" class="colorbox" rel="memorable-gallery" data-type="image" data-title="Lupita Nyong&amp;#039;o" data-description="Supporting Actress winner for 12 Years a Slave" data-colorbox-fid="11731" data-facebook-url="https://www.facebook.com/sharer.php?u=http://www.oscars.org/oscars/ceremonies/2014?fid=11731" data-twitter-url="https://twitter.com/share?url=http://www.oscars.org/oscars/ceremonies/2014?fid=11731&amp;via=TheAcademy" data-poster-date="" data-poster-nicholl="" data-poster-credit=""><noscript><style>.lazy-load{display:none;}</style><img alt="Lupita Nyong&#039;o" title="Lupita Nyong&#039;o" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/actress_lupita.jpg?itok=CIhXHC3C" class="lazy-load" /></noscript><img alt="Lupita Nyong&#039;o" title="Lupita Nyong&#039;o" data-original="http://www.oscars.org/sites/oscars/files/styles/ceremonies_media_std_default/public/actress_lupita.jpg?itok=CIhXHC3C" class="lazy-load" /></a></div></div></div><div class="field field--name-field-caption field--type-text field--label-hidden"><div class="field-items"><div class="field-item even">Lupita Nyong&#039;o</div></div></div><div class="field field--name-field-film-desc field--type-text-long field--label-hidden ellipsis"><div class="field-items"><div class="field-item even">Supporting Actress winner for 12 Years a Slave</div></div></div>  </div>
+</div>
+</div></li>
+</ul></div>  </div>  
+  <div class="views-field views-field-field-more-memorable-moments">        <div class="field-content"><a href="http://www.oscars.org/oscars/ceremonies/2014/memorable-moments" class="btn-link">View More Memorable Moments</a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div><div id="block-quicktabs-honorees" class="block block--quicktabs block--quicktabs-honorees ">
+        <h2 class="block__title block-title">Winners &amp; Nominees</h2>
+      <div class="block__content">
+    <div  id="quicktabs-honorees" class="quicktabs-wrapper quicktabs-style-nostyle"><ul class="quicktabs-tabs quicktabs-style-nostyle"><li class="active"><a href="/oscars/ceremonies/2014?qt-honorees=0#qt-honorees" id="quicktabs-tab-honorees-0" class="active">View by Category</a></li>
+<li><a href="/oscars/ceremonies/2014?qt-honorees=1#qt-honorees" id="quicktabs-tab-honorees-1" class="active">View by Film</a></li>
+</ul><div id="quicktabs-container-honorees" class="quicktabs_main quicktabs-style-nostyle"><div  id="quicktabs-tabpage-honorees-0" class="quicktabs-tabpage "><div class="view view-awards view-id-awards view-display-id-osc_honoree_by_cat view-dom-id-90f2edbe71c25662ff603c22699de2a6">
+        
+      <div class="view-filters">
+      <form class="ctools-auto-submit-full-form views-exposed-form-awards-osc-honoree-by-cat" action="/" method="get" id="views-exposed-form-awards-osc-honoree-by-cat" accept-charset="UTF-8"><div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clearfix">
+          <div id="edit-field-award-category-tid-wrapper" class="views-exposed-widget views-widget-filter-field_award_category_tid">
+                        <div class="views-widget">
+          <div class="form-item form-type-select form-item-field-award-category-tid">
+ <select id="edit-field-award-category-tid" name="field_award_category_tid" class="form-select"><option value="All" selected="selected">Select a Category</option><option value="1731">Actor in a Leading Role</option><option value="1736">Actor in a Supporting Role</option><option value="1741">Actress in a Leading Role</option><option value="1746">Actress in a Supporting Role</option><option value="1751">Animated Feature Film</option><option value="1756">Best Picture</option><option value="1761">Cinematography</option><option value="1766">Costume Design</option><option value="1771">Directing</option><option value="2336">Documentary (Feature)</option><option value="2301">Documentary (Short Subject)</option><option value="1786">Film Editing</option><option value="1791">Foreign Language Film</option><option value="1796">Makeup and Hairstyling</option><option value="2266">Music (Original Score)</option><option value="2511">Music (Original Song)</option><option value="1811">Production Design</option><option value="2496">Short Film (Animated)</option><option value="2501">Short Film (Live Action)</option><option value="1826">Sound Editing</option><option value="1831">Sound Mixing</option><option value="1836">Visual Effects</option><option value="2596">Writing (Adapted Screenplay)</option><option value="2296">Writing (Original Screenplay)</option></select>
+</div>
+        </div>
+              </div>
+                    <div class="views-exposed-widget views-submit-button">
+      <input class="ctools-use-ajax ctools-auto-submit-click js-hide form-submit" type="submit" id="edit-submit-awards" name="" value="Apply" />    </div>
+      </div>
+</div>
+</div></form>    </div>
+  
+  
+      <div class="view-content">
+      <div class="view-grouping"><div class="view-grouping-header"><h2>Actor in a Leading Role</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Matthew McConaughey</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Dallas Buyers Club
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Christian Bale</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">American Hustle
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Bruce Dern</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Nebraska
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Leonardo DiCaprio</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">The Wolf of Wall Street
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Chiwetel Ejiofor</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">12 Years a Slave
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Actor in a Supporting Role</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Jared Leto</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Dallas Buyers Club
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Barkhad Abdi</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Captain Phillips
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Bradley Cooper</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">American Hustle
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Michael Fassbender</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">12 Years a Slave
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Jonah Hill</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">The Wolf of Wall Street
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Actress in a Leading Role</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Cate Blanchett</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Blue Jasmine
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Amy Adams</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">American Hustle
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Sandra Bullock</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Gravity
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Judi Dench</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Philomena
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Meryl Streep</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">August: Osage County
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Actress in a Supporting Role</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Lupita Nyong&#039;o</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">12 Years a Slave
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Sally Hawkins</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Blue Jasmine
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Jennifer Lawrence</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">American Hustle
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Julia Roberts</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">August: Osage County
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">June Squibb</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Nebraska
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Animated Feature Film</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Frozen</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Chris Buck, Jennifer Lee and Peter Del Vecho
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Croods</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Chris Sanders, Kirk DeMicco and Kristine Belson
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Despicable Me 2</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Chris Renaud, Pierre Coffin and Chris Meledandri
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Ernest &amp; Celestine</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Benjamin Renner and Didier Brunner
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Wind Rises</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Hayao Miyazaki and Toshio Suzuki
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Best Picture</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen and Anthony Katagas, Producers
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Charles Roven, Richard Suckle, Megan Ellison and Jonathan Gordon, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Captain Phillips</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Scott Rudin, Dana Brunetti and Michael De Luca, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Dallas Buyers Club</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Robbie Brenner and Rachel Winter, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Alfonso Cuarón and David Heyman, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Her</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Megan Ellison, Spike Jonze and Vincent Landay, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Nebraska</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Albert Berger and Ron Yerxa, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Philomena</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Gabrielle Tana, Steve Coogan and Tracey Seaward, Producers
+</span>  </div>  </div>
+  <div class="views-row views-row-8 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Wolf of Wall Street</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Martin Scorsese, Leonardo DiCaprio, Joey McFarland and Emma Tillinger Koskoff, Producers
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Cinematography</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Emmanuel Lubezki
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Grandmaster</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Philippe Le Sourd
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Inside Llewyn Davis</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Bruno Delbonnel
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Nebraska</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Phedon Papamichael
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Prisoners</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Roger A. Deakins
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Costume Design</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Great Gatsby</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Catherine Martin
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Michael Wilkinson
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Grandmaster</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">William Chang Suk Ping
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Invisible Woman</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Michael O&#039;Connor
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Patricia Norris
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Directing</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Alfonso Cuarón
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">David O. Russell
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Nebraska</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Alexander Payne
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Steve McQueen
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Wolf of Wall Street</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Martin Scorsese
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Film Editing</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Alfonso Cuarón and Mark Sanger
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Jay Cassidy, Crispin Struthers and Alan Baumgarten
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Captain Phillips</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Christopher Rouse
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Dallas Buyers Club</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">John Mac McMurphy and Martin Pensa
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Joe Walker
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Foreign Language Film</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Great Beauty</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Italy
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Broken Circle Breakdown</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Belgium
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Hunt</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Denmark
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Missing Picture</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Cambodia
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Omar</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Palestine
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Makeup and Hairstyling</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Dallas Buyers Club</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Adruitha Lee and Robin Mathews
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Jackass Presents: Bad Grandpa</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Stephen Prouty
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Lone Ranger</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Joel Harlow and Gloria Pasqua-Casny
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Production Design</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Great Gatsby</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Production Design: Catherine Martin; Set Decoration: Beverley Dunn
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Production Design: Judy Becker; Set Decoration: Heather Loeffler
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Production Design: Andy Nicholson; Set Decoration: Rosie Goodwin and Joanne Woollard
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Her</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Production Design: K.K. Barrett; Set Decoration: Gene Serdena
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Production Design: Adam Stockhausen; Set Decoration: Alice Baker
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Sound Editing</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Glenn Freemantle
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">All Is Lost</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Steve Boeddeker and Richard Hymns
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Captain Phillips</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Oliver Tarney
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Hobbit: The Desolation of Smaug</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Brent Burge and Chris Ward
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Lone Survivor</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Wylie Stateman
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Sound Mixing</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Skip Lievsay, Niv Adiri, Christopher Benstead and Chris Munro
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Captain Phillips</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Chris Burdon, Mark Taylor, Mike Prestwood Smith and Chris Munro
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Hobbit: The Desolation of Smaug</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Christopher Boyes, Michael Hedges, Michael Semanick and Tony Johnson
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Inside Llewyn Davis</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Skip Lievsay, Greg Orloff and Peter F. Kurland
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Lone Survivor</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Andy Koyama, Beau Borders and David Brownlow
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Visual Effects</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Tim Webber, Chris Lawrence, David Shirk and Neil Corbould
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Hobbit: The Desolation of Smaug</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Joe Letteri, Eric Saindon, David Clayton and Eric Reynolds
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Iron Man 3</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Christopher Townsend, Guy Williams, Erik Nash and Dan Sudick
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Lone Ranger</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Tim Alexander, Gary Brozenich, Edson Williams and John Frazier
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Star Trek Into Darkness</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Roger Guyett, Patrick Tubach, Ben Grossmann and Burt Dalton
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Music (Original Score)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Gravity</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Steven Price
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Book Thief</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">John Williams
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Her</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">William Butler and Owen Pallett
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Philomena</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Alexandre Desplat
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Saving Mr. Banks</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Thomas Newman
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Writing (Original Screenplay)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Her</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Spike Jonze
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">American Hustle</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Eric Warren Singer and David O. Russell
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Blue Jasmine</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Woody Allen
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Dallas Buyers Club</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Craig Borten &amp; Melisa Wallack
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Nebraska</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Bob Nelson
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Documentary (Short Subject)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Lady in Number 6: Music Saved My Life</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Malcolm Clarke and Nicholas Reed
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">CaveDigger</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Jeffrey Karoff
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Facing Fear</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Jason Cohen
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Karama Has No Walls</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Sara Ishaq
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Prison Terminal: The Last Days of Private Jack Hall</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Edgar Barens
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Documentary (Feature)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">20 Feet from Stardom</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Morgan Neville, Gil Friesen and Caitrin Rogers
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Act of Killing</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Joshua Oppenheimer and Signe Byrge Sørensen
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Cutie and the Boxer</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Zachary Heinzerling and Lydia Dean Pilcher
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Dirty Wars</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Richard Rowley and Jeremy Scahill
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Square</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Jehane Noujaim and Karim Amer
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Short Film (Animated)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Mr. Hublot</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Laurent Witz and Alexandre Espigares
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Feral</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Daniel Sousa and Dan Golden
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Get a Horse!</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Lauren MacMullan and Dorothy McKim
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Possessions</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Shuhei Morita
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Room on the Broom</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Max Lang and Jan Lachauer
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Short Film (Live Action)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Helium</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Anders Walter and Kim Magnusson
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Aquel No Era Yo (That Wasn't Me)</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Esteban Crespo
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Avant Que De Tout Perdre (Just before Losing Everything)</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Xavier Legrand and Alexandre Gavras
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Pit__k_ Mun Kaikki Hoitaa? (Do I Have to Take Care of Everything?)</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Selma Vilhunen and Kirsikka Saari
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Voorman Problem</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Mark Gill and Baldwin Li
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Music (Original Song)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Frozen</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">&quot;Let It Go&quot; in Frozen; Music and Lyric by Kristen Anderson-Lopez and Robert Lopez
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Despicable Me 2</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Happy in &quot;Despicable Me 2&quot; Music and Lyric by Pharrell Williams
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Her</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">The Moon Song in &quot;Her&quot; Music by Karen O; Lyric by Karen O and Spike Jonze
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Mandela: Long Walk to Freedom</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Ordinary Love in &quot;Mandela: Long Walk to Freedom&quot; Music by Paul Hewson, Dave Evans, Adam Clayton and Larry Mullen; Lyric by Paul Hewson
+</span>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header"><h2>Writing (Adapted Screenplay)</h2></div><div class="view-grouping-content">  <h3><span class="golden-text">Winner</span></h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">12 Years a Slave</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Screenplay by John Ridley
+</span>  </div>  </div>
+  <h3>Nominees</h3>
+  <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Before Midnight</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Written by Richard Linklater, Julie Delpy, Ethan Hawke
+</span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Captain Phillips</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Screenplay by Billy Ray
+</span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">Philomena</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Screenplay by Steve Coogan and Jeff Pope
+</span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even views-row-last">
+      
+  <div class="views-field views-field-field-actor-name">        <h4 class="field-content">The Wolf of Wall Street</h4>  </div>  
+  <div class="views-field views-field-title">        <span class="field-content">Screenplay by Terence Winter
+</span>  </div>  </div>
+</div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></div><div  id="quicktabs-tabpage-honorees-1" class="quicktabs-tabpage quicktabs-hide"><div class="view view-awards view-id-awards view-display-id-osc_honoree_by_film view-dom-id-e790f2ce896bb8664ee5745c45ea48bd">
+        
+  
+      <div class="attachment attachment-before">
+      <div class="film-glossary-filter">
+      <div class="glossary">
+      <a href="/oscars/ceremonies/2014?qt-honorees=1#block-quicktabs-honorees" class="active">ALL</a><a href="/oscars/ceremonies/2014/0%2B0?qt-honorees=1#block-quicktabs-honorees">O-9</a><a href="/oscars/ceremonies/2014/A?qt-honorees=1#block-quicktabs-honorees">A</a><a href="/oscars/ceremonies/2014/B?qt-honorees=1#block-quicktabs-honorees">B</a><a href="/oscars/ceremonies/2014/C?qt-honorees=1#block-quicktabs-honorees">C</a><a href="/oscars/ceremonies/2014/D?qt-honorees=1#block-quicktabs-honorees">D</a><a href="/oscars/ceremonies/2014/E?qt-honorees=1#block-quicktabs-honorees">E</a><a href="/oscars/ceremonies/2014/F?qt-honorees=1#block-quicktabs-honorees">F</a><a href="/oscars/ceremonies/2014/G?qt-honorees=1#block-quicktabs-honorees">G</a><a href="/oscars/ceremonies/2014/H?qt-honorees=1#block-quicktabs-honorees">H</a><a href="/oscars/ceremonies/2014/I?qt-honorees=1#block-quicktabs-honorees">I</a><a href="/oscars/ceremonies/2014/J?qt-honorees=1#block-quicktabs-honorees">J</a><a href="/oscars/ceremonies/2014/K?qt-honorees=1#block-quicktabs-honorees">K</a><a href="/oscars/ceremonies/2014/L?qt-honorees=1#block-quicktabs-honorees">L</a><a href="/oscars/ceremonies/2014/M?qt-honorees=1#block-quicktabs-honorees">M</a><a href="/oscars/ceremonies/2014/N?qt-honorees=1#block-quicktabs-honorees">N</a><a href="/oscars/ceremonies/2014/O?qt-honorees=1#block-quicktabs-honorees">O</a><a href="/oscars/ceremonies/2014/P?qt-honorees=1#block-quicktabs-honorees">P</a><span class="no-link">Q</span>
+<a href="/oscars/ceremonies/2014/R?qt-honorees=1#block-quicktabs-honorees">R</a><a href="/oscars/ceremonies/2014/S?qt-honorees=1#block-quicktabs-honorees">S</a><span class="no-link">T</span>
+<span class="no-link">U</span>
+<a href="/oscars/ceremonies/2014/V?qt-honorees=1#block-quicktabs-honorees">V</a><a href="/oscars/ceremonies/2014/W?qt-honorees=1#block-quicktabs-honorees">W</a><span class="no-link">X</span>
+<span class="no-link">Y</span>
+<span class="no-link">Z</span>
+    </div>
+  </div>
+    </div>
+  
+      <div class="view-content">
+      <div class="view-grouping"><div class="view-grouping-header">0-9</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">12 Years a Slave</div><span class="label">9 Nominations, <span class="golden-text">3 Wins</span></span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Best Picture - Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen and Anthony Katagas, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Actress in a Supporting Role - Lupita Nyong&#039;o in &quot;12 Years a Slave&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Writing (Adapted Screenplay) - Screenplay by John Ridley</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Leading Role - Chiwetel Ejiofor in &quot;12 Years a Slave&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Film Editing - Joe Walker</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Supporting Role - Michael Fassbender in &quot;12 Years a Slave&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Costume Design - Patricia Norris</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Production Design - Production Design: Adam Stockhausen; Set Decoration: Alice Baker</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Directing - Steve McQueen</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">20 Feet from Stardom</div><span class="label"><span class="golden-text">1 Win</span>, 1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Documentary (Feature) - Morgan Neville, Gil Friesen and Caitrin Rogers</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">A</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">The Act of Killing</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Feature) - Joshua Oppenheimer and Signe Byrge Sørensen</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">All Is Lost</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Editing - Steve Boeddeker and Richard Hymns</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">American Hustle</div><span class="label">10 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Leading Role - Amy Adams in &quot;American Hustle&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Supporting Role - Bradley Cooper in &quot;American Hustle&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Charles Roven, Richard Suckle, Megan Ellison and Jonathan Gordon, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Leading Role - Christian Bale in &quot;American Hustle&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Directing - David O. Russell</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Film Editing - Jay Cassidy, Crispin Struthers and Alan Baumgarten</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Supporting Role - Jennifer Lawrence in &quot;American Hustle&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Costume Design - Michael Wilkinson</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Production Design - Production Design: Judy Becker; Set Decoration: Heather Loeffler</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Original Screenplay) - Written by Eric Warren Singer and David O. Russell</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Aquel No Era Yo (That Wasn&#039;t Me)</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Live Action) - Esteban Crespo</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">August: Osage County</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Supporting Role - Julia Roberts in &quot;August: Osage County&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Leading Role - Meryl Streep in &quot;August: Osage County&quot;</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Avant Que De Tout Perdre (Just before Losing Everything)</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Live Action) - Xavier Legrand and Alexandre Gavras</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">B</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Before Midnight</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Adapted Screenplay) - Written by Richard Linklater, Julie Delpy, Ethan Hawke</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Blue Jasmine</div><span class="label">3 Nominations, <span class="golden-text">1 Win</span></span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Actress in a Leading Role - Cate Blanchett in &quot;Blue Jasmine&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Supporting Role - Sally Hawkins in &quot;Blue Jasmine&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Original Screenplay) - Written by Woody Allen</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Book Thief</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Score) - John Williams</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Broken Circle Breakdown</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Foreign Language Film - Belgium</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">C</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Captain Phillips</div><span class="label">6 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Supporting Role - Barkhad Abdi in &quot;Captain Phillips&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Mixing - Chris Burdon, Mark Taylor, Mike Prestwood Smith and Chris Munro</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Film Editing - Christopher Rouse</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Editing - Oliver Tarney</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Scott Rudin, Dana Brunetti and Michael De Luca, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Adapted Screenplay) - Screenplay by Billy Ray</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">CaveDigger</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Short Subject) - Jeffrey Karoff</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Croods</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Animated Feature Film - Chris Sanders, Kirk DeMicco and Kristine Belson</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Cutie and the Boxer</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Feature) - Zachary Heinzerling and Lydia Dean Pilcher</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">D</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Dallas Buyers Club</div><span class="label">6 Nominations, <span class="golden-text">3 Wins</span></span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Makeup and Hairstyling - Adruitha Lee and Robin Mathews</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Actor in a Supporting Role - Jared Leto in &quot;Dallas Buyers Club&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Actor in a Leading Role - Matthew McConaughey in &quot;Dallas Buyers Club&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Film Editing - John Mac McMurphy and Martin Pensa</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Robbie Brenner and Rachel Winter, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Original Screenplay) - Written by Craig Borten &amp; Melisa Wallack</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Despicable Me 2</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Animated Feature Film - Chris Renaud, Pierre Coffin and Chris Meledandri</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Song) - Happy in &quot;Despicable Me 2&quot; Music and Lyric by Pharrell Williams</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Dirty Wars</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Feature) - Richard Rowley and Jeremy Scahill</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">E</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Ernest &amp;amp; Celestine</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Animated Feature Film - Benjamin Renner and Didier Brunner</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">F</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Facing Fear</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Short Subject) - Jason Cohen</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Feral</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Animated) - Daniel Sousa and Dan Golden</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Frozen</div><span class="label"><span class="golden-text">2 Wins</span>, 2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Music (Original Song) - &quot;Let It Go&quot; in Frozen; Music and Lyric by Kristen Anderson-Lopez and Robert Lopez</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Animated Feature Film - Chris Buck, Jennifer Lee and Peter Del Vecho</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">G</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Get a Horse!</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Animated) - Lauren MacMullan and Dorothy McKim</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Grandmaster</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Cinematography - Philippe Le Sourd</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Costume Design - William Chang Suk Ping</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Gravity</div><span class="label">10 Nominations, <span class="golden-text">7 Wins</span></span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Directing - Alfonso Cuarón</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Film Editing - Alfonso Cuarón and Mark Sanger</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Cinematography - Emmanuel Lubezki</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Sound Editing - Glenn Freemantle</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Sound Mixing - Skip Lievsay, Niv Adiri, Christopher Benstead and Chris Munro</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Music (Original Score) - Steven Price</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Visual Effects - Tim Webber, Chris Lawrence, David Shirk and Neil Corbould</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Alfonso Cuarón and David Heyman, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Production Design - Production Design: Andy Nicholson; Set Decoration: Rosie Goodwin and Joanne Woollard</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Leading Role - Sandra Bullock in &quot;Gravity&quot;</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Great Beauty</div><span class="label"><span class="golden-text">1 Win</span>, 1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Foreign Language Film - Italy</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Great Gatsby</div><span class="label"><span class="golden-text">2 Wins</span>, 2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Costume Design - Catherine Martin</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Production Design - Production Design: Catherine Martin; Set Decoration: Beverley Dunn</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">H</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Helium</div><span class="label"><span class="golden-text">1 Win</span>, 1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Short Film (Live Action) - Anders Walter and Kim Magnusson</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Her</div><span class="label">5 Nominations, <span class="golden-text">1 Win</span></span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Megan Ellison, Spike Jonze and Vincent Landay, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Production Design - Production Design: K.K. Barrett; Set Decoration: Gene Serdena</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Song) - The Moon Song in &quot;Her&quot; Music by Karen O; Lyric by Karen O and Spike Jonze</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Score) - William Butler and Owen Pallett</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Writing (Original Screenplay) - Written by Spike Jonze</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Hobbit: The Desolation of Smaug</div><span class="label">3 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Editing - Brent Burge and Chris Ward</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Mixing - Christopher Boyes, Michael Hedges, Michael Semanick and Tony Johnson</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Visual Effects - Joe Letteri, Eric Saindon, David Clayton and Eric Reynolds</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Hunt</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Foreign Language Film - Denmark</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">I</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Inside Llewyn Davis</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Cinematography - Bruno Delbonnel</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Mixing - Skip Lievsay, Greg Orloff and Peter F. Kurland</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Invisible Woman</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Costume Design - Michael O&#039;Connor</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Iron Man 3</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Visual Effects - Christopher Townsend, Guy Williams, Erik Nash and Dan Sudick</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">J</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Jackass Presents: Bad Grandpa</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Makeup and Hairstyling - Stephen Prouty</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">K</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Karama Has No Walls</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Short Subject) - Sara Ishaq</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">L</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">The Lady in Number 6: Music Saved My Life</div><span class="label"><span class="golden-text">1 Win</span>, 1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Documentary (Short Subject) - Malcolm Clarke and Nicholas Reed</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Lone Ranger</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Makeup and Hairstyling - Joel Harlow and Gloria Pasqua-Casny</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Visual Effects - Tim Alexander, Gary Brozenich, Edson Williams and John Frazier</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Lone Survivor</div><span class="label">2 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Mixing - Andy Koyama, Beau Borders and David Brownlow</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Sound Editing - Wylie Stateman</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">M</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Mandela: Long Walk to Freedom</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Song) - Ordinary Love in &quot;Mandela: Long Walk to Freedom&quot; Music by Paul Hewson, Dave Evans, Adam Clayton and Larry Mullen; Lyric by Paul Hewson</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Missing Picture</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Foreign Language Film - Cambodia</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Mr. Hublot</div><span class="label"><span class="golden-text">1 Win</span>, 1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content"><span class="golden-text">*</span> Short Film (Animated) - Laurent Witz and Alexandre Espigares</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">N</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Nebraska</div><span class="label">6 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Albert Berger and Ron Yerxa, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Directing - Alexander Payne</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Leading Role - Bruce Dern in &quot;Nebraska&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Supporting Role - June Squibb in &quot;Nebraska&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Cinematography - Phedon Papamichael</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Original Screenplay) - Written by Bob Nelson</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">O</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Omar</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Foreign Language Film - Palestine</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">P</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Philomena</div><span class="label">4 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Score) - Alexandre Desplat</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Gabrielle Tana, Steve Coogan and Tracey Seaward, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actress in a Leading Role - Judi Dench in &quot;Philomena&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Adapted Screenplay) - Screenplay by Steve Coogan and Jeff Pope</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Pit__k_ Mun Kaikki Hoitaa? (Do I Have to Take Care of Everything?)</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Live Action) - Selma Vilhunen and Kirsikka Saari</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Possessions</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Animated) - Shuhei Morita</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Prison Terminal: The Last Days of Private Jack Hall</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Short Subject) - Edgar Barens</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Prisoners</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Cinematography - Roger A. Deakins</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">R</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Room on the Broom</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Animated) - Max Lang and Jan Lachauer</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">S</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">Saving Mr. Banks</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Music (Original Score) - Thomas Newman</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Square</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Documentary (Feature) - Jehane Noujaim and Karim Amer</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">Star Trek Into Darkness</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Visual Effects - Roger Guyett, Patrick Tubach, Ben Grossmann and Burt Dalton</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">V</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">The Voorman Problem</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Short Film (Live Action) - Mark Gill and Baldwin Li</div>  </div>  </div>
+</div></div></div></div><div class="view-grouping"><div class="view-grouping-header">W</div><div class="view-grouping-content"><div class="view-grouping"><div class="view-grouping-header">The Wind Rises</div><span class="label">1 Nomination</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Animated Feature Film - Hayao Miyazaki and Toshio Suzuki</div>  </div>  </div>
+</div></div><div class="view-grouping"><div class="view-grouping-header">The Wolf of Wall Street</div><span class="label">5 Nominations</span><div class="view-grouping-content">  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Supporting Role - Jonah Hill in &quot;The Wolf of Wall Street&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Actor in a Leading Role - Leonardo DiCaprio in &quot;The Wolf of Wall Street&quot;</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Directing - Martin Scorsese</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Best Picture - Martin Scorsese, Leonardo DiCaprio, Joey McFarland and Emma Tillinger Koskoff, Producers</div>  </div>  </div>
+  <div>
+      
+  <div class="views-field views-field-title-field">        <div class="field-content">Writing (Adapted Screenplay) - Screenplay by Terence Winter</div>  </div>  </div>
+</div></div></div></div>    </div>
+  
+  
+  
+  
+  
+  
+</div></div></div></div>  </div>
+</div>
+
+                      </div>
+    </div>
+  </div>
+
+  <footer class="l-footer" role="contentinfo">
+      <div class="l-region l-region--footer">
+    <nav id="block-menu-menu-footer-menu" role="navigation" class="block block--menu block--menu-menu-footer-menu ">
+      
+  <ul class="menu"><li class="first leaf level-1 menu-about"><span class="menu-item-span"><a href="/about">About</a></span></li>
+<li class="leaf level-1 menu-contact"><span class="menu-item-span"><a href="/contact">Contact</a></span></li>
+<li class="leaf level-1 menu-legal"><span class="menu-item-span"><a href="/footer/legal">Legal</a></span></li>
+<li class="leaf level-1 menu-site-map"><span class="menu-item-span"><a href="/site-map">Site Map</a></span></li>
+<li class="leaf level-1 menu-careers"><span class="menu-item-span"><a href="/footer/careers">Careers</a></span></li>
+<li class="last leaf level-1 menu-press"><span class="menu-item-span"><a href="/press">Press</a></span></li>
+</ul></nav>
+<div id="block-block-6" class="block block--block block--block-6 footer-copyright">
+        <div class="block__content">
+    <p>© 2015 Academy of Motion Picture Arts and Sciences</p>
+  </div>
+</div>
+  </div>
+  </footer>
+</div>
+  <div id="fb-root"></div><script src="http://www.oscars.org/sites/oscars/files/js/js_YSGstXW1gbXbhRHr1vQVqnilmPq_VP6gtylpwKGa2js.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4dbf245202","applicationID":"11045696","transactionName":"ZQdRMUtQXUdRUkNcX1xNcgZNWFxaH0deUEdBPUMEXlQ=","queueTime":0,"applicationTime":1450,"atts":"SUBSRwNKTkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head >
+<meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwIFVF9WGwECVlFXAggG"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(19),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{h?h-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(20),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,h=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(p){"stack"in p&&(t(12),t(11),"addEventListener"in window&&t(6),s.xhrWrappable&&t(13),u=!0)}c.on("fn-start",function(t,e,n){u&&(h+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&h>0&&(h-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){N++,S=y.hash,this[u]=Date.now()}function o(){N--,y.hash!==S&&i(0,!0);var t=Date.now();this[l]=~~this[l]+t-this[u],this[h]=t}function i(t,e){x.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=Date.now()})}var c="-start",s="-end",f="-body",u="fn"+c,h="fn"+s,p="cb"+c,d="cb"+s,l="jsTime",m="fetch",v="addEventListener",w=window,y=w.location;if(w[v]){var g=t(9),b=t(10),x=t(8),E=t(6),T=t(12),O=t(7),P=t(13),R=t("ee"),D=R.get("tracer");t(14),t("loader").features.spa=!0;var S,M=w[v],N=0;R.on(u,r),R.on(p,r),R.on(h,o),R.on(d,o),R.buffer([u,h,"xhr-done","xhr-resolved"]),E.buffer([u]),T.buffer(["setTimeout"+s,"clearTimeout"+c,u]),P.buffer([u,"new-xhr","open-xhr"+c]),O.buffer([m+c,m+"-done",m+f+c,m+f+s]),x.buffer(["newURL"]),g.buffer([u]),b.buffer(["propagate",p,d,"executor-err","resolve"+c]),D.buffer([u,"no-"+u]),a(P,"open-xhr"+c),a(R,"xhr-resolved"),a(R,"xhr-done"),a(O,m+c),a(O,m+"-done"),x.on("pushState-end",i),x.on("replaceState-end",i),M("hashchange",i,!0),M("load",i,!0),M("popstate",function(){i(0,N>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(12),c=t(11),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",h="bstResource",p="resource",d="-start",l="-end",m="fn"+d,v="fn"+l,w="bstTimer",y="pushState";t("loader").features.stn=!0,t(8);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(v,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+d,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+l,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(h,[window.performance.getEntriesByType(p)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(h,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,h],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(21)(a),s=t("gos"),f=XMLHttpRequest,u="addEventListener",h="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=s(n,"nr@wrapped",function(){return c(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&c.inPlace(n,["handleEvent"],"fn-")}}),a.on(h+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(19);e.exports=o;var a=window,c="fetch-",s=c+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,h=a.Response,p=a.fetch,d="prototype";u&&h&&p&&(i(f,function(t,e){r(u[d],e,s),r(h[d],e,s)}),r(a,"fetch",c),o.on(c+"end",function(t,e){var n=this;e?e.clone().arrayBuffer().then(function(t){n.rxSize=t.byteLength,o.emit(c+"done",[null,e],n)}):o.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(21)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("mutation"),o=t(21)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],10:[function(t,e,n){function r(t){var e=a.context(),n=c(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(21),a=t("ee").get("promise"),c=i(a),s=t(19),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),c=f.resolve(i);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this),t[1]=c(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),c.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=c(t[0],"cb-",this),t[1]=c(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],11:[function(t,e,n){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],12:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(21)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",h="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+h),a.inPlace(window,[s],s+h),a.inPlace(window,[f,"clearImmediate"],f+h),i.on(s+u,r),i.on(c+u,o)},{}],13:[function(t,e,n){function r(t,e){h.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),h.inPlace(t,v,"fn-",c)}function i(t){w.push(t),l&&(g=-g,b.data=g)}function a(){for(var t=0;t<w.length;t++)r([],w[t]);w.length&&(w=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),h=t(21)(u),p=NREUM.o,d=p.XHR,l=p.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],w=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new d(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(d,y),y.prototype=d.prototype,h.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),l){var g=1,b=document.createTextNode(g);new l(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],14:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<h;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return l(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(15),f=t("ee"),u=["load","error","abort","timeout"],h=u.length,p=t("id"),d=t(18),l=t(17),m=window.XMLHttpRequest;a.features.xhr=!0,t(13),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,d&&(d>34||d<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=l(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<h;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],15:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],16:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(19),c=t(20),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],h="api-",p=h+"ixn-";a(u,function(t,e){f[e]=o(h+e,!0,"api")}),f.addPageAction=o(h+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(p+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],17:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],18:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],19:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],20:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],21:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(20),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){h([u,"",[r,a,o],c])}f(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(p){throw f(e+"err",[r,a,p],c),p}finally{f(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<n.length;s++)c=n[s],a=t[c],r(a)||(t[c]=e(a,f?c+o:o,i,c))}function f(e,n,r){if(!s){s=!0;try{t.emit(e,n,r)}catch(o){h([o,e,n,r])}s=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){h([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function h(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=p(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var u=f[v[n]];return u&&u.push([w,n,r,i]),i}function h(t,e){m[t]=p(t).concat(e)}function p(t){return m[t]||[]}function d(t){return u[t]=u[t]||o(n)}function l(t,e){s(t,function(t,n){e=e||"feature",v[n]=e,e in f||(f[e]=[])})}var m={},v={},w={on:h,emit:n,get:d,listeners:p,context:e,buffer:l};return w}function i(){return new r}var a="nr@context",c=t("gos"),s=t(19),f={},u={},h=e.exports=o();h.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(v,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",c("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(19),f=window,u=f.document,h="addEventListener",p="attachEvent",d=f.XMLHttpRequest,l=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(16);var m=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-974.min.js"},w=d&&l&&l[h]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:w};u[h]?(u[h]("DOMContentLoaded",i,!1),f[h]("load",r,!1)):(u[p]("onreadystatechange",o),f[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,14,5,3,4]);</script>
+<title>History of Royal Portrush Golf Club</title><meta name="robots" content="noodp,noydir" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="text/javascript">var _eab_data={"ajax_url":"https:\/\/www.royalportrushgolfclub.com\/wp-admin\/admin-ajax.php","root_url":"http:\/\/www.royalportrushgolfclub.com\/wp-content\/plugins\/events-and-bookings\/img\/","fb_scope":"email"};</script><link rel="alternate" type="application/rss+xml" title="Royal Portrush Golf Club &raquo; Feed" href="http://www.royalportrushgolfclub.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Royal Portrush Golf Club &raquo; Comments Feed" href="http://www.royalportrushgolfclub.com/comments/feed/" />
+<link rel="canonical" href="http://www.royalportrushgolfclub.com/history-of-royal-portrush-golf-club/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.royalportrushgolfclub.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.4"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='portfolio_slideshow-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/css/portfolio-slideshow.min.css?ver=1.5.6&V=1.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='fancybox-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/js/fancybox/jquery.fancybox-1.3.4.css?ver=1.3.4a&V=1.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='agency-pro-theme-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/_gen/agency-pro/style.css?ver=3.1.2&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='GNCDN-frontend-adminbar-styles-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/golfnow-cdn/css/adminbar.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='gcto-stylesheet-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/style.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-consent-style-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/uk-cookie-consent/assets/css/style.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-includes/css/dashicons.min.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-css'  href='//fonts.googleapis.com/css?family=EB+Garamond%7CSpinnaker&#038;ver=3.1.2' type='text/css' media='all' />
+<link rel='stylesheet' id='eab-upcoming_calendar_widget-style-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/events-and-bookings/css/upcoming_calendar_widget.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='genesis-shortcodes-css-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/genesis-shortcodes/css/shortcodes.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='genesis-shortcodes-responsive-css-css'  href='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/genesis-shortcodes/css/shortcodes_responsive.css?ver=4.4.4&V=1.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js?ver=1.7.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var MP_Ajax = {"ajaxUrl":"http:\/\/www.royalportrushgolfclub.com\/wp-admin\/admin-ajax.php","emptyCartMsg":"Are you sure you want to remove all items from your cart?","successMsg":"Item(s) Added!","imgUrl":"http:\/\/www.royalportrushgolfclub.com\/wp-content\/plugins\/marketpress\/marketpress-includes\/images\/loading.gif","addingMsg":"Adding to your cart...","outMsg":"In Your Cart","show_filters":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/marketpress/marketpress-includes/js/ajax-cart.js?ver=2.8.9&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/golfnow-cdn/js/adminbar.js?ver=4.4.4&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/_gen/agency-pro/js/responsive-menu.js?ver=1.0.0&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/_gen/agency-pro/js/backstretch.js?ver=1.0.0&V=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var BackStretchImg = {"src":"http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_1.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_2.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_3.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_4.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_5.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_6.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_7.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_8.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_9.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_10.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_11.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_12.jpg, http:\/\/www.royalportrushgolfclub.com\/wp-content\/themes\/_gen\/agency-pro_overrides\/RoyalPortrushGolfClub\/bg_images\/backgroundImage_13.jpg"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/backstretch-set.js?ver=1.0.0&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/events-and-bookings/js/upcoming_calendar_widget.js?ver=1.7.3&V=1.3'></script>
+<link rel='https://api.w.org/' href='http://www.royalportrushgolfclub.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.royalportrushgolfclub.com/xmlrpc.php?rsd" />
+<link rel="alternate" type="application/json+oembed" href="http://www.royalportrushgolfclub.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.royalportrushgolfclub.com%2Fhistory-of-royal-portrush-golf-club%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.royalportrushgolfclub.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.royalportrushgolfclub.com%2Fhistory-of-royal-portrush-golf-club%2F&#038;format=xml" />
+
+<script type="text/javascript">networkGACode = 'UA-26642741-3';customerGACode = 'UA-75288928-1';</script>
+<script type="text/javascript">customerGACodeForUBE = 'UA-75288928-1';</script>
+
+<!-- Google Tag Manager :: Network --> <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CDCRF"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5CDCRF');</script> <!-- End Google Tag Manager --><style type="text/css">
+	.wpmudevevents-calendar-event {background: #12344d !important;border-color: #12344d !important;color: #ffffff !important;}.wpmudevevents-calendar-event.junior-competitions {background: #12344d !important;border-color: #12344d !important;color: #ffffff !important;}.wpmudevevents-calendar-event.ladies-competitions {background: #41688d !important;border-color: #41688d !important;color: #ffffff !important;}.wpmudevevents-calendar-event.member-competitions {background: #12344d !important;border-color: #12344d !important;color: #ffffff !important;}.wpmudevevents-calendar-event.social {background: #a88c1e !important;border-color: #a88c1e !important;color: #ffffff !important;}</style>
+<style type="text/css">.centered a.next.browse.right {} .scrollable {height:75px;} a.prev.browse.left {top:37.5px} a.next.browse.right {top:-47.5px} .slideshow-wrapper .pscarousel img {margin-right:8px !important; margin-bottom:8px !important;} }</style><script type="text/javascript">/* <![CDATA[ */var psTimeout = new Array(); psAudio = new Array(); var psAutoplay = new Array(); var psDelay = new Array(); var psFluid = new Array(); var psTrans = new Array(); var psRandom = new Array(); var psCarouselSize = new Array(); var touchWipe = new Array(); var keyboardNav = new Array(); var psPagerStyle = new Array(); psCarousel = new Array(); var psSpeed = new Array(); var psNoWrap = new Array();/* ]]> */</script>
+<style id="ctcc-css" type="text/css" media="screen">
+			#catapult-cookie-bar {
+				box-sizing: border-box;
+				max-height: 0;
+				opacity: 0;
+				z-index: 99999;
+				overflow: hidden;
+				color: #ddd;
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				background-color: #464646;
+			}
+			#catapult-cookie-bar a {
+				color: #fff;
+			}
+			button#catapultCookie {
+				background:;
+				color: ;
+				border: 0; padding: 6px 9px; border-radius: 3px;
+			}
+			#catapult-cookie-bar h3 {
+				color: #ddd;
+			}
+			.has-cookie-bar #catapult-cookie-bar {
+				opacity: 1;
+				max-height: 999px;
+				min-height: 30px;
+			}</style><link rel="Shortcut Icon" href="http://www.royalportrushgolfclub.com/files/2015/03/favicon.png" type="image/x-icon" />
+<style type="text/css">.site-title a { background: url(http://www.teeitupmarketing.com/RoyalPortrush/files/2015/03/RPGC-Logo.png) no-repeat !important; }</style>
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="page page-id-132 page-template-default custom-header header-image content-sidebar" itemscope itemtype="http://schema.org/WebPage"><header class="site-header" itemscope itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><h1 class="site-title" itemprop="headline"><a href="http://www.royalportrushgolfclub.com/">Royal Portrush Golf Club</a></h1></div><div class="widget-area header-widget-area"><section id="text-4" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><h1><a href="http://www.royalportrushgolfclub.com ">ROYAL PORTRUSH GOLF CLUB</a></h1></div>
+		</div></section>
+<section id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrap"><nav class="nav-header" itemscope itemtype="http://schema.org/SiteNavigationElement"><ul id="menu-primary" class="menu genesis-nav-menu"><li id="menu-item-283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-283"><a href="http://www.teeitupmarketing.com/RoyalPortrush/" itemprop="url"><span itemprop="name">Home</span></a></li>
+<li id="menu-item-284" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-284"><a href="http://www.royalportrushgolfclub.com/courses/" itemprop="url"><span itemprop="name">Courses</span></a></li>
+<li id="menu-item-285" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-132 current_page_item menu-item-285"><a href="http://www.royalportrushgolfclub.com/history-of-royal-portrush-golf-club/" itemprop="url"><span itemprop="name">History</span></a></li>
+<li id="menu-item-286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-286"><a href="http://www.royalportrushgolfclub.com/visitors/" itemprop="url"><span itemprop="name">Visitors</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-424" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-424"><a href="http://www.teeitupmarketing.com/RoyalPortrush/visitors#green-fee" itemprop="url"><span itemprop="name">Green Fees</span></a></li>
+	<li id="menu-item-291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291"><a href="http://www.royalportrushgolfclub.com/tee-time-enquiry/" itemprop="url"><span itemprop="name">Book Tee Time</span></a></li>
+	<li id="menu-item-425" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-425"><a href="http://www.teeitupmarketing.com/RoyalPortrush/visitors#clubhouse" itemprop="url"><span itemprop="name">Clubhouse</span></a></li>
+	<li id="menu-item-426" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-426"><a href="http://www.teeitupmarketing.com/RoyalPortrush/visitors#dress-code" itemprop="url"><span itemprop="name">Dress Code</span></a></li>
+	<li id="menu-item-290" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290"><a href="http://www.royalportrushgolfclub.com/accommodation-transport/" itemprop="url"><span itemprop="name">Accommodation</span></a></li>
+	<li id="menu-item-1266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1266"><a href="http://www.royalportrushgolfclub.com/open-competition-booking/" itemprop="url"><span itemprop="name">Open Competition Booking</span></a></li>
+</ul>
+</li>
+<li id="menu-item-760" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-760"><a href="http://www.royalportrushgolfclub.com/pro-shop/" itemprop="url"><span itemprop="name">Club Shop</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="http://www.royalportrushgolfclub.com/store/" itemprop="url"><span itemprop="name">Store</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-99999999999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99999999999"><a href="http://www.royalportrushgolfclub.com/store/products/" itemprop="url"><span itemprop="name">Products</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99999999999"><a href="http://www.royalportrushgolfclub.com/store/shopping-cart/" itemprop="url"><span itemprop="name">Shopping Cart</span></a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-99999999999"><a href="http://www.royalportrushgolfclub.com/store/order-status/" itemprop="url"><span itemprop="name">Order Status</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-932"><a href="http://www.royalportrushgolfclub.com/pro-shop/professional-staff/" itemprop="url"><span itemprop="name">Professional Staff</span></a></li>
+	<li id="menu-item-864" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-864"><a href="http://www.royalportrushgolfclub.com/rental-clubs-services/" itemprop="url"><span itemprop="name">Rental Clubs &#038; Services</span></a></li>
+	<li id="menu-item-758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-758"><a href="http://www.royalportrushgolfclub.com/pro-shop/scotty-cameron/" itemprop="url"><span itemprop="name">Scotty Cameron Center</span></a></li>
+</ul>
+</li>
+<li id="menu-item-831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-831"><a href="#" itemprop="url"><span itemprop="name">Members</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-294" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-294"><a href="http://www.royalportrushgolfclub.com/tee-times/" itemprop="url"><span itemprop="name">Member Booking</span></a></li>
+	<li id="menu-item-1358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1358"><a href="http://www.royalportrushgolfclub.com/competition-results/" itemprop="url"><span itemprop="name">Competition Results</span></a></li>
+	<li id="menu-item-297" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297"><a href="http://www.royalportrushgolfclub.com/member-competitions/" itemprop="url"><span itemprop="name">Mens Competitions</span></a></li>
+	<li id="menu-item-296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296"><a href="http://www.royalportrushgolfclub.com/ladies-competitions/" itemprop="url"><span itemprop="name">Ladies Competitions</span></a></li>
+	<li id="menu-item-1239" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1239"><a href="http://www.royalportrushgolfclub.com/category/member-news/" itemprop="url"><span itemprop="name">Member News</span></a></li>
+	<li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-497"><a href="http://www.royalportrushgolfclub.com/junior-section/" itemprop="url"><span itemprop="name">Junior Section</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504"><a href="http://www.royalportrushgolfclub.com/junior-competitions/" itemprop="url"><span itemprop="name">Junior Competitions</span></a></li>
+		<li id="menu-item-494" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-494"><a href="http://www.royalportrushgolfclub.com/junior-results/" itemprop="url"><span itemprop="name">Junior Results</span></a></li>
+		<li id="menu-item-503" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-503"><a href="http://www.royalportrushgolfclub.com/junior-information/" itemprop="url"><span itemprop="name">Junior Information</span></a></li>
+		<li id="menu-item-1240" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1240"><a href="http://www.royalportrushgolfclub.com/category/junior-news/" itemprop="url"><span itemprop="name">Junior News</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-301" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-301"><a href="http://www.royalportrushgolfclub.com/category/latest-news/" itemprop="url"><span itemprop="name">News</span></a></li>
+<li id="menu-item-306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-306"><a href="http://www.royalportrushgolfclub.com/events-2/" itemprop="url"><span itemprop="name">Events</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a href="http://www.royalportrushgolfclub.com/social-events/" itemprop="url"><span itemprop="name">Social Events</span></a></li>
+</ul>
+</li>
+<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-303"><a href="http://www.royalportrushgolfclub.com/contact/" itemprop="url"><span itemprop="name">Contact</span></a></li>
+</ul></nav></div></section>
+</div></div></header><div class="site-container"><div class="utility-bar"><div class="wrap"></div></div><style type="text/css">
+p.mobileOnly {
+display: none;
+}
+@media only screen and (max-width: 768px) {
+p.mobileOnly {
+	display: block;
+}
+}
+</style>
+<p class="mobileOnly" style="text-align:center;"><a class="button" href="http://www.royalportrushgolfclub.com/tee-time-enquiry/">Book Tee Times</a></p><div class="site-inner"><div class="content-sidebar-wrap"><main class="content"><article class="post-132 page type-page status-publish entry" itemscope itemtype="http://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">History of Royal Portrush Golf Club</h1> 
+</header><div class="entry-content" itemprop="text"><p>If Portrush owes the best part of its renown to golf, which has converted an erstwhile fishing village into a world-famous holiday resort, it is no less true to say that golf, and especially ladies&#8217; golf, owes a considerable debt to Portrush.</p>
+<video id="maxfaulkner" class="video-js vjs-default-skin" controls width="690" height="350" poster="http://www.teeitupmarketing.com/RoyalPortrush/files/2015/03/maxfaulkner.png" preload="auto" data-setup="{}">
+  				<source type="video/m4v" src="http://www.teeitupmarketing.com/RoyalPortrush/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/videos/MaxFaulknerRPGC.m4v">
+  				<source type="video/webm" src="http://www.teeitupmarketing.com/RoyalPortrush/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/videos/MaxFaulknerRPGC.webm">
+  				<source type="video/mp4" src="http://www.teeitupmarketing.com/RoyalPortrush/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/videos/MaxFaulknerRPGC.iphone.mp4">
+ 				 <source type="video/ogv" src="http://www.teeitupmarketing.com/RoyalPortrush/wp-content/themes/_gen/agency-pro_overrides/RoyalPortrushGolfClub/videos/MaxFaulknerRPGC.ogv">
+				</video>
+<p style="text-align: center"><em>&#8211; Max Faulkner playing in the Open Championship at Royal Portrush in 1951 &#8211;</em></p>
+<hr />
+<h4>Royal Portrush History Timeline</h4>
+<p><strong>1888 &#8211; </strong>Club formed in May 1888, originally known as The County Club and was only a nine hole course</p>
+<p><strong>1889 &#8211; </strong>Extended to a eighteen hole course</p>
+<p><strong>1892 &#8211; </strong>Renamed as The Royal County Club, when H.R.H. The Duke of York was its patron</p>
+<p><strong>1892 &#8211; </strong>Irish Open Amateur Championship inaugurated at Royal Portrush</p>
+<p><strong>1895 &#8211; </strong>Finally named as The Royal Portrush Golf Club , with H.R.H. The Prince of Wales (later King Edward VII) as patron.</p>
+<p><strong>1895 &#8211; </strong>Royal Portrush was the first links outside of England to house the British Ladies&#8217; Championship, which was won by Lady Margaret Scott and has been played here another seven times since</p>
+<p><strong>1907 &#8211; </strong>Irish Professional Championship inaugurated at Royal Portrush</p>
+<p><strong>1929 &#8211; </strong>Harry Colt lays out plans for the Dunluce links</p>
+<p><strong>1930, 1937, 1947 &#8211; </strong>Royal Portrush plays host to The Irish Open.</p>
+<p><strong>1951 &#8211; </strong>‘The Open Championship’ is played at Royal Portrush, the first club outside of the mainland UK to have hosted the tournament. Max Faulkner wins with a total of 285.</p>
+<p><strong>1982 &#8211; </strong>The 5th green and 6th tee area require emergency steps to be taken to prevent them being washed into the ocean after heavy erosion.</p>
+<p><strong>1993 &#8211; </strong>Ian Pyman wins “The Amateur Championship”.</p>
+<p><strong>1995-1999, 2004 &#8211; </strong>The Senior British Open takes place featuring some of golf’s greats, Arnold Palmer, Gary Player and Tom Watson.</p>
+<p><strong>2012 &#8211;</strong> Royal Portrush hosts the Irish Open. </p>
+<hr />
+<h4>History in Detail</h4>
+<p>If Portrush owes the best part of its renown to golf, which has converted an erstwhile fishing village into a world-famous holiday resort, it is no less true to say that golf, and especially ladies&#8217; golf, owes a considerable debt to Portrush.</p>
+<p>It was here that the Irish Open Amateur Championship was inaugurated in 1892, and the Irish Professional Championship in 1907. Portrush, in 1895, was the first links outside of England to house the British Ladies&#8217; Championship, which was won by Lady Margaret Scott. The Championship was played here for the eighth time in 1995, and was won by Julie Hall from Felixstowe Ferry GC.</p>
+<p>Altogether more than fifty national championships, British and Irish, have been decided here. The first professional tournament ever held in Ireland was run by the club in 1895. It was decided by match play, and the famous Sandy&#8217; Herd, who was the Club&#8217;s first professional, was the winner; his opponent in the final was Harry Vardon, who was then a comparative unknown player, just coming up to the form that was to win him his first Open Championship in the following year. In July, Royal Portrush had the distinction of being the first Irish course to host The Open Championship, the winner being Max Faulkner with a score of 285 for the four rounds.</p>
+<p>When the club was formed in May 1888, it was known as The County Club. It became The Royal County Club in 1892, when H.R.H. The Duke of York was its patron, and &#8216;The Royal Portrush Golf Club&#8217; three years later, with H.R.H. The Prince of Wales (later King Edward VII) as patron.</p>
+<p>The links have undergone many alterations in the course of its existence. The nine-hole course of 1888 was extended to eighteen holes the following year, and at that time, eight of these holes were laid out on the landward side of the Causeway road. Gradually, however, the course was moved further and further into the sand hills, until the famous architect, Harry Colt, laid out his own plans for the Dunluce links in 1929. The unfortunate loss of land comprising the first and eighteenth holes of this layout led to the creation of the present eight and ninth holes under the guidance of P.G. Stevenson and Sir Anthony Babington in 1946.</p>
+<p>There have been may famous golfers who have played at the Royal Portrush Club at one stage or another: Gary Player, Arnold Palmer, Ernie Els, Darren Clarke and Larry Mize to name a few. With Phil Mickelson and Mark Calcavecchia playing in 2002 and Davis Love III and Jim Furyk enjoying a game in 2003. Other major winners who have visited Royal Portrush include Tom Watson, Jack Nicklaus, Steve Jones, Tom Kite and Ben Crenshaw.</p></div></article></main><aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSideBar"><section id="text-5" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Royal Portrush Golf Club</h4>
+			<div class="textwidget"><p>Dunluce Road<br />
+Portrush<br />
+County Antrim<br />
+BT56 8JQ<br />
+<br />
+General Enquiries:  <a href="mailto:info@royalportrushgolfclub.com">info@royalportrushgolfclub.com</a><br />
+<br />
+Tee Time Enquiries:  <a href="mailto:geoffrey@royalportrushgolfclub.com">geoffrey@royalportrushgolfclub.com</a></p>
+</div>
+		</div></section>
+<section id="text-6" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Telephone:</h4>
+			<div class="textwidget"><p>Office / Tee Times - 028 7082 2311<br />
+Club Shop - 028 7082 3335<br />
+Ladies Club - 028 7082 3351</p>
+</div>
+		</div></section>
+<section id="text-8" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><p style="text-align: center"><a href="http://www.royalportrushgolfclub.com/tee-time-enquiry/" class="button">Tee Time Enquiry</a></p>
+</div>
+		</div></section>
+</aside></div></div><footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter"><div class="wrap"><div class="social-footer"><a href="https://www.instagram.com/royalportrushgolfclub/ " target="_blank"><img src="http://d2tbfnbweol72x.cloudfront.net/wp-content/blogs.dir/4759/files/2015/03/InstagramLogoWhite-e1463768787970.png?V=1.3" alt="Instagram" /></a> <a href="https://twitter.com/#!/royalportrush" target="_blank"><img src="http://d2tbfnbweol72x.cloudfront.net/RoyalPortrush/files/2015/03/twitter_29.png?V=1.3" alt="Twitter" /></a> </div>
+<p>Royal Portrush Golf Club | Dunluce Road | Portrush County | Antrim | BT56 8JQ</p>
+<p class="address"></p>
+<div class="copy">Copyright &copy; 2016 Royal Portrush Golf Club All Rights Reserved.
+</div>
+<div class="poweredbyGCS"><a href="http://www.golfchannelsolutions.com/" target="_blank"><img src="http://d2tbfnbweol72x.cloudfront.net/wp-content/themes/PoweredByGCSWhite.png?V=1.3" alt="Powered by Golf Channel Solutions"></a>
+</div>
+
+</div></footer></div><script type='text/javascript'>/* <![CDATA[ */ var portfolioSlideshowOptions = { psFancyBox:true, psHash:false, psThumbSize:'75', psLoader:false, psFluid:false, psTouchSwipe:true, psKeyboardNav:true, psInfoTxt:'of' };/* ]]> */</script><script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/js/jquery.cycle.all.min.js?ver=2.99&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/js/scrollable.min.js?ver=1.2.5&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/js/portfolio-slideshow.min.js?ver=1.5.6&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/portfolio-slideshow-pro/js/fancybox/jquery.fancybox-1.3.4.pack.js?ver=1.3.4a&V=1.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var ctcc_vars = {"expiry":"30","method":"1","version":"6"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-content/plugins/uk-cookie-consent/assets/js/uk-cookie-consent-js.js?ver=2.0.0&V=1.3'></script>
+<script type='text/javascript' src='http://d2tbfnbweol72x.cloudfront.net/wp-includes/js/wp-embed.min.js?ver=4.4.4&V=1.3'></script>
+
+			
+			<script type="text/javascript">
+				jQuery(document).ready(function($){
+										if(!catapultReadCookie("catAccCookies")){ // If the cookie has not been set then show the bar
+						$("html").addClass("has-cookie-bar");
+						$("html").addClass("cookie-bar-bottom-bar");
+						$("html").addClass("cookie-bar-bar");
+											}
+					
+											ctccFirstPage();
+									});
+			</script>
+			
+		<div id="catapult-cookie-bar" class=""><div class="ctcc-inner "><span class="ctcc-left-side">We and our partners use cookies on this site to provide a better experience with content, analytics, ads and to help improve security on our site. To accept cookies, close this box or continue to use our site, otherwise please do not use this website. For more information about how we use cookies, or how to change your cookie settings, see our Cookies/Tracking Policy. Please click ‘I Agree’ to close this box. <a tabindex=1 target="_blank" href="http://www.nbcuniversal.com/privacy/cookies">Cookies/Tracking Policy</a></span><span class="ctcc-right-side"><br><button id="catapultCookie" tabindex=1 onclick="catapultAcceptCookies();">I Agree</button></span></div><!-- custom wrapper class --></div><!-- #catapult-cookie-bar --><script>
+	var url=window.location.toString();
+	var _comscore = _comscore || [];
+	_comscore.push( { c1: "2", c2: "6035083", c3: "", c4: url } );
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+		s.async = true;
+		s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+		el.parentNode.insertBefore( s, el );
+	})();
+</script>
+<noscript>
+	<img src="http://b.scorecardresearch.com/p?c1=2&c2=6035083&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+</noscript><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7bbc5eec5b","applicationID":"22205591","transactionName":"YQEBMkoCWBJSBhZYXVhLIgVMClkPHBUDVlc=","queueTime":0,"applicationTime":654,"atts":"TUYCRAIYSxw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

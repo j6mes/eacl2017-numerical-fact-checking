@@ -1,0 +1,927 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="en" lang="en" data-goto-desktop-msg="Go to desktop" data-desktop-url="http://www.visitsweden.com/sweden/?setView=desktop">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="EPi.Title" content="English startpage" />
+<meta name="EPi.Description" content="The Swedish official website for travel &amp; tourism information. Guide to accommodation, hotels and all you need for planning your vacation in Sweden" />
+<meta name="EPi.Keywords" content="Sweden, Stockholm, Sweden holiday, vacation in Sweden, travel to Sweden, Swedish tourism, Lapland, hotels in Sweden, city breaks, Sweeden, guides, holidays" />
+<meta name="EPi.Revised" content="Fri, 06 May 2011 10:25:50 GMT" />
+<meta name="EPi.Modified" content="Wed, 16 Nov 2016 18:55:47 GMT" />
+<meta name="EPi.Published" content="Mon, 19 May 2008 14:40:00 GMT" />
+<meta name="EPi.ID" content="437" />
+
+
+<title>VisitSweden - The official travel guide to your holiday in Sweden</title>
+
+<meta name="language" content="en" /><meta name="description" content="The Swedish official website for travel &amp; tourism information. Guide to accommodation, hotels and all you need for planning your vacation in Sweden" /><meta name="keywords" content="Sweden, Stockholm, Sweden holiday, vacation in Sweden, travel to Sweden, Swedish tourism, Lapland, hotels in Sweden, city breaks, Sweeden, guides, holidays" /><meta name="rating" content="General" /><meta name="revisit-after" content="4 weeks" /><meta name="generator" content="EPiServer" /><meta name="robots" content="all" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="creation_date" content="Mon, 19 May 2008 14:40:00 GMT" /><meta name="last-modified" content="Fri, 06 May 2011 10:25:50 GMT" /><meta name="revised" content="Fri, 06 May 2011 10:25:50 GMT" /><meta http-equiv="Content-Language" content="en" /><meta name="pagename" content="English startpage" />
+
+
+    <link rel="stylesheet" type="text/css" media="all" href="/UI/styles/framework.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/UI/styles/global.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/UI/styles/misc.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/UI/styles/richContentBrowser.css" />
+
+
+
+
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="/ui/styles/ie.css">
+<![endif]-->
+<!--[if IE 6]>
+    <script src="/UI/scripts/src/IE7.js" type="text/javascript"></script>
+    <script src="/UI/scripts/src/supersleight-min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/ui/styles/ie6.css">
+<![endif]-->
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="/ui/styles/ie7.css">
+<![endif]-->
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="/ui/styles/ie8.css">
+<![endif]-->
+
+    
+    <script>
+
+        function xdidCallback() {
+            if (window.ga)
+                ga('network.send', 'event', 'xdid', 'set', { 'nonInteraction': true, 'userId': xdid.id });
+            else
+                setTimeout('xdidCallback()', 500);
+        }
+
+        var _xdidConf = { customerId: 'vswe', callback: xdidCallback };
+
+    </script>
+    <script src="//storage.googleapis.com/outfox/xdid_min.js"></script>
+
+    
+        <!-- Google Analytics tracking script: -->
+        <script>
+
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-410969-1', 'auto');
+            ga('set', 'referrer', xdid.referrer);
+            ga('send', 'pageview');
+
+            //Network tracking:
+            ga('create', 'UA-410969-21', 'auto', { 'name': 'network' });
+            ga('network.set', { 'referrer': xdid.referrer, 'userId': xdid.id });
+            ga('network.send', 'pageview');
+
+        </script>
+    
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+
+
+<!-- Script for links -->
+<script type="text/javascript">
+
+    var clickUrl = '';
+
+    function redirectClient() {
+        window.location.href = clickUrl;
+    }
+
+    String.prototype.getHostname = function () {
+        var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+        //console.log(this.match(re));
+        if (this.match(re) != null) {
+            return this.match(re)[1].toString();
+        }
+        return "";
+    };
+
+    function callGA(e, el, hasTimeout) {
+        if (hasTimeout) {
+            // Prevent browser redirect
+            e.preventDefault();
+        }
+
+        // Get click from link
+        clickUrl = jQuery(el).attr('href');
+
+        var regexNoProtocol = /https?:\/\//g;
+        var urlWithoutProtocol = clickUrl.split(regexNoProtocol)[clickUrl.split(regexNoProtocol).length - 1];
+
+        var regexDocuments = /\.(pdf|doc|docx|ppt|pptx|pps|ppsx|xls|xlsx)/gi;
+
+        // Do Google Analytics calls
+
+        // Downloads
+        if (clickUrl.match(regexDocuments)) {
+            ga('send', 'event', 'Downloads', clickUrl.match(regexDocuments)[0].substring(1), urlWithoutProtocol);
+            // External link
+        } else if (clickUrl.match("http://|https://") && (location.href.getHostname() !== clickUrl.getHostname())) {
+            var value = 'External';
+
+            var gaValue = jQuery(el).attr('data-ga-value');
+            if (gaValue !== undefined) {
+                value = gaValue;
+            }
+
+            ga('send', 'event', 'Outbound Links', value, urlWithoutProtocol);
+        } else if (clickUrl.match("mailto:")) {
+            ga('send', 'event', 'Contact', 'Email', clickUrl.substr(7));
+        }
+
+        if (hasTimeout) {
+            // Do browser redirect after 100 ms
+            setTimeout('redirectClient()', 100);
+        }
+    }
+
+    // When document is loaded
+    $(window).load(function () {
+
+        if (window.jQuery) {
+            // For all clicks on <a> without _blank
+            jQuery('a[target!=_blank]').click(function (e) {
+                callGA(e, this, true);
+            });
+
+            // For all clicks on <a target='_blank'>
+            jQuery('a[target=_blank]').click(function (e) {
+                callGA(e, this);
+            });
+        }
+
+    });
+</script></head>
+
+<body class="">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MS84RM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MS84RM');</script>
+<!-- End Google Tag Manager -->
+
+
+    
+    <!--[if lt IE 7]>  <div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 75px; position: relative;'>    <div style='position: absolute; right: 3px; top: 3px; font-family: courier new; font-weight: bold;'><a href='#' onclick='javascript:this.parentNode.parentNode.style.display="none"; return false;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-cornerx.jpg' style='border: none;' alt='Close this notice'/></a></div>    <div style='width: 640px; margin: 0 auto; text-align: left; padding: 0; overflow: hidden; color: black;'>      <div style='width: 75px; float: left;'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-warning.jpg' alt='Warning!'/></div>      <div style='width: 275px; float: left; font-family: Arial, sans-serif;'>        <div style='font-size: 14px; font-weight: bold; margin-top: 12px;'>You are using an outdated browser</div>        <div style='font-size: 12px; margin-top: 6px; line-height: 12px;'>For a better experience using this site, please upgrade to a modern web browser.</div>      </div>      <div style='width: 75px; float: left;'><a href='http://www.firefox.com' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-firefox.jpg' style='border: none;' alt='Get Firefox 3.5'/></a></div>      <div style='width: 75px; float: left;'><a href='http://www.browserforthebetter.com/download.html' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-ie8.jpg' style='border: none;' alt='Get Internet Explorer 8'/></a></div>      <div style='width: 73px; float: left;'><a href='http://www.apple.com/safari/download/' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-safari.jpg' style='border: none;' alt='Get Safari 4'/></a></div>      <div style='float: left;'><a href='http://www.google.com/chrome' target='_blank'><img src='http://www.ie6nomore.com/files/theme/ie6nomore-chrome.jpg' style='border: none;' alt='Get Google Chrome'/></a></div>    </div>  </div>  <![endif]-->
+    <form method="post" action="/sweden/" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEzMjc3Mzc3NDJkGAQFNWN0bDAwJEZ1bGxSZWdpb24kUGFnZUZvb3RlciRCb3R0b21MaW5rcyRQbEJvdHRvbUxpbmtzDw9mZGQFK2N0bDAwJEZ1bGxSZWdpb24kUGFnZUZvb3RlciRGb290ZXIkUGxGb290ZXIPD2ZkZAU0Y3RsMDAkRnVsbFJlZ2lvbiRNYWluUmVnaW9uJFN0YXJ0UGFnZUV2ZW50cyRGbEV2ZW50cw8PZmRkBRljdGwwMCRUb3BMaW5rcyRQbFRvcExpbmtzDw9mZGSFqr150oBoJ2uDFFuBXPwfPVIucg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+    <!-- ClickTale Top part -->
+    <script type="text/javascript">
+        var WRInitTime = (new Date()).getTime();
+    </script>
+    <!-- ClickTale end of Top part -->
+    <div id="framework">
+        <div id="page">
+            <div id="menu">
+                <div class="leftBox">
+                    <div class="logoBox">
+                        <!--eri-no-index-->
+                        
+<div class="topLinksWrapper">
+	<ul class="topLinks">
+		
+		    <li><a class="toplinksactive" href="/"> Tourists </a></li>
+		    
+		    
+		    <li><a href="http://www.visitsweden.com/sweden/Pressroom/" rel="external"> Press </a></li>
+		    
+		    
+		    <li><a href="http://corporate.visitsweden.com"> Corporate </a></li>
+		    
+		    
+	</ul>
+</div>
+                        <!--/eri-no-index-->
+                        
+
+<a href="/sweden/">
+<img class="floatLeft logo" src="/ui/images/visit.logo.2.png" alt="VisitSweden" /></a>
+<span class="official">
+	Sweden's official website for <br />tourism and travel information
+	
+</span>
+
+                    </div>
+                    <!-- logoBox -->
+                    
+
+<ul class="mainMenu clearfix">
+     
+        <li class="first">
+            <span class="label mobile-children">Regions & Cities</span><span class="arrow"><!-- arrow --></span>   
+            <div class="box">
+                <div class="">
+                    <ul>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Northern-Sweden/">Northern Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Central-Sweden/">Central Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Southern-Sweden/">Southern Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Stockholm/">Stockholm</a></li>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Gothenburg/">Gothenburg</a></li>
+                        
+                            <li class=""><a href="/sweden/Regions--Cities/Malmo/">Malmö</a></li>
+                        
+                    </ul>
+
+                    
+
+                </div>
+            </div> 
+        </li>
+     
+        <li class="">
+            <span class="label mobile-children">Things to do</span><span class="arrow"><!-- arrow --></span>   
+            <div class="box cols">
+                <div class="containerBox">
+                    <ul>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Adventure--Sports/">Adventure & Sports</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Skiing/">Skiing</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Green-Sweden/">Green Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Culture-heritage--arts/">Culture, heritage & arts</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Events-in-Sweden/">Events in Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Food--Drink/">Food & Drink</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Nature--Outdoors/">Nature & Outdoors</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Shopping/">Shopping</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Swedish-Lifestyle/">Swedish Lifestyle</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/With-kids/">With kids</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Adventure--Sports/Fishing/">Fishing in Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Adventure--Sports/Golf/">Golf in Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Swedish-Lifestyle/Spa/">Spas in Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Things-to-do/Skiing/">Skiing in Sweden</a></li>
+                        
+                    </ul>
+
+                    
+                        <h2 class="featureheading">Featured</h2>
+                        <ul class="featured">
+                            
+                                <li>
+                                    <a href="http://www.visitsweden.com/sweden/Things-to-do/Green-Sweden/">
+                                        <img src="/ImageVault/Images/id_3436/conversionFormat_972/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="" />
+                                        <span>Green Sweden</span>
+                                    </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="http://www.visitsweden.com/sweden/Things-to-do/Food--Drink/">
+                                        <img src="/ImageVault/Images/id_3817/conversionFormat_972/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="" />
+                                        <span>Food & Drink</span>
+                                    </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="http://www.visitsweden.com/sweden/Things-to-do/Adventure--Sports/Fishing/">
+                                        <img src="/ImageVault/Images/id_3454/conversionFormat_972/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="" />
+                                        <span>Fishing</span>
+                                    </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="http://www.visitsweden.com/sweden/Things-to-do/Adventure--Sports/Golf/">
+                                        <img src="/ImageVault/Images/id_3514/conversionFormat_972/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="" />
+                                        <span>Golf</span>
+                                    </a>
+                                </li>
+                               
+                        </ul>
+                    
+
+                </div>
+            </div> 
+        </li>
+     
+        <li class="">
+            <span class="label mobile-children">Accommodation</span><span class="arrow"><!-- arrow --></span>   
+            <div class="box">
+                <div class="">
+                    <ul>
+                        
+                            <li class=""><a href="/sweden/Accommodation/Accommodation-guide/">Accommodation guide</a></li>
+                        
+                            <li class="mobile-display-none"><a href="/sweden/Accommodation/Book-accommodation/">Book accommodation </a></li>
+                        
+                            <li class="mobile-display-none"><a href="/sweden/Accommodation/Book-activities/">Book activities</a></li>
+                        
+                            <li class="mobile-display-none"><a href="/sweden/Accommodation/Book-packages/">Book packages</a></li>
+                        
+                    </ul>
+
+                    
+
+                </div>
+            </div> 
+        </li>
+     
+        <li class="last">
+            <span class="label mobile-children">Travel guide</span><span class="arrow"><!-- arrow --></span>   
+            <div class="box">
+                <div class="">
+                    <ul>
+                        
+                            <li class=""><a href="/sweden/Travel-guide/Getting-to-Sweden/">Getting to Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Travel-guide/Getting-around-in-Sweden/">Getting around in Sweden</a></li>
+                        
+                            <li class=""><a href="/sweden/Travel-guide/Tour-operators-from-North-America/">Tour operators from North America</a></li>
+                        
+                            <li class=""><a href="/sweden/Travel-guide/Tour-operators-from-United-Kingdom/">Tour operators from United Kingdom</a></li>
+                        
+                            <li class=""><a href="/sweden/Travel-guide/Maps/">Maps</a></li>
+                        
+                    </ul>
+
+                    
+
+                </div>
+            </div> 
+        </li>
+    
+    <li class="swedenfacts">
+        <span class="label mobile-go"><a href="http://www.visitsweden.com/sweden/Sweden-Facts/">Sweden Facts</a></span>
+    </li>
+</ul>                    
+                </div>
+                <!-- leftBox -->
+                <div class="rightBox">
+                    
+<!--EMBEDDED THRU BROKEN-->
+<div class="clockWithText">
+<div id="ClockWithText"><!-- flash area --></div>
+</div>
+
+   
+
+                    <select name="ctl00$LanguageSelector$ddlLanguages" id="ctl00_LanguageSelector_ddlLanguages" class="lang bb" onchange="(document.location.href=this.options[selectedIndex].value)">
+	<option value="Change Language">Change Language</option>
+	<option value="/sverige-dk/">Dansk</option>
+	<option value="/schweden/">Deutsch</option>
+	<option value="/sweden/">English</option>
+	<option value="/suecia/">Espa&#241;ol</option>
+	<option value="/suede/">Fran&#231;ais</option>
+	<option value="/svezia/">Italiano</option>
+	<option value="/zweden/">Nederlands</option>
+	<option value="/sverige-no/">Norsk</option>
+	<option value="/shveciya/">Pусский</option>
+	<option value="/ruotsi/">Suomeksi</option>
+</select>
+
+
+<input name="ctl00$LanguageSelector$iptSubmit" type="submit" id="ctl00_LanguageSelector_iptSubmit" class="submitLang" value="GO!" />
+
+
+<script type="text/javascript">
+
+	document.getElementById('ctl00_LanguageSelector_iptSubmit').style.display = 'none';
+	document.getElementById('ctl00_LanguageSelector_ddlLanguages').style.width = '220px';
+	
+</script>
+
+
+<div class="displayNone">
+<a href="/sverige-dk/">Dansk</a>
+<a href="/schweden/">Deutsch</a>
+<a href="/sweden/">English</a>
+<a href="/suecia/">Español</a>
+<a href="/suede/">Français</a>
+<a href="/svezia/">Italiano</a>
+<a href="/zweden/">Nederlands</a>
+<a href="/sverige-no/">Norsk</a>
+<a href="/shveciya/">Pусский</a>
+<a href="/ruotsi/">Suomeksi</a>
+</div>
+
+                    <div id="ctl00_QuickSearch_pnlSearch" class="mobile-quick-search" onkeypress="javascript:return WebForm_FireDefaultButton(event, 'ctl00_QuickSearch_quickSearchBoxPost')">
+	
+<input name="ctl00$QuickSearch$quickSearchBox" type="text" id="ctl00_QuickSearch_quickSearchBox" class="searchBox bb" />
+<a id="ctl00_QuickSearch_quickSearchBoxPost" class="submit" href="javascript:__doPostBack('ctl00$QuickSearch$quickSearchBoxPost','')">Search</a>
+
+</div>
+                </div>
+            </div>
+
+
+            <div id="content">                
+                
+                    
+                         
+                    
+                                     
+                    
+	<div id="start-flash">
+	  	   
+
+    <div class="mobile-display-none">
+        <div id="StartPageFlash">
+			<img id="imgFallback" src="/ImageVault/Images/id_4804/scope_0/ImageVaultHandler.aspx" alt="Harbour of Gothenburg" title="940_450_GTB_göran+assner-harbour+of+gothenburg-161" style="display:none" />
+		    <input type="hidden" id="startFlashValues" value="%2fUI%2fPages%2fStartPageXMLCreate.aspx%3fid%3d437%26lang%3den%26startid%3d2|/Global/StartPageFlashes/visitSwedenStartpage100222.swf||/UI/Flash/frame1.jpg|450|940" />
+        </div>   
+    </div>  
+	
+
+
+
+<div class="displayNone mobile-image-player">
+    
+            <img src="/ImageVault/Images/id_6547/scope_0/ImageVaultHandler.aspx" alt="Midnight sun in Northern Sweden (Photo: Tomas Utsi/imagebank.sweden.se)" />
+      
+            <img src="/ImageVault/Images/id_4803/scope_0/ImageVaultHandler.aspx" alt="Naturbyn ecovillage in Central Sweden (Photo: Jacque de Villiers/imagebank.sweden.se)" />
+      
+            <img src="/ImageVault/Images/id_6548/scope_0/ImageVaultHandler.aspx" alt="Stockholm (Photo: Björn Olin/Folio/imagebank.sweden.se)" />
+      
+            <img src="/ImageVault/Images/id_4804/scope_0/ImageVaultHandler.aspx" alt="Harbour of Gothenburg (Photo: Göran Assner/imagebank.sweden.se)" />
+      
+            <img src="/ImageVault/Images/id_6549/scope_0/ImageVaultHandler.aspx" alt="Malmö (Photo: Justin Brown/imagebank.sweden.se)" />
+      
+            <img src="/ImageVault/Images/id_1489/scope_0/ImageVaultHandler.aspx" alt="Blekinge archipelago, Southern Sweden (Photo: Johan Willner/Johnér)" />
+      
+</div>
+
+	</div>
+                    
+                    <!-- mapregion -->
+                    <div id="main-page" class="clearfix noBorder">                        
+                        
+            
+    <div class="module2Wrapper moduleMargin floatLeft">
+	    <div class="module2Wrapper pt14">
+	        
+
+<div class="mobile-module">
+	<h1>Welcome to Sweden</h1>
+	<p>Visitsweden.com is Sweden’s official travel and tourist information web site. Search for holiday and hotel information, images of Sweden and its culture. Find city breaks in Stockholm, Gothenburg and Malmö, trips to Swedish Lapland and many other destinations in Sweden.</p>
+</div>
+		    
+
+            
+
+<div class="mobile-module socialMedia">  	 
+	<div>
+		<div id="fb-root"></div>
+		<script src="http://connect.facebook.net/en_US/all.js#appId=154379121306245&amp;xfbml=1"></script>	  
+		<?xml:namespace prefix = fb/?><fb:like href="http://www.visitsweden.com/sweden/" send="false" layout="button_count" width="50" show_faces="false" font="trebuchet ms"></fb:like>            
+	</div>	  
+	<div class="googleplus">
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>	 
+		<g:plusone size="medium" font="trebuchet ms"></g:plusone>
+	</div>
+    <div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </div>
+	<div class="cb"> <!-- --> </div>
+</div>
+
+<script type="text/javascript">
+    FB.Event.subscribe('edge.create', function (targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
+    });
+    FB.Event.subscribe('edge.remove', function (targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+    });
+    FB.Event.subscribe('message.send', function (targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
+    });
+    FB.Event.subscribe('comment.create', function (targetUrl) {
+        _gaq.push(['_trackSocial', 'facebook', 'comment', targetUrl]);
+    });
+
+    twttr.events.bind('tweet', function (event) {
+        if (event) {
+            var targetUrl;
+            if (event.target && event.target.nodeName == 'IFRAME') {
+                targetUrl = extractParamFromUri(event.target.src, 'url');
+            }
+            _gaq.push(['_trackSocial', 'twitter', 'tweet', targetUrl]);
+        }
+    });
+</script>
+		    
+		    <div class="hr"><hr /></div>
+	    </div>
+	    <div class="module2Wrapper clearfix">
+		    <div class="module2Wrapper clearfix">
+	            
+	<div class="mobile-module mobile-puff module moduleMargin">
+		<a href="/sweden/Regions--Cities/Malmo/Shopping-Malmo/"><img src="/ImageVault/Images/id_1118/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Art and design by Formargruppen in Malmö" /></a>
+		<h2><a href="/sweden/Regions--Cities/Malmo/Shopping-Malmo/">Shopping Malmö</a></h2>
+		<p></p><P>Malmö makes for eclectic shopping. It’s got a 16th century shopping market square, a beloved flea market, a catalogue of shopping centres and new up-and-coming shopping areas.</P>
+    </div>
+
+	<div class="mobile-module mobile-puff module ">
+		<a href="/sweden/Things-to-do/Skiing/Ski-resorts/Are/"><img src="/ImageVault/Images/id_337/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Ski resort Åre in Jämtland" /></a>
+		<h2><a href="/sweden/Things-to-do/Skiing/Ski-resorts/Are/">Direct flights to Åre, northern Europe's leading alpine sport resort</a></h2>
+		<p>Åre in Sweden is Northern Europe's largest and most advanced and diverse alpine sport resort. And it's not just the skiing that keeps people coming here, this place is well known for it's sizzling nightlife. From December 2016 you can fly direct to Åre Östersund airport from London Gatwick </p>
+    </div>
+
+	<div class="mobile-module mobile-puff module moduleMargin">
+		<a href="/sweden/Things-to-do/Culture-heritage--arts/A-Traditional-Swedish-Christmas/"><img src="/ImageVault/Images/id_1252/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Christmas market in Gamla Stan/Old Town, Stockholm" /></a>
+		<h2><a href="/sweden/Things-to-do/Culture-heritage--arts/A-Traditional-Swedish-Christmas/">A Traditional Swedish Christmas</a></h2>
+		<p></p><P>Christmas in Sweden sees its cities, towns and villages glow against the white winter landscape. It’s Christmas card perfect.</P>
+<P>&nbsp;<BR /></P>
+    </div>
+
+	<div class="mobile-module mobile-puff module ">
+		<a href="/sweden/Things-to-do/Culture-heritage--arts/Swedish-Music-Phenomenon/"><img src="/ImageVault/Images/id_275/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="ABBA" /></a>
+		<h2><a href="/sweden/Things-to-do/Culture-heritage--arts/Swedish-Music-Phenomenon/">Swedish music phenomenon</a></h2>
+		<p></p><P>If you haven’t heard ‘Dancing queen’ by ABBA, or ‘One’ by dance collective Swedish House Mafia, you must have been living under a rock. Because music from Swedish musical artists is massive everywhere.</P>
+<P> </P>
+    </div>
+
+	<div class="mobile-module mobile-puff module moduleMargin">
+		<a href="/sweden/Local-pages/English/Meet-the-Original-Hipsters/"><img src="/ImageVault/Images/id_6569/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Swedish crisp bread from Stora Skedvi in Dalarna." /></a>
+		<h2><a href="/sweden/Local-pages/English/Meet-the-Original-Hipsters/">Meet the Original Hipsters</a></h2>
+		<p>A thousand years before the first sourdough was set to ferment in the trendy neighbourhoods of Stockholm, crispbread bakers walked from farm to farm and baked up the rye harvests. We went looking for the origins of the modern hipster in the Swedish countryside.</p>
+    </div>
+
+	<div class="mobile-module mobile-puff module ">
+		<a href="/sweden/Regions--Cities/Gothenburg/Culture-in-Gothenburg/Crime-Fiction-West-Sweden/"><img src="/ImageVault/Images/id_3520/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Fjällbacka in Bohuslän, West Sweden" /></a>
+		<h2><a href="/sweden/Regions--Cities/Gothenburg/Culture-in-Gothenburg/Crime-Fiction-West-Sweden/">Crime Fiction - West Sweden</a></h2>
+		<p></p><P>Murder and mystery are in the air on the west coast of Sweden, at least in the books of Swedish crime writers Camilla Läckberg, Åke Edwardsson and Ann Rosman. </P>
+    </div>
+
+	<div class="mobile-module mobile-puff module moduleMargin">
+		<a href="/sweden/Travel-guide/Getting-around-in-Sweden/Swedens-congestion-taxes-and-bridge-tolls/"><img src="/ImageVault/Images/id_6136/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Bridge of Motala" /></a>
+		<h2><a href="/sweden/Travel-guide/Getting-around-in-Sweden/Swedens-congestion-taxes-and-bridge-tolls/">Information from the Swedish Transport Agency: Sweden’s congestion taxes and bridge tolls</a></h2>
+		<p></p><P>In Sweden both Swedish and <A name="t8"></A>foreign-registered vehicles pay congestion taxes in Stockholm and Gothenburg and bridge tolls in Motala and Sundsvall.&nbsp;</P>
+    </div>
+
+	<div class="mobile-module mobile-puff module ">
+		<a href="/sweden/Supporting-pages/Brochures/"><img src="/ImageVault/Images/id_6477/conversionFormat_17/scope_0/conversionFormatType_Jpeg/ImageVaultHandler.aspx" alt="Sweden Magazine 2016" /></a>
+		<h2><a href="/sweden/Supporting-pages/Brochures/">Inspiration from Sweden</a></h2>
+		<p>Welcome to the 2016 edition of the Sweden Magazine! Read it online, download it, or order a copy.</p>
+    </div>
+
+	        </div>
+		    <div class="hr floatLeft"><hr /></div>
+	    </div>
+	    		
+		<div class="startFavoritesBox">
+		    
+
+
+<!-- Sets the correct styles if Javascript is disabled -->
+<!-- Overrides all .css styles -->
+<div id="ctl00_FullRegion_MainRegion_favorites_showSaveToFav" style="display:none;" class="mobile-save-favourites">
+	<div class="mobile-module module module-gradient">
+		<div class="linkMenu2 hideShadow">
+			
+			<h2>My favourites</h2>
+			<ul id="mySavedFavorites" class="listType1 inset-list"></ul>
+			<img src="/UI/Images/ajax-loader-1.gif" id="favoritesLoader" alt="Loading..." />
+			<a href="javascript:void(0)" class="addFavoriteLink" id="aSavePageLink">Save to favourites</a>
+			
+		</div>
+	</div>
+</div>
+
+<!-- Sets the correct styles if Javascript is enabled -->
+<!-- Overrides all .css styles -->
+<script type="text/javascript">
+	document.getElementById('ctl00_FullRegion_MainRegion_favorites_showSaveToFav').style.display = 'block';
+</script>
+		</div>
+		
+    </div>
+    <div class="module2Wrapper floatLeft">
+	    <div class="mobile-module module2Wrapper clearfix">
+            
+
+<h3 class="bookableH3 bgGrey">Upcoming events in Sweden <img src="/ui/images/icon.calendar.2016.png" alt="Bookable accomodation" class="icon" id="calendar" /></h3>
+<ul class="listType1 mobile-list" id="startPageEvents">
+		
+	        <li>
+	            <span class="eventItem">Old Town Christmas Market</span><span class="eventDate">19 November - 23 December</span>
+	            <div class="information" style="display:none;">
+	                <P>Welcome to visit this famous, oldest and most traditional Christmas Market in Stockholm with a special cheery festive atmosphere! It is located in the heart of the Old Town (Gamla Stan) at Stortorget square (close to the Royal Palace).</P>
+<P>In the Old Town Christmas Market you will find Swedish Christmas sweets smoked sausages, reindeer, elkmeat and other delicacies.</P>
+<P>There is also Glögg (mulled wine), a range of Swedish handicrafts and decorative arts of high-quality workmanship.</P>
+<P>Open daily between 11.00 and 18.00 hours.</P>                
+	                <div><strong> Location: </strong>Old Town, Stockholm</div>
+			        <div><strong>Website: </strong><a class="weblink" href="http://www.stortorgetsjulmarknad.com/en/index.php" rel="external" target="_blank">Old Town Christmas Market </a></div>
+
+	            </div>
+	       </li>	    
+	    
+	        <li>
+	            <span class="eventItem">Nobel Prize Day</span><span class="eventDate">10 December</span>
+	            <div class="information" style="display:none;">
+	                <P>Nobel Prize Day Every year, on December 10, the anniversary of Alfred Nobel's death, His Majesty Carl XVI Gustaf presents the Nobel Prizes in economics, chemistry, physics, medicine, and literature. The ceremony takes place in Konserthuset in Stockholm. Afterwards, a banquet for 1,200 invited guests is held in Blå Hallen in Stockholms Stadshus (City Hall). One hundred years ago marks the tenth time the Nobel Prizes were awarded according to Alfred Nobel's will.</P>                
+	                <div><strong> Location: </strong>Stockholm</div>
+			        <div><strong>Website: </strong><a class="weblink" href="https://sweden.se/society/the-nobel-prize/" rel="external" target="_blank">Sweden.se </a></div>
+
+	            </div>
+	       </li>	    
+	    
+	        <li>
+	            <span class="eventItem"> 50 Shades Of Ink Tattoo Expo</span><span class="eventDate">14 April - 16 April</span>
+	            <div class="information" style="display:none;">
+	                International Tattoo Convention with over 60 top tattooers from almost all over the world together with performers, traders and more. 
+                
+	                <div><strong> Location: </strong>Sundspärlan, Helsingborg Sweden</div>
+			        <div><strong>Website: </strong><a class="weblink" href="http://www.50shadesofink.eu/" rel="external" target="_blank">50 Shades Of Ink </a></div>
+
+	            </div>
+	       </li>	    
+	    	
+</ul>
+<a class="arrowLinkRight floatRight" href="/sweden/Things-to-do/Events-in-Sweden/">Show all events</a>
+
+	    </div>
+	        
+	    
+
+<div class="mobile-module bookingBoxWide">
+    <div class="clearfix">
+        <h3>Book online via VisitSweden's partners</h3>
+       
+        <div class="block">
+            <img src="/ui/Images/booking.icon.house.big.png" alt="" />
+            <a href="/sweden/Accommodation/Book-accommodation/?visitTurl=http://online2.citybreak.com/Multisearch/SearchAccommodation.aspx?onlineid%3d807436382">Book accommodation</a>
+          
+        </div>
+   
+        <div class="block">
+            <img src="/ui/Images/booking.icon.bag.big.png" class="bag" alt="" />
+            <a href="/sweden/Accommodation/Book-packages/?visitTurl=http://online2.citybreak.com/Multisearch/SearchPackage.aspx?onlineid%3d807436382">Book packages</a>
+       </div>
+       
+       <div class="block">
+            <img src="/ui/Images/booking.icon.activities.big.png" class="compass" alt="" />
+            <a href="/sweden/Accommodation/Book-activities/?visitTurl=http://online2.citybreak.com/Multisearch/SearchActivity.aspx?onlineid%3d807436382">Book activities</a>
+       </div>
+       
+    </div>
+</div>
+
+
+
+	    
+	    <!--eri-no-index-->
+	    
+    <div class="mobile-module module2Wrapper clearfix mobile-display-none">
+        <h4 class="h4Ad">Advertising:</h4>
+        <div class="ad moduleLeftMargin">
+	        <div class="wrapper">
+                <!--JavaScript Tag // Tag for network 609: VisitSweden // Website: Nya visitsweden.com // Page: Bannerexponering // Placement: Banner 1 (1638157) // created at: Jun 17, 2008 4:11:17 PM-->
+                <script type="text/javascript"><!--
+        document.write('<scr' + 'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn|3.0|609|1638157|0|105|ADTECH;loc=100;target=_blank;key=Home page;grp=437;misc=' + new Date().getTime() + '"></scri' + 'pt>');
+                    //--></script><noscript><div><a href="http://adserver.adtech.de/adlink|3.0|609|1638157|0|105|ADTECH;loc=300;key=Home page;grp=437" rel="external"><img src="http://adserver.adtech.de/adserv|3.0|609|1638157|0|105|ADTECH;loc=300;key=Home page;grp=437" alt="" width="200" height="200" /></a></div></noscript>
+                <!-- End of JavaScript Tag -->
+	        </div>
+        </div>
+        <div class="ad">
+	        <div class="wrapper">
+                <!--JavaScript Tag // Tag for network 609: VisitSweden // Website: Nya visitsweden.com // Page: Bannerexponering // Placement: Banner 2 (1638156) // created at: Jun 17, 2008 4:11:17 PM-->
+                <script type="text/javascript"><!--
+        document.write('<scr' + 'ipt language="javascript1.1" src="http://adserver.adtech.de/addyn|3.0|609|1638156|0|105|ADTECH;loc=100;target=_blank;key=Home page;grp=437;misc=' + new Date().getTime() + '"></scri' + 'pt>');
+                    //--></script><noscript><div><a href="http://adserver.adtech.de/adlink|3.0|609|1638156|0|105|ADTECH;loc=300;key=Home page;grp=437" rel="external"><img src="http://adserver.adtech.de/adserv|3.0|609|1638156|0|105|ADTECH;loc=300;keyHome page;grp=437" alt="" width="200" height="200" /></a></div></noscript>
+                <!-- End of JavaScript Tag -->
+	        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+	    <!--/eri-no-index-->
+    </div>
+    
+
+                    </div>
+                    
+                        <div id="footer" class="mobile-module module-gradient">
+                            
+
+<h2>More VisitSweden</h2>
+<div class="listWrapper clearfix">
+	<ul class="clearfix inset-list">
+		
+		        <li>
+		            <a href="/sweden/Supporting-pages/Brochures/" rel="external">Order brochures</a>
+			        <p>Order brochures over different activities and destinations in Sweden.</p>		     
+		        </li>		    
+		    
+		        <li>
+		            <a href="http://partner.visitsweden.com/?epslanguage=en" rel="external">Partners</a>
+			        <p>Partner with us. Contact us and we’ll tell you more. In Swedish only!</p>		     
+		        </li>		    
+		    
+		        <li>
+		            <a href="/sweden/PressRoom/" rel="external">Press</a>
+			        <p>Go here for press releases, images and press contacts.</p>		     
+		        </li>		    
+		    
+		        <li>
+		            <a href="http://visitsweden.com/meetings?epslanguage=en" rel="external">Meetings & Incentives</a>
+			        <p>Find your contacts for Meetings & Incenitives in Sweden</p>		     
+		        </li>		    
+		    
+		        <li>
+		            <a href="http://www.youtube.com/sweden?epslanguage=en">Follow VisitSweden on</a>
+			        <p></p><table height="80" width="100%" border="0">
+<tbody>
+<tr valign="middle">
+<td><a href="https://www.facebook.com/visitsweden" target="_blank"><img border="0" alt="" src="/Global/Banners/f_logo_small.gif" /></a><br /></td>
+<td><a href="https://twitter.com/#!/VisitSwedenUK" target="_blank"><img border="0" alt="" src="/Global/Banners/twittervs.gif" /></a></td></tr>
+<tr valign="top">
+<td><a href="https://www.youtube.com/channel/UC7-AfAX_aDvwmFy4sg4h3GQ" target="_blank"><img border="0" alt="" align="middle" src="/Global/Banners/youtube_vs.gif" /></a></td>
+<td><a href="http://visitswedenuk.tumblr.com/" target="_blank"><img border="0" alt="VS on Tumblr" src="/PageFiles/21970/tumblr-logoVS.gif" /></a></td></tr>
+<tr valign="middle">
+<td colspan="2"><a title="Instagram" class="ig-b- ig-b-24" href="http://instagram.com/visitswedeninuk" target="_blank"><img alt="Instagram" src="//badges.instagram.com/static/images/ig-badge-24.png" /></a></td></tr></tbody>
+<style>UNKNOWN {
+	DISPLAY: inline-block
+}
+.ig-b- IMG {
+	VISIBILITY: hidden
+}
+.ig-b-:hover {
+	BACKGROUND-POSITION: 0px -60px
+}
+.ig-b-:active {
+	BACKGROUND-POSITION: 0px -120px
+}
+.ig-b-24 {
+	HEIGHT: 24px; BACKGROUND: url(//badges.instagram.com/static/images/ig-badge-sprite-24.png) no-repeat 0px 0px; WIDTH: 24px
+}
+
+@media Unknown    
+{
+.ig-b-24 {
+	BACKGROUND-IMAGE: url(//badges.instagram.com/static/images/ig-badge-sprite-24@2x.png); background-size: 60px 178px
+}
+
+}
+</style>
+</table>		     
+		        </li>		    
+		    
+		
+	</ul>
+</div>
+
+                            <!--eri-no-index-->
+                            
+
+<div class="hr"><hr /></div>
+<p class="mobile-bottom-links">
+	
+	        <a class="blink" href="/sweden/Supporting-pages/All-About-VisitSweden/">About VisitSweden.com </a>
+	    
+	        <a class="blink" href="/sweden/Supporting-pages/Contact-us/" rel="external">Contact us </a>
+	    
+	        <a class="blink" href="http://www.youtube.com/sweden" rel="external">VisitSweden's official channel on Youtube </a>
+	    
+    
+</p>
+
+                            <!--/eri-no-index-->
+                        </div>
+                    
+                
+            </div>
+            <!-- content-->
+        </div>
+        
+
+
+<a href="http://www.sweden.se" rel="external" id="footerInfo">A part of the official gateway to Sweden</a>
+    </div>
+    <div class="hidden" id="widget_holder">
+    </div>
+    
+<div>
+	<!-- javascript bridge -->
+	<div id="net_js_bridge" class="hidden">
+		<input id="HiddenPoiId" type="hidden" value="" />
+		<input id="HiddenPoiName" type="hidden" value="" />
+		<input id="HiddenProviderText" type="hidden" value="is provided by:" />
+		<input id="HiddenBookPageId" type="hidden" value="1319" />
+		<input id="HiddenBookUrl" type="hidden" value="http://www.visitsweden.com/sweden/Accommodation/Book-accommodation/" />
+		<input id="HiddenLat" type="hidden" value="" />
+		<input id="HiddenLng" type="hidden" value="" />
+		<input id="HiddenZoom" type="hidden" value="" />
+		<input id="HiddenMiscCategories" type="hidden" value="" />
+		<input id="HiddenPageID" type="hidden" value="437" />
+		<input id="HiddenIsPoiLight" type="hidden" value="" />
+		<input id="HiddenPageName" type="hidden" value="English startpage" />
+		<input id="HiddenLanguageCode" type="hidden" value="en" />
+		<input id="HiddenLanguageSegment" type="hidden" value="sweden" />
+		<input id="HiddenPageTypeID" type="hidden" value="22" />
+	</div>
+
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+	
+	<script type="text/javascript" src="/UI/scripts/siteseeker.js"></script>
+	<script type="text/javascript" src="/UI/scripts/lib/json.min.js"></script>
+
+	<script type="text/javascript" src="/UI/scripts/opt/util.js"></script>
+
+	<script type="text/javascript" src="/UI/Scripts/opt/util.jsTdd.js"></script>
+	<script type="text/javascript" src="/UI/Scripts/opt/util.jsListenerObject.js"></script>
+	<script type="text/javascript" src="/UI/Scripts/opt/util.jsListenerCollection.js"></script>
+	<script type="text/javascript" src="/UI/Scripts/opt/util.jsExeQueueCollection.js"></script>
+
+	<script type="text/javascript" src="/UI/Pages/Campaign/Scripts/opt/imageGallery.js"></script>
+	<script type="text/javascript" src="/UI/scripts/opt/core.js"></script>
+	<script type="text/javascript" src="/UI/scripts/opt/imagesFromTheArea.js"></script>
+	<script type="text/javascript" src="/UI/scripts/opt/richContentBrowser.js"></script>
+	<script type="text/javascript" src="http://s3.amazonaws.com/getsatisfaction.com/javascripts/feedback-v2.js"></script>
+	<script type="text/javascript" src="http://s.clicktale.net/WRb.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+
+	
+	<script type="text/javascript" src="/UI/Scripts/opt/google.maps.2.2.js"></script>
+	<script type="text/javascript" src="/UI/Scripts/opt/maps.directions.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		var feedback_widget_options = {};
+		feedback_widget_options.display = "overlay";
+		feedback_widget_options.company = "communityofsweden";
+		feedback_widget_options.placement = "right";
+		feedback_widget_options.color = "#31b1e2";
+		feedback_widget_options.style = "question";
+		GSFN.feedback_widget.prototype.local_base_url = "http://help.communityofsweden.com";
+		GSFN.feedback_widget.prototype.local_ssl_base_url = "http://help.communityofsweden.com";
+		var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+	</script>
+
+	<!-- Start Visual Website Optimizer Asynchronous Code -->
+	<script type='text/javascript'>
+		var _vwo_code = (function () {
+			var account_id = 31095,
+			settings_tolerance = 2000,
+			library_tolerance = 1500,
+			use_existing_jquery = false,
+			// DO NOT EDIT BELOW THIS LINE
+			f = false, d = document; return { use_existing_jquery: function () { return use_existing_jquery; }, library_tolerance: function () { return library_tolerance; }, finish: function () { if (!f) { f = true; var a = d.getElementById('_vis_opt_path_hides'); if (a) a.parentNode.removeChild(a); } }, finished: function () { return f; }, load: function (a) { var b = d.createElement('script'); b.src = a; b.type = 'text/javascript'; b.innerText; b.onerror = function () { _vwo_code.finish(); }; d.getElementsByTagName('head')[0].appendChild(b); }, init: function () { settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance); this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&r=' + Math.random()); var a = d.createElement('style'), b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}', h = d.getElementsByTagName('head')[0]; a.setAttribute('id', '_vis_opt_path_hides'); a.setAttribute('type', 'text/css'); if (a.styleSheet) a.styleSheet.cssText = b; else a.appendChild(d.createTextNode(b)); h.appendChild(a); return settings_timer; } };
+		}()); _vwo_settings_timer = _vwo_code.init();
+	</script>
+	<!-- End Visual Website Optimizer Asynchronous Code -->
+
+	<script type="text/javascript"></script>
+</div>
+
+    
+<script src="/WebResource.axd?d=Xg9Epf7nfypF73_eMVH3IQ0QAsuNmFDvwBX6nGUelsfAbaG_tSj3SeMPdFk5mxi6yuaaWXGYtl4qeFJod3KSFcUaKB01&amp;t=635588660026805809" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+  function addClickFunction(id) {{
+            var b = document.getElementById(id);
+            if (b && typeof(b.click) == 'undefined') b.click = function() {{
+                var result = true; if (b.onclick) result = b.onclick();
+                if (typeof(result) == 'undefined' || result) {{ eval(b.getAttribute('href')); }}
+            }}}};addClickFunction('ctl00_QuickSearch_quickSearchBoxPost');//]]>
+</script>
+</form>
+</body>
+</html>

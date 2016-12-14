@@ -1,0 +1,4 @@
+function OnClientEntryAddingHandler(sender, eventArgs) {
+if (sender.get_entries().get_count() > 0) {
+eventArgs.set_cancel(true);
+alert("You can select only one dog.");

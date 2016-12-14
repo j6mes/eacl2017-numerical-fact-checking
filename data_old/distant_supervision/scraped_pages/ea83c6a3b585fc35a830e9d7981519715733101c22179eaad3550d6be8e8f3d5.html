@@ -1,0 +1,1396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+<title>Ukraine Time Zone Map, Current Local Time in Ukraine</title>
+<meta name="Description" content="Ukraine Time Zone Map -  Map showing Ukraine Time Zone (UTC+2) along with Current Local Time in Ukraine, area codes, calling codes, coordinates and many more facts info." />
+<meta name="Keywords" content="Ukraine Time Zone Map, Ukraine Time Zone, Ukraine Local Time, Ukraine Current Time, Current local time in Ukraine, Ukraine Clock, Ukraine daylight time" />
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="SHORTCUT ICON" href="http://www.mapsofworld.com/images/mapsofworld.ico" type="imaget/x-icon" />
+<script language="JavaScript" src="http://www.mapsofworld.com/js/style.js" type="text/Javascript"></script>
+<style>
+
+h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+#clock {
+  background-image: url("http://www.mapsofworld.com/images/clk/clockBg.png");
+  height: 200px;
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+#clock div {
+  position: absolute;
+  left:50%
+}
+#clock img[src*="second"] {
+  transition: transform 600000s linear 0s;
+}
+#clock:target img[src*="second"] {
+  transform: rotate(3600000deg);
+}
+#clock img[src*="minute"] {
+  transition: transform 360000s linear 0s;
+}
+#clock:target img[src*="minute"] {
+  transform: rotate(36000deg);
+}
+#clock img[src*="hour"] {
+  transition: transform 216000s linear 0s;
+}
+#clock:target img[src*="hour"] {
+  transform: rotate(360deg);
+}
+</style>
+<style type="text/css" media="screen, print">
+@import 'http://www.mapsofworld.com/style2011/new-style.css';
+.tableizer-table th{background:#1A3642}
+</style>
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/1152375/MOW-160-Ad-Unit', [160, 600], 'div-gpt-ad-1378097497377-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/MOW-300-Admeld-1', [300, 250], 'div-gpt-ad-1378097497377-13').addService(googletag.pubads());
+googletag.defineSlot('/1152375/MOW-728-Ad-Unit', [728, 90], 'div-gpt-ad-1378097497377-20').addService(googletag.pubads());
+googletag.defineSlot('/1152375/MOW-728-Ad-Unit-2', [728, 90], 'div-gpt-ad-1378097497377-21').addService(googletag.pubads());
+googletag.defineSlot('/1152375/300-TAN', [300, 250], 'div-gpt-ad-1379909196487-1').addService(googletag.pubads());
+googletag.defineSlot('/1152375/728-logo', [728, 90], 'div-gpt-ad-1379909196487-2').addService(googletag.pubads());
+
+googletag.defineSlot('/1152375/MOW-Left', [120, 600], 'div-gpt-ad-1379667358079-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/120-2nd-ad', [120, 600], 'div-gpt-ad-1379744071997-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/160-TAN', [160, 600], 'div-gpt-ad-1379909196487-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/Zedo-Inview', [1, 1], 'div-gpt-ad-1409564691568-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/Inarticle', [1, 1], 'div-gpt-ad-1409718772275-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/MOW-Mobile-300x250-bottom', [300, 250], 'div-gpt-ad-1408355438089-0').addService(googletag.pubads());
+googletag.defineSlot('/1152375/mow-anchor', [320, 50], 'div-gpt-ad-1461738982737-0').addService(googletag.pubads());
+
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("#calculate_time").click(function(){
+
+var timezonef=$( "#timezonefirst option:selected" ).val();
+var countryf=$( "#timezonefirst option:selected" ).attr("data-country");
+var timezones=$( "#timezonesecond option:selected" ).val();
+var countrys=$( "#timezonesecond option:selected" ).attr("data-country");
+if(timezones==""){
+alert("Please select a country");
+}
+else{
+$.ajax({
+url: "tz.php",
+type:'GET',
+data:{tzone:timezonef,countryone:countryf,tzsec:timezones,countrysec:countrys},
+success: function(result){
+        $("#timedifference").html(result);
+    }});
+    }
+    });
+    });
+</script>
+
+
+<script>
+$(document).ready(function(){
+$('#search').click(function(){
+ var tz_sel=$("#tz_select option:selected").val();
+ var slug=$("tz_select option:selected").attr("data-slug"); 
+ if(tz_sel=="")
+ {
+ 
+ alert("Please select appropriate country"); 
+ }
+else
+{
+
+window.location="http://www.mapsofworld.com/time-zone-map/"+tz_sel+".html";
+}
+  });
+});
+</script>
+<link rel="canonical" href="" /> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      {"parsetags": "explicit"}
+    </script>
+<script>
+        var map_location='http://www.mapsofworld.com/ukraine/maps/ukraine-outline-map.jpg                                                                ';        
+   </script>
+<style type="text/css">
+.tz-wrp{width:95%;float:left;background:#2eb398;padding:10px 2%}
+.tz-wrp2{width:96%;float:left;background:#2eb398;padding:10px 2%;margin-bottom: 10px;}
+.tz-txt{width:55%;float:left;color:#fbffff;font-size:21px;font-family:arial;padding:5px 1%;text-shadow:1px 1px #51bda3}
+.tz-slwrp{width:32%;float:left;position:relative;margin-right:1%}
+.tz-slwrp label,.tz-slwrp2 label{position:absolute;background:#e5fffb url(../images2015/icons/select-arrow.png) no-repeat 93% 9px;width:95%;top:0;left:0;padding:9px 0 8px 5%;color:#19806d;font-size:14px;font-family:helvetica;cursor:pointer}
+.tz-slwrp2 label{padding:5px 0 4px 5%}
+select#tz_select,.tz-slwrp2 select{padding:7px 2px 7px 3%;float:left;width:100%;border:0;opacity:0;z-index:99}
+.tz-wrp #search,#calculate_time{float:left;padding:8px 20px;background:#127862;color:#fff;font-weight:700;cursor:pointer;border:0}
+.tz1{float:left;width:40.2%;margin-right:2%}
+.tz-slwrp2{width:100%;float:left;position:relative;margin-right:1%}
+.w50{width:50% !important}
+@media screen and (max-width:770px){
+.w50{width:100% !important}
+.map_strip_us_states_left{width:100%;}
+}
+@media screen and (max-width:680px){
+.tz-txt{width:100%;margin-bottom:10px;}
+.tz-slwrp{width:79%;}
+#calculate_time{padding: 8px 9px;}
+}
+@media screen and (max-width:500px){
+.tz1{width:100%;margin-bottom:10px;}
+.timezonelink li{width:96%}
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+$('#tz_select').change(function(){var tzval=$('#tz_select option:selected').text();$('#tzsl1').text(tzval);});
+$('#timezonefirst').change(function(){var tzval2=$('#timezonefirst option:selected').text();$('#tzsl2').text(tzval2);});
+$('#timezonesecond').change(function(){var tzval3=$('#timezonesecond option:selected').text();$('#tzsl3').text(tzval3);});
+});
+</script>
+<script src="http://www.mapsofworld.com/js/left-media.js" type="text/javascript"> </script>
+</head>
+
+<body>
+<!-- header starts here -->
+ <!-- header -->
+  <div class="header" style="float:none; margin:0 auto">
+    <div class="logo"><a href="http://www.mapsofworld.com" title="Maps of World" ><img src="http://www.mapsofworld.com/images-mow/mow-logo.png" alt="Maps of world" border="0" title="Maps of world"/></a></div>
+<div class="sitename1"><a href="http://www.mapsofworld.com">Maps of World</a><br /><span>Current, Credible, Consistent</span></div>
+    <div class="add">
+
+    <!-- 728-logo -->
+<div id='div-gpt-ad-1379909196487-2'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379909196487-2'); });
+</script>
+</div>
+
+</div>
+  </div>
+  <div class="cl"></div>
+  <!-- header closed-->
+  <!-- menu -->
+
+<style type="text/css">
+.big-gsearch{width: 1000px;border: 1px solid #9E9E9E;background: #fff;padding:0;height:47px;margin:10px auto 10px auto;}
+.big-gsearch .googlesub {width: 46px;float: left;height: 47px;border: 0;outline: 0;margin-left: 2px;}
+.big-gsearch .google_input{width:839px;float: left;padding: 9px 11px !important;border:none !important;outline: none !important;height: 29px;font-weight: bold;line-height: 27px;background:#fff !important;}
+.big-gsearch .src-btn{width: 91px;float: left;height: 47px;border: 0;outline: 0;background: none repeat scroll 0 0 #E0422C;color: #FFFFFF;display: inline-block;font-size: 17px;font-weight: 600;line-height:45px;text-align: center;}
+.big-gsearch input.google_input::-webkit-input-placeholder{color:#5D5D5C;font-size:16px;font-weight:bold;}
+.big-gsearch input.google_input:-moz-placeholder{color:#5D5D5C;font-size:16px;font-weight:bold;}
+.big-gsearch input.google_input::-moz-placeholder{color:#5D5D5C;font-size:16px;font-weight:bold;}
+.big-gsearch input.google_input:-ms-input-placeholder{color:#5D5D5C;font-size:16px;font-weight:bold;}
+.search-box2{display:none !important;}
+#nav li a{font-size:13px !important;}
+@media screen and (max-width:770px){
+.big-gsearch{display:none !important;}
+.search-box2{display:block !important;}
+}
+</style>
+
+<div class="big-gsearch none-on-europ">
+<span class="src-btn">Search</span>
+<form action="http://www.mapsofworld.com/search_result.html" id="cse-search-box">
+<input name="cx" value="partner-pub-0641096029648877:5rb90cypfn0" type="hidden" />
+<input name="cof" value="FORID:10" type="hidden" />
+<input name="ie" value="ISO-8859-1" type="hidden" />
+<input name="q" class="google_input input-area" size="33"  type="text" placeholder="For maps of countries, states, cities, tourist places and interesting information"/>
+<input value="www.mapsofworld.com/" name="siteurl" type="hidden" />
+<input src="http://www.mapsofworld.com/images2015/icons/search-with-bg.jpg" name="sa" alt="Submit" type="image" class="googlesub"/>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box?=en"></script>
+</form>
+</div>
+
+<div class="navmenu">
+<ul id="nav">
+<li><a href="http://www.mapsofworld.com/world-maps/">World Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-maps/">Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-political-map.htm">Political Map of the World</a></li>
+<li><a href="http://www.mapsofworld.com/physical-map/world.htm">Physical Map of the World</a></li>
+<li><a href="http://www.mapsofworld.com/world-outline-map.htm">Blank World Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/world-map-for-kids.html">World Map for Kids</a></li>
+<li><a href="http://www.mapsofworld.com/satellite-maps/world-geo-map.html">Earth Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-atlas/">World Atlas</a></li>
+<li><a href="http://www.mapsofworld.com/time-zone-map/">World Time Zones Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/world-map-in-world-languages.html">Different Languages Map&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-maps/spanish.html">Spanish Map</a></li>
+<li><a href="http://www.mapsofworld.com/deutsch/">Deutsch Karte</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/russian.html">Russian Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/french.html">French Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/chinese.html">Chinese Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/italian.html">Italian Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/indonesian.html">Indonesian Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/portuguese.html">Mapa do Mundo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/continents/">Continents&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/north-america/">North America</a></li>
+<li><a href="http://www.mapsofworld.com/south-america/">South America</a></li>
+<li><a href="http://www.mapsofworld.com/europe/">Europe Map</a></li>
+<li><a href="http://www.mapsofworld.com/asia/">Asia Map</a></li>
+<li><a href="http://www.mapsofworld.com/africa/">Africa Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia-and-oceania/">Oceania Map</a></li>
+<li><a href="http://www.mapsofworld.com/antarctica/">Antarctica Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/map-of-countries.html">Country Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/usa/">US Map</a></li>
+<li><a href="http://www.mapsofworld.com/canada/">Canada Map</a></li>
+<li><a href="http://www.mapsofworld.com/united-kingdom/">United Kingdom Map</a></li>
+<li><a href="http://www.mapsofworld.com/france/">France Map</a></li>
+<li><a href="http://www.mapsofworld.com/russia/">Russia Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/">Australia Map</a></li>
+<li><a href="http://www.mapsofworld.com/germany/">Germany Map</a></li>
+<li><a href="http://www.mapsofworld.com/mexico/">Mexico Map</a></li>
+<li><a href="http://www.mapsofworld.com/italy/">Italy Map</a></li>
+<li><a href="http://www.mapsofworld.com/ireland/">Ireland Map</a></li>
+<li><a href="http://www.mapsofworld.com/syria/">Syria Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/world-city-maps/">City Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/north-america/map-of-north-america.html">Cities in North America&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/usa/new-york-city-map.html"> New York City Map</a></li>
+<li><a href="http://www.mapsofworld.com/usa/washington-dc-map.html">Washington DC Map</a></li>
+<li><a href="http://www.mapsofworld.com/usa/los-angeles-city-map.html"> Los Angeles Map</a></li>
+<li><a href="http://www.mapsofworld.com/canada/toronto-map.html">Toronto Map</a></li>
+<li><a href="http://www.mapsofworld.com/mexico/mexico-city.html">Mexico City Map</a></li>
+<li><a href="http://www.mapsofworld.com/usa/chicago-city-map.html">Chicago Map</a></li>
+<li><a href="http://www.mapsofworld.com/usa/san-francisco-city-map.html">San Francisco Map</a></li>
+<li><a href="http://www.mapsofworld.com/usa/boston-city-map.html">Boston Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/europe/cities.html">Cities in Europe&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/united-kingdom/london-city-map.html">London Map</a></li>
+<li><a href="http://www.mapsofworld.com/italy/rome-city-map.html">Rome Map</a></li>
+<li><a href="http://www.mapsofworld.com/spain/spain-cities/barcelona-map.html">Barcelona Map</a></li>
+<li><a href="http://www.mapsofworld.com/france/paris-city-map.html">Paris Map</a></li>
+<li><a href="http://www.mapsofworld.com/netherlands/amsterdam-city-map.html">Amsterdam Map</a></li>
+<li><a href="http://www.mapsofworld.com/ireland/dublin.html">Dublin Map</a></li>
+<li><a href="http://www.mapsofworld.com/turkey/istanbul-map.html">Istanbul Map</a></li>
+<li><a href="http://www.mapsofworld.com/germany/berlin-city-map.html">Berlin Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/australia/cities/">Cities in Australia&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/australia/sydney-city-map.html">Sydney Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/melbourne-city-map.html">Melbourne Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/map-of-brisbane.html">Map Of Brisbane</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/canberra-map.html">Canberra Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/adelaide-map.html">Adelaide Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/map-of-darwin.html">Darwin Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/perth-map.html">Perth Map</a></li>
+<li><a href="http://www.mapsofworld.com/australia/cities/newcastle-map.html">Newcastle Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/south-america/cities.html">Cities in South America&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/brazil/cities/salvador-map.html">Salvador Map</a></li>
+<li><a href="http://www.mapsofworld.com/brazil/rio-de-janeiro-city-map.html">Rio De Janeiro Map</a></li>
+<li><a href="http://www.mapsofworld.com/brazil/cities/sao-paulo-map.html">Sao Paulo Map</a></li>
+<li><a href="http://www.mapsofworld.com/colombia/cities/bogota.html">Bogota Map</a></li>
+<li><a href="http://www.mapsofworld.com/chile/cities/santiago.html">Santiago Map</a></li>
+<li><a href="http://www.mapsofworld.com/peru/provinces-and-cities/lima.html">Lima Map</a></li>
+<li><a href="http://www.mapsofworld.com/argentina/buenos-aires-city-map.html">Buenos Aires Map</a></li>
+<li><a href="http://www.mapsofworld.com/venezuela/caracas.html">Caracas Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/asia/cities.html">Cities in Asia&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/japan/tokyo-city-map.html">Tokyo Map</a></li>
+<li><a href="http://www.mapsofworld.com/india/delhi/">Delhi Map</a></li>
+<li><a href="http://www.mapsofworld.com/china/beijing-city-map.html">Beijing Map</a></li>
+<li><a href="http://www.mapsofworld.com/thailand/bangkok-city-map.html">Bangkok Map</a></li>
+<li><a href="http://www.mapsofworld.com/hong-kong/hong-kong-city-map.html">Hong Kong City Map</a></li>
+<li><a href="http://www.mapsofworld.com/dubai/">Dubai Map</a></li>
+<li><a href="http://www.mapsofworld.com/russia/moscow-city-map.html">Moscow Map</a></li>
+<li><a href="http://www.mapsofworld.com/indonesia/jakarta.html">Jakarta Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/africa/cities.html">Cities in Africa&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/south-africa/cape-town-city-map.html">Cape Town Map</a></li>
+<li><a href="http://www.mapsofworld.com/ghana/accra.html">Accra Map</a></li>
+<li><a href="http://www.mapsofworld.com/kenya/cities/nairobi.html">Nairobi Map</a></li>
+<li><a href="http://www.mapsofworld.com/egypt/cairo-map.html">Cairo Map</a></li>
+<li><a href="http://www.mapsofworld.com/tunisia/cities/tunis.html">Tunis Map</a></li>
+<li><a href="http://www.mapsofworld.com/egypt/cities/alexandria.html">Alexandria Map</a></li>
+<li><a href="http://www.mapsofworld.com/algeria/algiers-map.html">Algiers Map</a></li>
+<li><a href="http://www.mapsofworld.com/zimbabwe/harare.html">Harare Map</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/">Thematic Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/thematic-maps/demography.html">Demography Maps&raquo;</a>            
+<ul>
+<li><a href="http://www.mapsofworld.com/world-religion-map.htm">World Religion Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-illiteracy-map.htm">World Illiteracy Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-language-map.htm">World Language Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/happiness.html">World Happiest Countries</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-life-expectancy-map.htm">World Life Expectancy</a></li>
+</ul>
+</li>
+
+<li><a href="http://www.mapsofworld.com/world-top-ten/">World Top 10&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-richest-countries-map.html">Richest Countries in the World</a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-powerful-countries-map.html">Most Powerful Countries</a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-countries-with-largest-armies-map.html">Countries with Largest Army</a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-poorest-countries-map.html">Poorest Countries in the World</a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-largest-countries-in-area-map.html">Largest Countries in the World </a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/world-top-ten-largest-cities-map.html">Largest Cities in the World</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/lat_long/">Lat Long Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-maps/world-map-with-latitude-and-longitude.html">Latitude and Longitude Map</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/asia.html">Asia Lat Long</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/africa.html">Africa Lat Long</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/europe.html">Europe Lat Long</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/australia.html">Australia Lat Long</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/north-america.html">North America Lat Long</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/south-america.html">South America Lat Long</a></li>
+</ul>
+</li>
+
+<li><a href="http://www.mapsofworld.com/thematic-maps/economy.html">Economy Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-food-consumption-map.htm">World Food Consumption</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-energy-balance-map.htm">World Energy Balance Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/economy-maps/world-economic-classification.html">World Economic Classification</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-gdp-per-capita-map.html">World GDP Per Capita Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-export-map.htm">World Export Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/environment.html">Environment Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-ocean-map.htm">World Ocean Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-river-map.html">World River Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-desert-map.htm">World Desert Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/earthquake/">Major Earthquakes</a></li>
+<li><a href="http://www.mapsofworld.com/world-sea-ports-map.htm">World Seaports Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-natural-vegetation.htm">World Natural Vegetation</a></li>
+<li><a href="http://www.mapsofworld.com/world-freshwater-resources.htm" title="World Freshwater Resources Map">World Freshwater Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-natural-forest.htm">World Natural Forest</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-soil-map.html">World Soil Map</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/world-forestry-distribution.htm">Forestry Distribution Map</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/world-history-maps/">History Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/world-maps/world-war-i-map.html">World War I Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/world-war-ii-map.html">World War II Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-history-maps/europe-history-maps1900.html">Europe History Map 1900</a></li>
+<li><a href="http://www.mapsofworld.com/world-history-maps/europe-history-maps1937.html">Map of Europe before WW2</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/">Other Thematic Maps&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/thematic-maps/types-of-governments.html">Types of Governments</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/zika-virus.html">Zika Virus Affected Countries</a></li>
+<li><a href="http://www.mapsofworld.com/world-airroutes-map.htm">World Air Routes Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-mineral-map.htm">World Mineral Map</a></li>
+<li><a href="http://www.mapsofworld.com/deutsch/thematische-karten/">Thematic Map in German</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/world-maps/world-travel-map.html">Travel&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/wonders-of-world/top-100.html">Wonders of world</a></li>
+<li><a href="http://www.mapsofworld.com/travel/">World Travel Destinations</a></li>
+<li><a href="http://www.mapsofworld.com/world-top-ten/beaches.html">Top 10 Beaches</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/museums-enlarged-map.html">Famous Museums in the world</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/national-parks.html">Top National Parks</a></li>
+<li><a href="http://www.mapsofworld.com/world-airroutes-map.htm">World air routes map</a></li>
+<li><a href="http://www.mapsofworld.com/pages/been-there-done-that/">Been there done that</a></li>
+<li><a href="http://www.mapsofworld.com/travel-booking.html">Plan Your Trip! &nbsp;<i><img src="http://www.mapsofworld.com/images2015/new.gif" alt="new"/></i></a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/utilities/">Tools&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/utilities/route-planner.html">Driving Directions and Maps</a></li>
+<li><a href="http://www.mapsofworld.com/utilities/air-distance/">World Air Distance Locator</a></li>
+<li><a href="http://www.mapsofworld.com/countries-capitals/">Countries and Capitals </a></li>
+<li><a href="http://www.mapsofworld.com/international-airports/">Airport Finder </a></li>
+<li><a href="http://www.mapsofworld.com/embassies/">Embassy Finder </a></li>
+<li><a href="http://www.mapsofworld.com/usa/zipcodes/">US Zip Codes Finder </a></li>
+<li><a href="http://www.mapsofworld.com/usa/area-codes/">US Area Codes </a></li>
+<li><a href="http://www.mapsofworld.com/usa/universities/">US Universities </a></li>
+<li><a href="http://www.mapsofworld.com/postal-codes/">Postal Code Finder </a></li>
+<li><a href="http://www.mapsofworld.com/area-code/">Telephone Area Codes</a></li>
+<li><a href="http://www.mapsofworld.com/utilities/online-currency-converter.html">Currency Converter</a></li>
+<li><a href="http://www.mapsofworld.com/national-day.html">National &amp; Independence days</a></li>
+<li><a href="http://www.mapsofworld.com/flags/">Flags</a></li>
+</ul>
+</li>
+<li><a href="#">Resources&raquo;</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/around-the-world/">Around the World</a></li>
+<li><a href="http://www.mapsofworld.com/calendar-events/">Calendar Events Archive</a></li>
+<li><a href="http://www.mapsofworld.com/on-this-day/">On this day</a></li>
+<li><a href="http://www.mapsofworld.com/quiz/">Quiz</a></li>
+<li><a href="http://www.mapsofworld.com/infographics/">Infographics</a></li>
+<li><a href="http://blog.mapsofworld.com/">Blog</a></li>
+<li><a href="http://www.mapsofworld.com/videos/">Videos</a></li>
+<li><a href="http://www.mapsofworld.com/gis-remotesensing/">GIS Services</a></li>
+<li><a href="http://www.mapsofworld.com/custom-maps/">Custom Maps</a></li>
+<li><a href="http://www.mapsofworld.com/list-of/">List of World Trivia</a></li>
+<li><a href="http://www.mapsofworld.com/sports/">World Sports</a></li>
+<li><a href="http://www.mapsofworld.com/elections/usa/">US Elections</a></li>
+</ul>
+</li>
+<li><a href="http://www.mapsofworld.com/usa/">USA&raquo;</a>
+<ul style="right:0">
+<li><a href="http://www.mapsofworld.com/usa/states/">States in USA</a></li>
+<li><a href="http://www.mapsofworld.com/usa/county-maps/">Counties in USA</a></li>
+<li><a href="http://www.mapsofworld.com/usa/usa-cities.html">Cities in USA</a></li>
+<li><a href="http://www.mapsofworld.com/usa/zipcodes/">US Zip Codes</a></li>
+<li><a href="http://www.mapsofworld.com/usa/highways/">US Highways</a></li>
+<li><a href="http://www.mapsofworld.com/usa/airports-usa.html">US Airports</a></li>
+<li><a href="http://www.mapsofworld.com/elections/usa/">US Elections Map</a></li>
+</ul>
+</li>
+<li class="brdnone"><a href="http://www.mapsofworld.com/maps-applications.html" class="brdnone">Apps</a></li>
+</ul>
+</div>
+
+  <div class="cl"></div>
+
+  <!-- menu closed-->
+   <!-- menu 2 -->
+
+  <div class="cl"></div>
+  <!-- menu 2 closed-->
+
+<!-- brdcrumb -->
+    <div class="brdcrumb-box">
+<script type="text/javascript">
+    <!--
+    customer_care2();
+    //-->
+    </script>
+     <!-- search --> 
+  <div class="cl"></div>
+  <!-- brdcrumb closed-->
+ <!-- h1 & tweet-->
+    <!-- h1 & tweet-->
+    <div class="heading-new1">
+    <div class="heading-text-new1">
+    <div class="brdcrumb-new"><a href="http://www.mapsofworld.com/" >World Map</a> / <a href="http://www.mapsofworld.com/time-zone-map/" >Time Zone Maps</a> / Ukraine Time Zone Map</div>
+     
+    </div>
+    
+
+
+  </div>
+  <div class="cl"></div>
+  <!-- h1 & tweet closed-->
+<!-- header ends here -->
+
+  <!-- h1 & tweet closed-->
+<!-- header ends here -->
+
+
+<div class="main">
+<div id="left_nav1">
+<div class="width-left" align="left"> 
+<a href="http://www.mapsofworld.com/ukraine/">Ukraine Map</a> 
+<ul>
+<li><a href="http://www.mapsofworld.com/ukraine/ukraine-political-map.html">Political Map of Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/ukraine-location-map.html">Where is Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/physical-map/ukraine.html">Ukraine Physical Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/road-map.html">Ukraine Road Map</a></li>
+<li><a href="http://www.mapsofworld.com/lat_long/ukraine-lat-long.html">Ukraine Lat Long Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/ukraine-mineral-map.html">Ukraine Mineral Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/ukraine-outline-map.html">Ukraine Outline Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/crimea-location-map.html">Where is Crimea</a></li>
+<li><a href="http://www.mapsofworld.com/europe/russia-ukraine-map.html">Map of Ukraine and Russia</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/rail-map.html">Ukraine Rail Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/ukraine-river-map.html">Ukraine River Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/google-map.html">Ukraine Google Map</a></li>
+<li><a href="http://www.mapsofworld.com/world-maps/ukrainian.html">World Map in Ukrainian</a></li>
+<li><a href="http://mapsofworld.com/ukraine/maps/ukraine-political-map.jpg">Download Free Ukraine Political Map</a></li>
+<li><a href="http://www.mapsofworld.com/europe/ussr-map.html">USSR Map</a></li>
+<li><a href="http://www.mapsofworld.com/where-is/kiev.html">Where is Kiev</a></li>
+<li><a href="http://fr.mapsofworld.com/ukraine/">Map of Ukraine in French</a></li>
+<li><a href="http://espanol.mapsofworld.com/continentes/europa/ucrania/">Map of Ukraine in Spanish</a></li>
+</ul>
+</div>
+
+<div class="width-left">
+<a href="http://www.mapsofworld.com/deutsch/ukraine/">Ukraine Karte</a>
+</div>
+
+<div class="width-left">
+<a href="http://www.mapsofworld.com/utilities/">Quick Utilities</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/utilities/air-distance/">World Air Distance Locator</a></li>
+<li><a href="http://www.mapsofworld.com/postal-codes/">Postal Code</a></li>
+<li><a href="http://www.mapsofworld.com/area-code/country-ukraine.html">Ukraine Area Codes</a></li>
+</ul>
+</div>
+
+<div class="width-left" align="left"> 
+<a href="http://www.mapsofworld.com/country-profile/ukraine.html">About Ukraine</a> 
+<ul><li><a href="http://www.mapsofworld.com/time-zone-map/ukraine.html">Ukraine Time Zone</a></li>
+
+<li><a href="http://www.mapsofworld.com/pages/fast-facts/infographic-of-ukraine-fast-facts/">Infographic of Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/pages/fast-facts/ukraine/">Ukraine Fast Facts</a></li>
+<li><a href="http://www.mapsofworld.com/flags/ukraine-flag.html">Flag of Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/facts.html">Facts About Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/embassies/ukraine.html">Embassies and Consulates of Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/ukrainian-unity-day.html">Ukrainian Unity Day (Den Sobornosti)</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/independence-day.html">Ukraine Independence Day</a></li>
+<li><a href="http://www.mapsofworld.com/international-airports/ukraine/boryspil-borispol-airport-kbp.html">Boryspil Borispol Airport (KBP) Ukraine</a></li>
+<li><a href="http://www.mapsofworld.com/referrals/airlines/regional-and-domestic-airlines/ukraine.html">Ukraine Domestic Flights</a></li>
+<li><a href="http://www.mapsofworld.com/list-of/prime-ministers-ukraine/">List of Prime Ministers of Ukraine</a></li>
+</ul>
+</div>
+
+<div class="width-left" align="left"> 
+<a href="http://www.mapsofworld.com/ukraine/cities-map.html">Cities of Ukraine</a> 
+<ul>
+<li><a href="http://www.mapsofworld.com/ukraine/kiev.html">Kiev Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/kharkiv.html">Kharkiv City Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/odessa.html">Odessa City Map</a></li>
+</ul>
+</div>
+
+<div class="width-left" align="left"> 
+<a href="http://www.mapsofworld.com/ukraine/regions/">Regions of Ukraine</a> 
+<ul>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/cherkasy-map.html">Cherkasy Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/chernihiv-map.html">Chernihiv Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/chernivtsi-map.html">Chernivtsi Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/crimea-map.html">Crimea Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/dnipropetrovsk-map.html">Dnipropetrovsk Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/donetsk-map.html">Donetsk Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/ivano-frankivsk-map.html">Ivano-Frankivsk Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/kharkiv-map.html">Kharkiv Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/kherson-map.html">Kherson Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/khmelnytskyi-map.html">Khmelnytskyi Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/kiev-oblast-map.html">Kiev Region Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/kiev-city-region-map.html">Kiev City Region Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/kirovohrad-map.html">Kirovohrad Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/luhansk-map.html">Luhansk Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/lviv-map.html">Lviv Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/mykolaiv-map.html">Mykolaiv Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/odessa-map.html">Odessa Region Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/poltava-map.html">Poltava Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/rivne-map.html">Rivne Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/sevastopol-map.html">Sevastopol Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/sumy-map.html">Sumy Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/ternopil-map.html">Ternopil Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/transcarpathia-map.html">Transcarpathia Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/vinnytsya-map.html">Vinnytsya Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/volyn-map.html">Volyn Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/zaporizhzhya-map.html">Zaporizhzhya Map</a></li>
+<li><a href="http://www.mapsofworld.com/ukraine/regions/zhytomyr-map.html">Zhytomyr Map</a></li>
+</ul>
+</div>
+
+<div class="width-left">
+<a href="http://www.mapsofworld.com/around-the-world/">Around The World</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/around-the-world/pollution.html">Pollution in Chernobyl</a></li>
+<li><a href="http://www.mapsofworld.com/around-the-world/matriarchy.html">Define Matriarchy</a></li>
+<li><a href="http://www.mapsofworld.com/around-the-world/eggs.html">Eggs Around the World</a></li>
+<li><a href="http://www.mapsofworld.com/around-the-world/air-attacks.html">Air Attacks Around the World</a></li>
+</ul>
+</div>
+<div class="width-left"><a href="http://www.mapsofworld.com/travel/destinations/ukraine">Ukraine Travel Guide</a></div>
+<div class="width-left">
+<a href="http://www.mapsofworld.com/infographics/">Infographics</a>
+<ul>
+<li><a href="http://www.mapsofworld.com/poll/does-the-euro-have-a-future-text.html">Eurozone Crisis</a></li>
+<li><a href="http://www.mapsofworld.com/infographics/poll/has-the-united-nations-failed-facts-infographic-text.html">United Nations Organization</a></li>
+<li><a href="http://www.mapsofworld.com/thematic-maps/lgbt-rights.html">LGBT Rights</a></li>
+</ul>
+</div><br />
+  <!-- ADS DIv -->
+  <div class="left_bg">
+  <br />
+
+
+  </div>
+  <!-- ADS DIv -->
+</div>
+
+<!-- Left Navigation Panel Ends-->
+
+<div class="heading_new_large" >
+<!--<div class="globe_large">
+    <img src="http://www.mapsofworld.com/globe-locator/germany-globe.jpg" width="139" height="91" alt="" />
+  </div>-->
+<div class="heading-text-new1">
+  <h1>Ukraine Time Zone Map</h1>
+  </div>
+<!-- MOW-728-Ad-Unit -->
+<div id='div-gpt-ad-1378097497377-20'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1378097497377-20'); });
+</script>
+</div></center>
+ <div class="cl"></div><br />
+<div class="img_text-new">
+</div>
+  <div class="cl"></div><br />
+<div class="tz-wrp"> 
+<div class="tz-txt">Search for any <b>Time Zone Map</b></div>
+<div class="tz-slwrp">
+<label for="tz_select" id="tzsl1">----Select-----</label>
+<select id="tz_select"> 
+       <option value="">----Select-----</option> 
+     <option data-slug='Afghanistan' value='afghanistan'> Afghanistan </option><option data-slug='Albania' value='albania'> Albania </option><option data-slug='Algeria' value='algeria'> Algeria </option><option data-slug='Andorra' value='andorra'> Andorra </option><option data-slug='Angola' value='angola'> Angola </option><option data-slug='Anguila' value='anguila'> Anguila </option><option data-slug='Antarctica' value='antarctica'> Antarctica </option><option data-slug='Antigua' value='antigua'> Antigua </option><option data-slug='Argentina' value='argentina'> Argentina </option><option data-slug='Armenia' value='armenia'> Armenia </option><option data-slug='Aruba' value='aruba'> Aruba </option><option data-slug='Australia' value='australia'> Australia </option><option data-slug='Austria' value='austria'> Austria </option><option data-slug='Bahamas' value='bahamas'> Bahamas </option><option data-slug='Bahrain' value='bahrain'> Bahrain </option><option data-slug='Bangladesh' value='bangladesh'> Bangladesh </option><option data-slug='Barbados' value='barbados'> Barbados </option><option data-slug='Belarus' value='belarus'> Belarus </option><option data-slug='Belgium' value='belgium'> Belgium </option><option data-slug='Belize' value='belize'> Belize </option><option data-slug='Benin' value='benin'> Benin </option><option data-slug='Bermuda' value='bermuda'> Bermuda </option><option data-slug='Bhutan' value='bhutan'> Bhutan </option><option data-slug='Bolivia' value='bolivia'> Bolivia </option><option data-slug='Bosnia' value='bosnia'> Bosnia </option><option data-slug='Botswana' value='botswana'> Botswana </option><option data-slug='Brazil' value='brazil'> Brazil </option><option data-slug='Brunei' value='brunei'> Brunei </option><option data-slug='Bulgaria' value='bulgaria'> Bulgaria </option><option data-slug='Burkina' value='burkina'> Burkina </option><option data-slug='Burundi' value='burundi'> Burundi </option><option data-slug='Cambodia' value='cambodia'> Cambodia </option><option data-slug='Cameroon' value='cameroon'> Cameroon </option><option data-slug='Canada' value='canada'> Canada </option><option data-slug='Cape Verde' value='cape-verde'> Cape Verde </option><option data-slug='Cayman Island' value='cayman-island'> Cayman Island </option><option data-slug='Central African Republic' value='central-african-republic'> Central African Republic </option><option data-slug='Chad' value='chad'> Chad </option><option data-slug='Chile' value='chile'> Chile </option><option data-slug='China' value='china'> China </option><option data-slug='Colombia' value='colombia'> Colombia </option><option data-slug='Comoros' value='comoros'> Comoros </option><option data-slug='Cook Islands' value='cook-islands'> Cook Islands </option><option data-slug='Costa Rica' value='costa-rica'> Costa Rica </option><option data-slug='Cote Dlvorie' value='cote-dlvorie'> Cote Dlvorie </option><option data-slug='Croatia' value='croatia'> Croatia </option><option data-slug='Cuba' value='cuba'> Cuba </option><option data-slug='Cyprus' value='cyprus'> Cyprus </option><option data-slug='Czech Republic' value='czech-republic'> Czech Republic </option><option data-slug='Democratic Republic Of Congo' value='democratic-republic-of-congo'> Democratic Republic Of Congo </option><option data-slug='Denmark' value='denmark'> Denmark </option><option data-slug='Djibouti' value='djibouti'> Djibouti </option><option data-slug='Dominican Republic' value='dominican-republic'> Dominican Republic </option><option data-slug='Ecuador' value='ecuador'> Ecuador </option><option data-slug='Egypt' value='egypt'> Egypt </option><option data-slug='El Salvador' value='el-salvador'> El Salvador </option><option data-slug='Equatorial Guinea' value='equatorial-guinea'> Equatorial Guinea </option><option data-slug='Eritrea' value='eritrea'> Eritrea </option><option data-slug='Estonia' value='estonia'> Estonia </option><option data-slug='Ethiopia' value='ethiopia'> Ethiopia </option><option data-slug='falkland Islands' value='falkland-islands'> falkland Islands </option><option data-slug='Finland' value='finland'> Finland </option><option data-slug='France' value='france'> France </option><option data-slug='French Guiana ' value='french-guiana'> French Guiana  </option><option data-slug='French Polynesia ' value='french-polynesia'> French Polynesia  </option><option data-slug='Gabon' value='gabon'> Gabon </option><option data-slug='Georgia' value='georgia'> Georgia </option><option data-slug='Germany' value='germany'> Germany </option><option data-slug='Ghana' value='ghana'> Ghana </option><option data-slug='gibraltar' value='gibraltar'> gibraltar </option><option data-slug='Greece' value='greece'> Greece </option><option data-slug='Greenland' value='greenland'> Greenland </option><option data-slug='Grenada' value='grenada'> Grenada </option><option data-slug='Guam' value='guam'> Guam </option><option data-slug='Guatemala' value='guatemala'> Guatemala </option><option data-slug='Guinea' value='guinea'> Guinea </option><option data-slug='Guinea Bissau' value='guinea-bissau'> Guinea Bissau </option><option data-slug='Guyana' value='guyana'> Guyana </option><option data-slug='Haiti' value='haiti'> Haiti </option><option data-slug='Honduras' value='honduras'> Honduras </option><option data-slug='Hungary' value='hungary'> Hungary </option><option data-slug='Iceland' value='iceland'> Iceland </option><option data-slug='India' value='india'> India </option><option data-slug='Indonesia' value='indonesia'> Indonesia </option><option data-slug='Iran' value='iran'> Iran </option><option data-slug='Iraq' value='iraq'> Iraq </option><option data-slug='Ireland' value='ireland'> Ireland </option><option data-slug='Israel' value='israel'> Israel </option><option data-slug='Italy' value='italy'> Italy </option><option data-slug='Jamaica' value='jamaica'> Jamaica </option><option data-slug='Japan' value='japan'> Japan </option><option data-slug='Jordan' value='jordan'> Jordan </option><option data-slug='Kazakhstan' value='kazakhstan'> Kazakhstan </option><option data-slug='Kenya' value='kenya'> Kenya </option><option data-slug='Kiribati' value='kiribati'> Kiribati </option><option data-slug='Kuwait' value='kuwait'> Kuwait </option><option data-slug='Kyrgyzstan' value='kyrgyzstan'> Kyrgyzstan </option><option data-slug='Laos' value='laos'> Laos </option><option data-slug='Latvia' value='latvia'> Latvia </option><option data-slug='Lebanon' value='lebanon'> Lebanon </option><option data-slug='Lesotho' value='lesotho'> Lesotho </option><option data-slug='Liberia' value='liberia'> Liberia </option><option data-slug='Libya' value='libya'> Libya </option><option data-slug='Lithuania' value='lithuania'> Lithuania </option><option data-slug='Luxembourg' value='luxembourg'> Luxembourg </option><option data-slug='Macau' value='macau'> Macau </option><option data-slug='Macedonia' value='macedonia'> Macedonia </option><option data-slug='Malawi' value='malawi'> Malawi </option><option data-slug='Malaysia' value='malaysia'> Malaysia </option><option data-slug='Maldives' value='maldives'> Maldives </option><option data-slug='Mali' value='mali'> Mali </option><option data-slug='Malta' value='malta'> Malta </option><option data-slug='Marshall Islands' value='marshall-islands'> Marshall Islands </option><option data-slug='Mauritania' value='mauritania'> Mauritania </option><option data-slug='Mauritius' value='mauritius'> Mauritius </option><option data-slug='Mexico' value='mexico'> Mexico </option><option data-slug='Moldova' value='moldova'> Moldova </option><option data-slug='Monaco' value='monaco'> Monaco </option><option data-slug='Montenegro' value='montenegro'> Montenegro </option><option data-slug='Montserrat' value='montserrat'> Montserrat </option><option data-slug='Morocco' value='morocco'> Morocco </option><option data-slug='Mozambique' value='mozambique'> Mozambique </option><option data-slug='Myanmar' value='myanmar'> Myanmar </option><option data-slug='Namibia' value='namibia'> Namibia </option><option data-slug='Nauru' value='nauru'> Nauru </option><option data-slug='Nepal' value='nepal'> Nepal </option><option data-slug='Netherlands' value='netherlands'> Netherlands </option><option data-slug='Newzealand' value='newzealand'> Newzealand </option><option data-slug='Nicaragua' value='nicaragua'> Nicaragua </option><option data-slug='Niger' value='niger'> Niger </option><option data-slug='Nigeria' value='nigeria'> Nigeria </option><option data-slug='Niue' value='niue'> Niue </option><option data-slug='North Korea' value='north-korea'> North Korea </option><option data-slug='Northern Ireland' value='northern-ireland'> Northern Ireland </option><option data-slug='Northern Marianas' value='northern-marianas'> Northern Marianas </option><option data-slug='Norway' value='norway'> Norway </option><option data-slug='Pakistan' value='pakistan'> Pakistan </option><option data-slug='Palau' value='palau'> Palau </option><option data-slug='Panama' value='panama'> Panama </option><option data-slug='Papua New Guinea' value='papua-new-guinea'> Papua New Guinea </option><option data-slug='Paraguay' value='paraguay'> Paraguay </option><option data-slug='Peru' value='peru'> Peru </option><option data-slug='Philippines' value='philippines'> Philippines </option><option data-slug='Pitcairn Islands' value='pitcairn-islands'> Pitcairn Islands </option><option data-slug='Poland' value='poland'> Poland </option><option data-slug='Portugal' value='portugal'> Portugal </option><option data-slug='Qatar' value='qatar'> Qatar </option><option data-slug='Republic Of Congo' value='republic-of-congo'> Republic Of Congo </option><option data-slug='Romania' value='romania'> Romania </option><option data-slug='Russia' value='russia'> Russia </option><option data-slug='Rwanda' value='rwanda'> Rwanda </option><option data-slug='Saint Lucia' value='saint-lucia'> Saint Lucia </option><option data-slug='Samoa' value='samoa'> Samoa </option><option data-slug='San Marino' value='san-marino'> San Marino </option><option data-slug='Sao Tome Principe' value='sao-tome-principe'> Sao Tome Principe </option><option data-slug='Saudi Arabia' value='saudi-arabia'> Saudi Arabia </option><option data-slug='Senegal' value='senegal'> Senegal </option><option data-slug='Serbia' value='serbia'> Serbia </option><option data-slug='Seychelles' value='seychelles'> Seychelles </option><option data-slug='Sierra Leone' value='sierra-leone'> Sierra Leone </option><option data-slug='Slovakia' value='slovakia'> Slovakia </option><option data-slug='Slovenia' value='slovenia'> Slovenia </option><option data-slug='Somalia' value='somalia'> Somalia </option><option data-slug='South Africa' value='south-africa'> South Africa </option><option data-slug='Spain' value='spain'> Spain </option><option data-slug='Sri Lanka' value='sri-lanka'> Sri Lanka </option><option data-slug='St Kitts And Nevis' value='st-kitts-and-nevis'> St Kitts And Nevis </option><option data-slug='Sudan' value='sudan'> Sudan </option><option data-slug='Suriname' value='suriname'> Suriname </option><option data-slug='Swaziland' value='swaziland'> Swaziland </option><option data-slug='Sweden' value='sweden'> Sweden </option><option data-slug='Switzerland' value='switzerland'> Switzerland </option><option data-slug='Syria' value='syria'> Syria </option><option data-slug='Tajikistan' value='tajikistan'> Tajikistan </option><option data-slug='Tanzania' value='tanzania'> Tanzania </option><option data-slug='Thailand' value='thailand'> Thailand </option><option data-slug='The Gambia' value='the-gambia'> The Gambia </option><option data-slug='Timor Leste' value='timor-leste'> Timor Leste </option><option data-slug='Togo' value='togo'> Togo </option><option data-slug='Tonga' value='tonga'> Tonga </option><option data-slug='Trinidad And Tobago' value='trinidad-and-tobago'> Trinidad And Tobago </option><option data-slug='Tunisia' value='tunisia'> Tunisia </option><option data-slug='Turkey' value='turkey'> Turkey </option><option data-slug='Turkmenistan' value='turkmenistan'> Turkmenistan </option><option data-slug='Turks Caicos Islands' value='turks-caicos-islands'> Turks Caicos Islands </option><option data-slug='Uganda' value='uganda'> Uganda </option><option data-slug='Ukraine' value='ukraine'> Ukraine </option><option data-slug='United Arab Emirates' value='united-arab-emirates'> United Arab Emirates </option><option data-slug='United Kingdom' value='united-kingdom'> United Kingdom </option><option data-slug='Uruguay' value='uruguay'> Uruguay </option><option data-slug='USA' value='usa'> USA </option><option data-slug='Uzbekistan' value='uzbekistan'> Uzbekistan </option><option data-slug='Vanuatu' value='vanuatu'> Vanuatu </option><option data-slug='Venezuela' value='venezuela'> Venezuela </option><option data-slug='Vietnam' value='vietnam'> Vietnam </option><option data-slug='Vincent Gredines' value='vincent-gredines'> Vincent Gredines </option><option data-slug='Virgin Island' value='virgin-island'> Virgin Island </option><option data-slug='Wales' value='wales'> Wales </option><option data-slug='Western Sahara' value='western-sahara'> Western Sahara </option><option data-slug='Yemen' value='yemen'> Yemen </option><option data-slug='Zambia' value='zambia'> Zambia </option><option data-slug='Zimbabwe' value='zimbabwe'> Zimbabwe </option></select>
+</div>
+<input type="button" name="submit" id="search" value="GO">
+</div>
+<div class="cl"><br /></div>
+</div>
+<div class="big_map">
+<table align="center" cellpadding="0" cellspacing="0">
+<tr>
+
+<td><div class='map_strip_large'>
+        <div class='map_strip_us_states_left'  class='w50'>           
+          <div class='print_us_states' style='cursor:pointer; cursor:hand;' onclick='javascript:printImage(http://www.mapsofworld.com/ukraine/maps/ukraine-outline-map.jpg                                                                )'></div>
+          <div class='print_us_states_txt'><a href='#' title='Print this Map' onclick='javascript:printImage(http://www.mapsofworld.com/ukraine/maps/ukraine-outline-map.jpg                                                                )'>Print</a></div>
+          
+          <div class='email_us_states' style='cursor:pointer; cursor:hand;' onclick='document.location.href='http://www.mapsofworld.com/sendPage.php''> </div>          
+          <div class='email_us_states_txt'><a href='http://www.mapsofworld.com/sendPage.php' title='Email This Link'>Email</a></div>
+           <div class='download_large'  style='cursor:pointer; cursor:hand;' onclick='javascript:document.getElementById('email').style.display='block''></div>
+
+          <div class='download_large_txt' id='button'><a href='#' title='Save this Map' onclick='javascript:document.getElementById('email').style.display='block''>Download</a></div>
+        </div>
+
+        <div class='map_strip_us_states_right' class='w50'>
+          <div class='google_plus_us_states'><div id='content'><g:plusone size='medium'></g:plusone></div><script type='text/javascript'>gapi.plusone.go('content');   </script></div> 
+            <div class='e-img_us_states' style='width:69px;'><fb:like href='http://www.facebook.com/mapxl' layout='button_count' show_faces='true' width='50' font='arial'></fb:like></div>
+          
+          <div class='e-box_us_states'>  <div class='e-img_us_states'><script type='text/javascript'>var switchTo5x=true;</script><script type='text/javascript' src='http://w.sharethis.com/button/buttons.js'></script><span  class='st_twitter_hcount' displayText='Tweet'></span>
+          <script type='text/javascript'>stLight.options({publisher:'056ea25f-a4a0-4308-9c4d-e8271ef2bc0d'});</script></div> </div>
+          </div>
+    </div></td></tr>
+<tr>
+  <td>
+  
+
+<img src="http://www.mapsofworld.com/ukraine/maps/ukraine-outline-map.jpg                                                                "  title="Ukraine Time Zone Map" alt="Ukraine Time Zone Map" value='http://www.mapsofworld.com/ukraine/maps/ukraine-outline-map.jpg                                                                ' style="width:100%" id='main_map' align="center" oncontextmenu="return false;"/>
+
+
+
+  </td>
+</tr>
+</table>
+<div class="disclaimer" style="padding:2px 0 0 10px;font-size:12px;">
+
+<table width="98%">
+<tr>
+  <td><strong>Description</strong>&nbsp;:&nbsp;  Map showing Time Zone of Ukraine</td>
+  <td style="text-align:right;">
+  <a style="color:#000000;font-family:arial;font-size:11px;text-decoration:none;" href="#" onclick="displayHideBox('1'); return false;"><b>Disclaimer</b></a>
+</td>
+</tr>
+</table>
+
+
+<!--button-->
+<div id="LightBox1" class="box_content" style="display:none;">
+<table cellpadding="3" cellspacing="0" border="0">
+  <tr align="left">
+    <td colspan="2" bgcolor="#FFFFFF" style="padding:10px;"><div onclick="displayHideBox('1'); return false;" style="cursor:pointer;" align="right"><b>Close</b></div><p><!-- Box content --><b>Disclaimer :</b> All efforts have been made to make this image accurate. However Compare Infobase Limited,its directors and employees do not own any responsibility for the correctness or authenticity of the same.</p></td>
+  </tr>
+</table>
+</div><br/>
+<!--buttonclose-->
+<center><!-- MOW-468-Ad-Unit -->
+<div id='div-gpt-ad-1378097497377-18'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1378097497377-18'); });
+</script>
+</div></center>
+</div>
+  
+<!-- Map --></div>
+
+
+<!--  Right Panel Starts Here -->
+ <div id="right_panel">
+<center><!-- 160-TAN -->
+<div id='div-gpt-ad-1379909196487-0'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379909196487-0'); });
+</script>
+</div>
+</center><br />
+<div class="ad160"><!-- MOW-160-Ad-Unit -->
+<div id='div-gpt-ad-1378097497377-0'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1378097497377-0'); });
+</script>
+</div>
+</div>
+<br />
+<!-- WMS Table Ends Here -->
+ </div>
+<!--  Right Panel Ends HEre -->
+<div class="content_container">
+<div align="justify" class="text">
+<!-- MOW-468-Ad-Unit -->
+
+<br />
+<h2> Current Local Time in Ukraine</h2>
+<div class="localtime" style="text-align: center;">
+</div>
+<div id="clk">
+<div id="clock">
+    <div id="hour" style="transform: rotate(334.5deg);"><img src="http://www.mapsofworld.com/images/clk/hourhand.png"></div>
+    <div id="minute" style="transform: rotate(54deg);"><img src="http://www.mapsofworld.com/images/clk/minhand.png"></div>
+    <div id="second" style="transform: rotate(108deg);"><img src="http://www.mapsofworld.com/images/clk/sechand.png"></div>
+</div>
+</div>
+
+
+<h3>Time Zone of Ukraine: Europe/Kiev</h3><h3 id='c_time'></h3>
+ <br><br> 
+<div><strong><h2>TIME ZONE CONVERTER</strong></h2></div><br>
+<div class="tz-wrp2"> 
+<div class="tz1">
+<div class="tz-slwrp2">
+<label for="timezonefirst" id="tzsl2">Ukraine</label>
+<select id="timezonefirst"> 
+     <option data-country='Afghanistan' value='Asia/Kabul' > Afghanistan </option><option data-country='Albania' value='Europe/Tirane' > Albania </option><option data-country='Algeria' value='Africa/Algiers' > Algeria </option><option data-country='Andorra' value='Europe/Andorra' > Andorra </option><option data-country='Angola' value='Africa/Luanda' > Angola </option><option data-country='Anguila' value='America/Anguilla' > Anguila </option><option data-country='Antarctica' value='Antarctica/McMurdo' > Antarctica </option><option data-country='Antigua' value='America/Antigua' > Antigua </option><option data-country='Argentina' value='America/Argentina/Buenos_Aires' > Argentina </option><option data-country='Armenia' value='Asia/Yerevan' > Armenia </option><option data-country='Aruba' value='America/Aruba' > Aruba </option><option data-country='Australia' value='Australia/Brisbane' > Australia </option><option data-country='Austria' value='Europe/Vienna' > Austria </option><option data-country='Bahamas' value='America/Nassau' > Bahamas </option><option data-country='Bahrain' value='Asia/Bahrain' > Bahrain </option><option data-country='Bangladesh' value='Asia/Dhaka' > Bangladesh </option><option data-country='Barbados' value='America/Barbados' > Barbados </option><option data-country='Belarus' value='Europe/Minsk' > Belarus </option><option data-country='Belgium' value='Europe/Brussels' > Belgium </option><option data-country='Belize' value='America/Belize' > Belize </option><option data-country='Benin' value='Africa/Porto-Novo' > Benin </option><option data-country='Bermuda' value='Atlantic/Bermuda' > Bermuda </option><option data-country='Bhutan' value='Asia/Thimphu' > Bhutan </option><option data-country='Bolivia' value='America/La_Paz' > Bolivia </option><option data-country='Bosnia' value='Europe/Sarajevo' > Bosnia </option><option data-country='Botswana' value='Africa/Gaborone' > Botswana </option><option data-country='Brazil' value='America/Araguaina' > Brazil </option><option data-country='Brunei' value='Asia/Brunei' > Brunei </option><option data-country='Bulgaria' value='Europe/Sofia' > Bulgaria </option><option data-country='Burkina' value='Africa/Ouagadougou' > Burkina </option><option data-country='Burundi' value='Africa/Bujumbura' > Burundi </option><option data-country='Cambodia' value='Asia/Phnom_Penh' > Cambodia </option><option data-country='Cameroon' value='Africa/Douala' > Cameroon </option><option data-country='Canada' value='America/Atikokan' > Canada </option><option data-country='Cape Verde' value='Atlantic/Cape_Verde' > Cape Verde </option><option data-country='Cayman Island' value='America/Cayman' > Cayman Island </option><option data-country='Central African Republic' value='Africa/Bangui' > Central African Republic </option><option data-country='Chad' value='Africa/Ndjamena' > Chad </option><option data-country='Chile' value='America/Santiago' > Chile </option><option data-country='China' value='Asia/Shanghai' > China </option><option data-country='Colombia' value='America/Bogota' > Colombia </option><option data-country='Comoros' value='Indian/Comoro' > Comoros </option><option data-country='Cook Islands' value='Pacific/Rarotonga' > Cook Islands </option><option data-country='Costa Rica' value='America/Costa_Rica' > Costa Rica </option><option data-country='Cote Dlvorie' value='Africa/Abidjan' > Cote Dlvorie </option><option data-country='Croatia' value='Europe/Zagreb' > Croatia </option><option data-country='Cuba' value='America/Havana' > Cuba </option><option data-country='Cyprus' value='Asia/Nicosia' > Cyprus </option><option data-country='Czech Republic' value='Europe/Prague' > Czech Republic </option><option data-country='Democratic Republic Of Congo' value='Africa/Kinshasa' > Democratic Republic Of Congo </option><option data-country='Denmark' value='Europe/Copenhagen' > Denmark </option><option data-country='Djibouti' value='Africa/Djibouti' > Djibouti </option><option data-country='Dominican Republic' value='America/Santo_Domingo' > Dominican Republic </option><option data-country='Ecuador' value='America/Guayaquil' > Ecuador </option><option data-country='Egypt' value='Africa/Cairo' > Egypt </option><option data-country='El Salvador' value='America/El_Salvador' > El Salvador </option><option data-country='Equatorial Guinea' value='Africa/Malabo' > Equatorial Guinea </option><option data-country='Eritrea' value='Africa/Asmara' > Eritrea </option><option data-country='Estonia' value='Europe/Tallinn' > Estonia </option><option data-country='Ethiopia' value='Africa/Addis_Ababa' > Ethiopia </option><option data-country='falkland Islands' value='Atlantic/Stanley' > falkland Islands </option><option data-country='Finland' value='Europe/Helsinki' > Finland </option><option data-country='France' value='Europe/Paris' > France </option><option data-country='French Guiana ' value='America/Cayenne' > French Guiana  </option><option data-country='French Polynesia ' value='Pacific/Gambier' > French Polynesia  </option><option data-country='Gabon' value='Africa/Libreville' > Gabon </option><option data-country='Georgia' value='Asia/Tbilisi' > Georgia </option><option data-country='Germany' value='Europe/Berlin' > Germany </option><option data-country='Ghana' value='Africa/Accra' > Ghana </option><option data-country='gibraltar' value='Europe/Gibraltar' > gibraltar </option><option data-country='Greece' value='Europe/Athens' > Greece </option><option data-country='Greenland' value='America/Danmarkshavn' > Greenland </option><option data-country='Grenada' value='America/Grenada' > Grenada </option><option data-country='Guam' value='Pacific/Guam' > Guam </option><option data-country='Guatemala' value='America/Guatemala' > Guatemala </option><option data-country='Guinea' value='Africa/Conakry' > Guinea </option><option data-country='Guinea Bissau' value='Africa/Bissau' > Guinea Bissau </option><option data-country='Guyana' value='America/Guyana' > Guyana </option><option data-country='Haiti' value='America/Port-au-Prince' > Haiti </option><option data-country='Honduras' value='America/Tegucigalpa' > Honduras </option><option data-country='Hungary' value='Europe/Budapest' > Hungary </option><option data-country='Iceland' value='Atlantic/Reykjavik' > Iceland </option><option data-country='India' value='Asia/Kolkata' > India </option><option data-country='Indonesia' value='Asia/Jakarta' > Indonesia </option><option data-country='Iran' value='Asia/Tehran' > Iran </option><option data-country='Iraq' value='Asia/Baghdad' > Iraq </option><option data-country='Ireland' value='Europe/Dublin' > Ireland </option><option data-country='Israel' value='Asia/Jerusalem' > Israel </option><option data-country='Italy' value='Europe/Rome' > Italy </option><option data-country='Jamaica' value='America/Jamaica' > Jamaica </option><option data-country='Japan' value='Asia/Tokyo' > Japan </option><option data-country='Jordan' value='Asia/Amman' > Jordan </option><option data-country='Kazakhstan' value='Asia/Almaty' > Kazakhstan </option><option data-country='Kenya' value='Africa/Nairobi' > Kenya </option><option data-country='Kiribati' value='Pacific/Enderbury' > Kiribati </option><option data-country='Kuwait' value='Asia/Kuwait' > Kuwait </option><option data-country='Kyrgyzstan' value='Asia/Bishkek' > Kyrgyzstan </option><option data-country='Laos' value='Asia/Vientiane' > Laos </option><option data-country='Latvia' value='Europe/Riga' > Latvia </option><option data-country='Lebanon' value='Asia/Beirut' > Lebanon </option><option data-country='Lesotho' value='Africa/Maseru' > Lesotho </option><option data-country='Liberia' value='Africa/Monrovia' > Liberia </option><option data-country='Libya' value='Africa/Tripoli' > Libya </option><option data-country='Lithuania' value='Europe/Vilnius' > Lithuania </option><option data-country='Luxembourg' value='Europe/Luxembourg' > Luxembourg </option><option data-country='Macau' value='Indian/Antananarivo' > Macau </option><option data-country='Macedonia' value='Europe/Skopje' > Macedonia </option><option data-country='Malawi' value='Africa/Blantyre' > Malawi </option><option data-country='Malaysia' value='Asia/Kuala_Lumpur' > Malaysia </option><option data-country='Maldives' value='Indian/Maldives' > Maldives </option><option data-country='Mali' value='Africa/Bamako' > Mali </option><option data-country='Malta' value='Europe/Malta' > Malta </option><option data-country='Marshall Islands' value='Pacific/Kwajalein' > Marshall Islands </option><option data-country='Marshall Islands' value='Pacific/Majuro' > Marshall Islands </option><option data-country='Mauritania' value='America/Martinique' > Mauritania </option><option data-country='Mauritius' value='Indian/Mauritius' > Mauritius </option><option data-country='Mexico' value='America/Bahia_Banderas' > Mexico </option><option data-country='Moldova' value='Europe/Chisinau' > Moldova </option><option data-country='Monaco' value='Europe/Monaco' > Monaco </option><option data-country='Montenegro' value='Europe/Podgorica' > Montenegro </option><option data-country='Montserrat' value='America/Montserrat' > Montserrat </option><option data-country='Morocco' value='Africa/Casablanca' > Morocco </option><option data-country='Mozambique' value='Africa/Maputo' > Mozambique </option><option data-country='Myanmar' value='Asia/Rangoon' > Myanmar </option><option data-country='Namibia' value='Africa/Windhoek' > Namibia </option><option data-country='Nauru' value='Pacific/Nauru' > Nauru </option><option data-country='Nepal' value='Asia/Kathmandu' > Nepal </option><option data-country='Netherlands' value='Europe/Amsterdam' > Netherlands </option><option data-country='Newzealand' value='Pacific/Auckland' > Newzealand </option><option data-country='Nicaragua' value='America/Managua' > Nicaragua </option><option data-country='Niger' value='Africa/Niamey' > Niger </option><option data-country='Nigeria' value='Africa/Lagos' > Nigeria </option><option data-country='Niue' value='Pacific/Niue' > Niue </option><option data-country='North Korea' value='Asia/Pyongyang' > North Korea </option><option data-country='Northern Ireland' value='Europe/Oslo' > Northern Ireland </option><option data-country='Northern Marianas' value='Pacific/Saipan' > Northern Marianas </option><option data-country='Norway' value='Asia/Muscat' > Norway </option><option data-country='Pakistan' value='Asia/Karachi' > Pakistan </option><option data-country='Palau' value='Pacific/Palau' > Palau </option><option data-country='Panama' value='America/Panama' > Panama </option><option data-country='Papua New Guinea' value='Pacific/Port_Moresby' > Papua New Guinea </option><option data-country='Paraguay' value='America/Asuncion' > Paraguay </option><option data-country='Peru' value='America/Lima' > Peru </option><option data-country='Philippines' value='Asia/Manila' > Philippines </option><option data-country='Pitcairn Islands' value='Pacific/Pitcairn' > Pitcairn Islands </option><option data-country='Poland' value='Europe/Warsaw' > Poland </option><option data-country='Portugal' value='Atlantic/Azores' > Portugal </option><option data-country='Qatar' value='Asia/Qatar' > Qatar </option><option data-country='Republic Of Congo' value='Africa/Brazzaville' > Republic Of Congo </option><option data-country='Romania' value='Europe/Bucharest' > Romania </option><option data-country='Russia' value='Asia/Anadyr' > Russia </option><option data-country='Rwanda' value='Africa/Kigali' > Rwanda </option><option data-country='Saint Lucia' value='America/St_Lucia' > Saint Lucia </option><option data-country='Samoa' value='Pacific/Apia' > Samoa </option><option data-country='San Marino' value='Europe/San_Marino' > San Marino </option><option data-country='Sao Tome Principe' value='Africa/Sao_Tome' > Sao Tome Principe </option><option data-country='Saudi Arabia' value='Asia/Riyadh' > Saudi Arabia </option><option data-country='Senegal' value='Africa/Dakar' > Senegal </option><option data-country='Serbia' value='Europe/Belgrade' > Serbia </option><option data-country='Seychelles' value='Indian/Mahe' > Seychelles </option><option data-country='Sierra Leone' value='Africa/Freetown' > Sierra Leone </option><option data-country='Slovakia' value='Europe/Bratislava' > Slovakia </option><option data-country='Slovenia' value='Europe/Ljubljana' > Slovenia </option><option data-country='Somalia' value='Africa/Mogadishu' > Somalia </option><option data-country='South Africa' value='Africa/Johannesburg' > South Africa </option><option data-country='Spain' value='Africa/Ceuta' > Spain </option><option data-country='Sri Lanka' value='Asia/Colombo' > Sri Lanka </option><option data-country='St Kitts And Nevis' value='America/St_Kitts' > St Kitts And Nevis </option><option data-country='Sudan' value='Africa/Khartoum' > Sudan </option><option data-country='Suriname' value='America/Paramaribo' > Suriname </option><option data-country='Swaziland' value='Africa/Mbabane' > Swaziland </option><option data-country='Sweden' value='Europe/Stockholm' > Sweden </option><option data-country='Switzerland' value='Europe/Zurich' > Switzerland </option><option data-country='Syria' value='Asia/Damascus' > Syria </option><option data-country='Tajikistan' value='Asia/Dushanbe' > Tajikistan </option><option data-country='Tanzania' value='Africa/Dar_es_Salaam' > Tanzania </option><option data-country='Thailand' value='Asia/Bangkok' > Thailand </option><option data-country='The Gambia' value='Africa/Banjul' > The Gambia </option><option data-country='Timor Leste' value='Asia/Dili' > Timor Leste </option><option data-country='Togo' value='Africa/Lome' > Togo </option><option data-country='Tonga' value='Pacific/Tongatapu' > Tonga </option><option data-country='Trinidad And Tobago' value='America/Port_of_Spain' > Trinidad And Tobago </option><option data-country='Tunisia' value='Africa/Tunis' > Tunisia </option><option data-country='Turkey' value='Europe/Istanbul' > Turkey </option><option data-country='Turkmenistan' value='Asia/Ashgabat' > Turkmenistan </option><option data-country='Turks Caicos Islands' value='America/Grand_Turk' > Turks Caicos Islands </option><option data-country='Uganda' value='Africa/Kampala' > Uganda </option><option data-country='Ukraine' value='Europe/Kiev' selected> Ukraine </option><option data-country='United Arab Emirates' value='Asia/Dubai' > United Arab Emirates </option><option data-country='United Kingdom' value='Europe/London' > United Kingdom </option><option data-country='Uruguay' value='America/Montevideo' > Uruguay </option><option data-country='USA' value='PST' > USA </option><option data-country='Uzbekistan' value='Asia/Samarkand' > Uzbekistan </option><option data-country='Vanuatu' value='Pacific/Efate' > Vanuatu </option><option data-country='Venezuela' value='Asia/Ho_Chi_Minh' > Venezuela </option><option data-country='Vietnam' value='America/Caracas' > Vietnam </option><option data-country='Vincent Gredines' value='America/St_Vincent' > Vincent Gredines </option><option data-country='Virgin Island' value='America/Tortola' > Virgin Island </option><option data-country='Wales' value='GMT' > Wales </option><option data-country='Western Sahara' value='Africa/El_Aaiun' > Western Sahara </option><option data-country='Yemen' value='Asia/Aden' > Yemen </option><option data-country='Zambia' value='Africa/Lusaka' > Zambia </option><option data-country='Zimbabwe' value='Africa/Harare' > Zimbabwe </option></select>
+</div>
+</div>
+<div class="tz1">
+<div class="tz-slwrp2">
+<label for="timezonesecond" id="tzsl3">Select Another Country</label>
+<select id="timezonesecond"> 
+     <option data-country='Afghanistan' value='Asia/Kabul'> Afghanistan </option><option data-country='Albania' value='Europe/Tirane'> Albania </option><option data-country='Algeria' value='Africa/Algiers'> Algeria </option><option data-country='Andorra' value='Europe/Andorra'> Andorra </option><option data-country='Angola' value='Africa/Luanda'> Angola </option><option data-country='Anguila' value='America/Anguilla'> Anguila </option><option data-country='Antarctica' value='Antarctica/McMurdo'> Antarctica </option><option data-country='Antigua' value='America/Antigua'> Antigua </option><option data-country='Argentina' value='America/Argentina/Buenos_Aires'> Argentina </option><option data-country='Armenia' value='Asia/Yerevan'> Armenia </option><option data-country='Aruba' value='America/Aruba'> Aruba </option><option data-country='Australia' value='Australia/Brisbane'> Australia </option><option data-country='Austria' value='Europe/Vienna'> Austria </option><option data-country='Bahamas' value='America/Nassau'> Bahamas </option><option data-country='Bahrain' value='Asia/Bahrain'> Bahrain </option><option data-country='Bangladesh' value='Asia/Dhaka'> Bangladesh </option><option data-country='Barbados' value='America/Barbados'> Barbados </option><option data-country='Belarus' value='Europe/Minsk'> Belarus </option><option data-country='Belgium' value='Europe/Brussels'> Belgium </option><option data-country='Belize' value='America/Belize'> Belize </option><option data-country='Benin' value='Africa/Porto-Novo'> Benin </option><option data-country='Bermuda' value='Atlantic/Bermuda'> Bermuda </option><option data-country='Bhutan' value='Asia/Thimphu'> Bhutan </option><option data-country='Bolivia' value='America/La_Paz'> Bolivia </option><option data-country='Bosnia' value='Europe/Sarajevo'> Bosnia </option><option data-country='Botswana' value='Africa/Gaborone'> Botswana </option><option data-country='Brazil' value='America/Araguaina'> Brazil </option><option data-country='Brunei' value='Asia/Brunei'> Brunei </option><option data-country='Bulgaria' value='Europe/Sofia'> Bulgaria </option><option data-country='Burkina' value='Africa/Ouagadougou'> Burkina </option><option data-country='Burundi' value='Africa/Bujumbura'> Burundi </option><option data-country='Cambodia' value='Asia/Phnom_Penh'> Cambodia </option><option data-country='Cameroon' value='Africa/Douala'> Cameroon </option><option data-country='Canada' value='America/Atikokan'> Canada </option><option data-country='Cape Verde' value='Atlantic/Cape_Verde'> Cape Verde </option><option data-country='Cayman Island' value='America/Cayman'> Cayman Island </option><option data-country='Central African Republic' value='Africa/Bangui'> Central African Republic </option><option data-country='Chad' value='Africa/Ndjamena'> Chad </option><option data-country='Chile' value='America/Santiago'> Chile </option><option data-country='China' value='Asia/Shanghai'> China </option><option data-country='Colombia' value='America/Bogota'> Colombia </option><option data-country='Comoros' value='Indian/Comoro'> Comoros </option><option data-country='Cook Islands' value='Pacific/Rarotonga'> Cook Islands </option><option data-country='Costa Rica' value='America/Costa_Rica'> Costa Rica </option><option data-country='Cote Dlvorie' value='Africa/Abidjan'> Cote Dlvorie </option><option data-country='Croatia' value='Europe/Zagreb'> Croatia </option><option data-country='Cuba' value='America/Havana'> Cuba </option><option data-country='Cyprus' value='Asia/Nicosia'> Cyprus </option><option data-country='Czech Republic' value='Europe/Prague'> Czech Republic </option><option data-country='Democratic Republic Of Congo' value='Africa/Kinshasa'> Democratic Republic Of Congo </option><option data-country='Denmark' value='Europe/Copenhagen'> Denmark </option><option data-country='Djibouti' value='Africa/Djibouti'> Djibouti </option><option data-country='Dominican Republic' value='America/Santo_Domingo'> Dominican Republic </option><option data-country='Ecuador' value='America/Guayaquil'> Ecuador </option><option data-country='Egypt' value='Africa/Cairo'> Egypt </option><option data-country='El Salvador' value='America/El_Salvador'> El Salvador </option><option data-country='Equatorial Guinea' value='Africa/Malabo'> Equatorial Guinea </option><option data-country='Eritrea' value='Africa/Asmara'> Eritrea </option><option data-country='Estonia' value='Europe/Tallinn'> Estonia </option><option data-country='Ethiopia' value='Africa/Addis_Ababa'> Ethiopia </option><option data-country='falkland Islands' value='Atlantic/Stanley'> falkland Islands </option><option data-country='Finland' value='Europe/Helsinki'> Finland </option><option data-country='France' value='Europe/Paris'> France </option><option data-country='French Guiana ' value='America/Cayenne'> French Guiana  </option><option data-country='French Polynesia ' value='Pacific/Gambier'> French Polynesia  </option><option data-country='Gabon' value='Africa/Libreville'> Gabon </option><option data-country='Georgia' value='Asia/Tbilisi'> Georgia </option><option data-country='Germany' value='Europe/Berlin'> Germany </option><option data-country='Ghana' value='Africa/Accra'> Ghana </option><option data-country='gibraltar' value='Europe/Gibraltar'> gibraltar </option><option data-country='Greece' value='Europe/Athens'> Greece </option><option data-country='Greenland' value='America/Danmarkshavn'> Greenland </option><option data-country='Grenada' value='America/Grenada'> Grenada </option><option data-country='Guam' value='Pacific/Guam'> Guam </option><option data-country='Guatemala' value='America/Guatemala'> Guatemala </option><option data-country='Guinea' value='Africa/Conakry'> Guinea </option><option data-country='Guinea Bissau' value='Africa/Bissau'> Guinea Bissau </option><option data-country='Guyana' value='America/Guyana'> Guyana </option><option data-country='Haiti' value='America/Port-au-Prince'> Haiti </option><option data-country='Honduras' value='America/Tegucigalpa'> Honduras </option><option data-country='Hungary' value='Europe/Budapest'> Hungary </option><option data-country='Iceland' value='Atlantic/Reykjavik'> Iceland </option><option data-country='India' value='Asia/Kolkata'> India </option><option data-country='Indonesia' value='Asia/Jakarta'> Indonesia </option><option data-country='Iran' value='Asia/Tehran'> Iran </option><option data-country='Iraq' value='Asia/Baghdad'> Iraq </option><option data-country='Ireland' value='Europe/Dublin'> Ireland </option><option data-country='Israel' value='Asia/Jerusalem'> Israel </option><option data-country='Italy' value='Europe/Rome'> Italy </option><option data-country='Jamaica' value='America/Jamaica'> Jamaica </option><option data-country='Japan' value='Asia/Tokyo'> Japan </option><option data-country='Jordan' value='Asia/Amman'> Jordan </option><option data-country='Kazakhstan' value='Asia/Almaty'> Kazakhstan </option><option data-country='Kenya' value='Africa/Nairobi'> Kenya </option><option data-country='Kiribati' value='Pacific/Enderbury'> Kiribati </option><option data-country='Kuwait' value='Asia/Kuwait'> Kuwait </option><option data-country='Kyrgyzstan' value='Asia/Bishkek'> Kyrgyzstan </option><option data-country='Laos' value='Asia/Vientiane'> Laos </option><option data-country='Latvia' value='Europe/Riga'> Latvia </option><option data-country='Lebanon' value='Asia/Beirut'> Lebanon </option><option data-country='Lesotho' value='Africa/Maseru'> Lesotho </option><option data-country='Liberia' value='Africa/Monrovia'> Liberia </option><option data-country='Libya' value='Africa/Tripoli'> Libya </option><option data-country='Lithuania' value='Europe/Vilnius'> Lithuania </option><option data-country='Luxembourg' value='Europe/Luxembourg'> Luxembourg </option><option data-country='Macau' value='Indian/Antananarivo'> Macau </option><option data-country='Macedonia' value='Europe/Skopje'> Macedonia </option><option data-country='Malawi' value='Africa/Blantyre'> Malawi </option><option data-country='Malaysia' value='Asia/Kuala_Lumpur'> Malaysia </option><option data-country='Maldives' value='Indian/Maldives'> Maldives </option><option data-country='Mali' value='Africa/Bamako'> Mali </option><option data-country='Malta' value='Europe/Malta'> Malta </option><option data-country='Marshall Islands' value='Pacific/Kwajalein'> Marshall Islands </option><option data-country='Marshall Islands' value='Pacific/Majuro'> Marshall Islands </option><option data-country='Mauritania' value='America/Martinique'> Mauritania </option><option data-country='Mauritius' value='Indian/Mauritius'> Mauritius </option><option data-country='Mexico' value='America/Bahia_Banderas'> Mexico </option><option data-country='Moldova' value='Europe/Chisinau'> Moldova </option><option data-country='Monaco' value='Europe/Monaco'> Monaco </option><option data-country='Montenegro' value='Europe/Podgorica'> Montenegro </option><option data-country='Montserrat' value='America/Montserrat'> Montserrat </option><option data-country='Morocco' value='Africa/Casablanca'> Morocco </option><option data-country='Mozambique' value='Africa/Maputo'> Mozambique </option><option data-country='Myanmar' value='Asia/Rangoon'> Myanmar </option><option data-country='Namibia' value='Africa/Windhoek'> Namibia </option><option data-country='Nauru' value='Pacific/Nauru'> Nauru </option><option data-country='Nepal' value='Asia/Kathmandu'> Nepal </option><option data-country='Netherlands' value='Europe/Amsterdam'> Netherlands </option><option data-country='Newzealand' value='Pacific/Auckland'> Newzealand </option><option data-country='Nicaragua' value='America/Managua'> Nicaragua </option><option data-country='Niger' value='Africa/Niamey'> Niger </option><option data-country='Nigeria' value='Africa/Lagos'> Nigeria </option><option data-country='Niue' value='Pacific/Niue'> Niue </option><option data-country='North Korea' value='Asia/Pyongyang'> North Korea </option><option data-country='Northern Ireland' value='Europe/Oslo'> Northern Ireland </option><option data-country='Northern Marianas' value='Pacific/Saipan'> Northern Marianas </option><option data-country='Norway' value='Asia/Muscat'> Norway </option><option data-country='Pakistan' value='Asia/Karachi'> Pakistan </option><option data-country='Palau' value='Pacific/Palau'> Palau </option><option data-country='Panama' value='America/Panama'> Panama </option><option data-country='Papua New Guinea' value='Pacific/Port_Moresby'> Papua New Guinea </option><option data-country='Paraguay' value='America/Asuncion'> Paraguay </option><option data-country='Peru' value='America/Lima'> Peru </option><option data-country='Philippines' value='Asia/Manila'> Philippines </option><option data-country='Pitcairn Islands' value='Pacific/Pitcairn'> Pitcairn Islands </option><option data-country='Poland' value='Europe/Warsaw'> Poland </option><option data-country='Portugal' value='Atlantic/Azores'> Portugal </option><option data-country='Qatar' value='Asia/Qatar'> Qatar </option><option data-country='Republic Of Congo' value='Africa/Brazzaville'> Republic Of Congo </option><option data-country='Romania' value='Europe/Bucharest'> Romania </option><option data-country='Russia' value='Asia/Anadyr'> Russia </option><option data-country='Rwanda' value='Africa/Kigali'> Rwanda </option><option data-country='Saint Lucia' value='America/St_Lucia'> Saint Lucia </option><option data-country='Samoa' value='Pacific/Apia'> Samoa </option><option data-country='San Marino' value='Europe/San_Marino'> San Marino </option><option data-country='Sao Tome Principe' value='Africa/Sao_Tome'> Sao Tome Principe </option><option data-country='Saudi Arabia' value='Asia/Riyadh'> Saudi Arabia </option><option data-country='Senegal' value='Africa/Dakar'> Senegal </option><option data-country='Serbia' value='Europe/Belgrade'> Serbia </option><option data-country='Seychelles' value='Indian/Mahe'> Seychelles </option><option data-country='Sierra Leone' value='Africa/Freetown'> Sierra Leone </option><option data-country='Slovakia' value='Europe/Bratislava'> Slovakia </option><option data-country='Slovenia' value='Europe/Ljubljana'> Slovenia </option><option data-country='Somalia' value='Africa/Mogadishu'> Somalia </option><option data-country='South Africa' value='Africa/Johannesburg'> South Africa </option><option data-country='Spain' value='Africa/Ceuta'> Spain </option><option data-country='Sri Lanka' value='Asia/Colombo'> Sri Lanka </option><option data-country='St Kitts And Nevis' value='America/St_Kitts'> St Kitts And Nevis </option><option data-country='Sudan' value='Africa/Khartoum'> Sudan </option><option data-country='Suriname' value='America/Paramaribo'> Suriname </option><option data-country='Swaziland' value='Africa/Mbabane'> Swaziland </option><option data-country='Sweden' value='Europe/Stockholm'> Sweden </option><option data-country='Switzerland' value='Europe/Zurich'> Switzerland </option><option data-country='Syria' value='Asia/Damascus'> Syria </option><option data-country='Tajikistan' value='Asia/Dushanbe'> Tajikistan </option><option data-country='Tanzania' value='Africa/Dar_es_Salaam'> Tanzania </option><option data-country='Thailand' value='Asia/Bangkok'> Thailand </option><option data-country='The Gambia' value='Africa/Banjul'> The Gambia </option><option data-country='Timor Leste' value='Asia/Dili'> Timor Leste </option><option data-country='Togo' value='Africa/Lome'> Togo </option><option data-country='Tonga' value='Pacific/Tongatapu'> Tonga </option><option data-country='Trinidad And Tobago' value='America/Port_of_Spain'> Trinidad And Tobago </option><option data-country='Tunisia' value='Africa/Tunis'> Tunisia </option><option data-country='Turkey' value='Europe/Istanbul'> Turkey </option><option data-country='Turkmenistan' value='Asia/Ashgabat'> Turkmenistan </option><option data-country='Turks Caicos Islands' value='America/Grand_Turk'> Turks Caicos Islands </option><option data-country='Uganda' value='Africa/Kampala'> Uganda </option><option data-country='Ukraine' value='Europe/Kiev'> Ukraine </option><option data-country='United Arab Emirates' value='Asia/Dubai'> United Arab Emirates </option><option data-country='United Kingdom' value='Europe/London'> United Kingdom </option><option data-country='Uruguay' value='America/Montevideo'> Uruguay </option><option data-country='USA' value='PST'> USA </option><option data-country='Uzbekistan' value='Asia/Samarkand'> Uzbekistan </option><option data-country='Vanuatu' value='Pacific/Efate'> Vanuatu </option><option data-country='Venezuela' value='Asia/Ho_Chi_Minh'> Venezuela </option><option data-country='Vietnam' value='America/Caracas'> Vietnam </option><option data-country='Vincent Gredines' value='America/St_Vincent'> Vincent Gredines </option><option data-country='Virgin Island' value='America/Tortola'> Virgin Island </option><option data-country='Wales' value='GMT'> Wales </option><option data-country='Western Sahara' value='Africa/El_Aaiun'> Western Sahara </option><option data-country='Yemen' value='Asia/Aden'> Yemen </option><option data-country='Zambia' value='Africa/Lusaka'> Zambia </option><option data-country='Zimbabwe' value='Africa/Harare'> Zimbabwe </option></select>
+</div>
+</div>
+<div class="tzbtn-wrp"><input type="button" id="calculate_time" name="submit" value="Calculate"></div>
+</div>
+
+<div id="timedifference"></div>
+
+
+
+<!-- second block -->
+<table style="    margin-top: 21px;float: left;" class="tableizer-table">
+   <tr><th colspan="2">FACTS TABLE</th></tr>
+  <tr>
+    <td>Country Name</td>
+    <td>Ukraine</td>
+  </tr>
+ <tr>
+    <td>Continent</td>
+    <td>Europe</td>
+  </tr>
+   <tr>
+    <td>Timezone</td>
+    <td>(UTC+2)</td>
+  </tr>
+   <tr>
+    <td>Coordinates</td>
+    <td>49&deg; 00 N and 32&deg; 00' E</td>
+  </tr>
+   <tr>
+    <td>ISO Alpha-2 Code</td>
+    <td>UA</td>
+  </tr>
+   <tr>
+    <td>ISO Alpha-3 Code</td>
+    <td> UKR</td>
+  </tr>
+   <tr>
+    <td>Telephone Code</td>
+    <td>380</td>
+  </tr>
+   <tr>
+    <td>Capital</td>
+    <td>Kiev</td>
+  </tr>
+   <tr>
+    <td>Largest City</td>
+    <td>Kiev</td>
+  </tr>
+   <tr>
+    <td>Neighbouring Countries</td>
+    <td>Belarus, Hungary, Moldova, Poland, Romania, Russia, Slovakia    </td>
+  </tr>
+   <tr>
+    <td>Area</td>
+    <td>233,090 Sq Miles</td>
+  </tr>
+  </table>
+  
+<div class="cl"><br/></div>
+
+<div class="cl"><br/></div>
+
+
+<div class="timezonelink">
+
+<a href='http://www.mapsofworld.com/time-zone-map/europe.html'><h3 class='res_head' style='height:24px'>Time Zone Maps of Europe</h3></a><ul class='tz'><li><a href='http://www.mapsofworld.com/time-zone-map/albania.html'>Time Zone Map of Albania</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/andorra.html'>Time Zone Map of Andorra</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/armenia.html'>Time Zone Map of Armenia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/austria.html'>Time Zone Map of Austria</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/belarus.html'>Time Zone Map of Belarus</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/belgium.html'>Time Zone Map of Belgium</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/bosnia.html'>Time Zone Map of Bosnia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/bulgaria.html'>Time Zone Map of Bulgaria</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/croatia.html'>Time Zone Map of Croatia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/cyprus.html'>Time Zone Map of Cyprus</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/czech-republic.html'>Time Zone Map of Czech Republic</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/denmark.html'>Time Zone Map of Denmark</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/estonia.html'>Time Zone Map of Estonia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/ethiopia.html'>Time Zone Map of Ethiopia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/finland.html'>Time Zone Map of Finland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/france.html'>Time Zone Map of France</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/georgia.html'>Time Zone Map of Georgia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/germany.html'>Time Zone Map of Germany</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/greece.html'>Time Zone Map of Greece</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/hungary.html'>Time Zone Map of Hungary</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/iceland.html'>Time Zone Map of Iceland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/ireland.html'>Time Zone Map of Ireland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/italy.html'>Time Zone Map of Italy</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/latvia.html'>Time Zone Map of Latvia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/lithuania.html'>Time Zone Map of Lithuania</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/macedonia.html'>Time Zone Map of Macedonia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/moldova.html'>Time Zone Map of Moldova</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/monaco.html'>Time Zone Map of Monaco</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/montenegro.html'>Time Zone Map of Montenegro</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/netherlands.html'>Time Zone Map of Netherlands</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/northern-ireland.html'>Time Zone Map of Northern Ireland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/norway.html'>Time Zone Map of Norway</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/poland.html'>Time Zone Map of Poland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/portugal.html'>Time Zone Map of Portugal</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/romania.html'>Time Zone Map of Romania</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/san-marino.html'>Time Zone Map of San Marino</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/serbia.html'>Time Zone Map of Serbia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/slovakia.html'>Time Zone Map of Slovakia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/slovenia.html'>Time Zone Map of Slovenia</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/spain.html'>Time Zone Map of Spain</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/sweden.html'>Time Zone Map of Sweden</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/switzerland.html'>Time Zone Map of Switzerland</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/turkey.html'>Time Zone Map of Turkey</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/ukraine.html'>Time Zone Map of Ukraine</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/united-kingdom.html'>Time Zone Map of United Kingdom</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/gibraltar.html'>Time Zone Map of gibraltar</a></li><li><a href='http://www.mapsofworld.com/time-zone-map/wales.html'>Time Zone Map of Wales</a></li></ul><div class='cl'></div>  
+</div>
+
+ 
+ 
+<br>
+<b>Last Updated On : April 9, 2016</b>
+<br>
+<br>
+<div id='mapstore'></div>
+
+
+
+   <!-- content starts -->
+</div>
+<!-- Table Starts -->
+<div style="clear:both"></div><br />
+<table>
+<tr>
+  <td><!-- 300-TAN -->
+<div id='div-gpt-ad-1379909196487-1'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379909196487-1'); });
+</script>
+</div>
+</center></td>
+  <td>
+
+<center>
+<!-- MOW-300-Admeld-1 -->
+<!-- MOW-300-Admeld-1 -->
+<div id='div-gpt-ad-1378097497377-13'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1378097497377-13'); });
+</script>
+</div></center>
+</td>
+</tr>
+</table>
+
+
+
+<!-- Table Starts -->
+
+
+
+</div>
+</div>
+
+</div>
+<!--Mobile Direct Add Code start-->
+<div class="mobi_add"> 
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-format="autorelaxed"
+data-ad-client="ca-pub-0641096029648877"
+data-ad-slot="7495779248"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<!--Mobile Direct Add Code end-->
+
+
+<!-- Start Gutter space ad -->
+<div style="position:absolute;right:0;top:100px;" id="rtsl">
+ <div id="slide" style="width: 120px;height: 600px;position:relative;top: 178px;right:0px;display:block;z-index: 9999;">
+ <div style="float:left;background:url(http://www.mapsofworld.com/images2011/advertisement1.png) no-repeat;width:90px;height:9px;margin:10px 0 5px 5px;"></div>
+ <div id="hide" style="width:17px;height:16px;position:absolute;top:-15px;right:0px;z-index: 99999999;cursor: pointer;background:url('http://www.mapsofworld.com/images/cross-button-black.png') no-repeat scroll 0 0 transparent;"></div>
+	<!-- MOW-Left -->
+	<div id='div-gpt-ad-1379667358079-0' style='width:120px; height:600px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379667358079-0'); });
+	</script>
+	</div>
+ </div>
+ </div>
+<div style="position:absolute;left:0 !important;top:100px;" id="ltsl">
+<div id="slide2" style="width: 120px;height: 600px;position:relative;top: 178px;right:0px;display:block;z-index: 9999;">
+<div style="float:left;background:url(http://www.mapsofworld.com/images2011/advertisement1.png) no-repeat;width:90px;height:9px;margin:10px 0 5px 5px;"></div>
+ <div id="hide2" style="width:17px;height:16px;position:absolute;top:-15px;left:0px;z-index: 99999999;cursor: pointer;background:url('http://www.mapsofworld.com/images/cross-button-black.png') no-repeat scroll 0 0 transparent;"></div>
+	<!-- 120-2nd-ad -->
+	<div id='div-gpt-ad-1379744071997-0' style='width:120px; height:600px;'>
+	<script type='text/javascript'>
+	googletag.cmd.push(function() { googletag.display('div-gpt-ad-1379744071997-0'); });
+	</script>
+	</div>
+ </div>
+ </div>
+<style type="text/css">@media screen and (max-width:1024px){#ltsl,#rtsl{display:none !important;}}</style>
+<!-- End Gutter space ad -->
+<!-- saved from url=(0022)http://internet.e-mail -->
+<!-- Footer Starts Here -->
+<style type="text/css">
+.copytext{width:100%;float:left;}
+.copytext p{font-size:12px;padding:5px 0 0;width:49%;float:left;text-align:center;color:#176BC1;padding-top:5px;margin:0px;}
+.copytext p a{color:#176BC1;font-weight:normal}
+.exbox {width: 1000px;margin: 10px auto 0 auto;padding: 0;height:55px;background:#bb3639;}
+.exbox .left {float: left;width:50%;}
+.exbox img {float:left;margin:5px 0 0 5px}
+.exbox .txt {float: left;margin: 7px 0 0 10px;font-size: 14px;font-family:helvetica;padding: 0;color:#402323;text-decoration:underline;width:86%;text-align:left;}
+.exbox .txt a {color:#fff4ef;text-decoration:underline;}
+.exbox .txt1 {float: left;margin: 5px 0 0 10px;font-size:16px;padding: 0;color: #fff4ef;font-weight:bold;font-family:helvetica;}
+.exbox .right {float: right;width:49%;border-left:1px solid gray;height:55px;}
+.exbox .pad{margin-left:12px;}
+.tribalads{width:970px;margin:0 auto;padding:7px 0 0 0;background: url("http://www.mapsofworld.com/images2011/advertisement1.png") 0px 0px no-repeat!important;}
+.none-in-mob,.none-on-web{display:none}
+
+.mobi_add{display:none;}
+
+@media screen and (max-width:767px){
+.mobi_add{display:block;width:100%;float:left}
+}
+</style>
+<div class="cl"></div>
+<script type="text/javascript">
+$(document).ready(function(){
+var sWidth=$(window).width();
+var mapstore_size = $("#mapstore").size();
+var foldrname = window.location.pathname.split( '/' );
+if(mapstore_size <1 && sWidth > 770 && foldrname[1] !="sports"){
+ $('.storewall').append('<iframe src="http://www.mapsofworld.com/store/store1.html" width="1000px" height="460px" scrolling="no"  frameborder="0" align="middle"></iframe>');
+}
+$('#ltsl').animate({left:0},1000,'swing',function(){});
+$('#hide2').click(function(){
+$('#slide2').animate({left:-127},1000,'swing',function(){});
+$('#hide2').animate({left:-127},1000,'swing',function(){});
+$('#slide2').hide('slow');
+});
+$('.input-area').bind({
+focus: function(){$(this).attr("placeholder", "");},
+blur:  function(){$(this).attr('placeholder', 'For maps of countries, states, cities, tourist places and interesting information');}
+});
+$('head').append("<!-- Facebook Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1552463041738922');fbq('track', 'PageView');</\script><noscript><img height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=1552463041738922&ev=PageView&noscript=1'/></noscript><!-- End Facebook Pixel Code -->");
+
+if(sWidth>=1024){
+ $('body').append("<!-- BEGIN LivePerson Monitor. --><script type='text/javascript'> window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){window.lpTag={site:'35456509'||'',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{},_v:'1.6.0',_tagCount:1,protocol:'https:',events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;}</\script><!-- END LivePerson Monitor. --><div class='newsocial'><div class='newsocial1'><div class='addthis_sharing_toolbox'></div><!-- Go to www.addthis.com/dashboard to customize your tools --><script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56de761e91d668dc' async='async' defer='defer'></\script></div><div class='crossbnt'><img src='http://www.mapsofworld.com/images/cross-button-black.png' alt=''/></div></div>");
+}
+});
+</script>
+<div class="storewall"></div>
+<div class="cl"></div>
+
+<div class="exbox">
+<div class="left"><img src="http://www.mapsofworld.com/images-mow/kartik-small.jpg" alt=""/>
+<p class="txt"><a href="http://www.mapsofworld.com/custom-maps/">Looking for Expert Cartography / GIS Services?</a></p>
+<p class="txt1">Contact - Kartik Suri (+91- 9910492371 IST)</p>
+</div>
+<div class="right">
+<img src="http://www.mapsofworld.com/images2015/bill-spicer-small.jpg" alt="" class="pad"/>
+<p class="txt"><a href="http://www.mapsofworld.com/custom-maps/">For all Mapping Needs and Business Queries</a></p>
+<p class="txt1">Contact - Bill Spicer (+1 408 637 0064 PST)</p>
+</div>
+</div>
+<div class="cl"></div>
+<!-- bottom menu-->
+<div class="bottom-menu-bg" style="margin:0;">
+    
+        <!-- bottom menu -->
+    <div class="bottom-menu">
+
+            <!-- ist menu -->
+             <div class="bt-menu">
+			        <div class="bt-menu1" style="width:152px;">
+                           <div class="bt-hd-text"><a href="http://www.mapsofworld.com/map-of-countries.html">Countries of the World</a></div>
+                           <div class="bt-text-menu">
+                              <ul>
+								 <li><a href="http://www.mapsofworld.com/germany/">Germany Map</a></li>
+							    <li><a href="http://www.mapsofworld.com/spain/">Spain Map</a></li>
+								<li><a href="http://www.mapsofworld.com/scotland/">Scotland Map</a></li>
+								<li><a href="http://www.mapsofworld.com/brazil/">Brazil Map</a></li>
+								<li><a href="http://www.mapsofworld.com/china/">China Map</a></li>
+								<li><a href="http://www.mapsofworld.com/india/">India Map</a></li>
+								<li><a href="http://www.mapsofworld.com/japan/">Japan Map</a></li>
+								<li><a href="http://www.mapsofworld.com/south-africa/">South Africa Map</a></li>
+                              </ul>
+                           </div>
+                        </div>
+			 
+                    <div class="bt-menu1" style="width:152px;">
+                           <div class="bt-hd-text"><a href="http://www.mapsofworld.com/world-maps/">All About Maps</a></div>
+                           <div class="bt-text-menu">
+                              <ul>
+								 <li><a href="http://www.mapsofworld.com/satellite-maps/world-geo-map.html">Earth Map</a></li>
+							    <li><a href="http://www.mapsofworld.com/continents/">Continents of the World</a></li>
+								<li><a href="http://www.mapsofworld.com/map-of-countries.html">Countries of the World</a></li>
+								<li><a href="http://www.mapsofworld.com/world-city-maps/">City Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/world-atlas/">World Atlas</a></li>
+								<li><a href="http://www.mapsofworld.com/custom-maps/">Custom Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/posters/">World Map Poster</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                    <div class="bt-menu1"  style="width:152px;">
+                         <div class="bt-hd-text">
+						   <a href="http://www.mapsofworld.com/thematic-maps/">Thematic Maps</a></div>
+                              <div class="bt-text-menu">
+                                <ul>
+								    <li><a href="http://www.mapsofworld.com/world-seven-wonders.htm">7 Wonders of the World</a></li>
+									<li><a href="http://www.mapsofworld.com/honeymoon-destination/">Honeymoon Destinations</a></li>
+									<li><a href="http://www.mapsofworld.com/usa/national-parks/">US National Parks</a></li>
+									<li><a href="http://www.mapsofworld.com/world-top-ten/">World Top Ten</a></li>
+									<li><a href="http://www.mapsofworld.com/thematic-maps/earthquake/">Earthquake Maps</a></li>
+									<li><a href="http://www.mapsofworld.com/world-ocean-map.htm">Oceans Map</a></li>
+									<li><a href="http://www.mapsofworld.com/world-mineral-map.htm">Mineral Maps</a></li>
+									<li><a href="http://www.mapsofworld.com/referrals/weather/">Weather Map</a></li>
+                                  </ul>
+                           </div>
+                        </div>
+
+                        <div class="bt-menu1"  style="width:152px;">
+                             <div class="bt-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/world-maps/world-travel-map.html">Travel Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/world-maps/major-rail-network-map.html">Rail Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/road-maps/">Road Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/thematic-maps/world-river-map.html">River Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/world-airroutes-map.htm">Air Routes Map</a></li>
+								<li><a href="http://www.mapsofworld.com/world-history-maps/">History Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/outline-maps/">Outline Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/time-zone-map">World Time Zone Map</a></li>
+							</ul>
+                           </div>
+                        </div>
+
+                        <div class="bt-menu1" style="width:152px;">
+                           <div class="bt-hd-text"><a href="http://www.mapsofworld.com/calendar-events/">Calendar Events Archive</a></div>
+                             <div class="bt-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/events/year-2016/">Major Events in 2016</a></li>
+								<li><a href="http://www.mapsofworld.com/events/holidays/calendars/">2016 Holiday Calendar</a></li>
+								<li><a href="http://www.mapsofworld.com/sports/">Sporting Events 2016</a></li>
+								<li><a href="http://www.mapsofworld.com/events/holidays/new-year-wallpapers.html">Happy New Year Images 2017</a></li>
+								<li><a href="http://www.mapsofworld.com/events/holidays/christmas-wallpapers.html">Merry Christmas Images</a></li>
+								<li><a href="http://www.mapsofworld.com/events/holidays/">Happy Holidays</a></li>
+                                  </ul>
+                           </div>
+                        </div>
+
+						<div class="bt-menu1" style="width:152px;">
+						<div class="bt-hd-text"><a href="http://www.mapsofworld.com/utilities/">Travel Tools & Utilities</a></div>
+                           <div class="bt-text-menu">
+                              <ul>
+							  <li><a href="http://www.mapsofworld.com/referrals/airlines/airline-flight-schedule-and-flight-information/">Flight Schedule</a></li>
+								<li><a href="http://www.mapsofworld.com/games/">Map Games</a></li>
+								<li><a href="http://www.mapsofworld.com/maps-applications.html">Mobile Applications</a></li>
+								<li><a href="http://www.mapsofworld.com/referrals/weather/">World Weather Chart</a></li>
+								<li><a href="http://www.mapsofworld.com/where-is/">Location Maps</a></li>
+								<li><a href="http://www.mapsofworld.com/list-of/">List of</a></li>
+								<li><a href="http://www.mapsofworld.com/sports/olympics/summer-olympics/calendar.html">Olympics Calendar</a></li>
+								<li><a href="http://www.mapsofworld.com/lat_long/">Lat Long Finder</a></li>
+								
+                               </ul>
+                           </div>
+                        </div>
+					
+                 </div>
+        <!-- ist menu end -->
+
+    <!-- 2st menu -->
+             
+</div>
+
+<!-- bottom menu closed-->
+   </div>
+   <div class="cl"></div>
+   <!-- bottom menu closed-->
+
+   <!-- utilities -->
+  <div class="footer-bg">
+          <div class="footer-box">
+             <div class="footer1">
+                    <div class="footer-menu1">
+                           <div class="footer-hd-text"><a href="http://www.mapsofworld.com/utilities/">Utilities</a></div>
+                           <div class="footer-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/international-airports/">International Airports</a></li>
+								<li><a href="http://www.mapsofworld.com/referrals/airlines/airline-flight-schedule-and-flight-information/">Flight Schedule</a></li>
+								<li><a href="http://www.mapsofworld.com/utilities/route-planner.html">RoutePlanner</a></li>
+								<li><a href="http://www.mapsofworld.com/usa/zipcodes/">Zip Code Map</a></li>
+                              </ul>
+                           </div>
+                        </div>
+
+                        <div class="footer-menu1">
+                           <div class="footer-hd-text"><a href="http://www.mapsofworld.com/deutsch/">Weltkarte</a></div>
+                              <div class="footer-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/deutsch/usa/">USA Karte</a></li>
+								<li><a href="http://www.mapsofworld.com/deutsch/europakarte.html">Europakarte</a></li>
+								<li><a href="http://www.mapsofworld.com/deutsch/deutschland/">Deutschlandkarte</a></li>
+								<li><a href="http://www.mapsofworld.com/deutsch/frankreich/">Frankreich Karte</a></li>
+                              </ul>
+                           </div>
+                        </div>
+
+                    <div class="footer-menu1">
+                        <div class="footer-hd-text"><a href="http://www.mapsofworld.com/country-profile/">Country Information</a></div>
+                           <div class="footer-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/lat_long/">Lat Long Finder</a></li>
+								<li><a href="http://www.mapsofworld.com/flags/">Flags of the World</a></li>
+								<li><a href="http://www.mapsofworld.com/countries-capitals/">Countries and Capitals</a></li>
+								<li><a href="http://www.mapsofworld.com/embassies/">Embassy Finder</a></li>
+                               </ul>
+                           </div>
+                        </div>
+
+					 <div class="footer-menu1">
+                              <div class="footer-text-menu">
+                              <ul>
+								<li><a href="http://www.mapsofworld.com/cartography/">Cartography Services</a></li>
+								<li><a href="http://www.mapsofworld.com/gis-remotesensing/">GIS Services</a></li>
+								<li><a href="http://www.mapsofworld.com/tsunami/">Tsunami</a></li>
+								<li><a href="http://www.mapsofworld.com/hurricane/">Hurricane</a></li>     
+								<li><a href="http://finance.mapsofworld.com/">World Finance</a></li>
+                              </ul>
+                           </div>
+                        </div>
+
+                    </div>
+
+                 <div class="fasebook-block">
+					   <div class="facebook-brd">
+                        <div class="ft-block">
+                            <div class="ft-map1">
+							 <div class="ft-map1-img"><a href="https://twitter.com/mapsofworld" title="Twitter">
+								<img src="http://www.mapsofworld.com/images2016/twitter-icon.jpg" border="0" alt="Twitter"/></a></div>
+                               </div>
+							   <div class="ft-map1">
+                                <div class="ft-map1-img"><a href="https://www.facebook.com/mapxl" title="Facebook">
+								<img src="http://www.mapsofworld.com/images2016/facebook-icon.jpg" border="0" alt="Facebook"/></a></div>
+                                </div>
+
+                                <div class="ft-map1">
+                                <div class="ft-map1-img"><a href="https://in.pinterest.com/mapsofworld/" title="Pinterest">
+								<img src="http://www.mapsofworld.com/images2016/pinterest-icon.jpg" border="0" alt="Pinterest"/></a></div>
+                               </div>
+
+								<div class="ft-map1">
+                                <div class="ft-map1-img"><a href="http://www.mapsofworld.com/feed.xml" title="RSS">
+								<img src="http://www.mapsofworld.com/images2016/rss-icon.jpg" border="0" alt="RSS"/></a></div>
+								</div>
+
+								<div class="ft-map1">
+                                <div class="ft-map1-img"><a href="http://blog.mapsofworld.com/" title="Blog">
+								<img src="http://www.mapsofworld.com/images2016/blog-icon.jpg" alt="Mapsofworld Blog" border="0"/></a></div>
+								</div> 
+
+								<div class="ft-map1">
+                                <div class="ft-map1-img"><a href="https://veblr.com/user/mapsofworld" title="veblr">
+								<img src="http://www.mapsofworld.com/images2016/evblr-icon.jpg" border="0" alt="veblr"/></a></div>
+                                </div>
+                            </div>
+                        </div>
+                 </div>
+
+                <div class="subscribe-block">
+                <div class="subscribe-news">Subscribe to Our Weekly Newsletter</div>
+                <form action="http://newsletter.mapsofworld.com/?p=subscribe&id=1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+
+			   <div class="sub-text"><input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL" /> </div>
+
+			   <div class="sub-btn"><input type='image' src="http://www.mapsofworld.com/images2011/subscribe.png" onclick='return checkform();' value=' ' /></div><input type='hidden' name='list[17]' value='signup' /><input type='hidden' name='email' value='1' /><input type='hidden' name='subscribe' value='Subscribe' /></form>
+<script type="text/javascript">
+ copyscape();
+</script></div>
+</div>
+     </div>
+        <div class="cl"></div>
+  <!-- utilities closed-->
+
+
+
+  <!-- footer logo-->
+
+   <div class="footer-logo">
+<div class="footer-logo-menu" style="margin:0 auto;float:none">
+<a href="http://www.mapsofworld.com/world-hotels/">Best World Hotels</a>  |
+<a href="http://www.mapsofworld.com/referrals/airlines/">International Airlines Information</a> |
+<a href="http://www.mapsofworld.com/free-maps/">Free Maps</a> |
+<a href="http://www.mapsofworld.com/infographics/">Infographics</a> | 
+<a href="http://www.mapsofworld.com/usa/san-francisco/">San Francisco City Guide</a><br />
+<a href="http://www.mapsofworld.com/about-us.html">About Us</a> |
+<a href="http://www.mapsofworld.com/about-us.html">Contact Us</a> | 
+<a href="http://www.mapsofworld.com/feedback.html">Feedback</a> | 
+<a href="http://www.mapsofworld.com/site-map.html">Sitemap</a> | 
+<a href="http://www.mapsofworld.com/privacy-policy.html">Privacy Policy</a> |
+<a href="http://www.mapsofworld.com/copyright.html">Copyright</a> |
+<a href="http://www.mapsofworld.com/advertise-with-us.html">Advertise with us</a>
+</div>
+<div class="copytext">
+<p>&copy; Copyright 2002-2016 Compare Infobase Ltd.</p>
+<p><a href="http://mapxl.com">Business Managed by MapXL</a></p>
+</div>
+   </div>
+   <div class="cl"></div>
+<!--  footer end-->
+<!-- Footer Ends Here -->
+<!-- Zedo-Inview -->
+<div id='div-gpt-ad-1409564691568-0' style='width:1px; height:1px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1409564691568-0'); });
+</script>
+</div>
+<!-- Google Code for Remarketing Tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 979746448;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/979746448/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- Google Analytic -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-7930236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- Google Analytic -->
+<!-- Begin comScore Tag -->
+<script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "22444427" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript>
+  <img src="http://b.scorecardresearch.com/p?c1=2&c2=22444427&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+<div class="cl"></div>
+<div class="none-on-web">
+<!-- /1152375/Interstitial-for-Mobile -->
+<div id='div-gpt-ad-1464759949415-0' style='height:480px; width:320px;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1464759949415-0'); });
+</script>
+</div>
+</div>
+<!-- Addthis plugin -->
+<script type="text/javascript">
+var addthis_config = addthis_config||{};
+addthis_config.data_track_clickback = false;
+</script>
+<!-- End Addthis plugin-->
+<div class="cl"></div>
+
+<script>
+
+function Clock_dg(prop) {  
+    var angle = 360/60;
+        var now = new Date();
+        var offset='-3.5';
+        if (offset === parseInt(offset, 10)){
+        now.setHours(now.getHours()+offset);
+        }
+        else
+        {
+        offset=offset*10;
+        minoffset=((offset%10)/10)*60;
+        offset=parseInt(offset/10);
+        now.setHours(now.getHours()+offset);
+        now.setMinutes(now.getMinutes()+minoffset);
+        }
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+        var ampm = hour >= 12 ? 'PM' : 'AM';
+        if(hour > 12) {
+            hour = hour - 12;
+        }
+        var hour = hour < 10 ? '0'+hour : hour;
+        var minute = minute < 10 ? '0'+minute : minute;
+        var second = second < 10 ? '0'+second : second;
+        hourAngle = (360/12) * hour + (360/(12*60)) * minute;
+        min=minute.toString();
+         min=min.replace("-","");
+        var c_time=hour+':'+min+':'+second+' '+ampm;
+        $('#c_time').html("Current Time : "+c_time);
+         $('#minute')[0].style[prop] = 'rotate('+angle * minute+'deg)';
+        $('#second')[0].style[prop] = 'rotate('+angle * second+'deg)';
+        $('#hour')[0].style[prop] = 'rotate('+hourAngle+'deg)';
+}
+$(function(){        
+    var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split(' '),
+        prop,
+        el = document.createElement('div');
+
+    for(var i = 0, l = props.length; i < l; i++) {
+        if(typeof el.style[props[i]] !== "undefined") {
+            prop = props[i];
+            break;
+        }
+    }
+    setInterval(function(){
+        Clock_dg(prop)
+    },100);
+});
+
+</script>
+
+
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+_qacct="p-98f87jYQeyLZ6";quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-98f87jYQeyLZ6" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-98f87jYQeyLZ6.gif" style="display: none" border="0" height="1" width="1" alt="Quantcast"></a></noscript>
+<!-- End Quantcast tag -->
+</body></html>

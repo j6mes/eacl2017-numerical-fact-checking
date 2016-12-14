@@ -1,0 +1,3682 @@
+
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+
+	
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+	
+	
+
+	
+
+
+
+
+
+ 
+
+				
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+			
+			
+			
+		
+		
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>	<title>USDAA - News & Events: Event Calendar</title>
+
+
+				
+	<link rel="stylesheet" type="text/css" href="/stylesheet/site.css">
+	
+	<script language="javascript" src="/scripts/rollover.js"></script>
+	<script language="javascript" src="/scripts/generalForm.js"></script>
+
+	<script language="javascript" src="/scripts/NewWindow.js"></script>
+	
+
+		
+		
+
+
+
+
+<link rel="stylesheet"  type="text/css" media="screen"  href="/css/jquery-ui-1.8.16.usdaa-theme.css" />
+
+
+
+<link rel="stylesheet"  type="text/css" media="screen"  href="/css/superfish.css" />
+
+<link rel="stylesheet"  type="text/css" media="screen"  href="/css/uni-form.css" />
+<link rel="stylesheet"  type="text/css" media="screen"  href="/css/ui.jqgrid.css" />
+
+
+<link rel="stylesheet"  type="text/css" media="screen"  href="/stylesheet/site.css" />
+<link rel="stylesheet"  type="text/css" media="screen"  href="/css/usdaa.css" />
+
+
+
+
+		
+
+
+
+
+<!-- The following JQuery scripts are used in this application and are called from this file. --->
+
+<script type="text/javascript" src="/scripts/jquery/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/grid.locale-en.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery.jqGrid.min.js"></script>
+
+<script type="text/javascript" src="/scripts/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="/scripts/jquery/uni-form.jquery.js"></script>
+
+
+<script type="text/javascript" src="/scripts/jquery/jquery.qtip-1.0.0-beta3.1.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery.selectboxes.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/uploadify/jquery.uploadify.js"></script>
+<script type="text/javascript" src="/scripts/jquery/center.js"></script>
+<script type="text/javascript" src="/scripts/jquery/jquery.json-1.3.min.js"></script>
+
+
+<script type="text/javascript" src="/scripts/jquery/jquery.bgiframe.min.js"></script>
+<script type="text/javascript" src="/scripts/jquery/hoverIntent.js"></script>
+<script type="text/javascript" src="/scripts/jquery/superfish.js"></script>
+<script type="text/javascript" src="/scripts/jquery/supersubs.js"></script>
+
+
+
+
+
+
+
+
+
+		<script src="/scripts/groupServices/groupServices.js" type="text/javascript"></script>
+	
+	
+	<link rel="stylesheet"  type="text/css" href="/css/PDFoutput.css" />
+	
+	<script>
+		$(window).bind('load', function() {
+			$('.logo').each(function() {
+				if((typeof this.naturalWidth != "undefined" &&
+					this.naturalWidth == 0 ) 
+					|| this.readyState == 'uninitialized' ) {
+				 	$(this).attr({
+						src: '/groupLogos/missing.jpg',
+						alt: 'No group image uploaded yet'
+					});
+				}
+			});
+		})
+		
+		$(document).ready(function(){
+			initForms();
+			$(".eventTable tr:nth-child(even)").addClass("alt");
+			$("#testSchedule").dialog({
+				autoOpen: false,
+				bgiframe: true,	
+				resizable: false,
+				height:'auto',
+				position:['center', 15],
+				width:850,
+				modal: true,
+				draggable: false,
+				overlay: {
+					backgroundColor: '#000',
+					opacity: 0.5
+				}
+			});
+			
+			$("#printall").click(function(){
+				window.open('http://www.usdaa.com/events_detailPDF.cfm?event_no=104813','printwindow');
+				// $(".noteHolder").jqprint({printContainer:false,importCSS:true,operaSupport:true});
+			});
+			
+			$(".printsection").click(function(){
+				var section  = $(this).attr("rel");
+				window.open('http://www.usdaa.com/events_detailPDF.cfm?event_no=104813&section=' + section,'printwindow','width=400,height=200');
+				// $("#"+section).jqprint({printContainer:false,importCSS:true,operaSupport:true});
+			})
+			
+		})
+		
+		showTestSchedule = function(){
+			$("#testSchedule").dialog("open");
+		}
+		openCloseCategory = function(cat){
+			$("#"+cat).slideToggle();
+		}
+	</script>
+	<style>
+		p.label{
+			width:105px; 
+			font-weight:bold;
+		}
+		tbody tr.alt td{
+			background:#e0e0e0;
+		}
+		.category{
+			margin:0px 0; ##
+		}
+		.note{
+			padding:3px;
+			margin:3px 0; 
+		}
+		.categoryHeader{
+			font-weight:bold;
+			background: #ccc;
+			padding:5px;
+			vertical-align:middle;
+		}
+	</style>
+
+</head>
+<body bgcolor="ffffff" onLoad="MM_preloadImages('/images/secondPage_r02_c07_f2.jpg','/images/secondPage_r04_c01_f2.jpg','/images/secondPage_r06_c01_f2.jpg','/images/secondPage_r08_c01_f2.jpg','/images/secondPage_r09_c01_f2.jpg','/images/secondPage_r10_c01_f2.jpg','/images/secondPage_r11_c01_f2.jpg','/images/secondPage_r12_c01_f2.jpg','/images/secondPage_r13_c01_f2.jpg','/images/secondPage_r14_c01_f2.jpg','/images/secondPage_r15_c01_f2.jpg','/images/home_r02_c10_f2.gif');" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="750" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td>
+	  <!-- Head -->
+      <table border="0" cellpadding="0" cellspacing="0" width="750">
+        <tr valign="top">
+          <td rowspan="3"><img name="secondPage_r01_c01" src="/images/secondPage_r01_c01.jpg" width="156" height="165" border="0" usemap="#secondPage_r01_c01Map"><map name="secondPage_r01_c01Map"><area shape="rect" coords="4,0,127,125" href="/index.cfm"></map></td>
+          <td rowspan="3"><img name="secondPage_r01_c02" src="/images/secondPage_r01_c02.jpg" width="124" height="165" border="0"></td>
+          <td rowspan="3"><img name="secondPage_r01_c04" src="/images/secondPage_r01_c04.jpg" width="119" height="165" border="0"></td>
+          <td rowspan="3"><img name="secondPage_r01_c05" src="/images/secondPage_r01_c05.jpg" width="93" height="165" border="0"></td>
+          <td colspan="3"><img name="secondPage_r01_c06" src="/images/secondPage_r01_c06.jpg" width="258" height="11" border="0"></td>
+        </tr>
+        <tr valign="top">
+          <td><img name="secondPage_r02_c06" src="/images/secondPage_r02_c06.jpg" width="43" height="19" border="0"></td>
+          <td><a href="/competitorServices" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r02_c071','','/images/secondPage_r02_c07_f2.jpg',1)" ><img name="secondPage_r02_c071" src="/images/secondPage_r02_c07.jpg" width="157" height="19" border="0"></a></td>
+          <td><img name="secondPage_r02_c09" src="/images/secondPage_r02_c09.jpg" width="58" height="19" border="0"></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">
+		  	
+		  	<table width="258" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+            	<td><img src="/images/secondPage_r030_c01.jpg" width="64" height="25"></td>
+                <td><a href="legalNotices.cfm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('secondPage_r030_c02','','/images/secondPage_r030_c02_f2.jpg',1)" ><img name="secondPage_r030_c02" src="/images/secondPage_r030_c02.jpg" width="115" height="25" border="0"></a></td>
+                <td><img src="/images/secondPage_r030_c03.jpg" width="79" height="25"></td>
+            </tr>
+
+            <tr>
+				<td colspan="3"><img src="/images/secondPage_r030_c06.jpg" width="258" height="110"></td>
+			</tr>
+			</table>
+		  </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td> 
+      <table width="750" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="156" valign="top">
+			<!-- Left Nav ------------------------------------------------------------------ -->
+            <table border="0" cellpadding="0" cellspacing="0" width="156">
+              
+			  <tr valign="top">
+                <td><a href="aboutUs.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r04_c011','','/images/secondPage_r04_c01_f2.jpg',1)" ><img name="secondPage_r04_c011" 
+	
+	src="/images/secondPage_r04_c01.jpg"
+ 
+width="156" height="24" border="0"></a></td>
+              </tr>
+              
+			  
+              <tr valign="top">
+                <td><a href="faq.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r06_c011','','/images/secondPage_r06_c01_f2.jpg',1)" ><img name="secondPage_r06_c011" 
+	
+	src="/images/secondPage_r06_c01.jpg" 
+ 
+width="156" height="23" border="0"></a></td>
+              </tr>
+			  
+
+			  
+              <tr valign="top">
+                <td><a href="news.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r12_c011','','/images/secondPage_r12_c01_f2.jpg',1)" ><img name="secondPage_r12_c011"
+
+	src="/images/secondPage_r12_c01_f2.jpg"
+ 
+width="156" height="24" border="0"></a></td>
+              </tr>
+
+              <tr valign="top">
+                <td> 
+                  <table width="156" border="0" cellspacing="0" cellpadding="3">
+				    <tr bgcolor="636D94"> 
+                      <td bgcolor="636D94" width="12"> 
+                        <div align="right"></div>
+                      </td>
+                      <td><a class="subNav" href="news.cfm">News</a></td>
+                    </tr>
+                    <tr bgcolor="636D94"> 
+                      <td bgcolor="636D94" width="12"> 
+                        <div align="right"></div>
+                      </td>
+
+                      <td><a class="subNav" href="events.cfm">Event Calendar</a></td>
+                    </tr>
+
+					<tr bgcolor="636D94"> 
+                      <td bgcolor="636D94" width="12"> 
+                        <div align="right"></div>
+                      </td>
+                      <td><a class="subNav" href="http://www.usdaatitlemania.com" >Title Mania<sup>&reg;</sup></a></td>
+                    </tr>
+
+					<tr bgcolor="636D94"> 
+                      <td bgcolor="636D94" width="12"> 
+                        <div align="right"></div>
+                      </td>
+                      <td><a class="subNav" href="http://www.cynosport.com" >Cynosport<sup>&reg;</sup> World Games</a></td>
+                    </tr>
+
+					<tr bgcolor="636D94"> 
+                      <td bgcolor="636D94" width="12"> 
+                        <div align="right"></div>
+                      </td>
+                      <td><a class="subNav" href="http://www.donate2dogsports.org/team-usa" >Team USA</a></td>
+                    </tr>
+					</table>
+			    </td>
+			  </tr>				  
+
+			  
+			  
+			  <tr valign="top">
+                <td><a href="awards_topten.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r10_c011','','/images/secondPage_r10_c01_f2.jpg',1)" ><img name="secondPage_r10_c011" 
+	
+	src="/images/secondPage_r10_c01.jpg" 
+
+width="156" height="23" border="0"></a></td>
+              </tr>
+
+			  
+			  
+              <tr valign="top">
+                <td><a href="rulesReg.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r08_c011','','/images/secondPage_r08_c01_f2.jpg',1)" ><img name="secondPage_r08_c011" 
+	
+	src="/images/secondPage_r08_c01.jpg" 
+ 
+width="156" height="21" border="0"></a></td>
+              </tr>
+			  
+
+			  
+			  
+              <tr valign="top">
+                <td><a href="generalInfo.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r11_c011','','/images/secondPage_r11_c01_f2.jpg',1)" ><img name="secondPage_r11_c011" 
+	
+	src="/images/secondPage_r11_c01.jpg" 
+
+width="156" height="24" border="0"></a></td>
+              </tr>
+
+			  
+			  
+              <tr valign="top">
+                <td><img name="secondPage_r09_c011" 
+	
+	src="/images/secondPage_r09_c01.jpg" 
+ 
+width="156" height="25" border="0"></td>
+              </tr>
+			  
+			  
+              <tr valign="top" bgcolor="636D94">
+                <td bgcolor="636D94"><a href="/competitorServices" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r13_c011','','/images/secondPage_r13_c01_f2.jpg',1)" ><img name="secondPage_r13_c011" 
+	
+	src="/images/secondPage_r13_c01.jpg" 
+ 
+width="156" height="21" border="0"></a>
+ 			    </td>
+			  </tr>			  
+
+			  
+			  
+              <tr valign="top">
+
+                <td><a href="/groupServices" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r14_c011','','/images/secondPage_r14_c01_f2.jpg',1)" ><img name="secondPage_r14_c011" 
+
+	
+	src="/images/secondPage_r14_c01.jpg" 
+ 
+width="156" height="23" border="0"></a></td>
+              </tr>
+
+
+			  
+
+			  
+			  
+              <tr valign="top">
+                <td><a href="contactUs.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r15_c011','','/images/secondPage_r15_c01_f2.jpg',1)" ><img name="secondPage_r15_c011" 
+	
+	src="/images/secondPage_r15_c01.jpg" 
+ 
+width="156" height="25" border="0"></a></td>
+              </tr>
+			  
+			  
+              <tr valign="top">
+                <td><a href="legalNotices.cfm" onMouseOut="MM_swapImgRestore()"  onMouseOver="MM_swapImage('secondPage_r150_c011','','/images/secondPage_r150_c01_f2.jpg',1)" ><img name="secondPage_r150_c011" 
+	
+	src="/images/secondPage_r150_c01.jpg" 
+ 
+width="156" height="25" border="0"></a></td>
+              </tr>
+			  
+
+
+
+
+
+              <tr valign="top">
+                <td><img name="secondPage_r16_c01" src="/images/secondPage_r16_c01.jpg" width="156" height="100" border="0"></td>
+              </tr>
+              <tr valign="top">
+                <td><img name="secondPage_r17_c01" src="/images/secondPage_r17_c01.jpg" width="156" height="166" border="0"></td>
+
+              </tr>
+              <tr valign="top">
+                <td><img name="secondPage_r18_c01" src="/images/secondPage_r18_c01.jpg" width="156" height="19" border="0"></td>
+              </tr>
+             <tr valign="top">
+                <td><img src="/images/shim.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+          <td width="594" valign="top"> 
+            <table width="594" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>
+				  <!-- Heading & Location Status ---------------------------------------------- --> 
+                  <table border="0" cellpadding="0" cellspacing="0" width="594">
+                    <tr valign="top">
+                      <td rowspan="2"><img name="secondPage_r04_c02" src="/images/secondPage_r04_c02.gif" width="19" height="29" border="0"></td>
+                      <td height="20" valign="bottom"> 
+                        <div class="locText" align="right">
+						<a class='locText' href='http://www.usdaa.com/index.cfm'>Home</a> &gt; <a class='locText' href='news.cfm'>News & Events</a> > <a class='locText' href='events.cfm'>Event Calendar</a> > General Event Information
+						  </div>
+                      </td>
+                      <td rowspan="2"><img name="secondPage_r04_c08" src="/images/secondPage_r04_c08.gif" width="78" height="29" border="0"></td>
+                    </tr>
+                    <tr valign="top">
+                      <td><img name="secondPage_r05_c03" src="/images/secondPage_r05_c03.gif" width="497" height="9" border="0"></td>
+                    </tr>
+					
+                   	<tr valign="top">
+                      <td colspan="3">
+
+												<a href="/groupServices"><img name="secondPage_r07_c02" src="/images/header_Events.jpg" width="594" height="39" border="0"></a>
+
+											</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr> 
+                <td align="left">
+				  <!-- Content -->
+                  <table width="594" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="15"><!-- 15 pixel gap from the Nav -->&nbsp;</td>
+                      <td valign="top" align="left"> 
+					  
+					  
+		  
+
+
+
+
+
+
+
+	
+	
+
+		
+	
+		
+		
+		
+		
+		
+
+		
+		
+		
+		
+	
+	
+	
+	
+
+
+
+
+
+	
+
+
+
+
+
+
+
+ <h3>General Event Information</h3>
+ 
+
+
+
+
+
+
+
+
+	
+
+ 	<p>
+ 		The electronic Agility Test Schedule & Entry Form for this event are not available. Please download the indicated PDF file if shown below.
+	</p>
+	
+		<p>
+			<a href="/entryforms/OH0263104813.pdf">CLICK HERE</a> to download Agility Test Schedule PDF 
+			file. 
+		</p>
+	
+
+
+	<form class="uniForm">
+	 	<fieldset class="inlineLabels">
+			<div class="ctrlHolder">
+				<p class="label" style="width:105px;">Event Dates:</p>
+				<span>06/18/2011 - 06/19/2011</span>
+			</div>
+			<div class="ctrlHolder">
+				<p class="label" style="width:105px;">Club Name:</p>
+				<span>Penn-Ohio Agility</span>
+			</div>
+			<div class="ctrlHolder">
+				<p class="label" style="width:107px;height:3em">Location:</p>
+				
+				<div style="margin-left:105px;">Soccer Sports Plex<br />31515 Lorain Rd.<br />North Olmsted, OH United States
+				</div>
+			</div>
+			<div class="ctrlHolder">
+				<p class="label" style="width:105px;">Closing date:</p>
+				<span>05/31/2011</span>
+			</div>
+			
+				<div class="ctrlHolder">
+					<p class="label" style="width:105px;">2nd Closing Date:</p>
+					<span>06/13/2011</span>
+				</div>
+			
+			
+				<div class="ctrlHolder">
+					<p class="label" style="width:105px;height:3em;">Event Secretary:</p>
+					<div style="margin-left:105px;">
+						<a href="mailto:JPSassy@aol.com">Jayne Poyer</a>
+						<br />5350 St. Rt. 534
+						<br />Rome, OH 44085 United States
+					</div>
+				</div>
+			
+		</fieldset>
+	</form>
+
+<h3>Planned Class Schedule:</h3>
+
+	
+	<p>
+		The following class schedule has been filed for this event but is subject to change without notice.
+	</p>
+	<div style="border:1px solid black;margin-bottom:8px">
+		
+			<div>
+				<table cellpadding="3" cellspacing="0" border="0" style="width:100%" class="eventTable">
+					<thead class="ui-widget-header" >
+						<tr>
+							<th style="width:40%">
+								Day 1: 06/18/2011 
+							</th>
+							<th style="width:20%">Judge</th>
+						</tr> 
+					</thead>
+					<tbody>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Standard Agility</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Standard Agility</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Standard Agility </td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Gamblers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Gamblers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Gamblers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Jumpers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Snooker</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Snooker</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Snooker</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Pairs Relay</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Pairs Relay</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Pairs Relay</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Jumpers Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Pairs Relay Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Pairs Relay Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Pairs Relay Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Grand Prix of Dog Agility - Local Qualifier</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Grand Prix - Local Qualifier</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Dog Agility Steeplechase® - Local Qualifier - Rd 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Speed Jumping - Local Qualifier - Rd 1</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veterans Standard</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veterans Gamblers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veteran Snooker</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			
+		
+			<div>
+				<table cellpadding="3" cellspacing="0" border="0" style="width:100%" class="eventTable">
+					<thead class="ui-widget-header" >
+						<tr>
+							<th style="width:40%">
+								Day 2: 06/19/2011 
+							</th>
+							<th style="width:20%">Judge</th>
+						</tr> 
+					</thead>
+					<tbody>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Standard Agility</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Standard Agility</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Standard Agility </td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Gamblers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Gamblers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Gamblers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Jumpers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Jumpers</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Jumpers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Starters Snooker</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Advanced Snooker</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Masters Snooker</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Standard Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Gamblers Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Jumpers Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Jumpers Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Jumpers Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 1</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Snooker Level 3</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Dog Agility Steeplechase® - Local Qualifier - Rd 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Performance Speed Jumping - Local Qualifier - Rd 2</td>
+								<td  style="text-align:center">
+									Keraga, Meredith
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veterans Standard</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veterans Gamblers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veterans Jumpers</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Veteran Snooker</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Int'l Handlers Challenge - Performance Jumping</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Int'l Handlers Challenge - Jumping</td>
+								<td  style="text-align:center">
+									Drom, Patty
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Int'l Handlers Challenge - Performance Jumping</td>
+								<td  style="text-align:center">
+									TBA
+								</td>
+							</tr>
+						
+							<tr class="ctrlHolder">
+								<td>Int'l Handlers Challenge - Jumping</td>
+								<td  style="text-align:center">
+									TBA
+								</td>
+							</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			
+		
+	</div>
+
+<p><a href="javascript:;" onclick="history.back()">Back</a></p>
+
+
+
+	<div style="display:none" id="testSchedule" title="Test Schedule For Event #104813" >
+		<div>
+			<a href="javascript:;" id="printall">Print Test Schedule <img src="graphics/printer.png" /></a>
+		</div>
+		
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('5')">Show/Hide</a> Front Page
+					</div> 
+				</div>
+				<div id="cat_1" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+
+
+	<div style="padding-top:100px;"></div>
+	<table id="s5-table1" align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td width="20%">&nbsp;</td>
+			<td width="30%">&nbsp;</td>
+			<td width="30%">&nbsp;</td>
+			<td width="20%">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2" class="center">
+				<span class="f14 bold">
+					A <img src="/css/images/usdaaLogo.png" width="161" height="18" /> Licensed Event
+				</span>
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="center pad-10">
+				<span class="f14 bold">
+					Titling Event w/Tournament Classes
+				</span>
+			</td>
+		</tr>
+	
+		<tr>
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="center">
+				<span class="f10 bold ">hosted by</span>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td colspan="2" align="center">
+				
+				<table width="100%" border="0">
+					<tr>
+						<td width="50%">
+							<img src="/groupLogos/OH0263.jpg" class="float_right" />
+						</td>
+						<td width="50%" class="center">
+							<span class="f16 bold">
+								Penn-Ohio Agility
+							</span>
+						</td>
+					</tr>
+				</table>
+				
+			</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="center pad-30">
+				<span class="f12 bold">
+					Being Held At: <br>Soccer Sports Plex<br>
+					North Olmsted, OH
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="center pad-15">
+				<span class="f12 bold">
+					June 18 - 19, 2011<br />
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="center">
+				Closing Date: Tuesday, May 31, 2011
+				
+					<br />Secondary Closing Date: Monday, June 13, 2011<br />
+					(For move up in level only)
+				
+			</td>
+		</tr>
+		
+			<tr>
+				<td colspan="4">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="4" class="center">
+					<span class="f12 bold">Judges</span>
+				</td>
+			</tr>
+			
+			
+				<tr>
+					<td class="center" colspan="4">
+						Patty Drom - Wylie, TX
+						
+					</td>
+				</tr>
+			
+				<tr>
+					<td class="center" colspan="4">
+						Meredith Keraga - Lafayette, CO
+						
+					</td>
+				</tr>
+			
+		
+	</table>
+
+
+
+							
+							
+								
+								
+									<div id="note_100027S" style="width:95%;overflow:auto">
+										<div class="note-title"> Declaration of Trademarks & Service Marks</div>
+										<div class="note-body"><p>USDAA<sup>&reg;</sup>, the USDAA logo, CYNOSPORT<sup>&reg;</sup> the CYNOSPORT logo, DOG AGILITY MASTERS<sup>&reg;</sup>, GRAND PRIX OF DOG AGILITY<sup>&reg;</sup>, DOG AGILITY STEEPLECHASE<sup>&reg;</sup>, SPRING FESTIVAL OF DOG AGILITY<sup>&reg;</sup>, AGILITY DOG<sup>&reg;</sup>, ADVANCED AGILITY DOG<sup>&reg;</sup>, MASTER AGILITY DOG<sup>&reg;</sup>, AGILITY DOG CHAMPION<sup>&reg;</sup>, are the registered trademarks of United States Dog Agility Association, Inc. PERFORMANCE GRAND PRIX<sup>SM</sup>, PERFORMANCE VERSATILITY PAIRS<sup>SM</sup>, PERFORMANCE SPEED JUMPING<sup>SM</sup>, JUMPERS MASTER<sup>SM</sup>, GAMBLERS MASTER<sup>SM</sup>, SNOOKER MASTER<sup>SM</sup>, RELAY MASTER<sup>SM</sup>, PERFORMANCE DOG <sup>SM</sup>, ADVANCED PERFORMANCE DOG<sup>SM</sup>, MASTER PERFORMANCE DOG<sup>SM</sup>, and PERFORMANCE DOG CHAMPION<sup>SM </sup>are trade and service marks may not be used for commercial or other purposes without the express written consent of United States Dog Agility Association, Inc.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_1653C" style="width:95%;overflow:auto">
+										<div class="note-title"> Early Bird Discount</div>
+										<div class="note-body"><h3><span style="color: #ff0000">DISCOUNT ENDS SATURDAY, MAY 14<sup>th</sup>!</span></h3></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_2127C" style="width:95%;overflow:auto">
+										<div class="note-title"> Timers and Contacts</div>
+										<div class="note-body"><h3><span style="color: #0000ff">Electronic timing will be used.&nbsp; Contacts will be rubberized.</span></h3></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('16')">Show/Hide</a> Trademarks & Service Marks Declaration
+					</div> 
+				</div>
+				<div id="cat_2" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+			                
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('9')">Show/Hide</a> Organizing Committee
+					</div> 
+				</div>
+				<div id="cat_3" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+
+
+
+	<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="section-title">Organizing Committee</td>
+		</tr>
+		<tr>
+			<td id="s9-td1">
+				The Organizing Committee is the governing body for this event and shall be the sole authority on matters relative to conduct of the event.
+			</td>
+		</tr>
+		<tr>
+			<td class="note_body">
+				<div id="s9-top-border">
+					
+						<ul id="s9-ul">
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Chairperson
+									</div> 
+									<div id="s9-li-div2">
+										Denise Thomas
+										 
+											<br />
+											Email: <a href="mailto:countrysideas@aol.com">countrysideas@aol.com</a>
+											<br />
+											Phone: (814) 756-3545 
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Secretary
+									</div> 
+									<div id="s9-li-div2">
+										Jayne Poyer
+										 
+											<br />
+											Email: <a href="mailto:JPSassy@aol.com">JPSassy@aol.com</a>
+											<br />
+											Phone: (440) 357-3820 
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Public Relations Representative
+									</div> 
+									<div id="s9-li-div2">
+										Jayne Poyer
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Treasurer
+									</div> 
+									<div id="s9-li-div2">
+										Jayne Poyer
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Trophy & Awards
+									</div> 
+									<div id="s9-li-div2">
+										Michelle Vincent
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Chief Ring Steward
+									</div> 
+									<div id="s9-li-div2">
+										Thelma Kraut
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Chief Ring Steward
+									</div> 
+									<div id="s9-li-div2">
+										Marilyn Flower
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Chief Scorekeeper
+									</div> 
+									<div id="s9-li-div2">
+										Bonnie Kotyuk
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Disciplinary Action Committee Chairperson
+									</div> 
+									<div id="s9-li-div2">
+										Denise Thomas
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Equipment Manager
+									</div> 
+									<div id="s9-li-div2">
+										Howard Thomas
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Facilities Coordinator
+									</div> 
+									<div id="s9-li-div2">
+										Cindy Stubenhofer
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Hospitality Coordinator
+									</div> 
+									<div id="s9-li-div2">
+										Linda Neiger
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Volunteer Coordinator
+									</div> 
+									<div id="s9-li-div2">
+										Denise Thomas
+										
+									</div>
+								</li>
+							
+								<li id="s9-li">
+									<div id="s9-li-div">
+										Committee At-Large
+									</div> 
+									<div id="s9-li-div2">
+										Karen Sendek
+										
+									</div>
+								</li>
+							
+						</ul>
+					
+				</div>
+			</td>
+		</tr>
+	</table>
+
+							
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('8')">Show/Hide</a> Site Information
+					</div> 
+				</div>
+				<div id="cat_4" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+
+
+
+	
+
+
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Site Information</td>
+	</tr>
+	<tr>
+		<td class="note_body">
+			
+				<div id="s8-div1" class="pad-10">
+					
+						
+						<div id="s8-div2">
+							<span class="f10 bold">Soccer Sports Plex</span><br />
+							31515 Lorain Rd.<br />
+							North Olmsted, OH 44070<br />
+							United States<br />
+							<a href="http://maps.google.com/maps?q=Soccer%20Sports%20Plex, 31515 Lorain Rd., North Olmsted, OH, 44070, US" target="_blank">View on Google Maps</a>
+							
+							
+
+							
+							
+							
+						
+							
+								<div>
+									<span class="bold">Surface Type: </span>
+									
+										Indoor Artificial Surface
+									
+								</div>
+								<div>
+									<span class="bold">Ring Configuration: </span>
+									
+										80 x 120
+									
+								</div>
+								
+								
+							 		<div>
+							 			<br><span class="bold">Directions to the Site:</span><br />
+							 			
+							 				<span class="bold italic">From the North:</span><br>
+							 				Take I-71 South to I-480 (you need to be in the left lane). Take 480 West to Exit 2, Loraine Rd., abut 8 miles West of I-71. Turn Right at the lift. The Soccer Sports Plex is on the right, less than 1/3 of a mile.<br /><br />
+							 			
+							 			
+							 				<span class="bold italic">From the South:</span><br>
+							 				Take I-71 North to the I-480 Toledo exit. Take 480 West to Exit 2, Lorain Rd, about 8 miles West of I-71. Turn right at the light. Site will be on the right less than 1/3 of a mile.<br /><br />
+							 			
+							 			
+							 				<span class="bold italic">From the East:</span><br>
+							 				Take 480 West to Exit 2, Loraini Rd about 8 miles West of I-71. Turn right at the light. Sit will be on the right less than 1/3 of a mile.<br /><br />
+							 			
+							 			
+							 				<span class="bold italic">From the West:</span><br>
+							 				OR EAST: Take OH Turnpike to Exit 152(SR10-Lorain Rd exit). Turn right on Lorain Rd. After 2 miles, site will be on the right.<br /><br />
+							 			
+							 		</div>
+							 	
+								
+									<div>
+										<span class="bold">Other Information:</span>
+										none
+									</div>
+								
+							
+						</div>
+					
+				
+				</div>
+			
+		</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_916C" style="width:95%;overflow:auto">
+										<div class="note-title"> Concessions</div>
+										<div class="note-body"><p>Breakfast and lunch will available for purchase at the site.&nbsp; See Volunteer Form for worker perks.</p>
+<p><span style="color: #ff0000">.</span></p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('1')">Show/Hide</a> Provisions for Entries, Payment & Acceptance
+					</div> 
+				</div>
+				<div id="cat_5" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Entries &amp; Acceptance</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_100041S" style="width:95%;overflow:auto">
+										<div class="note-title"> Express & Overnight Entries</div>
+										<div class="note-body"><p>Entries sent by Fedex, Express Mail or other courier service will only be accepted if the waiver allowing delivery <b>without signature</b> is signed. The club will not be responsible for deliveries delayed if a signature is required.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100004S" style="width:95%;overflow:auto">
+										<div class="note-title"> General Rule on Eligibility</div>
+										<div class="note-body"><p>This event is sanctioned by the United States Dog Agility Association, Inc. (&quot;USDAA&quot;).</p>
+<p>This test is open to all persons with dogs being at least 18 months of age, regardless of pedigree or absence thereof, who have a current registration with USDAA and whose owners and the dog's handler are currently in good standing with USDAA.</p>
+<p>This event will be held under USDAA<sup>&reg;</sup> Official Rules and Regulations, a copy of which may be viewed and printed online at <a href="http://www.usdaa.com/binary/files/rules_ebook_2004print.pdf">www.usdaa.com.</a></p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100019S" style="width:95%;overflow:auto">
+										<div class="note-title"> No Entry For Exhibition Only</div>
+										<div class="note-body"><p>No entry &quot;For Exhibition Only&quot; shall be accepted.&nbsp;&nbsp; See additional note for club policy regarding dogs that measure up.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100007S" style="width:95%;overflow:auto">
+										<div class="note-title"> Policy on Refusal of Entry</div>
+										<div class="note-body"><p>The Organizing Committee of an event may refuse the entry of any competitor or dog for just cause should the Committee view that participation by the competitor or dog could be prejudicial to the sport. However, in such case, the Committee must notify the competitor in writing upon receipt of entry, but in no case, more than three days following the event closing date for acceptance of entries. The burden of responsibility for the appropriateness of such action rests solely with the host group and its Organizing Committee.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100008S" style="width:95%;overflow:auto">
+										<div class="note-title"> NSF Check/Credit Card</div>
+										<div class="note-body"><p>Any check or credit card that is charged back by the bank or other financial institution&nbsp;may be assessed a service charge of up to $40 per incident at the discretion of the host group.</p>
+<p>Returned checks or credit card returns do not constitute a valid entry. Amounts shall be paid within 30 day of postmarked notice of the returned payment if such date follows the event date. Any fees not received within 30 days of notice will result in cancellation of event results for all classes related to the entry for which payment was made. No reinstatement of results is possible, and all awards must be returned within 10 days of notification or the dog's registration may be suspended pending restitution.</p>
+<p>Any unpaid fees or shortfalls must be paid prior to&nbsp;the start of the event, or entry is canceled without recourse.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100010S" style="width:95%;overflow:auto">
+										<div class="note-title"> Refund Policy</div>
+										<div class="note-body"><p>There shall be NO REFUNDS for entries withdrawn after the closing date for acceptance of entries, for absentee, dismissal from the event as a result of disciplinary action, dismissal from a class, or for any other reason. Also, no entry fees will be refunded if the event cannot open or be completed by reason of riots, civil disturbances, acts of terrorism, fire, "act of God", public emergency, strike, or any other cause beyond the control of the host organization.</p>
+
+ </div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100039S" style="width:95%;overflow:auto">
+										<div class="note-title"> Submission of Entries with Secondary Move-Up Date</div>
+										<div class="note-body"><p>All entries or cancellations must be received at the Secretary's address no later than the closing date, after which time no entries will be accepted or cancelled. For entries received by the closing date, the level of entry into a given class may be advanced by notifying the Secretary in writing via email by the &quot;Secondary Closing Date&quot;. No other changes, cancellations or additions may be made after the initial closing date.</p>
+<p>To be accepted, entries must be complete, signed (by parent or legal guardian if handler is a minor), received by the closing date and accompanied by the correct fees and include a valid USDAA registration number on a completed registration form.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_1835C" style="width:95%;overflow:auto">
+										<div class="note-title"> Overpayment</div>
+										<div class="note-body"><p>There will be no refunds for overpayments of $10.00 or less</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('3')">Show/Hide</a> Check-In & Measuring
+					</div> 
+				</div>
+				<div id="cat_6" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Check-in &amp; Measuring</td>
+	</tr>
+</table>
+
+
+
+							
+							
+								
+								
+									<div id="note_100032S" style="width:95%;overflow:auto">
+										<div class="note-title"> Dog Measurements & Certification</div>
+										<div class="note-body"><p>All dogs not jumping 26&quot; in the Championship Program or 22&quot; in the Performance Program must be measured unless they have a permanent USDAA or World Cynosport Dog Registration card or&nbsp;a temporary card with 3 signatures as required by the regulations, making the dog eligible for their jump height (prior to 3 years of age). When not enrolling electronically, please send a copy of one the following items to facilitate the check-in process:</p>
+<ul>
+    <li>photocopy of permanent dog registration card,</li>
+    <li>printout of the dog-information page from your USDAA<sup>&reg;</sup> competitor web account, or</li>
+    <li>copy of your check-in letter from USDAA indicating your temporary card has been accepted by the USDAA office and your permanent registration card is in process.</li>
+</ul>
+</div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100045S" style="width:95%;overflow:auto">
+										<div class="note-title"> A Dog that Measures Up at Check-In - May Run FEO</div>
+										<div class="note-body"><p>If a judge's measurement of a dog at check-in establishes that the dog is ineligible for the height class in which entered, the competitor may opt to run the dog in the lower jump height class &quot;For Exhibition Only&quot;, and no awards or qualifying scores may be earned. The competitor may not change their entry from one program to another (e.g., from Championship to Performance).</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_1656C" style="width:95%;overflow:auto">
+										<div class="note-title"> Check-in & Walk-throughs June</div>
+										<div class="note-body"><p>SATURDAY &amp; SUNDAY <br />
+Check in &amp; measuring will be from 7:15 to 7:45am. <br />
+Walkthroughs will begin at 8am.&nbsp;&nbsp;<br />
+First dog on the line after completion of walkthroughs. A CMJ will not be in attendance at this event.&nbsp; Be sure to check your final confirmations for any changes.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('2')">Show/Hide</a> Other General Provisions for Entry
+					</div> 
+				</div>
+				<div id="cat_7" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">General Entry Conditions</td>
+	</tr>
+</table>
+
+							
+							
+								
+								
+									<div id="note_100016S" style="width:95%;overflow:auto">
+										<div class="note-title"> Statement of Responsibility</div>
+										<div class="note-body"><p>Competitors alone are responsible for the behavior of their dogs, children or guests. A competitor whose dogs, children or guests create unnecessary disturbances or repeatedly engage in unsafe or disruptive behavior may, at the discretion of the Event Organizing Committee, be asked to leave the test site.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100003S" style="width:95%;overflow:auto">
+										<div class="note-title"> Policy on Fault Limits</div>
+										<div class="note-body"><p>In the event of a larger entry, fault limits may be set at the discretion of the Organizing Committee and/or Judge without pre-event notice.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100005S" style="width:95%;overflow:auto">
+										<div class="note-title"> Prohibitions on Aids & Devices</div>
+										<div class="note-body"><p>No leads, collars, food, toys or other aids or devices shall be permitted on the course at any time.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100040S" style="width:95%;overflow:auto">
+										<div class="note-title"> Spam Blocker</div>
+										<div class="note-body"><p>Confirmations will be sent via email using the secretary's address.  If you have a spam blocker on your email account, please configure it to allow email from the secretary's address since confirmations will be sent from this account.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_919C" style="width:95%;overflow:auto">
+										<div class="note-title"> Penn-Ohio Refund Policy</div>
+										<div class="note-body"><p>A withdrawal after the closing date due to injury of the dog/handler, illness OF THE DOG or for bitches that come into season after the closing date will be eligible for a refund minus USDAA fees plus a service fee of $5 if supported by a written notice from a veterinarian/doctor. In such instances the secretary MUST be notified and&nbsp;receive supporting documentation <span>by the end of the trial</span>.&nbsp;&nbsp; Any other withdrawals after the closing date will not be eligible for refund.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('4')">Show/Hide</a> Class Descriptions
+					</div> 
+				</div>
+				<div id="cat_8" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Class Descriptions</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_100034S" style="width:95%;overflow:auto">
+										<div class="note-title"> Titling Class Rules & Descriptions</div>
+										<div class="note-body"><p>One or more titling classes shall be held at this Event from those described in Chapters 3 - 8 of USDAA Official Rules &amp; Regulations, which are downloadable from <a href="http://www.usdaa.com/rulesReg_eBook.cfm">www.usdaa.com/rulesReg_eBook.cfm</a>, and any amendments there to, which are downloadable from <a href="http://www.usdaa.com/rulesReg.cfm">www.usdaa.com/rulesReg.cfm</a>, each of which are hereby incorporated by reference.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100035S" style="width:95%;overflow:auto">
+										<div class="note-title"> Tournament Class Rules & Descriptions</div>
+										<div class="note-body"><p>One or more tournament classes are being held at this event, the rules and description of which may be downloaded on the Internet at <a href="http://www.usdaa.com/gen_formDoc.cfm">www.usdaa.com/gen_formDoc.cfm</a>, and are hereby incorporated by reference. A written copy may be obtained from the Event secretary.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('6')">Show/Hide</a> Prizes & Awards
+					</div> 
+				</div>
+				<div id="cat_9" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Prizes &amp; Awards</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_920C" style="width:95%;overflow:auto">
+										<div class="note-title"> Titling Class & Tournament Awards</div>
+										<div class="note-body"><p>&nbsp;<b>TOURNAMENTS</b><br />
+<u>Grand Prix &amp; Performance Grand Prix<br />
+</u>Rosettes will be awarded for 1<sup>st</sup> through 4<sup>th</sup> place in all heights in both tournaments.&nbsp;Qualifying Grand Prix competitors will receive maroon and white ribbons and qualifying Performance Grand Prix competitors will receive maroon and pink ribbons.&nbsp; The first place, qualifying dog/handler in each jump height will be awarded a bye voucher for a Regional Championships.</p>
+<p><u>Steeplechase &amp; Performance Speed Jumping <br />
+</u>Special Qualifying ribbons will be awarded in Round 1.&nbsp; In Round 2, prize money will be awarded pursuant to the distribution chart found in the online tournament rules.<br />
+&nbsp;</p>
+<p><b>TITLING CLASSES</b><br />
+Maroon flat ribbons will be awarded for all qualifying rounds in standard and non-standard classes.&nbsp; 1st through 4th place ribbons will be awarded in each jump height for Championship &amp; Performance; and to mini and open divisions for pairs.</p>
+<p>All awards must be claimed before the trial ends.&nbsp; No awards will be mailed.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('10')">Show/Hide</a> Tentative Schedule
+					</div> 
+				</div>
+				<div id="cat_10" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner entry" style="width:auto;overflow:auto;">
+						
+							
+<div class="page-break"></div>
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Tentative Schedule</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_1659C" style="width:95%;overflow:auto">
+										<div class="note-title"> Class Running Order - June</div>
+										<div class="note-body"><h4 style="text-align: center">SATURDAY:&nbsp; Small to&nbsp;Tall&nbsp;- Performance then Championship:<br />
+&nbsp;</h4>
+<table border="1" cellspacing="1" cellpadding="1" width="100%">
+    <tbody>
+        <tr>
+            <td>
+            <p style="text-align: center"><b>RING ONE - Patty Drom</b></p>
+            <p>Veterans/P3/Masters Gamblers<br />
+            P3/Masters Relay<br />
+            Veterans/P3/Masters Standard<br />
+            PGP/Grand Prix&nbsp;&nbsp;<br />
+            Veterans/P3/Masters Snooker*&nbsp;&nbsp;<br />
+            Veterans/P3/Masters Jumpers<br />
+            *P3/ Masters Jump height order&nbsp;randomized&nbsp;&nbsp;</p>
+            </td>
+            <td>
+            <p style="text-align: center"><b>RING TWO - Meredith Keraga</b></p>
+            <p>P2/Adv &amp; P1/St&nbsp;Gamblers&nbsp;<br />
+            PSJ/Steeplechase Round&nbsp;1&nbsp;<br />
+            P2/Adv &amp; P1/St&nbsp;Relay&nbsp;<br />
+            P2/Adv &amp; P1/St&nbsp;Standard&nbsp;<br />
+            P2/Adv &amp; P1/St&nbsp;Snooker<br />
+            &nbsp;<br />
+            &nbsp;</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 style="text-align: center"><br />
+&nbsp;SUNDAY:&nbsp; Tall to Small Championship&nbsp;then Performance</h4>
+<table border="1" cellspacing="1" cellpadding="1" width="100%">
+    <tbody>
+        <tr>
+            <td>
+            <p style="text-align: center"><b>RING ONE - Patty Drom</b></p>
+            <p>Masters/P3/Veterans Gamblers&nbsp;<br />
+            Masters/P3/ VeteransStandard&nbsp;<br />
+            Masters/P3/&nbsp;Veterans&nbsp;Snooker*&nbsp;&nbsp;<br />
+            Masters/ P3/&nbsp;Veterans&nbsp;Jumpers</p>
+            <p>Perf/Champ IHC Jumping<br />
+            *Masters/P3 Jump height order randomized</p>
+            </td>
+            <td>
+            <p style="text-align: center"><b>RING TWO - Meredith Keraga</b></p>
+            <p>Adv/P2&nbsp;&amp; St/P1 Gamblers<br />
+            Adv/P2 &amp; St/P1 Standard</p>
+            <p>STP/ PSJ Round 2&nbsp;<br />
+            Adv/P2 &amp; St/P1&nbsp;Snooker<br />
+            Adv/P2&nbsp;&amp; St/P1 Jumpers&nbsp;</p>
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('11')">Show/Hide</a> Hotel Information
+					</div> 
+				</div>
+				<div id="cat_11" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+
+
+
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Hotel Information</td>
+	</tr>
+	<tr>
+		<td class="note_body">
+			<div id="s11-div1">
+				
+					
+						<table cellspacing="4" width="97%">
+							<tr>
+								
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.motel6.com" target="_blank">Motel 6 Cleveland Intl. Airport N. Ridgeville #4287</a>
+											
+										</div>
+										32751 Lorain Rd North Ridgeville, OH<br/>
+										(800) 466-8356 (440) 327-6311<br />
+										<a href="http://maps.google.com/maps?q=32751 Lorain Rd, North Ridgeville, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+											<br/ >5 minutes
+										
+										
+									</td>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.super8.com" target="_blank">Super 8 Cleveland</a>
+											
+										</div>
+										32801 Lorain Rd North Ridgeville, OH<br/>
+										(800) 889-9698 (440) 327-0500<br />
+										<a href="http://maps.google.com/maps?q=32801 Lorain Rd, North Ridgeville, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+											<br/ >5 min
+										
+										
+									</td>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.redroof.com" target="_blank">Red Roof Inn</a>
+											
+										</div>
+										29595 Clemens Road Westlake, OH<br/>
+										(800) 733-7663 (440) 892-7920<br />
+										<a href="http://maps.google.com/maps?q=29595 Clemens Road, Westlake, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+										
+									</td>
+									
+										</tr><tr>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.redroof.com" target="_blank">Red Roof Inn Cleveland-Middleburg Heights</a>
+											
+										</div>
+										17555 Bagley Rd Middleburg Heights, OH<br/>
+										(800) 733-7663 (440) 234-2441<br />
+										<a href="http://maps.google.com/maps?q=17555 Bagley Rd, Middleburg Heights, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+											<br/ >15 min
+										
+										
+									</td>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.motel6.com" target="_blank">Motel 6 - Cleveland Middleburg Heights #1111</a>
+											
+										</div>
+										7219 Engle Rd Middleburg Hts, OH<br/>
+										(800) 466-8356 (440) 234-0990<br />
+										<a href="http://maps.google.com/maps?q=7219 Engle Rd, Middleburg Hts, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+											<br/ >15-20 min
+										
+										
+									</td>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.ichotelsgroup.com" target="_blank">Candlewood Suites Cleveland-N. Olmsted</a>
+											
+										</div>
+										24741 Country Club Blvd North Olmsted, OH<br/>
+										(877) 226-3539 (440) 716-0584<br />
+										<a href="http://maps.google.com/maps?q=24741 Country Club Blvd, North Olmsted, OH" target="_blank">View on Google Maps</a>
+										
+										
+											<br/ >There is a $25.00 one time pet fee
+										
+										
+											<br/ >10 minutes
+										
+										
+									</td>
+									
+										</tr><tr>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												 
+												
+												
+												
+												<a href="http://www.lq.com" target="_blank">LaQuinta Inn Cleveland Airport North</a>
+											
+										</div>
+										4222 W. 150th St. Cleveland, OH<br/>
+										(800) 753-3757 (216) 251-8500<br />
+										<a href="http://maps.google.com/maps?q=4222 W. 150th St., Cleveland, OH" target="_blank">View on Google Maps</a>
+										
+										
+										
+											<br/ >20 min
+										
+										
+									</td>
+									
+					            
+									
+									
+									<td class="s11-td1">
+										<div class="bold">
+											
+												Crystal Springs Campgrounds
+		                                    
+										</div>
+										31478 Bagley Rd. North Ridgeville, OH<br/>
+										 (440) 748-3200<br />
+										<a href="http://maps.google.com/maps?q=31478 Bagley Rd., North Ridgeville, OH" target="_blank">View on Google Maps</a>
+										
+											<br />Rate: $25.00 
+											
+											
+											
+										
+										
+										
+										
+											<br />CAMPING
+										
+									</td>
+									
+					            
+							</tr>
+						</table>
+					
+				
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+							
+							
+								
+								
+									<div id="note_1661C" style="width:95%;overflow:auto">
+										<div class="note-title"> RVs at Soccer SportsPlex</div>
+										<div class="note-body"><p>There is space for a limited number of Self-Contained RV's behind the complex in the rear parking lot.&nbsp; There are no hook-ups available.&nbsp; YOU MUST RESERVE A SPOT by emailing <a href="mailto:JPSassy@aol.com">JPSassy@aol.com</a> with the size of your RV.&nbsp; No tents, no camping in your car/van. There are no restrooms available in the evenings.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('7')">Show/Hide</a> Media Release & Rights of Privacy Waiver
+					</div> 
+				</div>
+				<div id="cat_12" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-20">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Media Release & Rights of Privacy Waiver</td>
+	</tr>
+</table>
+
+							
+							
+								
+								
+									<div id="note_100037S" style="width:95%;overflow:auto">
+										<div class="note-title"> Media Rights Release</div>
+										<div class="note-body"><p>I HEREBY GRANT TO USDAA and its affiliated companies, representatives, agents and assigns, all rights and permission to use or appropriate his/her and their dog's name, biography, likeness, photograph, voice, performing persona, or other indicia of identity for broadcast, telecast, cablecast, transmission or distribution in any format or media known now or in the future.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100038S" style="width:95%;overflow:auto">
+										<div class="note-title"> Waiver of Rights to Privacy, Publicity & Personality</div>
+										<div class="note-body"><p>FURTHER, I HEREBY RELEASE United States Dog Agility Association, Inc. and its affiliates, representatives, agents and assigns from any claim or cause of action for invasion of the rights of privacy, right of publicity, right of personality, or any similar right.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('99')">Show/Hide</a> Other Information
+					</div> 
+				</div>
+				<div id="cat_13" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td class="pad-40">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">Other Information</td>
+	</tr>
+</table>
+
+							
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('12')">Show/Hide</a> RV Form Info
+					</div> 
+				</div>
+				<div id="cat_14" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner entry" style="width:auto;overflow:auto;">
+						
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+							
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('15')">Show/Hide</a> Volunteer Form Info
+					</div> 
+				</div>
+				<div id="cat_15" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner general" style="width:auto;overflow:auto;">
+						
+							
+
+
+
+
+	<div class="page-break"></div>
+	<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="section-title">Volunteer Information</td>
+		</tr>
+		<tr>
+			<td class="note_body">
+				
+					<div id="image">
+						<div class="scale-img">
+							<img src="/groupfiles/volunteerformOH0263_104813.jpg">
+						</div>
+					</div>
+				
+			</td>
+		</tr>
+	</table>
+
+
+
+
+
+							
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('14')">Show/Hide</a> GENERAL AGREEMENT
+					</div> 
+				</div>
+				<div id="cat_16" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+<div class="page-break"></div>
+<table border="0" align="center" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="section-title">General Agreement</td>
+	</tr>
+</table>
+
+
+
+							
+							
+								
+								
+									<div id="note_100023S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.1 - Consideration & Waiver of Liability</div>
+										<div class="note-body"><p>IN CONSIDERATION OF the acceptance of this entry and the opportunity to participate and/or to be judged in the event on the dates to which this entry form applies (the "Event"),I AGREE TO HOLD HARMLESS each of the parties listed below (including each of their members, officers, directors, agents and employees), hereinafter collectively referred to as the "Event Organizers", from any claim for loss or injury that may be alleged to have been caused directly or indirectly to any person or thing by the act of myself or the dog listed on the entry form while in or upon the event premises or grounds or near any entrance thereto -
+
+<UL><li>The Event's Organizing Committee
+<li>The Event Organizer, being the USDAA Affiliated Group (or Groups) hosting or otherwise responsible for conduct of the event 
+<li>United States Dog Agility Association, Inc. ("USDAA"), World Cynosport Limited and affiliated companies
+<li>Event Sponsors
+<li>Property Owners of the premises upon which the event is held
+</ul>
+
+<p>I FURTHER AGREE TO HOLD HARMLESS the Event Organizers from any claim for loss or injury of the dog listed on my entry form for the Event as a result of disappearance, theft, death or other act, whether such loss or injury is caused or alleged to be caused for any reason, including negligence.I ASSUME ALL RESPONSIBILITY AND LIABILITY FOR ANY CLAIMS REFERENCED IN THIS "GENERAL AGREEMENT", INCLUDING LEGAL FEES.</p>
+</div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100025S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.2 - Acknowledgment & Acceptance of Regulations</div>
+										<div class="note-body"><p>I ACKNOWLEDGE THAT I HAVE READ AND UNDERSTAND USDAA<sup>®</sup> Official Rules and Regulations and rules for competition (e.g., tournament rules) that relate to the Event, whether incorporated in this General Agreement by reference or as stipulated herein for the Event to which this entry form pertains.
+</p>
+<p>I ACCEPT AND AGREE TO ABIDE BY any and all rulings of the Organizing Committee (and its members), the Event's Disciplinary Action Committee and/or USDAA relative to matters related to the Event. </p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100028S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.3 - Acknowledgment & Representation of Accuracy</div>
+										<div class="note-body"><p>I ACKNOWLEDGE, REPRESENT AND WARRANT that the information supplied by me in the entry form is correct and complete. If any portion of this information is found to be invalid or insufficient to establish the validity of my entry, such finding shall render my entry invalid in its entirety, for which there shall be no refund of fees paid or other recourse against the Event Organizers. Any acceptance of additional information or corrections to information after the closing date shall be at the sole discretion of the Event secretary.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100029S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.4 - Representation of Ownership or Agency</div>
+										<div class="note-body"><p>I HEREBY REPRESENT AND WARRANT that I am the owner of the dog listed hereon, or that I have full authority from the dog's owner as their agent to enter the dog in competition and to assume their responsibilities for the care, custody and control of the dog for entry to the Event, and</p> <p> I AGREE TO HOLD HARMLESS the Event Organizers listed in paragraph 1.1
+from any liability or claims, including legal fees, related to such ownership or agency status. </p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100030S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.5 - Media Release, Grants & Waivers of Rights to Broadcast & Promote</div>
+										<div class="note-body"><p>COMPETITOR HEREBY GRANTS TO USDAA and its affiliated companies, representatives, agents and assigns, all rights and permission to use or appropriate his/her and their dog's name, biography, likeness, photograph, voice, performing persona, or other indicia of identity for broadcast, telecast, cablecast, transmission or distribution in any format or media known now or in the future.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100031S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.6 - Waiver of Rights to Privacy, Publicity & Personality</div>
+										<div class="note-body"><p>FURTHER, COMPETITOR HEREBY RELEASES United States Dog Agility Association, Inc. and its affiliates, representatives, agents and assigns from any claim or cause of action for invasion of the rights of privacy, right of publicity, right of personality, or any similar right.</p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100033S" style="width:95%;overflow:auto">
+										<div class="note-title"> 1.7 - Signature/Electronic Submission Execution</div>
+										<div class="note-body"><p>THROUGH MY PHYSICAL SIGNATURE ON THE PAPER ENTRY FORM, OR THROUGH MY SUBMISSION OF AN ELECTRONIC ENTRY TO THE EVENT, I ACKNOWLEDGE, ACCEPT AND AGREE TO ABIDE by the provisions of this General Agreement, and all policies, rules, regulations and conditions of entry to the Event</p>
+
+<p>FURTHER, IF ENTRY IS FOR A MINOR, THROUGH MY PHYSICAL SIGNATURE ON THE PAPER ENTRY FORM, OR THROUGH MY SUBMISSION OF AN ELECTRONIC ENTRY TO THE EVENT, I REPRESENT AND WARRANT THAT I AM THE PARENT OR LEGAL GUARDIAN OF THE COMPETITOR/HANDLER entered in the Event, and I ACKNOWLEDGE that I have reviewed all provisions of this General Agreement, policies, rules, regulations, and conditions of entry to the Event with the Minor and I SHALL BE SOLELY RESPONSIBLE FOR THEIR ACTIONS AND COMPLIANCE WITH ALL RULES, REGULATIONS, POLICIES AND PROVISIONS FOR THE EVENT, AND ASSUME FULL LIABILITY FOR MINOR'S ACTIONS AND ACTIONS OF THEIR DOG.</p>
+</div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('13')">Show/Hide</a> USDAA<sup>&reg;</sup>Official Entry Form
+					</div> 
+				</div>
+				<div id="cat_17" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<div class="page-break"></div>
+	<div id="theEntryForm">
+		
+			<div style="text-align:center;">		
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed">
+					
+						
+						<tr>
+							<td class="center">
+								<span class="f12 bold">
+									USDAA&reg; Official Entry Form - Penn-Ohio Agility
+									
+										 - North Olmsted, OH
+									
+								</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="f9 center pad-10">
+								June 18 - 
+								
+									19, 2011
+								
+								 - Closing Date: Tuesday, May 31, 2011
+							</td>
+						</tr>
+						<tr>
+							<td class="f9 center">
+								Return to: Jayne Poyer, 5350 St. Rt. 534 
+								
+								Rome, OH 44085 - Make check payable to: 
+								
+									POAC
+								
+							</td>
+						</tr>
+					
+					
+					
+					
+					<tr>
+						<td class="f9 bold center pad-20">Dog and Handler Information</td>
+					</tr>
+					<tr>
+						<td class="pad-10" valign="bottom">
+							<table width="100%" cellpadding="0" cellspacing="0">
+								<tr>
+									<td class="f8 ef-td-border-b" style="width:30%; text-align:left; padding-left:3px;">
+										Dog's Call Name:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:15%; text-align:left; padding-left:3px;">
+										USDAA#:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:30%; text-align:left; padding-left:3px;">
+										Breed:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:10%; text-align:left; padding-left:3px;">
+										Height:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:15%; text-align:left; padding-left:3px;">
+										Birthdate:
+									</td>
+								</tr>
+							</table>
+							<table width="100%" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="6" style="height:10px;"></td>
+								</tr>
+								<tr>
+									<td class="f8 ef-td-border-b" style="width:60%; text-align:left; padding-left:3px;">
+										Address:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:40%; text-align:left; padding-left:3px;">
+										City, St/Pr/Region:
+									</td>
+								</tr>
+							</table>
+							<table width="100%" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="6" style="height:10px;"></td>
+								</tr>
+								<tr>
+									<td class="f8 ef-td-border-b" style="width:30%; text-align:left; padding-left:3px;">
+										Postal Code:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:35%; text-align:left; padding-left:3px;">
+										Day Phone:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:35%; text-align:left; padding-left:3px;">
+										Night Phone:
+									</td>
+									
+								</tr>
+							</table>
+							<table width="100%" cellpadding="0" cellspacing="0">
+								<tr>
+									<td colspan="6" style="height:10px;"></td>
+								</tr>
+								<tr>
+									<td class="f8 ef-td-border-b" style="width:40%; text-align:left; padding-left:3px;">
+										Handler:
+									</td>
+									<td class="f8 ef-td-border-l ef-td-border-b" style="width:60%; text-align:left; padding-left:3px;">
+										Email:
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="f9">
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td class="f9 bold center">
+							Class Entry Information
+						</td>
+					</tr>
+				</table>
+				
+				
+					
+					
+				<div id="entry-form">
+					
+					
+				
+					<table cellpadding="0" cellspacing="0" width="100%" style="table-layout:fixed">
+						
+						
+
+	
+	
+	
+	
+		
+	
+
+	
+	
+		
+	
+	
+
+
+	
+	
+	
+		<tr>
+			<td colspan="12" >
+				<table cellpadding="0" cellspacing="0" width="100%" style="table-layout:fixed" class="pad-10">
+					<tr>
+						<td class="f8 ef-td-border-b va-m" style="width:13%; text-align:left; padding-left:3px;">Jump Height:</td>
+						<td class="f8 ef-td-border-b va-m ef-td-border-l" style="width:27%; text-align:left; padding-left:3px;">Veteran: &nbsp;4"&nbsp;&nbsp;&nbsp;8"&nbsp;&nbsp;&nbsp;12"</td>
+						<td class="f8 ef-td-border-b va-m ef-td-border-l" style="width:33%; text-align:left; padding-left:3px;">Championship: &nbsp;&nbsp;10"&nbsp;&nbsp;&nbsp;14"&nbsp;&nbsp;&nbsp;16"&nbsp;&nbsp;&nbsp;20"&nbsp;&nbsp;&nbsp;22"&nbsp;&nbsp;&nbsp;24"</td>
+						<td class="f8 ef-td-border-b va-m ef-td-border-l" style="width:27%; text-align:left; padding-left:3px;">&nbsp;&nbsp;&nbsp;Performance: &nbsp;&nbsp;&nbsp;8"&nbsp;&nbsp;&nbsp;12"&nbsp;&nbsp;&nbsp;14"&nbsp;&nbsp;&nbsp;16"&nbsp;&nbsp;&nbsp;20"</td>
+					</tr>
+					<tr>
+						<td colspan="4" style="height:10px;"></td>
+					</tr>
+					<tr>
+						<td colspan="4" class="f8 italic center">If entering classes at DIFFERENT HEIGHTS in the SAME PROGRAM, submit a SEPARATE ENTRY FORM for each height class in that program.</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	
+	<tr class="ef-td-bg">
+		<td colspan="3" width="28%" class="f8 bold ef-td-border-b pad-5t">Saturday. Jun 18, 2011</td>
+		<th colspan="1" width="8%" class="f8 bold ef-td-border-b pad-5t">Veteran</th>
+		<th colspan="4" width="32%" class="f8 bold ef-td-border-b pad-5t">Championship</th>
+		<th colspan="4" width="32%" class="f8 bold ef-td-border-b pad-5t">Performance</th>
+	</tr>
+
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Standard</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Gamblers</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Jumpers</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b">&nbsp;</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Snooker</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+	<tr>
+		<td colspan="12" style="height:6px;"></td>
+	</tr>
+	<tr>
+		<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+		<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$17.00</td>
+		<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Pairs Relay</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ MST</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ ADV</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ STR</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PIII</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PII</td>
+		<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PI</td>
+	</tr>
+	<tr>
+		<td colspan="12" style="height:1px;"></td>
+	</tr>
+	<tr>
+		<td class="f8" style="text-align:left; padding-left:3px;">
+			&nbsp
+		</td>
+		<td colspan="11" class="f8 bold" style="text-align:left;">
+			If blank or incorrect, entry will be for draw team:
+		</td>
+		
+	</tr>
+	<tr>
+		<td colspan="12" style="height:6px;"></td>
+	</tr>
+	<tr>
+		<td class="f8 ef-td-border-b" style="text-align:left; padding-left:3px;">
+			&nbsp
+		</td>
+		<td colspan="4" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">
+			Partner:
+		</td>
+		<td colspan="3" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">
+			Dog:
+		</td>
+		<td colspan="2" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">
+			USDAA#:
+		</td>
+		<td colspan="2" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">
+			Jump Height:
+		</td>
+		
+	</tr>
+	
+
+
+
+	<tr>
+		<td colspan="6" style="height:6px;"></td>
+	</tr>
+	<tr>
+		<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+		<td style="width:7%; text-align:center" class="f8 ef-td-border-l ef-td-border-b">$23.00</td>
+		<td colspan="2" style="width:11%" class="f8 ef-td-border-l ef-td-border-b">Tournaments</td>
+		
+		<td colspan="4" class="f8 ef-td-border-l ef-td-border-b" style=" text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Grand Prix of Dog Agility&reg;</td>
+		<td colspan="4" class="f8 ef-td-border-l ef-td-border-b" style=" text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Performance Grand Prix</td>
+	</tr>
+
+
+	<tr>
+		<td colspan="6" style="height:6px;"></td>
+	</tr>
+	<tr>
+		<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+		<td style="width:7%; text-align:center" class="f8 ef-td-border-l ef-td-border-b">$23.00</td>
+		<td Colspan="2" style="width:11%" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left">Tournaments</td>
+		
+		<td colspan="4" class="f8 ef-td-border-l ef-td-border-b" style=" text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Dog Agility Steeplechase&reg;</td>
+		<td colspan="4" class="f8 ef-td-border-l ef-td-border-b" style=" text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Performance Speed Jumping</td>
+	</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+	
+		
+	
+		
+	
+		
+	
+		
+	
+	
+
+
+
+
+ 				
+					
+						
+						
+
+	
+	
+	
+	
+		
+	
+
+	
+	
+		
+	
+	
+
+
+	
+	
+	
+	<tr class="ef-td-bg">
+		<td colspan="3" width="28%" class="f8 bold ef-td-border-b pad-5t">Sunday. Jun 19, 2011</td>
+		<th colspan="1" width="8%" class="f8 bold ef-td-border-b pad-5t">Veteran</th>
+		<th colspan="4" width="32%" class="f8 bold ef-td-border-b pad-5t">Championship</th>
+		<th colspan="4" width="32%" class="f8 bold ef-td-border-b pad-5t">Performance</th>
+	</tr>
+
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Standard</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Gamblers</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Jumpers</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+<tr>
+	<td colspan="12" style="height:6px;"></td>
+</tr>
+<tr>
+	<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+	<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$0.00</td>
+	<td style="width:11%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">Snooker</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l"><img src="/graphics/checkbox.png" />
+</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ MST</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ ADV</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ STR</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">&nbsp;</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PIII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"> <img src="/graphics/checkbox.png" />
+ PII</td>
+	<td style="width:8%; text-align:center" class="f8 ef-td-border-b"><img src="/graphics/checkbox.png" />
+ PI</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+		
+		
+	
+		
+			
+		
+		
+	
+		
+			
+		
+		
+	
+		
+			
+		
+		
+	
+	
+	
+		
+			
+			
+			
+				<tr>
+					<td colspan="12" style="height:6px;"></td>
+				</tr>
+				<tr>
+					<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+					<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$15.00</td>
+					<td style="width:11%" class="f8 ef-td-border-b ef-td-border-l">Misc</td>
+					<td colspan="9" class="f8 ef-td-border-b ef-td-border-l" style="text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Int'l Handlers Challenge - Jumping</td>
+				</tr>
+			
+			
+		
+	
+		
+			
+			
+			
+				<tr>
+					<td colspan="12" style="height:6px;"></td>
+				</tr>
+				<tr>
+					<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+					<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$15.00</td>
+					<td style="width:11%" class="f8 ef-td-border-b ef-td-border-l">Misc</td>
+					<td colspan="9" class="f8 ef-td-border-b ef-td-border-l" style="text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Int'l Handlers Challenge - Jumping</td>
+				</tr>
+			
+			
+		
+	
+		
+			
+			
+			
+				<tr>
+					<td colspan="12" style="height:6px;"></td>
+				</tr>
+				<tr>
+					<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+					<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$15.00</td>
+					<td style="width:11%" class="f8 ef-td-border-b ef-td-border-l">Misc</td>
+					<td colspan="9" class="f8 ef-td-border-b ef-td-border-l" style="text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Int'l Handlers Challenge - Performance Jumping</td>
+				</tr>
+			
+			
+		
+	
+		
+			
+			
+			
+				<tr>
+					<td colspan="12" style="height:6px;"></td>
+				</tr>
+				<tr>
+					<td style="width:10%" class="f8 ef-td-border-b">&nbsp;</td>
+					<td style="width:7%; text-align:center" class="f8 ef-td-border-b ef-td-border-l">$15.00</td>
+					<td style="width:11%" class="f8 ef-td-border-b ef-td-border-l">Misc</td>
+					<td colspan="9" class="f8 ef-td-border-b ef-td-border-l" style="text-align:left; padding-left:3px;"><img src="/graphics/checkbox.png" />
+ Int'l Handlers Challenge - Performance Jumping</td>
+				</tr>
+			
+			
+		
+	
+	
+		
+		
+	
+
+
+
+
+ 				
+					
+					
+					
+					
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td class="f8 ef-td-border-b" style="text-align:center; padding-left:3px;">&nbsp;</td>
+							<td colspan="11" class="bold  ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">SUB-TOTAL</td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td class="f8 ef-td-border-b" style="text-align:left; padding-left:3px;">&nbsp;</td>
+							<td class="f8 ef-td-border-l ef-td-border-b" style="text-align:center; padding-left:3px;">$30.00</td>
+							<td colspan="10" class="f8 ef-td-border-l ef-td-border-b bold" style="text-align:left; padding-left:3px;">Dog Registration (if not previously registered) - ATTACH SEPARATE FORM or Register Online</td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td class="f8 ef-td-border-b">&nbsp;</td>
+							<td colspan="11" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">Discount (see footnote below for terms, if any discount is offered)</td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td class="f8 ef-td-border-b">&nbsp;</td>
+							<td colspan="11" class="f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">Add my voluntary contribution of $1.00 or more to support USA participation in IFCS events.</td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td class="f8 ef-td-border-b">&nbsp;</td>
+							<td colspan="11" class="bold f8 ef-td-border-l ef-td-border-b" style="text-align:left; padding-left:3px;">TOTAL FEES</td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+						<tr>
+							<td colspan="12" style="height:6px;"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		
+		
+		
+		
+
+
+							
+							
+								
+								
+									<div id="note_1652C" style="width:95%;overflow:auto">
+										<div class="note-title"> Discount</div>
+										<div class="note-body"><h4><b><span style="color: #ff00ff">Please take $1.00 off each Non-tournament class entered if your entry is postmarked by Saturday, May 14th.</span></b></h4></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100048S" style="width:95%;overflow:auto">
+										<div class="note-title"> </div>
+										<div class="note-body"><p><i><b>GENERAL AGREEMENT ACCEPTANCE: Through my signature, I declare that I have read USDAA Official Rules &amp; Regulations and the General Agreement and Test Schedule provisions&nbsp;set forth for entry to this event, and&nbsp;I acknowledge that I understand and agree to abide&nbsp;by all&nbsp; such rules, regulations, policies and provisions stipulated therein, including any provisions incorporated by reference.</b></i></p>
+<p><b><i>Signature:__________________________________________________________ Date:__________________</i></b><br />
+<i><b>Signature of Parent or <br />
+Legal Guardian, if a Minor:_____________________________________________&nbsp; Date:__________________</b></i></p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_946C" style="width:95%;overflow:auto">
+										<div class="note-title"> Change In Contact Info</div>
+										<div class="note-body"><p><span style="color: #ff0000"><b><span>Please check here if your info has changed since the last time you entered a POAC trial ___</span></b></span></p></div>
+										<br style="clear:both" />
+									</div>
+								
+									<div id="note_100050S" style="width:95%;overflow:auto">
+										<div class="note-title"> </div>
+										<div class="note-body"><p><i><b>PAIRS PARTNER INFORMATION:</b></i>&nbsp; I've entered pairs as a draw.&nbsp; When selecting a partner for me, please do not select the following dogs:</p>
+<p style="text-align: center">1___________________________&nbsp;&nbsp;2__________________________&nbsp; 3___________________________&nbsp;&nbsp;4__________________________</p></div>
+										<br style="clear:both" />
+									</div>
+								
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('18')">Show/Hide</a> USDAA<sup>&reg;</sup>Official Intro Program Entry Form
+					</div> 
+				</div>
+				<div id="cat_18" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+<div class="page-break"></div>
+	<div id="theEntryForm">
+	
+		
+
+
+							
+												
+					</div>
+				</div>
+			</div>
+		 
+			   
+			<div class="category" style="width:auto;overflow:auto;padding-bottom:3px">
+				<div class="categoryHeader" style="overflow:auto;width:auto;">
+					<div style="float:left;width:85%">
+						<a href="javascript:;" onclick="openCloseCategory('17')">Show/Hide</a> Dog Registration Form
+					</div> 
+				</div>
+				<div id="cat_19" style="width:auto;overflow:auto;padding:0;display:block" class="noteHolder">
+					<div class="inner " style="width:auto;overflow:auto;">
+						
+							
+
+
+<div class="page-break"></div>
+	
+		
+		
+<table width="100%" cellpadding="5" cellspacing="0" border="0" style="table-layout:fixed">
+	
+	<tr>
+		<td class="center" colspan="2">
+			<span class="f12 bold">
+				USDAA&reg; Official Dog and Junior Handler Registration form
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="center pad-30" colspan="2">
+			<span class="f10 bold">
+				&nbsp;
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td width="70%">
+			<span class="f10 bold">
+				<img src="/graphics/checkbox.png" />
+&nbsp;DOG REGISTRATION - $30.00 
+			</span>
+		</td>
+		<td rowspan="2">
+			<table width="100%" cellpadding="0" cellspacing="0" border="1" style="table-layout:fixed">
+				<tr>
+					<td colspan="2">
+						<table width="100%" cellpadding="5" cellspacing="0" border="0" style="table-layout:fixed">
+							<tr>
+								<td class="center" colspan="2">
+								FOR USDAA USE ONLY
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="20px">
+								REG #
+								</td>
+								<td align="center">
+								UJHP #
+								</td>
+							</tr>
+							<tr>
+								<td height="20px" valign="bottom" class="center">
+								______________
+								</td>
+								<td valign="bottom" class="center">
+								______________
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top">
+			<span class="f10 bold">
+				<img src="/graphics/checkbox.png" />
+&nbsp;JUNIOR HANDLER REGISTRATION - $30.00
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<span>
+				Dogs must be registered with USDAA in order to compete in USDAA sanctioned events. A registration card 
+				and number with a "U" prefix will be issued to facilitate entry at USDAA events and tracking of show 
+				results in the regular classes.
+			</span>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2">
+			<span>
+				Junior handlers (those 18 years of age and younger) and their dogs must be separately registered for 
+				participation in the USDAA's Junior Handler Program (UJHP). A registration number with a "J" prefix 
+				will be assigned for use in entering UJHP events. A dog competing in both programs (regular classes 
+				and UJHP) must be registered separately for each program, for which the total fee is $60.00. <i>Register online at www.usdaa.com and save more than 10%.</i>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span class="bold underline">
+				You must complete ALL information for a valid registration:
+			</span>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2" class="pad-15">
+			<span class="bold">
+				OWNER/HANDLER INFORMATION:
+			</span>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Primary Owner: _________________________________________________________________________________________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Name(s) to appear on awards:___________________________________________________________________________ 
+			</span>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Junior Handler: _____________________________________ DOB:_____________ Telephone: _____________________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Address: _______________________________________________________________________________________________
+			</span>
+		</td>
+	</tr>	
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				City / State: _______________________________ Postal Code: ______________ Country: _____________________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Email Address: _________________________________________________________________________________________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-15">
+			<span class="bold">
+				DOG INFORMATION:
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Formal Name: ___________________________________________________Call Name: _____________________________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-minus-10" valign="top" style="">
+			<span class="f7">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Dog name to appear on certificates; please print clearly or type)
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-10">
+			<span>
+				Breed: __________________________________________ DOB: _____________________ Height @ Withers: ___________
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="pad-minus-10" valign="top">
+			<span class="f7">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				(Specify breed or state "All American to denote mix-breed)
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				(Estimate if unknown)
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				(To nearest 1/4")
+			</span>
+		</td>
+	</tr>		
+	
+	
+	
+	
+	
+	
+	
+</table>
+		
+	
+		
+							
+												
+					</div>
+				</div>
+			</div>
+		
+	</div>
+
+
+	  
+
+
+
+
+				
+				
+				
+				</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<br><br>
+
+<script language="javascript" type="text/javascript">
+	<!--
+	
+		placeFocus();
+	
+	//-->
+</script>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr> 
+    	<td>
+			<!-- Footer Nav -->
+			<table border="0" cellpadding="0" cellspacing="0" width="594">
+				<tr valign="top"> 
+					<td bgcolor="#636C97" valign="middle"> 
+						<div class="footerText2" align="center">
+							<a class="footerText2" href="index.cfm">Home</a>
+							| <a class="footerText2" href="aboutUs.cfm">About Us</a>
+							| <a class="footerText2" href="faq.cfm">FAQ</a>
+							| <a class="footerText2" href="news.cfm">News & Events</a>
+							| <a class="footerText2" href="awards_topten.cfm">Awards</a>
+							| <a class="footerText2" href="rulesReg.cfm">Rules & Regulations</a>
+							| <a class="footerText2" href="http://www.usdaatitlemania.com">Title Mania</a>
+							| <a class="footerText2" href="http://www.cynosport.com">Cynosport World Games</a>
+							<br>
+							<a class="footerText2" href="generalInfo.cfm">General Information</a>
+							| <a class="footerText2" href="/competitorServices">Competitor Services</a>
+							| <a class="footerText2" href="groupInfoSer.cfm">Group Services</a>
+							| <a class="footerText2" href="contactUs.cfm">Contact Us</a>
+							| <a class="footerText2" href="legalNotices.cfm">Legal Notices</a>
+						</div>
+					</td>
+				</tr>
+				<tr valign="top"> 
+					<td align="center">
+						Copyright &copy; 2004-2016. United States Dog Agility Association, Inc. All rights reserved.
+					</td>
+				</tr>
+				<tr>
+				<td>&nbsp;</td>
+				</tr>
+				
+			</table>
+		</td>
+	</tr>
+	<tr>
+    <td>&nbsp;
+			<!-- Banner Space -->
+			<!--img src="images/secondPage_r21_c01.gif" width="750" height="105"-->
+		</td>
+  </tr>
+</table>
+
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21002147-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+</body>
+
+</html>
+
+															

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Debra Dalgleish">
+    <meta name="description" content="How to use Excel RANK function. Calculates rank of number in a list, ascending or descending order. Videos and free workbook">
+	<meta name="KeyWords" content="Excel Rank, Microsoft Excel, Excel functions, Rank function, RANK Function Excel, Excel RANK function">
+	<link rel="author" href="https://plus.google.com/108279571932575172220/posts"/>
+	
+    <title>Excel RANK Function Examples</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css_readable/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9531091850463532",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+<!-- #BeginLibraryItem "/Library/NavBar_Static_Black.lbi" -->    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.contextures.com/">Contextures</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://www.contextures.com/tiptech.html">Tips</a> </li>
+                    <li><a href="http://www.contextures.com/excelfiles.html">Files</a></li>
+                    <li><a href="http://www.contextures.com/contexturesproducts.html">Products</a></li>
+                    <li><a href="http://blog.contextures.com/">Blog</a></li>
+                    <li><a href="#search">Search</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+<!-- #EndLibraryItem -->
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            
+    <div class="col-lg-8"> 
+	
+	<!-- Blog Post --> 
+	
+	<!-- Title --> 
+	<a href="http://www.contextures.com/index.html"><img class="img-responsive" src="http://www.contextures.com/contextures.gif" alt="Contextures" width="314" height="49"></a> 
+      <h1>Excel RANK Function Examples</h1>
+				
+      <p>Use the RANK function to compare numbers to other numbers 
+            in the same list. Watch the videos, and get the free RANK workbook</p>
+				<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- Responsive Top -->
+				<ins class="adsbygoogle"
+					 style="display:block"
+					 data-ad-client="ca-pub-9531091850463532"
+					 data-ad-slot="6574318169"
+					 data-ad-format="auto"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script></p>
+				<!-- Subheadings Well -->
+                <div class="well">
+
+                  <div class="row">
+                        <div class="col-lg-6">
+							  <p><a href="#basics">How to Use RANK Function</a></p>
+							  <p><a href="#arguments">RANK Function Arguments</a> </p>
+							  <p><a href="#ties">RANK Function With Ties</a></p>
+                        </div>
+                        <div class="col-lg-6">
+							  
+            <p><a href="#ties">Break Ties With RANK Function</a>				  </p>
+            <p><a href="#videosplit">Split Winnings for Tied Rank</a>				  </p>
+            <p><a href="#download">Download the Sample File</a></p>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Post Content -->
+           <h2 align="left"><a name="videorank"></a><a name="basics"></a>How to Use the RANK Function</h2>
+          <p align="left">Use the RANK function to compare numbers to other numbers 
+            in the same list. See the steps in this video, and the written instructions 
+            are below the video.<a href="http://blog.contextures.com/archives/2010/03/22/calculating-rank-in-excel/"></a></p>
+<p><iframe width="420" height="266" src="//www.youtube-nocookie.com/embed/Pu32MJHL2nw?rel=0" allowfullscreen="yes"> Your browser can't show this frame. Here is a <a href="http://youtu.be/Pu32MJHL2nw" rel="nofollow" target="_blank">link</a> to the page</iframe></p> 
+ 
+
+      <h3>How to Use the RANK Function</h3>
+          <p>If you give the RANK function a number, and a list of numbers, it 
+            will tell you the rank of that number in the list, either in ascending 
+            or descending order.</p>
+          <p>For example, in the screen shot below, there is a list of 10 student 
+            test scores, in cells B2:B11. </p>
+          <p>To find the rank of the the first student's score in cell B2, enter 
+            this formula in cell C2:</p>
+          <p><strong>=RANK(B2,$B$2:$B$11)</strong></p>
+          <p><img class="img-responsive" src="images/RankScores02.png" width="323" height="228" border="1" alt="rank function 02"></p>
+          <p>Then, copy the formula from cell C2 down to cell C11, and the scores 
+            will be ranked in descending order.</p>
+          <p><img class="img-responsive" src="images/RankScores01.png" width="229" height="219" border="1" alt="rank function 01"></p>
+          <h3> <a href="#Top"><img src="images/scrollup.gif" alt="go to top" width="9" height="11" class="img-responsive" border="0"></a> 
+          </h3>
+          <p> </p>
+        
+
+          <h2><a name="arguments"></a>RANK Function Arguments</h2>
+          <p>There are 3 arguments for the RANK function:</p>
+          <ul>
+            <li><strong>number</strong>: in the above example, the number to rank 
+              is in cell <b>B2</b></li>
+            <li><strong>ref</strong>: We want to compare the number to the list 
+              of numbers in cells <b>$B$2:$B$11</b>. Use an absolute reference 
+              ($B$2:$B11), instead of a relative reference (B2:B11)so the referenced 
+              range will stay the same when you copy the formula down to the cells 
+              below</li>
+            <li><strong>order</strong>: (optional) This argument tells Excel whether 
+              to rank the list in ascending or descending order. 
+              <ul>
+                <li>Use zero, or leave this argument empty, to find the rank in 
+                  the list in descending order. In the example above, the order 
+                  argument was left blank, to find the rank in descending order.<br>
+                  <strong>=RANK(B2,$B$2:$B$11)</strong> </li>
+                <li>For ascending order, type a 1, or any other number except 
+
+                  zero. <br>
+                  If you were comparing golf scores, you could type a 1, to rank 
+                  in ascending order. <br>
+                  <strong>=RANK(B2,$B$2:$B$11<font color="#CC0033">,1</font>)</strong> 
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+      <p><a href="#Top"><img src="images/scrollup.gif" alt="go to top" width="9" height="11" class="img-responsive" border="0"></a> </p>
+
+      <h2><a name="ties"></a>RANK Function Ties</h2>
+          <p>What happens to the ranking if some of the scores are tied? Excel will skip subsequent numbers, if necessary, to show the correct rank. </p>
+          <ul>
+            <li>In this example above, the last two scores in the list are the same -- 38. 
+              The two students, Ivy and Joe, are both <strong>ranked as 4th.</strong></li>
+            <li>The next highest score -- Ed's score of 36 -- is <strong>ranked as 6th</strong>, not 
+              5th, because there are 5 students ahead of him.</li>
+          </ul>
+          <p>If you have to break the ties, or award prize money based on ties, there are examples below.</p>
+          <p><a href="#ties">Break Ties With RANK Function</a></p>
+      <p><a href="#videosplit">Split Winnings for Tied Rank</a></p>
+
+          <h3><a name="break"></a><a name="break"></a>Break Ties With RANK Function</h3>
+          <p>In some cases, ties aren't allowed, so you have to find a way to 
+            break the tie. </p>
+          <p>Watch this video to see the steps, and the written instructions are 
+            below the video.</p>
+<p><iframe width="420" height="266" src="//www.youtube-nocookie.com/embed/_fD5vhb36j0?rel=0" allowfullscreen="yes"> Your browser can't show this frame. Here is a <a href="http://youtu.be/_fD5vhb36j0" rel="nofollow" target="_blank">link</a> to the page</iframe></p> 
+
+      <p></p>
+          <h3>Break Ties With RANK Function</h3>
+          <p>In some cases, ties aren't allowed, so you have to find a way to 
+            break the tie. </p>
+          <p>In this example, you could keep track of the number of minutes that 
+            each student worked on the test, and use that time to break any ties. 
+            If scores are tied, the student who takes less time to complete the 
+            test will rank ahead of the other student with the same score. </p>
+          <h4>Calculate Decimal Amount for Tied Scores</h4>
+          <p>I added the Test Times in column C, and a TieBreak formula in column 
+            E.</p>
+          <p><strong>=IF(COUNTIF($B$2:$B$11,B2)&gt;1, <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RANK(C2,$C$2:$C$11,1)/100,0)</strong></p>
+          <p><img class="img-responsive" src="images/RankScores03.png" width="446" height="262" border="1" alt="rank function 01"></p>
+          <h4>How the Tie Break Formula Works</h4>
+          <p>The Tie Break formula uses COUNTIF and RANK functions, wrapped with 
+            an IF function, to see if a tie breaking decimal amount should be 
+            added to the original Rank.</p>
+          <ol>
+            <li>First, the TieBreak formula checks to see IF there is more than 
+              one instance of the number in the entire list:<br>
+              <strong>&nbsp;&nbsp;&nbsp;IF(COUNTIF($B$2:$B$11,B2)&gt;1</strong> 
+            </li>
+            <li>If there is more than one instance, it ranks the Times in <i>ascending</i> 
+              order, because a lower time is better:<br>
+              <strong>&nbsp;&nbsp;&nbsp;RANK(C2,$C$2:$C$11<font color="#CC0033">,1</font>)</strong> 
+            </li>
+            <li>Next, it divides that amount by 100, to get a decimal amount. 
+              Later, you'll add this decimal amount to the original Rank.<br>
+              <b>Note</b>: The divisor, 100, could be changed to another number, 
+              if you are working with a longer list.<br>
+              &nbsp;&nbsp;<b>&nbsp;/100</b> </li>
+            <li>Finally, to complete the IF function, if there is only one instance 
+              a a Rank, the result for the TieBreak is zero.<br>
+              &nbsp;&nbsp;&nbsp;<b>,0)</b> </li>
+          </ol>
+          <h4>Calculate the Final Rank</h4>
+          <p>After calculating the tie breaking decimal amounts, you can add the 
+            RANK function results to the TieBreak results, to get the final ranking.</p>
+          <p>In this example, two students were tied in 4th place. Joe took 27 
+            minutes to complete the test, and his Time was ranked 5th. Ivy took 
+            29 minutes to complete the test, and her Time was ranked 9th.</p>
+          <p>The Tie Break formula adds a decimal of 0.09 to Ivy's score, and 
+            0.05 to Joe's score. In the final ranking, Joe, with 4.05 ranks higher 
+            than Ivy, with 4.09.</p>
+          <p><img class="img-responsive" src="images/RankScores04.png" width="376" height="80" border="1" alt="rank function 01"></p>
+          <p><a href="#Top"><img src="images/scrollup.gif" alt="go to top" width="9" height="11" class="img-responsive" border="0"></a></p>
+        <p> </p>
+
+          <h2><a name="videosplit"></a><a name="split"></a>Split Winnings for Tied Rank</h2>
+          <p>In a tournament, instead of breaking the ties, you might want to 
+            split the winnings among any tied players, if you're awarding a cash 
+            prize, or points. To see the steps for splitting the winnings, watch 
+            this short video. The written instructions are below the video.</p>
+<p><iframe width="420" height="266" src="//www.youtube-nocookie.com/embed/a_72Y_6fYcw?rel=0" allowfullscreen="yes"> Your browser can't show this frame. Here is a <a href="http://youtu.be/a_72Y_6fYcw" rel="nofollow" target="_blank">link</a> to the page</iframe></p> 
+
+      <p></p>
+
+          <h3>Split Winnings for Tied Rank</h3>
+          <p>In a tournament, instead of breaking the ties, you might want to 
+            split the winnings among any tied players, if you're awarding a cash 
+            prize, or points. If 2 or more players have the same rank, they split 
+            the prize amount available for that rank, down to the next occupied 
+            rank. </p>
+          <p>Below is a sample prize table, showing the amount awarded for each 
+            rank. In this example, if 3 players are at rank 1, they would split 
+            the total amount (10+9+8=27) for ranks 1, 2 and 3. </p>
+          <p><img class="img-responsive" src="images/RankScores05.png" width="107" height="260" border="1" alt="rank function ties 01"></p>
+          <p>Each of the 3 players at rank 1 earns 9 (27/3 = 9) and the player 
+            with the next highest score would be ranked 4th, and earn 7. </p>
+          <h4>Calculate the Split Amount</h4>
+          <p>To split the prize amount among tied players, the Prize formula uses 
+            the AVERAGE function, with the OFFSET function finding the range of 
+            cells to average.This formula is entered in cell D2 and copied down 
+            to cell D11.</p>
+ 
+            <p><b>=AVERAGE(OFFSET($K$1,C2,0, COUNTIF($C$2:$C$11,C2)))</b></p>
+
+          <p><img class="img-responsive" src="images/RankScores06.png" width="385" height="322" border="1" alt="rank function 01"></p>
+          <h4>How the Prize Formula Works</h4>
+          <p> The Prize formula uses the AVERAGE function, with the OFFSET function 
+            finding the range of cells to average.</p>
+
+      <ol>
+            <li>The AVERAGE function will calculate the amount for each player, 
+              based on a specific range of cells:<br>
+              <strong>&nbsp;&nbsp;&nbsp;AVERAGE(</strong> </li>
+            <li>The OFFSET function returns the range with the amounts to use 
+              for the average:<br>
+              <strong>&nbsp;&nbsp;&nbsp;OFFSET(</strong> </li>
+            <li>In the OFFSET formula, the 1st argument is the reference cell. 
+              In this example, that is cell K1 -- the heading for the Prize amounts 
+              column. <br>
+              &nbsp;&nbsp;<b>&nbsp;$K$2,</b> </li>
+            <li>In the OFFSET formula, the 2nd argument is the number of rows 
+              down from the reference cell, that the cells to average start. The 
+              ranks are listed in ascending order, so for the Rank of 1, the cells 
+              to average would start 1 row down from the Reference cell of $K$1. 
+              The first player's rank is in cell C2, so refer to that in the formula<br>
+              &nbsp;&nbsp;<b>&nbsp;C2,</b> </li>
+            <li>In the OFFSET formula, the 3rd argument is the number of columns 
+              to the right of the reference cell, that the cells to average start. 
+              You want to find amounts in the same column, so the number is zero<br>
+              &nbsp;&nbsp;<b>&nbsp;0,</b> </li>
+            <li>In the OFFSET formula, the 4th argument is the number of rows 
+              to include in the range. This should be the number of players who 
+              are tied at that rank. The COUNTIF function will count the instances 
+              of the rank in column C, that are equal to the rank in C2<br>
+              &nbsp;&nbsp;<b>&nbsp;COUNTIF($C$2:$C$11,C2)</b> </li>
+          </ol>
+        <h2><a name="download"></a>Download the Sample File </h2>
+          <p>Download the zipped sample <a href="ExcelRankFunctionExample.zip">Excel 
+            RANK Function</a> file </p>
+
+
+          </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well --><a name="search"></a>
+                <div class="well">
+				   <style type="text/css">
+					@import url(//www.google.com/cse/api/branding.css);
+					</style>
+					<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000">
+					  <div class="cse-branding-form">
+						<form action="http://www.contextures.com/searchresultsctx.html" id="cse-search-box">
+						  <div>
+							<input type="hidden" name="cx" value="partner-pub-9531091850463532:3065461762" />
+							<input type="hidden" name="cof" value="FORID:10" />
+							<input type="hidden" name="ie" value="UTF-8" />
+							<input type="text" name="q" size="31" />
+							<input type="submit" name="sa" value="Search" />
+						  </div>
+						</form>
+					  </div>
+					  <div class="cse-branding-logo">
+						<img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+					  </div>
+					  <div class="cse-branding-text">
+						Custom Search
+					  </div>
+					</div>
+                </div>
+
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                  <h4>Related Links</h4>
+				  <p><a href="excel-template-golf-scores.html">Golf Score Template</a></p>
+				  <p><a href="excelaveragefunctions.html">AVERAGE</a></p>
+				  <p><a href="xlFunctions04.html">COUNT / COUNTIF</a></p>
+				  <p><a href="excelhlookupfunction.html">HLOOKUP</a></p>
+				  <p><a href="excelminmaxfunction.html">MIN / MAX</a> </p>
+				  <p><a href="xlFunctions01.html">SUM / SUMIF</a></p>
+				  <p><a href="xlFunctions02.html">VLOOKUP</a></p>
+				</div>
+
+                <!-- Ads -->
+					<blockquote><p>&nbsp; </p>
+        </blockquote>
+        <p align="center"><a href="30excelfunctionsin30days01.html"><img text="30 Excel Functions in 30 Days" src="images/30xl30dCover_180x234.png" width="180" height="234" border="1" alt="30 Excel Functions in 30 Days"></a></p>
+        <p align="center">&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <div class="AW-Form-1175035544"></div>
+<script type="text/javascript">(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//forms.aweber.com/form/44/1175035544.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, "script", "aweber-wjs-lvebp513x"));
+</script> 
+        <p align="center">&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <p align="center"><a href="http://www.contextures.com/exceltoolsaddin.html"><img  src="/images/aff/XLT_banner_160x490.png" alt="Excel Tools" width="160" height="490" class="img-responsive" border="0"></a></p>
+        <p align="center">&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <p align="center">&nbsp;</p>
+        <p align="center"> 
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Responsive Vertical --> <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9531091850463532"
+     data-ad-slot="8051051361"
+     data-ad-format="vertical"></ins> 
+          <script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        </p>
+        <p align="center">&nbsp; </p>
+        <p align="center">&nbsp;</p>
+        
+
+        
+		
+                <div class="well">
+					<!-- AWeber Web Form Generator 3.0 -->
+
+					<form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl"  >
+					<div style="display: none;">
+					<input type="hidden" name="meta_web_form_id" value="1834975337" />
+					<input type="hidden" name="meta_split_id" value="" />
+					<input type="hidden" name="listname" value="ctxtips01" />
+					<input type="hidden" name="redirect" value="http://www.contextures.com/exceltipstart10082789432.html" id="redirect_6997ec630ff505287c2051df41ac3965" />
+
+					<input type="hidden" name="meta_adtracking" value="CT_Red_Narrow" />
+					<input type="hidden" name="meta_message" value="1" />
+					<input type="hidden" name="meta_required" value="name,email" />
+
+					<input type="hidden" name="meta_tooltip" value="" />
+					</div>
+					<div id="af-form-1834975337" class="af-form"><div id="af-header-1834975337" class="af-header"><div class="bodyText"><p><span style="font-size: 24px;"><strong>&nbsp;Get Excel News</strong></span></p></div></div>
+					<div id="af-body-1834975337"  class="af-body af-standards">
+					<div class="af-element">
+					<label class="previewLabel" for="awf_field-71636576">Name: </label>
+					<div class="af-textWrap">
+					<input id="awf_field-71636576" type="text" name="name" class="text" value=""  onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " tabindex="500" />
+					</div>
+					<div class="af-clear"></div></div>
+					<div class="af-element">
+					<label class="previewLabel" for="awf_field-71636577">Email: </label>
+					<div class="af-textWrap"><input class="text" id="awf_field-71636577" type="text" name="email" value="" tabindex="501" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+					</div><div class="af-clear"></div>
+					</div>
+					<div class="af-element buttonContainer">
+					<input name="submit" id="af-submit-image-1834975337" type="image" class="image" style="background: none; max-width: 100%;" alt="Submit Form" src="https://forms.aweber.com/images/forms/pointer/alert/button.png" tabindex="502" />
+					<div class="af-clear"></div>
+					</div>
+					</div>
+					</div>
+					<div style="display: none;"><img src="https://forms.aweber.com/form/displays.htm?id=jBzMLJzsrMzM7A==" alt="" /></div>
+					</form>
+
+
+					<!-- /AWeber Web Form Generator 3.0 -->
+				</div>
+
+        
+    <p>&nbsp;</p>			
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- Responsive Vertical -->
+			<ins class="adsbygoogle"
+				 style="display:block"
+				 data-ad-client="ca-pub-9531091850463532"
+				 data-ad-slot="8051051361"
+				 data-ad-format="vertical"></ins>
+			<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p>        
+    <p align="left"><a href="30excelfunctionsin30days01.html"><img text="30 Excel Functions in 30 Days" src="images/30xl30dCover_212x275.png" width="212" height="275" border="2" alt="30 Excel Functions in 30 Days"></a></p>
+    <p>&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p><a href="http://www.decisionmodels.com/FastExcelV3_Buy.htm?source=contextures"><img src="/images/aff/fastexcel/FastExcelV3.jpg" alt="Fast Excel" width="230" height="230" class="img-responsive" border="1"></a></p>
+          <hr>
+
+    <!-- #BeginLibraryItem "/Library/Footer_Small.lbi" -->        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    
+    <p>Copyright &copy; Contextures Inc. 2016</p>
+					<p><a href="/privacy.html">Privacy Policy</a></p>
+					<p><a href="https://mvp.microsoft.com/en-us/mvp/Debra%20%20Dalgleish-7612"><br>
+          				<img class="img-responsive" src="/images/MVPLogo06H.jpg" width="120" height="49" border="0" alt="MVP Logo"><br>
+          				</a><a href="https://mvp.microsoft.com/en-us/mvp/Debra%20%20Dalgleish-7612">Debra Dalgleish</a></p>
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+<!-- #EndLibraryItem --> 
+
+    <p>Last updated: <!-- #BeginDate format:Am1a -->September 4, 2016 3:09 PM<!-- #EndDate --> 
+    </p>
+
+
+    </div>
+    <!-- /.container -->
+
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+    <!-- jQuery -->
+    <!-- script src="js/jquery.js"></script -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- script src="js/bootstrap.min.js"></script --><!-- #BeginLibraryItem "/Library/analytics_code.lbi" --><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2794720-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" src="//analytics.aweber.com/js/awt_analytics.js?id=5IhJ"></script>
+
+
+<!-- #EndLibraryItem --></div></body>
+
+</html>

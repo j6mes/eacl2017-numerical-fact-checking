@@ -1,0 +1,4703 @@
+ <!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if(top != self) {
+  top.location = self.location;
+}
+</script>
+
+<html xmlns="//www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
+
+	
+		
+		 
+		 
+		
+	
+	
+	<head> 
+		<title>BIGFLIX - Watch Movies Online | Hindi Movies | Tamil Movies | Telugu Movies | Malayalam| Download Movies | Bollywood on Demand across PC, Mobile, iPad, iPhone and Android</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta property="og:site_name" content="Bigflix Watch Online Movie"/>
+		<meta property="og:title" content="BIGFLIX - Watch Movies Online | Hindi Movies | Tamil Movies | Telugu Movies | Malayalam| Download Movies | Bollywood on Demand across PC, Mobile, iPad, iPhone and Android">
+		
+		<meta property="og:image:type" content="image/jpg">
+		<meta property="og:image" content="https://www.bigflix.com/apache_file/images/ui/rewamp/imgnf.jpg">
+		<meta property="og:image:width" content="200">
+		<meta property="og:image:height" content="280">
+		<meta property="fb:app_id" content="115242405266241" />
+		<meta property="og:type" content="video.other"/>
+		<meta name="description" content="Bigflix.com is Video on demand service, where you can watch movies online, stream at DVD quality with no ad breaks,Just visit bigflix.com now to select new and upcoming releases. Bigflix is India's premier movies on demand service offering 1000+ movies in Hindi, Tamil, Telugu, Malayalam, Punjabi and many other Indian languages. Now get to see Bollywood movies in the comfort of your home on PC, iPad, iPhone, Android and smart TV. Watch Movies Online or Streaming right to your TV and many other devices. Only Rs249/month."/>
+		<meta name="keywords" content="bollywood, download movies, full movie, watch movies, movies online, stream movies, instant streaming, full length movies, online, new movies, dvd movies, new on dvd, new movie releases, top dvd rentals, Watch Movie Online, Hindi Movies Online, Punjabi Movies, Watch Telugu Movies, Watch Malayalam movies, Watch Tamil Movies, Watch Hindi Movies, Watch English movies, android app"/> 
+		<meta name="robots" content="index, follow"/>
+		<meta name="revisit-after" content="1 day"/>
+		<meta name="copyright" content="Bigflix"/>
+		<meta name="googlebot" content="noodp"/>
+		<meta name="language" content="English"/>
+		<meta name="web_author" content="Bigflix.com"/>
+		<meta name="author" content="BIGFlix.com" />
+		<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="rating" content="general"/>
+		<meta name="distribution" content="global"/>
+		<meta name="verify-v1" content="jOTERuXym8kYRrzYh1CVQWkXSBthh9kelxjXA4C1wbk=" />
+		<meta name="google-site-verification" content="yBr4_74hfCyAtqFILFANtHre-3yFXNMduotV_Y_N1ik" />
+		<meta http-equiv="X-Frame-Options" content="deny">
+		
+	
+	<!-- SET: Mobile Specific Metas -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- END: Mobile Specific Metas -->
+	
+    
+    <!-- SET: STYLESHEET -->
+        <link href="//cdnvod101.bigflicks.com/apache_file/css/ui/rewamp/barebone_rewamp_packed.css" rel="stylesheet" type="text/css" media="all">
+    <!-- END: STYLESHEET -->
+	
+	<!-- SET: SCRIPTS -->
+        <script type="text/javascript" src="//cdnvod102.bigflicks.com/apache_file/js/ui/rewamp/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdnvod103.bigflicks.com/apache_file/js/ui/rewamp/jq-plug-packed.js"></script>
+        <script type="text/javascript" src="//cdnvod101.bigflicks.com/apache_file/js/ui/rewamp/jq-custom-packed.js"></script>
+        <script type="text/javascript" src="//cdnvod102.bigflicks.com/apache_file/js/ui/rewamp/jquery.screwdefaultbuttonsV2.js"></script>
+        <script type="text/javascript" src="//cdnvod103.bigflicks.com/apache_file/js/ui/rewamp/watermarkify.0.6.js"></script>
+        <script type="text/javascript" src="//cdnvod101.bigflicks.com/apache_file/js/ui/rewamp/amazingslider.js"></script>
+    
+   
+
+<script type="text/javascript">
+var redirectURL = '' ;
+var userLoggedIn =  false;
+
+
+
+// Load HTML 5 Tags for IE support
+
+(function(){
+var html5elmeents = "address|article|aside|audio|canvas|command|datalist|details|dialog|figure|figcaption|footer|header|hgroup|keygen|mark|meter|menu|nav|progress|ruby|section|time|video".split('|');
+for(var i = 0; i < html5elmeents.length; i++){
+document.createElement(html5elmeents[i]);
+}
+}
+)();
+function resetLoginErrorBoxNew(){
+	$('#lgn_emailidnew').addClass('text-f');
+	$('#lgn_emailidnew').removeClass('text-f-error');	
+	$('#lgn_passwordnew').addClass('text-f');
+	$('#lgn_passwordnew').removeClass('text-f-error');	
+	$('#error_login').html('');
+}
+
+
+
+ $(document).ready(function(){ 
+	$(".text-f").watermarkify();
+	$(".capcha-text-f").watermarkify();
+	$("#search_data").watermarkify();
+	
+	$('#loginBtnnew').click(function(){
+		 var a = $.trim(jQuery("#lgn_emailidnew").val());
+		 var b = $.trim(jQuery("#lgn_passwordnew").val());
+		 resetLoginErrorBoxNew();
+		 showLoading();
+		 hideError("login");
+		
+		 if (isEmpty(a)) {
+		  showError("login", "Please enter email id", "lgn_emailidnew");
+		  jQuery("#lgn_emailidnew").val("");
+		  jQuery("#lgn_emailidnew").focus();
+		  hideLoading();
+		  return false
+		 } else {
+		  if (!validEmailAddress(a)) {
+		   showError("login", "Please enter valid email id", "lgn_emailidnew");
+		   jQuery("#lgn_emailidnew").focus();
+		   hideLoading();
+		   return false
+		  } else {
+		   if (isEmpty(b)) {
+		    showError("login", "Please enter password", "lgn_passwordnew");
+		    jQuery("#lgn_passwordnew").val("");
+		    jQuery("#lgn_passwordnew").focus();
+		    hideLoading();
+		    return false
+		   } else {
+		    var c = window.location.href.split("/")[2] + "";
+		    var d = (c.indexOf("localhost") == -1) ? "https:" : "http:";
+		    $.ajax({
+		     type : "GET",
+		     url : d + "//" + c + "/subscribe.do?callback=?",
+		     async : false,
+		     contentType : "application/json",
+		     data : {
+		      parameter : "signUp",
+		      email : a,
+		      password : encodeURI((escape(b))),
+		      rememberMe : true
+		     },
+		     dataType : "jsonp",
+		     success : function (e) {
+		      var f = e.msg;
+		      if (f != null) {
+		      	resposeHandler(f)
+		      }
+		     },
+		     error : function (g, e, f) {
+		    	 alert('Error');
+		    	 showError("login", "Network error!!!", "lgn_emailid1");
+		    	 jQuery("#lgn_emailid").focus();
+					 hideLoading();
+					 return false;
+		    	 //setTimeout('validateLogin()', 5000);
+		     },
+		     timeout:12000
+		    })
+		   }
+		  }
+		 }
+		
+		
+	})
+	
+	  $('#lgn_emailidnew,#lgn_passwordnew').keypress(function (e) {
+	       if (e.which == 13) {
+	         $('#loginBtnnew').trigger("click");
+	         return false;    
+	       }
+	     });
+	
+	 $('#reg_emailidnew,#reg_passwordnew,#reg_confirmPasswordnew,#reg_capchanew').keypress(function (e) {
+	       if (e.which == 13) {
+	         $('#register-btnnew').trigger("click");
+	         return false;    
+	       }
+	     });
+	
+	//Register Validation
+	
+	$('#register-btnnew').click(function(){
+		resetRegistrationErrorBoxNew();
+		 showLoading();
+		 hideError("register");
+		var emailid = $.trim(jQuery('#reg_emailidnew').val());
+	    var pass = $.trim(jQuery('#reg_passwordnew').val());
+		var confirmPass = $.trim(jQuery('#reg_confirmPasswordnew').val()); 
+		var capcha = $.trim(jQuery('#reg_capchanew').val());
+		if(isEmpty(emailid))
+        {
+		   showError('register','Please enter email id','reg_emailidnew');
+		   jQuery('#reg_emailidnew').val('');
+		   jQuery('#reg_emailidnew').focus();
+		   hideLoading();
+           return false;
+        }
+		else if(!validEmailAddress(emailid))
+        {
+		   showError('register','Please enter valid email id','reg_emailidnew');
+		   jQuery('#reg_emailidnew').focus();
+		    hideLoading();
+           return false;
+        }
+		else if(isEmpty(pass))
+        {
+		   showError('register','Please enter password','reg_passwordnew');
+		    jQuery('#reg_passwordnew').val('');
+		   jQuery('#reg_passwordnew').focus();
+		    hideLoading();
+           return false;
+        }
+		else if(false == (pass.length >= 5 && pass.length <11))
+        {
+			showError('register','Your password should be between 5-10 characters long.','reg_passwordnew');
+			jQuery('#reg_passwordnew').focus();
+			 hideLoading();
+            return false;
+        }
+		else if(pass.match(/^(?=.*\d)(?=.*[a-z])(?=.*[@#$%&]).{6,}.*$/g) ==null){
+        	showError('register','Password must contain one number,special char & alphabet','reg_passwordnew');
+			jQuery('#reg_passwordnew').focus();
+			 hideLoading();
+            return false;
+        	
+        }
+		else if(isEmpty(confirmPass))
+        {
+		   showError('register','Please enter confirm password','reg_confirmPasswordnew');
+		   jQuery('#reg_confirmPasswordnew').val('');
+		   jQuery('#reg_confirmPasswordnew').focus();
+		    hideLoading();
+           return false;
+        }
+        else if(confirmPass != pass)
+        {
+			showError('register','Password does not match. Please try again','reg_confirmPasswordnew');
+			jQuery('#reg_confirmPasswordnew').focus();
+			 hideLoading();
+            return false;
+        }
+		else if (isEmpty(capcha))
+        {
+		   showError('register','Please enter captcha code','reg_capchanew');
+// 		    jQuery('#reg_capchanew').val('');
+		   jQuery('#reg_capchanew').focus();
+		    hideLoading();
+           return false;
+        }
+		else if (capcha != null)
+		{
+			//captch check
+			var domain = window.location.href.split("/")[2] + '';
+		var protocol = (domain.indexOf('localhost')==-1) ? 'https:' :  'http:';
+		$.ajax({
+			type: 'POST',
+			url:protocol+'//'+domain+'/subscribe.do',
+			data : {
+				parameter : "validateCapcha", 
+				answer : capcha
+			}, 
+			success: function(d) {
+				data=eval("(" + d + ")");
+				if ($.trim(data[0].msg)=="INVALID")
+			    {
+				   showError('register','Captcha code is incorrect','reg_capchanew');
+// 				   jQuery('#reg_capchanew').val('');
+				   jQuery('#reg_capchanew').focus();
+				   hideLoading();
+			       return false;
+			    }
+				else
+					{
+					callValidate(emailid,pass,confirmPass,capcha);
+					}
+			},
+		     error : function (g, e, f) {
+		    	 alert('Error');
+		    	 showError("register", "Network error!!!", "lgn_emailid1");
+		    	 jQuery('#reg_emailidnew').focus();
+				 hideLoading();
+				 return false;
+		    	 //setTimeout('validateLogin()', 5000);
+		     },
+		     timeout:12000
+			});
+		}
+	
+	})
+	
+});
+ 
+ function callValidate(emailid,pass,confirmPass,capcha)
+	{
+		var url = window.location.href;
+		var domain = url.split("/")[2] + '';
+		jQuery.ajax({
+     type: "POST",
+     url:"/xaja/cc",
+     data: { e: emailid },
+     success: function(msg) {
+         if(msg == "DUPLICATE"){
+
+				showError('register','Email id is already registered . Please try another email id','reg_emailidnew');
+				jQuery('#reg_emailidnew').focus();
+				 hideLoading();
+				 return false;
+         } else if (msg == "UNIQUE"){
+
+				var domain = window.location.href.split("/")[2] + '';
+				var protocol = (domain.indexOf('localhost')==-1) ? 'https:' :  'http:';
+					$.ajax({
+							type: 'GET',
+							url:protocol+'//'+domain+'/subscribe.do?callback=?',
+							async: true,
+							contentType: "application/json",
+							data: {parameter: "signUp",email:emailid,password:encodeURIComponent(pass),confirmPassword :encodeURIComponent(confirmPass),answer:capcha},
+							dataType: 'jsonp',
+							success: function(json) {
+							var responseText = json.msg;
+	                				if(responseText  != null)
+	                				{
+	                   					resposeHandler(responseText);
+	                				}
+				 		},
+							error: function (xhr, ajaxOptions, thrownError) {
+ 							//alert('Error: '+thrownError);
+			 				}
+					});
+			}
+     			}
+ 		});
+	}
+	
+ 
+ function resetRegistrationErrorBoxNew(){
+		$('#reg_emailidnew').addClass('text-f');
+		$('#reg_emailidnew').removeClass('text-f-error');	
+		$('#reg_passwordnew').addClass('text-f');
+		$('#reg_passwordnew').removeClass('text-f-error');		
+		$('#reg_confirmPasswordnew').addClass('text-f');
+	    $('#reg_confirmPasswordnew').removeClass('text-f-error');
+		$('#reg_capchanew').addClass('text-f');
+	    $('#reg_capchanew').removeClass('text-f-error');
+	    $('#error_register').html('');		    
+}
+
+</script>
+
+	
+
+        
+        
+		<!-- SET: FAVICON -->
+			<link rel="shortcut icon" type="image/x-icon" href="/apache_file/favicon.ico"> 
+			<link rel="icon" type="image/png" href="/apache_file/bigflix.png">
+			
+		<!-- END: FAVICON -->
+				
+	</head>
+ 	<body>
+		<div class="dwnCont">
+			<div id="android_phone_app"  style="display:none;">
+				<a href="https://play.google.com/store/apps/details?id=com.bigflix.BigFlixMovies" >
+				<div class="android-phone-msg"></div>
+				</a>
+			</div>
+			<br>
+			<div id="android_tablet_app"  style="display:none;">
+				<a href="https://play.google.com/store/apps/details?id=com.bigflix.bigflixtablet&hl=en">
+				<div class="android-tablet-msg"></div>
+				</a>
+			</div>
+			<br>
+			<div id="iOS_app" style="display:none;">
+				<a href="https://itunes.apple.com/us/app/bigflix-hd/id469988374?ls=1&mt=8">
+				<div class="ios-phone-msg"></div>
+				</a>
+			</div>
+			<br>
+			<div id="windows_phone_app" style="display:none;">
+				<a href="http://www.windowsphone.com/en-in/store/app/bigflix/c928834f-4547-4bb0-97ce-fdf6b00e6f1c">
+				<div class="windows-phone-msg"></div>
+				</a>
+			</div>
+			<div id="websiteview" style="display:none;" class="not-supported-phone-msg"></div>
+		</div>
+		<div  style="display:none">
+		      <div id="myAlertMsgBox"  class="popup">
+              <div class="alerttxt">
+              This is tested
+			  </div>
+              <div class="actionbtns" align="center"></div>
+			  </div>
+		</div>
+		<div  style="display:none">
+				<div id="myLoadingBox"  class="popup"></div>
+		</div>
+		 <input  name="redirectURL" id="redirectURL" type="hidden" value="">
+		  <div style='display:none'>
+                    <div id='login_register_form' style='padding:10px; background:#fff;' class="popup login-pop">
+                     <div id="register" style="display:none">
+                      <div class="login-title">Watch unlimited movies online</div>
+					  <div style="text-align: center">
+					    <a class="login-with-btn g-plus" href="javascript:void(0);" onclick="javascript:Glogin('0');"></a>
+						 <a class="login-with-btn" href="javascript:void(0);" onclick="javascript:fbLogin('0');"></a>
+						 
+						<a class="login-with-btn reliancedigitaltv" href="javascript:void(0);" onclick="javascript:relianceDigitalTVLogin();"></a>
+						
+					 </div>
+                      <hr class="hr-margin">
+                      <div class="login-sub-title">or use your email address</div>
+                      <div class="login-form">
+						<span id="error_register" class="form-error-txt" ></span>
+                      	<input class="text-f" id="reg_emailidnew" type="text" name="Email Address" autofocus />
+						<input class="text-f" id="reg_passwordnew" type="password" name="Password" >
+						<input class="text-f" id="reg_confirmPasswordnew" type="password" name="Confirm Password">
+						
+						<input class="capcha-text-f" id="reg_capchanew" type="text" name="Type Code" >
+						<img id="captcha_image" class="capchaimg" alt="captcha" src="/simpleImg" width="120" height="32"/>
+                        <input class="register-btn" name="register" type="button" value="Register" id="register-btnnew" >
+                      </div>
+                      <div class="login-form-links"> 
+                      	<div class="flt_Lt">Already a user? <a class="green" href="#" id="login-form">Login</a></div>
+                        			  			 					 					</div>
+                        </div>
+                        <div id="login" >
+                      <div class="login-title">Watch unlimited movies online</div>
+					  <div style="text-align: center">
+					    <a class="login-with-btn g-plus" href="javascript:void(0);" onclick="javascript:Glogin('0');"></a>
+						 <a class="login-with-btn" href="javascript:void(0);" onclick="javascript:fbLogin('0');"></a>
+						 
+						<a class="login-with-btn reliancedigitaltv" href="javascript:void(0);" onclick="javascript:relianceDigitalTVLogin();"></a>
+						
+					 </div>
+                      <hr class="hr-margin">
+                      <div class="login-sub-title">or use your email address</div>
+                      <div class="login-form">
+						<span id="error_login" class="form-error-txt" ></span>
+                      	<input class="text-f" id="lgn_emailidnew" type="text" name="Email Address" autofocus />
+                        <input class="text-f" id="lgn_passwordnew" type="password" name="Password" >
+                        <input class="register-btn" name="register" id="loginBtnnew" type="button" value="Login" >
+                      </div>
+                      <div class="login-form-links"> 
+                      	<div class="flt_Lt">Not an user? <a class="green" href="#" id="register-form">Register</a></div>
+						<div class="flt_Rt"><a class="green" href="javascript:void(0)" id="forgot-password-form">Forgot Password</a></div>
+					  </div>
+					  <div id="forgotPassword" class="login-form" style="display:none">
+						<span id="error_forgot" class="form-error-txt" ></span>
+                      	<input class="text-f"  id="forgot_emailid" type="text" name="Email Address" onkeypress="keyPressEventCall(this)">
+                        <input class="register-btn" name="register" type="button" value="Submit" onclick="validateForgotPassword()"> 
+                      </div>
+                    </div>
+                   <div id="reliance-digital-tv-login" style="display:none">
+                      <div class="login-title">Watch unlimited movies online</div>
+					  <div style="text-align: center">
+					    <a class="login-with-btn reliancedigitaltv" href="javascript:void(0);" style=" pointer-events: none; cursor: default; "></a>
+					 </div>
+                      <br>
+                      <div class="login-sub-title">Please Enter Smart Card Number</div>
+                      <div class="login-form">
+						<span id="error_reliancedigitaltv" class="form-error-txt" ></span>
+						<div id="rel_lgn_smartcardno_div">
+                      	<input class="text-f" id="rel_lgn_smartcardno" type="text" name="Smart Card Number" onkeypress="keyPressEventCall(this)">
+						</div>
+						<div id="rel_lgn_otp_div" style="display:none">
+                        <input class="text-f" id="rel_lgn_otp" type="text" name="OTP" onkeypress="keyPressEventCall(this)">
+						</div> 
+						<input  id="rel_lgn_otp_flag" type="hidden" value="0" >
+                        <input class="register-btn" name="register" type="button" value="Ok" onclick="validateRelianceDTHTVLogin()">
+						<input class="register-btn" id="otpregister" name="otpregister" type="button" value="Request New OTP" onclick="reganrateNewOTP()" style="display:none">
+						                      <div class="login-form-links"> 
+                      	<div class="flt_Lt">Already a user? <a class="green" href="#" id="login-form-reliancedigitaltv">Login</a></div>
+                        			  			 					 					</div>
+                      </div>
+                    </div>
+					<div id="reliance-digital-tv-login2" style="display:none">
+                      <div class="login-title">Watch unlimited movies online</div>
+					  <div style="text-align: center">
+					    <a class="login-with-btn reliancedigitaltv" href="javascript:void(0);" onclick="javascript:relianceDigitalTVLogin();"></a>
+					 </div>
+                      <br>
+                      <div class="login-sub-title">Please Enter Registration Details</div>
+                      <div class="login-form">
+						<span id="error_reliancedigitaltv2" class="form-error-txt-reg-log" ></span>
+                      	<input class="text-f" id="rel_lgn_emailid" type="text" name="Email Address" >
+						<input class="text-f" id="rel_lgn_password" type="password" name="Password" >
+						<input class="text-f" id="rel_lgn_confirmPassword" type="password" name="Confirm Password">
+                        <input class="register-btn" name="register" type="button" value="Ok" onclick="validateRelianceDTHTVRegistration()">
+						
+						<div class="login-form-links"> 
+                      	<div class="flt_Lt">Already a user? <a class="green" href="#" id="login-form-reliancedigitaltv2">Login</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+				  <div style='display:none'>
+                    <div id='set_password_form' style='padding:10px; background:#fff;' class="popup login-pop">
+                     <div id="setpassword">
+                      <div class="login-title">Set Password </div>
+					  
+                      <div class="login-form">
+					  <span class="displaytxt">To access your account across all our apps , please set a password.</span>
+						<span id="error_setpassword" class="form-error-txt" style="padding-top:10px"></span>
+						<input class="text-f" id="social_password" type="password" name="Password" onkeypress="keyPressEventCall(this)">
+						<input class="text-f" id="social_confirmPassword" type="password" name="Confirm Password" onkeypress="keyPressEventCall(this)">
+						<input  name="social_id" id="social_id" type="hidden">
+						<input  name="social_email" id="social_email" type="hidden" >
+						<input  name="social_firstName" id="social_firstName" type="hidden" >
+						<input  name="social_lastName" id="social_lastName" type="hidden" >
+						<input  name="social_applicationName" id="social_applicationName" type="hidden" >
+						<input  name="social_campaignId" id="social_campaignId" type="hidden" >
+						
+                        <input class="register-btn" name="setnow" type="button" value="Set Now" onclick="validateSetPassword('0')" >
+						<input class="register-btn" name="setlater" type="button" value="Set Later" onclick="validateSetPassword('1')">
+						<p> </p>
+					  </div> 
+                        </div> 
+                    </div>
+                  </div>
+		<!-- SET: WRAPPER -->
+		<div class="wrapper">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" async="false">
+        userId = 0;
+        var usertemp = null;
+        if(usertemp == null)
+        	{
+        		window.location.href ='/';
+        }
+        	
+        userLangPrefs = [];
+        jQuery(document).ready(function () {
+            populateLanguages(1);
+            //alert("null");
+            
+        });
+     
+	
+</script>
+<!-- SET: CONTAINER -->
+            <div class="sideFixed">
+                <div class="sideIn">
+                    <ul id="nav">
+                        <li id="FeaturedLink" >
+                             <a href="javascript:void(0);" onclick="log_ga_event('Left Menu','Click','Home','current','https://www.bigflix.com/watch-movies');">
+                                
+                                <span class="text"
+                                		alt="Home"
+                                		description="Home" 
+                                		title="Home"
+                                		caption ="Home">Home</span>
+                            </a>
+ 				       </li>
+                        <li id="MovieLink" >
+
+                             <a href="javascript:void(0);" onclick="log_ga_event('Left Menu','Click','Movies','current','https://www.bigflix.com/watch-all-movies');">
+                                
+                                <span class="text" alt="Watch Unlimited Movies"
+                                		description="Watch Unlimited Movies" 
+                                		title="Watch Unlimited Movies"
+                                		caption ="Watch Unlimited Movies">Movies</span>
+                            </a>
+
+                        </li>
+                        <li id="TrailerLink" >
+						
+                            <a href="javascript:void(0);" onclick="log_ga_event('Left Menu','Click','Free Trailers','current','https://www.bigflix.com/watch-trailers-movies');">
+							<span class="text" alt="Watch Free Trailers"
+									description="Watch Free Trailers" 
+									title="Watch Free Trailers"
+									caption ="Watch Free Trailers">Trailers</span>
+                            </a>
+
+                        </li>
+                        <li id="LanguageLink">
+                            <a  class="inline cboxElement languagesInline" href="javascript:void(0);">
+                                
+                                <span class="text" alt="Movies by language"
+                                		description="Movies by language"  
+                                		title="Movies by language"
+                                		caption ="Movies by language">Language</span>
+                            </a>
+                            <div style="display:none">
+                                <div id="inline_language" style="padding:10px; background:#fff;" class="popup">
+                                    <div class="search-advance">
+                                        <div class="search-advance-top">
+                                            <div style="text-align:center;">Movies by language</div>
+                                            
+                                        </div>
+                                        <hr class="pop-dvd">
+                                        <div class="search-list lang-list">
+                                            <div class="list" id="langList">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                 </div>
+                            </div>
+                        </li>
+                        
+                        <li id="MyPreminumLink">
+                            <a href="/premium-movies" onclick="log_ga_event('Left Menu','Click','Premium','current');location.href='https://www.bigflix.com/premium-movies'">
+                                 
+                                
+                               	  
+                                <span class="text" alt="Premium Movies Online"
+                                		description="Premium Movies Online"  
+                                		title="Premium Movies Online"
+                                		caption ="Premium Movies Online">Pay And Watch</span>
+                            </a>
+
+                        </li>
+                        
+                        <li id="DownloadsLink">
+                            <a href="javascript:void(0);" onclick="log_ga_event('Left Menu','Click','Downloads','current',null);openLoginWin()">
+                                <span class="ico"><img src="/apache_file/images/ui/rewamp/icon-5.png" alt="My Downloads"
+                                		description="My Downloads"  
+                                		title="My Downloads"
+                                		caption ="My Downloads"></span>
+                                <span class="text" alt="My Downloads"
+                                		description="My Downloads"  
+                                		title="My Downloads"
+                                		caption ="My Downloads">Downloads</span>
+                            </a>
+                        </li>
+
+                         
+                       <li id="LoginLink" > 
+                                <a class="loginRegisterInline" href="#" >
+                                
+                                    <span class="text" alt="Login"
+                                		description="Login"  
+                                		title="Login"
+                                		caption ="Login">Login</span>
+                                </a>
+                            </li>
+                        
+                       <li id="AboutUsLink">
+                            <a href="javascript:void(0);" onclick="log_ga_event('Left Menu','Click','About Us','current','https://www.bigflix.com/bigflix-about');">
+                                
+                                <span class="text" alt="About Us"
+                                		description="About Us"  
+                                		title="About Us"
+                                		caption ="About Us">About Us</span>
+                            </a>
+                        </li>
+                        <li id="SearchLink">
+                            <a href="#" class="searchbar">
+								
+							  
+							  <div class="search-container">
+							  <div class="search-field ui-widget"> 
+								<span role="status" aria-live="polite" class="ui-helper-hidden-accessible">10 results are available, use up and down arrow keys to navigate.</span>
+								<input type="text" placeHolder="Search" name="Search" class="ui-autocomplete-input" id="search_data_new" autocomplete="off" onkeypress="log_ga_event('Search','Keypress','Enter','current',null);keyPressEventCall(this)" />
+								  <input type="button" name="" onclick="log_ga_event('Search','Click','Search Icon','current',null);searchProducts();" class="blur search-icon" />
+								<input  name="search_data_value" id="search_data_value" type="hidden" />
+							  </div>
+							  
+							 <!-- <div id="resultCount" class="search-msg-box"></div>  -->
+							</div>
+                            </a>
+                        </li>
+
+                    </ul>
+                     
+
+
+
+
+<script type="text/javascript">
+
+ 	var DLMBridge = null;
+    
+    var LogAvailable = function(sender, e) {
+    	if (window.console && window.console.error){
+    		console.log('LogAvailable', e.Message);
+    	}
+    }
+
+    var MessageSendComplete = function(sender, e) {
+    	if (window.console && window.console.error){
+    		console.log('MessageSendComplete', e.Message, e.Error);
+    	}
+    }
+
+    var ErrorOccurred = function(sender, e) {
+    	if (window.console && window.console.error){
+    		console.log('ErrorOccurred', e.Message);
+    	}
+    }
+
+    function DLMBridgePluginLoaded(e, ver) {
+      DLMBridge = e;
+      if (window.console && window.console.error){
+      	console.log('DLMBridgePluginLoaded:', ver);
+      }
+
+      DLMBridge.ErrorOccurred = ErrorOccurred;
+      DLMBridge.MessageSendComplete = MessageSendComplete;
+      DLMBridge.LogAvailable = LogAvailable;
+    }
+
+     function addToDLM(url,productName,productId,fromPage) {
+	 productName = productName.replace(/[+]/g,' ');
+    	jQuery.ajax({
+	        type: "POST",
+	        url:"/BFDispatch.do",
+	        data: {productId: productId,link:url,parameter:'addDownloadDetails'},
+	        success: function(msg) {
+	            try {
+	            	showMsgBox(msg);
+	            	var message = '';
+//	            	var failure = "<input type='button' value='OK' onclick='javascript:closeModel();'/>";
+	            	var failure = 'Movie has been successfully added to your download queue!';
+	            	showMsgBox(failure);
+	            	if(msg.indexOf('UNSUB')!= -1)
+	            	{
+	            		message = "<div style=\"float: right; width: 100%; padding-bottom: 5px;\"><a style=\"float: right;\" href=\"javascript:void();\" onclick=\"javascript:closeModel();\"><img class=\"close\" height=\"14px\" width=\"16px\" alt=\"Click to close the window\" title=\"Click to close the window\" description=\"Click to close the window\" caption=\"Click to close the window\" src=\"/apache_file/images/ui/close-bttn.jpg\"></a></div>" ;
+	            		failure = "To Download Movies, Please <a href='javascript:void(0);' style='color:red;font-decoration:underline;' onclick='javascript:subscribeNow();'>Subscribe</a> to our Packages";
+            		   showMsgBox(failure);
+ 	            		//<br><br><input type='button' value='Subscribe' onclick='location.href=\"/package-list\"'/>&nbsp;&nbsp;";
+	            	}else if(msg.indexOf('ERROR')!= -1)
+	            	{
+	            		//failure = "<input type='button' value='OK' onclick='javascript:userLogin(\"login\");'/>";
+	            		  message = 'Please login first to add movie for download.';
+		        			showMsgBoxButton("Please login to add movie to your downloads.","openLoginWin()","Login","hideMsgBox()","Close");
+	            	}else{
+	            		var message = '<span style="color:red;">'+productName+'</span> Movie has been successfully added to your download list!';
+	            		if(fromPage=='MyDownload')
+						{
+						$("#editBox").show();
+						$("#instructionTxt1").hide();
+						$("#instructionTxt2").show();
+						}
+	            		if(msg.indexOf('alreadyAdded')!= -1)
+	            		{
+						// message = 'You have already downloaded '+productName+' movie. If you wish to download again, Please remove it from "My download" under "My Account" section';
+	            		   failure = 'You have already downloaded <span style="color:red;">'+productName+'</span> movie. If you wish to download again, Please remove it from your "Downloads"';
+	            		   showMsgBox(failure);
+	            		}
+	            		else 
+	            		{
+	            				//this is first time addition
+	            			if(msg.indexOf('new#SUCCESS')!= -1)
+	            			{
+		            		//	message = 'To start the download, you need to install our Download Manager (DLM). See <a style="color:blue;" target="_blank" href="/my-downloads"> here </a> for setup instructions.<br/> '+productName+' movie will be automatically added to your downloads once the DLM is installed';
+	            				failure = 'To start the download, you need to install our Download Manager (DLM). See <a style="color:blue;" target="_blank" href="/my-downloads"> here </a> for setup instructions.<br/> '+productName+' movie will be automatically added to your downloads once the DLM is installed';
+	        					showMsgBox(failure);
+ 	            			}
+	            			else
+	            				{
+	            				showMsgBox(message);
+	            				}
+							DLMBridge.SendMessage('<Item><Url><![CDATA['+url+']]></Url><Title><![CDATA['+productName+']]></Title><FileName>'+productName+'.cismv</FileName><ProductId>'+productId+'</ProductId></Item>');
+						}						
+					}
+					if (typeof fromPage !='undefined') {				
+						if(fromPage=='MyDownload')
+						{
+							autoRefreshMyDownloadList();
+							//autoRefreshMyDownloadRecommendedList();
+						}
+						else if(fromPage=='MyPopularDownloadRecommended')
+						{
+							//autoRefreshMyDownloadList();
+							reSetMyDownloadList();
+							autoRefreshMyDownloadRecommendedList();
+						}
+					}
+		     		//callModel();
+				}
+				catch (e) {
+					if (window.console && window.console.error){
+						console.log('1:', e);
+					}
+				}
+	    	}
+        });
+    }
+     var domainUrl = 'https://www.bigflix.com';
+     function subscribeNow(){
+    	 var domain = domainUrl.split("/")[2] + ''; 
+    	 if(domain.indexOf('localhost')==-1 && domain.indexOf('staging')==-1 && domain.indexOf('airteldev')==-1 )
+    		 {
+               	window.location.href = 'https://'+domain+'/subscribe.do?parameter=packageList';
+              }
+    	 else{
+    		   	window.location.href = '/subscribe.do?parameter=packageList';
+    	 	}
+    	 }
+    
+</script>
+    
+<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="1" height="1">
+    <param name="source" value="/apache_file/bigflix.dlm.bridge.web2dlm.host.xap" />
+    <param name="background" value="white" />
+    <param name="minRuntimeVersion" value="4.0.50826.0" />
+    <param name="autoUpgrade" value="true" />
+
+    <!-- <a href=http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50826.0 style="text-decoration: none">
+        <img src=http://go.microsoft.com/fwlink/?LinkId=161376 alt="Get Microsoft Silverlight" style="border-style: none" />
+    </a>-->
+</object>
+                  	<div id="logo" onclick="log_ga_event('Left Menu','click','Downloads','current','https://www.bigflix.com/watch-movies');">
+                  		<a href="javascript:void(0);">
+                  			<img src="/apache_file/images/ui/rewamp/logo.png" width="150" height="38" alt="Bigflix - Watch Movies Online"
+                  			title ="Bigflix - Watch Movies Online" description = "Bigflix - Watch Movies Online" caption ="Bigflix - Watch Movies Online">
+                  		</a>
+                 	</div>
+                </div>
+                   
+            </div>
+        <!-- END: CONTAINER -->
+         <!-- SEARCH CONTAINER  -->
+
+        <!-- END SEARCH CONTAINER -->
+
+
+        <script type="text/javascript"  async="false">
+    //onblur for input text field
+    $(document).ready(function() { 
+
+        $('input.blur').on('focus', function() {
+            // On first focus, check to see if we have the default text saved
+            // If not, save current value to data()
+            if (!$(this).data('defaultText')) $(this).data('defaultText', $(this).val());
+              // check to see if the input currently equals the default before clearing it
+            if ($(this).val()==$(this).data('defaultText')) $(this).val('');
+        });
+        $('input.blur').on('blur', function() {
+            // on blur, if there is no value, set the defaultText
+            if ($(this).val()=='') $(this).val($(this).data('defaultText'));
+        });
+
+
+    });
+
+    function getSuggestedData(val) {
+	alert(val);
+        if(val=='Search for Movies,Actors,etc..')
+        {
+
+            return;
+        }
+        //var url = "/xaja/SearchResults.do?parameter=autoSuggestForSearch&searchword="+val;
+        jQuery.ajax({
+            type: "Post",
+            url: "/xaja/SearchResults.do",
+            data: {parameter:"autoSuggestForSearch",searchword:val},
+            success: function(responseText)
+            {
+			alert(responseText);
+                if(responseText != null)
+                {
+                    var op = responseText.split("##");
+                    words = op[1].split("@#@");
+                    if ((words.length > 0) && (words[0]!='')){
+                        clearOutput();
+                        for (var i=0;i<words.length; ++i)
+                        {
+                            addWord (words[i]);
+                        }
+                        setVisible("visible");
+                        input = document.getElementsByName("text")[0].value;
+                    }
+                    else{
+                        setVisible("hidden");
+                        posi = -1;
+                    }
+                }
+            }
+        });
+    }
+
+    $(function() {
+        $( "#search_data_new").autocomplete({
+          //minLength:2,
+           source: function(request, response) {
+		      jQuery.ajax({
+            url: "/xaja/SearchResults.do?parameter=autoSuggestForSearch&searchword="+$("#search_data_new").val(), 
+            dataType: "json",
+            data: {
+                term: request.term
+            },
+            success: function (data) {
+                if (data != null && data != "") {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.name ,
+                            value: item.val 
+                        };
+                    }));
+                } else {
+                   // $('ul[class*=ui-autocomplete]').hide();
+                }
+            }
+        });
+        } ,
+		select: function(event, ui) {
+            $("#search_data_new").val(ui.item.label);
+			$("#search_data_value").val(ui.item.value);
+			searchProducts();
+			return false;
+        },
+        focus:function(event,ui) {
+        	$("#search_data_new").val(ui.item.label);
+        	$("#search_data_value").val(ui.item.value);
+        	return false;
+        	}
+       });
+    });
+
+
+    function populateLanguages(productTypeId){
+        var url = "/BFDispatch.do?parameter=getLanguages&producttypeid="+productTypeId;
+        jQuery.getJSON(url,function(data){
+            var langItems = [];
+            var htmlList = "";
+            jQuery.each(data,function(index,value){
+                if(jQuery.inArray(data[index].id,userLangPrefs) != -1){
+					langItems.push("<li><div class=language-title><a href=javascript:log_ga_event('Language','Click','"+data[index].name+"','current',null);selectLanguageForMovies('"+language+"') id='lang_lab_"+data[index].id+"'>&bull;&nbsp;"+data[index].name.toUpperCase()+"</a></div></li>");
+                }else{	
+					  var language = data[index].name;
+			langItems.push("<li><div class=language-title><a href=javascript:log_ga_event('Language','Click','"+language+"','current',null);selectLanguageForMovies('"+language+"') id='lang_lab_"+data[index].id+"'>&bull;&nbsp;"+data[index].name.toUpperCase()+"</a></div></li>");
+                }
+
+            });
+            htmlList += "<ul>"+langItems.join("");
+            jQuery("#langList").html(htmlList);
+            jQuery('#langList > ul > li > input:radio').screwDefaultButtons({
+                image: 'url("/apache_file/images/ui/rewamp/checkboxSmall.png")',
+                width: 43,
+                height: 43
+            });
+            $(".languagesInline").click(function(){
+				openLanguagePopup();
+            });
+			
+        });
+    }
+	function openLanguagePopup(){
+	   $.colorbox({inline:true, width:"650px", fixed:true , height :"350px" , href:"#inline_language"});
+       $("#cboxClose").show();
+       log_ga_event('Left Menu','Click','Language','current',null);
+	}
+    </script>
+
+<!-- Google Analytics -->
+<script text="text/javascript"  async="false">
+    function log_ga_event(category,action,label,page,redirectUrl){
+        var logToConsole=true;
+        try{
+            if(typeof ga != undefined){
+                if(typeof page != undefined && page !=''){
+                    if(page=='current'){
+                        page = window.location.pathname;
+                        ga('set', 'page',page);
+                    }else{
+                        ga('set', 'page', page);
+                    }
+                }
+                var value = 0;
+                 if(userId != 0 && userId != '0L'){
+                    value=1;
+                } 
+                ga('send','event',category,action,label,value);
+                if (logToConsole && typeof console == "object") {
+                    console.log('logged event '+category+":"+action+":"+value+":"+page);
+                }
+            }
+        }catch(error){
+            if (logToConsole && typeof console == "object") {
+                console.log('error logging event '+category+":"+action+":"+value+":"+page + " :: "+error);
+            }
+        }
+        if(redirectUrl != null)
+        {
+	        if(redirectUrl.match(/trailers/g) !==null ){
+	       	 $("#TrailerLink").addClass("selected"); 
+	        }
+        }
+        if(typeof redirectUrl != undefined && redirectUrl != null && redirectUrl !=''){
+            window.location.href=redirectUrl;
+        }
+       
+       
+        
+    }
+
+    var ga_account_id = 'UA-1992703-9';
+    var url = window.location.href;
+    if(url.indexOf("localhost") != -1 || url.indexOf("127.0.0.1") != -1 || url.indexOf("staging") != -1){
+        ga_account_id = 'UA-40240928-2';
+    }
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', ga_account_id, 'auto');
+    ga('set', 'forceSSL', true);
+    var screenRes = window.screen.width+'x'+window.screen.height;
+    var viewportSize = window.screen.availWidth+'x'+window.screen.availHeight;
+    var colorDepth = window.screen.colorDepth+'-bit';
+    ga('set', 'screenResolution', screenRes);
+    ga('set', 'viewportSize', viewportSize);
+    ga('set', 'screenColors', colorDepth);
+    ga('send', 'pageview',{'sessionControl': 'start','alwaysSendReferrer': true});
+</script>
+<!-- Google Analytics -->
+
+<!--  <script id="_webengage_script_tag" type="text/javascript">
+//58adc758 License code for Live server
+//311c4296 License code for Staging server
+var _weq = _weq || {};
+  _weq['webengage.notification.ruleData'] = {"userId":userId,"userStatus":" userStatusChk "}; 	
+  _weq['webengage.licenseCode'] = '58adc758';
+  _weq['webengage.widgetVersion'] = "4.0"; 
+ 
+  (function(d){
+    var _we = d.createElement('script');
+    _we.type = 'text/javascript';
+    _we.async = true;
+    _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    var _sNode = d.getElementById('_webengage_script_tag');
+    _sNode.parentNode.insertBefore(_we, _sNode);
+  })(document);
+</script>-->
+			 
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+   
+	
+    <!-- SET: CONTAINER -->
+    	<div class="container">
+
+            <!-- SET: MAIN CONTENT -->
+            <div class="main_content" id="head">
+            <section class="main">
+			
+			 
+			<div class="pagetitle"><a href="/watch-telugu-movies/all-movies">TELUGU</a></div>
+			<input class="input" name="language" id="language" type="hidden" value="telugu">
+			
+			<script type="text/javascript">
+ 			 $("#MovieLink").addClass("selected"); 
+			</script>
+			
+			
+			
+			
+			
+			
+			
+			
+						
+				<div class="wrapper-demo">
+                
+                       <span class="dropdownlabel">Sort By:</span> 
+					 <div class="demo-content">
+                    <div class="demo-live">
+                    <div id="divNoImage" class="dd-container" style="width: 180px;"></div>
+                    </div>
+                </div>
+ 
+ <script type="text/javascript">
+        $(document).ready(function () {
+        	
+        	var movList=$('ul>ul#slider3>li').length;
+        	if(movList ==0){
+        		$('#movieSect').html('<div class="notfound">Content\'s are not available for this category.</div>');
+        	}
+        	
+        	
+			var arr = window.location.href.split("/");
+			var sortByType = "All";
+			if(arr.length==5){
+			 sortByType = arr[arr.length-1].split("-")[0];
+			}
+           
+            var ddBasic = [{"text":"All","value":"All","url":"All"},{"text":"Drama","value":"Drama","url":"Drama"},{"text":"Thriller","value":"Thriller","url":"Thriller"},{"text":"Comedy","value":"Comedy","url":"Comedy"},{"text":"Romance","value":"Romance","url":"Romance"},{"text":"Action","value":"Action","url":"Action"},{"text":"Horror","value":"Horror","url":"Horror"},{"text":"Animation","value":"Animation","url":"Animation"},{"text":"Devotional","value":"Devotional","url":"Devotional"}] ; 
+			//[{"text":"Action","value":"Action","url":"Action"},{"text":"Animation","value":"Animation","url":"Animation"},{"text":"Comedy","value":"Comedy","url":"Comedy"},{"text":"Drama","value":"Drama","url":"Drama"},{"text":"Romance","value":"Romance","url":"Romance"},{"text":"Thriller","value":"Thriller","url":"Thriller"}];
+
+            $('#divNoImage').ddslick({
+                data: ddBasic,
+                selectText: sortByType ,
+				onSelected: function(selectedData){
+						var  sortVal = $('#divNoImage .dd-selected').text();
+                    log_ga_event('Genre Sort Dropdown','Click ',sortVal,'current',null);
+						if(arr.length==5){
+							if(sortVal!='All'){
+							window.location.href = window.location.href.substring(0,window.location.href.lastIndexOf('/'))+'/'+sortVal+'-movies';
+							}else{
+							window.location.href = window.location.href.substring(0,window.location.href.lastIndexOf('/'));
+							}
+						}else{
+						window.location.href = window.location.href +'/'+sortVal+'-movies';   
+						}
+				} 
+            });
+
+            //Callback function:
+            function displaySelectedData(demoIndex, ddData) {
+                $('#dd-display-data').append('<strong>selectedIndex:</strong> ' + ddData.selectedIndex + '<br/><strong>selectedItem:</strong> Check your browser console for selected "li" html element');
+
+                if (ddData.selectedData) {
+                    $('#dd-display-data').append(
+                        '<br/><br/><strong>selectedData:</strong><br/><strong>Text:</strong> ' + ddData.selectedData.text +
+                        '<br/><strong>Value:</strong>  ' + ddData.selectedData.value +
+                        '<br/><strong>Description:</strong>  ' + ddData.selectedData.description +
+                        '<br/><strong>ImageSrc:</strong>  ' + ddData.selectedData.imageSrc)
+                }
+                $('#dd-modal').fadeIn();
+                console.log(ddData);
+            }
+
+        });
+    </script>
+	</div> 
+	
+			</section>
+			</div>
+			
+<script type="text/javascript">
+var pageNo = 2;
+var isPagesFinished =  false 
+var isProgressing = false;
+var language;
+var arrURL = window.location.href.split("/");
+//alert(arrURL.length);
+var genreVal='All';
+if(arrURL.length==5){
+genreVal = arrURL[arrURL.length-1].split("-")[0];
+}
+//alert('genreVal :'+genreVal);
+		$(window).scroll(function(){
+		
+		    if($(window).scrollTop() == $(document).height() - $(window).height()){
+                log_ga_event('Scroll','Scroll',pageNo,'current',null);
+				if(!isPagesFinished && !isProgressing) {
+		    	$("#loadmoreajaxloader").show();
+				isProgressing = true;
+				language = $("#language").val();
+					jQuery.ajax({
+						type: "POST",
+						url:"/xaja/Index.do" ,
+						data:{parameter:'getMoviesByLanguage',language:language,genre:genreVal,pageNo:pageNo},
+						success: function(data) { 
+						if(data){
+							$("#slider3").append(data);
+							$("#loadmoreajaxloader").hide();
+							pageNo = pageNo +1;
+							isProgressing = false;
+						}else{
+							$("#loadmoreajaxloader").html('<center>No more posts to show.</center>');
+							isPagesFinished = true;
+						}
+						
+					}
+				});
+				
+				
+		    }
+			}
+		});
+</script>
+
+                    <div class="movieSect" id="movieSect">
+                        <div class="wrap">
+                        <div class="movieSectDivider"></div>		
+<div class="wrap">
+
+<div class="download-list" id="pan1">
+        
+		<ul id="slider3">	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+          
+            var listOfpremiumProductIdsByUser=[];
+           
+       	function hidePremiumTag(arr) {
+
+       	    $.each(arr, function() {
+       	        var productid = this.productId;
+       	        $('#' + productid).removeAttr('class');
+       	    })
+       	}
+       	$(document).ready(function(){
+       		hidePremiumTag(listOfpremiumProductIdsByUser);
+       	})
+       	
+       	
+       	   </script>
+        
+
+
+
+
+
+
+
+<script type="text/javascript"
+	src="//cdnvod101.bigflix.com/apache_file/js/ui/rewamp/jquery.rating.pack.js"></script>
+<script type="text/javascript"
+	src="//cdnvod102.bigflix.com/apache_file/js/ui/rewamp/loadScripts.js"></script>
+<style type="text/css">
+.imgPart .premium-btn-IN,.imgPart .premium-btn-IN.premium-btn2 {
+	background:
+		url(/apache_file/images/ui/rewamp/premium_movie.png) 1px 1px
+		no-repeat;
+	padding: 22px 0 0 16px;
+	font-size: 15px;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.imgPart .premium-btn-IN.premium-btn2 {
+	background:
+		url(/apache_file/images/ui/rewamp/exclusive_premium_movie.png) 1px
+		1px no-repeat;
+	color: #fff;
+}
+</style>
+
+
+	<ul id="slider3">
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg"
+							alt="Watch or Download Telugu Movie Kanne Gulaabeelu Online - 2005"
+							title="Watch Kanne Gulaabeelu Movie Online - 2005"
+							caption="Watch or Download Telugu Movie Kanne Gulaabeelu Online - 2005"
+							description="Watch or Download Telugu Movie Kanne Gulaabeelu Online - 2005">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406');"
+								href="/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406">Kanne Gulaabeelu</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Mature">Mature</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-1406" value=1
+											 checked="checked" 
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1406,'Kanne Gulaabeelu','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1406" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1406,'Kanne Gulaabeelu','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1406" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1406,'Kanne Gulaabeelu','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1406" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1406,'Kanne Gulaabeelu','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1406" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1406,'Kanne Gulaabeelu','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Kanne-Gulaabeelu_(tel).jpg');" />
+
+										
+
+										<span><b>1<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Kanne Gulaabeelu is a Telugu Erotic movie released in the year 2005.</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Mature-movies/Kanne-Gulaabeelu/1406');"
+										class="readMore">More Details</a> <span
+										id="loader_1406"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,1406,'Kanne Gulaabeelu');"
+											id="add_1406" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,1406,'Kanne Gulaabeelu');"
+											id="remove_1406" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Action-movies/Dhada/15819"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg"
+							alt="Watch or Download Telugu Movie Dhada Online - 2011"
+							title="Watch Dhada Movie Online - 2011"
+							caption="Watch or Download Telugu Movie Dhada Online - 2011"
+							description="Watch or Download Telugu Movie Dhada Online - 2011">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Action-movies/Dhada/15819');"
+								href="/Telugu-movies/Action-movies/Dhada/15819" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Action-movies/Dhada/15819">Dhada</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Action">Action</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-15819" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15819,'Dhada','/Telugu-movies/Action-movies/Dhada/15819','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15819" value=2
+											 checked="checked" 
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15819,'Dhada','/Telugu-movies/Action-movies/Dhada/15819','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15819" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15819,'Dhada','/Telugu-movies/Action-movies/Dhada/15819','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15819" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15819,'Dhada','/Telugu-movies/Action-movies/Dhada/15819','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15819" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15819,'Dhada','/Telugu-movies/Action-movies/Dhada/15819','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Dhada_(tel).jpg');" />
+
+										
+
+										<span><b>2<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Story starts with the film name dhada as Naga Chaitanya is a dhadar chasing begg ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Action-movies/Dhada/15819');"
+										class="readMore">More Details</a> <span
+										id="loader_15819"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,15819,'Dhada');"
+											id="add_15819" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,15819,'Dhada');"
+											id="remove_15819" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Dongodi-Pelli/17272"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg"
+							alt="Watch or Download Telugu Movie Dongodi Pelli Online - 2006"
+							title="Watch Dongodi Pelli Movie Online - 2006"
+							caption="Watch or Download Telugu Movie Dongodi Pelli Online - 2006"
+							description="Watch or Download Telugu Movie Dongodi Pelli Online - 2006">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272');"
+								href="/Telugu-movies/Drama-movies/Dongodi-Pelli/17272" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Dongodi-Pelli/17272">Dongodi Pelli</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17272" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17272,'Dongodi Pelli','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17272" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17272,'Dongodi Pelli','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17272" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17272,'Dongodi Pelli','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17272" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17272,'Dongodi Pelli','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17272" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17272,'Dongodi Pelli','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/dongodi_pelli_telu.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Raju (Rajendrababu) is a petty thief. Hundreds of cases are pending against him  ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Dongodi-Pelli/17272');"
+										class="readMore">More Details</a> <span
+										id="loader_17272"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17272,'Dongodi Pelli');"
+											id="add_17272" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17272,'Dongodi Pelli');"
+											id="remove_17272" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg"
+							alt="Watch or Download Telugu Movie Shanti Sandesham Online - 2003"
+							title="Watch Shanti Sandesham Movie Online - 2003"
+							caption="Watch or Download Telugu Movie Shanti Sandesham Online - 2003"
+							description="Watch or Download Telugu Movie Shanti Sandesham Online - 2003">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304');"
+								href="/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304">Shanti Sandesham</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Devotional,Drama">Devotional,Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17304" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17304,'Shanti Sandesham','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17304" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17304,'Shanti Sandesham','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17304" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17304,'Shanti Sandesham','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17304" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17304,'Shanti Sandesham','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17304" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17304,'Shanti Sandesham','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/santhi_sandesam_tel.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>The life story of Jesus Christ, the founder of Christianity, who taught about love and fellowship.</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Devotional,Drama-movies/Shanti-Sandesham/17304');"
+										class="readMore">More Details</a> <span
+										id="loader_17304"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17304,'Shanti Sandesham');"
+											id="add_17304" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17304,'Shanti Sandesham');"
+											id="remove_17304" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg"
+							alt="Watch or Download Telugu Movie Kondaveeti Raja Online - 1986"
+							title="Watch Kondaveeti Raja Movie Online - 1986"
+							caption="Watch or Download Telugu Movie Kondaveeti Raja Online - 1986"
+							description="Watch or Download Telugu Movie Kondaveeti Raja Online - 1986">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869');"
+								href="/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869">Kondaveeti Raja</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17869" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17869,'Kondaveeti Raja','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17869" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17869,'Kondaveeti Raja','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17869" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17869,'Kondaveeti Raja','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17869" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17869,'Kondaveeti Raja','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17869" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17869,'Kondaveeti Raja','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/KondaveetiRaja_200x280.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>An archaeologists' assistant comes to a village to unearth the secret to a hidde ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Kondaveeti-Raja/17869');"
+										class="readMore">More Details</a> <span
+										id="loader_17869"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17869,'Kondaveeti Raja');"
+											id="add_17869" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17869,'Kondaveeti Raja');"
+											id="remove_17869" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Geethanjali/9045"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg"
+							alt="Watch or Download Telugu Movie Geethanjali Online - 1989"
+							title="Watch Geethanjali Movie Online - 1989"
+							caption="Watch or Download Telugu Movie Geethanjali Online - 1989"
+							description="Watch or Download Telugu Movie Geethanjali Online - 1989">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Geethanjali/9045');"
+								href="/Telugu-movies/Drama-movies/Geethanjali/9045" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Geethanjali/9045">Geethanjali</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-9045" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,9045,'Geethanjali','/Telugu-movies/Drama-movies/Geethanjali/9045','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-9045" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,9045,'Geethanjali','/Telugu-movies/Drama-movies/Geethanjali/9045','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-9045" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,9045,'Geethanjali','/Telugu-movies/Drama-movies/Geethanjali/9045','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-9045" value=4
+											 checked="checked" 
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,9045,'Geethanjali','/Telugu-movies/Drama-movies/Geethanjali/9045','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-9045" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,9045,'Geethanjali','/Telugu-movies/Drama-movies/Geethanjali/9045','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Geethanjali_(tel).jpg');" />
+
+										
+
+										<span><b>4<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Geethanjali (Telugu:) is a 1989 Telugu film directed by Mani Ratnam, The film's  ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Geethanjali/9045');"
+										class="readMore">More Details</a> <span
+										id="loader_9045"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,9045,'Geethanjali');"
+											id="add_9045" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,9045,'Geethanjali');"
+											id="remove_9045" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Comedy-movies/Kevvu-Keka/16541"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg"
+							alt="Watch or Download Telugu Movie Kevvu Keka Online - 2013"
+							title="Watch Kevvu Keka Movie Online - 2013"
+							caption="Watch or Download Telugu Movie Kevvu Keka Online - 2013"
+							description="Watch or Download Telugu Movie Kevvu Keka Online - 2013">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541');"
+								href="/Telugu-movies/Comedy-movies/Kevvu-Keka/16541" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Comedy-movies/Kevvu-Keka/16541">Kevvu Keka</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Comedy">Comedy</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-16541" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,16541,'Kevvu Keka','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-16541" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,16541,'Kevvu Keka','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-16541" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,16541,'Kevvu Keka','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-16541" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,16541,'Kevvu Keka','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-16541" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,16541,'Kevvu Keka','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kevvu_keka_tel.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Kevvu Keka is an out-and-out slapstick comedy entertainer movie. In which, Butch ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Comedy-movies/Kevvu-Keka/16541');"
+										class="readMore">More Details</a> <span
+										id="loader_16541"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,16541,'Kevvu Keka');"
+											id="add_16541" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,16541,'Kevvu Keka');"
+											id="remove_16541" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Kalisunte/17283"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg"
+							alt="Watch or Download Telugu Movie Kalisunte Online - 2005"
+							title="Watch Kalisunte Movie Online - 2005"
+							caption="Watch or Download Telugu Movie Kalisunte Online - 2005"
+							description="Watch or Download Telugu Movie Kalisunte Online - 2005">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Kalisunte/17283');"
+								href="/Telugu-movies/Drama-movies/Kalisunte/17283" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Kalisunte/17283">Kalisunte</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17283" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17283,'Kalisunte','/Telugu-movies/Drama-movies/Kalisunte/17283','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17283" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17283,'Kalisunte','/Telugu-movies/Drama-movies/Kalisunte/17283','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17283" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17283,'Kalisunte','/Telugu-movies/Drama-movies/Kalisunte/17283','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17283" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17283,'Kalisunte','/Telugu-movies/Drama-movies/Kalisunte/17283','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17283" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17283,'Kalisunte','/Telugu-movies/Drama-movies/Kalisunte/17283','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/kalisunte_telu.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>There is the innocent Brahmin-boy Satya who comes from Nagercoil to Chennai to j ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Kalisunte/17283');"
+										class="readMore">More Details</a> <span
+										id="loader_17283"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17283,'Kalisunte');"
+											id="add_17283" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17283,'Kalisunte');"
+											id="remove_17283" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Aata-Modalaindi/17724"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg"
+							alt="Watch or Download Telugu Movie Aata Modalaindi Online - 2008"
+							title="Watch Aata Modalaindi Movie Online - 2008"
+							caption="Watch or Download Telugu Movie Aata Modalaindi Online - 2008"
+							description="Watch or Download Telugu Movie Aata Modalaindi Online - 2008">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724');"
+								href="/Telugu-movies/Drama-movies/Aata-Modalaindi/17724" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Aata-Modalaindi/17724">Aata Modalaindi</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17724" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17724,'Aata Modalaindi','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17724" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17724,'Aata Modalaindi','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17724" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17724,'Aata Modalaindi','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17724" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17724,'Aata Modalaindi','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17724" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17724,'Aata Modalaindi','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/aatamodalaindi_200x280.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Aata Modalaindi is a Telugu movie released in the year 2008.</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Aata-Modalaindi/17724');"
+										class="readMore">More Details</a> <span
+										id="loader_17724"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17724,'Aata Modalaindi');"
+											id="add_17724" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17724,'Aata Modalaindi');"
+											id="remove_17724" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Ninne-Premistha/17880"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg"
+							alt="Watch or Download Telugu Movie Ninne Premistha Online - 2000"
+							title="Watch Ninne Premistha Movie Online - 2000"
+							caption="Watch or Download Telugu Movie Ninne Premistha Online - 2000"
+							description="Watch or Download Telugu Movie Ninne Premistha Online - 2000">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Ninne-Premistha/17880');"
+								href="/Telugu-movies/Drama-movies/Ninne-Premistha/17880" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Ninne-Premistha/17880">Ninne Premistha</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17880" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17880,'Ninne Premistha','/Telugu-movies/Drama-movies/Ninne-Premistha/17880','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17880" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17880,'Ninne Premistha','/Telugu-movies/Drama-movies/Ninne-Premistha/17880','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17880" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17880,'Ninne Premistha','/Telugu-movies/Drama-movies/Ninne-Premistha/17880','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17880" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17880,'Ninne Premistha','/Telugu-movies/Drama-movies/Ninne-Premistha/17880','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17880" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17880,'Ninne Premistha','/Telugu-movies/Drama-movies/Ninne-Premistha/17880','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/NinnePremistha_200x280.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Kalyan misinterprets Meghamala's concern for love and tells her that he loves he ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Ninne-Premistha/17880');"
+										class="readMore">More Details</a> <span
+										id="loader_17880"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17880,'Ninne Premistha');"
+											id="add_17880" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17880,'Ninne Premistha');"
+											id="remove_17880" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Tenaliramakrishna/1377"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg"
+							alt="Watch or Download Telugu Movie Tenaliramakrishna Online - 1956"
+							title="Watch Tenaliramakrishna Movie Online - 1956"
+							caption="Watch or Download Telugu Movie Tenaliramakrishna Online - 1956"
+							description="Watch or Download Telugu Movie Tenaliramakrishna Online - 1956">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377');"
+								href="/Telugu-movies/Drama-movies/Tenaliramakrishna/1377" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Tenaliramakrishna/1377">Tenaliramakrishna</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-1377" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1377,'Tenaliramakrishna','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1377" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1377,'Tenaliramakrishna','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1377" value=3
+											 checked="checked" 
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1377,'Tenaliramakrishna','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1377" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1377,'Tenaliramakrishna','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1377" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1377,'Tenaliramakrishna','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Tenaliramakrishna_(tel).jpg');" />
+
+										
+
+										<span><b>3<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Tenali Ramkrishna is a poet at King Krishnadeva Raya's kingdom. He comes to know ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Tenaliramakrishna/1377');"
+										class="readMore">More Details</a> <span
+										id="loader_1377"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,1377,'Tenaliramakrishna');"
+											id="add_1377" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,1377,'Tenaliramakrishna');"
+											id="remove_1377" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg"
+							alt="Watch or Download Telugu Movie Bavagaru Baagunnara Online - 1998"
+							title="Watch Bavagaru Baagunnara Movie Online - 1998"
+							caption="Watch or Download Telugu Movie Bavagaru Baagunnara Online - 1998"
+							description="Watch or Download Telugu Movie Bavagaru Baagunnara Online - 1998">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228');"
+								href="/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228">Bavagaru Baag ...</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Comedy">Comedy</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-12228" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,12228,'Bavagaru Baagunnara','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-12228" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,12228,'Bavagaru Baagunnara','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-12228" value=3
+											 checked="checked" 
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,12228,'Bavagaru Baagunnara','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-12228" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,12228,'Bavagaru Baagunnara','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-12228" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,12228,'Bavagaru Baagunnara','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/Bavagaru-Baagunnara_(tel).jpg');" />
+
+										
+
+										<span><b>3<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Bavagaru Bagunnara is a family based movie in which, Raju (Chiranjeevi) runs bet ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Comedy-movies/Bavagaru-Baag-/12228');"
+										class="readMore">More Details</a> <span
+										id="loader_12228"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,12228,'Bavagaru Baagunnara');"
+											id="add_12228" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,12228,'Bavagaru Baagunnara');"
+											id="remove_12228" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Adrushtam/17262"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg"
+							alt="Watch or Download Telugu Movie Adrushtam Online - 2002"
+							title="Watch Adrushtam Movie Online - 2002"
+							caption="Watch or Download Telugu Movie Adrushtam Online - 2002"
+							description="Watch or Download Telugu Movie Adrushtam Online - 2002">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Adrushtam/17262');"
+								href="/Telugu-movies/Drama-movies/Adrushtam/17262" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Adrushtam/17262">Adrushtam</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17262" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17262,'Adrushtam','/Telugu-movies/Drama-movies/Adrushtam/17262','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17262" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17262,'Adrushtam','/Telugu-movies/Drama-movies/Adrushtam/17262','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17262" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17262,'Adrushtam','/Telugu-movies/Drama-movies/Adrushtam/17262','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17262" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17262,'Adrushtam','/Telugu-movies/Drama-movies/Adrushtam/17262','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17262" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17262,'Adrushtam','/Telugu-movies/Drama-movies/Adrushtam/17262','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/adrustam_telu.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Tarun (Tarun) is an unemployed youth who does the odd job around. He is never ab ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Adrushtam/17262');"
+										class="readMore">More Details</a> <span
+										id="loader_17262"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17262,'Adrushtam');"
+											id="add_17262" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17262,'Adrushtam');"
+											id="remove_17262" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg"
+							alt="Watch or Download Telugu Movie Naalo Unna Prema Online - 2001"
+							title="Watch Naalo Unna Prema Movie Online - 2001"
+							caption="Watch or Download Telugu Movie Naalo Unna Prema Online - 2001"
+							description="Watch or Download Telugu Movie Naalo Unna Prema Online - 2001">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294');"
+								href="/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294">Naalo Unna Prema</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17294" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17294,'Naalo Unna Prema','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17294" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17294,'Naalo Unna Prema','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17294" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17294,'Naalo Unna Prema','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17294" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17294,'Naalo Unna Prema','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17294" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17294,'Naalo Unna Prema','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/naalo_unna_prema_tel.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Hema (Laya) is a professional singer from Vizag. Sai Krishna (Jagapati Babu) is  ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Naalo-Unna-Prema/17294');"
+										class="readMore">More Details</a> <span
+										id="loader_17294"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17294,'Naalo Unna Prema');"
+											id="add_17294" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17294,'Naalo Unna Prema');"
+											id="remove_17294" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Arundhathi/17858"> <img data-src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg"
+							class="lazy" src="https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg"
+							alt="Watch or Download Telugu Movie Arundhathi Online - 1999"
+							title="Watch Arundhathi Movie Online - 1999"
+							caption="Watch or Download Telugu Movie Arundhathi Online - 1999"
+							description="Watch or Download Telugu Movie Arundhathi Online - 1999">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Arundhathi/17858');"
+								href="/Telugu-movies/Drama-movies/Arundhathi/17858" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Arundhathi/17858">Arundhathi</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17858" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17858,'Arundhathi','/Telugu-movies/Drama-movies/Arundhathi/17858','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17858" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17858,'Arundhathi','/Telugu-movies/Drama-movies/Arundhathi/17858','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17858" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17858,'Arundhathi','/Telugu-movies/Drama-movies/Arundhathi/17858','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17858" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17858,'Arundhathi','/Telugu-movies/Drama-movies/Arundhathi/17858','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17858" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17858,'Arundhathi','/Telugu-movies/Drama-movies/Arundhathi/17858','https://cdnvod102.bigflicks.com/images/vod/movies/200X280/Arundhathi_200x280.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Arundhati is a Telugu Family movie released in the year 1999.</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Arundhathi/17858');"
+										class="readMore">More Details</a> <span
+										id="loader_17858"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17858,'Arundhathi');"
+											id="add_17858" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17858,'Arundhathi');"
+											id="remove_17858" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Sivanna/17894"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg"
+							alt="Watch or Download Telugu Movie Sivanna Online - 2001"
+							title="Watch Sivanna Movie Online - 2001"
+							caption="Watch or Download Telugu Movie Sivanna Online - 2001"
+							description="Watch or Download Telugu Movie Sivanna Online - 2001">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Sivanna/17894');"
+								href="/Telugu-movies/Drama-movies/Sivanna/17894" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Sivanna/17894">Sivanna</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17894" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17894,'Sivanna','/Telugu-movies/Drama-movies/Sivanna/17894','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17894" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17894,'Sivanna','/Telugu-movies/Drama-movies/Sivanna/17894','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17894" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17894,'Sivanna','/Telugu-movies/Drama-movies/Sivanna/17894','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17894" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17894,'Sivanna','/Telugu-movies/Drama-movies/Sivanna/17894','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17894" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17894,'Sivanna','/Telugu-movies/Drama-movies/Sivanna/17894','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Sivanna_200x280.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Saikumar is the son of Kota Srinivasa Rao and Sudha. Kota wants his son to becom ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Sivanna/17894');"
+										class="readMore">More Details</a> <span
+										id="loader_17894"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17894,'Sivanna');"
+											id="add_17894" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17894,'Sivanna');"
+											id="remove_17894" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Mahamanthri-T-/1407"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg"
+							alt="Watch or Download Telugu Movie Mahamanthri Timmarusu Online - 1962"
+							title="Watch Mahamanthri Timmarusu Movie Online - 1962"
+							caption="Watch or Download Telugu Movie Mahamanthri Timmarusu Online - 1962"
+							description="Watch or Download Telugu Movie Mahamanthri Timmarusu Online - 1962">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407');"
+								href="/Telugu-movies/Drama-movies/Mahamanthri-T-/1407" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Mahamanthri-T-/1407">Mahamanthri T ...</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-1407" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1407,'Mahamanthri Timmarusu','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1407" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1407,'Mahamanthri Timmarusu','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1407" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1407,'Mahamanthri Timmarusu','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1407" value=4
+											 checked="checked" 
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1407,'Mahamanthri Timmarusu','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-1407" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,1407,'Mahamanthri Timmarusu','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Mahamanthri-Timmarusu_(tel).jpg');" />
+
+										
+
+										<span><b>4<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Hamvira accuses Timmarusu, the prime minister in Krishnadevaraya's court, of bei ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Mahamanthri-T-/1407');"
+										class="readMore">More Details</a> <span
+										id="loader_1407"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,1407,'Mahamanthri Timmarusu');"
+											id="add_1407" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,1407,'Mahamanthri Timmarusu');"
+											id="remove_1407" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Vedam/15821"> <img data-src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg"
+							class="lazy" src="https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg"
+							alt="Watch or Download Telugu Movie Vedam Online - 2010"
+							title="Watch Vedam Movie Online - 2010"
+							caption="Watch or Download Telugu Movie Vedam Online - 2010"
+							description="Watch or Download Telugu Movie Vedam Online - 2010">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Vedam/15821');"
+								href="/Telugu-movies/Drama-movies/Vedam/15821" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Vedam/15821">Vedam</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-15821" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15821,'Vedam','/Telugu-movies/Drama-movies/Vedam/15821','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15821" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15821,'Vedam','/Telugu-movies/Drama-movies/Vedam/15821','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15821" value=3
+											 checked="checked" 
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15821,'Vedam','/Telugu-movies/Drama-movies/Vedam/15821','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15821" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15821,'Vedam','/Telugu-movies/Drama-movies/Vedam/15821','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-15821" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,15821,'Vedam','/Telugu-movies/Drama-movies/Vedam/15821','https://cdnvod103.bigflicks.com/images/vod/movies/200X280/Vedam_(tel).jpg');" />
+
+										
+
+										<span><b>3<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>Vivek Chakravarthy (Manoj Manchu) is an upcoming rock star in Bengaluru who hail ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Vedam/15821');"
+										class="readMore">More Details</a> <span
+										id="loader_15821"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,15821,'Vedam');"
+											id="add_15821" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,15821,'Vedam');"
+											id="remove_15821" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Doosukeltha/17273"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg"
+							alt="Watch or Download Telugu Movie Doosukeltha Online - 2013"
+							title="Watch Doosukeltha Movie Online - 2013"
+							caption="Watch or Download Telugu Movie Doosukeltha Online - 2013"
+							description="Watch or Download Telugu Movie Doosukeltha Online - 2013">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Doosukeltha/17273');"
+								href="/Telugu-movies/Drama-movies/Doosukeltha/17273" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Doosukeltha/17273">Doosukeltha</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17273" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17273,'Doosukeltha','/Telugu-movies/Drama-movies/Doosukeltha/17273','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17273" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17273,'Doosukeltha','/Telugu-movies/Drama-movies/Doosukeltha/17273','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17273" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17273,'Doosukeltha','/Telugu-movies/Drama-movies/Doosukeltha/17273','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17273" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17273,'Doosukeltha','/Telugu-movies/Drama-movies/Doosukeltha/17273','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17273" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17273,'Doosukeltha','/Telugu-movies/Drama-movies/Doosukeltha/17273','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/doosukeltha_tel.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>A small bet by Chinna (Vishnu) during his childhood results in his family escapi ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Doosukeltha/17273');"
+										class="readMore">More Details</a> <span
+										id="loader_17273"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17273,'Doosukeltha');"
+											id="add_17273" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17273,'Doosukeltha');"
+											id="remove_17273" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+
+			
+			
+				
+				
+			
+			
+				
+				
+			
+
+			
+			
+			
+			<li>
+				<div class="imagepopup">
+					<div class="imgPart">
+						<a href="/Telugu-movies/Drama-movies/Saradaga-Amma-/17305"> <img data-src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg"
+							class="lazy" src="https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg"
+							alt="Watch or Download Telugu Movie Saradaga Ammayitho Online - 2013"
+							title="Watch Saradaga Ammayitho Movie Online - 2013"
+							caption="Watch or Download Telugu Movie Saradaga Ammayitho Online - 2013"
+							description="Watch or Download Telugu Movie Saradaga Ammayitho Online - 2013">
+						</a>
+						
+							
+
+
+							
+							
+
+							
+
+							
+
+						
+						<div class="hidden overlay">
+							<a
+								onclick="log_ga_event('Thumbnail','Click','Play','current','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305');"
+								href="/Telugu-movies/Drama-movies/Saradaga-Amma-/17305" class="play-btn">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="textPart hidden">
+						<div class="PartIn">
+							<div class="PartInIn">
+								<h5>
+									<a href="/Telugu-movies/Drama-movies/Saradaga-Amma-/17305">Saradaga Amma ...</a>
+								</h5>
+								<div class="cate">
+									<a href="/search?q=Telugu" class="">Telugu</a> <i
+										class="clear_0">&nbsp;</i>
+									<p class="">
+										<a href="/search?q=Drama">Drama</a>
+									</p>
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<div class="startList">
+									<div class="flt_Lt">
+
+										
+										<input class="star required" type="radio"
+											name="language-17305" value=1
+											
+											id="radio_1"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17305,'Saradaga Ammayitho','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17305" value=2
+											
+											id="radio_2"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17305,'Saradaga Ammayitho','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17305" value=3
+											
+											id="radio_3"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17305,'Saradaga Ammayitho','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17305" value=4
+											
+											id="radio_4"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17305,'Saradaga Ammayitho','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg');" />
+
+										
+										<input class="star required" type="radio"
+											name="language-17305" value=5
+											
+											id="radio_5"
+											onchange="log_ga_event('Thumbnail','Click','Rating','current',null);saveUserRating(this.value,17305,'Saradaga Ammayitho','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305','https://cdnvod101.bigflicks.com/images/vod/movies/200X280/saradaga_ammayitho.jpg');" />
+
+										
+
+										<span><b>0<i>/</i>5 Rating </b></span><br />
+									</div>
+
+									<i class="clear_0">&nbsp;</i>
+								</div>
+								<i class="clear_0">&nbsp;</i>
+								<div class="btnsPart btnsPartNe">
+									<p>When Santosh, a flirt, falls for Geeta, she challenges him to stay in a girl's h ...</p>
+									<a href="javascript:void(0);"
+										onclick="log_ga_event('Thumbnail','Click','More Details','current','/Telugu-movies/Drama-movies/Saradaga-Amma-/17305');"
+										class="readMore">More Details</a> <span
+										id="loader_17305"></span> <i class="clear_0">&nbsp;</i>
+									<div class="btnsWrap">
+										<a 
+											href="javascript:log_ga_event('Thumbnail','Click','Add to Playlist','current',null);userPlayList(true,17305,'Saradaga Ammayitho');"
+											id="add_17305" class="dwnbtn"> <span>Add
+												to queue</span>
+										</a> <a  style="display: none;" 
+											href="javascript:log_ga_event('Thumbnail','Click','Remove from Playlist','current',null);userPlayList(false,17305,'Saradaga Ammayitho');"
+											id="remove_17305" class="dwnbtn"> <span>Remove
+												from queue</span>
+										</a> <i class="clear_0">&nbsp;</i>
+										
+										<i class="clear_0">&nbsp;</i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</li>
+		
+	</ul>
+
+
+
+
+		</ul>
+	 </div> 
+
+</div>
+
+ <i class="clear_0">&nbsp;</i>
+                    </div>
+					 <i class="clear_0">&nbsp;</i>
+                    </div>
+					
+                </div>
+            <!-- END: MAIN CONTENT -->
+            
+            <!-- SET: FOOTER -->
+           
+            	<div id="footer">
+				<div id="loadmoreajaxloader" style="display:none;"><center><img src='/apache_file/images/new_images/ajax-loader.gif' alt='loader' caption='loader' title='loader' description='loader'/></center></div>
+                </div>
+            <!-- END: FOOTER -->
+            
+        </div>
+    <!-- END: CONTAINER -->
+ 
+
+
+		</div>
+		<!-- END: WRAPPER -->
+		 <noscript>
+    <div class="noscriptmsg">
+    Please enable javascript on your browser for better experence of the site.
+    </div>
+</noscript>
+		 <div class="footer">
+              Copyrights &copy; 2016 BIGFLIX Private Limited. All Rights Reserved.
+                                </div>
+   	</body>
+</html>
