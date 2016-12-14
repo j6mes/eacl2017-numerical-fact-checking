@@ -35,7 +35,7 @@ def precompute_features(world,block = None):
         num_qs = len(lines)
 
         if block is not None:
-            lines = lines[block]
+            lines = lines[block:block+1]
 
         num_qs = len(lines)
         done = 0
