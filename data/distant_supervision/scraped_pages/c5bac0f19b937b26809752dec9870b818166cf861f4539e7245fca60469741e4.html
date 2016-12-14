@@ -1,0 +1,2519 @@
+																																																																																																				<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<title>Schools Archive - HMC</title>
+<link rel="stylesheet" type="text/css" media="all" href="//www.hmc.org.uk/wp-content/themes/hmc/style.css" />
+<script src="//www.hmc.org.uk/wp-content/themes/hmc/js/libs/modernizr-2.0.6.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.6.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="//www.hmc.org.uk/schools/" />
+<link rel="next" href="//www.hmc.org.uk/schools/page/2/" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="object" />
+<meta property="og:title" content="Schools Archive - HMC" />
+<meta property="og:url" content="http://www.hmc.org.uk/schools/" />
+<meta property="og:site_name" content="HMC" />
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="HMC &raquo; Schools Feed" href="//www.hmc.org.uk/schools/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.hmc.org.uk\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='ec-users-profile-css'  href='//www.hmc.org.uk/wp-content/plugins/ec-user-profile/style.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='nextgen_gallery_related_images-css'  href='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/nextgen_gallery_display/static/nextgen_gallery_related_images.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='//www.hmc.org.uk/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.9.3' type='text/css' media='all' />
+<link rel='stylesheet' id='bbp-default-css'  href='//www.hmc.org.uk/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.4-5380' type='text/css' media='screen' />
+<link rel='stylesheet' id='accordion_archives-css'  href='//www.hmc.org.uk/wp-content/plugins/ec-accordion-archive-widget/style.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='//www.hmc.org.uk/wp-includes/css/dashicons.min.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='//www.hmc.org.uk/wp-includes/js/thickbox/thickbox.css?ver=4.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='galleria-classic-css'  href='//www.hmc.org.uk/wp-content/plugins/slickr-flickr/galleria/themes/classic/galleria.classic.css?ver=1.3.5' type='text/css' media='all' />
+<link rel='stylesheet' id='slickr-flickr-css'  href='//www.hmc.org.uk/wp-content/plugins/slickr-flickr/styles/public.css?ver=2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='//www.hmc.org.uk/wp-content/plugins/jetpack/css/jetpack.css?ver=3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='nivo-slider-css'  href='//www.hmc.org.uk/wp-content/plugins/easy-nivo-slider/3rd-party/nivo-slider.css?ver=2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='easy-nivo-slider-css'  href='//www.hmc.org.uk/wp-content/plugins/easy-nivo-slider/css/easy-nivo-slider.css?ver=1.6.1' type='text/css' media='all' />
+<!-- This site uses the Yoast Google Analytics plugin v5.0.6 - Universal disabled - https://yoast.com/wordpress/plugins/google-analytics/ -->
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-34564704-1']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+<!-- / Yoast Google Analytics -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var photocrati_ajax = {"url":"http:\/\/www.hmc.org.uk\/photocrati_ajax","wp_home_url":"http:\/\/www.hmc.org.uk","wp_site_url":"http:\/\/www.hmc.org.uk","wp_root_url":"http:\/\/www.hmc.org.uk","wp_plugins_url":"http:\/\/www.hmc.org.uk\/wp-content\/plugins","wp_content_url":"http:\/\/www.hmc.org.uk\/wp-content","wp_includes_url":"http:\/\/www.hmc.org.uk\/wp-includes\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/ajax.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/persist.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/store.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/ngg_store.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.google.com/jsapi?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/ec-google-charts/assets/front.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/sharebar/js/sharebar.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/ec-accordion-archive-widget/script.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/lightbox_context.js?ver=4.3.1'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/easy-nivo-slider/3rd-party/jquery.nivo.slider.js?ver=2.5'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="//www.hmc.org.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="//www.hmc.org.uk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.3.1" />
+<!-- <meta name="NextGEN" version="2.0.66.29" /> -->
+<link rel="stylesheet" href="//www.hmc.org.uk/wp-content/plugins/sharebar/css/sharebar.css" type="text/css" media="screen" />
+<script type="text/javascript">jQuery(document).ready(function($) { $('.sharebar').sharebar({horizontal:'true',swidth:'70',minwidth:1000,position:'right',leftOffset:20,rightOffset:30}); });</script>
+<!-- Sharebar Plugin by Monjurul Dolon (http://mdolon.com/) - more info at: http://devgrow.com/sharebar-wordpress-plugin -->
+
+<link rel='dns-prefetch' href='//i0.wp.com'>
+<link rel='dns-prefetch' href='//i1.wp.com'>
+<link rel='dns-prefetch' href='//i2.wp.com'>
+<style type='text/css'>img#wpstats{display:none}</style><script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
+	</head>
+
+<body class="archive post-type-archive post-type-archive-schools responsive chrome">
+
+<div id="container">
+    <header>
+    <div id="header-logo" class="left"><a href="http://www.hmc.org.uk" title="The Headmasters' &amp; Headmistresses' Conference"><span>The Headmasters' &amp; Headmistresses' Conference</span></a></div>
+    <div id="top-nav" class="right">
+        <div id="header-social" class="left social">
+    <a href="https://www.facebook.com/pages/Headmasters-Headmistresses-Conference-HMC/118022814972600" class="social-icon facebook" target="_blank"><span>Facebook</span></a>
+    <a href="http://twitter.com/#!/hmc_org" class="social-icon twitter" target="_blank"><span>Twitter</span></a>
+    <a href="http://www.flickr.com/photos/hmcleadingindependentschools/" class="social-icon flickr" target="_blank"><span>Flickr</span></a>
+    <a href="https://plus.google.com/u/0/114597183367501398585/posts" class="social-icon googleplus" target="_blank"><span>Google Plus</span></a>
+    <a href="http://www.linkedin.com/groups/HMC-Headmasters-Headmistresses-Conference-Leading-4123782" class="social-icon linkedin" target="_blank"><span>LinkedIn</span></a>
+</div>        <div id="members-button" class="right"><a href="/members-zone">Member Zone</a></div>
+        <div id="mobile-menu" class="mq-only">
+            <a href="#" id="menu-btn"><span>Menu</span></a>
+            <a href="tel:+441858469059" id="tel-btn"><span>Tel</span></a>
+            <a href="#" id="search-btn"><span>Search</span></a>
+        </div>
+    </div>
+    <div id="header-search" class="right"><form role="search" method="get" id="searchform" action="//www.hmc.org.uk" >
+    <input type="text" value="" class="search" placeholder="Search" name="s" id="s">
+     <button type="submit" id="searchsubmit">Go</button>
+</form></div>
+    <div id="main-nav" class="left"><div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-38"><a href="http://www.hmc.org.uk/about-hmc/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-651" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-651"><a href="http://www.hmc.org.uk/about-hmc/">About Us</a></li>
+	<li id="menu-item-707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-707"><a href="http://www.hmc.org.uk/about-hmc/hmc-executive/">HMC Executive</a></li>
+	<li id="menu-item-706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-706"><a href="http://www.hmc.org.uk/about-hmc/hmc-support-staff/">The HMC Team</a></li>
+	<li id="menu-item-653" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-653"><a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/">Why a HMC School?</a></li>
+	<li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-705"><a href="http://www.hmc.org.uk/about-hmc/history-of-hmc/">History of HMC</a></li>
+	<li id="menu-item-763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-763"><a href="http://www.hmc.org.uk/about-hmc/membership/">Membership</a></li>
+	<li id="menu-item-1880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1880"><a href="http://www.hmc.org.uk/about-hmc/partnerships/">Partnerships</a></li>
+	<li id="menu-item-1879" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1879"><a href="http://www.hmc.org.uk/about-hmc/curriculum-innovation/">Curriculum Innovation</a></li>
+	<li id="menu-item-766" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-766"><a href="http://www.hmc.org.uk/about-hmc/fees-and-financial-support/">Fees and Financial Support</a></li>
+	<li id="menu-item-10108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10108"><a href="http://www.hmc.org.uk/about-hmc/gap-year-scholarships/">Gap Year Scholarships</a></li>
+	<li id="menu-item-348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-348"><a href="http://www.hmc.org.uk/about-hmc/projects/">HMC Projects</a></li>
+	<li id="menu-item-349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-349"><a href="http://www.hmc.org.uk/about-hmc/sustainability/">HMC Sustainability</a></li>
+	<li id="menu-item-19232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19232"><a href="http://www.hmc.org.uk/about-hmc/jobs/">Careers</a></li>
+	<li id="menu-item-652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-652"><a href="http://www.hmc.org.uk/about-hmc/faqs/">FAQs</a></li>
+</ul>
+</li>
+<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37"><a href="http://www.hmc.org.uk/facts-figures/">Facts &#038; Figures</a>
+<ul class="sub-menu">
+	<li id="menu-item-722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-722"><a href="http://www.hmc.org.uk/facts-figures/top-10-facts/">Top 10 Facts About HMC</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="http://www.hmc.org.uk/factcards/">HMC Fact Cards</a></li>
+	<li id="menu-item-720" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-720"><a href="http://www.hmc.org.uk/facts-figures/academic-success/">Academic Success</a></li>
+	<li id="menu-item-721" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-721"><a href="http://www.hmc.org.uk/facts-figures/achievements/">Achievements</a></li>
+	<li id="menu-item-21379" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21379"><a href="http://www.hmc.org.uk/facts-figures/economic-impact/">Economic Impact</a></li>
+	<li id="menu-item-27498" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27498"><a href="http://www.hmc.org.uk/facts-figures/durham-university-academic-value-added-research-2016/">Durham University &#8216;Academic Value Added&#8217; Research 2016</a></li>
+</ul>
+</li>
+<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-39"><a href="http://www.hmc.org.uk/hmc-schools/">Schools</a>
+<ul class="sub-menu">
+	<li id="menu-item-1378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1378"><a href="http://www.hmc.org.uk/schools">Schools Directory</a></li>
+	<li id="menu-item-311" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-311"><a href="http://www.hmc.org.uk/hmc-schools/map/">Schools Map</a></li>
+	<li id="menu-item-312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a href="http://www.hmc.org.uk/hmc-schools/choosing-a-school/">Choosing a School</a></li>
+	<li id="menu-item-796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796"><a href="http://www.hmc.org.uk/hmc-schools/teaching-in-hmc-schools/">Teaching in HMC Schools</a></li>
+</ul>
+</li>
+<li id="menu-item-804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-804"><a href="http://www.hmc.org.uk/publications/">Publications</a>
+<ul class="sub-menu">
+	<li id="menu-item-14170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14170"><a href="http://www.hmc.org.uk/publications/insight-hmc-magazine/">Insight &#8211; HMC Magazine</a></li>
+	<li id="menu-item-2281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2281"><a href="http://www.hmc.org.uk/publications/leading-schools-in-the-21st-century/">Leading Schools in the 21st Century</a></li>
+</ul>
+</li>
+<li id="menu-item-16068" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16068"><a href="/professional-development/">Professional Development</a>
+<ul class="sub-menu">
+	<li id="menu-item-16069" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16069"><a href="/professional-development/">About HMCPD</a></li>
+	<li id="menu-item-1840" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1840"><a href="http://hmcpd.learningsource.co.uk/">Courses &#038; Events</a></li>
+	<li id="menu-item-16070" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16070"><a href="/professional-development/resources/">Resources</a></li>
+	<li id="menu-item-16071" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16071"><a href="/professional-development/news-announcements/">News &#038; Announcements</a></li>
+	<li id="menu-item-16072" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16072"><a href="/professional-development/contact-hmcpd/">Contact HMCPD</a></li>
+</ul>
+</li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-26"><a href="http://www.hmc.org.uk/news/">News &#038; Events</a>
+<ul class="sub-menu">
+	<li id="menu-item-1883" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1883"><a href="http://www.hmc.org.uk/blog/category/press-releases/">Press Releases &#038; Statements</a></li>
+	<li id="menu-item-1882" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1882"><a href="http://www.hmc.org.uk/blog/category/hmc-news/">HMC in the News</a></li>
+	<li id="menu-item-1881" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1881"><a href="http://www.hmc.org.uk/blog/category/education-in-the-news/">Education in the News</a></li>
+	<li id="menu-item-842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-842"><a href="http://www.hmc.org.uk/annual-conference-2/">Annual Conference 2016: Leading Creative Schools</a></li>
+	<li id="menu-item-26233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26233"><a href="http://www.hmc.org.uk/news/spring-conference-2016/">Spring Conference 2016: Good Mental Health in Schools &#8211; What Works?</a></li>
+	<li id="menu-item-7828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7828"><a href="http://www.hmc.org.uk/annual-conference-2/hmc-tv/">HMC TV</a></li>
+	<li id="menu-item-1884" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1884"><a href="http://www.hmc.org.uk/blog/category/school-conferences/">School Events</a></li>
+	<li id="menu-item-5023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5023"><a href="http://www.hmc.org.uk/news/media-toolkit/">Media Enquiries &#038; Toolkit</a></li>
+</ul>
+</li>
+<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347"><a href="http://www.hmc.org.uk/hmc-blog/">HMC Blog</a></li>
+<li id="menu-item-338" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-338"><a href="http://www.hmc.org.uk/links/">Links</a></li>
+<li id="menu-item-358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="http://www.hmc.org.uk/contact-us/">Contact Us</a></li>
+</ul></div></div>
+</header>
+
+<ul id="sharebar" style="background:#;border-color:#;">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="HMC_Org">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.hmc.org.uk/schools/hull-collegiate-school/&layout=box_count&show_faces=false&width=60&action=like&colorscheme=light&height=45" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:48px; height:61px;" allowTransparency="true"></iframe></li><li><g:plusone size="tall"></g:plusone></li></ul>
+    <!-- Main -->
+    <div id="main" role="main">
+        
+        <!-- Content -->
+        <div id="content" class="left schools-directory">
+            <div id="breadcrumbs"><b>You are here:</b><!-- Breadcrumb NavXT 5.1.1 -->
+<span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" title="Go to HMC." href="http://www.hmc.org.uk" class="home">HMC</a></span> &gt; <span typeof="v:Breadcrumb"><span property="v:title">Schools</span></span></div>
+            <h1>Schools Directory</h1>
+            <p>To find a HMC school near you, you can either use the <a href="http://www.hmc.org.uk/hmc-schools/map/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/map/', 'map']);" >map</a> on the right or if you know the name of the school you are looking for you can use the directory below.</p>
+            <ul class="main-categories">
+              
+            <label class="hmc-schools"><input type="checkbox" name="category" CHECKED value="hmc-schools" /> UK Members</label>
+              
+            <label class="international-members"><input type="checkbox" name="category"  value="international-members" /> International Members</label>
+              
+            <label class="additional-members"><input type="checkbox" name="category"  value="additional-members" /> HMC Associates</label>
+                        </ul>
+            
+            <div id="myList-nav"></div>
+            
+            <div id="schools-subcategories-wrapper">
+                                    <ul class="sub-categories no-list" id="parent-wrapper_international-members">
+                        <table>
+                            <tr>
+                                <td valign="top"><span class="filter-label">Filter by region:</span></td>
+                                <td valign="top">
+                                                                        <li><input type="checkbox" name="category"  value="africa" id="checkbox-africa" /><label for="checkbox-africa">Africa</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="asia" id="checkbox-asia" /><label for="checkbox-asia">Asia</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="india" id="checkbox-india" /><label for="checkbox-india">India</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="australia-new-zealand" id="checkbox-australia-new-zealand" /><label for="checkbox-australia-new-zealand">Australia &amp; New Zealand</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="europe" id="checkbox-europe" /><label for="checkbox-europe">Europe</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="middle-east" id="checkbox-middle-east" /><label for="checkbox-middle-east">Middle East</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="central-south-america" id="checkbox-central-south-america" /><label for="checkbox-central-south-america">Central &amp; South America</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="canada" id="checkbox-canada" /><label for="checkbox-canada">Canada</label></li>
+                                                                    </td>
+                            </tr>
+                        </table>
+                    </ul>
+                                    <ul class="sub-categories no-list" id="parent-wrapper_hmc-schools">
+                        <table>
+                            <tr>
+                                <td valign="top"><span class="filter-label">Filter by region:</span></td>
+                                <td valign="top">
+                                                                        <li><input type="checkbox" name="category"  value="east" id="checkbox-east" /><label for="checkbox-east">East</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="ireland" id="checkbox-ireland" /><label for="checkbox-ireland">Ireland</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="london" id="checkbox-london" /><label for="checkbox-london">London</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="north-east" id="checkbox-north-east" /><label for="checkbox-north-east">North East</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="north-west" id="checkbox-north-west" /><label for="checkbox-north-west">North West</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="scotland" id="checkbox-scotland" /><label for="checkbox-scotland">Scotland</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="south-central" id="checkbox-south-central" /><label for="checkbox-south-central">South Central</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="south-east" id="checkbox-south-east" /><label for="checkbox-south-east">South East</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="south-west" id="checkbox-south-west" /><label for="checkbox-south-west">South West</label></li>
+                                                                        <li><input type="checkbox" name="category"  value="west" id="checkbox-west" /><label for="checkbox-west">West</label></li>
+                                                                    </td>
+                            </tr>
+                        </table>
+                    </ul>
+                            </div>
+            
+            <ul id="myList">
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/abingdon-school/">Abingdon School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ackworth-school/">Ackworth School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/aiglon-college-switzerland/">Aiglon College, Switzerland</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/aks/">AKS</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/aldenham-school/">Aldenham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/alleyns-school/">Alleyn&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ampleforth-college/">Ampleforth College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/anglican-church-grammar-school-australia/">Anglican Church Grammar School, Australia</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ardingly-college/">Ardingly College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ashford-school/">Ashford School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ashville-college/">Ashville College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/bablake-school/">Bablake School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bancrofts-school/">Bancroft&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bangor-grammar-school/">Bangor Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/barnard-castle-school/">Barnard Castle School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school additional-members north-east">
+                <h3><a href="http://www.hmc.org.uk/schools/batley-grammar-school/">Batley Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bedales-school/">Bedales School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-bedes-school/">Bede’s Senior School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bedford-modern-school/">Bedford Modern School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bedford-school/">Bedford School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/belfast-royal-academy/">Belfast Royal Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/benenden-school/">Benenden School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/berkhamsted-school/">Berkhamsted School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/birkdale-school/">Birkdale School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/birkenhead-school/">Birkenhead School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school additional-members south-central">
+                <h3><a href="http://www.hmc.org.uk/schools/bishop-wordsworths-grammar-school/">Bishop Wordsworth&#8217;s Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bishops-stortford-college/">Bishop&#8217;s Stortford College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/bloxham-school/">Bloxham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/blundells-school/">Blundell&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bolton-school-boys-division/">Bolton School (Boys’ Division)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bootham-school/">Bootham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bradfield-college/">Bradfield College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bradford-grammar-school/">Bradford Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/brentwood-school/">Brentwood School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/brighton-college/">Brighton College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bristol-grammar-school/">Bristol Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/british-school-muscat/">British School Muscat</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/british-school-al-khubairat/">British School, Al Khubairat</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bromley-high-school/">Bromley High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/bromsgrove-school/">Bromsgrove School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bryanston-school/">Bryanston School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/bury-grammar-school-boys/">Bury Grammar School Boys</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/camberwell-grammar-school/">Camberwell Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/campbell-college/">Campbell College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/campion-school/">Campion School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/canford-school/">Canford School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/caterham-school/">Caterham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/charterhouse/">Charterhouse</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/cheadle-hulme-school/">Cheadle Hulme School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/cheltenham-college/">Cheltenham College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/cheltenham-ladies-college/">Cheltenham Ladies&#8217; College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/chethams-school-of-music/">Chetham&#8217;s School of Music</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/chigwell-school/">Chigwell School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/christ-college/">Christ College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/christs-hospital/">Christ&#8217;s Hospital</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/churchers-college/">Churcher&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/city-of-london-freemens-school/">City of London Freemen&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/city-of-london-school/">City of London School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/city-london-school-girls/">City of London School for Girls</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/clayesmore-school/">Clayesmore School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/clifton-college/">Clifton College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/clongowes-wood-college/">Clongowes Wood College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/cokethorpe-school/">Cokethorpe School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/coleraine-grammar-school/">Coleraine Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/colfes-school/">Colfe&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/colstons-school-2/">Colston&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/cranleigh-school/">Cranleigh School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/culford-school/">Culford School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/dame-allans-schools/">Dame Allan’s Schools</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/dauntseys-school/">Dauntsey’s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/dean-close-school/">Dean Close School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/denstone-college/">Denstone College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/doha-college/">Doha College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/dollar-academy/">Dollar Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/downe-house/">Downe House</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/downside-school/">Downside School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/dubai-college/">Dubai College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/dulwich-college/">Dulwich College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/dulwich-college-beijing/">Dulwich College Beijing</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/durham-school/">Durham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/eastbourne-college/">Eastbourne College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/elizabeth-college/">Elizabeth College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/ellesmere-college/">Ellesmere College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/eltham-college/">Eltham College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/emanuel-school/">Emanuel School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/epsom-college/">Epsom College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/stewarts-melville-college/">Erskine Stewart&#8217;s Melville Schools</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/eton-college/">Eton College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/exeter-school/">Exeter School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/felsted-school/">Felsted School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/fettes-college/">Fettes College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/forest-school/">Forest School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/framlingham-college/">Framlingham College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/francis-holland-regents-park/">Francis Holland, Regent&#8217;s Park</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/frensham-heights-school/">Frensham Heights School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/geelong-grammar-school/">Geelong Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/george-heriots-school/">George Heriot&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/george-watsons-college/">George Watson’s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/giggleswick-school/">Giggleswick School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/glenalmond-college/">Glenalmond College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/godolphin-latymer-school/">Godolphin and Latymer School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/gordonstoun-school/">Gordonstoun School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/greshams-school/">Gresham&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/guildford-high-school/">Guildford High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/haberdashers-askes-boys-school/">Haberdashers&#8217; Aske&#8217;s Boys&#8217; School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/haberdashers-monmouth-school-girls/">Haberdashers&#8217; Monmouth School for Girls</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/haileybury-2/">Haileybury</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/haileybury/">Haileybury</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/halliford-school/">Halliford School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/hampton-school/">Hampton School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/harrow-school/">Harrow School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/hereford-cathedral-school/">Hereford Cathedral School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/high-school-of-dundee/">High School of Dundee</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/high-school-of-glasgow/">High School of Glasgow</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/highgate-school/">Highgate School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school africa international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/hillcrest-international-school-kenya/">Hillcrest International School, Kenya</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/howells-school/">Howell&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/hull-collegiate-school/">Hull Collegiate School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/hurstpierpoint-college/">Hurstpierpoint College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/hutchesons-grammar-school/">Hutchesons&#8217; Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/hymers-college/">Hymers College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-charles-kalms-henry-ronson-immanuel-college/">Immanuel College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ipswich-school/">Ipswich School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/jags-james-allens-girls-school/">JAGS (James Allen&#8217;s Girls&#8217; School)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/jerudong-international-school/">Jerudong International School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/jumeirah-english-speaking-school/">JESS, Dubai</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kelvinside-academy/">Kelvinside Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kent-college/">Kent College (Canterbury)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kent-college-pembur/">Kent College (Pembury)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kimbolton-school/">Kimbolton School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/kincoppal-rose-bay-school-of-the-sacred-heart/">Kincoppal-Rose Bay School of the Sacred Heart</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/king-edward-vi-school/">King Edward VI School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/king-edwards-school-bath/">King Edward&#8217;s School (Bath)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/king-edwards-school-witley/">King Edward&#8217;s School (Witley)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/king-edwards-school-birmingham/">King Edward&#8217;s School Birmingham</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/king-henry-vlll-school/">King Henry Vlll School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/king-williams-college/">King William&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-college-taunton/">King&#8217;s College (Taunton)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-college-school-wimbledon/">King&#8217;s College School (Wimbledon)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-ely/">King&#8217;s Ely</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-rochester/">King&#8217;s Rochester</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-bruton/">King&#8217;s School (Bruton)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-chester/">King&#8217;s School (Chester)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-gloucester/">King&#8217;s School (Gloucester)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-macclesfield/">King&#8217;s School (Macclesfield)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-school-worcester/">King&#8217;s School (Worcester)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/kings-college-madrid/">King’s College, Madrid</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kingston-grammar-school/">Kingston Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kingswood-school/">Kingswood School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/kirkham-grammar-school/">Kirkham Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/knox-grammar-school/">Knox Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/kolej-tuanku-jaafar/">Kolej Tuanku Ja&#8217;afar</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lancing-college/">Lancing College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/latymer-upper-school/">Latymer Upper School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/leicester-grammar-school/">Leicester Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/leighton-park-school/">Leighton Park School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lincoln-minster-school/">Lincoln Minster School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lingfield-notre-dame-school/">Lingfield Notre Dame School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lomond-school/">Lomond School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lord-wandsworth-college/">Lord Wandsworth College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/loretto-school/">Loretto School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/loughborough-grammar-school/">Loughborough Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/magdalen-college-school/">Magdalen College School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/malvern-college/">Malvern College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/manchester-grammar-school/">Manchester Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/marlborough-college/">Marlborough College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/melbourne-grammar-school/">Melbourne Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/merchant-taylors-boys-school-crosby/">Merchant Taylors&#8217; Boys&#8217; School (Crosby)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/merchant-taylors-school-northwood/">Merchant Taylors&#8217; School (Northwood)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/merchiston-castle-school/">Merchiston Castle School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/methodist-college-belfast/">Methodist College (Belfast)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/methodist-ladies-college-mlc/">Methodist Ladies&#8217; College (MLC)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/michaelhouse/">Michaelhouse</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/mill-hill-school/">Mill Hill School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/millfield-school/">Millfield School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/monkton-combe-school/">Monkton Combe School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/monmouth-school/">Monmouth School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/morrisons-academy/">Morrison’s Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/mount-kelly/">Mount Kelly</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/mount-st-marys-college/">Mount St Mary&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/new-hall-school/">New Hall School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/newcastle-under-lyme-school/">Newcastle-under-Lyme School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/norwich-school/">Norwich School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/nottingham-high-school/">Nottingham High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/oakham-school/">Oakham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/oldham-hulme-grammar-school/">Oldham Hulme Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/oundle-school/">Oundle School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/pangbourne-college/">Pangbourne College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school west">
+                <h3><a href="http://www.hmc.org.uk/schools/pates-grammar-school/">Pate’s Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school africa international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/peponi-school/">Peponi School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school africa international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/peterhouse/">Peterhouse</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/plymouth-college/">Plymouth College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/pocklington-school/">Pocklington School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/princethorpe-college/">Princethorpe College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/prior-park-college/">Prior Park College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/putney-high-school/">Putney High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/queen-annes-school/">Queen Anne&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/queen-elizabeth-grammar-school/">Queen Elizabeth Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school additional-members north-west">
+                <h3><a href="http://www.hmc.org.uk/schools/queen-elizabeths-grammar-school/">Queen Elizabeth&#8217;s Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/queen-elizabeths-hospital-bristol/">Queen Elizabeth&#8217;s Hospital (Bristol)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/queens-college/">Queen&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/queenswood-school/">Queenswood School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/radley-college/">Radley College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ratcliffe-college/">Ratcliffe College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/reading-blue-coat-school/">Reading Blue Coat School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/reeds-school/">Reed&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/reigate-grammar-school/">Reigate Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/rendcomb-college/">Rendcomb College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/repton-school/">Repton School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/robert-gordons-college/">Robert Gordon’s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/roedean/">Roedean</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/rossall-school/">Rossall School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/rougemont-school/">Rougemont School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/royal-belfast-academical-institution/">Royal Belfast Academical Institution</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/royal-grammar-school-guildford/">Royal Grammar School (Guildford)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/royal-masonic-school-girls/">Royal Masonic School for Girls</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/royal-russell-school/">Royal Russell School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/rugby-school/">Rugby School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/rydal-penrhos/">Rydal Penrhos</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/ryde-school/">Ryde School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/scotch-college/">Scotch College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/seaford-college/">Seaford College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sedbergh-school/">Sedbergh School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sevenoaks-school/">Sevenoaks School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school canada international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/shawnigan-lake-school/">Shawnigan Lake School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sherborne-school-girls/">Sherborne Girls</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sherborne-school/">Sherborne School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/shiplake-college/">Shiplake College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/shore-school/">Shore School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/shrewsbury-international-school-bangkok/">Shrewsbury International School Bangkok</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/shrewsbury-school/">Shrewsbury School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sidcot-school/">Sidcot School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/silcoates-school/">Silcoates School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sir-william-perkins-school/">Sir William Perkins&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/solihull-school/">Solihull School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/south-hampstead-high-school/">South Hampstead High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-albans-high-school-girls/">St Albans High School for Girls</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-albans-school/">St Albans School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-aloysius-college/">St Aloysius&#8217; College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school central-south-america international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-andrews-scots-school/">St Andrew&#8217;s Scots School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-bedes-college/">St Bede&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-benedicts-school/">St Benedict&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-catherines-british-embassy-school/">St Catherine&#8217;s British School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/st-christophers-school/">St Christopher&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-columbas-college-st-albans/">St Columba&#8217;s College (St Albans)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-columbas-college-dublin/">St Columba&#8217;s College, Dublin</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-columbas-school-kilmacolm/">St Columba&#8217;s School, Kilmacolm</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-dunstans-college/">St Dunstan’s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-edmunds-college/">St Edmund&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-edmunds-school-canterbury/">St Edmund&#8217;s School, Canterbury</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-edwards-school/">St Edward&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school africa international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-georges-college/">St George&#8217;s College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school central-south-america international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-georges-college-north/">St George&#8217;s College North</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-georges-college-weybridge/">St George&#8217;s College Weybridge</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-georges-british-international-school/">St George’s British International School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-johns-school/">St John&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-julians-school/">St Julian&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-lawrence-college/">St Lawrence College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-leonards-college-australia/">St Leonard&#8217;s College, Australia</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-leonards-school/">St Leonards School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-marys-calne/">St Mary&#8217;s Calne</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-marys-ascot/">St Mary’s Ascot</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-marys-college-crosby/">St Mary’s College (Crosby)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-pauls-school/">St Paul&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school central-south-america international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/st-pauls-school-sao-paulo/">St Paul&#8217;s School (Sao Paulo)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-pauls-girls-school/">St Paul’s Girls’ School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/st-peters-school/">St Peter&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/stephen-perse-foundation/">Stephen Perse Foundation</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/stockport-grammar-school/">Stockport Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/stonyhurst-college/">Stonyhurst College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/stowe-school/">Stowe School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/strathallan-school/">Strathallan School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/surbiton-high-school/">Surbiton High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/sutton-valence-school/">Sutton Valence School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/tanglin-trust-school-ltd/">Tanglin Trust School Ltd</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/taunton-school/">Taunton School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/abbey-school-reading/">The Abbey School, Reading</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school india international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-british-school-in-new-delhi/">The British School in New Delhi</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-british-school-in-the-netherlands/">The British School in the Netherlands</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members middle-east">
+                <h3><a href="http://www.hmc.org.uk/schools/british-school-jakarta/">The British School Jakarta</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/british-school-barcelona/">The British School of Barcelona</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-british-school-of-brussels/">The British School of Brussels</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-british-school-of-milan/">The British School of Milan</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-british-school-of-paris/">The British School of Paris</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-cathedral-john-connon-school/">The Cathedral &#038; John Connon School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-doon-school/">The Doon School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-edinburgh-academy/">The Edinburgh Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-english-college-in-prague/">The English College in Prague</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school europe international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-english-school/">The English School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school scotland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-glasgow-academy/">The Glasgow Academy</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-godolphin-school/">The Godolphin School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-grammar-school-at-leeds/">The Grammar School at Leeds</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-grange-school/">The Grange School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school central-south-america international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-grange-school-chile/">The Grange School (Chile)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-international-school-bangalore/">The International School Bangalore</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-john-lyon-school/">The John Lyon School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school additional-members south-east">
+                <h3><a href="http://www.hmc.org.uk/schools/the-judd-school/">The Judd School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-kings-school/">The King&#8217;s School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-kings-hospital/">The King’s Hospital</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-kings-school-canterbury/">The King’s School (Canterbury)</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/lady-eleanor-holles-school/">The Lady Eleanor Holles School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-leys-school/">The Leys School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/royal-grammar-school-newcastle/">The Newcastle upon Tyne Royal Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-oratory-school/">The Oratory School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-perse-school/">The Perse School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-portsmouth-grammar-school/">The Portsmouth Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/the-royal-grammar-school-worcester/">The Royal Grammar School Worcester</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-royal-hospital-school/">The Royal Hospital School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-royal-school-armagh/">The Royal School Armagh</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school ireland hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-royal-school-dungannon/">The Royal School, Dungannon</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/the-scots-college/">The Scots College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/the-stamford-endowed-schools/">The Stamford Endowed Schools</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/tonbridge-school/">Tonbridge School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/trent-college/">Trent College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/trinity-grammar-school/">Trinity Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/trinity-school/">Trinity School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/truro-school/">Truro School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/university-college-school/">University College School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/uppingham-school/">Uppingham School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/victoria-college/">Victoria College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/warminster-school/">Warminster School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/warwick-school/">Warwick School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east additional-members">
+                <h3><a href="http://www.hmc.org.uk/schools/welbeck-sixth-form-college/">Welbeck Defence Sixth Form College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wellingborough-school/">Wellingborough School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-central hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wellington-college/">Wellington College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wellington-school/">Wellington School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wells-cathedral-school/">Wells Cathedral School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school australia-new-zealand international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/wesley-college/">Wesley College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/west-buckland-school/">West Buckland School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/westminster-school/">Westminster School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/whitgift-school/">Whitgift School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wimbledon-high-school/">Wimbledon High School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wisbech-grammar-school/">Wisbech Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-west hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/withington-girls-school/">Withington Girls&#8217; School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/wolverhampton-grammar-school/">Wolverhampton Grammar School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/woodbridge-school/">Woodbridge School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/woodhouse-grove-school/">Woodhouse Grove School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school asia international-members">
+                <h3><a href="http://www.hmc.org.uk/schools/woodstock-school/">Woodstock School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/worksop-college/">Worksop College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school south-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/worth-school/">Worth School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/wrekin-college/">Wrekin College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school hmc-schools west">
+                <h3><a href="http://www.hmc.org.uk/schools/wycliffe-college/">Wycliffe College</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school london hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/wycombe-abbey/">Wycombe Abbey</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                        <li class="school north-east hmc-schools">
+                <h3><a href="http://www.hmc.org.uk/schools/yarm-school/">Yarm School</a></h3>
+                <div></div>
+                <div></div>
+            </li>
+            
+                <script type="text/javascript">
+    // <![CDATA[
+        var disqus_shortname = 'hmcorguk';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+            </ul>
+                        
+        </div>
+        
+        <!-- Sidebar -->
+<div id="sidebar" class="right">
+    
+        
+    <ul class="no-list">
+        
+            <li id="schools-widget" class="widget-container">
+                <h3 class="widget-title">Our Schools</h3>
+                <a href="/hmc-schools/map" class="img-link"><img src="/wp-content/themes/hmc/images/retina/sidebar-map-large.jpg" alt="HMC Schools Map"></a>
+                Search our HMC Schools by:<br/>
+                <a href="/schools">Schools Directory</a> | <a href="/hmc-schools/map">Schools Map</a>
+            </li>        <li id="twitter-widget-2" class="widget-container homepage-tweets twitter-widget"><h3 class="widget-title">Latest Tweets</h3>
+						<ul>
+							<li>
+								<span class="twitter-date"><a href="http://twitter.com/hmc_org/status/808651250724114432">24 hours ago</a></span><br />
+								<span class="twitter-text">RT @<a href="https://twitter.com/schoolstogether">schoolstogether</a>: What can you share with <a href="https://t.co/jsj9iw4pb4">https://t.co/jsj9iw4pb4</a>? It's easy to register your school &amp; add details of partnerships - tea…</span>
+							</li>
+							<li>
+								<span class="twitter-date"><a href="http://twitter.com/hmc_org/status/808651230063030272">24 hours ago</a></span><br />
+								<span class="twitter-text">RT @<a href="https://twitter.com/Philip_Britton">Philip_Britton</a>: You will find a good number of partnerships linked to @<a href="https://twitter.com/BoltonSchool">BoltonSchool</a> <a href="https://t.co/khjohvYL92">https://t.co/khjohvYL92</a></span>
+							</li>
+							<li>
+								<span class="twitter-date"><a href="http://twitter.com/hmc_org/status/808651196051365888">24 hours ago</a></span><br />
+								<span class="twitter-text">RT @<a href="https://twitter.com/schoolstogether">schoolstogether</a>: @<a href="https://twitter.com/BoltonSchool">BoltonSchool</a>'s Level 6 Maths programme gives talented Y6 pupils from local state primary schools access to specialist…</span>
+							</li>
+							<li>
+								<span class="twitter-date"><a href="http://twitter.com/hmc_org/status/808650757440319489">24 hours ago</a></span><br />
+								<span class="twitter-text">New Headmaster at @<a href="https://twitter.com/RatcliffeColl">RatcliffeColl</a> for Sept 2017 <a href="https://t.co/INd9llvgw1">https://t.co/INd9llvgw1</a></span>
+							</li>
+							<li>
+								<span class="twitter-date"><a href="http://twitter.com/hmc_org/status/808618275127042048">13 December 2016</a></span><br />
+								<span class="twitter-text">Merry Christmas from the @<a href="https://twitter.com/HMC_Chair">HMC_Chair</a>, officers and staff at HMC #<a href="https://twitter.com/search/?q=Christmas2016">Christmas2016</a> #<a href="https://twitter.com/search/?q=SeasonsGreetings">SeasonsGreetings</a> #<a href="https://twitter.com/search/?q=MerryChristmas">MerryChristmas</a> <a href="https://t.co/G1v9RCSLe7">https://t.co/G1v9RCSLe7</a></span>
+							</li>
+							<li>
+						</ul>
+						</li>    </ul>
+</div>        
+    </div> <!-- end #main -->
+
+    <footer>
+        <div id="footer-bar">
+            <div id="footer-social">
+                <div class="strapline">HMC - Follow, Connect, Share</div>
+                <div id="sharebar-horizontal"><ul id="sharebarx">
+<li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="HMC_Org">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></li><li><iframe src="http://www.facebook.com/plugins/like.php?href=http://www.hmc.org.uk/schools/yarm-school/&layout=button_count&show_faces=false&width=85&action=like&colorscheme=light&height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:85px; height:21px;" allowTransparency="true"></iframe></li><li><g:plusone size="medium"></g:plusone></li></ul></div>
+            </div>
+            <div id="footer-logo"></div>
+        </div>
+        <div id="footer">
+            
+            <div id="factsfigures" class="left">
+                <h2>Facts &amp; Figures</h2>
+                <ol>
+<li>223,126 pupils are taught in <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> in the UK and Ireland, an increase of 22% from ten years ago.</li>
+<li>One in four of all those attending the UK's top ten universities come from <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC&#039;s 283 schools']);" title="Schools">HMC's 283 schools</a>.</li>
+<li>92% of pupils in <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> in the UK go on to <a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/preparation-for-higher-education-and-employment/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/preparation-for-higher-education-and-employment/', 'higher education']);" title="Preparation for Higher Education and Employment">higher education</a>.</li>
+<li>32% of pupils in <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> across the UK received help with their <a href="http://www.hmc.org.uk/about-hmc/fees-and-financial-support/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/fees-and-financial-support/', 'fees']);" title="Fees and Financial Support">fees</a> in 2015/16 totalling £442 million in <a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/fee-assistance/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/fee-assistance/', 'assistance']);" title="Financial Support">assistance</a>....that's over £1.2m per day. £212 million of this was in the form of means-tested <a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/fee-assistance/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/fee-assistance/', 'bursaries']);" title="Financial Support">bursaries</a>.</li>
+<li>79% of <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> in the UK and Ireland are co-educational, 13% are boys' only and 8% are girls' only schools. 60% offer <a href="http://www.hmc.org.uk/hmc-schools/choosing-a-school/boarding/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/choosing-a-school/boarding/', 'boarding']);" title="Boarding">boarding</a> in some form.</li>
+<li>There is <a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/smaller-class-sizes/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/smaller-class-sizes/', 'one teacher for every 9 pupils']);" title="Smaller Class Sizes">one teacher for every 9 pupils</a> in <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> in England compared with one per 22 in the state sector.</li>
+<li>There are now <a href="http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/international-links/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/why-choose-a-hmc-school/international-links/', '13,249 non-British pupils']);" title="International Links">13,249 non-British pupils</a>, whose parents live overseas, at <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> in the UK.</li>
+<li><a href="http://www.hmc.org.uk/about-hmc/fees-and-financial-support/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/fees-and-financial-support/', 'Average fees']);" title="Fees and Financial Support">Average fees</a> in <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> start from £3,328 per term/£9,984 per year for day students and £8,902 per term/£26,707 per year for boarding.</li>
+<li>100% of <a href="http://www.hmc.org.uk/hmc-schools/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/hmc-schools/', 'HMC schools']);" title="Schools">HMC schools</a> are involved in <a href="http://www.hmc.org.uk/about-hmc/partnerships/" onclick="_gaq.push(['_trackEvent', 'outbound-article-int', 'http://www.hmc.org.uk/about-hmc/partnerships/', 'partnerships']);" title="Partnerships">partnerships</a> with state maintained schools.</li>
+<li>Pupils in HMC schools play on average between 5 and 6 hours of sports and games a week in over 40 different sports - double the amount played by pupils in state schools. 36 of the medals won by Team GB at Rio 2016 were by athletes educated at HMC schools.</li>
+</ol>
+            </div>
+            <div id="footer-nav" class="footer-col left">
+                <div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-3668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-3668"><a href="http://www.hmc.org.uk/">Home</a></li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://www.hmc.org.uk/about-hmc/">About Us</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://www.hmc.org.uk/facts-figures/">Facts &#038; Figures</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://www.hmc.org.uk/hmc-schools/">Schools</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="http://www.hmc.org.uk/hmc-schools/teaching-in-hmc-schools/">Teaching in HMC Schools</a></li>
+<li id="menu-item-14171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14171"><a href="http://www.hmc.org.uk/publications/">Publications</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://www.hmc.org.uk/news/">News &#038; Events</a></li>
+<li id="menu-item-355" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-355"><a href="http://www.hmc.org.uk/hmc-blog/">HMC Blog</a></li>
+<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="http://www.hmc.org.uk/links/">Links</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://www.hmc.org.uk/contact-us/">Contact Us</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://www.hmc.org.uk/members-zone/">Members Zone</a></li>
+<li id="menu-item-1279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1279"><a href="http://www.hmc.org.uk/cookie-policy/">Cookie Policy</a></li>
+</ul></div>            </div>
+            <div id="footer-address" class="footer-col left">
+                			<div class="textwidget"><p>The Headmasters’ and Headmistresses’ Conference is a company limited by guarantee. Registered in England and Wales number 101760.</p>
+<address>
+<strong>HMC</strong><br/>
+12 The Point, Rockingham Road,<br/>
+Market Harborough,<br/>
+Leicestershire, LE16 7QU
+</address>
+<span class="tel">Tel: <strong>01858 469 059</strong></span></div>
+		                <div id="copyright">All rights reserved &copy; 2016 The Headmasters' &amp; Headmistresses' Conference<span class="mobile-only"> | <a href="#" id="btn-desktop">View Desktop Version</a></span></div>
+                <div id="engine"><a href="http://www.enginecreative.co.uk" title="Engine Creative Agency" target="_blank">Website Design &amp; Development by Engine Creative</a></div>
+            </div>
+            
+            <div id="slickr-flickr" class="left">
+                <div id="flickr_featured_7996"><div class="slickr-flickr-slideshow landscape medium nocaptions "><div class="active"><img src="//farm9.staticflickr.com/8078/8356782199_c7d43c0e18.jpg" title="queens002_088" alt=""  /></div><div><img src="//farm9.staticflickr.com/8069/8229173321_0b1e02811c.jpg" title="(Untitled)" alt=""  /></div><div><img src="//farm9.staticflickr.com/8037/7996247694_50f0baa434.jpg" title="Portsmouth Grammar School" alt=""  /></div><div><img src="//farm9.staticflickr.com/8180/7996242671_b37ca5c91d.jpg" title="Portsmouth Grammar School" alt=""  /></div><div><img src="//farm9.staticflickr.com/8291/7642794490_04d8793499.jpg" title="wb-060511-gh114" alt=""  /></div><div><img src="//farm9.staticflickr.com/8283/7642815170_6d5ea2acf9.jpg" title="wb-060511-gh16" alt=""  /></div><div><img src="//farm8.staticflickr.com/7247/7501233084_1b0f86ce35.jpg" title="Attain Alice Snark" alt=""  /></div><div><img src="//farm9.staticflickr.com/8166/7501002888_01e9b83902.jpg" title="18.6.11_Boo sports day 228" alt=""  /></div><div><img src="//farm8.staticflickr.com/7253/7500154554_6c56db6983.jpg" title="Monmouth School - The Grange" alt=""  /></div><div><img src="//farm9.staticflickr.com/8294/7500024760_280cecf36f.jpg" title="TONY MARSH, TONY MARSH" alt=""  /></div><div><img src="//farm9.staticflickr.com/8023/7494278158_c7b3d32bb7.jpg" title="Monmouth School Football" alt=""  /></div><div><img src="//farm8.staticflickr.com/7119/7493677022_e3d5b64873.jpg" title="Bedford Modern Junior School pupils 003" alt=""  /></div><div><img src="//farm8.staticflickr.com/7128/7493398734_f6c8fe1ef1.jpg" title="St Albans School" alt=""  /></div><div><img src="//farm9.staticflickr.com/8006/7493404546_a103e47b0e.jpg" title="St Albans School CCF" alt=""  /></div><div><img src="//farm8.staticflickr.com/7255/7493373708_16ff9a7060.jpg" title="Taunton School" alt=""  /></div><div><img src="//farm8.staticflickr.com/7276/6857026578_3106cf0820.jpg" title="063_wfp1062" alt=""  /></div></div><div style="clear:both"></div></div>                <div class="heading"><a href="http://www.flickr.com/photos/68598650@N03" target="_blank">Flickr Gallery</a></div>
+            </div>
+            
+        </div>
+    </footer>
+    
+</div> <!-- end #container -->
+
+<div id="modal-mask">
+    
+    <div id="cookie-modal">
+        <h3>HMC Cookie Policy</h3>
+        <p>The HMC website uses cookies to monitor usage. For further information about cookies and how to remove them from your browser, please view our <a href="/cookie-policy">cookie policy</a>.</p>
+        <button id="cookie-ok">OK</button>
+    </div>
+    
+    <div id="video-modal">
+        <iframe src="//player.vimeo.com/video/71329170?title=0&amp;byline=0&amp;autoplay=0&amp;loop=0" height="450" width="800" allowfullscreen="" frameborder="0" id="vimeo-iframe"></iframe>
+        <button id="btn-vimeo-close"></button>
+    </div>
+    
+</div>
+
+<!-- Scripts -->
+<script defer src="//www.hmc.org.uk/wp-content/themes/hmc/js/plugins.js"></script>
+<script defer src="//www.hmc.org.uk/wp-content/themes/hmc/js/script.js"></script>
+
+<!-- Chrome Frame -->
+<!--[if lt IE 7 ]>
+<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+<![endif]-->
+
+<!-- ngg_resource_manager_marker --><script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/jetpack/modules/photon/photon.js?ver=20130122'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.hmc.org.uk\/wp-content\/themes\/hmc\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.9.3'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.4-5380'></script>
+<script type='text/javascript' src='//s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201650'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"http:\/\/www.hmc.org.uk\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/slickr-flickr/galleria/galleria-1.3.5.min.js?ver=1.3.5'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/slickr-flickr/galleria/themes/classic/galleria.classic.min.js?ver=1.3.5'></script>
+<script type='text/javascript' src='//www.hmc.org.uk/wp-content/plugins/slickr-flickr/scripts/public.js?ver=2.0'></script>
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+jQuery("#flickr_featured_7996").data("options",{"delay":4000,"autoplay":true,"transition":0,"link":"next","target":"_self"});
+
+});
+//]]>
+</script><script type="text/javascript">
+//<![CDATA[
+jQuery.noConflict(); 
+jQuery(document).ready(function() { slickr_flickr_start(); });
+//]]>
+</script><script type='text/javascript' src='//stats.wp.com/e-201650.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.7',blog:'75508518',post:'0',tz:'0',srv:'www.hmc.org.uk'} ]);
+	_stq.push([ 'clickTrackerInit', '75508518', '0' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02bc39f36d","applicationID":"3322997","transactionName":"ZV0HMEFTCEEABhUIC1wXJAdHWwlcTgQTAgxbTgBJQFEOXQ4JEg==","queueTime":0,"applicationTime":2016,"atts":"SRoERglJG08=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+
+ Served from: www.hmc.org.uk @ 2016-12-14 12:33:48 by W3 Total Cache -->

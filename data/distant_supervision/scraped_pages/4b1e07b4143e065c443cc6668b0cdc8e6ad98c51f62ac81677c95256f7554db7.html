@@ -1,0 +1,1367 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+
+<!-- REQUIRED META INFORMATION -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- DOCUMENT TITLE -->
+<title>Actuarial Life Table</title>
+
+<!-- OCOMM META INFORMATION -->
+<meta name="dc.creator" content="" />
+<meta name="lead_content_manager" content="" />
+<meta name="coder" content="" />
+
+<!-- OCOMM STYLES & SCRIPTS -->
+<link href="/framework/css/phoenix.css" type="text/css" rel="stylesheet" media="all" />
+
+ <!-- OACT STYLES -->
+    <link href="../templatefiles/ocact.css" type="text/css" rel="stylesheet" media="all" />
+
+
+	
+<!-- SMARTPHONE ICON -->
+<link rel="apple-touch-icon-precomposed" href="/framework/images/icons/png/apple-touch-icon.png">
+
+<!-- NO SCRIPT STYLES -->
+<noscript><link href="/framework/css/noscript.css" rel="stylesheet" media="all" /></noscript>
+
+<!-- SSA INTERNET HEAD SCRIPTS -->
+<script src="/framework/js/ssa.internet.head.js"></script>
+
+<!-- FACEBOOK OPEN GRAPH META TAGS -->
+<meta property="og:image" content="/framework/images/icons/png/logo-fb-share.png" />
+<meta property="og:description" content="Social Security delivers a broad range of services online at socialsecurity.gov.  We have a proud history of protecting the integrity of our programs and service to the public." />
+</head>
+<body class="nav-sidebar">
+
+<!-- PAGE CONTAINER -->
+<div id="page">
+
+<!-- PAGE HEADER -->
+<!-- ACCESSIBILITY OPTIONS -->
+<div class="bg-dark-gray accessibility">
+    <div class="content-wrapper no-padding">
+        <a class="accessibility-mode" id="accessibility-mode" href="#">Turn Accessibility Mode <span>On</span></a>
+        <a class="skip-navigation" id="skip-navigation" href="#title-bar">Skip to content</a>
+    </div>
+</div>
+<!-- BANNER -->
+<header class="banner-neo" id="banner" role="banner">
+    <div class="banner-wrapper">
+        <h1 class="banner-logo">
+            <a class="banner-logo__link" href="/">Social Security</a>
+        </h1>
+        <nav class="banner-nav" id="banner-nav">
+            <a class="banner-nav__link banner-search" href="https://search.ssa.gov/search?affiliate=ssa" title="Search">
+                <svg class="banner-nav__icon" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M 10 23 C 11.219 23 12.384 22.762 13.496 22.285 C 14.608 21.808 15.565 21.169 16.367 20.367 C 17.169 19.565 17.808 18.608 18.285 17.496 C 18.762 16.384 19 15.219 19 14 C 19 12.953 18.829 11.951 18.488 10.992 C 18.147 10.033 17.661 9.164 17.031 8.383 L 22.711 2.711 C 22.904 2.518 23 2.281 23 2 C 23 1.713 22.905 1.475 22.715 1.285 C 22.525 1.095 22.287 1 22 1 C 21.719 1 21.482 1.096 21.289 1.289 L 15.617 6.969 C 14.836 6.339 13.966 5.853 13.008 5.512 C 12.05 5.171 11.047 5 10 5 C 8.781 5 7.616 5.238 6.504 5.715 C 5.392 6.192 4.435 6.831 3.633 7.633 C 2.831 8.435 2.192 9.392 1.715 10.504 C 1.238 11.616 1 12.781 1 14 C 1 15.219 1.238 16.384 1.715 17.496 C 2.192 18.608 2.831 19.565 3.633 20.367 C 4.435 21.169 5.392 21.808 6.504 22.285 C 7.616 22.762 8.781 23 10 23 Z M 10 21 C 9.052 21 8.146 20.815 7.281 20.445 C 6.416 20.075 5.672 19.578 5.047 18.953 C 4.422 18.328 3.925 17.584 3.555 16.719 C 3.185 15.854 3 14.948 3 14 C 3 13.052 3.185 12.146 3.555 11.281 C 3.925 10.416 4.422 9.672 5.047 9.047 C 5.672 8.422 6.416 7.925 7.281 7.555 C 8.146 7.185 9.052 7 10 7 C 10.948 7 11.854 7.185 12.719 7.555 C 13.584 7.925 14.328 8.422 14.953 9.047 C 15.578 9.672 16.075 10.416 16.445 11.281 C 16.815 12.146 17 13.052 17 14 C 17 14.948 16.815 15.854 16.445 16.719 C 16.075 17.584 15.578 18.328 14.953 18.953 C 14.328 19.578 13.584 20.075 12.719 20.445 C 11.854 20.815 10.948 21 10 21 Z" transform="matrix(-1, 0, 0, -1, 24.000001, 24.000001)" vector-effect="non-scaling-stroke"></path>
+                </svg><span>Search</span></a>
+            <a class="banner-nav__link banner-menu" href="/site/menu/en/" id="ssa-menu" title="Menu">
+                <svg class="banner-nav__icon" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 5h18q.414 0 .707.293T22 6t-.293.707T21 7H3q-.414 0-.707-.293T2 6t.293-.707T3 5zm0 12h18q.414 0 .707.293T22 18t-.293.707T21 19H3q-.414 0-.707-.293T2 18t.293-.707T3 17zm0-6h18q.414 0 .707.293T22 12t-.293.707T21 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11z" vector-effect="non-scaling-stroke"></path>
+                </svg><span>Menu</span></a>
+            <a class="banner-nav__link banner-languages" href="/site/languages/en/" id="ssa-languages" title="Languages">
+                <svg class="banner-nav__icon" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c.812 0 1.604-.08 2.37-.235-.31-.147-.343-1.255-.037-1.887.34-.703 1.406-2.485.35-3.08-1.053-.6-.76-.868-1.405-1.56-.644-.692-.38-.796-.422-.974-.14-.61.62-1.523.656-1.616.035-.094.035-.446.023-.55-.012-.107-.48-.387-.597-.4-.117-.01-.176.188-.34.2-.164.012-.88-.433-1.03-.55-.154-.117-.224-.398-.435-.61-.21-.212-.235-.047-.562-.175-.327-.13-1.382-.516-2.19-.844-.81-.33-.88-.79-.892-1.114-.012-.325-.492-.797-.718-1.137-.225-.342-.267-.81-.348-.705-.082.106.422 1.336.34 1.37-.083.037-.26-.338-.493-.643-.235-.304.245-.14-.505-1.617-.75-1.476.235-2.23.282-3 .048-.77.633.28.328-.21-.304-.493.023-1.524-.21-1.9-.235-.374-1.57.423-1.57.423.034-.363 1.17-.985 1.99-1.56.82-.573 1.322-.128 1.982.083.66.21.703.142.48-.07-.222-.21.094-.316.61-.235.516.082.656.704 1.442.645.784-.06.08.152.186.35.105.2-.117.177-.633.53-.516.35.012.35.926 1.02.913.667.632-.447.538-.94-.094-.49.668-.105.668-.105.563.375.46.02.87.15.408.13 1.52 1.07 1.52 1.07-1.395.762-.516.844-.282 1.02.235.175-.48.515-.48.515-.294-.293-.34.012-.528.117-.187.105-.012.375-.012.375-.97.153-.75 1.173-.738 1.418.012.247-.62.622-.786.973-.164.35.423 1.113.117 1.16-.305.048-.61-1.148-2.25-.703-.495.134-1.593.703-1.008 1.863.585 1.16 1.558-.328 1.886-.164.33.163-.093.902-.023.913.07.012.927.033.974 1.032.048 1 1.3.914 1.57.938.27.023 1.173-.74 1.3-.774.13-.035.646-.47 1.77.175 1.126.644 1.7.55 2.086.82.387.27.117.81.48.985.365.176 1.818-.058 2.18.54.364.597-1.5 3.597-2.085 3.925-.586.328-.856 1.078-1.442 1.558-.69.563-1.418 1.076-2.18 1.535-.684.407-.807 1.137-1.112 1.367C19.984 22.52 24 17.73 24 12c0-6.627-5.373-12-12-12zm2.813 11.262c-.165.047-.504.352-1.336-.14-.832-.494-1.406-.4-1.477-.48 0 0-.07-.2.293-.236.747-.072 1.688.692 1.9.704.21.012.315-.21.69-.09.375.12.094.195-.07.242zM10.887 1.196c-.082-.06.068-.128.157-.246.05-.07.013-.182.078-.246.175-.177 1.043-.423.874.058-.17.48-.98.527-1.11.434zm2.098 1.523c-.293-.013-.983-.086-.856-.212.494-.492-.188-.633-.61-.668-.423-.036-.598-.27-.388-.294.21-.024 1.055.013 1.196.13.14.117.902.422.95.644.047.223 0 .41-.293.4zm2.542-.083c-.234.188-1.413-.673-1.64-.867-.985-.844-1.513-.563-1.72-.703-.206-.142-.132-.33.184-.61.318-.282 1.21.094 1.724.152.516.058 1.113.457 1.125.93.01.474.562.91.327 1.097z" vector-effect="non-scaling-stroke"></path>
+                </svg><span>Languages</span></a>
+            <a class="banner-nav__link banner-signin" href="/site/signin/en/" id="ssa-signin" title="Sign in/up">
+                <svg class="banner-nav__icon" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.016q-.797 0-1.406-.61t-.61-1.405.61-1.405 1.406-.61 1.406.61.61 1.406-.61 1.407-1.406.61zm6 3V9.986H6v10.03h12zm-6-17.11q-1.266 0-2.18.914T8.906 6H9v2.016h6.094V6q0-1.266-.914-2.18T12 2.906zm6 5.11q.797 0 1.406.586t.61 1.383v10.03q0 .798-.61 1.384T18 21.984H6q-.797 0-1.406-.586t-.61-1.384V9.986q0-.798.61-1.384T6 8.016h.984V6q0-2.063 1.477-3.54T12 .985t3.54 1.477T17.015 6v2.016H18z" vector-effect="non-scaling-stroke"></path>
+                </svg><span>Sign in / up</span></a>
+        </nav>
+    </div>
+</header>
+
+
+<!-- PAGE NAVIGATION -->
+<!-- DEPRECATED -->
+
+<!-- PAGE TITLE -->
+<div id="title-bar"><h2>Actuarial Life Table</h2></div>
+
+<!-- PAGE CONTENT -->
+<div class="no-top-padding" id="content" role="main">
+
+<!-- GRID SYSTEM -->
+<div class="grid no-top-padding">
+
+<div class="row-12 equal-heights " style="background-color: #eeefef;" >
+
+<div class="column-3 large pad-all " style="background-color: #eeefef;" id="nav-sidebar" role="navigation "> 
+
+ <p>   <a href="../index.html">Office of the Chief Actuary </a>  </p>
+    <p><a href="../NOTES/as120/LifeTables_Body.html">Life Tables</a></p>
+
+</div><!-- end .column-3 -->
+
+
+<div class="column-9 large border-left pad-left" style="background-color: w;" > 
+
+
+<!-- #BeginEditable "import" -->
+
+    <!-- check for latest version of publication on next line -->
+
+
+    <p>A period life table is based on the mortality experience of a population
+     during a relatively short period of time.  Here we present the 2013 period life table
+     for the <a href="#ss">Social Security area population</a>.
+     For this table, the period life expectancy at a given age is the average remaining number 
+	 of years expected prior to death for a person at that exact age, born on January 1, using the mortality 
+	 rates for 2013 over the course of his or her remaining life. </p>
+   
+</div><!-- end .column-9 -->
+
+</div><!-- end .row-12 -->
+
+<div class="row-12 large">
+
+<div class="column-12"> 
+
+<!-- #BeginEditable "import" -->
+<!-- #BeginEditable "import" -->
+<table width="100%" border="0" cellspacing="0" cellpadding="1" summary="formatting"><tbody>
+  <tr bgcolor="#333366"><td height="1"></td></tr>
+  <tr valign="top"><td align="center"><p>
+<table cellpadding="1" cellspacing="0" border="1" width="100%">
+<caption><b>Period Life Table, 2013</b></caption>
+<thead style="display: table-header-group">
+<tr valign="bottom">
+  <th scope="col" colspan="1" rowspan="2" align="center">Exact<br /> age</th>
+  <th align="center" colspan="3">Male</th>
+  <th align="center" colspan="3">Female</th>
+</tr>
+<tr valign="bottom">
+  <th scope="col" align="right" abbr="male probability">Death
+    <br />probability <a href="#fn1"><small><sup>a</sup></small></a></th>
+  <th scope="col" align="right" abbr="male number">Number of<br />
+   lives <a href="#fn2"><small><sup>b</sup></small></a></th>
+  <th scope="col" align="right" abbr="male life expectancy">Life<br /> expectancy</th>
+  <th scope="col" align="right" abbr="female probability">Death<br />
+   probability <a href="#fn1"><small><sup>a</sup></small></a></th>
+  <th scope="col" align="right" abbr="female number">Number of<br />
+   lives <a href="#fn2"><small><sup>b</sup></small></a></th>
+  <th scope="col" align="right" abbr="female life expectancy">Life<br />
+   expectancy</th>
+</tr>
+</thead>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">   0</td>
+  <td>  0.006519</td>
+  <td>  100,000</td>
+  <td> 76.28</td>
+  <td>  0.005377</td>
+  <td>  100,000</td>
+  <td> 81.05</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">   1</td>
+  <td>  0.000462</td>
+  <td>   99,348</td>
+  <td> 75.78</td>
+  <td>  0.000379</td>
+  <td>   99,462</td>
+  <td> 80.49</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">   2</td>
+  <td>  0.000291</td>
+  <td>   99,302</td>
+  <td> 74.82</td>
+  <td>  0.000221</td>
+  <td>   99,425</td>
+  <td> 79.52</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">   3</td>
+  <td>  0.000209</td>
+  <td>   99,273</td>
+  <td> 73.84</td>
+  <td>  0.000162</td>
+  <td>   99,403</td>
+  <td> 78.54</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">   4</td>
+  <td>  0.000176</td>
+  <td>   99,252</td>
+  <td> 72.85</td>
+  <td>  0.000133</td>
+  <td>   99,387</td>
+  <td> 77.55</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">   5</td>
+  <td>  0.000159</td>
+  <td>   99,235</td>
+  <td> 71.87</td>
+  <td>  0.000119</td>
+  <td>   99,373</td>
+  <td> 76.56</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">   6</td>
+  <td>  0.000146</td>
+  <td>   99,219</td>
+  <td> 70.88</td>
+  <td>  0.000109</td>
+  <td>   99,361</td>
+  <td> 75.57</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">   7</td>
+  <td>  0.000133</td>
+  <td>   99,205</td>
+  <td> 69.89</td>
+  <td>  0.000101</td>
+  <td>   99,351</td>
+  <td> 74.58</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">   8</td>
+  <td>  0.000118</td>
+  <td>   99,192</td>
+  <td> 68.90</td>
+  <td>  0.000096</td>
+  <td>   99,341</td>
+  <td> 73.58</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">   9</td>
+  <td>  0.000102</td>
+  <td>   99,180</td>
+  <td> 67.90</td>
+  <td>  0.000093</td>
+  <td>   99,331</td>
+  <td> 72.59</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  10</td>
+  <td>  0.000091</td>
+  <td>   99,170</td>
+  <td> 66.91</td>
+  <td>  0.000094</td>
+  <td>   99,322</td>
+  <td> 71.60</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  11</td>
+  <td>  0.000096</td>
+  <td>   99,161</td>
+  <td> 65.92</td>
+  <td>  0.000100</td>
+  <td>   99,312</td>
+  <td> 70.60</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  12</td>
+  <td>  0.000128</td>
+  <td>   99,151</td>
+  <td> 64.92</td>
+  <td>  0.000112</td>
+  <td>   99,303</td>
+  <td> 69.61</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  13</td>
+  <td>  0.000195</td>
+  <td>   99,138</td>
+  <td> 63.93</td>
+  <td>  0.000134</td>
+  <td>   99,291</td>
+  <td> 68.62</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  14</td>
+  <td>  0.000288</td>
+  <td>   99,119</td>
+  <td> 62.94</td>
+  <td>  0.000162</td>
+  <td>   99,278</td>
+  <td> 67.63</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  15</td>
+  <td>  0.000389</td>
+  <td>   99,091</td>
+  <td> 61.96</td>
+  <td>  0.000194</td>
+  <td>   99,262</td>
+  <td> 66.64</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  16</td>
+  <td>  0.000492</td>
+  <td>   99,052</td>
+  <td> 60.99</td>
+  <td>  0.000226</td>
+  <td>   99,243</td>
+  <td> 65.65</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  17</td>
+  <td>  0.000607</td>
+  <td>   99,003</td>
+  <td> 60.02</td>
+  <td>  0.000261</td>
+  <td>   99,220</td>
+  <td> 64.67</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  18</td>
+  <td>  0.000735</td>
+  <td>   98,943</td>
+  <td> 59.05</td>
+  <td>  0.000297</td>
+  <td>   99,194</td>
+  <td> 63.68</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  19</td>
+  <td>  0.000869</td>
+  <td>   98,870</td>
+  <td> 58.09</td>
+  <td>  0.000334</td>
+  <td>   99,165</td>
+  <td> 62.70</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  20</td>
+  <td>  0.001011</td>
+  <td>   98,785</td>
+  <td> 57.14</td>
+  <td>  0.000373</td>
+  <td>   99,132</td>
+  <td> 61.72</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  21</td>
+  <td>  0.001145</td>
+  <td>   98,685</td>
+  <td> 56.20</td>
+  <td>  0.000412</td>
+  <td>   99,095</td>
+  <td> 60.75</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  22</td>
+  <td>  0.001246</td>
+  <td>   98,572</td>
+  <td> 55.27</td>
+  <td>  0.000446</td>
+  <td>   99,054</td>
+  <td> 59.77</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  23</td>
+  <td>  0.001301</td>
+  <td>   98,449</td>
+  <td> 54.33</td>
+  <td>  0.000472</td>
+  <td>   99,010</td>
+  <td> 58.80</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  24</td>
+  <td>  0.001321</td>
+  <td>   98,321</td>
+  <td> 53.40</td>
+  <td>  0.000493</td>
+  <td>   98,963</td>
+  <td> 57.82</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  25</td>
+  <td>  0.001330</td>
+  <td>   98,191</td>
+  <td> 52.47</td>
+  <td>  0.000513</td>
+  <td>   98,915</td>
+  <td> 56.85</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  26</td>
+  <td>  0.001345</td>
+  <td>   98,060</td>
+  <td> 51.54</td>
+  <td>  0.000537</td>
+  <td>   98,864</td>
+  <td> 55.88</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  27</td>
+  <td>  0.001363</td>
+  <td>   97,928</td>
+  <td> 50.61</td>
+  <td>  0.000563</td>
+  <td>   98,811</td>
+  <td> 54.91</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  28</td>
+  <td>  0.001391</td>
+  <td>   97,795</td>
+  <td> 49.68</td>
+  <td>  0.000593</td>
+  <td>   98,755</td>
+  <td> 53.94</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  29</td>
+  <td>  0.001427</td>
+  <td>   97,659</td>
+  <td> 48.75</td>
+  <td>  0.000627</td>
+  <td>   98,697</td>
+  <td> 52.97</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  30</td>
+  <td>  0.001467</td>
+  <td>   97,519</td>
+  <td> 47.82</td>
+  <td>  0.000664</td>
+  <td>   98,635</td>
+  <td> 52.01</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  31</td>
+  <td>  0.001505</td>
+  <td>   97,376</td>
+  <td> 46.89</td>
+  <td>  0.000705</td>
+  <td>   98,569</td>
+  <td> 51.04</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  32</td>
+  <td>  0.001541</td>
+  <td>   97,230</td>
+  <td> 45.96</td>
+  <td>  0.000748</td>
+  <td>   98,500</td>
+  <td> 50.08</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  33</td>
+  <td>  0.001573</td>
+  <td>   97,080</td>
+  <td> 45.03</td>
+  <td>  0.000794</td>
+  <td>   98,426</td>
+  <td> 49.11</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  34</td>
+  <td>  0.001606</td>
+  <td>   96,927</td>
+  <td> 44.10</td>
+  <td>  0.000845</td>
+  <td>   98,348</td>
+  <td> 48.15</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  35</td>
+  <td>  0.001648</td>
+  <td>   96,772</td>
+  <td> 43.17</td>
+  <td>  0.000903</td>
+  <td>   98,265</td>
+  <td> 47.19</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  36</td>
+  <td>  0.001704</td>
+  <td>   96,612</td>
+  <td> 42.24</td>
+  <td>  0.000968</td>
+  <td>   98,176</td>
+  <td> 46.23</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  37</td>
+  <td>  0.001774</td>
+  <td>   96,448</td>
+  <td> 41.31</td>
+  <td>  0.001038</td>
+  <td>   98,081</td>
+  <td> 45.28</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  38</td>
+  <td>  0.001861</td>
+  <td>   96,277</td>
+  <td> 40.38</td>
+  <td>  0.001113</td>
+  <td>   97,979</td>
+  <td> 44.33</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  39</td>
+  <td>  0.001967</td>
+  <td>   96,097</td>
+  <td> 39.46</td>
+  <td>  0.001196</td>
+  <td>   97,870</td>
+  <td> 43.37</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  40</td>
+  <td>  0.002092</td>
+  <td>   95,908</td>
+  <td> 38.53</td>
+  <td>  0.001287</td>
+  <td>   97,753</td>
+  <td> 42.43</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  41</td>
+  <td>  0.002240</td>
+  <td>   95,708</td>
+  <td> 37.61</td>
+  <td>  0.001393</td>
+  <td>   97,627</td>
+  <td> 41.48</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  42</td>
+  <td>  0.002418</td>
+  <td>   95,493</td>
+  <td> 36.70</td>
+  <td>  0.001517</td>
+  <td>   97,491</td>
+  <td> 40.54</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  43</td>
+  <td>  0.002629</td>
+  <td>   95,262</td>
+  <td> 35.78</td>
+  <td>  0.001662</td>
+  <td>   97,343</td>
+  <td> 39.60</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  44</td>
+  <td>  0.002873</td>
+  <td>   95,012</td>
+  <td> 34.88</td>
+  <td>  0.001827</td>
+  <td>   97,182</td>
+  <td> 38.66</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  45</td>
+  <td>  0.003146</td>
+  <td>   94,739</td>
+  <td> 33.98</td>
+  <td>  0.002005</td>
+  <td>   97,004</td>
+  <td> 37.73</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  46</td>
+  <td>  0.003447</td>
+  <td>   94,441</td>
+  <td> 33.08</td>
+  <td>  0.002198</td>
+  <td>   96,810</td>
+  <td> 36.81</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  47</td>
+  <td>  0.003787</td>
+  <td>   94,115</td>
+  <td> 32.19</td>
+  <td>  0.002412</td>
+  <td>   96,597</td>
+  <td> 35.89</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  48</td>
+  <td>  0.004167</td>
+  <td>   93,759</td>
+  <td> 31.32</td>
+  <td>  0.002648</td>
+  <td>   96,364</td>
+  <td> 34.97</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  49</td>
+  <td>  0.004586</td>
+  <td>   93,368</td>
+  <td> 30.44</td>
+  <td>  0.002904</td>
+  <td>   96,109</td>
+  <td> 34.06</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  50</td>
+  <td>  0.005038</td>
+  <td>   92,940</td>
+  <td> 29.58</td>
+  <td>  0.003182</td>
+  <td>   95,829</td>
+  <td> 33.16</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  51</td>
+  <td>  0.005520</td>
+  <td>   92,472</td>
+  <td> 28.73</td>
+  <td>  0.003473</td>
+  <td>   95,524</td>
+  <td> 32.27</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  52</td>
+  <td>  0.006036</td>
+  <td>   91,961</td>
+  <td> 27.89</td>
+  <td>  0.003767</td>
+  <td>   95,193</td>
+  <td> 31.38</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  53</td>
+  <td>  0.006587</td>
+  <td>   91,406</td>
+  <td> 27.05</td>
+  <td>  0.004058</td>
+  <td>   94,834</td>
+  <td> 30.49</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  54</td>
+  <td>  0.007170</td>
+  <td>   90,804</td>
+  <td> 26.23</td>
+  <td>  0.004352</td>
+  <td>   94,449</td>
+  <td> 29.62</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  55</td>
+  <td>  0.007801</td>
+  <td>   90,153</td>
+  <td> 25.41</td>
+  <td>  0.004681</td>
+  <td>   94,038</td>
+  <td> 28.74</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  56</td>
+  <td>  0.008466</td>
+  <td>   89,450</td>
+  <td> 24.61</td>
+  <td>  0.005040</td>
+  <td>   93,598</td>
+  <td> 27.88</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  57</td>
+  <td>  0.009133</td>
+  <td>   88,693</td>
+  <td> 23.82</td>
+  <td>  0.005400</td>
+  <td>   93,126</td>
+  <td> 27.01</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  58</td>
+  <td>  0.009792</td>
+  <td>   87,883</td>
+  <td> 23.03</td>
+  <td>  0.005756</td>
+  <td>   92,623</td>
+  <td> 26.16</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  59</td>
+  <td>  0.010462</td>
+  <td>   87,022</td>
+  <td> 22.25</td>
+  <td>  0.006128</td>
+  <td>   92,090</td>
+  <td> 25.31</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  60</td>
+  <td>  0.011197</td>
+  <td>   86,112</td>
+  <td> 21.48</td>
+  <td>  0.006545</td>
+  <td>   91,526</td>
+  <td> 24.46</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  61</td>
+  <td>  0.012009</td>
+  <td>   85,147</td>
+  <td> 20.72</td>
+  <td>  0.007034</td>
+  <td>   90,927</td>
+  <td> 23.62</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  62</td>
+  <td>  0.012867</td>
+  <td>   84,125</td>
+  <td> 19.97</td>
+  <td>  0.007607</td>
+  <td>   90,287</td>
+  <td> 22.78</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  63</td>
+  <td>  0.013772</td>
+  <td>   83,042</td>
+  <td> 19.22</td>
+  <td>  0.008281</td>
+  <td>   89,600</td>
+  <td> 21.95</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  64</td>
+  <td>  0.014749</td>
+  <td>   81,899</td>
+  <td> 18.48</td>
+  <td>  0.009057</td>
+  <td>   88,858</td>
+  <td> 21.13</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  65</td>
+  <td>  0.015852</td>
+  <td>   80,691</td>
+  <td> 17.75</td>
+  <td>  0.009953</td>
+  <td>   88,054</td>
+  <td> 20.32</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  66</td>
+  <td>  0.017097</td>
+  <td>   79,412</td>
+  <td> 17.03</td>
+  <td>  0.010950</td>
+  <td>   87,177</td>
+  <td> 19.52</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  67</td>
+  <td>  0.018463</td>
+  <td>   78,054</td>
+  <td> 16.32</td>
+  <td>  0.012010</td>
+  <td>   86,223</td>
+  <td> 18.73</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  68</td>
+  <td>  0.019959</td>
+  <td>   76,613</td>
+  <td> 15.61</td>
+  <td>  0.013124</td>
+  <td>   85,187</td>
+  <td> 17.95</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  69</td>
+  <td>  0.021616</td>
+  <td>   75,084</td>
+  <td> 14.92</td>
+  <td>  0.014330</td>
+  <td>   84,069</td>
+  <td> 17.18</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  70</td>
+  <td>  0.023528</td>
+  <td>   73,461</td>
+  <td> 14.24</td>
+  <td>  0.015728</td>
+  <td>   82,864</td>
+  <td> 16.43</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  71</td>
+  <td>  0.025693</td>
+  <td>   71,732</td>
+  <td> 13.57</td>
+  <td>  0.017338</td>
+  <td>   81,561</td>
+  <td> 15.68</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  72</td>
+  <td>  0.028041</td>
+  <td>   69,889</td>
+  <td> 12.92</td>
+  <td>  0.019108</td>
+  <td>   80,147</td>
+  <td> 14.95</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  73</td>
+  <td>  0.030567</td>
+  <td>   67,930</td>
+  <td> 12.27</td>
+  <td>  0.021041</td>
+  <td>   78,616</td>
+  <td> 14.23</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  74</td>
+  <td>  0.033347</td>
+  <td>   65,853</td>
+  <td> 11.65</td>
+  <td>  0.023191</td>
+  <td>   76,961</td>
+  <td> 13.53</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  75</td>
+  <td>  0.036572</td>
+  <td>   63,657</td>
+  <td> 11.03</td>
+  <td>  0.025713</td>
+  <td>   75,177</td>
+  <td> 12.83</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  76</td>
+  <td>  0.040276</td>
+  <td>   61,329</td>
+  <td> 10.43</td>
+  <td>  0.028609</td>
+  <td>   73,244</td>
+  <td> 12.16</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  77</td>
+  <td>  0.044348</td>
+  <td>   58,859</td>
+  <td>  9.85</td>
+  <td>  0.031760</td>
+  <td>   71,148</td>
+  <td> 11.50</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  78</td>
+  <td>  0.048797</td>
+  <td>   56,249</td>
+  <td>  9.28</td>
+  <td>  0.035157</td>
+  <td>   68,888</td>
+  <td> 10.86</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  79</td>
+  <td>  0.053739</td>
+  <td>   53,504</td>
+  <td>  8.73</td>
+  <td>  0.038920</td>
+  <td>   66,467</td>
+  <td> 10.24</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  80</td>
+  <td>  0.059403</td>
+  <td>   50,629</td>
+  <td>  8.20</td>
+  <td>  0.043289</td>
+  <td>   63,880</td>
+  <td>  9.64</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  81</td>
+  <td>  0.065873</td>
+  <td>   47,621</td>
+  <td>  7.68</td>
+  <td>  0.048356</td>
+  <td>   61,114</td>
+  <td>  9.05</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  82</td>
+  <td>  0.073082</td>
+  <td>   44,484</td>
+  <td>  7.19</td>
+  <td>  0.054041</td>
+  <td>   58,159</td>
+  <td>  8.48</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  83</td>
+  <td>  0.081070</td>
+  <td>   41,233</td>
+  <td>  6.72</td>
+  <td>  0.060384</td>
+  <td>   55,016</td>
+  <td>  7.94</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  84</td>
+  <td>  0.089947</td>
+  <td>   37,890</td>
+  <td>  6.27</td>
+  <td>  0.067498</td>
+  <td>   51,694</td>
+  <td>  7.42</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  85</td>
+  <td>  0.099842</td>
+  <td>   34,482</td>
+  <td>  5.84</td>
+  <td>  0.075516</td>
+  <td>   48,205</td>
+  <td>  6.92</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  86</td>
+  <td>  0.110863</td>
+  <td>   31,040</td>
+  <td>  5.43</td>
+  <td>  0.084556</td>
+  <td>   44,565</td>
+  <td>  6.44</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  87</td>
+  <td>  0.123088</td>
+  <td>   27,598</td>
+  <td>  5.04</td>
+  <td>  0.094703</td>
+  <td>   40,796</td>
+  <td>  5.99</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  88</td>
+  <td>  0.136563</td>
+  <td>   24,201</td>
+  <td>  4.68</td>
+  <td>  0.106014</td>
+  <td>   36,933</td>
+  <td>  5.57</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  89</td>
+  <td>  0.151299</td>
+  <td>   20,896</td>
+  <td>  4.34</td>
+  <td>  0.118513</td>
+  <td>   33,017</td>
+  <td>  5.17</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  90</td>
+  <td>  0.167291</td>
+  <td>   17,735</td>
+  <td>  4.03</td>
+  <td>  0.132206</td>
+  <td>   29,104</td>
+  <td>  4.80</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  91</td>
+  <td>  0.184520</td>
+  <td>   14,768</td>
+  <td>  3.74</td>
+  <td>  0.147092</td>
+  <td>   25,257</td>
+  <td>  4.45</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  92</td>
+  <td>  0.202954</td>
+  <td>   12,043</td>
+  <td>  3.47</td>
+  <td>  0.163154</td>
+  <td>   21,542</td>
+  <td>  4.13</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  93</td>
+  <td>  0.222555</td>
+  <td>    9,599</td>
+  <td>  3.23</td>
+  <td>  0.180371</td>
+  <td>   18,027</td>
+  <td>  3.84</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center">  94</td>
+  <td>  0.243272</td>
+  <td>    7,463</td>
+  <td>  3.01</td>
+  <td>  0.198714</td>
+  <td>   14,775</td>
+  <td>  3.57</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  95</td>
+  <td>  0.263821</td>
+  <td>    5,647</td>
+  <td>  2.82</td>
+  <td>  0.217264</td>
+  <td>   11,839</td>
+  <td>  3.34</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  96</td>
+  <td>  0.283833</td>
+  <td>    4,157</td>
+  <td>  2.64</td>
+  <td>  0.235735</td>
+  <td>    9,267</td>
+  <td>  3.12</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  97</td>
+  <td>  0.302916</td>
+  <td>    2,977</td>
+  <td>  2.49</td>
+  <td>  0.253810</td>
+  <td>    7,083</td>
+  <td>  2.93</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  98</td>
+  <td>  0.320672</td>
+  <td>    2,075</td>
+  <td>  2.36</td>
+  <td>  0.271155</td>
+  <td>    5,285</td>
+  <td>  2.76</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center">  99</td>
+  <td>  0.336706</td>
+  <td>    1,410</td>
+  <td>  2.24</td>
+  <td>  0.287424</td>
+  <td>    3,852</td>
+  <td>  2.60</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 100</td>
+  <td>  0.353541</td>
+  <td>      935</td>
+  <td>  2.12</td>
+  <td>  0.304670</td>
+  <td>    2,745</td>
+  <td>  2.45</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 101</td>
+  <td>  0.371218</td>
+  <td>      605</td>
+  <td>  2.01</td>
+  <td>  0.322950</td>
+  <td>    1,909</td>
+  <td>  2.30</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 102</td>
+  <td>  0.389779</td>
+  <td>      380</td>
+  <td>  1.90</td>
+  <td>  0.342327</td>
+  <td>    1,292</td>
+  <td>  2.17</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 103</td>
+  <td>  0.409268</td>
+  <td>      232</td>
+  <td>  1.80</td>
+  <td>  0.362867</td>
+  <td>      850</td>
+  <td>  2.03</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 104</td>
+  <td>  0.429732</td>
+  <td>      137</td>
+  <td>  1.70</td>
+  <td>  0.384639</td>
+  <td>      541</td>
+  <td>  1.91</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 105</td>
+  <td>  0.451218</td>
+  <td>       78</td>
+  <td>  1.60</td>
+  <td>  0.407717</td>
+  <td>      333</td>
+  <td>  1.78</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 106</td>
+  <td>  0.473779</td>
+  <td>       43</td>
+  <td>  1.51</td>
+  <td>  0.432180</td>
+  <td>      197</td>
+  <td>  1.67</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 107</td>
+  <td>  0.497468</td>
+  <td>       23</td>
+  <td>  1.42</td>
+  <td>  0.458111</td>
+  <td>      112</td>
+  <td>  1.56</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 108</td>
+  <td>  0.522341</td>
+  <td>       11</td>
+  <td>  1.34</td>
+  <td>  0.485597</td>
+  <td>       61</td>
+  <td>  1.45</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 109</td>
+  <td>  0.548458</td>
+  <td>        5</td>
+  <td>  1.26</td>
+  <td>  0.514733</td>
+  <td>       31</td>
+  <td>  1.35</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 110</td>
+  <td>  0.575881</td>
+  <td>        2</td>
+  <td>  1.18</td>
+  <td>  0.545617</td>
+  <td>       15</td>
+  <td>  1.26</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 111</td>
+  <td>  0.604675</td>
+  <td>        1</td>
+  <td>  1.11</td>
+  <td>  0.578354</td>
+  <td>        7</td>
+  <td>  1.17</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 112</td>
+  <td>  0.634909</td>
+  <td>        0</td>
+  <td>  1.04</td>
+  <td>  0.613055</td>
+  <td>        3</td>
+  <td>  1.08</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 113</td>
+  <td>  0.666655</td>
+  <td>        0</td>
+  <td>  0.97</td>
+  <td>  0.649839</td>
+  <td>        1</td>
+  <td>  1.00</td>
+</tr>
+<tr bgcolor="#eeefef" valign="bottom" align="right">
+  <td align="center"> 114</td>
+  <td>  0.699987</td>
+  <td>        0</td>
+  <td>  0.90</td>
+  <td>  0.688829</td>
+  <td>        0</td>
+  <td>  0.92</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 115</td>
+  <td>  0.734987</td>
+  <td>        0</td>
+  <td>  0.84</td>
+  <td>  0.730159</td>
+  <td>        0</td>
+  <td>  0.85</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 116</td>
+  <td>  0.771736</td>
+  <td>        0</td>
+  <td>  0.78</td>
+  <td>  0.771736</td>
+  <td>        0</td>
+  <td>  0.78</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 117</td>
+  <td>  0.810323</td>
+  <td>        0</td>
+  <td>  0.72</td>
+  <td>  0.810323</td>
+  <td>        0</td>
+  <td>  0.72</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 118</td>
+  <td>  0.850839</td>
+  <td>        0</td>
+  <td>  0.67</td>
+  <td>  0.850839</td>
+  <td>        0</td>
+  <td>  0.67</td>
+</tr>
+<tr valign=bottom align=right>
+  <td align="center"> 119</td>
+  <td>  0.893381</td>
+  <td>        0</td>
+  <td>  0.61</td>
+  <td>  0.893381</td>
+  <td>        0</td>
+  <td>  0.61</td>
+</tr>
+ <td align="left" colspan="7"><small><a name="fn1">
+  <p><sup>a</sup></a> Probability of dying within one year.<br />
+  <a name="fn2"><sup>b</sup></a> Number of survivors out of 100,000 born alive.</p>
+  <p>Note:
+   The period life expectancy at a given age for 2013 represents the average number
+   of years of life remaining if a group of persons at that age were to experience
+   the mortality rates for 2013 over the course of their remaining life.</p>
+   <p>Source: Social Security Administration, Estimates from the 2016 Trustees Report.</p>  
+  </small></td>
+</tr>
+</tr>
+</table>
+  </td>
+ </tr>
+</tbody></table>
+<!-- #EndEditMain-->
+
+<!-- #EndEditMain-->
+<table cellpadding="4" cellspacing="0" border="0" width="98%">
+<tr><td align="left">
+<small><a name="ss"></a> The Social Security area population is comprised of (1) residents of the 50 States and the 
+District of Columbia (adjusted for net census undercount); (2) civilian residents of Puerto Rico, the Virgin 
+Islands, Guam, American Samoa and the Northern Mariana Islands; (3) Federal civilian employees and persons in the U.S. 
+Armed Forces abroad and their dependents; (4) non-citizens living abroad who are insured for Social Security 
+benefits; and (5) all other U.S. citizens abroad.</small></td></tr></table></center></p>
+
+
+</div><!-- end .column-12 -->
+
+
+</div><!-- end .row-12 -->
+
+</div><!-- end grid -->
+</div><!-- end #content -->
+
+<!-- PAGE FOOTER -->
+<footer class="footer" id="footer" role="contentinfo">
+
+<div class="important-info">
+<h4>Important Information:</h4>
+<ul>
+<li><a href="/accessibility/">Accessibility</a></li>
+<li><a href="/foia/">FOIA</a></li>
+<li><a href="/open/">Open Government</a></li>
+<li><a href="/agency/glossary/">Glossary</a></li>
+<li><a href="/agency/privacy.html">Privacy</a></li>
+<li><a href="http://oig.ssa.gov/report-fraud-waste-or-abuse">Report Fraud, Waste or Abuse</a></li>
+<li><a href="/sitemap.htm">Site Map</a></li>
+<li><a href="/agency/websitepolicies.html">Website Policies</a></li>
+</ul>
+</div>
+
+<div class="gov-sites">
+<h4>Other Government Websites:</h4>
+<ul>
+<li><a href="http://www.govbenefits.gov">Benefits.gov</a></li>
+<li><a href="https://www.disability.gov/">Disability.gov</a></li>
+<li><a href="https://www.healthcare.gov">Healthcare.gov</a></li>
+<li><a href="http://mymoney.gov">MyMoney.gov</a></li>
+<li><a href="https://regulations.gov">Regulations.gov</a></li>
+<li><a href="https://www.usa.gov">USA.gov</a></li>
+<li><a href="/agency/other-gov-websites.html">Other Government Sites</a></li>
+</ul>
+</div>
+
+<div class="social-media">
+<h4>Follow:</h4>
+<ul>
+<li><a class="btn-twitter disclaimer" href="//twitter.com/socialsecurity/" title="Twitter"><span class="visually-hidden">Twitter</span></a></li>
+<li><a class="btn-facebook disclaimer" href="//facebook.com/socialsecurity/" title="Facebook"><span class="visually-hidden">Facebook</span></a></li>
+<li><a class="btn-youtube disclaimer" href="//youtube.com/socialsecurityonline/" title="YouTube"><span class="visually-hidden">YouTube</span></a></li>
+<li><a class="btn-blog" href="//blog.ssa.gov/" title="Blog"><span class="visually-hidden">Blog</span></a></li>
+<li><a class="btn-more" href="/socialmedia/" title="More Social Media"><span class="visually-hidden">More Social Media</span></a></li>
+</ul>
+</div>
+
+<p class="align-center margin-top">This website is produced and published at U.S. taxpayer expense.</p>
+
+</footer>
+<!-- END FOOTER -->
+
+</div><!-- end #page -->
+<!-- OCOMM BODY CONTENT -->
+<!-- DEFINITION PANEL -->
+<aside class="definition-panel" id="definition-panel" role="dialog" tabindex="-1"></aside>
+
+<!-- MODAL DISCLAIMER DIALOG -->
+<aside class="modal modal-disclaimer" id="modal-disclaimer" role="dialog" tabindex="-1">
+    <div class="modal-container">
+        <h4>External Link Disclaimer</h4>
+        <div style="max-width: 600px;margin:1.5rem auto;text-align:left;padding: 0 1em;">
+            <p>You are exiting the Social Security Administration's website.</p>
+            <p>SSA cannot attest to the accuracy of information provided by such websites. If we provide a link to such a website, this does not constitute an endorsement by SSA or any of its employees of the information or products presented on the non-SSA website.</p>
+            <p>Also, such websites are not within our control and may not follow the same privacy, security or accessibility policies. Once you visit such a website you are subject to the policies of that site.</p>
+        </div>
+        <p style="margin-top: 1.5rem;"><a class="btn modal-cancel" href="#" id="disclaimer-cancel">Cancel</a>&#160;&#160;<a class="btn modal-continue" href="#" id="disclaimer-continue">Continue</a>
+        </p>
+        <a class="modal-close" href="#" title="Close disclaimer dialog">X</a>
+    </div>
+</aside>
+
+<!-- UTILITY BAR -->
+<aside class="utility-bar" id="utility-bar">
+
+<!-- UTILITY BAR TOP -->
+<span class="utility-bar-top">
+<a class="icon icon-twitter share-link" href="#" id="share-twitter" title="Share on Twitter">
+<span class="visually-hidden">Share on Twitter</span>
+</a>
+<a class="icon icon-facebook share-link" href="#" id="share-facebook" title="Share on Facebook">
+<span class="visually-hidden">Share on Facebook</span>
+</a>
+<a class="icon icon-gov-delivery" href="#" id="gov-delivery-link" title="Get Page Updates">
+<span class="visually-hidden">Get Page Updates</span>
+</a>
+</span>
+<!-- END UTILITY BAR TOP -->
+
+<!-- UTILITY BAR BOTTOM -->
+<span class="utility-bar-bottom">
+<a class="icon icon-arrow-up" href="#banner" id="top-link" title="Back to Top">
+<span class="visually-hidden">Back to Top</span>
+</a>
+</span>
+<!-- END UTILITY BAR BOTTOM -->
+
+</aside>
+<!-- END UTILITY BAR -->
+
+<!-- OVERLAY -->
+<div class="modal-overlay"></div>
+
+<!-- SSA INTERNET BODY SCRIPTS -->
+<script src="/framework/js/ssa.internet.body.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>State Temperatures | Temperature, Precipitation, and Drought | National Centers for Environmental Information (NCEI)</title>
+<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<![endif]-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Annual and Seasonal Statewide Mean, Maximum, and Minimum Temperature Time Series and Decadal Maps" />
+<meta name="keywords" content="Annual, Winter, Spring, Summer, Fall, Seasonal, Statewide, Mean, Maximum, Max, Minimum, Min, Temperature, Time Series, Decade Maps" />
+<meta name="author" content="Ethen Shepherd, Jesse Enloe" />
+<meta name="application-name" content="State Temperatures" />
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<meta name="msapplication-tooltip" content=""/>
+<meta name="msapplication-task" content="name=NCEI;action-uri=http://www.ncdc.noaa.gov/;icon-uri=http://www.ncdc.noaa.gov/favicon.ico" />
+<meta name="msapplication-TileColor" content="#007EC6" />
+<meta name="msapplication-TileImage" content="images/apple-touch-icon-144.png" />
+<meta name="verify-v1" content="DjxBYfR0oM2KSNJl6i2BbxfTcXOGUnbglkT0QQj5KtI=" />
+
+<!-- The following is a speed hack for IE browsers -->
+<!--[if IE]><![endif]-->
+
+<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+<link type="text/css" rel="stylesheet" media="all" href="css/application.css" />
+
+<link type="text/css" rel="stylesheet" media="screen and (max-width: 659px)" href="css/layout_320.css" /> 
+<link type="text/css" rel="stylesheet" type="text/css" media="screen and (min-width: 660px) and (max-width: 1023px)" href="css/layout_640.css" /> 
+<link type="text/css" rel="stylesheet" type="text/css" media="screen and (min-width: 1024px)" href="css/layout_1024.css" />
+
+<link type="text/css" rel="stylesheet" type="text/css" media="all" href="css/smoothness/jquery-ui-1.10.3.custom.min.css" />
+
+<!--[if IE 8]>
+<link type="text/css" rel="stylesheet" media="all" href="css/ie8.css" />
+<![endif]-->
+
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="css/ie7.css" />
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link type="text/css" rel="stylesheet" media="all" href="css/ie6.css" />
+<![endif]-->
+
+<!--[if gte IE 6]>
+<link type="text/css" rel="stylesheet" media="all" href="css/ie.css" />
+<![endif]-->
+
+<script type="text/javascript" src="js/lib/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-ui-1.10.3.custom.min.js"></script>
+
+<!--[if lte IE 9]>
+	<script type="text/javascript" src="js/lib/html5shiv.min.js"></script>
+	<script type="text/javascript" src="js/lib/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="js/application.js"></script>
+
+<link type="text/css" rel="stylesheet" media="all" href="vendor/bootstrap/css/bootstrap.custom.css" />
+<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/statetrends.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="css/statetrends.css" />
+
+</head>
+
+<body>
+	<div id="main">
+
+		<!-- BEGIN Header -->
+		<header>
+			<div id="header" class="clearfix" role="banner">
+				<div class="inset clearfix">
+					<a class="noaalink" href="http://www.noaa.gov/"></a>
+					<div class="title"><a href="http://www.ncdc.noaa.gov/" title="National Climatic Data Center">National Climatic Data Center<span>&nbsp;</span></a></div>
+					<a href="http://www.commerce.gov/" id="headDOC" title="Click to visit the U.S. Department of Commerce Website"></a>
+				</div>
+			</div>
+
+			<!-- Required for 508 compliance -->
+			<div class="element-invisible">
+				<a class="element-invisible element-focusable" href="#main-content">Skip to main content</a><br />
+				<a class="element-invisible element-focusable" href="#site-search">Skip to site search</a>
+			</div>
+
+			<nav id="nav" class="clearfix" role="navigation">
+				<div class="inset">
+					<ul class="mainNav" role="menubar">
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/" title="Home">Home</a></li>
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/climate-information" title="Climate Information">Climate Information</a></li>
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/data-access" title="Data Access">Data Access</a></li>
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/customer-support" title="Customer Support">Customer Support</a></li>
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/contact" title="Contact Us">Contact</a></li>
+						<li role="menuitem"><a href="//www.ncdc.noaa.gov/about" title="About">About</a></li>
+					</ul> 
+					<div class="navSearchForm" role="search">
+						<form name="sitesearchform" method="get" action="http://search.usa.gov/search"> 
+						<a id="site-search"></a>
+						<fieldset>
+							<legend>Search for articles, products, and data at the National Centers for Environmental Information</legend>
+							<input type="hidden" name="affiliate" value="NCDC" />
+							<label for="sitesearch">Search Field:</label>
+							<input type="text" name="query" class="searchtext inputbox" id="sitesearch" value="Search" maxlength="50" tabindex="1" />
+							<label for="sitesearchbutton">Search button:</label> 
+							<input type="submit" class="submitbutton" id="sitesearchbutton" value="Search" tabindex="2" /> 
+						</fieldset>
+					</form>
+				</div>
+			</div><!-- /inset -->
+		</nav><!-- /#nav -->
+
+		</header>
+		<!-- END Header -->
+
+		<!-- BEGIN Breadcrumbs -->
+		<div id="breadcrumbs">
+			<div class="inset">
+				<a href="/">Home</a> &gt; <a href="/climate-monitoring/">Climate Monitoring</a> &gt; <a href="/temp-and-precip">Temp, Precip, and Drought</a> &gt; State Temperatures
+			</div>
+		</div>
+		<!-- END Breadcrumbs -->
+
+		<div id="content" class="clearfix container">
+			<div class="inset sf-content row">
+			  <div class="callout row">
+			    <div>
+            <h1>State Annual and Seasonal Time Series</h1>
+            <p>The graphics presented here depict historical temperature averages for U.S. states since 1895. 
+            They are derived from the current U.S. Climate Division Database 
+            (<a href="http://www.ncdc.noaa.gov/monitoring-references/maps/us-climate-divisions.php"><em>n</em>ClimDiv</a>), 
+            which has been used in climate monitoring at NCEI since March 2014.
+            The <em>n</em>ClimDiv database has several major improvements over its predecessor, including the addition 
+            of many more temperature stations, the application of NCEI's modern array of quality control 
+            algorithms, and the use of new methodologies that improve accuracy in data-sparse regions.</p>
+          </div>
+			  </div>
+			  
+			  <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+			  
+			  <div class="row">
+          <div class="col-xs-12">
+            <h4 class="highlight-bar">State Trend Charts</h4>
+            <div class="highlight-callout">
+            <p>These charts present three color-coded time series. The gray line 
+            represents the annual (or seasonal) temperature value. The blue line shows the overall trend in a 
+            fashion that smoothes out the year-to-year variability in temperature. The light blue shaded area 
+            represents the 95% confidence interval for the trend. The smoothed temperature is constructed 
+            using a locally estimated scatterplot methodology known as 
+            <a href="http://en.wikipedia.org/wiki/Local_regression">LOESS</a>.</p>
+            </div>
+			    </div>
+        </div>
+        
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        
+			  <div id="selectors-a" class="selectors row-fluid" ab="a">
+			    <div class="col-md-4 col-md-offset-2 col-xs-8 col-xs-offset-2">
+            <label>Select Variable</label><br />
+            <div class="sel-element btn-group">
+              <button type="button" class="btn btn-default" value="tmin">Min Temp</button>
+              <button type="button" class="btn btn-default active" value="tavg">Mean Temp</button>
+              <button type="button" class="btn btn-default" value="tmax">Max Temp</button>
+            </div>
+          </div>
+          <div class="col-md-1 col-xs-12">&nbsp;</div>
+          <div class="btn-group col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
+            <label>Select State</label>
+            <select class="sel-state form-control btn-default">
+              <option value="Alabama">Alabama</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="NewHampshire">New Hampshire</option>
+              <option value="NewJersey">New Jersey</option>
+              <option value="NewMexico">New Mexico</option>
+              <option value="NewYork">New York</option>
+              <option value="NorthCarolina">North Carolina</option>
+              <option value="NorthDakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="RhodeIsland">Rhode Island</option>
+              <option value="SouthCarolina">South Carolina</option>
+              <option value="SouthDakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="WestVirginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        
+			  <div class="results row" id="results-single">
+			    <img class="result-img result-main col-xs-10 col-xs-offset-1" />
+        </div>
+        
+        <div class="results row">
+          <div class="active thumbnail-container result-b col-sm-2 col-sm-offset-1 col-xs-4 col-xs-offset-4">
+            <img class="result-img" id="result-a" />
+            <label>Annual</label>
+          </div>
+          <div class="thumbnail-container result-b col-sm-2 col-sm-offset-0 col-xs-4 col-xs-offset-4">
+            <img class="result-img" id="result-b" />
+            <label>Spring</label>
+          </div>
+          <div class="thumbnail-container result-b col-sm-2 col-sm-offset-0 col-xs-4 col-xs-offset-4">
+            <img class="result-img" id="result-c" />
+            <label>Summer</label>
+          </div>
+          <div class="thumbnail-container result-b col-sm-2 col-sm-offset-0 col-xs-4 col-xs-offset-4">
+            <img class="result-img" id="result-d" />
+            <label>Fall</label>
+          </div>
+          <div class="thumbnail-container result-b col-sm-2 col-sm-offset-0 col-xs-4 col-xs-offset-4">
+            <img class="result-img" id="result-e" />
+            <label>Winter</label>
+          </div>
+        </div>
+        
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="highlight-bar">Decadal Average Temperature Maps</h4>
+            <div class="highlight-callout">
+            <p>These maps show how the decadal average temperature for each state differs from the 
+            20th century average. First, the average temperature for each state from 1901 to 2000 
+            was calculated using the <em>n</em>ClimDiv data set.  Next, the average temperature for each 
+            state was calculated for each decade (1895-1900, 1901-1910, 1911-1920, ..., 2011-2014). 
+            Finally, each state's 20th century average was subtracted from each of its decadal averages. 
+            Negative values indicate that a decade is cooler than the long term 20th century average.  
+            Positive values indicate that a decade is warmer than the long term average. This process 
+            was done for minimum temperature, average temperature, and maximum temperature. </p>
+            </div>
+			    </div>
+        </div>
+        
+        <div class="row spacer"><div class="col-xs-12">&nbsp;</div></div>
+        
+			  <div id="selectors-b" class="selectors row-fluid" ab="b">
+			    <div class="col-md-4 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <label>Select Variable</label><br />
+            <div class="sel-map-element btn-group">
+              <button type="button" class="btn btn-default" value="TMIN">Min Temp</button>
+              <button type="button" class="btn btn-default active" value="TAVG">Mean Temp</button>
+              <button type="button" class="btn btn-default" value="TMAX">Max Temp</button>
+            </div>
+          </div>
+          <div class="col-md-1 col-xs-12">&nbsp;</div>
+          <div class="select-area col-md-3 col-md-offset-0 col-xs-8 col-xs-offset-2">
+            <label>Select Decade</label><br />
+            <div class="decade-down btn-group">
+              <button type="button" class="btn btn-default" value="left">&lt;&lt;</button>
+            </div>
+            <div class="btn-group">
+              <select class="sel-map-decade form-control btn-default">
+                <option value="1890">1895-1900</option>
+                <option value="1900">1901-1910</option>
+                <option value="1910">1911-1920</option>
+                <option value="1920">1921-1930</option>
+                <option value="1930">1931-1940</option>
+                <option value="1940">1941-1950</option>
+                <option value="1950">1951-1960</option>
+                <option value="1960">1961-1970</option>
+                <option value="1970">1971-1980</option>
+                <option value="1980">1981-1990</option>
+                <option value="1990">1991-2000</option>
+                <option value="2000">2001-2010</option>
+                <option value="2010">2011-2014</option>
+              </select>
+            </div>
+            <div class="decade-up btn-group">
+              <button type="button" class="btn btn-default" value="right">&gt;&gt;</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row spacer">
+          <div class="col-xs-12">&nbsp;</div>
+        </div>
+        
+			  <div class="results row" id="results-map">
+			    <img class="result-img result-map col-xs-10 col-xs-offset-1" />
+        </div>
+        
+        
+			</div><!-- /inset -->
+		</div><!-- /#content -->
+
+		<!-- BEGIN Footer -->
+		<footer id="footer" class="clearfix">
+			<div class="inset">
+
+				<div class="subfooter">
+					<a role="link" href="http://www.commerce.gov/"><img src="/shared/v1/images/logos/logo_doc_dark.png" alt="Click to visit the U.S. Department of Commerce Website" /></a>
+					<a role="link" href="http://www.usa.gov"><img src="/shared/v1/images/logos/logo_usagov.png" alt="Click to visit USA.gov" /></a>
+					<a role="link" href="http://www.ready.gov"><img src="/shared/v1/images/logos/logo_ready.png" alt="Click to visit Ready.gov" /></a>
+				</div>
+
+				<ul class="menu">
+					<li><a role="link" title="NCEI" href="//www.ncdc.noaa.gov/">NCEI</a></li>
+					<li><a role="link" title="About" href="//www.ncdc.noaa.gov/about">About</a></li>
+					<li><a role="link" title="General help section" href="//www.ncdc.noaa.gov/sitemap">Site Map</a></li>
+				</ul>
+
+				<ul class="menu">
+					<li><a role="link" title="NOAA's Privacy Policy" href="http://www.noaa.gov/privacy.html" rel="external">Privacy</a></li>
+					<li><a role="link" title="Freedom of Information Act" href="http://www.rdc.noaa.gov/%7Efoia/" rel="external">FOIA</a></li>
+					<li><a role="link" title="Information Quality" href="http://www.cio.noaa.gov/Policy_Programs/info_quality.html" rel="external">Information Quality</a></li>
+					<li><a role="link" title="Disclaimer" href="http://www.noaa.gov/disclaimer.html" rel="external">Disclaimer</a></li>
+				</ul>
+
+				<ul class="menu last">
+					<li><a role="link" title="United States Department of Commerce" href="http://www.commerce.gov/" rel="external">Department of Commerce</a></li>
+					<li><a role="link" title="NOAA" href="http://www.noaa.gov" rel="external">NOAA</a></li>
+					<li><a role="link" title="NESDIS" href="http://www.nesdis.noaa.gov/" rel="external">NESDIS</a></li>
+				</ul>
+
+				<div class="clearfix"></div>
+
+				<div id="footerCrumbs" class="clearfix">
+					<a class="ext" href="http://www.commerce.gov/" target="_blank">Department of Commerce</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a class="ext" href="http://www.noaa.gov" target="_blank">NOAA</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a class="ext" href="http://www.nesdis.noaa.gov/" target="_blank">NESDIS</a><span class="ext">&nbsp;</span>&nbsp;&gt;&nbsp;<a href=?http://www.ncei.noaa.gov/?>NCEI</a>&nbsp;&gt;&nbsp;<a href="http://www.ncdc.noaa.gov">NCDC</a><span class="ext">&nbsp;</span>
+				</div>
+
+			</div><!-- /inset -->
+		</footer><!-- /#footer -->
+		<!-- END Footer -->
+
+
+	</div><!-- /#main -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42795060-3', 'noaa.gov');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+<script id="_fed_an_ua_tag" type="text/javascript" src="/scripts/federated-analytics.js?agency=DOC%26subagency=NOAA"></script>
+<script id="_fed_an_ua_tag" type="text/javascript" src="/scripts/federated-analytics.js?agency=DOC%26subagency=NOAA"></script></body>
+</html>

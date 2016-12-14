@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <!-- TradeDoubler site verification 1408361 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"824523606647f287213fd5449b84c368",petok:"c6b03f8d8f99eda4ecee27bcb3b6a5d558239ddc-1481717818-1800",zone:"holiday-weather.com",rocket:"0",apps:{"ga_key":{"ua":"UA-223274-24","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UgIPWVZSGwADVFZbBwA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(12),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(13),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),s.xhrWrappable&&t(6),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(14)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(14)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(14)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],6:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,v,"fn-",c)}function i(t){y.push(t),h&&(w=-w,b.data=w)}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(3);var f=t("ee"),u=f.get("xhr"),d=t(14)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",v=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var g=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,g),g.prototype=p.prototype,d.inPlace(g.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var w=1,b=document.createTextNode(w);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(8),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(11),h=t(10),m=window.XMLHttpRequest;a.features.xhr=!0,t(6),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(12),c=t(13),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],10:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],11:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],12:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],13:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],14:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(13),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[g[n]];return f&&f.push([w,n,r,i]),i}}function p(t,e){y[t]=h(t).concat(e)}function h(t){return y[t]||[]}function m(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",g[n]=e,e in u||(u[e]=[])})}var y={},g={},w={on:p,emit:n,get:m,listeners:h,context:e,buffer:v,abort:a,aborted:!1};return w}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(12),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=w.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(y,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(12),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(9);var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},g=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),w=e.exports={offset:a(),origin:v,features:{},xhrWrappable:g};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,7]);</script>
+      <title>USA - Holiday Weather</title>    
+    
+      <meta name="robots" content="index, follow">
+  
+  <style type="text/css">
+    @font-face {
+      font-family:'amaranthregular';
+      src:url(../fonts/amaranth-webfont.eot);
+      src:url(../fonts/amaranth-webfont.eot?#iefix) format("embedded-opentype"),url(../fonts/amaranth-webfont.woff) format("woff"),url(../fonts/amaranth-webfont.ttf) format("truetype"),url(../fonts/amaranth-webfont.svg#amaranthregular) format("svg");
+      font-weight:400;
+      font-style:normal;
+    }
+    @font-face{font-family:"Glyphicons Halflings";src:url(/fonts/glyph/glyphicons-halflings-regular.eot) format("embedded-opentype"),url(/fonts/glyph/glyphicons-halflings-regular.woff) format("woff"),url(/fonts/glyph/glyphicons-halflings-regular.ttf) format("truetype"),url(/fonts/glyph/glyphicons-halflings-regular.svg) format("svg");font-weight:400}
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.5/css/lightslider.min.css">
+  <link rel="stylesheet" href="http://ea81ef432dd328c1ca8a-354e16f8751a1811fba778eb938559eb.r27.cf3.rackcdn.com/styles.min.dfb0e42143a93806c969.css" />
+  
+   
+
+  <link href="http://ea81ef432dd328c1ca8a-354e16f8751a1811fba778eb938559eb.r27.cf3.rackcdn.com/print.css" media="print" rel="stylesheet" />
+
+  <script type="text/javascript">
+    var render_graphs = "javascript";
+    var default_graph = "cols";
+  </script>
+  <script src="/javascript/modernizr/modernizr.custom.js"></script>
+  	
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/hw_styles-ie8.css" media="all" />
+    <style type="text/css">
+      .col_2_right .live_weather_panel #weather_map { display:none; }
+      .weather_map_tabs { display:none; }
+    </style>
+  <![endif]-->
+  	
+  <!--[if IE 7]>
+    <link rel="stylesheet" href="/css/hw_styles-ie7.css" media="scren" />
+  <![endif]-->
+
+  <!--[if lt IE 7]>
+    <link rel="stylesheet" href="/css/hw_styles-ie6.css" media="all" />
+  <![endif]-->
+  
+  <!--[if IE 8]>
+    <script>window.isIE8 = true;</script>
+  <![endif]-->
+  
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" media="all" type="text/css" href="/css/weather-ie.css" />
+    <script src="/javascript/html5.js"></script>
+    <script>render_graphs = "flash";default_graph = "bars";</script>
+  <![endif]-->
+	
+<meta name="description" content="We provide weather reports and weather forecasts for locations in USA." >
+<meta name="keywords" content="USA weather, forecasts, weather forecasts, holiday weather" >
+<meta name="classification" content="Weather Holiday, Holiday Weather, Weather USA" > 
+
+<!--Google Analytics Code-->
+<script type="text/javascript">/* CloudFlare analytics upgrade */
+</script>
+
+<!-- Google Site Search -->
+<script>
+  (function() {
+    var cx = '014703289948444025541:iro4txsg_9i';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<!-- Facebook "Like" button -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.async = true;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Google "+1" button -->
+<script>
+  window.___gcfg = {
+    lang: 'en-GB',
+    parsetags: 'onload'
+  };
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-223274-24']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TKPD59"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKPD59');</script>
+<!-- End Google Tag Manager -->
+  <!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"Y1Rfh1aMQV00wv", domain:"holiday-weather.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=Y1Rfh1aMQV00wv" style="display:none" height="1" width="1" alt="" /></noscript>
+<!-- End Alexa Certify Javascript -->
+  
+<header id="main_header">
+	<div id="topbar">
+	  <a name="topofpage"></a>
+	  <div id="topbar_inner">
+		<div id="topbar_inner_left">
+              <a href="/"  class="holiday-weather-logo">Holiday Weather</a>
+      		</div>
+		<div id="topbar_inner_right">
+              <form method="get" action="/search" class="top_nav_search_form header_search" >
+  <label for="location_search" class="hide">Search : </label>
+  <div class="search_input">
+    <input type="text" name="query" value="" placeholder="Search for a destination" id="location_search" autocomplete="off" />
+  </div>
+  <button type="submit" name="search" value="search" class="search_button">Search</button>
+  <input type="hidden" name="search" value="1"/>
+  
+      <input type="hidden" name="max" value="0"/>
+  </form>
+      		</div>
+	  </div>
+	</div> <!-- /topbar -->
+</header>
+
+
+  <div id="maincontent">
+    <div class="full_content_wide">
+      <div id="nav_breadcrumbs">
+    
+  <a href="/">Home</a> &gt; <a href="/continent/americas/">The Americas</a> &gt; USA</div>
+
+<div class="country-landing">
+  <h1><span class="header-resort">USA: </span>Weather Overview</h1>
+  <div id="map_data_wrapper">
+    <ul id="gmap_tabs">
+      <li><a href="#weather_sidebar" data-ref="weather" onClick="_gaq.push(['_trackEvent', 'Country tabs', 'Tab clicked', 'Live Weather']); dataLayer.push({'event': 'ga-event', 'eventCategory': 'Country tabs', 'eventAction': 'Tab clicked', 'eventLabel': 'Live Weather'});"><h2>Live Weather</h2></a></li>
+      <li><a href="#forecasts_sidebar" data-ref="forecast" onClick="_gaq.push(['_trackEvent', 'Country tabs', 'Tab clicked', 'Weather Forecast']); dataLayer.push({'event': 'ga-event', 'eventCategory': 'Country tabs', 'eventAction': 'Tab clicked', 'eventLabel': 'Weather Forecast'});"><h2>Weather Forecast</h2></a></li>
+      <li><a href="#averages_sidebar" data-ref="averages" onClick="_gaq.push(['_trackEvent', 'Country tabs', 'Tab clicked', 'Weather Averages']); dataLayer.push({'event': 'ga-event', 'eventCategory': 'Country tabs', 'eventAction': 'Tab clicked', 'eventLabel': 'Weather Averages'});"><h2>Weather Averages</h2></a></li>
+    </ul>
+    <div id="map_panel" class="ui-tab-content">
+      <div id="map_topbar" class="country-search country-controls">
+        <form action="/maps/search/" method="get" id="map_search_form" class="map-search">
+          <input type="text" id="map_search" autocomplete="off" placeholder="Search in USA" /><button type="submit" value="Search in USA" id="map_submit">Go</button>
+        </form>
+      </div>
+
+
+      <div class="date_time">
+        <div class="map-time"><strong>Wednesday</strong> 14 December</div> 
+        <div class="avg_time">
+          12:14 GMT
+                  </div>
+              </div>
+
+      <div class="country-content">
+        <div id="map_wrapper" class="country-map">
+                      <div id="g_map" data-lat="36.222233" data-lng="-96.561188" data-zoom="4" data-country="us"></div>
+                    </div>
+
+        <div id="map_sidebar" class="country-resorts">
+
+          <div id="weather_sidebar" class="data-container">
+            <div class="temp-toggle">
+              <span class="label">View by:</span>
+              <span class="temp-c-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_c sub-page selected"></div>
+              </span>
+              <span class="temp-f-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_f sub-page"></div>
+              </span>
+            </div>
+              <div class="nav_options-table">
+                  <div class="nav_options">
+                    <span class="resort_sort_label">
+                      Sort by:
+                    </span>
+                      <div class="select-wrap">
+                          <select class="resort_sort_order auto_sort">
+                              <option value="alpha">Alphabetical</option>
+                              <option value="hotest" selected="selected">Hottest</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="country-resort-list-container">
+                  <table class="country-resort-list resort-list" class="sortable_nav" cellspacing="0">
+                      <thead>
+                      <tr>
+                          <th>Flag</th>
+                          <th>Name</th>
+                          <th>Temp</th>
+                      </tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+              </div>
+          </div>
+
+          <div id="forecasts_sidebar" class="data-container">
+            <div class="temp-toggle">
+              <span class="label">View by:</span>
+              <span class="temp-c-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_c sub-page selected"></div>
+              </span>
+              <span class="temp-f-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_f sub-page"></div>
+              </span>
+            </div>
+              <div class="nav_options-table">
+                  <div class="nav_options">
+                    <span class="resort_sort_label">
+                      Sort by:
+                    </span>
+                      <div class="select-wrap">
+                          <select class="resort_sort_order auto_sort">
+                              <option value="alpha">Alphabetical</option>
+                              <option value="hotest" selected="selected">Hottest</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="country-resort-list-container">
+                  <table class="country-resort-list resort-list" class="sortable_nav" cellspacing="0">
+                      <thead>
+                      <tr>
+                          <th>Flag</th>
+                          <th>Name</th>
+                          <th>Temp</th>
+                      </tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+              </div>
+          </div>
+
+          <div id="averages_sidebar" class="data-container">
+            <div class="temp-toggle">
+              <span class="label">View by:</span>
+              <span class="temp-c-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_c sub-page selected"></div>
+              </span>
+              <span class="temp-f-toggle">
+                <div class="resort_weather_nav_temp_toggle resort_weather_nav_temp_toggle_f sub-page"></div>
+              </span>
+            </div>
+              <div class="nav_options-table">
+                  <div class="nav_options">
+                    <span class="resort_sort_label">
+                      Sort by:
+                    </span>
+                      <div class="select-wrap">
+                          <select class="resort_sort_order auto_sort">
+                              <option value="alpha">Alphabetical</option>
+                              <option value="hotest" selected="selected">Hottest</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="country-resort-list-container">
+                  <table class="country-resort-list resort-list" class="sortable_nav" cellspacing="0">
+                      <thead>
+                      <tr>
+                          <th>Flag</th>
+                          <th>Name</th>
+                          <th>Temp</th>
+                      </tr>
+                      </thead>
+                      <tbody></tbody>
+                  </table>
+              </div>
+          </div>
+
+          <div class="top-ten-sidelink top-ten-sidelink--country">
+            <a href="/top-forecasts?country=USA&country-slug=us" class="top-ten-link" onclick="_gaq.push(['_trackEvent', 'Top Forecasts Button Link', 'Sidebar']); dataLayer.push({'event': 'ga-event', 'eventCategory': 'Top Forecasts Button Link', 'eventAction': 'Sidebar'});">
+              <span class="top-ten-sidelink__country-label">USA</span>
+              Top <span class="feature-number">10</span> Forecasts
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="left_nav" class="left_nav">	
+  <nav>
+    <p class="nav_header"><strong>Top Countries</strong></p>
+    <div class="nav_options">
+  <span class="resort_sort_label">
+    Sort by:
+  </span>
+  <div class="sort-inline country_options">
+    <div class="countries_sort_toggle sub-page" data-sortorder="0"></div><div class="resort_weather_sort_toggle_label">Alphabetical</div>
+    <div class="countries_sort_toggle sub-page selected" data-sortorder="1"></div><div class="resort_weather_sort_toggle_label">Most Popular</div>
+  </div>
+
+</div>
+
+<table id="country_weather_nav" class="sortable_nav">
+  <thead style="display:none;">
+    <tr>
+      <th class="country_name"><a href="#">Country</a></th>
+      <th class="country_meta_data">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+          <tr>
+        <td class="country_name"><a href="/country/spain/"><div class="country-flags-xsmall span-0"></div> Spain</a></td>
+        <td class="country_meta_data">182842</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/canary-islands/"><div class="country-flags-xsmall cany-0"></div> Canary Islands</a></td>
+        <td class="country_meta_data">85518</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/turkey/"><div class="country-flags-xsmall turk-0"></div> Turkey</a></td>
+        <td class="country_meta_data">59820</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/greece/"><div class="country-flags-xsmall grec-0"></div> Greece</a></td>
+        <td class="country_meta_data">39732</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/cyprus/"><div class="country-flags-xsmall cypr-0"></div> Cyprus</a></td>
+        <td class="country_meta_data">31779</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/dominican_republic/"><div class="country-flags-xsmall dore-0"></div> Dominican Republic</a></td>
+        <td class="country_meta_data">29260</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/morocco/"><div class="country-flags-xsmall morc-0"></div> Morocco</a></td>
+        <td class="country_meta_data">28889</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/tunisia/"><div class="country-flags-xsmall tuns-0"></div> Tunisia</a></td>
+        <td class="country_meta_data">28393</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/cuba/"><div class="country-flags-xsmall cuba-0"></div> Cuba</a></td>
+        <td class="country_meta_data">24673</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/portugal/"><div class="country-flags-xsmall port-0"></div> Portugal</a></td>
+        <td class="country_meta_data">24214</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/italy/"><div class="country-flags-xsmall ital-0"></div> Italy</a></td>
+        <td class="country_meta_data">24171</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/egypt/"><div class="country-flags-xsmall egyp-0"></div> Egypt</a></td>
+        <td class="country_meta_data">23895</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/mexico/"><div class="country-flags-xsmall mexc-0"></div> Mexico</a></td>
+        <td class="country_meta_data">22527</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/france/"><div class="country-flags-xsmall fran-0"></div> France</a></td>
+        <td class="country_meta_data">22125</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/us/"><div class="country-flags-xsmall unst-0"></div> USA</a></td>
+        <td class="country_meta_data">21288</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/mauritius/"><div class="country-flags-xsmall mrts-0"></div> Mauritius</a></td>
+        <td class="country_meta_data">17223</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/cape_verde/"><div class="country-flags-xsmall cave-0"></div> Cape Verde</a></td>
+        <td class="country_meta_data">16805</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/uk/"><div class="country-flags-xsmall unkg-0"></div> United Kingdom</a></td>
+        <td class="country_meta_data">15803</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/barbados/"><div class="country-flags-xsmall barb-0"></div> Barbados</a></td>
+        <td class="country_meta_data">14240</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/jamaica/"><div class="country-flags-xsmall jama-0"></div> Jamaica</a></td>
+        <td class="country_meta_data">14025</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/thailand/"><div class="country-flags-xsmall thal-0"></div> Thailand</a></td>
+        <td class="country_meta_data">13478</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/croatia/"><div class="country-flags-xsmall croa-0"></div> Croatia</a></td>
+        <td class="country_meta_data">12001</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/malta/"><div class="country-flags-xsmall malt-0"></div> Malta</a></td>
+        <td class="country_meta_data">11192</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/india/"><div class="country-flags-xsmall inda-0"></div> India</a></td>
+        <td class="country_meta_data">8997</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/vietnam/"><div class="country-flags-xsmall viet-0"></div> Vietnam</a></td>
+        <td class="country_meta_data">8396</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/australia/"><div class="country-flags-xsmall astl-0"></div> Australia</a></td>
+        <td class="country_meta_data">7376</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/bahamas/"><div class="country-flags-xsmall bhms-0"></div> Bahamas</a></td>
+        <td class="country_meta_data">7300</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/sri_lanka/"><div class="country-flags-xsmall srla-0"></div> Sri Lanka</a></td>
+        <td class="country_meta_data">4656</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/saint_lucia/"><div class="country-flags-xsmall stlu-0"></div> Saint Lucia</a></td>
+        <td class="country_meta_data">4346</td>
+      </tr>
+          <tr>
+        <td class="country_name"><a href="/country/bulgaria/"><div class="country-flags-xsmall bulg-0"></div> Bulgaria</a></td>
+        <td class="country_meta_data">4082</td>
+      </tr>
+      </tbody>
+</table>
+    
+    <p class="nav_header"><strong>Top Resorts</strong></p>
+    <div class="nav_options-table">
+  <div class="nav_options">
+    <span class="resort_sort_label">
+      Sort by:
+    </span>
+    <div class="select-wrap">
+      <select id="resort_sort_order" class="auto_sort">
+        <option value="0">Alphabetical</option>
+        <option value="2">Hottest</option>
+        <option value="1" selected="selected">Most Popular</option>
+      </select>
+    </div>
+  </div>
+  <div class="nav_options">
+    <span class="resort_sort_label">
+      View by:
+    </span>
+    <div class="input">
+      <div class="resort_weather_nav_temp_toggle selected" id="resort_weather_nav_temp_toggle_c"></div><div class="resort_weather_sort_toggle_label temp">&deg;C</div>
+      <div class="resort_weather_nav_temp_toggle" id="resort_weather_nav_temp_toggle_f"></div><div class="resort_weather_sort_toggle_label temp">&deg;F</div>
+    </div>
+  </div>
+</div>
+
+<table id="resort_weather_nav" class="sortable_nav auto_sort live_weather_nav">
+  <thead style="display:none;">
+    <tr>
+      <th class="resort_name"><a href="#">Resort</a></th>
+      <th><a href="#">Temp</a></th>
+      <th class="resort_meta_data">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+                <tr style="background-color:#FF7133;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/tenerife/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Tenerife</a></td>
+        <td class="resort_meta_data">176550</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">22</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">72</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6833;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/lanzarote/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Lanzarote</a></td>
+        <td class="resort_meta_data">104549</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">24</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">75</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7133;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/playa_de_las_americas/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Playa de las Americas</a></td>
+        <td class="resort_meta_data">95865</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">22</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">72</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7733;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/fuerteventura/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Fuerteventura</a></td>
+        <td class="resort_meta_data">88770</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">21</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">70</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7733;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/gran_canaria/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Gran Canaria</a></td>
+        <td class="resort_meta_data">68201</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">21</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">70</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6c33;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/sharm_el_sheikh/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/egyp_1.gif" alt="Flag of Egypt" />Sharm El Sheikh</a></td>
+        <td class="resort_meta_data">61598</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">23</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">73</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FFa633;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/benidorm/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Benidorm</a></td>
+        <td class="resort_meta_data">50968</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">15</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">59</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9d907;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/algarve/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/port_1.gif" alt="Flag of Portugal" />Algarve</a></td>
+        <td class="resort_meta_data">32974</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_mostlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">14</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">57</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7133;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/tenerife_south_/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Tenerife South </a></td>
+        <td class="resort_meta_data">30424</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">22</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">72</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9d907;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/costa_del_sol/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Costa del Sol</a></td>
+        <td class="resort_meta_data">27115</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">14</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">57</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6c33;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/riviera_maya/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/mexc_1.gif" alt="Flag of Mexico" />Riviera Maya</a></td>
+        <td class="resort_meta_data">26643</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_nt_partlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">23</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">73</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9de07;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/majorca/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Majorca</a></td>
+        <td class="resort_meta_data">26258</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_mostlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">11</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">52</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7133;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/costa_adeje/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Costa Adeje</a></td>
+        <td class="resort_meta_data">25621</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">22</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">72</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF9c33;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/malta/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/malt_1.gif" alt="Flag of Malta" />Malta</a></td>
+        <td class="resort_meta_data">25147</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">16</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">61</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FFa633;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/paphos/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cypr_1.gif" alt="Flag of Cyprus" />Paphos</a></td>
+        <td class="resort_meta_data">24426</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">15</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">59</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF9333;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/madeira/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/mdra_1.gif" alt="Flag of Madeira Islands" />Madeira</a></td>
+        <td class="resort_meta_data">21119</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_mostlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">17</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">63</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6c33;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/cancun/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/mexc_1.gif" alt="Flag of Mexico" />Cancun</a></td>
+        <td class="resort_meta_data">18997</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_nt_partlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">23</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">73</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF9333;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/marrakesh/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/morc_1.gif" alt="Flag of Morocco" />Marrakesh</a></td>
+        <td class="resort_meta_data">18192</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">17</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">63</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9eb07;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/las_vegas/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/unst_1.gif" alt="Flag of USA" />Las Vegas</a></td>
+        <td class="resort_meta_data">18150</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Clear skies"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">7</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">45</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6833;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/playa_blanca/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Playa blanca</a></td>
+        <td class="resort_meta_data">18101</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">24</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">75</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9e307;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/crete/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/grec_1.gif" alt="Flag of Greece" />Crete</a></td>
+        <td class="resort_meta_data">17074</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">9</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">48</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9d907;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/malaga/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Malaga</a></td>
+        <td class="resort_meta_data">16783</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">14</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">57</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9d907;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/albufeira/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/port_1.gif" alt="Flag of Portugal" />Albufeira</a></td>
+        <td class="resort_meta_data">16482</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_mostlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">14</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">57</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6833;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/costa_teguise/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Costa Teguise</a></td>
+        <td class="resort_meta_data">15422</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">24</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">75</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FFa633;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/benalmadena/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Benalmadena</a></td>
+        <td class="resort_meta_data">14733</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_mostlycloudy_16" style="display: inline-block;" title="Mostly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">15</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">59</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF6033;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/punta_cana/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/dore_1.gif" alt="Flag of Dominican Republic" />Punta cana</a></td>
+        <td class="resort_meta_data">14057</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">26</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">79</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9dc07;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/barcelona/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/span_1.gif" alt="Flag of Spain" />Barcelona</a></td>
+        <td class="resort_meta_data">12984</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_hazy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">12</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">54</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#F9e307;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/antalya/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/turk_1.gif" alt="Flag of Turkey" />Antalya</a></td>
+        <td class="resort_meta_data">12301</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">9</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">48</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7733;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/puerto_rico/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Puerto Rico</a></td>
+        <td class="resort_meta_data">12254</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_partlycloudy_16" style="display: inline-block;" title="A few clouds"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">21</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">70</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+                <tr style="background-color:#FF7133;">
+        <td class="resort_name resort_weather_nav_highlight"><a href="/los_christianos/" style="color: #FFF;"><img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/cany_1.gif" alt="Flag of Canary Islands" />Los Cristianos</a></td>
+        <td class="resort_meta_data">12064</td>
+        <td class="weather_data resort_weather_nav_highlight">
+                                                              <span class="icon_sprite icon_clear_16" style="display: inline-block;" title="Partly cloudy"></span>
+                        <span class="temperature_data_container">
+              <span class="resort_weather_nav_temp_default" style="color: #FFF;"><span class="temperature_data_default"><span class="temperature_data_unit_c">22</span></span><span class="temperature_label_default"><span class="temperature_label_unit_c">&deg;C</span></span></span>
+            
+              <span class="resort_weather_nav_temp_alternate" style="color: #FFF;"><span class="temperature_data_alternate"><span class="temperature_data_unit_f">72</span></span><span class="temperature_label_alternate"><span class="temperature_label_unit_f">&deg;F</span></span></span>
+            </span>
+                  </td>
+      </tr>
+      </tbody>
+</table>
+
+  </nav>
+</div>
+
+  
+<div class="col_2_right">
+
+  <div class="col_3_alt">
+    
+    <div class="mpu-middle">
+      <div id="div-gpt-ad-1336042917446-0" class="dfp-container dfp-container-mpu"></div>    </div>
+
+    <div class="country_stats">
+
+            <img src="http://8b90b43d6bcfc09ee36c-3ad5470e7d4bb324e402ac2f90d6d0ba.r2.cf3.rackcdn.com/us.jpg" alt="USA Flag" class="flag" />
+      
+      <div class="country-info">
+        <h3>About USA</h3>
+        <ul>
+                  <li><strong>Capital</strong>:
+                        Washington                      </li>
+                          <li><strong>Area</strong>:
+            9,629,091km<sup>2</sup> 
+          </li>
+                          <li><strong>Population</strong>:
+            303,824,000          </li>
+                          <li><strong>Currency</strong>:
+            Dollar                        (USD)
+                      </li>
+                </ul>
+      </div>
+            <p class="country-links"><a href="/country/us/links/">See USA links in our directory</a></p>
+          </div>
+    <div class="sidebar-ad">
+      <div id="div-gpt-ad-1336043004726-0" class="dfp-container dfp-container-skyscraper"></div>    </div>
+
+  </div>
+
+  <div class="col_2_middle">
+
+    <h2>About USA</h2>
+      
+        <div class="country_weather_overview">        
+        <o:smarttagtype name="PlaceType" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><o:smarttagtype name="PlaceName" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><o:smarttagtype name="country-region" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><o:smarttagtype name="City" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><o:smarttagtype name="State" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><o:smarttagtype name="place" namespaceuri="urn:schemas-microsoft-com:office:smarttags"></o:smarttagtype><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1:*{behavior:url(#ieooui) }
+</style>
+<![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The </span><st1:country-region style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">USA</st1:place></st1:country-region><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, due to its immense size and geographical diversity, has various climates in different locations. The south and west regions tend to be warmer and dryer while the north and east are more temperate with colder winters. Coastal regions are naturally milder than inland areas away from large bodies of water. Mountainous regions of higher altitude are colder and receive higher levels of precipitation. &nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The </span><st1:country-region style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">USA</st1:place></st1:country-region><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> can be broken up into different climatic regions that stretch in bands across the country, but to make this more digestible to the holiday-maker this guide will stick to the following geographical regions.</span></p>
+
+<p><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em;"><span style="font-size: 14pt; font-family: Calibri;">West</span></span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">: <st1:city w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/washington/index.html" name="" target="">Washington</a></st1:city>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/oregon/index.html" name="" target="">Oregon</a>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/california/index.html" name="" target="">California</a>, <a classname="" href="//www.holiday-weather.com/country/us/idaho/index.html" name="" target="">Idaho</a>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/utah/index.html" name="" target="">Utah</a>, <st1:place w:st="on"><st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/nevada/index.html" name="" target="">Nevada</a></st1:state></st1:place></span></p>
+
+<p><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em;"><span style="font-size: 14pt; font-family: Calibri;">Southwest</span></span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">: <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/arizona/index.html" name="" target="">Arizona</a>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/new_mexico/index.html" name="" target="">New Mexico</a></st1:state>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/texas/index.html" name="" target="">Texas</a></st1:state>, <st1:place w:st="on"><st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/oklahoma/index.html" name="" target="">Oklahoma</a></st1:state></st1:place></span></p>
+
+<p><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em; text-indent: -72pt;"><span style="font-size: 14pt; font-family: Calibri;">Central</span></span><span style="font-size: 13px; line-height: 1.6em; text-indent: -72pt; font-family: Calibri;">: <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/montana_us/index.html" name="" target="">Montana</a></st1:state>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/north_dakota/index.html" name="" target="">North Dakota</a></st1:state>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/south_dakota/index.html" name="" target="">South Dakota</a>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/wyoming/index.html" name="" target="">Wyoming</a></st1:state>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/colorado/index.html" name="" target="">Colorado</a>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/nebraska/index.html" name="" target="">Nebraska</a></st1:state>, <st1:state w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/kansas/index.html" name="" target="">Kansas</a></st1:place></st1:state></span></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; text-indent: -72pt; font-family: Calibri;"><st1:state w:st="on"><st1:place w:st="on"></st1:place></st1:state></span><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em; text-indent: -36pt;"><span style="font-size: 14pt; font-family: Calibri;">Midwest</span></span><span style="font-size: 13px; line-height: 1.6em; text-indent: -36pt; font-family: Calibri;">: <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/minnesota/index.html" name="" target="">Minnesota</a>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/iowa/index.html" name="" target="">Iowa</a></st1:state>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/missouri/index.html" name="" target="">Missouri</a>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/wisconsin/index.html" name="" target="">Wisconsin</a>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/illinois/index.html" name="" target="">Illinois</a>, <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/michigan/index.html" name="" target="">Michigan</a>, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/indiana/index.html" name="" target="">Indiana</a></st1:state>, <st1:place w:st="on"><st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/ohio/index.html" name="" target="">Ohio</a></st1:state></st1:place></span></p>
+
+<p><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em; text-indent: -72pt;"><span style="font-size: 14pt; font-family: Calibri;">South</span></span><span style="font-size: 13px; line-height: 1.6em; text-indent: -72pt; font-family: Calibri;">: <a classname="" href="//www.holiday-weather.com/country/us/arkansas/index.html" name="" target="">Arkansas</a>, <a classname="" href="//www.holiday-weather.com/country/us/louisiana/index.html" name="" target="">Louisiana</a>, <a classname="" href="//www.holiday-weather.com/country/us/kentucky/index.html" name="" target="">Kentucky</a>, <a classname="" href="//www.holiday-weather.com/country/us/tennessee/index.html" name="" target="">Tennessee</a>, <a classname="" href="//www.holiday-weather.com/country/us/mississippi/index.html" name="" target="">Mississippi</a>, <a classname="" href="//www.holiday-weather.com/country/us/alabama/index.html" name="" target="">Alabama</a>, <a classname="" href="//www.holiday-weather.com/country/us/west_virginia/index.html" name="" target="">West Virginia</a>, <a classname="" href="//www.holiday-weather.com/country/us/virginia/index.html" name="" target="">Virginia</a>, <a classname="" href="//www.holiday-weather.com/country/us/north_carolina/index.html" name="" target="">North Carolina</a>, <a classname="" href="//www.holiday-weather.com/country/us/south_carolina/index.html" name="" target="">South Carolina</a>, <a classname="" href="//www.holiday-weather.com/country/us/georgia/index.html" name="" target="">Georgia</a>, <a classname="" href="//www.holiday-weather.com/country/us/florida_us/index.html" name="" target="">Florida</a></span></p>
+
+<p><span class="Heading1Char" style="font-size: 13px; line-height: 1.6em; text-indent: -63pt;"><span style="font-size: 14pt; font-family: Calibri;">Northeast</span></span><span style="font-size: 13px; line-height: 1.6em; text-indent: -63pt; font-family: Calibri;">: <a classname="" href="//www.holiday-weather.com/country/us/vermont/index.html" name="" target="">Vermont</a>, <a classname="" href="//www.holiday-weather.com/country/us/new_hampshire/index.html" name="" target="">New Hampshire</a>, <a classname="" href="//www.holiday-weather.com/country/us/maine/index.html" name="" target="">Maine</a>, <a classname="" href="//www.holiday-weather.com/country/us/massachusetts/index.html" name="" target="">Massachusetts</a>, <a classname="" href="//www.holiday-weather.com/country/us/rhode_island/index.html" name="" target="">Rhode Island</a>, <a classname="" href="//www.holiday-weather.com/country/us/connecticut/index.html" name="" target="">Connecticut</a>,&nbsp; <a classname="" href="//www.holiday-weather.com/country/us/new_jersey/index.html" name="" target="">New Jersey</a>, <a classname="" href="//www.holiday-weather.com/country/us/delaware/index.html" name="" target="">Delaware</a>, <a classname="" href="//www.holiday-weather.com/country/us/maryland_us/index.html" name="" target="">Maryland</a>, <a classname="" href="//www.holiday-weather.com/washington_dc/index.html" name="" target="">District of Columbia</a></span></p>
+
+<p><st1:place style="font-size: 13px; line-height: 1.6em; text-indent: -72pt;" w:st="on"><st1:state w:st="on"><b><span style="font-size: 14pt; font-family: Calibri;">Alaska: </span></b></st1:state></st1:place><a classname="" href="//www.holiday-weather.com/country/us/alaska/index.html" name="" style="font-size: 13px; line-height: 1.6em; text-indent: -72pt; background-color: rgb(255, 255, 255);" target="">link</a></p>
+
+<p><st1:place style="font-size: 13px; line-height: 1.6em;" w:st="on"><st1:state w:st="on"><b><span style="font-size: 14pt; font-family: Calibri;">Hawaii: </span></b></st1:state></st1:place><a classname="" href="//www.holiday-weather.com/country/us/hawaii/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">link</a></p>
+
+<p><span style="font-family: Calibri; font-size: 18pt; line-height: 1.6em;">West USA</span></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The Pacific northwest coast of the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:country-region w:st="on">USA</st1:country-region></st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is the wettest part of the country receiving year-round drizzle,&nbsp;some storms and fog in the summer. However, summers are usually mild to hot and drier than the winters which are mild to cold. The Pacific southwest coast, </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">California</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, receives pleasant weather all year with long, hot summers and mild winters. The interior western states are drier, partially desert, with greater extremes of temperature.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Washington</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:state w:st="on"><st1:place w:st="on">Oregon</st1:place></st1:state></span></b></p>
+
+<p class="MsoNormal"><a classname="" href="//www.holiday-weather.com/country/us/washington/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">Washington</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> and <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/oregon/index.html" name="" target="">Oregon</a></st1:state> are coastal states, split by the <st1:place w:st="on">Cascade Mountains</st1:place>. Western areas receive a temperate, marine climate while east of the mountains the climate is dry.&nbsp;</span><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/seattle/index.html" name="" target="">Seattle</a></span></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> in <st1:state w:st="on">Washington</st1:state> and Portland <st1:city w:st="on"></st1:city> in <st1:state w:st="on"><st1:place w:st="on">Oregon</st1:place></st1:state> see quite dry summers with the occasional thunderstorm and average high temperatures around the mid 20s in the height of summer. Summertime on the coast is often plagued with a dense fog but when this clears hours of sunshine are to be enjoyed. Spring and autumn see average day time temperatures around 12 <i>&deg;</i><em><span style="font-style: normal;">C. The winter sees average highs around 8</span></em><i>&deg;</i><em><span style="font-style: normal;">C and lows around 2</span></em><i>&deg;</i><em><span style="font-style: normal;">C. Snow does not fall often in urban areas but has been known in December. Precipitation is high from autumn to spring and sees the ski season starting in November.&nbsp;</span></em></span><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">East of the <st1:place w:st="on">Cascade Mountains</st1:place> conditions are semi-arid. The Columbian River Plateau is the driest area with a number of deserts.</span></em></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><b><span style="font-family: Calibri; font-style: normal;">California</span></b></em></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">Officially nicknamed the <st1:placename w:st="on">Golden</st1:placename> <st1:placetype w:st="on">State</st1:placetype> due to the discovery of gold in 1968, arguments have been made for <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/california/index.html" name="" target="">California</a></st1:state> to steal <st1:state w:st="on">Florida</st1:state>&rsquo;s nickname, the <st1:place w:st="on"><st1:placename w:st="on">Sunshine</st1:placename> <st1:placetype w:st="on">State</st1:placetype></st1:place>. <st1:state w:st="on">California</st1:state> is famed for the hot weather of its south coast but the state experiences hugely varied weather as it stretches from the north to the south of <st1:country-region w:st="on"><st1:place w:st="on">America</st1:place></st1:country-region> and has diverse topological features.</span></em></p>
+
+<p><img alt="Venice Beach California, USA." src="/uploads/resort_guides/image/USA/Venice%20Beach_%20Sunset_%20Summer%20concept.jpg" style="font-size: 13px; line-height: 1.6em; width: 448px; height: 300px;" /></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><strong>California, USA.</strong></em></p>
+
+<p class="MsoNormal"><a classname="" href="//www.holiday-weather.com/san_francisco/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">San Francisco</a><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">, on the northern part of the coast, receives fairly mild summers with high temperatures averaging around 20</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C in July and August. Night times cool off to around 13</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C. The mild winters are only around 7</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C cooler than the summers. This still has a high impact on tourism and most visitors stick to the summer months, but the variation between the highs and low of the year are relatively tiny. The northern parts of <st1:state w:st="on"><st1:place w:st="on">California</st1:place></st1:state> are generally much wetter than the south. &nbsp;</span></em><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><st1:place w:st="on"><em><span style="font-family: Calibri; font-style: normal;"><a classname="" href="//www.holiday-weather.com/los_angeles/index.html" name="" target="">Los Angeles</a></span></em></st1:place></st1:city><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;"> on the southern coast is hot all year round with a sub-tropical climate. It has a dry season from May till October with average highs between 20 and 30</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C, the peak being in August. The wet season from November to April is cooler with average highs staying in the early 20s. <st1:city w:st="on"><st1:place w:st="on">Los Angeles</st1:place></st1:city> sees an average of 263 days of sunshine a year. &nbsp;</span></em><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">To the east of <st1:state w:st="on"><st1:place w:st="on">California</st1:place></st1:state>&rsquo;s mountains lie its arid desert regions. Coastal <st1:state w:st="on"><st1:place w:st="on">California</st1:place></st1:state> is not susceptible to tropical cyclones. Earthquakes are quite common around the <st1:place w:st="on">San Andreas Fault</st1:place> which runs right through the state.</span></em></p>
+
+<p><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">Idaho</span></b></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><st1:place w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/country/us/idaho/index.html" name="" target="">Idaho</a></span></st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> receives a temperate climate with all four seasons remaining distinct. Summers are very hot, seeing average highs around 30<i>&deg;</i><em><span style="font-style: normal;">C</span></em> while winters are devastatingly cold, sometimes dropping below 0<i>&deg;</i><em><span style="font-style: normal;">F, which is a -18</span></em><i>&deg;</i><em><span style="font-style: normal;">C.</span></em> The record low is an unthinkable -51<i>&deg;</i><em><span style="font-style: normal;">C</span></em>. The protection of mountains gives <st1:city w:st="on"><a classname="" href="//www.holiday-weather.com/boise/index.html" name="" target="">Boise</a></st1:city> and <st1:city w:st="on"><st1:place w:st="on">Lewiston</st1:place></st1:city> longer summers than the rest of the state.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Utah</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:state w:st="on"><st1:place w:st="on">Nevada</st1:place></st1:state></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">Two of the four desert states, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/utah/index.html" name="" target="">Utah</a></st1:state> and <st1:state w:st="on">Nevada</st1:state> are far from their primary water source, the Pacific Ocean, and protected by Sierra <a classname="" href="//www.holiday-weather.com/country/us/nevada/index.html" name="" target="">Nevada</a>, the Cascades and the <st1:place w:st="on">Rocky Mountains</st1:place>; they receive low levels of precipitation. Regional climate depends largely on altitude, with lower altitudes seeing typical desert conditions and higher elevations receiving more temperate climates. The desert terrain and lack of water result in vast temperature differences from day to night.&nbsp;</span><a classname="" href="//www.holiday-weather.com/salt_lake_city/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">Salt Lake City,</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> in <st1:state w:st="on"><st1:place w:st="on">Utah</st1:place></st1:state>, receives all four seasons with the hot summers tempered by winds from the lake, and cold, snowy winters with temperatures regularly dropping below 0<i>&deg;</i><em><span style="font-style: normal;">C.&nbsp;</span></em></span><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><em><span style="font-family: Calibri; font-style: normal;"><a classname="" href="//www.holiday-weather.com/las_vegas/index.html" name="" target="">Las Vegas</a></span></em></st1:city><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;"> sits right in the middle of the Mojave Desert in <st1:state w:st="on"><st1:place w:st="on">Nevada</st1:place></st1:state>. It receives almost 300 days of sunshine year and minimal rainfall that falls in short storms, sometimes causing flash floods. The height of the summer sees blistering daily averages in the 40s with stifling nights in the 20s. Winters are short and mild with day time temperatures bottoming in January at 15</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C, and night times dipping just below freezing.&nbsp;</span></em><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">Mountainous areas are much cooler. The <st1:place w:st="on">Rockies</st1:place> receive a lot of snow and are famous for skiing.</span></em></p>
+
+<p><span style="font-family: Calibri; font-size: 18pt; line-height: 1.6em;">Southwest USA</span></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The southwest is typically hot and dry with more temperate climates to the northeast. Tornado Alley stretches between the Rocky and </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Appalachian Mountains</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> in the east of this region and tornados cause havoc through spring and early summer.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Arizona</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:place w:st="on"><st1:state w:st="on">New Mexico</st1:state></st1:place></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The remaining two desert states, <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/arizona/index.html" name="" target="">Arizona</a></st1:state> and <st1:state w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/new_mexico/index.html" name="" target="">New Mexico</a>, see much the same climate as <st1:state w:st="on">Utah</st1:state> and <st1:state w:st="on"><st1:place w:st="on">Nevada</st1:place></st1:state>: hot and dry. As stated above, regional climate depends largely on altitude, with lower altitudes seeing typical desert conditions and higher elevations receiving more temperate climates. From May till October is the monsoon season during which flash-flooding is possible. &nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The most famous geographical feature of the area, and one of the seven wonders of the natural world, is the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/grand_canyon/index.html" name="" target="">Grand Canyon</a></st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. Cutting across central and northern </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Arizona</st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Grand Canyon</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is a great example of the extreme contrasts between climates at different altitudes. Its south rim is 1000 feet higher than its north rim and sees snowy winters and warm summers around 20</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C</span></em><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> with cool nights while the north rim sees ice and snow all year round. The inner canyon, deep below the rim, sees summer highs nearing the 40s and night times do not cool off so drastically.</span></p>
+
+<p><img alt="Grand Canyon USA" src="/uploads/resort_guides/image/USA/Hiker%20woman%20hiking%20in%20Grand%20Canyon%20walking%20with%20hiking%20poles_%20Healthy%20active%20lifestyle%20image%20of%20hiking%20young%20multiracial%20female%20hiker%20in%20Grand%20Canyon,%20South%20Rim,%20Arizona,%20USA.jpg" style="font-size: 13px; line-height: 1.6em; width: 448px; height: 299px;" /></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><strong>The Grand Canyon, USA.</strong></em></p>
+
+<p><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">Texas</span></b></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><st1:place w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/country/us/texas/index.html" name="" target="">Texas</a></span></st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&rsquo;s great size means it straddles a number of climatic regions, but it is generally hot and dry in the summer and mild to cold in the winter. The Texas High Plains on the <a classname="" href="//www.holiday-weather.com/country/us/new_mexico/index.html" name="" target="">New Mexican</a> border are semi-arid and desert-like. The mountains on the Mexican border see much cooler weather but lower south arid conditions return. The rest of <st1:state w:st="on"><st1:place w:st="on">Texas</st1:place></st1:state> is mostly sub-tropical, getting milder towards the coast.&nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">In <st1:city w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/austin/index.html" name="" target="">Austin</a></st1:place></st1:city> summer highs average around 36<i>&deg;</i><em><span style="font-style: normal;">C while winter sees misleading highs around 16</span></em><i>&deg;</i><em><span style="font-style: normal;">C; it can often be much colder. <st1:city w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/houston/index.html" name="" target="">Houston</a></st1:place></st1:city> is similar though slightly milder with average summer highs around 34</span></em><i>&deg;</i><em><span style="font-style: normal;">C and winter highs around 17</span></em><i>&deg;</i><em><span style="font-style: normal;">C. Rainfall is always low.&nbsp;</span></em></span><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">Coastal <st1:state w:st="on"><st1:place w:st="on">Texas</st1:place></st1:state> is prone to hurricanes and the north contains the end of Tornado Alley. Tornados usually occur in spring and early summer.</span></em></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><b><span style="font-family: Calibri; font-style: normal;">Oklahoma</span></b></em></p>
+
+<p class="MsoNormal"><a classname="" href="//www.holiday-weather.com/country/us/oklahoma/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">Oklahoma</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is a temperate state receiving a continental climate. It receives long, hot, dry summers and cold, snowy winters. The east of the state is influenced by the humid, sub-tropical climate blown up from the <st1:place w:st="on">Gulf of Mexico</st1:place>. To the west conditions become increasingly more arid. <st1:city w:st="on"><a classname="" href="//www.holiday-weather.com/oklahoma_city/index.html" name="" target="">Oklahoma City</a></st1:city>, sitting in gentle prairie land, is one of the sunniest and windiest cities in the <st1:country-region w:st="on"><st1:place w:st="on">USA</st1:place></st1:country-region>. Most of <st1:state w:st="on"><st1:place w:st="on">Oklahoma</st1:place></st1:state> is part of Tornado Alley and the state is visited by numerous tornados, mostly between April and June.</span></p>
+
+<p><span style="font-family: Calibri; font-size: 18pt; line-height: 1.6em; text-indent: -36pt;">Central USA</span></p>
+
+<p><span style="font-family: Calibri; font-size: 13px; line-height: 1.6em;">The central states have a temperate continental climate with four distinct seasons.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Montana</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">, <st1:state w:st="on">Wyoming</st1:state> and <st1:place w:st="on"><st1:state w:st="on">Colorado</st1:state></st1:place></span></b></p>
+
+<p><img alt="Colorado Mountains USA" src="/uploads/resort_guides/image/USA/mountains%20of%20Colorado,%20a%20lake%20and%20clouds.jpg" style="font-size: 13px; line-height: 1.6em; opacity: 0.9; width: 448px;" /></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><font face="Calibri"><b>Colorado Mountains, USA.</b></font></em></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">Although </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/montana_us/index.html" name="" target="">Montana</a></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is considered part of the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Great Plains</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, it has many mountains. The Rockies, and the continental divide, stretch through western </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Montana</st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, right through </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/wyoming/index.html" name="" target="">Wyoming</a></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> and </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/colorado/index.html" name="" target="">Colorado</a></st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. The mountains restrict the flow of cool air from the east to the west, and warm air from west to east. The </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Rockies</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> have unpredictable weather from day to day though the four seasons are very distinct. Summers are warm and dry, interrupted by thunderstorms. Snow starts falling in the autumn and sees the start of a long ski season though the best of the ski season is seen to be in spring. Winter sport enthusiasts come from all over the world to ski in </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">Colorado</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&rsquo;s famed resorts such as Vale and Beaver Creek. The winter sees deep snow and regular blizzards with temperatures falling at night to around a bitter -37</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C. Spring is very changeable with wet weather and increasing temperatures seeing the snow gradually melt away.&nbsp;</span></em><span style="font-family: Calibri; font-size: 13px; line-height: 1.6em;">East of the mountains weather is warmer with summers getting hotter the further south across the three states. It is usually quite dry. Winters are extremely cold.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">North Dakota</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:state w:st="on"><st1:place w:st="on">South Dakota</st1:place></st1:state></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Dakotas</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> receive a temperate climate with four distinct seasons. Summers are hot and dry with periods of drought. The winters are bitingly cold.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Kansas</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:state w:st="on"><st1:place w:st="on">Nebraska</st1:place></st1:state></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">Both states receive continental climates with distinct seasons. Summers are hot and winters are cold. The western regions are dry and windy. The east is much more humid and receives the majority of the states&rsquo; rain. This falls mostly in spring and summer and which is when <st1:state w:st="on"><st1:place w:st="on"></st1:place></st1:state><a classname="" href="//www.holiday-weather.com/country/us/kansas/index.html" name="" target="">Kansas</a>, famously part of Tornado Alley, sees the majority of its tornados. &nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">Summer in </span><st1:city style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/kansas_city/index.html" name="" target="">Kansas City</a></st1:place></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is sweltering, seeing average highs in the mid 30s with humidity at uncomfortable levels. The sun stays out for around eleven hours a day and the nights provide little respite from the heat. Spring and autumn see dramatic changes in temperature, quickly heating up from 12</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C in April to 18</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C in May, and dropping from 20</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C in October to 12</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C in November. Night times are considerable cooler. Winter months are very cold with day times lingering between 1</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C and 6</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C, and night times falling well below zero.</span></em></p>
+
+<p><span style="font-family: Calibri; font-size: 18pt; text-indent: -36pt; line-height: 1.6em;">Midwest </span><st1:country-region style="font-family: Calibri; font-size: 18pt; text-indent: -36pt; line-height: 1.6em;" w:st="on"><st1:place w:st="on">USA</st1:place></st1:country-region></p>
+
+<p><st1:country-region style="font-family: Calibri; font-size: 18pt; text-indent: -36pt; line-height: 1.6em;" w:st="on"><st1:place w:st="on"></st1:place></st1:country-region><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Midwest</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is known for being hot and humid though it does receive all four seasons.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Minnesota</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">, <st1:state w:st="on">Iowa</st1:state> and <st1:place w:st="on"><st1:state w:st="on">Wisconsin</st1:state></st1:place></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">These states have typical humid continental climates, enduring extremes of temperatures in the summer and winter months. Lakes <st1:state w:st="on">Michigan</st1:state> and <st1:city w:st="on">Superior</st1:city> in <st1:state w:st="on"><st1:place w:st="on">Wisconsin</st1:place></st1:state> have some moderating effects on the surrounding areas. The Mississippi River starts in <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/minnesota/index.html" name="" target="">Minnesota</a></st1:state> from <st1:placetype w:st="on">Lake</st1:placetype> <st1:placename w:st="on">Itasca</st1:placename> and stretches all the way across the <st1:country-region w:st="on">USA</st1:country-region> to the <st1:place w:st="on">Gulf of Mexico</st1:place>. It often creates state borders as it does in the case of these three states. The <st1:state w:st="on"><st1:place w:st="on">Mississippi</st1:place></st1:state> and the lakes in the surrounding areas are a real draw for water sport lovers. Waterskiing was invented on the stretch of the <st1:state w:st="on">Mississippi</st1:state> between <st1:state w:st="on">Minnesota</st1:state> and <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/wisconsin/index.html" name="" target="">Wisconsin</a></st1:state> known as <st1:place w:st="on"><st1:placetype w:st="on">Lake</st1:placetype> <st1:placename w:st="on">Pepin</st1:placename></st1:place>.&nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The whole area is prone to heavy precipitation seeing lots of snow in the winter and heavy rain in the spring and summer. Thunderstorms are a regular occurrence, tornadoes are not rare and the </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">Mississippi</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is susceptible to flooding. However, summer months still see a lot of sunshine and the hot temperatures and beautiful waters draw many visitors.</span></p>
+
+<p><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">Michigan</span></b></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/country/us/michigan/index.html" name="" target="">Michigan</a></span></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> also has a humid continental climate for the most part, but the Upper Peninsula and the northern part of the <st1:place w:st="on">Lower Peninsula</st1:place> receive much colder weather. They see warm, short summers and long, upsettingly cold winters. January and February often see average highs below freezing. The state is prone to violent thunderstorms and tornadoes which are more frequent in the southern region.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Missouri</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">, <st1:state w:st="on">Illinois</st1:state>, <st1:state w:st="on">Indiana</st1:state> and <st1:state w:st="on"><st1:place w:st="on">Ohio</st1:place></st1:state></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">These states also have humid continental climates apart from their most southerly regions where the climate is humid sub-tropical. While the majority of theses states receive the typical blazing hot, humid summers and snowy, cold winters, the southern parts receive milder winters. Thunderstorms are common in all states; <st1:state w:st="on">Indiana</st1:state> sees some tornado activity and earthquakes are not unheard of in <st1:state w:st="on"><st1:place w:st="on"></st1:place></st1:state><a classname="" href="//www.holiday-weather.com/country/us/ohio/index.html" name="" target="">Ohio</a>. The <st1:place w:st="on">Missouri River</st1:place> is prone to heavy flooding. &nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">July and August in </span><st1:city style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/chicago/index.html" name="" target="">Chicago</a></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> in </span><a classname="" href="//www.holiday-weather.com/country/us/illinois/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Illinois</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> are beautifully hot months, seeing an average high around 28</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C. January, the coldest month, sees average lows of -8</span></em><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C with regular snow.</span></em></p>
+
+<p><span style="font-family: Calibri; font-size: 18pt; line-height: 1.6em; text-indent: -36pt;">South USA</span></p>
+
+<p><span style="font-family: Calibri; font-size: 13px; line-height: 1.6em;">The southern states are typically hot in the summer with mild winters. The whole area is prone to thunderstorms and coastal regions are sometimes hit by hurricanes.</span></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Arkansas</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">, <st1:state w:st="on">Kentucky</st1:state>, <st1:state w:st="on">Tennessee</st1:state>, <st1:state w:st="on">West Virginia</st1:state>, <st1:state w:st="on">Virginia</st1:state> and <st1:place w:st="on"><st1:state w:st="on">North Carolina</st1:state></st1:place></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">These states enjoy a humid sub-tropical climate receiving all four seasons with hot summers and mild winters. There are many regional variations, mainly due to the Blue Ridge section of the Appalachian Mountains which stretch across all of these states apart from </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">Kentucky</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. In these areas higher elevation correlates with cooler temperatures and increased snowfall in winter months.</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&nbsp; </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/west_virginia/index.html" name="" target="">West Virginia</a></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, which is very mountainous, is one of the wettest and cloudiest states in the </span><st1:country-region style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">USA</st1:place></st1:country-region><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/north_carolina/index.html" name="" target="">North Carolina</a></st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> is actually the wettest of the eastern states due to the rain bearing southerly winds that come over the mountains. However, in all of these states where rainfall is highest through spring and summer, sunshine regularly follows the heavy downpours.&nbsp;</span><a classname="" href="//www.holiday-weather.com/country/us/kentucky/index.html" name="" style="font-size: 13px; line-height: 1.6em; background-color: rgb(255, 255, 255);" target="">Kentucky</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> and <st1:state w:st="on"><st1:place w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/tennessee/index.html" name="" target="">Tennessee</a></st1:place></st1:state> are far enough west, away from the ocean, to be safe from hurricanes, but tornados are a risk. <st1:state w:st="on">Virginia</st1:state> and <st1:state w:st="on"><st1:place w:st="on">North Carolina</st1:place></st1:state>&rsquo;s Atlantic coast means they are susceptible to hurricanes that often do damage far in land.</span></p>
+
+<p class="MsoNormal"><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/virginia_beach/index.html" name="" target="">Virginia Beach</a></span></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, on <st1:state w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/virginia/index.html" name="" target="">Virginia</a></st1:state>&rsquo;s coast right on the border with <st1:state w:st="on"><st1:place w:st="on">North Carolina</st1:place></st1:state>, sees average highs reaching just into the 30s in July and August. Wintertime sees averages staying above freezing though it can dip below and while snow is rare, it has been known to happen. This city is spared the majority of hurricanes as their usual path is to the north.</span></p>
+
+<p><img alt="Nashville Tennessee USA" src="/uploads/resort_guides/image/USA/Nashville,%20Tennessee%20downtown%20skyline%20at%20Shelby%20Street%20Bridge_.jpg" style="font-size: 13px; line-height: 1.6em; opacity: 0.9; width: 448px; height: 300px;" /></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><strong>Nashville Tennessee, USA.</strong></em></p>
+
+<p><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Louisiana</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">, <st1:state w:st="on">Mississippi</st1:state>, <st1:state w:st="on">Alabama</st1:state>, <st1:country-region w:st="on">Georgia</st1:country-region> and <st1:place w:st="on"><st1:state w:st="on">South Carolina</st1:state></st1:place></span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The states of the Deep South also have a pleasant humid sub-tropical climate with the southern parts of the states, and all of </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/louisiana/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Louisiana</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, with coasts on the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Gulf of Mexico</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, experiencing higher temperatures year round. Northern regions are especially cooler in the Appalachian Mountains which reach into </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"></st1:state><a classname="" href="//www.holiday-weather.com/country/us/alabama/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Alabama</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, </span><a classname="" href="//www.holiday-weather.com/country/us/georgia/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Georgia</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> and </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"></st1:place></st1:state><a classname="" href="//www.holiday-weather.com/country/us/south_carolina/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">South Carolina</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. Thunderstorms are common and there is the risk of hurricanes in the summer and autumn months. Spring and autumn are warm with day time temperatures sometimes reaching up into the 20s. Summers are long and hot, seeing daily average highs in the mid 30s. Winters can get down to freezing but snow is rare, apart from in the mountains. Rainfall is quite high all year round with the majority falling in the summer months in thunderstorms.&nbsp;</span><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><span style="font-family: Calibri;"><a classname="" href="//www.holiday-weather.com/new_orleans/index.html" name="" target="">New Orleans</a></span></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, on the coast of <a classname="" href="//www.holiday-weather.com/country/us/louisiana/index.html" name="" target="">Louisiana</a>, has been identified as one of the three cities in <st1:place w:st="on"><st1:country-region w:st="on">America</st1:country-region></st1:place> most susceptible to hurricanes.</span></p>
+
+<p><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">Florida</span></b></p>
+
+<p><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">Most of </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"></st1:place></st1:state><a classname="" href="//www.holiday-weather.com/country/us/florida_us/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Florida</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> also has a humid sub-tropical climate, usually warmer than the states to its immediate north. But closer to Lake Okeechobee the weather quickly increases in heat and south of Lake Okeechobee </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">Florida</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> experiences a true tropical climate.</span></p>
+
+<p><img alt="Key West, Florida" src="/uploads/resort_guides/image/USA/footbridge%20to%20the%20beach%20-%20Key%20West.jpg" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; width: 448px; height: 380px;" /></p>
+
+<p><em style="font-size: 13px; line-height: 1.6em;"><strong><span style="font-family: Calibri;">Key West, Florida USA.</span></strong></em></p>
+
+<p><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><span style="font-family: Calibri;">Jacksonville</span></st1:city><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> in the north of <st1:state w:st="on">Florida</st1:state> shares its summer temperatures with <st1:city w:st="on"><st1:place w:st="on">Miami</st1:place></st1:city> in the south, seeing summer average highs around 33<i>&deg;</i><em><span style="font-style: normal;">C. However, <st1:city w:st="on"><st1:place w:st="on">Jacksonville</st1:place></st1:city> is much colder in the autumn, spring and winter, seeing average lows of 6</span></em><i>&deg;</i><em><span style="font-style: normal;">C in January.</span></em></span></p>
+
+<p class="MsoNormal"><st1:city style="font-size: 13px; line-height: 1.6em;" w:st="on"><st1:place w:st="on"><em><span style="font-family: Calibri; font-style: normal;"><a classname="" href="//www.holiday-weather.com/miami/index.html" name="" target="">Miami</a> </span></em></st1:place></st1:city><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">&rsquo;s tropical climate means warm to hot temperatures year round. It has hot, humid summers with the monsoon season falling between May and October, and a warm, dry winter. January, the coolest month, sees average highs of 24</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C and average lows of 16</span></em><i style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;">&deg;</span></i><em style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri; font-style: normal;">C. <st1:city w:st="on">Miami</st1:city> is statistically the most like city in <st1:country-region w:st="on"><st1:place w:st="on">America</st1:place></st1:country-region> to be hit by a hurricane.</span></em></p>
+
+<p class="MsoNormal"><span style="font-family: Calibri; font-size: 18pt; line-height: 1.6em;">Northeast USA</span></p>
+
+<p class="MsoNormal"><span style="font-family: Calibri; font-size: 13px; line-height: 1.6em;">The north-eastern states are known for their pleasantly hot summers and snowy winters.</span></p>
+
+<p class="MsoNormal"><st1:state style="font-size: 13px; line-height: 1.6em;" w:st="on"><b><span style="font-family: Calibri;">Maryland</span></b></st1:state><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"> and <st1:place w:st="on"><st1:state w:st="on">Delaware</st1:state></st1:place></span></b></p>
+
+<p class="MsoNormal"><b style="font-size: 13px; line-height: 1.6em;"><span style="font-family: Calibri;"><st1:place w:st="on"><st1:state w:st="on"></st1:state></st1:place></span></b><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">These states lie in the transition zone between a humid sub-tropical climate and a continental climate and as such have regional variations in weather. The southern regions of both states receive humid sub-tropical conditions. While the whole region enjoys long, hot summers, the northern areas see longer and colder winters. The east of </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><a classname="" href="//www.holiday-weather.com/country/us/maryland_us/index.html" name="" target="">Maryland</a></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> and most of </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on"></st1:place></st1:state><a classname="" href="//www.holiday-weather.com/country/us/delaware/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Delaware</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> are part of the flat Atlantic Coastal plain. In the northern regions of </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Maryland</st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> the flat land meets the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Appalachian Mountains</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> which see heavy snow and temperatures below -12</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C every winter</span></em><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. The states are surrounded by water: Chesapeake Bay in the west, Delaware Bay in the east and the </span><st1:place style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Atlantic Ocean</st1:place><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> to the northeast. The states&rsquo; climates are moderated somewhat by the abundance of water and coastal winds. Hurricanes are possible though </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">North Carolina</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, to the south, provides protection from the majority of these tropical cyclones.&nbsp;</span><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">The </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">District of Columbia</st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, </span><st1:city style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"></st1:city><a classname="" href="//www.holiday-weather.com/washington_dc/index.html" name="" style="font-size: 13px; line-height: 1.6em; font-family: Calibri; background-color: rgb(255, 255, 255);" target="">Washington D.C.</a><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">, is surrounded by </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on">Maryland</st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"> apart from its southwest border which is with </span><st1:state style="font-size: 13px; line-height: 1.6em; font-family: Calibri;" w:st="on"><st1:place w:st="on">Virginia</st1:place></st1:state><span style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">. It falls in the area&rsquo;s humid sub-tropical climate. Scorching summers see 30</span><i style="font-size: 13px; line-height: 1.6em; font-family: Calibri;">&deg;</i><em style="font-size: 13px; line-height: 1.6em; font-family: Calibri;"><span style="font-style: normal;">C average highs in July and August.</span></em></p>
+    </div>
+        
+  </div>
+</div>
+    </div>
+      
+<footer id="page_footer">
+
+    <div class="pre-footer">
+    <div class="pre-footer-left"><a href="/">Return to Homepage</a></div>
+    <div class="pre-footer-right"><a href="#">Return to Top</a></div>
+  </div>
+  
+	<div class="inner_footer">
+	 <div class="footer-col-1">
+    <div id="footer_search">
+        <h6 class="footer-header">Main Links</h6>
+        <ul>
+          <li class="footer-col-list-2"><a href="/about-us/">About Us</a></li>
+          <li class="footer-col-list-2"><a href="/holiday-reviews/">Reviews</a></li>
+          <li class="footer-col-list-2"><a href="/widget-builder/">Widgets</a></li>
+          <li class="footer-col-list-2"><a href="/contact-us/">Contact Us</a></li>   
+          <li class="footer-col-list-2"><a id="launch_user_preferences" href="#" class="cboxElement">Settings</a></li>
+          <li class="footer-col-list-2"><a href="/links/index.html">Links</a></li>
+          <li class="footer-col-list-2"><a href="/site-map/">Sitemap</a></li>
+        </ul>
+        <div class="google_search">
+          <gcse:searchbox-only resultsUrl="/search-results/"></gcse:searchbox-only>
+        </div>
+      </div>
+   </div>
+   <div class="footer-col-2">
+        <div class="history_item_links"></div>   </div>
+   <div class="footer-col-3">
+
+              <form method="get" action="/search" class="top_nav_search_form footer_search" >
+  <label for="location_search" class="hide">Search : </label>
+  <div class="search_input">
+    <input type="text" name="query" value="" placeholder="Search for a destination" id="footer_location_search" autocomplete="off" />
+  </div>
+  <button type="submit" name="search" value="search" class="search_button">Search</button>
+  <input type="hidden" name="search" value="1"/>
+  
+      <input type="hidden" name="max" value="0"/>
+  </form>
+            
+      <div class="top_destinations">
+        <h6 class="footer-header">Top 6 Destinations</h6>
+        <ul>
+                      <li><a href="/country/canary-islands/"><div class="country-flags-xsmall cany-0"></div>Canary Islands<span class="arrow"></span></a></li>
+                      <li><a href="/country/france/"><div class="country-flags-xsmall fran-0"></div>France<span class="arrow"></span></a></li>
+                      <li><a href="/country/greece/"><div class="country-flags-xsmall grec-0"></div>Greece<span class="arrow"></span></a></li>
+                      <li><a href="/country/spain/"><div class="country-flags-xsmall span-0"></div>Spain<span class="arrow"></span></a></li>
+                      <li><a href="/country/turkey/"><div class="country-flags-xsmall turk-0"></div>Turkey<span class="arrow"></span></a></li>
+                      <li><a href="/country/uk/"><div class="country-flags-xsmall unkg-0"></div>UK<span class="arrow"></span></a></li>
+                  </ul>
+      </div>
+
+   </div>
+   <div class="static_links">
+      <p class="copyright">&copy; 2016 <a href="/" >Holiday Weather</a> </p>
+      <div class="right_links">
+        Holiday Weather limited <span class="seperator">|</span> 5 Chapel mews <span class="seperator">|</span> Hove <span class="seperator">|</span> BN3 1AR
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li class="social-twitter"><a href="https://twitter.com/weatherholiday" target="_blank">twitter</a></li>
+          <li class="social-google"><a href="https://plus.google.com/101830710901855994905/about" target="_blank">google+</a></li>
+          <li class="social-facebook"><a href="https://www.facebook.com/HolidayWeather" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+ 
+  </div>
+  <script src="//d2wy8f7a9ursnm.cloudfront.net/bugsnag-2.min.js" data-apikey="9c27f02072600430f7ae64031703e2f8" data-appversion="1.4-SNAPSHOT"></script>
+
+
+
+<script type="text/javascript">
+    var currentPageName = 'Country: Index';
+  </script>
+
+<script type="text/javascript">
+  var defaultUserPreferences = {};
+  defaultUserPreferences.defaultWeatherIconSprite = {};
+  // TODO: Get userPreferences from settings.ini for use in go live
+  defaultUserPreferences.defaultWeatherIconSprite.name = 'set_original';
+  defaultUserPreferences.defaultWeatherIconSprite.csspath = '/css/sprites';
+  
+  defaultUserPreferences.favourites = [];
+  defaultUserPreferences.resortHistoryItems = [];
+  
+  defaultUserPreferences.unitsOfMeasurement = {};
+  
+  defaultUserPreferences.unitsOfMeasurement.temp = 'c';
+  defaultUserPreferences.unitsOfMeasurement.speed = 'mph';
+  defaultUserPreferences.unitsOfMeasurement.distance = 'miles';
+  
+  var cloudinarySettings = {}
+      cloudinarySettings['cloudName'] = "hj7ggro7s";
+        cloudinarySettings['indexHost'] = "https://bifur-eu-west-1.searchly.com";
+        cloudinarySettings['indexAuth'] = "holiday-weather:ude7tgz3eftfgltovjg2mm9uol728kl0";
+        cloudinarySettings['indexName'] = "newimages";
+  
+      cloudinarySettings['ratingsUrl'] = "http://hw-ratings-prod.herokuapp.com/";
+  </script>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="/javascript/indexed-cloudinary.min.js"></script>
+
+<script src="//weather-tools.holiday-weather.com/bundle.js"></script>
+
+   <script type="text/javascript" src="http://72447b6777e70bc91f77-3c959582b4ff826f3d675b5ea1295eb8.r48.cf3.rackcdn.com/weather-js.min.46cb0cc5c6196822d523.js"></script>
+
+
+
+<script>
+   $('.z-index-switch-trigger').change(function(e) {
+      $(this).closest('.z-index-switch-container').find('.z-index-switch-element').each(function() {
+         if ($(this).css('z-index') == 99) {
+            $(this).css('z-index', '9');
+         } else {
+            $(this).css('z-index', '99');
+         }
+      });
+   });
+</script>
+
+
+<script type="text/javascript">
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+
+var adElements = [
+  {'slot': '/5020673/Leaderboard', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1337681898286-0'},
+  {'slot': '/5020673/LBF2', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1398329445593-0'},
+  {'slot': '/5020673/MPU', 'width': 300, 'height': 250, 'elementId': 'div-gpt-ad-1336042917446-0'},
+  {'slot': '/5020673/Skyscraper', 'width': 120, 'height': 600, 'elementId': 'div-gpt-ad-1370877243922-0'},
+  {'slot': '/5020673/Sky_160_HP', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1386071646138-0'},
+  {'slot': '/5020673/Wide_Skyscraper', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1336043004726-0'},
+  {'slot': '/5020673/Skyscraper_BTF_wide', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1337069408215-0'},
+  {'slot': '/5020673/Wallpaper_Ad', 'width': 1405, 'height': 900, 'elementId': 'div-gpt-ad-1367922897250-0'},
+  
+  {'slot': '/5020673/HWD_large', 'width': 435, 'height': 484, 'elementId': 'div-gpt-ad-1440499577218-0'},
+  {'slot': '/5020673/HWatchdog-small', 'width': 210, 'height': 410, 'elementId': 'div-gpt-ad-1440584281139-0'},
+  
+  /* Targeted Resort Live Weather */
+  {'slot': '/5020673/LB_DT_LIVE', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1480436090456-0'},
+  {'slot': '/5020673/LSKY_DT_Live', 'width': 300, 'height': 600, 'elementId': 'div-gpt-ad-1480436193795-0'},
+  {'slot': '/5020673/SKY_DT_LIVE_L', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480436372466-0'},
+  {'slot': '/5020673/SKY_DT_LIVE_R', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480436290556-0'},
+  
+  /* Targeted Resort Forecast */
+  {'slot': '/5020673/LB_DT_FC', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1480672799691-0'},
+  {'slot': '/5020673/SKY_DT_FC_L', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480501505834-0'},
+  {'slot': '/5020673/SKY_DT_FC_R', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480501600292-0'},
+  
+  /* Targeted Resort Annual Averages */
+  {'slot': '/5020673/LB_DT_AV', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1480501742957-0'},
+  {'slot': '/5020673/SKY_DT_AV_L', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480501847829-0'},
+  {'slot': '/5020673/SKY_DT_AV_R', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480501798929-0'},
+  
+  /* Targeted Resort Monthly Averages */
+  {'slot': '/5020673/LB_DT-MA', 'width': 728, 'height': 90, 'elementId': 'div-gpt-ad-1480501913659-0'},
+  {'slot': '/5020673/SKY_DT_MA_L', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480501988876-0'},
+  {'slot': '/5020673/SKY_DT_MA-R', 'width': 160, 'height': 600, 'elementId': 'div-gpt-ad-1480502054757-0'}
+];
+
+googletag.cmd.push(function() {
+  var i, max = adElements.length;
+  for (i = 0; i < max; i++) {
+    if (document.getElementById(adElements[i]['elementId'])) {
+      googletag.defineSlot(adElements[i]['slot'], [adElements[i]['width'], adElements[i]['height']], adElements[i]['elementId']).addService(googletag.pubads());
+    }
+  }
+
+    googletag.pubads().setTargeting('Env', 'production');
+    
+          googletag.pubads().setTargeting('Page', 'index');
+    
+      googletag.pubads().setTargeting('Level', 'country');
+    
+      googletag.pubads().setTargeting('Continent', 'americas');
+    
+      googletag.pubads().setTargeting('SubCont', 'north_america');
+    
+      googletag.pubads().setTargeting('Country', 'us');
+    
+    
+      googletag.pubads().setTargeting('ResortId', '88');
+    googletag.pubads().setTargeting('ResortLat', '28.004101830368');
+    googletag.pubads().setTargeting('ResortLng', '-16.59210205078');
+    googletag.pubads().setTargeting('ResortName', 'Tenerife');
+    googletag.pubads().setTargeting('CountryName', 'Canary Islands');
+    
+    
+  googletag.pubads().enableSingleRequest();
+  googletag.enableServices();
+});
+
+var i, max = adElements.length;
+for (i = 0; i < max; i++) {
+  if (document.getElementById(adElements[i]['elementId'])) {
+    var elementId = adElements[i]['elementId'];
+    googletag.cmd.push(function() { googletag.display(elementId); });
+  }
+}
+
+// Track ad-blockers
+$(document).ready(function() {
+  setTimeout(function() { 
+    // Get the first AdSense ad unit on the page
+    var adsLoading = false;
+    $('.dfp-container').each(function() {
+      if (this.innerHTML.replace(/\s/g, "").length > 0) {
+        adsLoading = true;
+      }
+    });
+    
+    if (!adsLoading) {
+      _gaq.push(['_trackEvent', 'Adblock', 'Yes', 'Desktop']);
+      dataLayer.push({'event': 'ga-event', 'eventCategory': 'Adblock', 'eventAction': 'Yes', 'eventLabel': 'Desktop'});
+    }
+  }, 3000); // Run ad block detection 3 seconds after page load
+});
+
+</script>
+
+
+
+<div style="display: none">
+   <div id="user_preferences_form_container" style="width: 400px; padding: 10px 20px; text-align: left; font-size: 14px;">
+      <form class="user_preferences_form" action="" method="get">
+         <h3 style="color: #2e76b6; font-size: 20px;">Your Holiday Weather Settings</h3>
+
+         <div class="user_preference">
+            <strong style="display: inline-block; width: 170px;">Show temperature in:</strong> <label style="display: inline-block; width: 70px;"><input type="radio"
+               name="unit_temperature" class="user_preferences_unit_temperature" value="f" />&deg;F</label> <label><input type="radio" name="unit_temperature"
+               class="user_preferences_unit_temperature" value="c" />&deg;C</label>
+         </div>
+
+         <div class="user_preference" style="margin-top: 20px;">
+            <strong style="display: inline-block; width: 170px;">Show distance in:</strong> <label style="display: inline-block; width: 70px;"><input type="radio"
+               name="unit_distance" class="user_preferences_unit_distance" value="miles" />miles</label> <label><input type="radio" name="unit_distance"
+               class="user_preferences_unit_distance" value="km" />km</label>
+         </div>
+
+         <input type="hidden" name="speed_unit_miles" value="mph"> <input type="hidden" name="speed_unit_km" value="kmh">
+         <div class="user_preference weather_icon_select" style="margin-top: 20px; margin-bottom: 10px;">
+            <strong>Select your weather icons:</strong>
+         </div>
+         <ul>
+            <li><label for="weather_icon_set_original"> <span style="display: inline-block; width: 85px; margin-bottom: 4px;"> <strong>Normal</strong> <span
+                     style="display: inline-block; margin-left: 16px;"> <input type="radio" name="weather_icon_set" value="set_original" id="weather_icon_set_original"
+                        class="weather_icon_set" />
+                  </span>
+               </span> <br /> <span> <img src="/images/weather_icons/45/clear.png" alt="Clear" />
+               </span> <span> <img src="/images/weather_icons/45/chancerain.png" alt="Day chance rain" />
+               </span> <span> <img src="/images/weather_icons/45/nt_chanceflurries.png" alt="Night chance flurries" />
+               </span>
+            </label></li>
+            <li><label for="weather_icon_set_1"> <span style="display: inline-block; width: 85px; margin-bottom: 4px;"> <strong>Smiley</strong> <span
+                     style="display: inline-block; margin-left: 16px;"> <input type="radio" name="weather_icon_set" value="set_1" id="weather_icon_set_1" class="weather_icon_set" />
+                  </span>
+               </span> <br /> <span> <img src="/images/weather_icons/alt_1/45/clear.png" alt="Clear" />
+               </span> <span> <img src="/images/weather_icons/alt_1/45/chancerain.png" alt="Day chance rain" />
+               </span> <span> <img src="/images/weather_icons/alt_1/45/nt_chanceflurries.png" alt="Night chance flurries" />
+               </span>
+            </label></li>
+            <li><label for="weather_icon_set_2"> <span style="display: inline-block; width: 80px; margin-bottom: 4px"> <strong>Bluey</strong> <span
+                     style="display: inline-block; margin-left: 20px;"> <input type="radio" name="weather_icon_set" value="set_2" id="weather_icon_set_2" class="weather_icon_set" />
+                  </span>
+               </span> <br /> <span> <img src="/images/weather_icons/alt_2/45/clear.png" alt="Clear" />
+               </span> <span> <img src="/images/weather_icons/alt_2/45/chancerain.png" alt="Day light rain chance" />
+               </span> <span> <img src="/images/weather_icons/alt_2/45/nt_chanceflurries.png" alt="Night chance flurries" />
+               </span>
+            </label></li>
+         </ul>
+
+         <div class="user_preference" style="padding-top: 20px; text-align: center;">
+            <input
+               style="background: #ff7f00; color: #fff; font-weight: bold; font-size: 16px; border: 1px solid #ff7f00; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;"
+               type="submit" value="Save" />
+         </div>
+         <div>
+            <div id="user_favourite_links"></div>
+         </div>
+      </form>
+   </div>
+</div>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1249cfa74f","applicationID":"3307901","transactionName":"ZlcBZkNUVkVWW0ZcCV8dIlFFXFdYGE9XVBJZVxEdUlpNWENKSxoPX1YGSg==","queueTime":0,"applicationTime":95,"atts":"ShACEAtORUs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

@@ -1,0 +1,1422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--ASPX page @1-67EC8F23-->
+
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<title id="PageTitle">Life Expectancy- United States</title>
+
+<meta content="CodeCharge Studio 3.0.2.2" name="GENERATOR">
+<link href="Styles/P360/Style.css" type="text/css" rel="stylesheet">
+<script language="javascript" type="text/javascript">
+        function PopupWindow(recordid)
+        {
+            window.open("genarate_csv.aspx?Data_Set_Group_Id=" + recordid, "GenerateCSV", "scrollbars=no,width=200,height=100,resizable=no,replace");
+        }
+</script>
+<script language="javascript" src="Scripts/getobject.js"></script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+        plus = new Image();
+        plus.src = "Images/plus.gif";
+        minus = new Image();
+        minus.src = "Images/minus.gif";
+        transparent = new Image();
+        transparent.src = "Images/transparent.gif";
+
+        function ShowSub(Id)
+        {
+                var divObj = GetObject("DS" + Id);
+                var imgObj = GetObject("IMG" + Id);
+                if ( divObj != null )
+                {
+                        if ( divObj.style.display == 'none' )
+                        {
+                                divObj.style.display = '';
+                                imgObj.src = "Images/minus.gif";
+                        }
+                        else
+                        {
+                                divObj.style.display = 'none';
+                                imgObj.src = "Images/plus.gif";
+                        }
+                }
+                else
+                {
+                        imgObj.src = "Images/transparent.gif";
+                        imgObj.height = 0;
+                }
+        }
+-->
+</script>
+</head>
+
+<body>
+
+	<!-- ShareThis -->
+    <span id='share_this_span'></span>
+    <script>    var ShareThisURL = "http://data360.org/dsg.aspx?Data_Set_Group_Id=195"; var PublisherKey = "739e8c6b-3915-471c-90d8-fed6ea1650c0"; </script>
+    <script language="javascript" type="text/javascript" src="Scripts/ShareThis.js"></script>
+
+	
+<form name="ctl00" method="post" action="dsg.aspx?Data_Set_Group_Id=195" onsubmit="javascript:return WebForm_OnSubmit();" id="ctl00">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMzMTAwMDY2NA9kFgRmDxYCHglpbm5lcmh0bWwFHkxpZmUgRXhwZWN0YW5jeS0gVW5pdGVkIFN0YXRlc2QCAQ9kFhICAQ8PFhQeGXRibE9yZ2FuaXphdGlvbjFTb3J0RmllbGQLKYQBUDM2MC5oZWFkZXIudGJsT3JnYW5pemF0aW9uMURhdGFQcm92aWRlcitTb3J0RmllbGRzLCBBcHBfQ29kZS41dHlxdDgwNCwgVmVyc2lvbj0xLjAuNjEwOS4zNzY2NiwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsAB4XdGJsT3JnYW5pemF0aW9uMVNvcnREaXILKWlQMzYwLkRhdGEuU29ydERpcmVjdGlvbnMsIEFwcF9Db2RlLjV0eXF0ODA0LCBWZXJzaW9uPTEuMC42MTA5LjM3NjY2LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwAHhp0YmxPcmdhbml6YXRpb24xUGFnZXNDb3VudAIBHhh0YmxPcmdhbml6YXRpb24xUGFnZVNpemUCAR4ZdGJsT3JnYW5pemF0aW9uUGFnZU51bWJlcgIBHhd0YmxPcmdhbml6YXRpb25QYWdlU2l6ZQIBHhh0YmxPcmdhbml6YXRpb25Tb3J0RmllbGQLKYMBUDM2MC5oZWFkZXIudGJsT3JnYW5pemF0aW9uRGF0YVByb3ZpZGVyK1NvcnRGaWVsZHMsIEFwcF9Db2RlLjV0eXF0ODA0LCBWZXJzaW9uPTEuMC42MTA5LjM3NjY2LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwAHhZ0YmxPcmdhbml6YXRpb25Tb3J0RGlyCysFAB4ZdGJsT3JnYW5pemF0aW9uUGFnZXNDb3VudAIBHhp0YmxPcmdhbml6YXRpb24xUGFnZU51bWJlcgIBZBYOAgIPFgIeC18hSXRlbUNvdW50AgEWAgIBD2QWAgIBDxYCHgRUZXh0BV88aW1nIHRpdGxlPSJEYXRhMzYwIiBoc3BhY2U9IjAiIHNyYz0iL0ltYWdlcy9sb2dvLzIwMDgxMDIwMTM1MDI4LkRhdGEzNjBfNjB4NjAuanBnIiBib3JkZXI9IjAiPmQCBA8PFgIfDAXLATxwIHN0eWxlPSJ0ZXh0LWFsaWduOiBsZWZ0OyI+PHNwYW4gc3R5bGU9ImZvbnQtZmFtaWx5OiAmcXVvdDthcmlhbCZxdW90OywgJnF1b3Q7aGVsdmV0aWNhJnF1b3Q7LCBzYW5zLXNlcmlmOyBmb250LXNpemU6IHh4LWxhcmdlOyI+QmVjYXVzZSB0aGUgbmV3cyBzaG91bGQgYmUgb2JqZWN0aXZlLCBjbGVhciwgYW5kIGRhdGEtZHJpdmVuLjwvc3Bhbj48L3A+ZGQCBg8WAh8MBdIDPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPjwhLS0NCg0KICAgICAgICAgICAgZ29vZ2xlX2FkX2NsaWVudCA9ICJwdWItNzk5MjQ1ODkyMTY3NjY0NiI7DQoNCiAgICAgICAgICAgIC8qIDIwMDgtMTAtMDcgLSBCbHVlIFNxdWFyZSBBZCA0NjggeCA2MCAqLw0KDQogICAgICAgICAgICBnb29nbGVfYWRfc2xvdCA9ICIzNDExNTI4MDMwIjsNCg0KICAgICAgICAgICAgZ29vZ2xlX2FkX3dpZHRoID0gNDY4Ow0KDQogICAgICAgICAgICBnb29nbGVfYWRfaGVpZ2h0ID0gNjA7DQoNCiAgICAgICAgICAgIC8vLS0+DQoNCiAgICAgICAgICAgIDwvc2NyaXB0Pg0KICAgICAgICAgICAgPHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiDQoNCiAgICAgICAgICAgIHNyYz0iaHR0cDovL3BhZ2VhZDIuZ29vZ2xlc3luZGljYXRpb24uY29tL3BhZ2VhZC9zaG93X2Fkcy5qcyI+DQoNCiAgICAgICAgICAgIDwvc2NyaXB0PmQCCA8WAh8LAgEWAgIBD2QWAgIBDxYCHwwFIDIwMDgxMDIwMTM1MDI4LkRhdGEzNjBfNjB4NjAuanBnZAIKDxYCHwwFUTxhIGlkPSJzdWJzY3JpYmVfYnV0dG9uIiBzdHlsZT0nY3Vyc29yOiBwb2ludGVyOyc+U3Vic2NyaWJlPC9hPiBUbyBPdXIgTmV3c2xldHRlcmQCDA9kFgQCFQ8PZBYCHgRocmVmBShodHRwOi8vZGF0YTM2MC5vcmcvdGVybXNfb2Zfc2VydmljZS5hc3B4ZAIZDw8WAh8MBYIBPHNwYW4gY2xhc3M9InJlcXVpcmVkIj4qPC9zcGFuPlJlcXVpcmVkIEZpZWxkczxiciAvPk5vdGU6IERhdGEzNjAgd2lsbCBub3QgbWFrZSB5b3VyIGVtYWlsIGFkZHJlc3MgYXZhaWxhYmxlIHRvIGFueSB0aGlyZCBwYXJ0aWVzLmRkAhQPZBYCZg9kFgJmD2QWBgIBDxYCHwwFgQQ8dGFibGUgY2VsbHNwYWNpbmc9IjAiIGNlbGxwYWRkaW5nPSIwIiBib3JkZXI9IjAiIGhlaWdodD0iMjIiPjx0ciBjbGFzcz0iTWVudSI+PHRkIHN0eWxlPSJib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjNmY2Yjc1OyBib3JkZXItdG9wOiAxcHggc29saWQgIzZmNmI3NTsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNmY2Yjc1OyIgbm93cmFwIGJnY29sb3I9IiNDMEM2RUIiPjxiPjxhIGhyZWY9ImluZGV4LmFzcHgiPkhvbWU8L2E+PC9iPjwvdGQ+PHRkIHN0eWxlPSJib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjNmY2Yjc1OyIgbm93cmFwIGJnY29sb3I9IiNmZmZmZmYiPjxiPjxhIGhyZWY9Im15X2FjdGl2aXR5LmFzcHgiPk15IERhdGEzNjA8L2E+PC9iPjwvdGQ+PHRkIHN0eWxlPSJib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjNmY2Yjc1OyIgbm93cmFwIGJnY29sb3I9IiNmZmZmZmYiPjxiPjxhIGhyZWY9Im9yZ2FuaXphdGlvbnMuYXNweCI+UGxhdGZvcm1zPC9hPjwvYj48L3RkPjwvdHI+PC90YWJsZT5kAgMPFgIfDAVoPGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9InVzaW5nX2RhdGEzNjAuYXNweCNkc2ciPjxpbWcgYm9yZGVyPSIwIiBzcmM9Ii9TdHlsZXMvUDM2MC9JbWFnZXMvSGVscC5naWYiPjwvYT5kAgUPFgIfDAXHBjx0YWJsZSBoZWlnaHQ9IjIyIiBjZWxsc3BhY2luZz0iMCIgY2VsbHBhZGRpbmc9IjAiIGJvcmRlcj0iMCI+PHRyIGNsYXNzPSJNZW51Ij48dGQ+PGEgaHJlZj0icHViX2RwLmFzcHgiPkRhdGEgUGxvdHM8L2E+PC90ZD48dGQgc3R5bGU9ImJvcmRlci1sZWZ0OiAxcHggc29saWQgIzZmNmI3NTsiPjxhIGhyZWY9ImRzX2xpc3QuYXNweCI+RGF0YSBTZXRzPC9hPjwvdGQ+PHRkIGJnY29sb3I9IiNDMEM2RUIiIHN0eWxlPSJib3JkZXItbGVmdDogMXB4IHNvbGlkICM2ZjZiNzU7IiAgc3R5bGU9ImJvcmRlci1sZWZ0OiAxcHggc29saWQgIzZmNmI3NTsiPjxhIGhyZWY9ImRzZ19saXN0LmFzcHgiPkRhdGEgR3JhcGhzPC9hPjwvdGQ+PHRkIHN0eWxlPSJib3JkZXItbGVmdDogMXB4IHNvbGlkICM2ZjZiNzU7Ij48YSBocmVmPSJkZ19saXN0LmFzcHgiPkR5bmFtaWMgRGF0YSBHcmFwaHM8L2E+PC90ZD48dGQgc3R5bGU9ImJvcmRlci1sZWZ0OiAxcHggc29saWQgIzZmNmI3NTsiPjxhIGhyZWY9ImdnX2xpc3QuYXNweCI+R3JhcGggR3JvdXBzPC9hPjwvdGQ+PHRkIHN0eWxlPSJib3JkZXItbGVmdDogMXB4IHNvbGlkICM2ZjZiNzU7Ij48YSBocmVmPSJkb3dubG9hZC5hc3B4Ij5SZXBvcnRzPC9hPjwvdGQ+PHRkIHN0eWxlPSJib3JkZXItbGVmdDogMXB4IHNvbGlkICM2ZjZiNzU7Ij48YSBocmVmPSJvcmdfZGVzY3IuYXNweCI+QWJvdXQgRGF0YTM2MDwvYT48L3RkPjx0ZCBzdHlsZT0iYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCAjNmY2Yjc1OyBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCAjNmY2Yjc1OyI+PGEgaHJlZj0ic3RhZmYuYXNweCI+U3RhZmY8L2E+PC90ZD48L3RyPjwvdGFibGU+ZAIFDw8WAh4ISW1hZ2VVcmwFF3RlbXAvZHNnMTk1XzUwMF8zNTAuanBnFgIeBnVzZW1hcAURZHNnMTk1XzUwMF8zNTBNYXBkAgcPFgIfDAWVATx0cj48dGQgYWxpZ249ImxlZnQiPjxiPkRhdGEgR3JhcGggTmFtZTwvYj48L3RkPjx0ZCBjb2xzcGFuPSczJyBhbGlnbj0ibGVmdCI+PGRpdiBpZD0iZGF0YV9ncmFwaF9uYW1lIj5MaWZlIEV4cGVjdGFuY3ktIFVuaXRlZCBTdGF0ZXM8L2Rpdj48L3RkPjwvdHI+ZAIJDxYCHwsCARYCZg9kFgJmDxUEHGlzc3VlX2dyb3VwLmFzcHg/VG9waWNfSWQ9MzEPU29jaWV0YWwgVHJlbmRzI2lzc3VlX2dyb3VwLmFzcHg/SXNzdWVfR3JvdXBfSWQ9Mjc0GEJpcnRoLCBEZWF0aCwgJiBMaWZlc3BhbmQCDQ8WAh8MBcsBPGRpdiBjbGFzcz0ic2Nyb2xsYm94IiBzdHlsZT0iaGVpZ2h0OiAxMjBweDsiPjxwPjxhIGhyZWY9ImdyYXBoX2dyb3VwLmFzcHg/R3JhcGhfR3JvdXBfSWQ9MTM2MiI+R2xvYmFsIFBlcnNwZWN0aXZlIDI8L2E+PC9wPjxwPjxhIGhyZWY9ImdyYXBoX2dyb3VwLmFzcHg/R3JhcGhfR3JvdXBfSWQ9MjQ5Ij5MaWZlIEV4cGVjdGFuY3kgPC9hPjwvcD48L2Rpdj5kAg8PEGQPFgNmAgECAhYDEAUMR28gdG8gUmVwb3J0ZWcQBRxUUCBDb21tZW50YXJ5IDYgT2N0b2JlciAyMDA2BQI3M2cQBRJHbG9iYWwgUGVyc3BlY3RpdmUFAzE5OGcWAWZkAhEPZBYGZg9kFgJmDw8WBB8OZR4LTmF2aWdhdGVVcmwFNGFkbV9kc2dfcmVwb3J0LmFzcHg/RGF0YV9TZXRfR3JvdXBfSWQ9MTk1JnRyYW5zcG9zZT1kZAIBDw8WBB8OZR8QBRtqYXZhc2NyaXB0OlBvcHVwV2luZG93KDE5NSlkZAIDDw8WBB8OZR8QBSNib29rbWFya3MuYXNweD9JdGVtX0lkPTE5NSZUeXBlPURTR2RkAhMPZBYCAgIPZBYKZg8WAh4HVmlzaWJsZWhkAgEPFgIfEWhkAgMPFgIfDAUMMSAtIDgwIG9mIDgwZAIEDw8WBh8OBR5TdHlsZXMvUDM2MC9JbWFnZXMvUHJldk9mZi5naWYfEAUWP0RhdGFfU2V0X0dyb3VwX0lkPTE5NR4HRW5hYmxlZGhkZAIFDw8WBh8OBR5TdHlsZXMvUDM2MC9JbWFnZXMvTmV4dE9mZi5naWYfEAUWP0RhdGFfU2V0X0dyb3VwX0lkPTE5NR8SaGRkAhUPZBYWAgIPFgIfDQUSaHR0cDovL2RhdGEzNjAub3JnZAIEDxYEHwAFDUFib3V0IERhdGEzNjAfDQUfaHR0cDovL2RhdGEzNjAub3JnL2Fib3V0dXMuYXNweGQCBg8WBB8ABQ9FZGl0b3JpYWwgQm9hcmQfDQUnaHR0cDovL2RhdGEzNjAub3JnL2VkaXRvcmlhbF9ib2FyZC5hc3B4ZAIIDxYEHwAFDVVzaW5nIERhdGEzNjAfDQUlaHR0cDovL2RhdGEzNjAub3JnL3VzaW5nX2RhdGEzNjAuYXNweGQCCg8WBB8ABQhQcmljaWNuZx8NBR9odHRwOi8vZGF0YTM2MC5vcmcvcHJpY2luZy5hc3B4ZAIMDxYEHwAFB1Jldmlld3MfDQUfaHR0cDovL2RhdGEzNjAub3JnL3Jldmlld3MuYXNweGQCDw8WBB8ABQVMaW5rcx8NBTZodHRwOi8vZGF0YTM2MC5vcmcvcHViX2RwX3JlcG9ydC5hc3B4P0RhdGFfUGxvdF9JZD02MThkAhEPFgQfAAUOUHJpdmFjeSBQb2xpY3kfDQUmaHR0cDovL2RhdGEzNjAub3JnL3ByaXZhY3lfcG9saWN5LmFzcHhkAhMPFgQfAAUQVGVybXMgb2YgU2VydmljZR8NBShodHRwOi8vZGF0YTM2MC5vcmcvdGVybXNfb2Zfc2VydmljZS5hc3B4ZAIVDxYEHwAFB0NvbnRhY3QfDQUfaHR0cDovL2RhdGEzNjAub3JnL2NvbnRhY3QuYXNweGQCFw8PFgIfDAV9PGEgaHJlZj0ibG9naW4uYXNweD9yZXRfbGluaz0lMmZkc2cuYXNweCUzZkRhdGFfU2V0X0dyb3VwX0lkJTNkMTk1Ij5Mb2dpbjwvYT4gfCA8YSBocmVmPSJuZXdfYWNjb3VudC5hc3B4Ij5DcmVhdGUgQWNjb3VudDwvYT5kZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUlaGVhZGVyJFN1YnNjcmliZSRBZ3JlZVRvVGVybXNDaGVja0JvePBFUsPxDaBB04o7KCN5LzhMZu3G" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl00'];
+if (!theForm) {
+    theForm = document.ctl00;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=VUBDJrCSudt8bRgyWKkaBG6yuD6NWOdmswyFBxorhpmb2auITOViN_gx_7yI20KYZzA-xJvT1uAxqFeuRhYsB5xhbRg1&amp;t=635588618575142005" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=S75O4plWLWP6ClmYc2nQdoCRBWtZMDHvNCH_OUCQzjwgm_Heu7VaAUu5BTftPZ-Gax1DcNUZ8YqW30XhXa24j7zOet41&amp;t=635588618575142005" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="66D41912" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWEALXkIqjCQKbuqumAgKp0qNoAv2egZMGApLjvvUDArSY3IYOAqCv/PANAqjV1eUHAtvC+KYPAqKz9+YJApmWxYgHApLl09EPApLl09EPApuKjbwDAsOB6cEFAsrB3tYLGcWBjlS2zcacQXj+P9ZzajAt3z0=" />
+</div>
+<div class="header_container ">
+<!--ASPX page @1-0BE0AB35-->
+
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> 
+</script>
+<script type="text/javascript">
+_uacct = "UA-525994-1";
+if (typeof(urchinTracker) == 'function') urchinTracker();
+</script>
+
+
+<script type="text/javascript" language="javascript" src="Scripts/obj.js"></script>
+
+  <input type="hidden" name="s_Organization_Id" id="s_Organization_Id" value=""/>
+  <input type="hidden" name="s_Search_Term" id="s_Search_Term" value=""/>
+
+<div style="display:none;">
+<!--[if le IE 9.0]>
+	<style type="text/css">
+	#opaque { background: none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='Styles/P360/Images/Opaque.png', SizingMethod="scale" ); }
+	</style>
+<![endif]-->
+</div>  
+  
+<table cellspacing="0" cellpadding="0" width="1000" align="left" border="0">
+        <tr><td>
+        <table cellspacing="0" cellpadding="0" width="100%" align="left" border="0">
+          <tr>
+            <td valign="top" class="Header_Logo">
+		<!-- Data360 Logo -->
+		
+		
+			<a href="index.aspx"><img title="Data360" hspace="0" src="/Images/logo/20081020135028.Data360_60x60.jpg" border="0"></a> 
+			<input name="header$tblOrganizationRepeater$ctl01$tblOrganizationOrganization_Name" type="hidden" id="header_tblOrganizationRepeater_ctl01_tblOrganizationOrganization_Name" value="Data360" />
+ 			
+		
+			
+		
+			</td> 
+			
+			<td class="Header_Featured_Text">
+		<!-- Featured Text -->
+		<span id="header_FeaturedTextLabel"><p style="text-align: left;"><span style="font-family: &quot;arial&quot;, &quot;helvetica&quot;, sans-serif; font-size: xx-large;">Because the news should be objective, clear, and data-driven.</span></p></span>
+            </td>
+			
+            <td valign="top" class="Header_Advertisment">
+			
+		
+		<!-- Google Advertisments -->
+		<div id='h_advert'>
+        <script type="text/javascript"><!--
+
+            google_ad_client = "pub-7992458921676646";
+
+            /* 2008-10-07 - Blue Square Ad 468 x 60 */
+
+            google_ad_slot = "3411528030";
+
+            google_ad_width = 468;
+
+            google_ad_height = 60;
+
+            //-->
+
+            </script>
+            <script type="text/javascript"
+
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+
+            </script>
+		</div>
+		
+        
+		</td>
+        </tr>
+        </table>
+		
+		
+        </td></tr>
+		<tr><td align='right'>
+		
+		<div id="header_welcome">
+		<a id="subscribe_button" style='cursor: pointer;'>Subscribe</a> To Our Newsletter
+		</div>
+		
+		</td></tr>
+		<tr><td>
+
+        
+
+<style type="text/css">
+    .style1
+    {
+        width: 367px;
+    }
+</style>
+
+<div id="opaque" style="display: none;"></div>
+<div id="subscribe_popup_window" style="display: none;">
+<table class="Simple_Table" >
+    <tr><td colspan="2" class="Caption">Subscribe to Our Newsletter</td></tr>
+    <tr>
+        <td class="Left_Caption">Email<span class="required">*</span></td>
+        <td align="left" class="style1">
+            <input name="header$Subscribe$EmailTextBox" type="text" id="header_Subscribe_EmailTextBox" style="width:250px;" />
+            <span id="header_Subscribe_EmailEnterValidator" style="color:Red;visibility:hidden;">*</span>
+            <span id="header_Subscribe_EmailCheckValidator" style="color:Red;visibility:hidden;">*</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="Left_Caption">First Name<span class="required">*</span></td>
+        <td align="left" class="style1">
+            <input name="header$Subscribe$FirstNameTextBox" type="text" id="header_Subscribe_FirstNameTextBox" style="width:250px;" />
+            <span id="header_Subscribe_FirstNameEnterValidator" style="color:Red;visibility:hidden;">*</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="Left_Caption">Last Name<span class="required">*</span></td>
+        <td align="left" class="style1">
+            <input name="header$Subscribe$LastNameTextBox" type="text" id="header_Subscribe_LastNameTextBox" style="width:250px;" />
+            <span id="header_Subscribe_LastNameEnterValidator" style="color:Red;visibility:hidden;">*</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="Left_Caption">Company</td>
+        <td align="left" class="style1">
+            <input name="header$Subscribe$CompanyTextBox" type="text" id="header_Subscribe_CompanyTextBox" style="width:250px;" /></td>
+    </tr>
+    <tr>
+        <td class="Left_Caption">Website</td>
+        <td align="left" class="style1">
+            <input name="header$Subscribe$WebsiteTextBox" type="text" id="header_Subscribe_WebsiteTextBox" style="width:250px;" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="left" class="style1"><input id="header_Subscribe_AgreeToTermsCheckBox" type="checkbox" name="header$Subscribe$AgreeToTermsCheckBox" /><b> I agree to</b> <a id="header_Subscribe_TermsOFServiceLinkButton" target="_blank" href="http://data360.org/terms_of_service.aspx" href="javascript:__doPostBack('header$Subscribe$TermsOFServiceLinkButton','')">Terms of Service</a>
+        <span id="header_Subscribe_AgreeToTermsCustomValidator" style="color:Red;visibility:hidden;">*</span>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="left" class="Tiny_Cell">
+            <span id="header_Subscribe_StatusLabel"><span class="required">*</span>Required Fields<br />Note: Data360 will not make your email address available to any third parties.</span>
+            <div id="header_Subscribe_ValidationSummary" style="color:Red;display:none;">
+
+</div>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" class="Cell" align="right">
+        <a id="header_Subscribe_SubmitNewsLetter" class="Data360_HyperLink" href="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;header$Subscribe$SubmitNewsLetter&quot;, &quot;&quot;, true, &quot;SubscribeGroupValidator&quot;, &quot;&quot;, false, true))">Submit</a>
+        <a id="close_popup" class="Data360_HyperLink">Close</a></td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+		
+	<div id='menu_holder'>
+        <span id="header_Horizontal_menu1_ExploreMenuLabel"><span id='explore' class='mainlink explore' style='cursor:pointer;'>Explore</span><ul class='topics'><li class='topic topline'><a href="issue_group.aspx?Topic_Id=28" class="dir" >Economy - GDP & Government</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=245'>GDP</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=176' class='report'>US Macro Economy- Latest News</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=184' class='report'>Global Macro Economy - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=230' class='data_graph'>GDP United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=231' class='data_graph'>GNP United States</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=274' class='data_graph'>GDP Growth Rate (Recent History)</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=166' class='report'>Consumer Price Index Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=353' class='data_graph'>GDP United States (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=321' class='data_graph'>GNP Growth Rate (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=354' class='data_graph'>GDP Growth Rate</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=804' class='data_graph'>Share of Global GDP by Country</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=246'>Trade Balances (Exports & Imports)</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=208' class='report'>US Balance of Payments</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2272' class='data_graph'>US Balance of Payments</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2273' class='data_graph'>US Balance of Payments with China</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2298' class='data_graph'>Net Exports of Goods and Services</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2271' class='data_graph'>US Import and Export Price Indices (End User): All commodities</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2299' class='data_graph'>Net Exports of Goods and Services (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=91' class='data_graph'>U.S. Trade Balance </a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2508' class='data_graph'>Exports to China</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=247'>Federal Budgets, Deficits & Debt</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=179' class='report'>Federal Budget - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=171' class='report'>Job Openings and Labor Turnover Survey</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=52' class='data_graph'>Federal Government Surplus (Deficit)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=409' class='data_graph'>Federal Government Surplus (Deficit) as Percent of GDP</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1195' class='data_graph'>U.S. Postage Stamp Rate </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1001' class='data_graph'>Owners of U.S. National Debt</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=272' class='data_graph'>Percent of U.S. Federal Debt Held by Foreign Investors</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1530' class='data_graph'>Government Spending On Infrastructure</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=53' class='data_graph'>Federal Debt US </a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=248'>State & Local Budgets, Deficits & Debt</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=101' class='report'>US Education Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1994' class='data_graph'>California State Spending - Department of Corrections & Rehabilitation vs. Workforce Investment Board</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=94' class='report'>Public Opinions of the California Government </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1347' class='data_graph'>Earmarked Money by State</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1981' class='data_graph'>California State Expenditures by Agency - All Funds</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=854' class='data_graph'>2006 Lottery Sales by State</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=925' class='data_graph'>Change in State Spending on Corrections, 1985-2000</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=923' class='data_graph'>State Spending on Corrections- 2000</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1494' class='data_graph'>Microcredit in India</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=249'>Taxes</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=475' class='data_graph'>Top U.S. Federal Income Tax Rates on Regular Income and Capital Gains</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1452' class='data_graph'>Tax Misery Index by Country</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=511' class='data_graph'>Social Security & Medicare Employment Tax Rates</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1361' class='data_graph'>Social Security Surplus</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=476' class='data_graph'>Total 2003 Taxes as % of GDP</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1360' class='data_graph'>Projected Medicare Spending</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=250'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=191' class='report'>Global Perspectives - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=479' class='data_graph'>Worlds Largest Economies (2004)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1497' class='data_graph'>Total Value of Loans Granted in India</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2567' class='data_graph'>State Teachers' Retirement System Contribution Percent CA Versus NY</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=29" class="dir" >Economy - Money CPI/PPI</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=251'>Interest Rates</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=82' class='report'>US Housing</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=168' class='report'>US Money Supply</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=81' class='report'>US Interest Rates</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2231' class='data_graph'>10-Year Treasury Constant Maturity Rate</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=242' class='data_graph'>Prime Rate US (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=245' class='data_graph'>Mortgage Rate- 30-Year (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=273' class='data_graph'>Federal Debt per Person US </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=243' class='data_graph'>Treasury Bill-6 Month (Recent History)</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2570' class='data_graph'>LIBOR Rates Recent History</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=252'>Exchange Rates</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=180' class='report'>Exchange Rate - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=103' class='report'>US Exchange Rate Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=579' class='data_graph'>Foreign Exchange Rate- U.K. Pound/ USD</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=60' class='data_graph'>Foreign Exchange Rate Canada / U.S. </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1216' class='data_graph'>Foreign Exchange Rate Denmark/ U.S Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1220' class='data_graph'>Foreign Exchange Rate Switzerland / U.S.  Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1219' class='data_graph'>Foreign Exchange Rate Switzerland / U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1218' class='data_graph'>Foreign Exchange Rate Thailand / U.S. Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1306' class='data_graph'>US Dollars Per Australian Dollar</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1221' class='data_graph'>Foreign Exchange Rate Sweden/ U.S.</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=253'>Money Supply</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2052' class='data_graph'>U.S. Money Supply (M1 and M2)</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=168' class='report'>US Money Supply</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=166' class='report'>Consumer Price Index Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2359' class='data_graph'>Reserve Balances with Federal Reserve Banks</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2060' class='data_graph'>U.S. Money Supply and CPI – Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2209' class='data_graph'>Year-on-Year Percentage Change in M2 Money Stock</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2216' class='data_graph'>Currency in Circulation</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2053' class='data_graph'>U.S. Money Supply and Consumer Price Index</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2296' class='data_graph'>Gross Private Domestic Investment</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=254'>Equity Markets</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=251' class='data_graph'>Dow Jones Industrial Average Trading Volume</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=360' class='data_graph'>Dow Jones Industrial Average Trading Volume (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=358' class='data_graph'>Dow Jones Industrial Average Monthly Change (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=359' class='data_graph'>Dow Jones Industrial Average Adjusted Close (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=368' class='data_graph'>S&P 500 Trading Volume (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=25' class='data_graph'>Dow Jones Ind Avg (Nominal & CPI-Adj)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=254' class='data_graph'>S&P 500 Adjusted Close</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=367' class='data_graph'>S&P 500 Monthly Change (Recent History)</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=357' class='data_graph'>Dow Jones Industrial Average Monthly Change</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=255'>Debt Markets</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2327' class='data_graph'>Asset-Backed Commercial Paper Outstanding</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2289' class='data_graph'>Moodys Seasoned Aaa Corporate Bond Yield</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2243' class='data_graph'>Commercial Paper Outstanding</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2403' class='data_graph'>Commercial Loans Vs Monthly GDP</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1369' class='data_graph'>Size of US High-Yield Bond Market</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=256'>CPI/PPI</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=169' class='report'>Consumer Price Index</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=206' class='report'>Gasoline Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=166' class='report'>Consumer Price Index Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2328' class='data_graph'>Producer Price Index: Finished Goods</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2274' class='data_graph'>CPI - All Items</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2217' class='data_graph'>Consumer Price Index</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=344' class='data_graph'>CPI Monthly Change (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=48' class='data_graph'>Consumer Price Index - All Items</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2281' class='data_graph'>CPI – All Items Less Food & Energy: One Year Percentage Change: Recent History</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2526' class='data_graph'>Inflation Rate Vs Interest Rate for U.S.</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=257'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=169' class='report'>Consumer Price Index</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=170' class='report'>US Gross Domestic Product (GDP) and Its Components</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2293' class='data_graph'>Personal Consumption Expenditures</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2332' class='data_graph'>Personal Saving Rate</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2286' class='data_graph'>Personal Consumption Expenditures: Chain-Type Price Index Less Food and Energy</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=781' class='data_graph'>Personal Saving Rate</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2335' class='data_graph'>Kansas City Financial Stress Index</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2030' class='data_graph'>Consumer Confidence, Present Situation and Expectations Indices</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2022' class='data_graph'>Market Value of Dollar of S&P 500 Earnings vs. Treasury Interest</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2049' class='data_graph'>Personal Saving as a % of Personal Disposable Income</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=30" class="dir" >Economy - Business & Employment</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=258'>Employment</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=95' class='report'>US Employment Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=171' class='report'>Job Openings and Labor Turnover Survey</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=773' class='data_graph'>U.S. Average Hourly Earnings</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=179' class='report'>Federal Budget - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=228' class='data_graph'>Number of Government Employees</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=248' class='data_graph'>Unemployment Rate US (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2362' class='data_graph'>Income Percentiles 2011 (top 1/4)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=340' class='data_graph'>Nonfarm Payroll Change (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=44' class='data_graph'>Unemployment Rate US </a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=160' class='report'>US Healthcare</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=259'>Retail</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2039' class='data_graph'>U.S. Real Consumer Spending - Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2038' class='data_graph'>U.S. Real Consumer Spending</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=680' class='data_graph'>Total Retail Establishments by Industry- U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2033' class='data_graph'>U.S. Real Consumer Spending - Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2032' class='data_graph'>U.S. Real Consumer Spending</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2036' class='data_graph'>% Change in Consumer Spending</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2037' class='data_graph'>% Change in Consumer Spending - Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=683' class='data_graph'>Top Retailers- Number of Stores (2006)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2034' class='data_graph'>% Change in U.S. Real Consumer Spending</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2035' class='data_graph'>% Change in U.S. Real Consumer Spending - Recent History</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=260'>Manufacturing</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2316' class='data_graph'>ISM Manufacturing: PMI Composite Index</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2410' class='data_graph'>Capacity Utilization</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2179' class='data_graph'>Manufacturers New Orders-Nondefense Capital Goods Excluding Aircraft</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=504' class='data_graph'>Light Vehicle Sales (U.S.) - Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2238' class='data_graph'>Light Vehicle Sales (U.S.)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2218' class='data_graph'>Inventory to Sales Ratio: Total Business</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=269' class='data_graph'>Capacity Utilization US-Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1057' class='data_graph'>Light Vehicle Market Share by Size Class</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=261'>Services</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2465' class='data_graph'>US City Average Price of Other Goods and Services</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2463' class='data_graph'>US City Average Price of Education and Communication</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2467' class='data_graph'>US City Average Price of Medical Care</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=499' class='data_graph'>Lobbyist Spending</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1763' class='data_graph'>Hospital IT Budgets as Percent of Total Operating Expense</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=202' class='report'>Prices by Item Type</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=262'>Technology</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=497' class='data_graph'>Cost of DVD Players</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=555' class='data_graph'>Percent of Population Using Internet-by Region</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1516' class='data_graph'>Total Pages Viewed (MM)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1514' class='data_graph'>Total Minutes per Month</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1515' class='data_graph'>Average Daily Visitors (000)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=512' class='data_graph'>Online Advertising Revenue 2000-2007</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=502' class='data_graph'>Text Messages Sent in the 3rd Quarter of 2005</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1513' class='data_graph'>Average Minutes per Visitor</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1517' class='data_graph'>Pages per Visitor per Month (000)</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=263'>Commodities</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=822' class='data_graph'>Commodity Production- World</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2336' class='data_graph'>Import Price Index: China - All Commodities</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=819' class='data_graph'>Commodity Unit Value</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=813' class='data_graph'>Commodity Production-U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=820' class='data_graph'>Commodity Imports</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=821' class='data_graph'>Commodity Exports</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=827' class='data_graph'>Copper End Uses</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=829' class='data_graph'>Iron and Steel End Uses</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=830' class='data_graph'>Asbestos End Uses</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=824' class='data_graph'>Arsenic End Uses</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=264'>Housing & Construction</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=82' class='report'>US Housing</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=110' class='report'>S&P/Case-Shiller® Home Price Indices</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=181' class='report'>Housing - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=208' class='report'>US Balance of Payments</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=47' class='data_graph'>Housing Starts</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=265' class='data_graph'>Housing Starts (Recent History)</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=171' class='report'>Job Openings and Labor Turnover Survey</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1010' class='data_graph'>Composite-20 Home Price Index</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1933' class='data_graph'>Chicago Home Price Index</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1939' class='data_graph'>Los Angeles Home Price Index </a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=850' class='data_graph'>Turner Building Cost Index</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=265'>Defense Spending</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=539' class='data_graph'>Defense Spending U.S.- Annual</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=535' class='data_graph'>U.S. Troop Deployment</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=55' class='data_graph'>Defense Spending US </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1484' class='data_graph'>U.S. Border Patrol Budget</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=763' class='data_graph'>US Troops in Iraq</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1751' class='data_graph'>Cost of War (Afghanistan & Iraq)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=267' class='data_graph'>Defense Spending per Person</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1482' class='data_graph'>U.S. Border Patrol Staff</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=266'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=498' class='data_graph'>Profit Margins of Selected Industries</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2486' class='data_graph'>Disposable Personal Income</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2377' class='data_graph'>Corporate Profits After Taxes</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2544' class='data_graph'>Coincident Economic Acticity Index for California</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2534' class='data_graph'>Per Capita Personal Income in California</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=471' class='data_graph'>501c Organizations in the United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=789' class='data_graph'>Best States For Small Business</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=691' class='data_graph'>501 c 3 organizations</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1995' class='data_graph'>The Silicon Valley Venture Capitalist Confidence Index (TM)</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=31" class="dir" >Societal Trends</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=267'>Crime</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=193' class='report'>Crime - Latest News</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=196' class='report'>Legal - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=699' class='data_graph'>Homicide Rate by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=237' class='data_graph'>Crime Rate United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1447' class='data_graph'>Homicide Rate by Country- Albania through Korea</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=738' class='data_graph'>Least Corrupt Countries</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=704' class='data_graph'>U.S. Direct Expenditures by Criminal Justice Function</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=703' class='data_graph'>% of US Population Under Correctional Supervision by Race</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=996' class='data_graph'>Incarcerated African American Men in the U.S.</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1368' class='data_graph'>Oakland and San Francisco Homicides </a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=268'>Immigration</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=194' class='report'>Immigration - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1492' class='data_graph'>Illegal Immigrant Workers by Job Type</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1458' class='data_graph'>Immigration into the United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=797' class='data_graph'>Immigration to and Emigration from Germany</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=795' class='data_graph'>Top Destinations for German Emigrants</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1349' class='data_graph'>Illegal Immigrantion- Arrests and Prosecutions</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1483' class='data_graph'>U.S. Illegal Immigrant Apprehensions </a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=794' class='data_graph'>Immigration to and Emigration from Germany</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=269'>Public Opinion</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=99' class='report'>US Voting Likelihoods</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=645' class='data_graph'>Internet Usage Growth Rate by Region</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=191' class='report'>Global Perspectives - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=516' class='data_graph'>Midterm Presidential Approval Ratings</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1507' class='data_graph'>U.S. Public Understanding of Scientific Terms and Concepts</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=791' class='data_graph'>End of Presidency Job Approval Ratings</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1089' class='data_graph'>Arnold Schwarzeneggers Job Performance as Governor</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1090' class='data_graph'>Arnold Schwarzeneggers Job Performance Opinion by Party</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=94' class='report'>Public Opinions of the California Government </a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=270'>Religion</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=491' class='data_graph'>Countries with the most Roman Catholics</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=507' class='data_graph'>Belief in Evolution - % of Population</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=617' class='data_graph'>Religious Affiliations- World</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=503' class='data_graph'>Religious Affiliations- U.S. </a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=271'>Reproduction</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1100' class='data_graph'>Number of Sexual Partners You Have Had</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=514' class='data_graph'>Teenage Pregnancy Rates</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=93' class='report'>Global Sex Survey Results</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1129' class='data_graph'>What developing countries need most in terms of sexual health- help to encourage women to uphold their rights</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=528' class='data_graph'>Teenage Abortion Rates</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1158' class='data_graph'>What governments should invest in - sex education in schools</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1104' class='data_graph'>% of People Reporting Having Had an Unplanned Pregnancy-  17 to 18 Years Old</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1102' class='data_graph'>% of People Reporting Having Had an Unplanned Pregnancy- Under 16 Years Old</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=506' class='data_graph'>US Abortions Per 1000 Women Aged 15-44</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=612' class='data_graph'>Percent of Married Women (15-49) Using Modern Contraception</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=272'>Inequality</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=175' class='report'>Inequality-Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=159' class='report'>Relationship between unemployment and homelessness</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=157' class='report'>Homelessness in America</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=160' class='report'>US Healthcare</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2129' class='data_graph'>Daily NYC Homeless Census</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2077' class='data_graph'>Homelessness Rates by state 2007</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2099' class='data_graph'>Detroit 2005-2008 Homelessness Rates</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2100' class='data_graph'>New York City 2005-2008 Homelessness Rates</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2155' class='data_graph'>Cyclical Changes in Homeless Rates NYC</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=273'>Population & Demographics</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=156' class='report'>Life Expectancy v. Infant Mortality Rates</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=216' class='data_graph'>Population Philippines</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=205' class='data_graph'>Population Egypt</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=201' class='data_graph'>Population China</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=466' class='data_graph'>Percentage of Population Age 65 or Over</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=644' class='data_graph'>Population as a Percent of Total Global Population- by Region</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=93' class='report'>Global Sex Survey Results</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=191' class='report'>Global Perspectives - Latest News</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=274'>Birth, Death, & Lifespan</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=195' class='data_graph'>Life Expectancy- United States</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=156' class='report'>Life Expectancy v. Infant Mortality Rates</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=587' class='data_graph'>U.S. Death Rates by Age Group</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=584' class='data_graph'>U.S. Death Rates by Cause</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=464' class='data_graph'>Life Expectancy at Birth</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2092' class='data_graph'>Life Expectancy at Birth- China</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1454' class='data_graph'>Number of Deaths in the U.S. by Cause</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1455' class='data_graph'>% of Total Deaths in the U.S. by Cause of Death</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=275'>Disease</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=160' class='report'>US Healthcare</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=93' class='report'>Global Sex Survey Results</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=233' class='data_graph'>Diabetes Prevalence per Age Group</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1101' class='data_graph'>% of People Reporting Having Had Unprotected Sex Without Knowing Partners History</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1112' class='data_graph'>Areas which need greater public awareness- genital warts/HPV</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1118' class='data_graph'>Areas which need greater public awareness- trichomoniasis</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1111' class='data_graph'>Areas which need greater public awareness- chlamydia</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=276'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=99' class='report'>US Voting Likelihoods</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=159' class='report'>Relationship between unemployment and homelessness</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=157' class='report'>Homelessness in America</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=196' class='data_graph'>Obesity in the United States</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=160' class='report'>US Healthcare</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=93' class='report'>Global Sex Survey Results</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1505' class='data_graph'>The Most Urgent Health Problems in the U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1156' class='data_graph'>Views on sex - my sex life is monotonous</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=32" class="dir" >Education</a><ul class='issue_groups'><li class='topline issue_group'><a href='issue_group.aspx?Issue_Group_Id=277'>Pre-K</a><ul class='reports'></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=278'>K-12</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=101' class='report'>US Education Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=599' class='data_graph'>Literacy Rate by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1653' class='data_graph'>High School Graduation Rates in Select OECD Countries</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1389' class='data_graph'>Number of Schools in the United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1707' class='data_graph'>NYC Schools:  Progress Score vs. Performance Score</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2117' class='data_graph'>Chicago Public Schools Year-Round vs. Reg Calendar ISAT Scores</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=93' class='report'>Global Sex Survey Results</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1099' class='data_graph'>Age When You First Had Sex</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1095' class='data_graph'>Age When First Received Sex Education</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1377' class='data_graph'>Number of Teachers and Student/Teacher Ratio</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=279'>College & Grad School</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=101' class='report'>US Education Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=196' class='report'>Legal - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=992' class='data_graph'>Endowment per Student</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1334' class='data_graph'>California Public University Tuition</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1590' class='data_graph'>Average Public and Private College Tuition</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1337' class='data_graph'>College Student Binge Drinking by Housing Type</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=999' class='data_graph'>African American Men in Higher Education</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=924' class='data_graph'>Change in State Spending on Higher Education, 1985-2000</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=696' class='data_graph'>% of Higher Education Students that are Foreign</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1341' class='data_graph'>College Student Current Marijuana Use by Housing Type</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=280'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=101' class='report'>US Education Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=178' class='report'>State and Local Finance - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=832' class='data_graph'>Pupil/ Teacher Ratio by State</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1980' class='data_graph'>California Expenditures - Grants Only</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1594' class='data_graph'>Student Aid Funding per Recipient by Program</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1593' class='data_graph'>Number of Student Aid Recipients by Program</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1399' class='data_graph'>Ratio of Spending on Corrections to Higher Education</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=33" class="dir" >Energy</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=281'>Electric</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=397' class='data_graph'>Electricity Average Retail Price</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1499' class='data_graph'>Energy Consumption per Person by State Political Orientation</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=349' class='data_graph'>Electricity Generated-US</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=607' class='data_graph'>Hybrid-Electric Vehicle U.S. Market Share (2005)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=603' class='data_graph'>Fuel Sources for Electricity Generation- U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=350' class='data_graph'>Electricity Generated (Renewable)-US</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=182' class='report'>Energy - Latest News</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=282'>Oil</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=279' class='data_graph'>Spot Oil Price: West Texas Intermediate (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=275' class='data_graph'>Spot Oil Price: West Texas Intermediate</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=276' class='data_graph'>Spot Price of Gasoline</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=277' class='data_graph'>Spot Price of Gasoline (Recent History)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1491' class='data_graph'>Oil and Gas Reserves by Country or Company</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1490' class='data_graph'>Price of Ethanol vs. Gasoline</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=627' class='data_graph'>U.S. Petroleum Imports by Country</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=109' class='data_graph'>Crude Oil Reserves United States </a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=283'>Gas</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=206' class='report'>Gasoline Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2175' class='data_graph'>Weekly Retail Gasoline and Diesel Prices</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2339' class='data_graph'>US Regular All Formulations Gas Price</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2494' class='data_graph'>CPI of Gasoline</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2489' class='data_graph'>Total Retail Gasoline Deliveries by Refiners</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2499' class='data_graph'>Gas Spending as Percent of Total Spending by Occuption</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2338' class='data_graph'>Monthly Gasoline Prices</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2496' class='data_graph'>Consumer Speding on Gasoline by Income Quintile</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2497' class='data_graph'>Consumer Spending on Gasoline by Education Level</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2498' class='data_graph'>Consumer Spending on Gasoline by Occupation</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=284'>Solar</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=604' class='data_graph'>Global PV Cell Production by Country</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=621' class='data_graph'>Global PV Cell Installations in 2005</a></li></ul></li><li class='issue_group'><a href='issue_group.aspx?Issue_Group_Id=285'>Wind</a><ul class='reports'></ul></li><li class='issue_group'><a href='issue_group.aspx?Issue_Group_Id=286'>Hydro</a><ul class='reports'></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=287'>Alternative</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=602' class='data_graph'>Renewable Energy Technology Market Size (Actual and Projected)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1344' class='data_graph'>Fuel Ethanol Production in the United States</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=616' class='data_graph'>PV Solar Cell Efficiencies</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=605' class='data_graph'>U.S. PV Cell Costs </a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=288'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=206' class='report'>Gasoline Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=100' class='report'>Sustainability by U.S. City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2493' class='data_graph'>US Import Price Index, Fuel</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=611' class='data_graph'>U.S. Energy Consumption by Fuel</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=606' class='data_graph'>U.S. Biodiesel Production Potential</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1300' class='data_graph'>Green Economy Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=615' class='data_graph'>U.S. Energy-Tech Venture Capital Investments- % of Total U.S. Venture Capital Investments</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=614' class='data_graph'>U.S. Energy-Tech Venture Investments by Subsector</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=34" class="dir" >Environment</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=289'>Climate & Temperature</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1655' class='data_graph'>Average Global Temperatures Through Time</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=371' class='data_graph'>Atmospheric CO2 (Monthly)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=235' class='data_graph'>Temperature (Celsius)-Global Surface (Land and Ocean) Temperature Anomalies</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1779' class='data_graph'>Average Global Temperature Differentials</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=236' class='data_graph'>Global Temperature Anomalies</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=29' class='data_graph'>Global Surface Temperatures (Annual Change)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2025' class='data_graph'>Changes That Reduce Global Warming - Actual and Perceived</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=261' class='data_graph'>Atmospheric CO2</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=290'>Water</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=757' class='data_graph'>Average Water Use Per Person Per Day</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=100' class='report'>Sustainability by U.S. City</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1291' class='data_graph'>Tap Water Quality Sustainability Rankings by City</a></li></ul></li><li class='issue_group'><a href='issue_group.aspx?Issue_Group_Id=291'>Earthquakes</a><ul class='reports'></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=292'>Disasters</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=100' class='report'>Sustainability by U.S. City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1303' class='data_graph'>Natural Disaster Risk Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1197' class='data_graph'>Disaster Declarations by State</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1196' class='data_graph'>Disaster Declarations by Year</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1648' class='data_graph'>Cost of Fire Losses by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1519' class='data_graph'>Doomsday Clock (World Proximity to Catastrophe - Higher is Better)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1602' class='data_graph'>Fire Data - USA - Acres / Fire (thru 10/25 each yr)</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1601' class='data_graph'>Fire Data - USA (through 10/25 each year)</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1603' class='data_graph'>Wildland Fires - Acres / Fire</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=293'>Sharks</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=800' class='data_graph'>Southern Resident Killer Whale Population</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1972' class='data_graph'>Shark Attacks - Global</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=294'>Pollution</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=100' class='report'>Sustainability by U.S. City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=629' class='data_graph'>Annual Greenhouse Gas Emissions by Car</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1290' class='data_graph'>Air Quality Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=623' class='data_graph'>Vehicle mpg Comparisons</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=490' class='data_graph'>Number of Days U.S. Air Quality Index Over 100 </a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=239' class='data_graph'>Carbon Monoxide Emissions</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=637' class='data_graph'>U.S. Percentage of Light Vehicles that are Hybrid</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=190' class='report'>Environmental - Latest News</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=295'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=100' class='report'>Sustainability by U.S. City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1283' class='data_graph'>Metro Public Transit Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1302' class='data_graph'>LEED Buildings Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1500' class='data_graph'>Number of States with Environmentally Friendly Policies</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1296' class='data_graph'>Affordability Sustainability Rankings by City</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1506' class='data_graph'>Total Wildland Fires and Acres Burned</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1228' class='data_graph'>Chicago Sustainability Rankings</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1233' class='data_graph'>Denver Sustainability Rankings</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1240' class='data_graph'>Honolulu Sustainability Rankings</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1235' class='data_graph'>Baltimore Sustainability Rankings</a></li></ul></li></ul></li><li class='topic'><a href="issue_group.aspx?Topic_Id=35" class="dir" >Sports & Leisure</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=296'>Sports</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1004' class='data_graph'>Mount Everest Deaths per Summit</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1003' class='data_graph'>Mount Everest Deaths</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=801' class='data_graph'>Basketball Program Revenue</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=189' class='report'>Sports - Latest News</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1002' class='data_graph'>Mount Everest Summits</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=806' class='data_graph'>Average Cost of a Night at the Ballpark by Team</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=975' class='data_graph'>NCAA Mens Basketball Tournament TV Ad Revenue</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=993' class='data_graph'>Network TV Ad Revenue- Regular Season vs. Post Season</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1606' class='data_graph'>2004 Olympics - Total Medals by Country</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=977' class='data_graph'>Network TV Ad Rates for Major Sporting Events (2006)</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=297'>Leisure</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2468' class='data_graph'>US City Average Price of Recreation</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=202' class='report'>Prices by Item Type</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=298'>Travel</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1333' class='data_graph'>Involuntary Denied Boardings by Airline</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2469' class='data_graph'>US City Average Price of Transportation</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=741' class='data_graph'>Mishandled Baggage Reports per 1,000 Passengers</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1330' class='data_graph'>On-Time Arrival Percentage by Airline </a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1332' class='data_graph'>Bags Lost by Airline</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1331' class='data_graph'>Total Complaints by Airline</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=202' class='report'>Prices by Item Type</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=299'>Entertainment</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=189' class='report'>Sports - Latest News</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=976' class='data_graph'>Post-Season TV Ad Revenues by Sport</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=300'>Other</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=760' class='data_graph'>Acres of Christmas Trees Planted</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=759' class='data_graph'>Number of Christmas Trees Harvested </a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=761' class='data_graph'>Number of Christmas Tree Farms</a></li></ul></li></ul></li><li class='topic bottomline'><a href="issue_group.aspx?Topic_Id=36" class="dir" >Data by Country</a><ul class='issue_groups'><li class='topline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=301'>US</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=184' class='report'>Global Macro Economy - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=206' class='report'>Gasoline Overview</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=211' class='report'>California Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=804' class='data_graph'>Share of Global GDP by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2339' class='data_graph'>US Regular All Formulations Gas Price</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2486' class='data_graph'>Disposable Personal Income</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2526' class='data_graph'>Inflation Rate Vs Interest Rate for U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2493' class='data_graph'>US Import Price Index, Fuel</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=2525' class='data_graph'>3-Month Treasury Maturity Constant Rate</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2544' class='data_graph'>Coincident Economic Acticity Index for California</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=302'>Canada</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=60' class='data_graph'>Foreign Exchange Rate Canada / U.S. </a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=303'>Mexico</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=74' class='data_graph'>Foreign Exchange Rate Mexico / U.S. </a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=73' class='report'>TP Commentary 6 October 2006</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=304'>China</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=184' class='report'>Global Macro Economy - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=208' class='report'>US Balance of Payments</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=804' class='data_graph'>Share of Global GDP by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=61' class='data_graph'>Foreign Exchange Rate China / U.S. </a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=2508' class='data_graph'>Exports to China</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=305'>India</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=184' class='report'>Global Macro Economy - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=804' class='data_graph'>Share of Global GDP by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=69' class='data_graph'>Foreign Exchange Rate Indian Rupees / USD</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1498' class='data_graph'>Average Size of a Loan in India</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1496' class='data_graph'>Number of People Getting Loans in India</a></li></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=306'>UK</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=103' class='report'>US Exchange Rate Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=579' class='data_graph'>Foreign Exchange Rate- U.K. Pound/ USD</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=180' class='report'>Exchange Rate - Latest News</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=162' class='report'>US Foreign Exchange Rates</a></li></ul></li><li class='issue_group'><a href='issue_group.aspx?Issue_Group_Id=307'>Germany</a><ul class='reports'></ul></li><li class='issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=308'>Japan</a><ul class='reports'><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=103' class='report'>US Exchange Rate Overview</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=72' class='data_graph'>Foreign Exchange Rate Japan / U.S. </a></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=180' class='report'>Exchange Rate - Latest News</a></li><li class='report item bottomline'><a href='report_slides.aspx?Print_Group_Id=162' class='report'>US Foreign Exchange Rates</a></li></ul></li><li class='bottomline issue_group'><a class='dir' href='issue_group.aspx?Issue_Group_Id=309'>Other</a><ul class='reports'><li class='report category_name'><span>Featured Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=184' class='report'>Global Macro Economy - Latest News</a></li><li class='report category_name'><span>Popular Reports</span></li><li class='report item'><a href='report_slides.aspx?Print_Group_Id=198' class='report'>Global Perspective</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1216' class='data_graph'>Foreign Exchange Rate Denmark/ U.S Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=804' class='data_graph'>Share of Global GDP by Country</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1220' class='data_graph'>Foreign Exchange Rate Switzerland / U.S.  Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1219' class='data_graph'>Foreign Exchange Rate Switzerland / U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1218' class='data_graph'>Foreign Exchange Rate Thailand / U.S. Recent History</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1221' class='data_graph'>Foreign Exchange Rate Sweden/ U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=1217' class='data_graph'>Foreign Exchange Rate Thailand / U.S.</a></li><li class='report item'><a href='dsg.aspx?Data_Set_Group_Id=593' class='data_graph'>GNI per capita by Country</a></li><li class='report item bottomline'><a href='dsg.aspx?Data_Set_Group_Id=1215' class='data_graph'>Foreign Exchange Rate Denmark/ U.S.</a></li></ul></li></ul></li></ul><a class='mainlink Navigate' href="http://www.data360.org/pub_navigate.aspx">Navigate</a><a class='mainlink About' href="http://www.data360.org/aboutus.aspx">About</a><a class='mainlink Staff' href="http://www.data360.org/staff.aspx">Staff</a><a class='mainlink' target='_blank' href="http://data360.wordpress.com/">Blog</a></span>
+<script language="javascript" type="text/javascript" src="Scripts/menu.js"></script>
+
+
+
+		
+		<span id="header_AdmLabel"></span>
+
+			<table cellspacing="0" cellpadding="0" border="0" style="margin-top: 2px; float: right;">
+			<tr>
+			<td style="padding:0px 0px 0px 0px; margin: 0px 0px 0px 0px" valign="middle" align="right">
+			<span id="header_tblSearchHolder">
+			<input name="header$tblSearchs_Search_Term" type="text" maxlength="100" size="30" id="header_tblSearchs_Search_Term" onkeypress="OnKeyPressSearch(event);" style="font-size:10px;padding:0px 0px 0px 0px; margin: 0px 0px 0px 0px; border: 1px solid #C0C6EB" />&nbsp;
+			</span>
+			</td>
+            <td style="padding:0px 0px 0px 0px; margin: 0px 0px 0px 0px" valign="middle" align="right" width="60"><a onclick="DoSearch();" href="#">
+            <img style="padding:0px 0px 0px 0px; margin: 0px 0px 0px 0px" src="/Styles/P360/Images/en/Search.png" border="0" height="19" vspace="0px" hspace="0px" width="52" /></a>&nbsp;</td>
+			</tr>
+			</table>
+			
+        
+		</div>
+		
+		</td></tr>
+        <tr><td>
+		
+		
+        
+		<script language='javascript' type='text/javascript'>var isAdminMode = false;</script>
+
+<!--End ASPX page-->
+
+
+<div id="PageIsLoading"><img src="Styles/P360/Images/Loading.gif" width="16" height="11" alt="loading" />&nbsp;Page Loading...</div>
+</div><!-- #div_header -->
+
+<div id="dsg_container">
+
+    <div class="left_floating_div">
+
+	<table width='1000px'>
+	<tr>
+	<td>
+        <!-- <div id="div_left_side"> -->
+            
+            <img id="imgChart" usemap="dsg195_500_350Map" src="temp/dsg195_500_350.jpg" style="height:350px;width:500px;border-width:0px;" />
+        <!-- </div><!-- #div_left_side -->
+	
+	</td>
+	<td valign='top' align='left'>
+
+        <!-- <div id="div_right_side"> -->
+                  <div style="width: 475px;">
+
+                  <table class="Grid" cellspacing="0" cellpadding="2" width="100%">
+                    <tr><td align="left"><b>Data Graph Name</b></td><td colspan='3' align="left"><div id="data_graph_name">Life Expectancy- United States</div></td></tr>
+                    
+                    
+                                        
+                    <tr>
+                    <td align="left"><b>Topic</b></td>
+                    <td><a href='issue_group.aspx?Topic_Id=31'>Societal Trends</a></td>
+                    <td><b>Issue Group</b></td>
+                    <td><a href='issue_group.aspx?Issue_Group_Id=274'>Birth, Death, & Lifespan</a></td>
+                    </tr>
+
+                    
+                     
+                  </table>
+
+                        <div class="sources">
+                          <div class="scrollbox" style="height:207px">
+                             <p></p>
+                          </div>
+                        </div>
+
+                  <table class="Grid" style="display:none" cellspacing="0" cellpadding="2" width="100%" align="center">
+                    <tr class="Header">
+                      <th align="middle">Graph Group(s):</th>
+                    </tr>
+                    <tr class="Row">
+                      <td nowrap align="left"><div class="scrollbox" style="height: 120px;"><p><a href="graph_group.aspx?Graph_Group_Id=1362">Global Perspective 2</a></p><p><a href="graph_group.aspx?Graph_Group_Id=249">Life Expectancy </a></p></div>&nbsp;</td>
+                    </tr>
+                  </table>
+
+                  <br />
+				  <div style='clear: both'></div>
+
+<div style='margin-left: 50px;'>				  
+<table border='0' style='margin-bottom: 5px'>
+<tr> 
+<td valign='top' align='left'>    
+	 <select name="lbGoToGraphGroup" onchange="javascript:setTimeout('__doPostBack(\'lbGoToGraphGroup\',\'\')', 0)" id="lbGoToGraphGroup" style="width:250px;">
+	<option selected="selected" value="">Go to Report</option>
+	<option value="73">TP Commentary 6 October 2006</option>
+	<option value="198">Global Perspective</option>
+
+</select> &nbsp; </td>
+<td valign='top'> <img src='Styles/P360/Images/ShareThisButton.png' onClick="ShareDataGraph();" style="cursor:pointer;"/>
+</td>
+</tr>
+</table>			
+
+                  <!-- <div style="float: left; clear: left; margin-top: 10px;"> -->
+                  <a id="aCsv" class="Data360_HyperLink" href="javascript:PopupWindow(195)">Download Data</a>&nbsp;
+                      <!-- <a id="aBookmark" class="Data360_HyperLink" href="bookmarks.aspx?Item_Id=195&amp;Type=DSG">Add To My Bookmarks</a> -->
+	              
+                  <!-- </div><!-- #div_ImgUrls -->
+</div>
+          </div>
+        <!-- </div><!-- #div_right_side -->
+	
+	</td>
+	</tr>
+	</table>
+		
+
+		<div class='left_table' style="margin-top: 10px; margin-bottom: 10px; float: left;">
+        <!--ASPX page @1-2411A2ED-->
+
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+    plus = new Image();
+    plus.src = "Images/plus.gif";
+    minus = new Image();
+    minus.src = "Images/minus.gif";
+    transparent = new Image();
+    transparent.src = "Images/transparent.gif";
+
+    function GetObject(ObjectId, tagName) {
+        svn = document.getElementsByTagName(tagName);
+        for (a = 0; a < svn.length; a++) {
+            if (svn[a].id.lastIndexOf(ObjectId) >= 0) {
+                ObjectId = svn[a].id;
+            }
+        }
+
+        var Obj;
+        if (document.getElementById)
+            Obj = document.getElementById(ObjectId);
+        else if (document.all)
+            Obj = eval("window." + ObjectId);
+        else if (document.layers)
+            Obj = document.layers[ObjectId];
+        else
+            Obj = null;
+
+        return Obj;
+    }
+
+    function ShowSub(Id) {
+        var divObj = GetObject("DS" + Id, "tr");
+        var imgObj = GetObject("IMG" + Id, "img");
+        if (divObj != null) {
+            if (divObj.style.display == 'none') {
+                divObj.style.display = '';
+                imgObj.src = "Images/minus.gif";
+            }
+            else {
+                divObj.style.display = 'none';
+                imgObj.src = "Images/plus.gif";
+            }
+        }
+        else {
+            imgObj.src = "Images/transparent.gif";
+            imgObj.height = 0;
+        }
+    }
+
+    function ShowSub1(I) {
+        var divObj1 = GetObject("trUOM", "tr");
+        var divObj2 = GetObject("trLast", "tr");
+        var divObj3 = GetObject("trSource", "tr");
+        var divObj4 = GetObject("trSUrl", "tr");
+        var divObj5 = GetObject("trDoc", "tr");
+        var divObj6 = GetObject("trUpdater", "tr");
+        var divObj7 = GetObject("trDisplay", "tr");
+        var divObj8 = GetObject("trLegend", "tr");
+        var imgObj = GetObject("IMGall", "img");
+        if (divObj1 != null && divObj2 != null && divObj3 != null && divObj4 != null && divObj5 != null && divObj6 != null && divObj7 != null && divObj8 != null) {
+            if (divObj1.style.display == 'none') {
+                divObj1.style.display = '';
+                divObj2.style.display = '';
+                divObj3.style.display = '';
+                divObj4.style.display = '';
+                divObj5.style.display = '';
+                divObj6.style.display = '';
+                divObj7.style.display = '';
+                divObj8.style.display = '';
+                imgObj.src = "Images/minus.gif";
+            }
+            else {
+                divObj1.style.display = 'none';
+                divObj2.style.display = 'none';
+                divObj3.style.display = 'none';
+                divObj4.style.display = 'none';
+                divObj5.style.display = 'none';
+                divObj6.style.display = 'none';
+                divObj7.style.display = 'none';
+                divObj8.style.display = 'none';
+                imgObj.src = "Images/plus.gif";
+            }
+        }
+        else {
+            imgObj.src = "Images/transparent.gif";
+            imgObj.height = 0;
+        }
+    }
+-->
+</script>
+
+<meta name="GENERATOR" content="CodeCharge Studio 3.1.0.2">
+<table>
+    <tr align="left">
+        <td align="left">
+            <!--ASPX page @1-2C21F9F3-->
+
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//End CCS script
+</script>
+<meta name="GENERATOR" content="CodeCharge Studio 3.1.0.2">
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+    function lbShow_OnChange(lb) {
+        var url = "dsg.aspx?" + "Data_Set_Group_Id" + "=" + "195";
+        if (lb.value != "") url = url + "&count=" + lb.value;
+        var vgoto = "";
+        if (vgoto != "") url = url + "&goto=" + vgoto;
+        var transpose = "";
+        if (transpose != "") url = url + "&transpose=" + transpose;
+        document.location = url;
+    }
+
+                        function GetObject(ObjectId, tagName)
+                        {
+                                svn = document.getElementsByTagName(tagName);           
+                                for ( a = 0; a < svn.length; a++ )
+                                {
+                                        if ( svn[a].id.lastIndexOf(ObjectId) >= 0 )
+                                        {
+                                                ObjectId = svn[a].id;
+                                        }
+                                }
+                        
+                                var Obj;
+                                if (document.getElementById)
+                                        Obj = document.getElementById(ObjectId);
+                                else if (document.all)
+                                        Obj = eval("window." + ObjectId);
+                                else if (document.layers)
+                                        Obj = document.layers[ObjectId];
+                                else
+                                        Obj = null;
+                        
+                                return Obj;
+                        }
+
+function txtGoTo_OnKeyPress(e)
+{
+        var key = window.event ? e.keyCode : e.which;
+        if (key == 13)
+        {
+                var txtGoTo, lb;
+				txtGoTo = GetObject("dp_navigator_txtGoTo", "input");
+				lb = GetObject("dp_navigator_lbShow", "select");
+                if (txtGoTo.value != "")
+                {
+                    var url = "dsg.aspx?" + "Data_Set_Group_Id" + "=" + "195";
+                    if (lb.value != "") url = url + "&count=" + lb.value;
+                    if (txtGoTo.value != "1") url = url + "&goto=" + txtGoTo.value;
+                    if (lb.value != "all")
+                    {
+                        var PageIndex = Math.floor((txtGoTo.value - 1) / lb.value) + 1;
+                        if (PageIndex > 1)  url = url + "&page=" + PageIndex;
+                    }
+                    var transpose = "";
+                    if (transpose != "") url = url + "&transpose=" + transpose;
+                    document.location = url;
+                    return false;
+                }
+        }
+        return blockNonNumbers(txtGoTo, e, false, false);
+}
+function blockNonNumbers(obj, e, allowDecimal, allowNegative)
+{
+        var key;
+        var isCtrl = false;
+        var keychar;
+        var reg;
+                
+        if(window.event) {
+                key = e.keyCode;
+                isCtrl = window.event.ctrlKey
+        }
+        else if(e.which) {
+                key = e.which;
+                isCtrl = e.ctrlKey;
+        }
+        
+        if (isNaN(key)) return true;
+        
+        keychar = String.fromCharCode(key);
+        
+        // check for backspace or delete, or if Ctrl was pressed
+        if (key == 8 || isCtrl)
+        {
+                return true;
+        }
+
+        reg = /\d/;
+        var isFirstN = allowNegative ? keychar == '-' && obj.value.indexOf('-') == -1 : false;
+        var isFirstD = allowDecimal ? keychar == '.' && obj.value.indexOf('.') == -1 : false;
+        
+        return isFirstN || isFirstD || reg.test(keychar);
+}
+-->
+</script>
+<table cellspacing="3" cellpadding="0">
+  <tr style="vertical-align: middle;">
+    
+    
+        <td nowrap><font size="2">&nbsp;Show rows:&nbsp;</font></td>
+        <td>
+      <select name="dsg_report_values$dp_navigator$lbShow" id="dsg_report_values_dp_navigator_lbShow" onchange="lbShow_OnChange(this)">
+	<option value="25">25</option>
+	<option value="50">50</option>
+	<option selected="selected" value="100">100</option>
+	<option value="500">500</option>
+	<option value="all">All Data</option>
+</select>
+        </td>
+        <td nowrap><font size="2">&nbsp;per page&nbsp; 1 - 80 of 80</font></td> 
+    <td style="vertical-align: bottom;" nowrap>
+
+
+
+
+
+<a id="dsg_report_values_dp_navigator_lnkPrev" disabled="disabled"><img src="Styles/P360/Images/PrevOff.gif" style="border-width:0px;" /></a>&nbsp;<a id="dsg_report_values_dp_navigator_lnkNext" disabled="disabled"><img src="Styles/P360/Images/NextOff.gif" style="border-width:0px;" /></a></td> 
+  </tr>
+ 
+</table>
+
+
+
+<!--End ASPX page-->
+
+
+        </td>
+    </tr>
+</table>
+<table id="dsg_report_values_ReportTable" class="Grid" cellspacing="0" cellpadding="2" border="1" style="width: 1px;">
+	<tr class="Row1">
+		<td width="5%"><a class='Data360_HyperLink' href="dsg.aspx?Data_Set_Group_Id=195&transpose=row">Transpose</a></td>
+		<td width="150px"><a href="http://www.data360.org/pub_dp_report.aspx?Data_Plot_Id=350" class='Data360_HyperLink'>View Data Plot</a><br><img src="Images/transparent.gif" height="0" width="150px"/></td>
+		<td width="150px"><a href="http://www.data360.org/pub_dp_report.aspx?Data_Plot_Id=350" class='Data360_HyperLink'>View Data Plot</a><br><img src="Images/transparent.gif" height="0" width="150px"/></td>
+		<td width="150px"><a href="http://www.data360.org/pub_dp_report.aspx?Data_Plot_Id=350" class='Data360_HyperLink'>View Data Plot</a><br><img src="Images/transparent.gif" height="0" width="150px"/></td>
+		<td width="150px"><a href="http://www.data360.org/pub_dp_report.aspx?Data_Plot_Id=891" class='Data360_HyperLink'>View Data Plot</a><br><img src="Images/transparent.gif" height="0" width="150px"/></td>
+	</tr>
+	<tr class="Row1" id="trName">
+		<th><b><a href='javascript:ShowSub1();'><img id="IMGall" border="0" hspace="0" vspace="0" width="9" width="9" src="Images/plus.gif"></a>&nbsp;Name</b></th>
+		<td><b>Life Expectancy Average for Females and Males in the US [350] - Life Expectancy - Female [2247]</b></td>
+		<td><b>Life Expectancy Average for Females and Males in the US [350] - Life Expectancy - Male [2248]</b></td>
+		<td><b>Life Expectancy Average for Females and Males in the US [350] - Life Expectancy - United States Average [2249]</b></td>
+		<td><b>U.S. Life Expectancy Rates [891] - U.S. Life Expectancy [16058]</b></td>
+	</tr>
+	<tr class="Row1" id="trUOM">
+		<th><b>Units&nbsp;of&nbsp;Measure</b></th>
+		<td>Years&nbsp;</td>
+		<td>Years&nbsp;</td>
+		<td>Years&nbsp;</td>
+		<td>Years&nbsp;</td>
+	</tr>
+	<tr class="Row1" id="trLast">
+		<th><b>Last&nbsp;Updated</b></th>
+		<td>4/16/2008</td>
+		<td>4/16/2008</td>
+		<td>4/16/2008</td>
+		<td>11/10/2011</td>
+	</tr>
+	<tr class="Row1" id="trSource">
+		<th><b>Source</b></th>
+		<td>U.S. Census Bureau, International Data Base</td>
+		<td>U.S. Census Bureau, International Data Base</td>
+		<td>U.S. Census Bureau, International Data Base</td>
+		<td>World Bank</td>
+	</tr>
+	<tr class="Row1" id="trSUrl">
+		<th><b>Source&nbsp;URL</b></th>
+		<td><a href='http://www.census.gov/ipc/www/idbsprd.html' target='_blank'>www.census.gov/ipc/www/idbsprd.html</a></td>
+		<td><a href='http://www.census.gov/ipc/www/idbsprd.html' target='_blank'>www.census.gov/ipc/www/idbsprd.html</a></td>
+		<td><a href='http://www.census.gov/ipc/www/idbsprd.html' target='_blank'>www.census.gov/ipc/www/idbsprd.html</a></td>
+		<td><a href='http://data.worldbank.org/indicator/SP.DYN.LE00.IN' target='_blank'>http://data.worldbank.org/indicator/SP.DYN.LE00.IN</a></td>
+	</tr>
+	<tr class="Row1" id="trDoc">
+		<th><b>Source&nbsp;Document</b></th>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr class="Row1" id="trUpdater">
+		<th><b>Updater</b></th>
+		<td nowrap="nowrap">(no&nbsp;editor)&nbsp;</td>
+		<td nowrap="nowrap">(no&nbsp;editor)&nbsp;</td>
+		<td nowrap="nowrap">(no&nbsp;editor)&nbsp;</td>
+		<td nowrap="nowrap">(no&nbsp;editor)&nbsp;</td>
+	</tr>
+	<tr class="Row1" id="trDisplay">
+		<th><b>Display&nbsp;on&nbsp;Graph</b></th>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+		<td>Yes</td>
+	</tr>
+	<tr class="Row1" id="trLegend">
+		<th><b>Legend</b></th>
+		<td>Female [350] - <a href="http://www.data360.org">www.data360.org</a></td>
+		<td>Male [350] - <a href="http://www.data360.org">www.data360.org</a></td>
+		<td>US Average [350] - <a href="http://www.data360.org">www.data360.org</a></td>
+		<td>U.S. Life Expectancy<br>U.S. Life Expectancy [891] - <a href="http://www.data360.org">www.data360.org</a></td>
+	</tr>
+	<tr class="Row1">
+		<th style="vertical-align:top;"><b>Notes</b></th>
+		<td style="vertical-align:top;WORD-BREAK:BREAK-ALL;">&nbsp</td>
+		<td style="vertical-align:top;WORD-BREAK:BREAK-ALL;">&nbsp</td>
+		<td style="vertical-align:top;WORD-BREAK:BREAK-ALL;">&nbsp</td>
+		<td style="vertical-align:top;WORD-BREAK:BREAK-ALL;">&nbsp</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2050</td>
+		<td>86.62&nbsp;</td>
+		<td>81.23&nbsp;</td>
+		<td>83.86&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2049</td>
+		<td>86.50&nbsp;</td>
+		<td>81.08&nbsp;</td>
+		<td>83.73&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2048</td>
+		<td>86.37&nbsp;</td>
+		<td>80.94&nbsp;</td>
+		<td>83.59&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2047</td>
+		<td>86.25&nbsp;</td>
+		<td>80.80&nbsp;</td>
+		<td>83.46&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2046</td>
+		<td>86.13&nbsp;</td>
+		<td>80.65&nbsp;</td>
+		<td>83.33&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2045</td>
+		<td>86.01&nbsp;</td>
+		<td>80.51&nbsp;</td>
+		<td>83.19&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2044</td>
+		<td>85.89&nbsp;</td>
+		<td>80.36&nbsp;</td>
+		<td>83.06&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2043</td>
+		<td>85.76&nbsp;</td>
+		<td>80.22&nbsp;</td>
+		<td>82.93&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2042</td>
+		<td>85.64&nbsp;</td>
+		<td>80.07&nbsp;</td>
+		<td>82.79&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2041</td>
+		<td>85.52&nbsp;</td>
+		<td>79.93&nbsp;</td>
+		<td>82.66&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2040</td>
+		<td>85.40&nbsp;</td>
+		<td>79.78&nbsp;</td>
+		<td>82.52&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2039</td>
+		<td>85.27&nbsp;</td>
+		<td>79.63&nbsp;</td>
+		<td>82.39&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2038</td>
+		<td>85.15&nbsp;</td>
+		<td>79.49&nbsp;</td>
+		<td>82.25&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2037</td>
+		<td>85.03&nbsp;</td>
+		<td>79.34&nbsp;</td>
+		<td>82.12&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2036</td>
+		<td>84.90&nbsp;</td>
+		<td>79.20&nbsp;</td>
+		<td>81.98&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2035</td>
+		<td>84.78&nbsp;</td>
+		<td>79.05&nbsp;</td>
+		<td>81.85&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2034</td>
+		<td>84.66&nbsp;</td>
+		<td>78.90&nbsp;</td>
+		<td>81.71&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2033</td>
+		<td>84.54&nbsp;</td>
+		<td>78.76&nbsp;</td>
+		<td>81.58&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2032</td>
+		<td>84.42&nbsp;</td>
+		<td>78.61&nbsp;</td>
+		<td>81.44&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2031</td>
+		<td>84.29&nbsp;</td>
+		<td>78.46&nbsp;</td>
+		<td>81.31&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2030</td>
+		<td>84.17&nbsp;</td>
+		<td>78.32&nbsp;</td>
+		<td>81.18&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2029</td>
+		<td>84.05&nbsp;</td>
+		<td>78.17&nbsp;</td>
+		<td>81.04&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2028</td>
+		<td>83.93&nbsp;</td>
+		<td>78.03&nbsp;</td>
+		<td>80.91&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2027</td>
+		<td>83.80&nbsp;</td>
+		<td>77.88&nbsp;</td>
+		<td>80.77&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2026</td>
+		<td>83.68&nbsp;</td>
+		<td>77.73&nbsp;</td>
+		<td>80.64&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2025</td>
+		<td>83.56&nbsp;</td>
+		<td>77.59&nbsp;</td>
+		<td>80.50&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2024</td>
+		<td>83.43&nbsp;</td>
+		<td>77.44&nbsp;</td>
+		<td>80.37&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2023</td>
+		<td>83.31&nbsp;</td>
+		<td>77.29&nbsp;</td>
+		<td>80.23&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2022</td>
+		<td>83.18&nbsp;</td>
+		<td>77.15&nbsp;</td>
+		<td>80.09&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2021</td>
+		<td>83.06&nbsp;</td>
+		<td>77.00&nbsp;</td>
+		<td>79.96&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2020</td>
+		<td>82.93&nbsp;</td>
+		<td>76.85&nbsp;</td>
+		<td>79.82&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2019</td>
+		<td>82.78&nbsp;</td>
+		<td>76.72&nbsp;</td>
+		<td>79.68&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2018</td>
+		<td>82.63&nbsp;</td>
+		<td>76.59&nbsp;</td>
+		<td>79.54&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2017</td>
+		<td>82.48&nbsp;</td>
+		<td>76.46&nbsp;</td>
+		<td>79.40&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2016</td>
+		<td>82.34&nbsp;</td>
+		<td>76.33&nbsp;</td>
+		<td>79.26&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2015</td>
+		<td>82.19&nbsp;</td>
+		<td>76.20&nbsp;</td>
+		<td>79.12&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2014</td>
+		<td>82.04&nbsp;</td>
+		<td>76.07&nbsp;</td>
+		<td>78.98&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2013</td>
+		<td>81.88&nbsp;</td>
+		<td>75.94&nbsp;</td>
+		<td>78.84&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2012</td>
+		<td>81.73&nbsp;</td>
+		<td>75.81&nbsp;</td>
+		<td>78.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2011</td>
+		<td>81.58&nbsp;</td>
+		<td>75.68&nbsp;</td>
+		<td>78.56&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2010</td>
+		<td>81.43&nbsp;</td>
+		<td>75.55&nbsp;</td>
+		<td>78.42&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2009</td>
+		<td>81.28&nbsp;</td>
+		<td>75.42&nbsp;</td>
+		<td>78.28&nbsp;</td>
+		<td>78.09&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2008</td>
+		<td>81.13&nbsp;</td>
+		<td>75.29&nbsp;</td>
+		<td>78.14&nbsp;</td>
+		<td>77.94&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2007</td>
+		<td>80.97&nbsp;</td>
+		<td>75.15&nbsp;</td>
+		<td>78.00&nbsp;</td>
+		<td>77.84&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2006</td>
+		<td>80.82&nbsp;</td>
+		<td>75.02&nbsp;</td>
+		<td>77.85&nbsp;</td>
+		<td>77.59&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2005</td>
+		<td>80.67&nbsp;</td>
+		<td>74.89&nbsp;</td>
+		<td>77.71&nbsp;</td>
+		<td>77.34&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2004</td>
+		<td>80.36&nbsp;</td>
+		<td>74.63&nbsp;</td>
+		<td>77.43&nbsp;</td>
+		<td>77.34&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2003</td>
+		<td>80.05&nbsp;</td>
+		<td>74.37&nbsp;</td>
+		<td>77.14&nbsp;</td>
+		<td>76.99&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2002</td>
+		<td>79.74&nbsp;</td>
+		<td>74.11&nbsp;</td>
+		<td>76.86&nbsp;</td>
+		<td>76.84&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2001</td>
+		<td>79.43&nbsp;</td>
+		<td>73.85&nbsp;</td>
+		<td>76.58&nbsp;</td>
+		<td>76.74&nbsp;</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">2000</td>
+		<td>79.49&nbsp;</td>
+		<td>73.90&nbsp;</td>
+		<td>76.62&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1999</td>
+		<td>79.40&nbsp;</td>
+		<td>73.94&nbsp;</td>
+		<td>76.73&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1998</td>
+		<td>79.48&nbsp;</td>
+		<td>73.83&nbsp;</td>
+		<td>76.71&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1997</td>
+		<td>79.36&nbsp;</td>
+		<td>73.56&nbsp;</td>
+		<td>76.51&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1996</td>
+		<td>79.08&nbsp;</td>
+		<td>73.06&nbsp;</td>
+		<td>76.12&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1995</td>
+		<td>78.95&nbsp;</td>
+		<td>72.54&nbsp;</td>
+		<td>75.79&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1994</td>
+		<td>78.96&nbsp;</td>
+		<td>72.35&nbsp;</td>
+		<td>75.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1993</td>
+		<td>78.84&nbsp;</td>
+		<td>72.15&nbsp;</td>
+		<td>75.54&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1992</td>
+		<td>79.10&nbsp;</td>
+		<td>72.30&nbsp;</td>
+		<td>75.80&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1991</td>
+		<td>78.90&nbsp;</td>
+		<td>72.00&nbsp;</td>
+		<td>75.50&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1989</td>
+		<td>78.50&nbsp;</td>
+		<td>71.70&nbsp;</td>
+		<td>75.10&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1988</td>
+		<td>78.30&nbsp;</td>
+		<td>71.40&nbsp;</td>
+		<td>74.90&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1987</td>
+		<td>78.30&nbsp;</td>
+		<td>71.40&nbsp;</td>
+		<td>74.90&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1986</td>
+		<td>78.20&nbsp;</td>
+		<td>71.20&nbsp;</td>
+		<td>74.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1985</td>
+		<td>78.20&nbsp;</td>
+		<td>71.10&nbsp;</td>
+		<td>74.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1984</td>
+		<td>78.20&nbsp;</td>
+		<td>71.10&nbsp;</td>
+		<td>74.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1983</td>
+		<td>78.10&nbsp;</td>
+		<td>71.00&nbsp;</td>
+		<td>74.60&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1982</td>
+		<td>78.10&nbsp;</td>
+		<td>70.80&nbsp;</td>
+		<td>74.50&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1981</td>
+		<td>77.80&nbsp;</td>
+		<td>70.40&nbsp;</td>
+		<td>74.10&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1980</td>
+		<td>77.40&nbsp;</td>
+		<td>70.00&nbsp;</td>
+		<td>73.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1979</td>
+		<td>77.80&nbsp;</td>
+		<td>70.00&nbsp;</td>
+		<td>73.90&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1978</td>
+		<td>77.30&nbsp;</td>
+		<td>69.60&nbsp;</td>
+		<td>73.50&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1977</td>
+		<td>77.20&nbsp;</td>
+		<td>69.50&nbsp;</td>
+		<td>73.30&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1976</td>
+		<td>76.80&nbsp;</td>
+		<td>69.10&nbsp;</td>
+		<td>72.90&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1975</td>
+		<td>76.60&nbsp;</td>
+		<td>68.80&nbsp;</td>
+		<td>72.60&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1970</td>
+		<td>74.70&nbsp;</td>
+		<td>67.10&nbsp;</td>
+		<td>70.80&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1965</td>
+		<td>73.80&nbsp;</td>
+		<td>66.80&nbsp;</td>
+		<td>70.20&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1960</td>
+		<td>73.10&nbsp;</td>
+		<td>66.60&nbsp;</td>
+		<td>69.70&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1955</td>
+		<td>72.80&nbsp;</td>
+		<td>66.70&nbsp;</td>
+		<td>69.60&nbsp;</td>
+		<td>-</td>
+	</tr>
+	<tr class="Row1">
+		<td align="left" nowrap="nowrap">1950</td>
+		<td>71.10&nbsp;</td>
+		<td>65.60&nbsp;</td>
+		<td>68.20&nbsp;</td>
+		<td>-</td>
+	</tr>
+</table>
+
+<!--End ASPX page-->
+
+        </div><!-- #div_report -->
+		<div style="clear:both;"></div>
+
+
+    </div><!-- content -->
+
+    <div class="footer_container">
+    <!--ASPX page @1-3008FB18-->
+
+
+<table border="0" cellpadding="0'" cellspacing="0" width="100%">
+    <tr>
+        <td>
+
+<center>
+<div id="Footer_Menu_Items">
+<a href="http://data360.org" id="footer_aMainPage" target="_blank">Home</a> |
+<a href="http://data360.org/aboutus.aspx" id="footer_aAboutUs">About Data360</a> |
+<a href="http://data360.org/editorial_board.aspx" id="footer_aEditorialBoard" target="_blank">Editorial Board</a> |
+<a href="http://data360.org/using_data360.aspx" id="footer_aUsing" target="_blank">Using Data360</a> |
+
+<div style="display: none;">
+<a href="http://data360.org/pricing.aspx" id="footer_aPricing" target="_blank">Pricicng</a> |
+</div>
+
+<a href="http://data360.org/reviews.aspx" id="footer_aReviews" target="_blank">Reviews</a>
+|
+            
+<a href="http://data360.org/pub_dp_report.aspx?Data_Plot_Id=618" id="footer_aLinks" target="_blank">Links</a> |
+<a href="http://data360.org/privacy_policy.aspx" id="footer_aPolicy" target="_blank">Privacy Policy</a> |
+<a href="http://data360.org/terms_of_service.aspx" id="footer_aTerms" target="_blank">Terms of Service</a> |
+<a href="http://data360.org/contact.aspx" id="footer_aContact" target="_blank">Contact</a> |
+
+<span id="footer_LoginLabel"><a href="login.aspx?ret_link=%2fdsg.aspx%3fData_Set_Group_Id%3d195">Login</a> | <a href="new_account.aspx">Create Account</a></span>
+
+</div>
+</center>
+
+        </td>
+    </tr>
+</table>
+<script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" language="javascript">
+    $("#subscribe_button").click(function ()
+    {
+        $("#subscribe_popup_window").fadeIn("400");
+        $("#opaque").height($(document).height());
+        $("#opaque").fadeIn("400");
+    });
+
+    $("#close_popup").click(function ()
+    {
+            $("#subscribe_popup_window").fadeOut("400");
+            $("#opaque").fadeOut("400");
+    });
+
+        function AgreeToTermsValidate(source, arguments) {
+
+            var inputs = document.getElementById('subscribe_popup_window').getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++)
+                if ((inputs[i].type == "checkbox") && (inputs[i].checked == true)) arguments.IsValid = true;
+                else arguments.IsValid = false;
+   }
+   
+$(document).ready(function(){
+  $('#wp_blog a').attr('target', '_blank');
+  //$('#wp_blog a').addClass("snap_noshots");
+});
+</script>
+<script language="javascript" type="text/javascript" src="Scripts/urlparser.js"></script>
+<script language="javascript" type="text/javascript">init_menu();redtextboxes();</script>
+<!--End ASPX page-->
+
+    <script type="text/javascript">
+    function PageHide() { document.getElementById('PageIsLoading').style.display = 'none'; }
+    if (window.addEventListener) { window.addEventListener('load', PageHide, false); }
+    else if (window.attachEvent) { var r = window.attachEvent("onload", PageHide); }
+    else { PageHide(); }
+    </script>
+    </div><!-- div_footer -->
+    <div style="clear: both;"></div>
+
+</div><!-- .footer_container -->
+
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("header_Subscribe_ValidationSummary"));
+var Page_Validators =  new Array(document.getElementById("header_Subscribe_EmailEnterValidator"), document.getElementById("header_Subscribe_EmailCheckValidator"), document.getElementById("header_Subscribe_FirstNameEnterValidator"), document.getElementById("header_Subscribe_LastNameEnterValidator"), document.getElementById("header_Subscribe_AgreeToTermsCustomValidator"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var header_Subscribe_EmailEnterValidator = document.all ? document.all["header_Subscribe_EmailEnterValidator"] : document.getElementById("header_Subscribe_EmailEnterValidator");
+header_Subscribe_EmailEnterValidator.controltovalidate = "header_Subscribe_EmailTextBox";
+header_Subscribe_EmailEnterValidator.errormessage = "Please enter your email";
+header_Subscribe_EmailEnterValidator.validationGroup = "SubscribeGroupValidator";
+header_Subscribe_EmailEnterValidator.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+header_Subscribe_EmailEnterValidator.initialvalue = "";
+var header_Subscribe_EmailCheckValidator = document.all ? document.all["header_Subscribe_EmailCheckValidator"] : document.getElementById("header_Subscribe_EmailCheckValidator");
+header_Subscribe_EmailCheckValidator.controltovalidate = "header_Subscribe_EmailTextBox";
+header_Subscribe_EmailCheckValidator.errormessage = "Enter a valid email";
+header_Subscribe_EmailCheckValidator.validationGroup = "SubscribeGroupValidator";
+header_Subscribe_EmailCheckValidator.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+header_Subscribe_EmailCheckValidator.validationexpression = "\\w+([-+.\']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+var header_Subscribe_FirstNameEnterValidator = document.all ? document.all["header_Subscribe_FirstNameEnterValidator"] : document.getElementById("header_Subscribe_FirstNameEnterValidator");
+header_Subscribe_FirstNameEnterValidator.controltovalidate = "header_Subscribe_FirstNameTextBox";
+header_Subscribe_FirstNameEnterValidator.errormessage = "Please enter your first name";
+header_Subscribe_FirstNameEnterValidator.validationGroup = "SubscribeGroupValidator";
+header_Subscribe_FirstNameEnterValidator.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+header_Subscribe_FirstNameEnterValidator.initialvalue = "";
+var header_Subscribe_LastNameEnterValidator = document.all ? document.all["header_Subscribe_LastNameEnterValidator"] : document.getElementById("header_Subscribe_LastNameEnterValidator");
+header_Subscribe_LastNameEnterValidator.controltovalidate = "header_Subscribe_LastNameTextBox";
+header_Subscribe_LastNameEnterValidator.errormessage = "Please enter your last name";
+header_Subscribe_LastNameEnterValidator.validationGroup = "SubscribeGroupValidator";
+header_Subscribe_LastNameEnterValidator.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+header_Subscribe_LastNameEnterValidator.initialvalue = "";
+var header_Subscribe_AgreeToTermsCustomValidator = document.all ? document.all["header_Subscribe_AgreeToTermsCustomValidator"] : document.getElementById("header_Subscribe_AgreeToTermsCustomValidator");
+header_Subscribe_AgreeToTermsCustomValidator.errormessage = "You have to agree to terms of our service";
+header_Subscribe_AgreeToTermsCustomValidator.validationGroup = "SubscribeGroupValidator";
+header_Subscribe_AgreeToTermsCustomValidator.evaluationfunction = "CustomValidatorEvaluateIsValid";
+header_Subscribe_AgreeToTermsCustomValidator.clientvalidationfunction = "AgreeToTermsValidate";
+var header_Subscribe_ValidationSummary = document.all ? document.all["header_Subscribe_ValidationSummary"] : document.getElementById("header_Subscribe_ValidationSummary");
+header_Subscribe_ValidationSummary.validationGroup = "SubscribeGroupValidator";
+//]]>
+</script>
+
+<script>ShowSub1();</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+
+</body>
+</html>
+
+<!--End ASPX page-->
+

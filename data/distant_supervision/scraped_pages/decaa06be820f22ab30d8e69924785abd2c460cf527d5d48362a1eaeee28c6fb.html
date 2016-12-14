@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema# schema: http://schema.org/"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="http://www.avert.org/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="USA HIV statistics. The USA is a major contributor to funding the global HIV response, yet it also has its own significant epidemic to address. " />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" />
+<link rel="shortlink" href="http://www.avert.org/node/400" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="http://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" />
+<meta name="twitter:title" content="HIV and AIDS in the United States of America (USA)" />
+<meta name="twitter:description" content="The United States of America (USA) currently has around 1.2 million people living with HIV.  Nearly one in eight of these people are unaware they have HIV.[fn]CDC(February 2016) ‘HIV and AIDS in America: A Snapshot (Factsheet)’[/fn] The size of the epidemic is relatively small compared to the country’s population, but is heavily concentrated among several key affected populations." />
+<meta name="twitter:image" content="http://www.avert.org/sites/default/files/usa_0.png" />
+  <title>HIV and AIDS in the United States of America (USA) | AVERT</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cleartype" content="on">
+
+  <link type="text/css" rel="stylesheet" href="http://www.avert.org/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.avert.org/sites/default/files/css/css__Ju5GKUHfnPiFo4tp3goHv1Jxf9MaoMaD-D6bAauZss.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.avert.org/sites/default/files/css/css_4OJM3COaTF-4un3sUP21RsqlqXFAn7CT2syd9yFdhhw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://www.avert.org/sites/default/files/css/css_Kvw7nTSekS1F4G1L2sTu9sWzkdU-XBg_Nr0CgzVa0u4.css" media="all" />
+  <script src="http://www.avert.org/sites/default/files/js/js_ri60QNjcazMKdlAmWmDsmRb0iKaVkkXUQxH2MsgpmVo.js"></script>
+<script src="http://www.avert.org/sites/default/files/js/js_uBUdh-_RuBBkyQI26AJMcR6vgfwEcVBSTjAPX2g7tGg.js"></script>
+<script>document.createElement( "picture" );</script>
+<script src="http://www.avert.org/sites/default/files/js/js_o8MyDqAwnxVk2UVPtEzBX2mujyn7bd39cxJ1U3_4eo4.js"></script>
+<script src="http://www.avert.org/sites/default/files/js/js_RHCs5ebYMQkrYB6Lq2b-cG9SLVCBMcFhcu4NTqYLitI.js"></script>
+<script>var switchTo5x = true;var useFastShare = true;</script>
+<script src="http://w.sharethis.com/button/buttons.js"></script>
+<script>if (typeof stLight !== 'undefined') { stLight.options({"publisher":"b4f55339-34d3-4878-851c-c052eff92d82","version":"5x","lang":"en"}); }</script>
+<script src="http://www.avert.org/sites/default/files/js/js_OdXFhM2lSDsvHu7xHAPfKVZ1t0CRTjOuNfDeVkdLdSI.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-1240026-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");stLight.options({publisherGA:"UA-1240026-1"});</script>
+<script>setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0028/6859.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);</script>
+<script src="http://www.avert.org/sites/default/files/js/js_dAzemAxV4pkpzuOG-VoJpYRSGsPU6hdpOaxX5xi4DdA.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"avertsubtheme","theme_token":"tQsSoNafK3b09SlyKH8vfi3Xr7NMT-HI0DTNp1VTmBU","jquery_version":"1.8","js":{"sites\/all\/modules\/contrib\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/contrib\/picture\/picture.min.js":1,"sites\/all\/modules\/contrib\/responsive_imagemaps\/responsive_imagemaps.js":1,"modules\/statistics\/statistics.js":1,"sites\/all\/modules\/contrib\/clientside_validation\/clientside_validation.ie8.js":1,"sites\/all\/modules\/contrib\/clientside_validation\/clientside_validation.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.8\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery.form\/3\/jquery.form.min.js":1,"misc\/form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"0":1,"sites\/all\/modules\/contrib\/admin_menu\/admin_devel\/admin_devel.js":1,"sites\/all\/modules\/contrib\/context_breakpoint\/context_breakpoint.js":1,"sites\/all\/modules\/contrib\/caption_filter\/js\/caption-filter.js":1,"sites\/all\/modules\/contrib\/jcaption\/jcaption.js":1,"sites\/all\/libraries\/responsive-imagemaps\/jquery.rwdImageMaps.min.js":1,"1":1,"http:\/\/w.sharethis.com\/button\/buttons.js":1,"2":1,"sites\/all\/modules\/contrib\/webform_conditional\/webform_conditional.js":1,"sites\/all\/modules\/contrib\/clientside_validation\/jquery-validate\/jquery.validate.min.js":1,"misc\/textarea.js":1,"sites\/all\/modules\/contrib\/mollom\/mollom.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/webform\/js\/webform.js":1,"sites\/all\/modules\/contrib\/megamenu\/megamenu.js":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/jquery.meanmenu.min.js":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/responsive_menus_mean_menu.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"3":1,"4":1,"sites\/all\/themes\/contrib\/avertsubtheme\/js\/script.js":1,"sites\/all\/themes\/contrib\/avertsubtheme\/js\/custom.js":1,"sites\/all\/themes\/contrib\/avertsubtheme\/js\/campaign.js":1,"sites\/all\/themes\/contrib\/avertsubtheme\/js\/tracking.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/footnotes\/footnotes.css":1,"sites\/all\/modules\/contrib\/simplenews\/simplenews.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/mollom\/mollom.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/picture\/picture_wysiwyg.css":1,"sites\/all\/modules\/contrib\/quiz\/quiz.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/caption_filter\/caption-filter.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/rate\/rate.css":1,"sites\/all\/modules\/contrib\/webform\/css\/webform.css":1,"sites\/all\/modules\/contrib\/megamenu\/megamenu.css":1,"sites\/all\/modules\/contrib\/megamenu\/megamenu-skins.css":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/meanmenu.min.css":1,"sites\/all\/modules\/contrib\/path_breadcrumbs\/css\/path_breadcrumbs.css":1,"sites\/all\/modules\/contrib\/social_media_links\/social_media_links.css":1,"sites\/all\/themes\/contrib\/avertsubtheme\/system.menus.css":1,"sites\/all\/themes\/contrib\/avertsubtheme\/system.messages.css":1,"sites\/all\/themes\/contrib\/avertsubtheme\/system.theme.css":1,"sites\/all\/themes\/contrib\/avertsubtheme\/css\/styles.css":1,"sites\/all\/themes\/contrib\/avertsubtheme\/font-awesome\/css\/font-awesome.min.css":1}},"context_breakpoint":{"settings":{"save_resolution":false,"breakpoints_in_url":false,"admin_disable_reload":false},"contexts":{"desktop_menu":{"autoreload":0,"breakpoints":{"custom.user.mobile":{"min-width":320,"max-width":768}}},"professionals_mobile":{"autoreload":0,"breakpoints":{"custom.user.desktop_context":{"min-width":769}}},"public_mobile_menu":{"autoreload":0,"breakpoints":{"custom.user.desktop_context":{"min-width":769}}}},"is_admin":false},"jcaption":{"jcaption_selectors":[".content img"],"jcaption_alt_title":"title","jcaption_requireText":true,"jcaption_copyStyle":false,"jcaption_removeStyle":true,"jcaption_removeClass":true,"jcaption_removeAlign":true,"jcaption_copyAlignmentToClass":false,"jcaption_copyFloatToClass":true,"jcaption_copyClassToClass":true,"jcaption_autoWidth":true,"jcaption_keepLink":false,"jcaption_styleMarkup":"","jcaption_animate":false,"jcaption_showDuration":"200","jcaption_hideDuration":"200"},"webform_conditional_webform_client_form_193":{"fields":false,"nid":"193","showSpeed":null},"ajax":{"edit-webform-ajax-submit-193":{"callback":"webform_ajax_callback","wrapper":"webform-ajax-wrapper-193","progress":{"message":"","type":"throbber"},"event":"click","url":"\/system\/ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Submit"}}},"urlIsAjaxTrusted":{"\/system\/ajax":true,"\/professionals\/hiv-around-world\/western-central-europe-north-america\/usa":true},"megamenu":{"timeout":"500","sizewait":"250","hoverwait":"400"},"responsive_menus":[{"selectors":".block-merging-two-menu","trigger_txt":"\u003Cspan \/\u003E\u003Cspan \/\u003E\u003Cspan \/\u003E","close_txt":"\u003Cspan \/\u003E\u003Cspan \/\u003E\u003Cspan \/\u003E","close_size":"18px","position":"right","media_size":"768","show_children":"1","expand_children":"1","expand_txt":"+","contract_txt":"-","remove_attrs":"1","responsive_menus_style":"mean_menu"}],"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"statistics":{"data":{"nid":"400"},"url":"\/modules\/statistics\/statistics.php"},"clientsideValidation":{"forms":{"webform-client-form-193":{"errorPlacement":"3","general":{"errorClass":"error","wrapper":"li","validateTabs":0,"scrollTo":1,"scrollSpeed":"1000","disableHtml5Validation":1,"validateOnBlur":"1","validateOnBlurAlways":"1","validateOnKeyUp":"1","validateBeforeAjax":"1","validateOnSubmit":"1","showMessages":"0","errorElement":"label"},"rules":{"submitted[two_wrapper][first_name]":{"maxlength":128,"messages":{"maxlength":"Name field has a max length of 128 characters."}},"submitted[two_wrapper][last_name]":{"maxlength":128,"messages":{"maxlength":"Email address field has a max length of 128 characters."}},"submitted[your_feedback]":{"required":true,"messages":{"required":"Your feedback field is required."}},"submitted[pageurl]":{"maxlength":128,"messages":{"maxlength":"page URL field has a max length of 128 characters."}},"mollom[captcha]":{"maxlength":128,"messages":{"maxlength":"Verification field has a max length of 128 characters."}},"mollom[homepage]":{"maxlength":128,"messages":{"maxlength":"Home page field has a max length of 128 characters."}}}}},"general":{"usexregxp":0,"months":{"January":1,"Jan":1,"February":2,"Feb":2,"March":3,"Mar":3,"April":4,"Apr":4,"May":5,"June":6,"Jun":6,"July":7,"Jul":7,"August":8,"Aug":8,"September":9,"Sep":9,"October":10,"Oct":10,"November":11,"Nov":11,"December":12,"Dec":12}},"groups":{"webform-client-form-193":{}}}});</script>
+<script type="text/javascript">Drupal.behaviors.contextBreakpoint.preInit();</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/contrib/zen/js/html5-respond.js"></script>
+    <![endif]-->
+  </head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-400 node-type-professional-article section-professionals" >
+      <p id="skip-link">
+      <a href="#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+    </p>
+      
+<div id="page">
+  <div class="wrapper">
+    <div class="top_header clearfix">
+        <div class="region region-top-header">
+    <div id="block-menu-menu-super-global" class="block block-menu super-global-menu first odd" role="navigation">
+
+      
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf"><a href="/" class="menu__link menu__link public">Public</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf"><a href="/professionals" class="menu__link menu__link profession">Professionals</a></li>
+</ul>
+</div>
+<div id="block-megamenu-menu-global-menu" class="block block-megamenu global-menu last even">
+
+      
+  <ul id="megamenu-menu-global-menu" class="megamenu-menu columnar megamenu-skin-avert-menu"><li id="megamenu-mlid-2220" class="megamenu-parent megamenu-parent-0 odd half-1 leaf-0 first menu-2220  first"><h2 class="megamenu-parent-title"><a href="/what-we-do">What we do</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-1969" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/what-we-do/about-avert">About AVERT</a></h3></li>
+<li id="megamenu-mlid-1970" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/what-we-do/where-we-work">Where we work</a></h3></li>
+<li id="megamenu-mlid-1971" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 "><h3 class="megamenu-slot-title"><a href="/what-we-do/impact">Impact of our work</a></h3></li>
+<li id="megamenu-mlid-2222" class="megamenu-slot megamenu-slot-3 even half-2 leaf-3 last  last"><h3 class="megamenu-slot-title"><a href="/what-we-do/leadership">Leadership team</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-2224" class="megamenu-parent megamenu-parent-1 even half-1 leaf-1 menu-2224 "><h2 class="megamenu-parent-title"><a href="/support-us">Support us</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-2330" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/support-us/fundraise">Fundraise</a></h3></li>
+<li id="megamenu-mlid-2235" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/support-us/join-a-campaign">Join a campaign</a></h3></li>
+<li id="megamenu-mlid-59311" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 "><h3 class="megamenu-slot-title"><a href="/support-us/organisation-giving">Giving as an organisation</a></h3></li>
+<li id="megamenu-mlid-1980" class="megamenu-slot megamenu-slot-3 even half-2 leaf-3 last  last"><h3 class="megamenu-slot-title"><a href="/support-us/be-social">Be social</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-2225" class="megamenu-parent megamenu-parent-2 odd half-1 leaf-2 menu-2225 "><h2 class="megamenu-parent-title"><a href="/learn-share">Learn &amp; share</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-2226" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/learn-share/hiv-fact-sheets">Fact sheets</a></h3></li>
+<li id="megamenu-mlid-2335" class="megamenu-slot megamenu-slot-1 even half-2 leaf-1 last  last"><h3 class="megamenu-slot-title"><a href="/learn-share/quizzes">Quizzes</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-587" class="megamenu-parent megamenu-parent-3 even half-1 leaf-3 menu-587 "><h2 class="megamenu-parent-title"><a href="/contact-us">Contact us</a></h2></li>
+<li id="megamenu-mlid-588" class="megamenu-parent megamenu-parent-4 odd half-2 leaf-4 menu-588 "><h2 class="megamenu-parent-title"><a href="/please-donate-now#quickset-donate_quick_tabs2">Donate</a></h2></li>
+<li id="megamenu-mlid-116011" class="megamenu-parent megamenu-parent-5 even half-2 leaf-5 menu-116011 "><h2 class="megamenu-parent-title"><a href="http://timeline.avert.org">Timeline</a></h2></li>
+<li id="megamenu-mlid-589" class="megamenu-parent megamenu-parent-6 odd half-2 leaf-6 last menu-589  last"><h2 class="megamenu-parent-title"><a href="/news">News</a></h2></li>
+</ul>
+</div>
+  </div>
+    </div>
+    <header class="header" id="header" role="banner">
+
+              <div class="logo-wrapper">
+          <a href="/" title="Home" rel="home" class="header__logo" id="logo">
+            <img src="http://www.avert.org/sites/default/files/logo_0.png" alt="Home" class="header__logo-image"/>
+          </a>
+        </div>
+      
+              <div class="header__name-and-slogan" id="name-and-slogan">
+          
+                      <div class="header__site-slogan"
+                 id="site-slogan">30 years providing global information and education on HIV</div>
+                  </div>
+      
+        <div class="header__region region region-header">
+    <div id="block-search-api-page-search" class="block block-search-api-page first odd">
+
+      
+  <form action="/professionals/hiv-around-world/western-central-europe-north-america/usa" method="post" id="search-api-page-search-form-search" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-keys-1">
+  <label class="element-invisible" for="edit-keys-1">Enter your keywords </label>
+ <input placeholder="Enter your keywords" type="text" id="edit-keys-1" name="keys_1" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<input type="hidden" name="id" value="1" />
+<input type="submit" id="edit-submit-1" name="op" value="Search" class="form-submit" /><input type="hidden" name="form_build_id" value="form-2pJUf5D3h7C-3J2CKAGO7X-Ft4pxytPBgQ5uCt2_vvE" />
+<input type="hidden" name="form_id" value="search_api_page_search_form_search" />
+</div></form>
+</div>
+<div id="block-block-5" class="block block-block mobile-search-icon last even">
+
+      
+  <span class="mobile"><img src=http://www.avert.org/sites/all/themes/contrib/avertsubtheme/images/gray-search-icon.png></span>
+</div>
+  </div>
+
+    </header>
+    <div id="navigation">
+
+            <!-- <nav id="main-menu" role="navigation" tabindex="-1"> -->
+            <!-- </nav> -->
+            <a class="toggle-nav" href="javascript:void(0)"><span></span><span></span><span></span></a>
+        <div class="region region-profestional-navbar">
+    <div id="block-megamenu-menu-professionals-menu" class="block block-megamenu professionals-menu first last odd">
+
+      
+  <ul id="megamenu-menu-professionals-menu" class="megamenu-menu columnar megamenu-skin-avert-menu"><li id="megamenu-mlid-512" class="megamenu-parent megamenu-parent-0 odd half-1 leaf-0 first menu-512  first"><h2 class="megamenu-parent-title"><a href="/professionals/hiv-science">Science</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-2360" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/professionals/hiv-science/overview">The science of HIV &amp; AIDS - overview</a></h3></li>
+<li id="megamenu-mlid-514" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-science/types-strains">HIV strains and types</a></h3></li>
+<li id="megamenu-mlid-2316" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-science/stages-infection">Stages of HIV infection</a></h3></li>
+<li id="megamenu-mlid-1994" class="megamenu-slot megamenu-slot-3 even half-2 leaf-3 last  last"><h3 class="megamenu-slot-title"><a href="/professionals/hiv-science/searching-cure">Searching for a cure</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-517" class="megamenu-parent megamenu-parent-1 even half-1 leaf-1 menu-517 "><h2 class="megamenu-parent-title"><a href="/professionals/history-hiv-aids">History</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-1996" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/professionals/history-hiv-aids/overview">History of HIV &amp; AIDS overview</a></h3></li>
+<li id="megamenu-mlid-2020" class="megamenu-slot megamenu-slot-1 even half-2 leaf-1 last  last"><h3 class="megamenu-slot-title"><a href="/professionals/history-hiv-aids/origin">HIV origins</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-520" class="megamenu-parent megamenu-parent-2 odd half-1 leaf-2 menu-520 "><h2 class="megamenu-parent-title"><a href="/professionals/hiv-around-world">Around the world</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-521" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/global-hiv-and-aids-statistics">Global statistics</a></h3></li>
+<li id="megamenu-mlid-522" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/global-response">Global response</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-1998" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-around-world/global-response/funding">Funding</a></li>
+<li id="megamenu-mlid-1997" class="megamenu-item megamenu-item-1 even half-2 leaf-1 last  last"><a href="/global-hiv-targets">Global targets</a></li>
+</ul></li>
+<li id="megamenu-mlid-525" class="megamenu-slot megamenu-slot-2 odd half-1 leaf-2 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/sub-saharan-africa">Sub-Saharan Africa</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2048" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-around-world/sub-saharan-africa/overview">Regional overview</a></li>
+<li id="megamenu-mlid-2055" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-around-world/sub-saharan-africa/botswana">Botswana</a></li>
+<li id="megamenu-mlid-2056" class="megamenu-item megamenu-item-2 odd half-1 leaf-2 "><a href="/professionals/hiv-around-world/sub-saharan-africa/kenya">Kenya</a></li>
+<li id="megamenu-mlid-2057" class="megamenu-item megamenu-item-3 even half-1 leaf-3 "><a href="/professionals/hiv-around-world/sub-saharan-africa/lesotho">Lesotho</a></li>
+<li id="megamenu-mlid-2059" class="megamenu-item megamenu-item-4 odd half-1 leaf-4 "><a href="/professionals/hiv-around-world/sub-saharan-africa/malawi">Malawi</a></li>
+<li id="megamenu-mlid-2061" class="megamenu-item megamenu-item-5 even half-1 leaf-5 "><a href="/professionals/hiv-around-world/sub-saharan-africa/nigeria">Nigeria</a></li>
+<li id="megamenu-mlid-2062" class="megamenu-item megamenu-item-6 odd half-2 leaf-6 "><a href="/professionals/hiv-around-world/sub-saharan-africa/south-africa">South Africa</a></li>
+<li id="megamenu-mlid-2063" class="megamenu-item megamenu-item-7 even half-2 leaf-7 "><a href="/professionals/hiv-around-world/sub-saharan-africa/swaziland">Swaziland</a></li>
+<li id="megamenu-mlid-2064" class="megamenu-item megamenu-item-8 odd half-2 leaf-8 "><a href="/professionals/hiv-around-world/sub-saharan-africa/tanzania">Tanzania</a></li>
+<li id="megamenu-mlid-2065" class="megamenu-item megamenu-item-9 even half-2 leaf-9 "><a href="/professionals/hiv-around-world/sub-saharan-africa/uganda">Uganda</a></li>
+<li id="megamenu-mlid-2066" class="megamenu-item megamenu-item-10 odd half-2 leaf-10 "><a href="/professionals/hiv-around-world/sub-saharan-africa/zambia">Zambia</a></li>
+<li id="megamenu-mlid-2067" class="megamenu-item megamenu-item-11 even half-2 leaf-11 last  last"><a href="/professionals/hiv-around-world/sub-saharan-africa/zimbabwe">Zimbabwe</a></li>
+</ul></li>
+<li id="megamenu-mlid-2201" class="megamenu-slot megamenu-slot-3 even half-1 leaf-3 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/asia-pacific">Asia &amp; the Pacific</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2075" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-around-world/asia-pacific/overview">Regional overview</a></li>
+<li id="megamenu-mlid-2076" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-around-world/asia-pacific/china">China</a></li>
+<li id="megamenu-mlid-2077" class="megamenu-item megamenu-item-2 odd half-2 leaf-2 "><a href="/professionals/hiv-around-world/asia-pacific/india">India</a></li>
+<li id="megamenu-mlid-2082" class="megamenu-item megamenu-item-3 even half-2 leaf-3 last  last"><a href="/professionals/hiv-around-world/asia-pacific/thailand">Thailand</a></li>
+</ul></li>
+<li id="megamenu-mlid-2072" class="megamenu-slot megamenu-slot-4 odd half-1 leaf-4 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/middle-east-north-africa-mena">Middle East &amp; North Africa</a></h3></li>
+<li id="megamenu-mlid-2202" class="megamenu-slot megamenu-slot-5 even half-2 leaf-5 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/latin-america">Latin America</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2074" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-around-world/latin-america/overview">Regional overview</a></li>
+<li id="megamenu-mlid-2073" class="megamenu-item megamenu-item-1 even half-2 leaf-1 last  last"><a href="/professionals/hiv-around-world/latin-america/brazil">Brazil</a></li>
+</ul></li>
+<li id="megamenu-mlid-2069" class="megamenu-slot megamenu-slot-6 odd half-2 leaf-6 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/caribbean">Caribbean</a></h3></li>
+<li id="megamenu-mlid-2068" class="megamenu-slot megamenu-slot-7 even half-2 leaf-7 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/eastern-europe-central-asia">Eastern Europe &amp; Central Asia</a></h3></li>
+<li id="megamenu-mlid-2203" class="megamenu-slot megamenu-slot-8 odd half-2 leaf-8 last  last"><h3 class="megamenu-slot-title"><a href="/professionals/hiv-around-world/western-central-europe-north-america">Western Europe, Central Europe &amp; North America</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2054" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-around-world/western-central-europe-north-america/overview">Regional overview</a></li>
+<li id="megamenu-mlid-2060" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-around-world/western-central-europe-north-america/uk">UK</a></li>
+<li id="megamenu-mlid-2058" class="megamenu-item megamenu-item-2 odd half-2 leaf-2 last  last"><a href="/professionals/hiv-around-world/western-central-europe-north-america/usa" class="active">USA</a></li>
+</ul></li>
+</ul></li>
+<li id="megamenu-mlid-555" class="megamenu-parent megamenu-parent-3 even half-1 leaf-3 menu-555 "><h2 class="megamenu-parent-title"><a href="/professionals/hiv-social-issues">Social issues</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-2198" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/professionals/hiv-social-issues/key-affected-populations">Key affected populations</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2037" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-social-issues/key-affected-populations/men-sex-men">Men who have sex with men</a></li>
+<li id="megamenu-mlid-2041" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-social-issues/key-affected-populations/people-inject-drugs">People who inject drugs</a></li>
+<li id="megamenu-mlid-2039" class="megamenu-item megamenu-item-2 odd half-1 leaf-2 "><a href="/professionals/hiv-social-issues/key-affected-populations/sex-workers">Sex workers</a></li>
+<li id="megamenu-mlid-2040" class="megamenu-item megamenu-item-3 even half-1 leaf-3 "><a href="/professionals/hiv-social-issues/key-affected-populations/prisoners">Prisoners</a></li>
+<li id="megamenu-mlid-2043" class="megamenu-item megamenu-item-4 odd half-2 leaf-4 "><a href="/professionals/hiv-social-issues/key-affected-populations/transgender">Transgender people</a></li>
+<li id="megamenu-mlid-2042" class="megamenu-item megamenu-item-5 even half-2 leaf-5 "><a href="/professionals/hiv-social-issues/key-affected-populations/women">Women</a></li>
+<li id="megamenu-mlid-2045" class="megamenu-item megamenu-item-6 odd half-2 leaf-6 "><a href="/professionals/hiv-social-issues/key-affected-populations/children">Children</a></li>
+<li id="megamenu-mlid-2044" class="megamenu-item megamenu-item-7 even half-2 leaf-7 last  last"><a href="/professionals/hiv-social-issues/key-affected-populations/young-people">Young people</a></li>
+</ul></li>
+<li id="megamenu-mlid-2046" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-social-issues/stigma-discrimination">Stigma &amp; discrimination</a></h3></li>
+<li id="megamenu-mlid-2047" class="megamenu-slot megamenu-slot-2 odd half-1 leaf-2 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-social-issues/homophobia">Homophobia</a></h3></li>
+<li id="megamenu-mlid-58826" class="megamenu-slot megamenu-slot-3 even half-2 leaf-3 "><h3 class="megamenu-slot-title"><a href="/professionals/social-issues/gender-inequality">Gender inequality</a></h3></li>
+<li id="megamenu-mlid-104996" class="megamenu-slot megamenu-slot-4 odd half-2 leaf-4 last  last"><h3 class="megamenu-slot-title"><a href="/human-rights-and-hiv">Human rights</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-59031" class="megamenu-parent megamenu-parent-4 odd half-1 leaf-4 menu-59031 "><h2 class="megamenu-parent-title"><a href="/professionals/hiv-programming">Programming</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-2199" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/professionals/hiv-programming/prevention">Prevention programming</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-2021" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-programming/prevention/overview">HIV prevention programmes overview</a></li>
+<li id="megamenu-mlid-2028" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-programming/prevention/prevention-mother-child">Prevention of mother-to-child transmission</a></li>
+<li id="megamenu-mlid-2023" class="megamenu-item megamenu-item-2 odd half-1 leaf-2 "><a href="/professionals/hiv-programming/prevention/harm-reduction">Harm reduction</a></li>
+<li id="megamenu-mlid-2026" class="megamenu-item megamenu-item-3 even half-1 leaf-3 "><a href="/professionals/hiv-programming/prevention/needle-syringe-programmes">Needle &amp; syringe programmes</a></li>
+<li id="megamenu-mlid-2022" class="megamenu-item megamenu-item-4 odd half-2 leaf-4 "><a href="/professionals/hiv-programming/prevention/voluntary-medical-male-circumcision">Voluntary medical male circumcision</a></li>
+<li id="megamenu-mlid-2030" class="megamenu-item megamenu-item-5 even half-2 leaf-5 "><a href="/professionals/hiv-programming/prevention/treatment-as-prevention">Treatment as prevention</a></li>
+<li id="megamenu-mlid-57116" class="megamenu-item megamenu-item-6 odd half-2 leaf-6 last  last"><a href="/professionals/hiv-programming/prevention/pre-exposure-prophylaxis">Pre-exposure prophylaxis</a></li>
+</ul></li>
+<li id="megamenu-mlid-59036" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/professionals/hiv-programming/treatment">Treatment programming</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-59041" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/professionals/hiv-programming/treatment/overview">HIV treatment programmes overview</a></li>
+<li id="megamenu-mlid-59046" class="megamenu-item megamenu-item-1 even half-1 leaf-1 "><a href="/professionals/hiv-programming/treatment/cascade">Treatment cascade</a></li>
+<li id="megamenu-mlid-59051" class="megamenu-item megamenu-item-2 odd half-2 leaf-2 last  last"><a href="/professionals/hiv-programming/treatment/key-populations">Treating key populations</a></li>
+</ul></li>
+<li id="megamenu-mlid-105096" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 last  last"><h3 class="megamenu-slot-title"><a href="/hiv-and-co-infections-programming">HIV and co-infections</a></h3><ul class="megamenu-items "><li id="megamenu-mlid-105101" class="megamenu-item megamenu-item-0 odd half-1 leaf-0 first  first"><a href="/hiv-and-hepatitis-c-0">HIV/Hep C co-infection programmes</a></li>
+<li id="megamenu-mlid-105106" class="megamenu-item megamenu-item-1 even half-2 leaf-1 last  last"><a href="/professionals/hiv-programming/hiv-tb-coinfection">HIV/TB co-infection programmes</a></li>
+</ul></li>
+</ul></li>
+<li id="megamenu-mlid-15051" class="megamenu-parent megamenu-parent-5 even half-1 leaf-5 menu-15051 "><h2 class="megamenu-parent-title"><a href="/what-we-do" class="mobile_menu">What we do</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-15056" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/what-we-do/about-avert" class="mobile_menu">About AVERT</a></h3></li>
+<li id="megamenu-mlid-15066" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/what-we-do/where-we-work" class="mobile_menu">Where we work</a></h3></li>
+<li id="megamenu-mlid-15081" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 "><h3 class="megamenu-slot-title"><a href="/what-we-do/impact" class="mobile_menu">Impact of our work</a></h3></li>
+<li id="megamenu-mlid-15091" class="megamenu-slot megamenu-slot-3 even half-2 leaf-3 last  last"><h3 class="megamenu-slot-title"><a href="/what-we-do/leadership" class="mobile_menu">Leadership team</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-15161" class="megamenu-parent megamenu-parent-6 odd half-2 leaf-6 menu-15161 "><h2 class="megamenu-parent-title"><a href="/support-us" class="mobile_menu">Get involved</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-15171" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/support-us/fundraise" class="mobile_menu">Fundraise</a></h3></li>
+<li id="megamenu-mlid-15181" class="megamenu-slot megamenu-slot-1 even half-1 leaf-1 "><h3 class="megamenu-slot-title"><a href="/support-us/join-a-campaign" class="mobile_menu">Join a campaign</a></h3></li>
+<li id="megamenu-mlid-15201" class="megamenu-slot megamenu-slot-2 odd half-2 leaf-2 last  last"><h3 class="megamenu-slot-title"><a href="/support-us/be-social" class="mobile_menu">Be social</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-15131" class="megamenu-parent megamenu-parent-7 even half-2 leaf-7 menu-15131 "><h2 class="megamenu-parent-title"><a href="/learn-share" class="mobile_menu">Learn &amp; share</a></h2><ul class="megamenu-bin megamenu-slots-columnar"><li id="megamenu-mlid-15141" class="megamenu-slot megamenu-slot-0 odd half-1 leaf-0 first  first"><h3 class="megamenu-slot-title"><a href="/learn-share/hiv-fact-sheets" class="mobile_menu">Fact sheets</a></h3></li>
+<li id="megamenu-mlid-15151" class="megamenu-slot megamenu-slot-1 even half-2 leaf-1 last  last"><h3 class="megamenu-slot-title"><a href="/learn-share/quizzes" class="mobile_menu">Quizzes</a></h3></li>
+</ul></li>
+<li id="megamenu-mlid-15096" class="megamenu-parent megamenu-parent-8 odd half-2 leaf-8 menu-15096 "><h2 class="megamenu-parent-title"><a href="/contact-us" class="mobile_menu">Contact us</a></h2></li>
+<li id="megamenu-mlid-15111" class="megamenu-parent megamenu-parent-9 even half-2 leaf-9 menu-15111 "><h2 class="megamenu-parent-title"><a href="/please-donate-now#quickset-donate_quick_tabs2" class="mobile_menu">Donate</a></h2></li>
+<li id="megamenu-mlid-15116" class="megamenu-parent megamenu-parent-10 odd half-2 leaf-10 last menu-15116  last"><h2 class="megamenu-parent-title"><a href="/news" class="mobile_menu">News</a></h2></li>
+</ul>
+</div>
+  </div>
+
+    </div>
+
+        
+        <div id="main">
+
+      <div id="content" class="column" role="main">
+                <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><div class="inline odd first" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.avert.org/" itemprop="url"><span itemprop="title">Home</span></a></div> <span class="delimiter">»</span> <div class="inline even" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.avert.org/professionals" itemprop="url"><span itemprop="title">Professionals</span></a></div> <span class="delimiter">»</span> <div class="inline odd" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.avert.org/professionals/hiv-around-world" itemprop="url"><span itemprop="title">Around the world</span></a></div> <span class="delimiter">»</span> <div class="inline even" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america" itemprop="url"><span itemprop="title">Western Europe, Central Europe &amp; North America</span></a></div> <span class="delimiter">»</span> <div class="inline odd last" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" itemprop="url"><span itemprop="title">USA</span></a></div></div>
+                  <div class="region region-mobile-content">
+    <div id="block-sharethis-sharethis-block" class="block block-sharethis share-right-block first last odd">
+
+        <h2 class="block__title block-title">Share</h2>
+    
+  <div class="sharethis-wrapper"><span st_url="https://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" st_title="HIV and AIDS in the United States of America (USA)" class="st_facebook_large" displayText="facebook"></span>
+<span st_url="https://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" st_title="HIV and AIDS in the United States of America (USA)" class="st_twitter_large" displayText="twitter" st_via="" st_username=""></span>
+<span st_url="https://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" st_title="HIV and AIDS in the United States of America (USA)" class="st_linkedin_large" displayText="linkedin" st_via="" st_username=""></span>
+<span st_url="https://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" st_title="HIV and AIDS in the United States of America (USA)" class="st_googleplus_large" displayText="googleplus" st_via="" st_username=""></span>
+</div>
+</div>
+  </div>
+        <a id="main-content"></a>
+
+        
+        
+
+                            <h1 class="page__title title"
+              id="page-title">HIV and AIDS in the United States of America (USA)</h1>
+                  
+
+                        
+
+
+<article class="node-400 node node-professional-article view-mode-full clearfix" about="/professionals/hiv-around-world/western-central-europe-north-america/usa" typeof="sioc:Item foaf:Document">
+
+      <header>
+                  <span property="dc:title" content="HIV and AIDS in the United States of America (USA)" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+      
+          </header>
+  
+  <div class="field field-name-field-image field-type-image field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even"><div id="file-1506" class="file file-image file-image-png copy-hidden caption-hidden">
+
+        <h2 class="element-invisible"><a href="/files/usa-map">USA map</a></h2>
+    
+  
+  <div class="content">
+    <div class="img-content">
+      <img typeof="foaf:Image" src="http://www.avert.org/sites/default/files/styles/article_scale_style_780/public/usa_0.png?itok=WSBKdJ4E" width="780" height="350" alt="Map of the United States of America (USA) and country HIV statistics" />    </div>
+      </div>
+
+  
+</div>
+</div>
+      </div>
+</div>
+<div class="view view-professional-author view-id-professional_author view-display-id-entity_view_1 view-dom-id-2f215c8e333192e797bcacff97228ec3">
+      
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-author-quotation">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-field-quotation-author-name">        <div class="field-content"></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even" property="content:encoded"><p>The United States of America (USA) currently has around 1.2 million people living with HIV.  Nearly one in eight of these people are unaware they have HIV.<a class="see-footnote" id="footnoteref1_921x4l4" title="CDC(February 2016) ‘HIV and AIDS in America: A Snapshot (Factsheet)’" href="#footnote1_921x4l4">1</a> The size of the epidemic is relatively small compared to the country’s population, but is heavily concentrated among several <a href="http://www.avert.org/node/451" target="_self">key affected populations</a>. Most new HIV infections occur among men who have sex with men (sometimes referred to as MSM), with African American/black men who have sex with men most affected. African American/black heterosexual women are also disproportionately affected.<a class="see-footnote" id="footnoteref2_nsa73pg" title="CDC (August 2016) ‘Today’s HIV/AIDS Epidemic’" href="#footnote2_nsa73pg">2</a></p>
+<p>HIV rates are higher in southern states, which account for around 44% of all people living with HIV, despite making up roughly one-third (37%) of the population.<a class="see-footnote" id="footnoteref3_dh1nq3n" title="CDC (May 2016) ‘HIV in the United States by Geographic Distribution (Factsheet)’" href="#footnote3_dh1nq3n">3</a></p>
+<p>Since the beginning of the HIV epidemic, 675,000 people have died of AIDS-related illnesses in the USA.<a class="see-footnote" id="footnoteref4_msewrhz" title=" Centers for Disease Control and Prevention (August 2016) ‘Today’s HIV/AIDS Epidemic Factsheet’" href="#footnote4_msewrhz">4</a></p>
+<p>Although the USA is the greatest national funder of the HIV epidemic globally, it is still facing a major ongoing HIV epidemic itself, with around 40,000 new infections a year.<a class="see-footnote" id="footnoteref5_fooegf2" title="White House Office of National AIDS Policy (July 2016) ‘The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)’" href="#footnote5_fooegf2">5</a> <a href="http://www.avert.org/node/391" target="_self">Stigma and discrimination</a> continue to hamper people's access to HIV prevention, testing and treatment services, fuelling the cycle of new infections.</p>
+<p class="box-quote quote">Although the USA is the greatest national funder of the HIV epidemic globally, it is still facing a major ongoing HIV epidemic itself.</p>
+<p>The USA lacked a comprehensive plan on HIV until President Obama created a National HIV/AIDS Strategy in 2010.</p>
+<p>The latest strategy, released in 2015, is structured around four core aims: reducing new HIV infections, increasing access to care and improving health outcomes for people living with HIV, reducing HIV-related disparities and health inequities and achieving a co-ordinated national response to the epidemic.<a class="see-footnote" id="footnoteref6_0qunawk" title="The White House (2015, July) 'The National HIV/AIDS Strategy: Updated to 2020'" href="#footnote6_0qunawk">6</a></p>
+<h2>Key affected populations in the USA</h2>
+<p>The impact of the HIV epidemic in the USA is more serious among some groups than others. These key affected populations can be grouped by transmission category (for example, <a href="http://www.avert.org/node/382" target="_self">men who have sex with men)</a> but also by race, with people of colour having significantly higher rates of HIV infection over white Americans.<a class="see-footnote" id="footnoteref7_3bq7jhj" title="CDC (March, 2015) 'Today’s HIV/AIDS Epidemic'" href="#footnote7_3bq7jhj">7</a></p>
+<p>A complex set of economic and socioeconomic factors drive risk to these populations, including discrimination, stigma, poverty and a lack of access to care.<a class="see-footnote" id="footnoteref8_10xds3z" title="CDC (March, 2015) 'Today’s HIV/AIDS Epidemic'" href="#footnote8_10xds3z">8</a> Sexual networks is also a major determining factor, with populations at a high risk to HIV tending to have sex with people in their own communities.</p>
+<p><strong>Men who have sex with men in the USA</strong></p>
+<p>Men who have sex with men (MSM) are most affected by HIV in the USA, accounting for more than two-thirds of all new HIV diagnoses in the country.<a class="see-footnote" id="footnoteref9_a0ogo4l" title="CDC (2014) ‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’" href="#footnote9_a0ogo4l">9</a>New infections are on the increase, increasing by 9% between 2010 and 2014.<a class="see-footnote" id="footnoteref10_u0cupx0" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote10_u0cupx0">10</a></p>
+<p>If current diagnosis rates continue, one in six men American men who have sex with men will be diagnosed with HIV in their lifetime. There are significant disparities by race as this equates to one in two African American/black men who have sex with men, one in four Hispanic/Latino men who have sex with men and one in 11 white men who have sex with men.<a class="see-footnote" id="footnoteref11_qijik2e" title="CDC (September 2016) ‘HIV Among Gay and Bisexual Men’" href="#footnote11_qijik2e">11</a></p>
+<p>At the end of 2013, 687,800 American men who have sex with men were living with HIV and an estimated 15% were unaware of their infection.<a class="see-footnote" id="footnoteref12_u9ol9bo" title="CDC (September 2016) ‘HIV Among Gay and Bisexual Men’" href="#footnote12_u9ol9bo">12</a> This is echoed by a 2014 survey by the Centres for Disease Control (CDC) of men who have sex with men, which found 75% of those surveyed who were living with HIV were aware of their status, compared with 71% of HIV-negative respondents.<a class="see-footnote" id="footnoteref13_q5er5sz" title="CDC (2014) ‘HIV infection risk, prevention, and testing behaviors among men who have sex with men: national HIV behavioral surveillance—20 U.S. cities’" href="#footnote13_q5er5sz">13</a></p>
+<p>Every three years, the CDC studies sexual risk behaviours among men who have sex with men in selected cities. The latest data from this survey suggests the number of men who have sex with men having anal sex without a condom is increasing, with 15.7% reporting this in 2014 compared to 13.7% in 2008.<a class="see-footnote" id="footnoteref14_ima5ldo" title="CDC (2015) ‘National HIV Prevention Progress Report’" href="#footnote14_ima5ldo">14</a></p>
+<p>The survey found around one-third (35.2%) of young male high school students who had sex with men had also engaged in condom-less anal sex and other higher risk behaviours – a higher proportion than in earlier surveys.<a class="see-footnote" id="footnoteref15_31ni0yr" title="White House Office of National AIDS Policy (2016) ‘The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)’" href="#footnote15_31ni0yr">15</a></p>
+<p><strong>African Americans/black people in the USA</strong></p>
+<p>African American/black people are most affected by HIV in the USA. This group accounted for 4% of all new HIV infections in 2014 and 41% of the total number of people living with HIV in the USA, despite only making up 12% of the population.<a class="see-footnote" id="footnoteref16_jpx6obg" title="CDC (2014) ‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’" href="#footnote16_jpx6obg">16</a>Among all African American/black people diagnosed with HIV in 2014, an estimated 57% (11,201) were men who have sex with men. Of these, 39% (4,321) were young men (aged 13 to 24).<a class="see-footnote" id="footnoteref17_mdu591m" title="CDC (2014) ‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’" href="#footnote17_mdu591m">17</a></p>
+<p>From 2005 to 2014, the number of new HIV diagnoses among African American/black women fell 42%, although it is still high compared to women from other racial or ethnic groups. In 2014, an estimated 1,350 Hispanic/Latino women and 1,483 white women were diagnosed with HIV, compared to 5,128 African American/black women.<a class="see-footnote" id="footnoteref18_3icawc5" title="CDC (2014) ‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’" href="#footnote18_3icawc5">18</a></p>
+<p>African American/black men and <a href="http://www.avert.org/node/387" target="_self">women</a> are most likely to be infected through unprotected sex with a man or by injecting drugs. Other factors such as heightened levels of poverty, lack of access to adequate healthcare and stigma surrounding men who have sex with men also increase this group's risk of HIV infection.<a class="see-footnote" id="footnoteref19_8fj17y0" title=" Centers for Disease Control and Prevention ‘HIV Among African American Gay and Bisexual Men Facsheet’ (accessed 1 November, 2016)" href="#footnote19_8fj17y0">19</a></p>
+<p>Young African American/black men who have sex with men (aged 13 to 24) are most affected.<a class="see-footnote" id="footnoteref20_6mqf3eb" title="CDC ‘HIV Among Youth’ (accessed 1 November, 2016)" href="#footnote20_6mqf3eb">20</a> In 2014, 55% of young men who have sex with men newly diagnosed with HIV were African American/black.<a class="see-footnote" id="footnoteref21_gghtj4o" title="CDC (April, 2015) HIV Among African American Gay and Bisexual Men" href="#footnote21_gghtj4o">21</a></p>
+<p>High HIV prevalence within the African American/black community and the increased likelihood of individuals within this community only having sex with others in the community heightens their risk of HIV.<a class="see-footnote" id="footnoteref22_hs2a35a" title="CDC (April, 2015) HIV Among African American Gay and Bisexual Men" href="#footnote22_hs2a35a">22</a></p>
+<p><img alt="PLHIV in USA" class="media-element file-default" data-file_info="%7B%22fid%22:%22273%22,%22view_mode%22:%22default%22,%22fields%22:%7B%22format%22:%22default%22,%22field_file_image_alt_text%5Bund%5D%5B0%5D%5Bvalue%5D%22:%22PLHIV%20in%20USA%22,%22field_file_image_title_text%5Bund%5D%5B0%5D%5Bvalue%5D%22:%22PLHIV%20in%20USA%22%7D,%22type%22:%22media%22%7D" src="/sites/default/files/USA-donut.png" title="PLHIV in USA" typeof="foaf:Image" /></p>
+<p><strong>Hispanic/Latino people in the USA</strong></p>
+<p>HIV continues to be a serious threat to the health of the Hispanic/Latino community. In 2014, Hispanic/Latino people accounted for almost a quarter of all estimated new diagnoses of HIV in the USA, despite representing about 17% of the total US population.<a class="see-footnote" id="footnoteref23_n76kcfb" title=" Centers for Disease Control and Prevention ‘HIV Among Hispanics/Latinos’ (accessed 1 November, 2016)" href="#footnote23_n76kcfb">23</a></p>
+<p>Men accounted for 86% of all new infections among this community, and the large majority of infections resulted from sex between men.<a class="see-footnote" id="footnoteref24_04a6frb" title="CDC ‘HIV Among Hispanics/Latinos’ (accessed 1 November, 2016)" href="#footnote24_04a6frb">24</a>The Hispanic/Latino community faces a number of challenges to accessing HIV prevention and treatment services. Language, cultural factors and fear of being deported are all key barriers.<a class="see-footnote" id="footnoteref25_9wce3jz" title="CDC ‘HIV Among Hispanics/Latinos’ (accessed 1 November, 2016)" href="#footnote25_9wce3jz">25</a></p>
+<h2>Prisoners in the USA</h2>
+<p>The USA has the largest incarcerated population in the world, with 2.2 million people in prison or other closed settings.<a class="see-footnote" id="footnoteref26_cddjw6j" title="Walmsley, R. (2015) ‘World Prison Population List’ International Centre for Prison Studies" href="#footnote26_cddjw6j">26</a> The country incarcerates a larger percentage of its population than any country in the world except the Seychelles, with 698 prisoners per 100,000 people.<a class="see-footnote" id="footnoteref27_nzk2wgc" title="Rubin, R. (2016) ‘US prisons missing opportunities to tackle HIV in inmates’ The Lancet S0140-6736(16)31078-31079" href="#footnote27_nzk2wgc">27</a></p>
+<p>HIV prevalence is estimated to be 1.5% among prisoners, compared to 0.5% among the general population. Most prisoners are infected with HIV before they are incarcerated with one study estimating that one in seven people living with HIV in the USA go through the prison system every year. The majority of these belong to other key populations for HIV such as African Americans/black people or men who have sex with men.<a class="see-footnote" id="footnoteref28_yldyfds" title="Rubin, R. (2016) ‘US prisons missing opportunities to tackle HIV in inmates’ The Lancet S0140-6736(16)31078-31079" href="#footnote28_yldyfds">28</a></p>
+<p>Others become infected while they are in prison – for example, via unprotected sex. A study in the New York area found 13% of incarcerated men and women reported being sexually active in the previous six months.<a class="see-footnote" id="footnoteref29_lutjhwo" title="Tawandra, L. et al (2016) ‘Predictors of sexual behaviour among men and women in New York City area prisons’ Culture, Health &amp; Sexuality 8:1-14" href="#footnote29_lutjhwo">29</a></p>
+<p class="full-width-quote quote">“In almost any jurisdiction in the US, there’s a concentration of the epidemic in the correctional population.”</p>
+<p><em>- Anne Spaulding, infectious disease specialist, Emory University <a class="see-footnote" id="footnoteref30_07db0hl" title="Rubin, R. (2016) ‘US prisons missing opportunities to tackle HIV in inmates’ The Lancet S0140-6736(16)31078-31079" href="#footnote30_07db0hl">30</a></em></p>
+<h2>People who inject drugs in the USA</h2>
+<p>Heroin use is increasing in the USA among men and women in most age groups and across all income levels, rising by 63% between 2002 and 2013. This trend coincides with an increase in hepatitis C virus infections and new outbreaks of HIV associated with injecting drug use. <a class="see-footnote" id="footnoteref31_wcw0282" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote31_wcw0282">31</a> However, despite this, between 2010 and 2014 the overall annual number of new HIV diagnoses among people who inject drugs (sometimes referred to as PWID) in the USA decreased by 26%.<a class="see-footnote" id="footnoteref32_md4bp8z" title=" UNAIDS (2016) 'Prevention Gap Report'" href="#footnote32_md4bp8z">32</a></p>
+<p>An estimated 7% of new HIV infections in 2013 in the USA were among people who inject drugs.<a class="see-footnote" id="footnoteref33_ubi8x3g" title="CDC (April, 2015) HIV and Injecting Drug Use" href="#footnote33_ubi8x3g">33</a> Of those living with HIV, around 18% are injecting drug users.<a class="see-footnote" id="footnoteref34_5ow5kz7" title="CDC Epidemiology of HIV Infection through to 2013" href="#footnote34_5ow5kz7">34</a> The majority of people who are living with HIV who inject drugs are African Americans/black people (46%).<a class="see-footnote" id="footnoteref35_k8i7056" title="CDC (April, 2015) HIV and Injecting Drug Use[/fn[HP1] ]In 2014, 47,055 people died of a drug overdose in the USA – an increase of 137% since 2000.CDC (2016) ‘Morbidity and Mortality Weekly Report: Increases in Drug and Opioid Overdose Deaths – United States, 2000-2014’" href="#footnote35_k8i7056">35</a> <a href="/node/373" target="_self">Harm reduction programmes</a> such as <a href="/node/374" target="_self">needle and syringe programmes</a>, opioid substitution therapy and treatment for overdose need to be scaled up to accommodate the needs of this fast-growing population.</p>
+<h2>Young people in the USA</h2>
+<p><a href="/node/389" target="_self">Young people</a> (aged 13-24) accounted for 22%, or more than one in five, new HIV infections in 2014.<a class="see-footnote" id="footnoteref36_23we7pf" title=" CDC ‘HIV Among Youth’ (accessed 1 November, 2016)" href="#footnote36_23we7pf">36</a>81% of these infections occurred among 20 to 24 year olds.<a class="see-footnote" id="footnoteref37_lm68od5" title="CDC (April, 2015) HIV Among Youth" href="#footnote37_lm68od5">37</a>At the end of 2012, an estimated 57,200 youths (between 18 and 24) were living with HIV in the USA. Of these, 25,300 were unaware they had HIV – the highest rate of undiagnosed HIV in any age group.<a class="see-footnote" id="footnoteref38_b7b6kx1" title="CDC ‘HIV Among Youth’ (accessed 1 November, 2016)" href="#footnote38_b7b6kx1">38</a> This age group is also the least likely to be receiving treatment for HIV.<a class="see-footnote" id="footnoteref39_umw6j53" title="CDC ‘HIV Among Youth’ (accessed 1 November, 2016)" href="#footnote39_umw6j53">39</a></p>
+<p>Results from CDC’s 2015 <a href="https://www.cdc.gov/healthyyouth/data/yrbs/index.htm">Youth Risk Behavior Surveillance System (YRBS)</a><a class="see-footnote" id="footnoteref40_jzxbqjf" title="CDC (2016) ‘National YRBS/SHPPS Combination Fact Sheets: HIV and other STD Prevention and United State Students’" href="#footnote40_jzxbqjf">40</a>,which monitors health risk behaviours among high school students, found:</p>
+<ul><li><strong>Low rates of testing: </strong>Only 10% of sexually active high school students had been tested for HIV.</li>
+<li><strong>Low rates of condom use: </strong>43% of sexually active high school students did not use a condom the last time they had sexual intercourse.</li>
+<li><strong>Substance use: </strong>21% of sexually active high school students had drunk alcohol or used drugs before their most recent sexual intercourse.</li>
+</ul><h2>HIV prevention programmes in the USA</h2>
+<p>American health authorities are placing increased emphasis on the role that 'social determinants of health', such as a person's age, class, race, living environment and poor access to healthcare, have on their risk of becoming infected with HIV. <a class="see-footnote" id="footnoteref41_n1l1dgx" title="CDC (2010) ' Establishing a Holistic Framework to reduce inequities in HIV, Viral Hepatitis, STDs and Tuberculosis in the United States'" href="#footnote41_n1l1dgx">41</a></p>
+<p>To address these issues, the USA has adopted a High-Impact Prevention (HIP) approach. Funded by CDC, this approach combines behavioural, medical and structural interventions targeted towards most at-risk populations in specific geographical areas.<a class="see-footnote" id="footnoteref42_rkrsgto" title="CDC (2015) ‘High-Impact HIV Prevention: CDC's Approach to Reducing HIV Infections in the United States’ [Accessed May 13, 2015]" href="#footnote42_rkrsgto">42</a></p>
+<p>One such behavioural intervention is the ‘Peers Reaching Out and Modelling Intervention Strategy’ (PROMISE). This is a community-led programme that has been successful in reducing HIV risk in groups such as people who inject drugs. People from these communities are recruited as role models to disseminate information and materials to their peers to help them move towards safer practices.<a class="see-footnote" id="footnoteref43_qhect29" title="CDC (2015) ‘Effective Interventions: HIV Prevention that works – PROMISE’ [Accessed May 12, 2015]" href="#footnote43_qhect29">43</a></p>
+<p>Another HIP strategy is <em>Data to Care</em>, which began in 2013. This public health intervention aims to produce data to identify people who have been diagnosed with HIV but are not in care, in order to link them to treatment.<a class="see-footnote" id="footnoteref44_5u1ejnf" title="CDC (November, 2015) ‘HIP Overview Factsheet’" href="#footnote44_5u1ejnf">44</a>e</p>
+<p><strong>HIV prevention campaigns</strong></p>
+<p>The CDC leads on campaigns that aim to take the taboo out of HIV. Specifically, the 'Act Against AIDS' campaign has many strands that target different population groups. The most recent include:</p>
+<ul><li>Doing It</li>
+</ul><p>A national campaign in English and Spanish designed to motivate all adults to get tested for HIV and know their status. The campaign’s overriding message is that HIV testing should be a part of everyone’s regular health routine. It uses the hashtag #DoingIt and phrasing such as “He’s doing it. She’s doing it. We’re doing it. YOU should be doing it, too” and “Look who’s #DoingIt”.<a class="see-footnote" id="footnoteref45_1xlenx5" title="CDC ‘Act Against AIDS campaign page’ (Accessed 1 November, 2016)" href="#footnote45_1xlenx5">45</a></p>
+<ul><li>Know the Facts First</li>
+</ul><p>This campaign provides teenage girls (ages 13-19) with accurate information about sexually transmitted diseases including HIV and how to prevent them, helping them to make informed decisions. The US Department of Health and Human Services’ <a href="http://www.womenshealth.gov/about-us/index.html">Office on Women’s Health</a> (OWH) sponsors this campaign.<a class="see-footnote" id="footnoteref46_q5q0e0s" title="AIDS.gov ‘Federal Resources/Campaigns’ page’ (Accessed 1 November, 2016)" href="#footnote46_q5q0e0s">46</a></p>
+<ul><li>HIV Treatment Works</li>
+</ul><p>This campaign encourages people living with HIV to get in care, start taking HIV medications, remain in care and stay on treatment as directed.<a class="see-footnote" id="footnoteref47_kt832c5" title="AIDS.gov ‘Federal Resources/Campaigns’ page’ (Accessed 1 November, 2016)" href="#footnote47_kt832c5">47</a></p>
+<ul><li>We Can Stop HIV One Conversation at a Time</li>
+</ul><p>This campaign encourages Hispanics/Latino men and women to talk openly about HIV and AIDS with their families, friends, partners, and communities. Resources are available in English and Spanish.<a class="see-footnote" id="footnoteref48_l43gorl" title="AIDS.gov ‘Federal Resources/Campaigns’ page’ (Accessed 1 November, 2016)" href="#footnote48_l43gorl">48</a></p>
+<h2>HIV and sex education</h2>
+<p>The status of sexual health education varies substantially throughout the USA and is insufficient in many areas.<a class="see-footnote" id="footnoteref49_y6qos3s" title="CDC (2014) ‘School Health Profiles: Characteristics of Health Programs Among Secondary Schools’In most states, fewer than half of high schools teach all 16 critical topics that CDC recommends for effective sex education. Specifically, many schools do not include prevention information that relates to the needs of young men who have sex with men. Many also argue that sex education is not starting early enough. A 2014 CDC study found half or less than half of the middle schools in every state teaching all 16 topics.CDC (2014) ‘School Health Profiles: Characteristics of Health Programs Among Secondary Schools’Sex education has also been declining over time across the country. The percentage of US schools in which students are required to receive instruction on HIV prevention decreased from 64% in 2000 to 41% in 2014.CDC ‘HIV Among Youth’ (accessed 1 November, 2016)" href="#footnote49_y6qos3s">49</a></p>
+<p>President Obama eliminated three quarters of the budget for abstinence-only education in 2009, which had previously received the majority of funding, turning instead towards more comprehensive approaches.<a class="see-footnote" id="footnoteref50_7pmnj5m" title="Advocates for Youth (2009) ‘Comprehensive Sex Education: Research and Results’" href="#footnote50_7pmnj5m">50</a> <a class="see-footnote" id="footnoteref51_n56zn4q" title="SIECUS (2015) A Brief History of Federal Funding for More Comprehensive Approaches to Sex" href="#footnote51_n56zn4q">51</a> Despite this, in 2014, 26 states stated that abstinence needed to be ‘stressed’ in HIV education in school, and only 22 states made comprehensive sex education in schools mandatory.<a class="see-footnote" id="footnoteref52_f6lqzdx" title="Kaiser Family Foundation (2014) ‘State Sex and HIV Education Policy’" href="#footnote52_f6lqzdx">52</a></p>
+<h2>Treatment as prevention</h2>
+<p>In December 2014, the USA released guidelines recognising the benefits of early treatment for a person living with HIV and in prevention. <a class="see-footnote" id="footnoteref53_ew93rph" title="CDC (2014) Recommendations for HIV Prevention with Adults and Adolescents with HIV in the United States, 2014" href="#footnote53_ew93rph">53</a> This is because a suppressed viral load (lower levels of HIV in the body) decreases the likelihood of transmitting HIV to others. When people are engaged in care, healthcare providers can also offer advice on measures to further reduce the risk of transmitting HIV to others.</p>
+<p>Pre-exposure prophylaxis (PrEP), where HIV-negative people can take treatment before exposure to HIV to prevent infection, has been recommended in America since 2012 for people at ongoing substantial risk of HIV infection. This includes HIV-negative people in a sexual relationship with a person living with HIV, people who inject drugs and men who have sex with men who do not consistently use condoms.<a class="see-footnote" id="footnoteref54_bi29ydl" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote54_bi29ydl">54</a></p>
+<p>Of the 1.2 million people who were eligible for PrEP in the USA in 2015, only an estimated 30 000 were prescribed it.<a class="see-footnote" id="footnoteref55_89yl4sa" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote55_89yl4sa">55</a> It is estimated that increasing PrEP coverage in the USA could prevent around 48 000 new infections within five years ,and up to 185,000 new infections in the same period if increased coverage were combined with expanded testing and treatment.<a class="see-footnote" id="footnoteref56_glrlh44" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote56_glrlh44">56</a></p>
+<p>However, 34% of primary care doctors and nurses in the USA do not know about PrEP and are therefore not offering it to people at risk of HIV.<a class="see-footnote" id="footnoteref57_88qbtp5" title="CDC (2015, November) ‘Daily Pill Can Prevent HIV’" href="#footnote57_88qbtp5">57</a></p>
+<h2>HIV testing and counselling in the USA</h2>
+<p>With 13% of the population unaware that they are living with HIV, increasing access to testing and counselling is a fundamental priority of America’s National HIV/AIDS Strategy.<a class="see-footnote" id="footnoteref58_b7bde3b" title="CDC (May 2016) ‘HIV in the United States by Geographic Distribution (Factsheet)’" href="#footnote58_b7bde3b">58</a> The number of Americans testing for HIV has increased in recent years, but it is thought that only 54% have ever tested for HIV.<a class="see-footnote" id="footnoteref59_47m16ac" title="Kaiser Family Foundation (2014, May) 'HIV Testing in the United States'" href="#footnote59_47m16ac">59</a></p>
+<p>A 2012 study into HIV testing history among people with Medicaid and commercial insurance found testing to be very low (4.3% among Medicaid patients and 2.8% among commercial insurance patients). 80% of these tests took place alongside STI screening or Hepatitis testing, suggesting that routine HIV testing is not widespread and that people mostly test for HIV as a result of actively testing for other illnesses.<a class="see-footnote" id="footnoteref60_ytc66th" title="Dietz, P. M., et al (2015) ‘HIV Testing among Outpatients with Medicaid and Commercial Insurance’, PLoS ONE" href="#footnote60_ytc66th">60</a></p>
+<p>Testing rates remain far too low even among groups at high risk for HIV infection, including men who have sex with men, African Americans/black people and young people.<a class="see-footnote" id="footnoteref61_dnabkrc" title="CDC (August 2016) ‘HIV testing in the United States (Factsheet)’" href="#footnote61_dnabkrc">61</a>. In a study of men who have sex with men based in 20 American cities published in 2013, 34% who had HIV were unaware of their positive status. Of these, more than one-third (35%) had not been tested in the past 12 months.<a class="see-footnote" id="footnoteref62_5887490" title="Wejnert C, Le B, Rose CE, Oster AM, Smith AJ, Zhu J, et al. (2013) ‘HIV Infection and Awareness among Men Who Have Sex with Men–20 Cities, United States, 2008 and 2011’ PLoS ONE 8(10): e76878" href="#footnote62_5887490">62</a></p>
+<p>Although African Americans/black people are more likely to get tested for HIV than Hispanic/Latino people or white people, more than a third have never been tested.<a class="see-footnote" id="footnoteref63_92a2ymr" title="CDC (August 2016) ‘HIV testing in the United States (Factsheet)’" href="#footnote63_92a2ymr">63</a>.</p>
+<h2>Antiretroviral treatment in the USA</h2>
+<p>More than half (61%) of President Obama’s 2017 federal budget request for HIV spending was for care and treatment programmes. In comparision, just 3% of the budget request was for HIV prevention and 8% was for HIV research.<a class="see-footnote" id="footnoteref64_tnth8wc" title="The Henry J Kaiser Foundation (2016, June) ‘U.S. Federal Funding for HIV/AIDS: Trends Over Time (Factsheet)’" href="#footnote64_tnth8wc">64</a></p>
+<p>The USA launched the HIV Care Continuum Initiative in 2013 to improve the capacity of all states to systematically identify and re-engage people living with HIV in treatment. This has expanded the number of people working in the HIV response by engaging and training non-traditional care providers such as community based organisations.<a class="see-footnote" id="footnoteref65_4gj7tk8" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote65_4gj7tk8">65</a></p>
+<p>At the same time, thousands of additional people living with HIV in the USA have been enrolled in comprehensive health insurance through the implementation of the Affordable Care Act.<a class="see-footnote" id="footnoteref66_63a1z8w" title="UNAIDS (2016) 'Prevention Gap Report'" href="#footnote66_63a1z8w">66</a> Early studies of the Affordable Care Act’s effect on the healthcare of people living with HIV in America, such as a 2014 study of five states by the Kaiser Family Foundation, suggest that many people have used the systems established under the Act to find more affordable and comprehensive health insurance coverage.<a class="see-footnote" id="footnoteref67_s7wqywh" title="Kates J, Dawson L, Undem T, Perry K. / Kaiser Family Foundation (2014) ‘Health insurance coverage for people with HIV under the Affordable Care Act: experiences in five states.’" href="#footnote67_s7wqywh">67</a></p>
+<p>According to the Kaiser Family Foundation, Medicaid was the largest source of insurance coverage for people with HIV in 2014, estimated to cover more than 40% of people with HIV in care.<a class="see-footnote" id="footnoteref68_m0z7mje" title="The Henry J Kaiser Foundation (2016, October) ‘Medicaid and HIV’" href="#footnote68_m0z7mje">68</a></p>
+<p>As a result of these interventions, about three in four (74.5%) of people newly diagnosed with HIV were linked to HIV medical care within one month of diagnosis in 2014 (the most recent data available). This result exceeded the USA’s annual target of 73.9%. However, only 56.5% of newly diagnosed people were retained in care – below the 60% target.<a class="see-footnote" id="footnoteref69_k7gdcqa" title="White House Office of National AIDS Policy (2016) ‘The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)’" href="#footnote69_k7gdcqa">69</a></p>
+<h2>Barriers to HIV prevention in the USA</h2>
+<p class="full-width-quote quote">As someone involved with the HIV response for over 30 years, I have witnessed terrific progress in the areas of HIV education, prevention, treatment, and social protections; however, stigma and discrimination against people living with HIV remains the single largest component of the HIV response where we continuously fail to reach real significant progress.</p>
+<p><em>- Eric Sawyer, Civil Society Partnership Advisor at UNAIDS</em></p>
+<p><strong>Social barriers</strong></p>
+<p><a class="see-footnote" id="footnoteref70_x29st9i" title="GNP+ ‘Press release: United States PLHIV Stigma Index Launches for World AIDS Day 2013’" href="#footnote70_x29st9i">70</a>Addressing stigma and discrimination around HIV is a major challenge for the USA, including misconceptions about how HIV is transmitted. For example, a 2015 survey of people in Georgia, the state with the fifth-highest number of HIV diagnoses in the country, found 75% of those questioned reporting that people living with HIV experience stigma and discrimination. While most said they would feel “comfortable” working with someone living with HIV, 44% felt “very” or “somewhat” <em>uncomfortable with having a person living with HIV as a roommate. The vast majority </em>(90%) said they would be uncomfortable having an intimate relationship with a person with HIV. <a class="see-footnote" id="footnoteref71_i7624qi" title="Hoff, T., Levine, S. Hamel, L. and Brodie, M. / Kaiser Family Foundation (2015, November) ‘Public Attitudes and Knowledge About HIV/AIDS in Georgia: Summary of Findings’" href="#footnote71_i7624qi">71</a></p>
+<p>In 2013, GNP+ launched the USA Stigma Index as a way for people living with HIV to document experiences of stigma and discrimination and mobilise communities to act to tackle the issue. As of 2016, its findings are yet to be published.<a class="see-footnote" id="footnoteref72_rdq5cg2" title="GNP+ http://www.stigmaindex.org/north-america (Accessed 1 November 2016)" href="#footnote72_rdq5cg2">72</a></p>
+<p>Uneven healthcare provision is also a major barrier to effective services, with the quality of HIV prevention and care received varying greatly across the country depending on location and socio-economic group. Non-white people in the South experience the worst clinical outcomes after being diagnosed with HIV. Factors that contribute towards this include: poverty and poor access to healthcare relative to the rest of the country.<a class="see-footnote" id="footnoteref73_pp61lb4" title="CDC (May 2016) ‘HIV in the United States by Geographic Distribution (Factsheet)’" href="#footnote73_pp61lb4">73</a></p>
+<p><strong>Economic barriers</strong></p>
+<p>The federal budget request for 2016 included a total of $34.0 billion for domestic HIV and AIDS.<a class="see-footnote" id="footnoteref74_os4ck3w" title="The Henry J Kaiser Foundation (2016, June) ‘U.S. Federal Funding for HIV/AIDS: Trends Over Time (Factsheet)’" href="#footnote74_os4ck3w">74</a> It has been acknowledged that this is a restricted amount of money, however commitments to increase funding towards prevention have not been made.</p>
+<p>The funding of prevention efforts for people who inject drugs have been particularly controversial. Federal funding for needle exchanges, which are globally recognised as an effective way to reduce HIV transmission, was banned until 2009. However, Congress failed to allocate any funding for this intervention until January 2016.<a class="see-footnote" id="footnoteref75_525cx15" title="NPR.org ‘Congress Ends Ban On Federal Funding For Needle Exchange Programs’ (Accessed 1 November, 2016)" href="#footnote75_525cx15">75</a></p>
+<p><strong>Legal barriers</strong></p>
+<p>Legislation has contributed to the improvement of the lives of those living with HIV and AIDS in the USA. This culminated in 2010 when President Obama lifted the ban on entry into the country for all HIV-positive people.</p>
+<p>An analysis by CDC and Department of Justice researchers found that, by 2011, a total of 67 laws explicitly focused on persons living with HIV had been enacted in 33 states.<a class="see-footnote" id="footnoteref76_qgd9kt4" title=" Lehman, JS, Carr, MH., Nichol, AJ, et al. (2014) ‘Prevalence and public health implications of state laws that criminalize potential HIV exposure in the United States’ AIDS Behaviour 2014." href="#footnote76_qgd9kt4">76</a> Many of these convictions have occurred against people for spitting or biting, despite these not being routes of HIV transmission.<a class="see-footnote" id="footnoteref77_m1t3for" title="Global Network of People Living with HIV (July, 2010) ' Global Criminalisaion Scan Report 2010'" href="#footnote77_m1t3for">77</a> Convictions under these laws, when combined with Canadian convictions, total more than the entire number of convictions made in the rest of the world.</p>
+<h2>The future of HIV and AIDS in the USA</h2>
+<p class="full-width-quote quote">“The United States will become a place where new HIV infections are rare, and when they do occur, every person, regardless of age, gender, race/ethnicity, sexual orientation, gender identity, or socio-economic circumstance, will have unfettered access to high quality, life-extending care, free from stigma and discrimination.”</p>
+<p align="right"><em>- The US National HIV/AIDS Strategy’s mission statement<a class="see-footnote" id="footnoteref78_rql7af0" title="White House Office of National AIDS Policy (2015) ‘The National HIV/AIDS Strategy: Updated to 2020’" href="#footnote78_rql7af0">78</a></em></p>
+<p>In 2016, the American government updated its National HIV/AIDS Strategy. Its four key focus areas (as outlined in the introductory section of this page) remain unchanged. It will also begin to monitor HIV stigma, HIV among people who are transgender and the effectiveness of PrEP as a prevention strategy.<a class="see-footnote" id="footnoteref79_k8ueyph" title="White House Office of National AIDS Policy (2016) ‘The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)’" href="#footnote79_k8ueyph">79</a> White House Office of National AIDS Policy (2015) <a href="https://www.whitehouse.gov/sites/default/files/docs/national_hiv_aids_strategy_update_2020.pdf">‘The National HIV/AIDS Strategy: Updated to 2020’</a></p>
+<p>In order to break the cycle of transmission among key affected populations in the USA, increasing the impact of targeted campaigns towards people in these groups is vital. Expanding access and uptake to HIV testing, and increasing the number of people who are aware of their status, will also go a long way to controlling the epidemic in this country.</p>
+<ul class="footnotes"><li class="footnote" id="footnote1_921x4l4"><a class="footnote-label" href="#footnoteref1_921x4l4">1.</a> CDC(February 2016) <a href="https://www.cdc.gov/nchhstp/newsroom/docs/factsheets/hiv-and-aids-in-america-a-snapshot-508.pdf">‘HIV and AIDS in America: A Snapshot (Factsheet)’</a></li>
+<li class="footnote" id="footnote2_nsa73pg"><a class="footnote-label" href="#footnoteref2_nsa73pg">2.</a> CDC (August 2016) <a href="https://www.cdc.gov/nchhstp/newsroom/docs/factsheets/todaysepidemic-508.pdf">‘Today’s HIV/AIDS Epidemic’</a></li>
+<li class="footnote" id="footnote3_dh1nq3n"><a class="footnote-label" href="#footnoteref3_dh1nq3n">3.</a> CDC (May 2016) <a href="https://www.cdc.gov/hiv/pdf/statistics/cdc-hiv-geographic-distribution.pdf">‘HIV in the United States by Geographic Distribution (Factsheet)’</a></li>
+<li class="footnote" id="footnote4_msewrhz"><a class="footnote-label" href="#footnoteref4_msewrhz">4.</a>  Centers for Disease Control and Prevention (August 2016) <a href="https://www.cdc.gov/nchhstp/newsroom/docs/factsheets/todaysepidemic-508.pdf">‘Today’s HIV/AIDS Epidemic Factsheet’</a></li>
+<li class="footnote" id="footnote5_fooegf2"><a class="footnote-label" href="#footnoteref5_fooegf2">5.</a> White House Office of National AIDS Policy (July 2016) ‘<a href="https://www.aids.gov/federal-resources/national-hiv-aids-strategy/nhas-2020-indicators.pdf">The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)</a>’</li>
+<li class="footnote" id="footnote6_0qunawk"><a class="footnote-label" href="#footnoteref6_0qunawk">6.</a> The White House (2015, July) '<a href="https://www.aids.gov/federal-resources/national-hiv-aids-strategy/nhas-update.pdf" target="_blank">The National HIV/AIDS Strategy: Updated to 2020</a>'</li>
+<li class="footnote" id="footnote7_3bq7jhj"><a class="footnote-label" href="#footnoteref7_3bq7jhj">7.</a> CDC (March, 2015) '<a href="http://www.cdc.gov/nchhstp/newsroom/docs/factsheets/todaysepidemic-508.pdf" target="_blank">Today’s HIV/AIDS Epidemic</a>'</li>
+<li class="footnote" id="footnote8_10xds3z"><a class="footnote-label" href="#footnoteref8_10xds3z">8.</a> CDC (March, 2015) '<a href="http://www.cdc.gov/nchhstp/newsroom/docs/factsheets/todaysepidemic-508.pdf" target="_blank">Today’s HIV/AIDS Epidemic</a>'</li>
+<li class="footnote" id="footnote9_a0ogo4l"><a class="footnote-label" href="#footnoteref9_a0ogo4l">9.</a> CDC (2014) <a href="http://www.cdc.gov/hiv/pdf/library/reports/surveillance/cdc-hiv-surveillance-report-us.pdf">‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’</a></li>
+<li class="footnote" id="footnote10_u0cupx0"><a class="footnote-label" href="#footnoteref10_u0cupx0">10.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote11_qijik2e"><a class="footnote-label" href="#footnoteref11_qijik2e">11.</a> CDC (September 2016) <a href="https://www.cdc.gov/hiv/pdf/group/msm/cdc-hiv-msm.pdf">‘HIV Among Gay and Bisexual Men’</a></li>
+<li class="footnote" id="footnote12_u9ol9bo"><a class="footnote-label" href="#footnoteref12_u9ol9bo">12.</a> CDC (September 2016) <a href="https://www.cdc.gov/hiv/pdf/group/msm/cdc-hiv-msm.pdf">‘HIV Among Gay and Bisexual Men’</a></li>
+<li class="footnote" id="footnote13_q5er5sz"><a class="footnote-label" href="#footnoteref13_q5er5sz">13.</a> CDC (2014) ‘<a href="http://www.cdc.gov/hiv/pdf/library/%20reports/surveillance/cdc-hiv-hssr-nhbs-msm-2014.pdf">HIV infection risk, prevention, and testing behaviors among men who have sex with men: national HIV behavioral surveillance—20 U.S. cities’</a></li>
+<li class="footnote" id="footnote14_ima5ldo"><a class="footnote-label" href="#footnoteref14_ima5ldo">14.</a> CDC (2015) <a href="http://www.cdc.gov/hiv/pdf/policies/progressreports/cdc-hiv-nationalprogressreport.pdf">‘National HIV Prevention Progress Report’</a></li>
+<li class="footnote" id="footnote15_31ni0yr"><a class="footnote-label" href="#footnoteref15_31ni0yr">15.</a> White House Office of National AIDS Policy (2016) ‘<a href="https://www.aids.gov/federal-resources/national-hiv-aids-strategy/nhas-2020-indicators.pdf">The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)</a>’</li>
+<li class="footnote" id="footnote16_jpx6obg"><a class="footnote-label" href="#footnoteref16_jpx6obg">16.</a> CDC (2014) <a href="http://www.cdc.gov/hiv/pdf/library/reports/surveillance/cdc-hiv-surveillance-report-us.pdf">‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’</a></li>
+<li class="footnote" id="footnote17_mdu591m"><a class="footnote-label" href="#footnoteref17_mdu591m">17.</a> CDC (2014) <a href="http://www.cdc.gov/hiv/pdf/library/reports/surveillance/cdc-hiv-surveillance-report-us.pdf">‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’</a></li>
+<li class="footnote" id="footnote18_3icawc5"><a class="footnote-label" href="#footnoteref18_3icawc5">18.</a> CDC (2014) <a href="http://www.cdc.gov/hiv/pdf/library/reports/surveillance/cdc-hiv-surveillance-report-us.pdf">‘HIV Surveillance Report: Diagnoses of HIV Infection in the United States and Dependent Areas’</a></li>
+<li class="footnote" id="footnote19_8fj17y0"><a class="footnote-label" href="#footnoteref19_8fj17y0">19.</a>  Centers for Disease Control and Prevention <a href="https://www.cdc.gov/hiv/group/msm/bmsm.html">‘HIV Among African American Gay and Bisexual Men Facsheet’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote20_6mqf3eb"><a class="footnote-label" href="#footnoteref20_6mqf3eb">20.</a> CDC <a href="https://www.cdc.gov/hiv/group/age/youth/index.html">‘HIV Among Youth’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote21_gghtj4o"><a class="footnote-label" href="#footnoteref21_gghtj4o">21.</a> CDC (April, 2015) <a href="http://www.cdc.gov/hiv/risk/racialethnic/bmsm/facts/#refB">HIV Among African American Gay and Bisexual Men</a></li>
+<li class="footnote" id="footnote22_hs2a35a"><a class="footnote-label" href="#footnoteref22_hs2a35a">22.</a> CDC (April, 2015) <a href="http://www.cdc.gov/hiv/risk/racialethnic/bmsm/facts/#refB">HIV Among African American Gay and Bisexual Men</a></li>
+<li class="footnote" id="footnote23_n76kcfb"><a class="footnote-label" href="#footnoteref23_n76kcfb">23.</a>  Centers for Disease Control and Prevention <a href="https://www.cdc.gov/hiv/group/racialethnic/hispaniclatinos/index.html">‘HIV Among Hispanics/Latinos’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote24_04a6frb"><a class="footnote-label" href="#footnoteref24_04a6frb">24.</a> CDC <a href="https://www.cdc.gov/hiv/group/racialethnic/hispaniclatinos/index.html">‘HIV Among Hispanics/Latinos’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote25_9wce3jz"><a class="footnote-label" href="#footnoteref25_9wce3jz">25.</a> CDC <a href="https://www.cdc.gov/hiv/group/racialethnic/hispaniclatinos/index.html">‘HIV Among Hispanics/Latinos’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote26_cddjw6j"><a class="footnote-label" href="#footnoteref26_cddjw6j">26.</a> Walmsley, R. (2015) ‘<a href="http://www.prisonstudies.org/sites/default/files/resources/downloads/world_prison_population_list_11th_edition.pdf" target="_blank">World Prison Population List</a>’ International Centre for Prison Studies</li>
+<li class="footnote" id="footnote27_nzk2wgc"><a class="footnote-label" href="#footnoteref27_nzk2wgc">27.</a> Rubin, R. (2016) ‘<a href="http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)31078-9/abstract" target="_blank">US prisons missing opportunities to tackle HIV in inmates</a>’ The Lancet S0140-6736(16)31078-31079</li>
+<li class="footnote" id="footnote28_yldyfds"><a class="footnote-label" href="#footnoteref28_yldyfds">28.</a> Rubin, R. (2016) ‘<a href="http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)31078-9/abstract" target="_blank">US prisons missing opportunities to tackle HIV in inmates</a>’ The Lancet S0140-6736(16)31078-31079</li>
+<li class="footnote" id="footnote29_lutjhwo"><a class="footnote-label" href="#footnoteref29_lutjhwo">29.</a> Tawandra, L. et al (2016) ‘<a href="http://www.ncbi.nlm.nih.gov/pubmed/27268725" target="_blank">Predictors of sexual behaviour among men and women in New York City area prisons</a>’ Culture, Health &amp; Sexuality 8:1-14</li>
+<li class="footnote" id="footnote30_07db0hl"><a class="footnote-label" href="#footnoteref30_07db0hl">30.</a> Rubin, R. (2016) ‘<a href="http://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)31078-9/abstract" target="_blank">US prisons missing opportunities to tackle HIV in inmates</a>’ The Lancet S0140-6736(16)31078-31079</li>
+<li class="footnote" id="footnote31_wcw0282"><a class="footnote-label" href="#footnoteref31_wcw0282">31.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote32_md4bp8z"><a class="footnote-label" href="#footnoteref32_md4bp8z">32.</a>  UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote33_ubi8x3g"><a class="footnote-label" href="#footnoteref33_ubi8x3g">33.</a> CDC (April, 2015) <a href="http://www.cdc.gov/hiv/risk/behavior/idu.html">HIV and Injecting Drug Use</a></li>
+<li class="footnote" id="footnote34_5ow5kz7"><a class="footnote-label" href="#footnoteref34_5ow5kz7">34.</a> CDC <a href="http://www.cdc.gov/hiv/pdf/g-l/cdc-hiv-genepislideseries-2013.pdf">Epidemiology of HIV Infection</a> through to 2013</li>
+<li class="footnote" id="footnote35_k8i7056"><a class="footnote-label" href="#footnoteref35_k8i7056">35.</a> CDC (April, 2015) <a href="http://www.cdc.gov/hiv/risk/behavior/idu.html">HIV and Injecting Drug Use</a>[/<a>fn</a><a href="#_msocom_1" id="_anchor_1" name="_msoanchor_1">[HP1]</a> ]
+<p>In 2014, 47,055 people died of a drug overdose in the USA – an increase of 137% since 2000.<fn>CDC (2016) ‘<a href="http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6450a3.htm?s_cid=mm6450a3_w" target="_blank">Morbidity and Mortality Weekly Report: Increases in Drug and Opioid Overdose Deaths – United States, 2000-2014</a>’</fn></p></li>
+<li class="footnote" id="footnote36_23we7pf"><a class="footnote-label" href="#footnoteref36_23we7pf">36.</a>  CDC <a href="https://www.cdc.gov/hiv/group/age/youth/index.html">‘HIV Among Youth’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote37_lm68od5"><a class="footnote-label" href="#footnoteref37_lm68od5">37.</a> CDC (April, 2015) <a href="http://www.cdc.gov/hiv/risk/age/youth/index.html">HIV Among Youth</a></li>
+<li class="footnote" id="footnote38_b7b6kx1"><a class="footnote-label" href="#footnoteref38_b7b6kx1">38.</a> CDC <a href="https://www.cdc.gov/hiv/group/age/youth/index.html">‘HIV Among Youth’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote39_umw6j53"><a class="footnote-label" href="#footnoteref39_umw6j53">39.</a> CDC <a href="https://www.cdc.gov/hiv/group/age/youth/index.html">‘HIV Among Youth’</a> (accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote40_jzxbqjf"><a class="footnote-label" href="#footnoteref40_jzxbqjf">40.</a> CDC (2016) <a href="https://www.cdc.gov/healthyyouth/data/yrbs/pdf/2015/2015_us_hiv.pdf">‘National YRBS/SHPPS Combination Fact Sheets: HIV and other STD Prevention and United State Students’</a></li>
+<li class="footnote" id="footnote41_n1l1dgx"><a class="footnote-label" href="#footnoteref41_n1l1dgx">41.</a> CDC (2010) ' <a href="http://www.cdc.gov/socialdeterminants/">Establishing a Holistic Framework to reduce inequities in HIV, Viral Hepatitis, STDs and Tuberculosis in the United States</a>'</li>
+<li class="footnote" id="footnote42_rkrsgto"><a class="footnote-label" href="#footnoteref42_rkrsgto">42.</a> CDC (2015) <a href="http://www.cdc.gov/hiv/policies/hip.html">‘High-Impact HIV Prevention: CDC's Approach to Reducing HIV Infections in the United States’</a> [Accessed May 13, 2015]</li>
+<li class="footnote" id="footnote43_qhect29"><a class="footnote-label" href="#footnoteref43_qhect29">43.</a> CDC (2015) <a href="https://effectiveinterventions.cdc.gov/en/HighImpactPrevention/Interventions/PROMISE.aspx">‘Effective Interventions: HIV Prevention that works – PROMISE’</a> [Accessed May 12, 2015]</li>
+<li class="footnote" id="footnote44_5u1ejnf"><a class="footnote-label" href="#footnoteref44_5u1ejnf">44.</a> CDC (November, 2015) <a href="https://effectiveinterventions.cdc.gov/docs/default-source/general-docs/15-1106-hip-overview-factsheet.pdf?sfvrsn=2">‘HIP Overview Factsheet’</a></li>
+<li class="footnote" id="footnote45_1xlenx5"><a class="footnote-label" href="#footnoteref45_1xlenx5">45.</a> CDC ‘Act Against AIDS campaign page’ (Accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote46_q5q0e0s"><a class="footnote-label" href="#footnoteref46_q5q0e0s">46.</a> AIDS.gov <a href="https://www.aids.gov/federal-resources/campaigns/">‘Federal Resources/Campaigns’</a> page’ (Accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote47_kt832c5"><a class="footnote-label" href="#footnoteref47_kt832c5">47.</a> AIDS.gov <a href="https://www.aids.gov/federal-resources/campaigns/">‘Federal Resources/Campaigns’</a> page’ (Accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote48_l43gorl"><a class="footnote-label" href="#footnoteref48_l43gorl">48.</a> AIDS.gov <a href="https://www.aids.gov/federal-resources/campaigns/">‘Federal Resources/Campaigns’</a> page’ (Accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote49_y6qos3s"><a class="footnote-label" href="#footnoteref49_y6qos3s">49.</a> CDC (2014) <a href="https://www.cdc.gov/healthyyouth/data/profiles/pdf/2014/2014_profiles_report.pdf">‘School Health Profiles: Characteristics of Health Programs Among Secondary Schools’</a>
+<p>In most states, fewer than half of high schools teach all 16 critical topics that CDC recommends for effective sex education. Specifically, many schools do not include prevention information that relates to the needs of young men who have sex with men. Many also argue that sex education is not starting early enough. A 2014 CDC study found half or less than half of the middle schools in every state teaching all 16 topics.<fn>CDC (2014) <a href="https://www.cdc.gov/healthyyouth/data/profiles/pdf/2014/2014_profiles_report.pdf">‘School Health Profiles: Characteristics of Health Programs Among Secondary Schools’</a></fn></p>
+<p>Sex education has also been declining over time across the country. The percentage of US schools in which students are required to receive instruction on HIV prevention decreased from 64% in 2000 to 41% in 2014.<fn>CDC <a href="https://www.cdc.gov/hiv/group/age/youth/index.html">‘HIV Among Youth’</a> (accessed 1 November, 2016)</fn></p></li>
+<li class="footnote" id="footnote50_7pmnj5m"><a class="footnote-label" href="#footnoteref50_7pmnj5m">50.</a> Advocates for Youth (2009) <a href="http://www.advocatesforyouth.org/storage/advfy/documents/fscse.pdf">‘Comprehensive Sex Education: Research and Results</a>’</li>
+<li class="footnote" id="footnote51_n56zn4q"><a class="footnote-label" href="#footnoteref51_n56zn4q">51.</a> SIECUS (2015) <a href="http://www.siecus.org/index.cfm?fuseaction=page.viewpage&amp;pageid=1341&amp;nodeid=1" target="_blank">A Brief History of Federal Funding for More Comprehensive Approaches to Sex</a></li>
+<li class="footnote" id="footnote52_f6lqzdx"><a class="footnote-label" href="#footnoteref52_f6lqzdx">52.</a> Kaiser Family Foundation (2014) <a href="http://kff.org/hivaids/state-indicator/sexhiv-education-policy/">‘State Sex and HIV Education Policy’</a></li>
+<li class="footnote" id="footnote53_ew93rph"><a class="footnote-label" href="#footnoteref53_ew93rph">53.</a> CDC (2014) <a href="http://stacks.cdc.gov/view/cdc/26062">Recommendations for HIV Prevention with Adults and Adolescents with HIV in the United States, 2014</a></li>
+<li class="footnote" id="footnote54_bi29ydl"><a class="footnote-label" href="#footnoteref54_bi29ydl">54.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote55_89yl4sa"><a class="footnote-label" href="#footnoteref55_89yl4sa">55.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote56_glrlh44"><a class="footnote-label" href="#footnoteref56_glrlh44">56.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote57_88qbtp5"><a class="footnote-label" href="#footnoteref57_88qbtp5">57.</a> CDC (2015, November) ‘<a href="http://www.cdc.gov/vitalsigns/hivprep/" target="_blank">Daily Pill Can Prevent HIV</a>’</li>
+<li class="footnote" id="footnote58_b7bde3b"><a class="footnote-label" href="#footnoteref58_b7bde3b">58.</a> CDC (May 2016) <a href="https://www.cdc.gov/hiv/pdf/statistics/cdc-hiv-geographic-distribution.pdf">‘HIV in the United States by Geographic Distribution (Factsheet)’</a></li>
+<li class="footnote" id="footnote59_47m16ac"><a class="footnote-label" href="#footnoteref59_47m16ac">59.</a> Kaiser Family Foundation (2014, May) '<a href="http://kff.org/hivaids/fact-sheet/hiv-testing-in-the-united-states/">HIV Testing in the United States</a>'</li>
+<li class="footnote" id="footnote60_ytc66th"><a class="footnote-label" href="#footnoteref60_ytc66th">60.</a> Dietz, P. M., et al (2015) ‘<a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0144965" target="_blank">HIV Testing among Outpatients with Medicaid and Commercial Insurance</a>’, PLoS ONE</li>
+<li class="footnote" id="footnote61_dnabkrc"><a class="footnote-label" href="#footnoteref61_dnabkrc">61.</a> CDC (August 2016) <a href="https://www.cdc.gov/nchhstp/newsroom/docs/factsheets/hiv-testing-us-508.pdf">‘HIV testing in the United States (Factsheet)’</a></li>
+<li class="footnote" id="footnote62_5887490"><a class="footnote-label" href="#footnoteref62_5887490">62.</a> Wejnert C, Le B, Rose CE, Oster AM, Smith AJ, Zhu J, et al. (2013) <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0076878">‘HIV Infection and Awareness among Men Who Have Sex with Men–20 Cities, United States, 2008 and 2011’</a> PLoS ONE 8(10): e76878</li>
+<li class="footnote" id="footnote63_92a2ymr"><a class="footnote-label" href="#footnoteref63_92a2ymr">63.</a> CDC (August 2016) <a href="https://www.cdc.gov/nchhstp/newsroom/docs/factsheets/hiv-testing-us-508.pdf">‘HIV testing in the United States (Factsheet)’</a></li>
+<li class="footnote" id="footnote64_tnth8wc"><a class="footnote-label" href="#footnoteref64_tnth8wc">64.</a> The Henry J Kaiser Foundation (2016, June) <a href="http://files.kff.org/attachment/Fact-Sheet-US-Federal-Funding-for-HIVAIDS-Trends-Over-Time">‘U.S. Federal Funding for HIV/AIDS: Trends Over Time (Factsheet)’</a></li>
+<li class="footnote" id="footnote65_4gj7tk8"><a class="footnote-label" href="#footnoteref65_4gj7tk8">65.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote66_63a1z8w"><a class="footnote-label" href="#footnoteref66_63a1z8w">66.</a> UNAIDS (2016) <a href="http://www.unaids.org/sites/default/files/media_asset/2016-prevention-gap-report_en.pdf">'Prevention Gap Report'</a></li>
+<li class="footnote" id="footnote67_s7wqywh"><a class="footnote-label" href="#footnoteref67_s7wqywh">67.</a> Kates J, Dawson L, Undem T, Perry K. / Kaiser Family Foundation (2014) <a href="http://kff.org/hivaids/issue-brief/health-insurance-coverage-for-people-with-hiv-under-the-affordable-care-act-experiences-in-five-states/">‘Health insurance coverage for people with HIV under the Affordable Care Act: experiences in five states.’</a></li>
+<li class="footnote" id="footnote68_m0z7mje"><a class="footnote-label" href="#footnoteref68_m0z7mje">68.</a> The Henry J Kaiser Foundation (2016, October) ‘<a href="http://files.kff.org/attachment/Fact-Sheet-Medicaid-and-HIV">Medicaid and HIV’</a></li>
+<li class="footnote" id="footnote69_k7gdcqa"><a class="footnote-label" href="#footnoteref69_k7gdcqa">69.</a> White House Office of National AIDS Policy (2016) ‘<a href="https://www.aids.gov/federal-resources/national-hiv-aids-strategy/nhas-2020-indicators.pdf">The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)</a>’</li>
+<li class="footnote" id="footnote70_x29st9i"><a class="footnote-label" href="#footnoteref70_x29st9i">70.</a> <a href="https://docs.google.com/viewer?a=v&amp;pid=sites&amp;srcid=Z25wbmEub3JnfG9wZW58Z3g6ZWI0MmFmYWU1NGZmZDgw">GNP+ ‘Press release: United States PLHIV Stigma Index Launches for World AIDS Day 2013’</a></li>
+<li class="footnote" id="footnote71_i7624qi"><a class="footnote-label" href="#footnoteref71_i7624qi">71.</a> Hoff, T., Levine, S. Hamel, L. and Brodie, M. / Kaiser Family Foundation (2015, November) <a href="http://kff.org/hivaids/poll-finding/public-attitudes-and-knowledge-about-hivaids-in-georgia/">‘Public Attitudes and Knowledge About HIV/AIDS in Georgia: Summary of Findings’</a></li>
+<li class="footnote" id="footnote72_rdq5cg2"><a class="footnote-label" href="#footnoteref72_rdq5cg2">72.</a> GNP+ <a href="http://www.stigmaindex.org/north-america">http://www.stigmaindex.org/north-america</a> (Accessed 1 November 2016)</li>
+<li class="footnote" id="footnote73_pp61lb4"><a class="footnote-label" href="#footnoteref73_pp61lb4">73.</a> CDC (May 2016) <a href="https://www.cdc.gov/hiv/pdf/statistics/cdc-hiv-geographic-distribution.pdf">‘HIV in the United States by Geographic Distribution (Factsheet)’</a></li>
+<li class="footnote" id="footnote74_os4ck3w"><a class="footnote-label" href="#footnoteref74_os4ck3w">74.</a> The Henry J Kaiser Foundation (2016, June) <a href="http://files.kff.org/attachment/Fact-Sheet-US-Federal-Funding-for-HIVAIDS-Trends-Over-Time">‘U.S. Federal Funding for HIV/AIDS: Trends Over Time (Factsheet)’</a></li>
+<li class="footnote" id="footnote75_525cx15"><a class="footnote-label" href="#footnoteref75_525cx15">75.</a> NPR.org <a href="http://www.npr.org/2016/01/08/462412631/congress-ends-ban-on-federal-funding-for-needle-exchange-programs">‘Congress Ends Ban On Federal Funding For Needle Exchange Programs’</a> (Accessed 1 November, 2016)</li>
+<li class="footnote" id="footnote76_qgd9kt4"><a class="footnote-label" href="#footnoteref76_qgd9kt4">76.</a>  Lehman, JS, Carr, MH., Nichol, AJ, et al. (2014) <a href="http://link.springer.com/article/10.1007/s10461-014-0724-0/fulltext.html">‘Prevalence and public health implications of state laws that criminalize potential HIV exposure in the United States’</a> AIDS Behaviour 2014.</li>
+<li class="footnote" id="footnote77_m1t3for"><a class="footnote-label" href="#footnoteref77_m1t3for">77.</a> Global Network of People Living with HIV (July, 2010) ' <a href="http://www.gnpplus.net/resources/2010-global-criminalisation-scan-report/">Global Criminalisaion Scan Report 2010</a>'</li>
+<li class="footnote" id="footnote78_rql7af0"><a class="footnote-label" href="#footnoteref78_rql7af0">78.</a> White House Office of National AIDS Policy (2015) <a href="https://www.whitehouse.gov/sites/default/files/docs/national_hiv_aids_strategy_update_2020.pdf">‘The National HIV/AIDS Strategy: Updated to 2020’</a></li>
+<li class="footnote" id="footnote79_k8ueyph"><a class="footnote-label" href="#footnoteref79_k8ueyph">79.</a> White House Office of National AIDS Policy (2016) ‘<a href="https://www.aids.gov/federal-resources/national-hiv-aids-strategy/nhas-2020-indicators.pdf">The National HIV/AIDS Strategy: Updated to 2020 (Indicator Supplement)</a>’</li>
+</ul></div>
+      </div>
+</div>
+<div class="field field-name-field-page-last-reviewed field-type-datetime field-label-inline clearfix">
+      <div class="field-label">Last full review:&nbsp;</div>
+    <div class="field-items">
+          <div class="field-item even"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2015-05-01T00:00:00+05:30">01 May 2015</span></div>
+      </div>
+</div>
+<span property="dc:title" content="HIV and AIDS in the United States of America (USA)" class="rdf-meta element-hidden"></span>
+  
+  
+</article>
+  <div id="block-webform-client-block-193" class="block block-webform pro-article-webform even">
+
+          <h2 class="block__title block-title">Would you like to comment on this page?</h2>
+      
+    <div class="content">
+      <div id="webform-ajax-wrapper-193"><form class="webform-client-form webform-client-form-193" action="/professionals/hiv-around-world/western-central-europe-north-america/usa" method="post" id="webform-client-form-193" accept-charset="UTF-8"><div><div  class="form-item webform-component webform-component-markup webform-component--we-are-unable">
+ <p>We are unable to respond to any questions, or offer advice or information in relation to personal matters.</p>
+
+</div>
+<fieldset class="webform-component-fieldset fields_wrapper webform-component--two-wrapper form-wrapper"><div class="fieldset-wrapper"><div  class="form-item webform-component webform-component-textfield webform-component--two-wrapper--first-name">
+  <label for="edit-submitted-two-wrapper-first-name">Name </label>
+ <input type="text" id="edit-submitted-two-wrapper-first-name" name="submitted[two_wrapper][first_name]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--two-wrapper--last-name">
+  <label for="edit-submitted-two-wrapper-last-name">Email address </label>
+ <input type="text" id="edit-submitted-two-wrapper-last-name" name="submitted[two_wrapper][last_name]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+</div></fieldset>
+<div  class="form-item webform-component webform-component-textarea webform-component--your-feedback">
+  <label for="edit-submitted-your-feedback">Your feedback <span class="form-required" title="This field is required.">*</span></label>
+ <div class="form-textarea-wrapper resizable"><textarea required="required" id="edit-submitted-your-feedback" name="submitted[your_feedback]" cols="60" rows="5" class="form-textarea required"></textarea></div>
+</div>
+<div  class="form-item webform-component webform-component-textfield webform-component--pageurl">
+  <label for="edit-submitted-pageurl">page URL </label>
+ <input readonly="readonly" type="text" id="edit-submitted-pageurl" name="submitted[pageurl]" value="http://www.avert.org/professionals/hiv-around-world/western-central-europe-north-america/usa" size="60" maxlength="128" class="form-text" />
+</div>
+<input type="hidden" name="details[sid]" />
+<input type="hidden" name="details[page_num]" value="1" />
+<input type="hidden" name="details[page_count]" value="1" />
+<input type="hidden" name="details[finished]" value="0" />
+<input type="hidden" name="form_build_id" value="form-IgWxbcc9nFk09J65D7TRn1__eRgkCPjAoDxJPTguaJQ" />
+<input type="hidden" name="form_id" value="webform_client_form_193" />
+<input type="hidden" name="webform_ajax_wrapper_id" value="webform-ajax-wrapper-193" />
+<input class="mollom-content-id" type="hidden" name="mollom[contentId]" value="" />
+<input class="mollom-captcha-id" type="hidden" name="mollom[captchaId]" value="" />
+<div style="display: none;"><div class="form-item form-type-textfield form-item-mollom-homepage">
+  <label for="edit-mollom-homepage">Home page </label>
+ <input autocomplete="off" type="text" id="edit-mollom-homepage" name="mollom[homepage]" value="" size="60" maxlength="128" class="form-text" />
+</div>
+</div><div class="description mollom-privacy">By submitting this form, you accept the <a href="https://www.mollom.com/web-service-privacy-policy" class="mollom-target" rel="nofollow">Mollom privacy policy</a>.</div><div class="form-actions"><input class="webform-submit button-primary form-submit" type="submit" id="edit-webform-ajax-submit-193" name="op" value="Submit" /></div></div></form></div>    </div>
+  </div>
+<div id="block-views-review-date-block-1" class="block block-views last odd">
+
+      
+  <div class="view view-review-date view-id-review_date view-display-id-block_1 view-dom-id-20d6d718f83ee5e5eb60ee6c3b74ba70">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last clearfix">
+      
+  <div class="views-field views-field-views-conditional">        <span class="field-content"><span class="views-label views-label-changed">Last updated: </span><div class="field-content">29 November 2016</div></span>  </div>  
+  <div class="views-field views-field-field-page-last-reviewed">    <span class="views-label views-label-field-page-last-reviewed">Last full review: </span>    <div class="field-content"><span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2015-05-01T00:00:00+05:30">01 May 2015</span></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+              </div>
+
+                              <aside class="sidebars">
+              <section class="region region-sidebar-first column sidebar">
+    <div id="block-menu-block-3" class="block block-menu-block inner-left-nav first last odd" role="navigation">
+
+      
+  <div class="menu-block-wrapper menu-block-3 menu-name-menu-professionals-menu parent-mlid-0 menu-level-2">
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-521"><a href="/global-hiv-and-aids-statistics" class="menu__link menu__link">Global statistics</a></li>
+<li class="menu__item is-expanded menu__item is-expanded expanded menu-mlid-522"><a href="/professionals/hiv-around-world/global-response" class="menu__link menu__link">Global response</a><ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-1998"><a href="/professionals/hiv-around-world/global-response/funding" class="menu__link menu__link">Funding</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf menu-mlid-1997"><a href="/global-hiv-targets" class="menu__link menu__link">Global targets</a></li>
+</ul></li>
+<li class="menu__item is-expanded menu__item is-expanded expanded menu-mlid-525"><a href="/professionals/hiv-around-world/sub-saharan-africa" class="menu__link menu__link">Sub-Saharan Africa</a><ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-2048"><a href="/professionals/hiv-around-world/sub-saharan-africa/overview" class="menu__link menu__link">Regional overview</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2055"><a href="/professionals/hiv-around-world/sub-saharan-africa/botswana" class="menu__link menu__link">Botswana</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2056"><a href="/professionals/hiv-around-world/sub-saharan-africa/kenya" class="menu__link menu__link">Kenya</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2057"><a href="/professionals/hiv-around-world/sub-saharan-africa/lesotho" class="menu__link menu__link">Lesotho</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2059"><a href="/professionals/hiv-around-world/sub-saharan-africa/malawi" class="menu__link menu__link">Malawi</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2061"><a href="/professionals/hiv-around-world/sub-saharan-africa/nigeria" class="menu__link menu__link">Nigeria</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2062"><a href="/professionals/hiv-around-world/sub-saharan-africa/south-africa" class="menu__link menu__link">South Africa</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2063"><a href="/professionals/hiv-around-world/sub-saharan-africa/swaziland" class="menu__link menu__link">Swaziland</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2064"><a href="/professionals/hiv-around-world/sub-saharan-africa/tanzania" class="menu__link menu__link">Tanzania</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2065"><a href="/professionals/hiv-around-world/sub-saharan-africa/uganda" class="menu__link menu__link">Uganda</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2066"><a href="/professionals/hiv-around-world/sub-saharan-africa/zambia" class="menu__link menu__link">Zambia</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf menu-mlid-2067"><a href="/professionals/hiv-around-world/sub-saharan-africa/zimbabwe" class="menu__link menu__link">Zimbabwe</a></li>
+</ul></li>
+<li class="menu__item is-expanded menu__item is-expanded expanded menu-mlid-2201"><a href="/professionals/hiv-around-world/asia-pacific" class="menu__link menu__link">Asia &amp; the Pacific</a><ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-2075"><a href="/professionals/hiv-around-world/asia-pacific/overview" class="menu__link menu__link">Regional overview</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2076"><a href="/professionals/hiv-around-world/asia-pacific/china" class="menu__link menu__link">China</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2077"><a href="/professionals/hiv-around-world/asia-pacific/india" class="menu__link menu__link">India</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf menu-mlid-2082"><a href="/professionals/hiv-around-world/asia-pacific/thailand" class="menu__link menu__link">Thailand</a></li>
+</ul></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2072"><a href="/professionals/hiv-around-world/middle-east-north-africa-mena" class="menu__link menu__link">Middle East &amp; North Africa</a></li>
+<li class="menu__item is-expanded menu__item is-expanded expanded menu-mlid-2202"><a href="/professionals/hiv-around-world/latin-america" class="menu__link menu__link">Latin America</a><ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-2074"><a href="/professionals/hiv-around-world/latin-america/overview" class="menu__link menu__link">Regional overview</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf menu-mlid-2073"><a href="/professionals/hiv-around-world/latin-america/brazil" class="menu__link menu__link">Brazil</a></li>
+</ul></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2069"><a href="/professionals/hiv-around-world/caribbean" class="menu__link menu__link">Caribbean</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2068"><a href="/professionals/hiv-around-world/eastern-europe-central-asia" class="menu__link menu__link">Eastern Europe &amp; Central Asia</a></li>
+<li class="menu__item is-active-trail is-expanded menu__item is-active-trail is-expanded last expanded active-trail menu-mlid-2203"><a href="/professionals/hiv-around-world/western-central-europe-north-america" class="menu__link is-active-trail menu__link is-active-trail active-trail">Western Europe, Central Europe &amp; North America</a><ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf menu-mlid-2054"><a href="/professionals/hiv-around-world/western-central-europe-north-america/overview" class="menu__link menu__link">Regional overview</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf menu-mlid-2060"><a href="/professionals/hiv-around-world/western-central-europe-north-america/uk" class="menu__link menu__link">UK</a></li>
+<li class="menu__item is-active is-active-trail is-leaf menu__item is-active is-active-trail is-leaf last leaf active-trail active menu-mlid-2058"><a href="/professionals/hiv-around-world/western-central-europe-north-america/usa" class="menu__link is-active-trail menu__link is-active-trail active-trail active">USA</a></li>
+</ul></li>
+</ul></div>
+
+</div>
+  </section>
+  <section class="region region-sidebar-second column sidebar">
+    <div id="block-views-pdf-download-block-1" class="block block-views share-right-block first odd">
+
+      
+  <div class="view view-pdf-download view-id-pdf_download view-display-id-block_1 view-dom-id-f95641a177e7235f14a8d63c74923cca">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><a href="/node/400/pdf" class="pdf-dowload-link"><img src="/sites/default/files/download-pdf_0.png"></a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-views-whats-hot-right-now-block-1" class="block block-views gray-title related-links-block even">
+
+        <h2 class="block__title block-title">What&#039;s hot right now</h2>
+    
+  <div class="view view-whats-hot-right-now view-id-whats_hot_right_now view-display-id-block_1 view-dom-id-af5691d7ea3e787c31ce67ce8bb89e06">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/hiv-transmission-prevention/prep">What is pre-exposure prophylaxis (PrEP)?</a></span>  </div></li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/sex-stis/safer-sex-hiv/condoms">Condoms - how to use a male condom</a></span>  </div></li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/living-with-hiv/health-wellbeing/taking-care-of-yourself">Taking care of yourself when living with HIV</a></span>  </div></li>
+          <li class="views-row views-row-4 views-row-even">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/hiv-transmission-prevention/myths">Myths about HIV and AIDS</a></span>  </div></li>
+          <li class="views-row views-row-5 views-row-odd views-row-last">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/about-hiv-aids/what-hiv-aids">What are HIV and AIDS?</a></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-views-related-links-block" class="block block-views red-title related-links-block odd">
+
+        <h2 class="block__title block-title">Related links</h2>
+    
+  <div class="view view-related-links view-id-related_links view-display-id-block view-dom-id-91e6bb23ece0db34decb7676f6e9b3b0">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-related-link">        <div class="field-content"><div class="item-list"><ul><li class="first"><a href="/professionals/hiv-around-world/western-central-europe-north-america/overview">HIV and AIDS in W &amp; C Europe &amp; N America regional overview</a></li>
+<li><a href="/professionals/hiv-around-world/western-central-europe-north-america/uk">HIV and AIDS in the United Kingdom (UK)</a></li>
+<li class="last"><a href="/news/us-health-insurers-discriminate-high-arv-prices">US health insurers discriminate with high ARV prices</a></li>
+</ul></div></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-avert-newsletter-avert-newsletter-etap" class="block block-avert-newsletter last even">
+
+      
+  <iframe id="etapIframe" seamless="seamless" scrolling="no" style="border:none;width:100%; height: 650px; margin-top: 20px;" src="https://app.etapestry.com/onlineforms/AVERT/newsletter-signup.html"></iframe>
+</div>
+  </section>
+          </aside>
+                  </div>
+
+    
+    <footer class="footer_wrapper">
+        <div class="region region-footer-one">
+    <div id="block-menu-menu-footer-column-one" class="block block-menu footer-nav footer-one first last odd" role="navigation">
+
+      
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf"><a href="/learn-share/hiv-fact-sheets" class="menu__link menu__link">HIV fact sheets</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/learn-share/quizzes" class="menu__link menu__link">Quizzes</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf"><a href="/jobs-internships" class="menu__link menu__link">Jobs and internships</a></li>
+</ul>
+</div>
+  </div>
+        <div class="region region-footer-two">
+    <div id="block-menu-menu-footer-column-second" class="block block-menu footer-nav footer-two first last odd" role="navigation">
+
+      
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf"><a href="/please-donate-now#quickset-donate_quick_tabs2" class="menu__link menu__link">Donate</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/support-us/fundraise" class="menu__link menu__link">Fundraise</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf"><a href="/support-us/join-a-campaign" class="menu__link menu__link">Join a campaign</a></li>
+</ul>
+</div>
+  </div>
+        <div class="region region-footer-three">
+    <div id="block-menu-menu-footer-column-third" class="block block-menu footer-nav footer-three first last odd" role="navigation">
+
+      
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf"><a href="/what-we-do/about-avert" class="menu__link menu__link">About us</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/what-we-do/where-we-work" class="menu__link menu__link">Where we work</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf"><a href="/contact-us" class="menu__link menu__link">Contact us</a></li>
+</ul>
+</div>
+  </div>
+        <div class="region region-footer-four">
+    <div id="block-social-media-links-social-media-links" class="block block-social-media-links social-media footer-four first last odd">
+
+        <h2 class="block__title block-title">Follow us</h2>
+    
+  <ul class="social-media-links platforms inline horizontal"><li  class="facebook first"><a href="https://www.facebook.com/avertAIDS" target="_blank" title="Facebook"><img src="http://www.avert.org/sites/all/modules/contrib/social_media_links/libraries/elegantthemes/PNG/facebook.png" alt="Facebook icon" /></a></li><li  class="twitter"><a href="http://www.twitter.com/avert_org" target="_blank" title="Twitter"><img src="http://www.avert.org/sites/all/modules/contrib/social_media_links/libraries/elegantthemes/PNG/twitter.png" alt="Twitter icon" /></a></li><li  class="linkedin"><a href="http://www.linkedin.com/groups?gid=4447318&amp;trk=myg_ugrp_ovr" target="_blank" title="LinkedIn"><img src="http://www.avert.org/sites/all/modules/contrib/social_media_links/libraries/elegantthemes/PNG/linkedin.png" alt="LinkedIn icon" /></a></li><li  class="googleplus last"><a href="https://plus.google.com/+AvertOrgHIV/" target="_blank" title="Google+"><img src="http://www.avert.org/sites/all/modules/contrib/social_media_links/libraries/elegantthemes/PNG/googleplus.png" alt="Google+ icon" /></a></li></ul>
+</div>
+  </div>
+        <div class="region region-footer-five">
+    <div id="block-menu-menu-footer-menu" class="block block-menu footer-menu first odd" role="navigation">
+
+      
+  <ul class="menu"><li class="menu__item is-leaf menu__item is-leaf first leaf"><a href="/contact-us" class="menu__link menu__link">Contact us</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/terms-conditions" class="menu__link menu__link">Terms and conditions</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/privacy-policy" class="menu__link menu__link">Privacy policy</a></li>
+<li class="menu__item is-leaf menu__item is-leaf leaf"><a href="/sitemap" class="menu__link menu__link">Sitemap</a></li>
+<li class="menu__item is-leaf menu__item is-leaf last leaf"><a href="/please-donate-now#quickset-donate_quick_tabs2" class="menu__link menu__link">Donate</a></li>
+</ul>
+</div>
+<div id="block-block-1" class="block block-block copyright-block last even">
+
+      
+  <p>All material on <a href="http://www.avert.org">www.avert.org</a> is copyright AVERT 1986 - 2016 (unless stated otherwise). All rights reserved. Registered UK charity number: 1074849. Registered UK company number: 3716796.</p>
+
+</div>
+  </div>
+    </footer>
+  </div>
+</div>
+  <script src="http://www.avert.org/sites/default/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script>
+<script src="http://www.avert.org/sites/default/files/js/js_lQB_NJJ7UxJ1HqhY05H-_Aq3ylsvTnDF5L0EqOoniMg.js"></script>
+  <script id="dsq-count-scr" src="//avertglobal.disqus.com/count.js" async></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"caa04d444a","applicationID":"10599201","transactionName":"ZwBQNkUADUNUBRANDV5KcwFDCAxeGjkWARRZFlsNWQgNV2oQDQEV","queueTime":0,"applicationTime":1366,"atts":"S0dTQA0aHk0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

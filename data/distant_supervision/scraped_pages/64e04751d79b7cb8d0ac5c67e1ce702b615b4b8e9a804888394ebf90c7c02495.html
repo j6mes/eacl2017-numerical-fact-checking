@@ -1,0 +1,2351 @@
+<!doctype html>
+<!--[if !IE]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<!--[if IE]>
+<html class="ie" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Ug8CUVVbGwcCV1ZVBgc="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+		<link rel="search" type="application/opensearchdescription+xml" title="Course Hero" href="/open-search-description.xml" />
+	<title>Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf - Health Care</title>
+	            <meta name="description" content="View Notes - Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf from GM 538 at UCLA. Health Care Delivery in the United States Knickman
+Kovner">
+        <meta property="og:description" content="View Notes - Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf from GM 538 at UCLA. Health Care Delivery in the United States Knickman
+Kovner"/>
+            	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta property="og:image"
+          content="https://www.coursehero.com/thumb/c1/42/c142e65e166c2b6fb71e215a2386d92428723a11_180.jpg"/>
+    <meta property="og:title" content="Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf - Health Care"/>
+                    <meta name="twitter:widgets:csp" content="on">
+    
+				
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+	<!-- CSS -->
+	        <link rel="stylesheet" href="/assets/fonts/HaasGrotesk.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+				<link href="https://www.coursehero.com//sym-assets/css/3839d05-f7264f1.css" rel='stylesheet' type='text/css'/>
+				        <link rel="stylesheet" href="https://www.coursehero.com//sym-assets/css/95008d1-405dd4b.css">
+    
+			<link rel="stylesheet" href="https://www.coursehero.com//sym-assets/css/d0d4444-80fc1dd.css">
+		
+	<!-- Head Javascript -->
+					<script src="https://www.coursehero.com//sym-assets/js/7ef26d7-d55df4f.js" type="text/javascript"></script>
+		
+				<script type="text/javascript">
+			//<![CDATA[
+			var AKSB = AKSB || {};
+			AKSB.q = [];
+			AKSB.mark = function(c, b) {
+				AKSB.q.push(["mark", c, b || (new Date).getTime()])
+			};
+			AKSB.measure = function(c, b, a) {
+				AKSB.q.push(["measure", c, b, a || (new Date).getTime()])
+			};
+			AKSB.done = function(c) {
+				AKSB.q.push(["done", c])
+			};
+			AKSB.mark("firstbyte", (new Date).getTime());
+			AKSB.prof = {
+				origin: true,
+				custid: "434776",
+				beaconrate: 100
+			};
+			(function(b) {
+				var a = document.createElement("iframe");
+				a.src = "javascript:false";
+				(a.frameElement || a).style.cssText = "width: 0; height: 0; border: 0; display: none";
+				var c = document.getElementsByTagName("script"),
+						c = c[c.length - 1];
+				c.parentNode.insertBefore(a, c);
+				a = a.contentWindow.document;
+				a.open().write("<body onload=\"var js = document.createElement('script');js.id = 'aksb-ifr';js.src = '" + b + "';document.body.appendChild(js);\">");
+				a.close()
+			})(("https:" === document.location.protocol ? "https:" : "http:") + "//ds-aksb-a.akamaihd.net/434776/aksb-a/aksb.min.js");
+			//]]>
+		</script>
+		
+            <link rel="shortcut icon" href="/chfavicon.ico" type="image/x-icon" />
+        <script>/*DO NOT ALTER *** CourseHero.com*/(function(e){var t="1909",n=document,r,i,s={http:"http://cdn.mplxtms.com/s/MasterTMS.min.js",https:"https://secure-cdn.mplxtms.com/s/MasterTMS.min.js"},o=s[/\w+/.exec(window.location.protocol)[0]];i=n.createElement("script"),i.type="text/javascript",i.async=!0,i.src=o+"#"+t,r=n.getElementsByTagName("script")[0],r.parentNode.insertBefore(i,r),i.readyState?i.onreadystatechange=function(){if(i.readyState==="loaded"||i.readyState==="complete")i.onreadystatechange=null}:i.onload=function(){try{e()}catch(t){}}})(function(){});</script></head>
+<body>
+<!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-DK9F"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-DK9F');</script>
+    <!-- Wrapping Google Tag Management event firing code in a try/catch block -->
+    <script>
+        try{
+                    } catch (error){
+            if (typeof(console) !== 'undefined') {
+                console.error("[GTM-EVENT] ERROR: "+error);
+            }
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+
+	
+				
+<header id="ch-header" >
+						<a href="/" id="ch_headerLogo_action">
+    <img alt="Course Hero Logo" class="ch_header_logo" src="/assets/img/coursehero-logo.svg" width="210" height="40" />
+    <img alt="Course Hero Symbol" class="ch_headerMobile_logo" src="/assets/img/coursehero-logotype_white.svg" width="42" height="30" />
+</a>
+            <div class="ch_search_wrapper">
+            <div class="ch_search_innerWrapper">
+                <form action="/search/results/" method="POST" data-ng-module="searchServices">
+                    <input type="hidden" name="header" value="v2">
+                    <input type="hidden" name="filters_product" value="documents">
+                    <input name="stx" type="search" class="ch_h-search-form_input" data-ch-smart-search placeholder="Search "/>
+                </form>
+            </div>
+        </div> 
+        <ul class="ch_nav_group isBrowseMenu">
+    <li>
+    <a class="ch_nav_action isHamburgerMenu" href="#"><span class="bar"></span><span></span></a>
+    <div class="ch_subNav_panel">
+        <ul class="ch_mobileNav_group">
+            <li class="hasChildren">
+                                                    <a href="/study-materials/" title="Study Resources">Find Study Resources</a>
+                    <ul class="isHidden">
+                        <li class="oneLevelUpAction"><a href="#"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                    <li><a href="/study-materials/" rel="" title="by School">by School</a>
+                                                                                            </li>
+                                                    <li><a href="/subjects/" rel="" title="by Subject">by Subject</a>
+                                                                                            </li>
+                                                    <li><a href="/lit/" rel="" title="by Book">by Book</a>
+                                                                                                    <div class="ch_mobile_secondaryNav_group">
+                                                                                    <a href="/lit/" rel="" title="Literature Study Guides">Literature Study Guides</a>
+                                                                                    <a href="/infographics/" rel="" title="Infographics">Infographics</a>
+                                                                            </div>
+                                                            </li>
+                                            </ul>
+                                    <a href="/tutors/homework-help/" title="Tutoring Help">Get instant Tutoring Help</a>
+                    <ul class="isHidden">
+                        <li class="oneLevelUpAction"><a href="#"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                    <li><a href="/tutors/homework-help/" rel="" title="Ask a Tutor a Question">Ask a Tutor a Question</a>
+                                                                                            </li>
+                                            </ul>
+                                    <a href="/flashcards/" title="Flashcards">Use Flashcards</a>
+                    <ul class="isHidden">
+                        <li class="oneLevelUpAction"><a href="#"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                    <li><a href="/flashcards/browse/" rel="" title="View Flashcards">View Flashcards</a>
+                                                                                            </li>
+                                                    <li><a href="/flashcards/create.php" rel="nofollow" title="Create Flashcards">Create Flashcards</a>
+                                                                                            </li>
+                                            </ul>
+                                    <a href="/earn-money/" title="Contributing">Earn by Contributing</a>
+                    <ul class="isHidden">
+                        <li class="oneLevelUpAction"><a href="#"><i class="fa fa-angle-left"></i> Main Menu</a></li>
+                                                    <li><a href="/free-access/" rel="" title="Earn Free Access">Earn Free Access</a>
+                                                                                            </li>
+                                                    <li><a href="/upload/" rel="nofollow" title="Upload Documents">Upload Documents</a>
+                                                                                            </li>
+                                                    <li><a href="/course-advice/" rel="" title="Write Course Advice">Write Course Advice</a>
+                                                                                            </li>
+                                                    <li><a href="/referrals/" rel="" title="Refer your Friends">Refer your Friends</a>
+                                                                                            </li>
+                                                    <li><a href="/earn-money/" rel="" title="Earn Money">Earn Money</a>
+                                                                                            </li>
+                                                    <li><a href="/upload/marketplace/" rel="nofollow" title="Upload Documents">Upload Documents</a>
+                                                                                            </li>
+                                                    <li><a href="/qa/qa-builder/" rel="nofollow" title="Create Q&amp;A pairs">Create Q&A pairs</a>
+                                                                                            </li>
+                                                    <li><a href="/qa/expert/landing.php" rel="" title="Become a Tutor">Become a Tutor</a>
+                                                                                            </li>
+                                                    <li><a href="/scholarships/" rel="" title="Scholarships">Scholarships</a>
+                                                                                            </li>
+                                            </ul>
+                            </li>
+            <li class="ch_mobileAppLinks">
+                <a href="https://itunes.apple.com/app/apple-store/id922208952?pt=108036802&ct=nav_menu&mt=8" class="ch-external-link" target="_blank" rel="nofollow" ><img alt="app store button" class="ch_mobilePromotion_button" src="/assets/img/header/appstore.png" height="30" /></a>
+                <a href="https://play.google.com/store/apps/details?id=com.coursehero.coursehero&hl=en&utm_campaign=nav_menu" class="ch-external-link" target="_blank" rel="nofollow"><img alt="google play button" class="ch_mobilePromotion_button" src="/assets/img/header/googleplay.png" height="30" /></a>
+            </li>
+        </ul>
+    </div>
+</li>
+            <li>
+            <a class="ch_nav_action" href="/study-materials/" title="Study Resources" id="" rel="">
+                <span class="bar"></span>
+                <span>
+                                            <span class="prefixVerb">Find</span>
+                        Study Resources <i class="fa fa-angle-down"></i>
+                                    </span>
+            </a>
+            <div class="ch_subNav_panel">
+                <ul class="ch_subNav_group">
+                                            <li class="">
+                                                            <a href="/study-materials/" rel="" title="by School" id="">by School</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/subjects/" rel="" title="by Subject" id="">by Subject</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/lit/" rel="" title="by Book" id="">by Book</a>
+                            
+                                                                                        <i class="right_arrow fa fa-angle-right"></i>
+                                <ul class="ch_secondaryNav_group">
+                                                                            <li>
+                                            <a href="/lit/" rel="" title="Literature Study Guides" id="">Literature Study Guides</a>
+                                        </li>
+                                                                            <li>
+                                            <a href="/infographics/" rel="" title="Infographics" id="">Infographics</a>
+                                        </li>
+                                                                    </ul>
+                                                    </li>
+                                    </ul>
+            </div>
+        </li>
+            <li>
+            <a class="ch_nav_action" href="/tutors/homework-help/" title="Tutoring Help" id="" rel="">
+                <span class="bar"></span>
+                <span>
+                                            <span class="prefixVerb">Get Instant</span>
+                        Tutoring Help <i class="fa fa-angle-down"></i>
+                                    </span>
+            </a>
+            <div class="ch_subNav_panel">
+                <ul class="ch_subNav_group">
+                                            <li class="">
+                                                            <a href="/tutors/homework-help/" rel="" title="Ask a Tutor a Question" id="">Ask a Tutor a Question</a>
+                            
+                                                                                </li>
+                                    </ul>
+            </div>
+        </li>
+            <li>
+            <a class="ch_nav_action" href="/flashcards/" title="Flashcards" id="" rel="">
+                <span class="bar"></span>
+                <span>
+                                            <span class="prefixVerb">Use</span>
+                        Flashcards <i class="fa fa-angle-down"></i>
+                                    </span>
+            </a>
+            <div class="ch_subNav_panel">
+                <ul class="ch_subNav_group">
+                                            <li class="">
+                                                            <a href="/flashcards/browse/" rel="" title="View Flashcards" id="">View Flashcards</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/flashcards/create.php" rel="nofollow" title="Create Flashcards" id="">Create Flashcards</a>
+                            
+                                                                                </li>
+                                    </ul>
+            </div>
+        </li>
+            <li>
+            <a class="ch_nav_action" href="/earn-money/" title="Contributing" id="" rel="">
+                <span class="bar"></span>
+                <span>
+                                            <span class="prefixVerb">Earn by</span>
+                        Contributing <i class="fa fa-angle-down"></i>
+                                    </span>
+            </a>
+            <div class="ch_subNav_panel">
+                <ul class="ch_subNav_group">
+                                            <li class="isSeparator">
+                                                            Earn Free Access<a href="/free-access/" rel="" title="Earn Free Access" id="">Learn More &gt;</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/upload/" rel="nofollow" title="Upload Documents" id="">Upload Documents</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/course-advice/" rel="" title="Write Course Advice" id="">Write Course Advice</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/referrals/" rel="" title="Refer your Friends" id="">Refer your Friends</a>
+                            
+                                                                                </li>
+                                            <li class="isSeparator">
+                                                            Earn Money<a href="/earn-money/" rel="" title="Earn Money" id="">Learn More &gt;</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/upload/marketplace/" rel="nofollow" title="Upload Documents" id="">Upload Documents</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/qa/qa-builder/" rel="nofollow" title="Create Q&amp;A pairs" id="">Create Q&A pairs</a>
+                            
+                                                                                </li>
+                                            <li class="">
+                                                            <a href="/qa/expert/landing.php" rel="" title="Become a Tutor" id="">Become a Tutor</a>
+                            
+                                                                                </li>
+                                            <li class="isSeparator">
+                                                            Scholarships<a href="/scholarships/" rel="" title="Scholarships" id="">Learn More &gt;</a>
+                            
+                                                                                </li>
+                                    </ul>
+            </div>
+        </li>
+    </ul>
+
+<ul class="ch_nav_group isLoggedOut">
+            <li class="ch_areYouTeacher_container"><a href="/educators/" rel="" class="ch_nav_action" title="Are you an educator?" id="ch_areYouTeacher_button">Are you an educator?</a></li>
+            <li class=""><a href="/login.php?ref=login" rel="nofollow" class="ch_nav_action" title="Log in" id="ch_login_button">Log in</a></li>
+            <li class=""><a href="/registerForm.php?" rel="nofollow" class="ch_nav_action" title="Sign up " id="ch_signup_button"><span>Sign up</span> <i class="fa fa-user"></i></a></li>
+    </ul>
+							</header>
+
+			
+	<div id="ch-body">
+		    <div data-ng-app="BasicDocLanding">
+
+        <div class="bdp_body_wrapper">
+            <div class="bdp_body_container">
+                <div id="ch_breadcrumbs">
+    <div id="microdata-bc-0" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" itemref="microdata-bc-1">
+        <a id="breadcrumbs-home" href="/" itemprop="url" data-ch-mixpanel-breadcrumb-tracking="Home"><span itemprop="title">Home</span></a>
+    </div>
+            <div id="microdata-bc-1" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child" itemref="microdata-bc-2">
+            <a id="breadcrumbs-school" href="/sitemap/schools/394-UCLA/" itemprop="url" data-ch-mixpanel-breadcrumb-tracking="School"><span itemprop="title">UCLA</span></a>
+        </div>
+                    <div id="microdata-bc-2" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child" itemref="microdata-bc-3">
+                <a id="breadcrumbs-dept" href="/sitemap/schools/394-UCLA/departments/703627-GM/" itemprop="url" data-ch-mixpanel-breadcrumb-tracking="Department"><span itemprop="title">GM</span></a>
+            </div>
+                            <div id="microdata-bc-3"  itemscope itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child">
+                    <a id="breadcrumbs-course" href="/sitemap/schools/394-UCLA/courses/5507647-GM538/" itemprop="url" data-ch-mixpanel-breadcrumb-tracking="Course"><span itemprop="title">GM 538</span></a>
+                </div>
+                                <div id="microdata-bc-4" class="destination-page">
+        <span>Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf</span>
+    </div>
+    </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        function sendBreadcrumbClickEvent(crumb){
+                    }//homepage search
+        $('#microdata-bc-0').click(function(){
+            sendBreadcrumbClickEvent("Home");
+        });
+        $('#microdata-bc-1').click(function(){
+            sendBreadcrumbClickEvent("School");
+        });
+        $('#microdata-bc-2').click(function(){
+            sendBreadcrumbClickEvent("Department");
+        });
+        $('#microdata-bc-3').click(function(){
+            sendBreadcrumbClickEvent("Course");
+        });
+    });
+</script>
+
+
+
+                <div itemscope itemtype="http://schema.org/CreativeWork">
+                    <div class="bdp_title_container" itemprop="headline">
+                        <h1 class="bdp_title_heading">
+                                                                                                Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf...
+                                                                                    </h1>
+                    </div>
+
+                    <div class="ch_docInfo_container">
+    <ul class="ch_docInfo_bundle">
+                    <li class="ch_docCourse_info">
+                    <label>SCHOOL</label>
+                    <span itemprop="educationalAlignment" itemscope itemtype="http://schema.org/AlignmentObject">
+                        <a itemprop="url" href="/sitemap/schools/394-UCLA/" title="UCLA">
+                            <span itemprop="targetName">UCLA</span>
+                        </a>
+                    </span>
+            </li>
+        
+                    <li class="ch_docCourse_info">
+                <label>COURSE TITLE</label>
+                <span itemprop="isPartOf" itemscope itemtype="http://schema.org/CreativeWork">
+                    <a itemprop="url" id="sidebar-course-crosslink" rel="nofollow" href="/sitemap/schools/394-UCLA/courses/5507647-GM538/" title="GM 538">
+                        <span itemprop="text">GM 538</span>
+                    </a>
+                                    </span>
+            </li>
+        
+                    <li class="ch_docCourse_info">
+                <label>TYPE</label>
+                <div itemprop="learningResourceType" class="ch_docType_info">Notes</div>
+            </li>
+        
+                    <li class="doc_uploaderDetails_container">
+                <div class="doc_uploaderInfo_content">
+                    <div class="doc_uploaderProfile_info">
+                        <label>UPLOADED BY</label>
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <a itemprop="url" href="/profile/forgetmenow101/"><span itemprop="name">forgetmenow101</span></a>
+                        </span>
+                    </div>
+                </div>
+            </li>
+                
+                    <li>
+                <label>PAGES</label>
+                25
+            </li>
+        
+                    <li>
+                <section class="ch_taggingEdit_link" data-ng-controller="IncorrectTagCtrl" data-ng-init="init({&quot;school_name&quot;:&quot;UCLA&quot;,&quot;prof_name&quot;:&quot;Jane Smith&quot;,&quot;dept_acro&quot;:&quot;GM&quot;,&quot;term_string&quot;:&quot;Fall&quot;,&quot;course_id&quot;:5507647,&quot;canonical_course_id&quot;:5507647,&quot;school_id&quot;:394,&quot;dept_id&quot;:703627,&quot;course_num&quot;:&quot;538&quot;,&quot;year&quot;:2014,&quot;term&quot;:1,&quot;prof_id&quot;:1198102,&quot;course_name&quot;:&quot;Org. Devel.&quot;,&quot;professor&quot;:{&quot;prof_pk&quot;:1198102,&quot;prof_id&quot;:1198102,&quot;school_id&quot;:394,&quot;dept_id&quot;:0,&quot;name&quot;:&quot;Jane Smith&quot;},&quot;resource_url&quot;:&quot;https:\/\/www.coursehero.com\/sitemap\/schools\/394-UCLA\/courses\/5507647-GM538\/&quot;}, 'Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf', 'notes', {&quot;lesson&quot;:&quot;Lesson Plan&quot;,&quot;notes&quot;:&quot;Notes&quot;,&quot;test_prep&quot;:&quot;Test Prep&quot;,&quot;homework&quot;:&quot;Homework Help&quot;,&quot;essay&quot;:&quot;Essay&quot;,&quot;lab&quot;:&quot;Lab Report&quot;}, '')">
+    
+            <a class="ch_docEditInfo_link" href="/registerForm.php?login_user_type=document&user_action=retag&user_action_id=16170471" rel="nofollow" data-ch-mixpanel-conversion-tracking="Edit Document Button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" enable-background="new 0 0 42 42"><switch><g><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m12.3 38.3l-11.4 2.6 2.7-11.4 27.5-27.5c1.4-1.4 3.6-1.4 5 0l3.7 3.7c1.4 1.4 1.4 3.6 0 5l-27.5 27.6z"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m38.6 12l-8.7-8.8"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m36.1 14.5l-8.7-8.8"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M 12.8,37.8 4,29.1"/></g></switch></svg>
+    <span class="ch_docEditInfo_tooltip">Click to edit the document details</span>
+    </a>
+</section>
+
+            </li>
+                
+            </ul>               
+</div>
+
+                                            <main class="bdp_docViewerWide_main">
+                    
+                                                        <div class="bdp_doc-viewer_notification">
+                                <div class="bdp_notification_text">
+                                    <p><img src="/assets/img/doc-landing/info-icon.svg" class="bdp_text_highlight"
+                                            alt="Info icon"/><em>This <strong>preview</strong> shows
+                                            page                                                <strong>1</strong>. <strong>Sign up</strong>
+                                                to
+                                                <span class="bdp-orphan">view the full content.</span></em></p>
+                                </div>
+                                <a rel="nofollow" class="bdp_header_action roadblock-button"
+                                   href="/registerForm.php?reg_only=1"
+                                   data-ch-mixpanel-conversion-tracking="Roadblock button">View Full Document <img
+                                            src="/assets/img/doc-landing/chevron-right.svg" alt="Right Arrow Icon"/></a>
+                            </div>
+
+                        <div id="bdp_doc-viewer-image_start" ></div>
+                                                        <div id="bdp_image-preview_container" class="bdp_preview_container"
+                                                                                                                data-doc-preview-multiple="1"
+                                     >
+                                                                    <div class="bdp_preview_single">
+                                        <img src="/thumb/c1/42/c142e65e166c2b6fb71e215a2386d92428723a11_180.jpg"
+                                             onerror="image_error_backup(this, '/view_thumbnail.php?filehash=c142e65e166c2b6fb71e215a2386d92428723a11&size=180')"
+                                        />
+                                    </div>
+                                                                <div class="bdp_preview_end">
+                                    This is the end of the preview. <a id="conversion-link-below-preview" rel="nofollow"
+                                                                       href="/registerForm.php?reg_only=1"
+                                                                       data-ch-mixpanel-conversion-tracking="Link after preview">Sign up</a>
+                                    to
+                                    access the rest of the document.
+                                </div>
+                            </div>
+                            <div id="bdp_doc-viewer-image_end" class="bdp_doc-viewer_end"></div>
+
+                                                            <div id="bdp_doc-viewer-text_container" class="bdp_doc-viewer_container">
+                                    <div class="bdp_preview_container">
+                                        <p class="bdp_preview_paragraph" itemprop="text">
+                                            <strong>Unformatted text preview: </strong>Health Care Delivery in the United States Knickman
+Kovner Jonas &amp; Kovner’s James R. Knickman, PhD · Anthony R. Kovner, PhD Editors 11th
+Edition MD, MPH, MS, FNYAS, Founding Editor “Health care managers, practitioners, and students must both operate as effectively as they can within the daunting and continually evolving system at hand and identify opportunities for reform advances… Health Care Delivery in the United States
+has been an indispensable companion to those preparing to manage this balance. The present edition demonstrates once again
+why this volume has come to be so prized. It takes the long view – charting recent developments in health policy, and putting
+them side-by-side with descriptions and analysis of existing programs in the United States and abroad.” — Sherry Glied, PhD, Dean and Professor of Public Service, NYU Wagner, From the Foreword Designed for graduate and advanced undergraduate students of health care management and administration and public health,
+the text addresses all of the complex core issues surrounding our health care system in a strikingly readable and accessible
+format. Contributors provide an in-depth and objective appraisal of why and how we organize health care the way we do,
+the enormous impact of health-related behaviors on the structure, function, and cost of the health care delivery system, and
+other emerging and recurrent issues in health policy, health care management, and public health. The 11th edition features the
+writings of such luminaries as Michael K. Gusmanno, Carolyn M. Clancy, Joanne Spetz, Nirav R. Shah, Michael S. Sparer, and
+Christy Harris Lemak, among others. Chapters include key words, learning objectives and competencies, discussion questions,
+case studies, and new charts and tables with concrete health care data. Included for instructors is an Instructor’s Manual,
+PowerPoint slides, Syllabus, Test Bank, Image Bank, Supplemental e-chapter on the ACA, and a transition guide bridging the
+10th and 11th editions.
+Key Features:
+• Integration of the ACA throughout the text, including
+a supplementary e-chapter devoted to this major
+health care policy innovation
+• The implementation of Obamacare
+• Combines acute and chronic care into organizations
+of medical care
+• Nursing workforce challenges
+• Health disparities, vulnerable populations, and
+immigrant health
+• Strategies to achieve the Triple Aim (better health and
+better care at lower cost) • New models of care including accountable care
+organizations (ACOs), patient homes, health
+exchanges, and integrated health systems
+• Emerging societal efforts toward creating healthy
+environments and illness prevention
+• Increasing incentives for efficiency and better quality
+of care
+• Expanded discussion of information technology
+• A new 5-year trend forecast ISBN 978-0-8261-2527-9 11 W. 42nd Street
+New York, NY 10036-8002
+www.springerpub.com 9 780826 125279 Health Care Delivery in the United States T his fully updated and revised 11th edition of a highly esteemed survey and analysis of health care delivery in the
+United States keeps pace with the rapid changes that are reshaping our system. Fundamentally, this new edition
+presents the realities that impact our nation’s achievement of the so-called Triple Aim: better health and better care at
+a lower cost. It addresses challenges and responses to the Affordable Care Act (ACA), the implementation of Obamacare,
+and many new models of care designed to replace outmoded systems. Leading scholars, practitioners, and educators
+within population health and medical care present the most up-to-date evidence-based information on health disparities,
+vulnerable populations, and immigrant health; nursing workforce challenges; new information technology; preventive
+medicine; emerging approaches to control health care costs; and much more. Jonas &amp; Kovner’s Steven Jonas, 11th Edition Jonas &amp; Kovner’s Health Care
+Delivery in the
+United States
+11th Edition
+James R. Knickman
+Anthony R. Kovner
+Editors Compliments of Springer Publishing, LLC 4 Comparative Health Systems
+Michael K. Gusmano and Victor G. Rodwin KEY WORDS
+health system models
+health system performance
+national health insurance (NHI) national health service (NHS)
+National Institute for Health and Care
+Excellence (NICE) LEARNING OBJECTIVES o Understand the difference between NHI and NHS systems
+o Highlight key features and issues in the health systems of Britain, France, Canada,
+and China o View the U.S. health system from an international perspective
+TOPICAL OUTLINE o
+o
+o
+o
+o
+o
+o
+o
+o Looking abroad to promote self-examination at home
+Health system models
+NHS and NHI systems compared with the United States
+The health systems in England, Canada, France, and China
+Provider payment
+Coordination of care
+Workforce and information technology (IT)
+Health system performance
+Lessons ■ Overview
+Public opinion polls regularly ﬁnd that medical professionals and the
+public are dissatisﬁed with the system and believe major change is
+necessary.
+Windows can sometimes be mirrors. A look at health systems abroad can enable us to
+develop a better understanding of our health system in the United States. An international perspective suggests that the United States has the most expensive health care Copyright Springer Publishing Company, LLC 54 Part I. Health Policy system in the world, but unlike other wealthy countries, we fail to provide universal
+health insurance coverage and experience large inequities in access to primary and
+specialty care. Health care costs are often a source of financial strain, even bankruptcy,
+for people with serious illness (Hacker, 2006), and Americans suffer from high rates
+of mortality that could have been avoided with timely and appropriate access to a
+range of effective health care services (Nolte &amp; McKee, 2012). There is also evidence
+that the U.S. health care system squanders resources and fails to address many of its
+population’s health care needs. Not surprisingly, public opinion polls regularly find
+that medical professionals and the public are dissatisfied with the system and believe
+major change is necessary (Blendon, Benson, &amp; Brulé, 2012). LOOKING ABROAD TO PROMOTE SELF-EXAMINATION AT HOME
+International comparisons of health care system performance remind us that there
+are workable alternatives to our current system. Examining other systems provides
+“the gift of perspective” and helps us to understand our own system “by reference
+to what it is like or unlike” (Marmor et al., 2005). As Rudolf Klein (1997, p. 1270)
+explains:
+Policy learning . . . is as much a process of self-examination—of reflecting on the
+characteristics of one’s own country and health care system—as of looking at the
+experience of others . . . the experience of other countries is largely valuable insofar
+as it prompts a process of critical introspection by enlarging our sense of what is
+possible and adding to our repertoire of possible policy tools. For policy learning is
+not about the transfer of ideas or techniques . . . but about their adaptation to local
+circumstances. (emphasis in original) This chapter attempts to provide a better understanding of the U.S. health care
+system by comparing it to health systems in wealthy countries, which share many
+characteristics in common, and by contrasting it to China, which is different. Our
+focus on wealthy nations draws on the experience of those belonging to an organization based in Paris that studies economic trends and policies and collects health data
+from member nations—the Organisation for Economic Co-operation and Development (OECD). We pay special attention to England,1 which operates a national health
+service (NHS), and to Canada and France, which have national health insurance (NHI)
+systems. Our focus on China is an example of so-called BRIC nations (Brazil, Russia,
+India, and China) with large populations that have benefited from rapid economic
+growth over the past two decades and now are demanding access to state-of-the-art
+medical care.
+Although England’s NHS is one of the most public systems in the world, it also
+allows opportunities for private hospitals, private practice, and private insurance for
+those who prefer such options. Canada is frequently compared with the United States
+because of its physical proximity and similar political culture; until the mid-1960s,
+Canada’s health care financing and delivery systems were nearly identical to those
+in the United States (Marmor et al., 2005). France’s health system also shares many
+1
+We focus on England, the largest constituent country within the United Kingdom because there are important
+differences among the NHS in Scotland, Wales, and Northern Ireland. Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 55 features with the U.S. health system. Like the United States, France relies on a multipayer system for financing care and offers a mix of public and private providers for
+delivering health care services. French citizens also enjoy freedom of choice among
+providers—to an even greater extent than Americans. The French experience (Rodwin
+&amp; Contributors, 2006) suggests that it is possible to achieve universal coverage without adopting a single-payer NHI system, such as Canada’s, or an NHS, as in England.
+China offers a more striking contrast to the United States. Despite its rapidly growing economy, China’s national investments in public health and medical care are far
+smaller than those of OECD nations, and out-of-pocket payments represent roughly
+half of all health care expenditures. We conclude the chapter with some lessons of
+comparative experience for U.S. policymakers. ■ Health System Models
+NHS systems, such as those in the United Kingdom, Sweden, Norway, Finland,
+Denmark, Portugal, Spain, Italy, and Greece, may be traced back to Lord Beveridge,
+who wrote the blueprint for the English NHS immediately after World War II. Although
+such systems are characterized by a dominant share of financing derived from general
+revenue taxes, this does not preclude other forms of financing. For example, the relative size of private financing and provision is much higher in Italy and Spain than in
+Sweden or Denmark. In England, 76% of NHS funding comes from general taxation,
+18% from a payroll tax, and the remainder from private payments (Thomson, Osborn,
+Squires, &amp; Reed, 2012, p. 33). Historically, NHI systems have had a more open-ended
+reimbursement system for health care providers, but this distinction is blurring as
+NHI systems are increasingly under pressure to operate within budget limits.
+NHI systems may be traced back to Chancellor Otto von Bismarck, who established
+the first NHI program for salaried industrial workers in Germany in 1883. With the
+exception of Canada, whose dominant share of financing is from general tax revenues,
+these systems are characterized by payroll tax–based financing. In addition to income
+taxes, about a quarter of Canada’s federal spending on health care comes from corporations. The provinces also supplement income and corporate taxes with additional
+sources of funding, such as sales, tobacco, and alcohol taxes. As with NHS systems, NHI
+systems are characterized by significant variation in their financing and organizational
+arrangements. For example, the share of French health care expenditures financed from
+general tax revenues has increased beyond 40% (Rodwin &amp; Contributors, 2006).
+Whether one’s image of a health system is private and market-based, as in the
+United States and Switzerland; public and government-managed, as in the United
+Kingdom and Scandinavian nations; or at some intermediary point along such a continuum, as in France and Canada; it is possible to make some useful distinctions with
+respect to the public versus the private provision of health care and methods of financing of health services. Table 4.1 classifies health systems along these dimensions. PROVISION OF HEALTH SERVICES
+The arrangements for providing health care in Table 4.1 distinguish whether health
+services are delivered by the public, private not-for-profit, or private for-profit sector.
+Within these categories, many distinctions may be added. For example, some publicly
+Copyright Springer Publishing Company, LLC 56 Part I. Health Policy
+TABLE 4.1 HEALTH SYSTEM PROVISION AND FINANCING Financing Provision
+Government Social Security/NHI Private Insurance Out-of-Pocket A B C D 1 2 3 4 5 6 7 8 9 10 11 12 Government Owned
+A
+Private Nonproﬁt/
+Quasi-Government
+B
+Private For-Proﬁt
+C capitalized organizations (row A) are national (VHA), others are subnational (state
+mental hospitals), and many are local (municipal hospitals). Likewise, the not-forprofit category may include a variety of quasi-public organizations, such as hospital
+trusts in Britain (row B). The for-profit form of provision (row C), a distinctive subcategory in the United States, includes private for-profit hospitals and managed care
+organizations (MCOs) that sell ownership shares to investors through stock markets.
+Indeed, the growth of large investor-owned MCOs distinguishes the United States
+from most other OECD nations. FINANCING
+The four methods of raising revenues to pay for health services correspond to columns
+A through D:
+■
+■
+■
+■ A: General revenue financing through the fiscal tax system
+B: Compulsory payroll tax financing through the Social Security (payroll tax) system
+C: Voluntary premiums assessed by private health insurance companies
+D: Individual out-of-pocket payments There are, of course, other methods and sources of financing, particularly for capital expenditures, such as direct employer contributions and philanthropic funds. But
+these are no longer dominant sources of health care financing.
+Although all countries rely on these four sources of revenue to finance health
+care services, most developed countries have adopted one of two distinct models
+for financing care. In NHS systems, the government uses its resources to operate
+most, if not all, of the delivery system. In NHI systems, revenue is most often raised
+through payroll taxes to fund a social insurance program that reimburses health
+care providers for services rather than paying for health care directly through the
+government’s budget. Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 57 In contrast to England, Canada, and France, China and the United States rely,
+to varying degrees, on subnational and local governments to finance health care. In
+Canada, provinces and territories administer universal health insurance programs and
+the federal government provides block grants that account for approximately 20% of
+health care expenditures. To qualify for the federal funds, provincial and territorial
+health insurance systems must meet five criteria specified by the Canada Health Act
+of 1984. They must be (a) administered on a nonprofit basis by a public authority;
+(b) comprehensive in the sense that they must cover most health services provided
+by hospitals, medical practitioners, or dentists; (c) universal in that all legal Canadian
+residents are covered; (d) portable so that coverage for all residents in each province
+or territory is transferable to all other parts of Canada; and (e) accessible, although
+“reasonable access” is not defined in the law.
+In 2009, China adopted a reform that seeks to provide health insurance for all of
+its population. Although China already provides some minimal health insurance to
+the majority of its population, coverage remains extremely limited and, as we noted
+earlier, more than half of all spending on health care still comes from out-of-pocket
+payments (Table 4.1, column D). In terms of public funding for health care, China
+relies—to an even greater extent than Canada—on subnational government revenues
+to finance the country’s three national health insurance funds.
+Below the national government, China has provincial, regional, and local governments. By the mid-1990s, these subnational government authorities financed 80% to
+90% of total government spending on social services, including health care (Hipgravel
+et al., 2012). The adoption of health reform has increased central government contributions to health care, but local government taxes and out-of-pocket payments
+from individual patients still represent the two largest sources of revenue. As of 2012,
+provincial and local government revenues financed 78% of health care expenditures
+(Fabre, 2013). This approach has exacerbated the large economic disparities between
+the wealthier coastal provinces and the poorer rural provinces in western China. The
+national government has attempted to address the country’s rural–urban disparities,
+but with limited success (Jian, Chan, Reidpath, &amp; Xu, 2010). ■ NHS and NHI Systems Compared With the United States
+Table 4.1 enables one to highlight key features of NHS and NHI systems and to
+adopt an international perspective on the U.S. health care system. The most striking difference between the United States and NHS or NHI systems is that the United
+States—even after passage of the Patient Protection and Affordable Care Act of 2010
+(ACA)—includes large elements of financing that are based on actuarial principles
+whereby private insurance premiums (column C) are set with respect to estimated
+risk. In contrast, in NHS and NHI systems, most health care financing is based on
+ability to pay (columns A and B). Ability-to-pay criteria lead to wealthier, younger, and
+healthier individuals paying disproportionately to finance the care of poorer, older,
+and sicker individuals. Aside from this important distinction, a look at box 1 through
+box 12 suggests that most health care systems have elements of many boxes ranging
+from socialized medicine (box 1) to out-of-pocket payment for private practitioners
+and hospitals (box 12). Copyright Springer Publishing Company, LLC 58 Part I. Health Policy The United States has neither an NHS nor an NHI system. Instead, the U.S. health
+care system relies on a patchwork of public and private insurance with large gaps in
+coverage (see Chapter 3). Its enormous pluralism exhibits components of its health
+system within each of the boxes in Table 4.1. It uses a social insurance system for
+older people and for those with permanent disabilities (Medicare: columns A and B); a
+social welfare system for some people with low incomes (Medicaid and CHIP, column
+B); and a subsidized employer-based private health insurance system for a large, but
+shrinking percentage of salaried employees in the private and public sectors (column
+C). Along with its public and private insurance programs, the United States has elements of socialized medicine (publicly funded and provided programs in box 1), such
+as the military health care system, the Veterans Health Administration (VHA) system,
+and the Indian Health Service (IHS) for Native American and Alaskan Native people. ■ The Health Systems in England, Canada, France, and China After World War II, governments have gradually extended their role in the
+ﬁnancing and provision of health services. Beyond the differences we have noted between NHI and NHS systems, these systems
+have evolved in similar directions. After World War II, governments have gradually
+extended their role in the financing and provision of health services. What was once
+largely the responsibility of the family, philanthropy, religious institutions, employers,
+and local governments has largely been taken over by national and subnational governments—a trend that has accompanied the rise of the welfare state (de Kervasdoué,
+Kimberly, &amp; Rodwin, 1984). This evolution has affected all wealthy OECD nations and,
+increasingly, BRIC and less developed nations. The U.S. reliance on employer-based
+private health insurance—even after the implementation of the ACA—is an important
+contrast to NHI and NHS systems. Yet even in the United States recent decades have
+seen an expansion of public insurance and a decline in employer-based coverage.
+The growth of government involvement in health systems has characterized
+OECD nations during the great boom years of health sector growth (1950s and 1960s),
+when governments encouraged hospital construction and modernization, workforce
+training, and biomedical research. It continued in the 1970s, when the goals of OECD
+countries shifted more in the direction of rationalization and cost containment (Rodwin, 1984). In the early 21st century, public and private health insurance has become
+the dominant source for funding health care, and public expenditure on health care
+services, along with education and Social Security, has become one of the largest categories of social expenditure as a share of gross domestic product (GDP).
+In contrast to these trends in OECD nations, by the end of the 1970s China moved
+from a health system dominated by public financing to one that is now dominated
+by private, out-of-pocket payments. Between 1949 and the early 1980s, the Chinese
+health system was financed largely by the central government and state-owned enterprises ( Valentine, 2005). In 1978, Deng Xiaoping called for market reforms. The central government reduced its share of national health care spending from 32% to 15%
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 59 (Blumenthal &amp; Hsiao, 2005). It slashed subsidies to public hospitals and introduced
+market mechanisms in health care, resulting in rapid growth of out-of-pocket payments and income-based inequities.
+By the late 1990s, Chinese officials increased investment in public health to
+address growing disparities between rural and urban areas. Efforts to improve the
+public health and primary care systems accelerated after the outbreak of SARS in late
+2002. By the end of 2003, more than 5,000 people were infected with SARS and 349
+people died (Smith, 2006), thus exposing the weaknesses of the public health system.
+Since 2009, China has continued to expand the role of government through the creation of new public insurance schemes and the adoption of new public health regulations (Wang, Gusmano, &amp; Cao, 2011).
+In addition to the growth of government’s role in health care, most OECD nations
+must confront common challenges and exhibit distinct approaches for many issues.
+We illustrate how this is so by comparing the health systems of England, Canada,
+France, and China with respect to (a) provider payment, (b) coordination of care,
+(c) workforce and IT, and most importantly, (d) health system performance. PROVIDER PAYMENT
+All countries rely on multiple methods for paying physicians and hospitals. NHS systems traditionally have relied more on salaried and capitation forms of payment for
+physicians and budgets for hospitals. In the English NHS, about two thirds of general
+practitioners (GPs) and dentists work as independent contractors reimbursed through
+a blended payment system, 75% from capitation payment and most of the rest (20%)
+from fee-for-service (FFS) payments based on performance. Since 2012, GPs have
+been placed in charge of clinical commissioning groups (CCGs), which control about
+70% of the NHS budget. CCGs are responsible for purchasing hospital and specialty
+medical care services for their patients. The NHS first introduced a prospective payment system for reimbursing public and private hospitals in 2003 and, in April 2004,
+phased in a new national tariff system. Since 2012, the NHS has adopted a Payment
+by Results (PbR) system based on the average cost of providing the procedure or the
+treatment across the NHS as a whole.
+Historically, Canadian primary care physicians have been paid on an FFS basis.
+The Ministries of Health for all provinces and territories are responsible for negotiating an annual physician fee schedule based on a relative value scale (RVS) for each
+reimbursable procedure or code. The RVS may be based on a resource-based fee
+schedule (RBFS), which tries to capture the inputs required to provide the service, or
+on historical charges. Studies have found wide variation in fee schedules across Canada
+(Roth &amp; Adams, 2009). In more recent years, some provinces have experimented with
+blended capitation schemes in family health networks, family health teams, and family
+health organizations. Blended capitation relies on age- and gender-adjusted payments,
+coupled with financial incentives to follow “evidence-based” guidelines and FFS when
+physicians treat nonenrolled patients (HealthForceOntario, 2014).
+In France, physicians in the ambulatory sector and in private hospitals are reimbursed on the basis of a fee schedule negotiated among physician associations, NHI
+funds, and the government. Approximately 15% of all physicians (and 25% of those
+in private office–based practice) selected the option to extra-bill beyond the negotiated fees that represent payment in full for all other physicians. These figures vary by
+Copyright Springer Publishing Company, LLC 60 Part I. Health Policy specialty, with the highest rates of extra-billing among specialists in comparison to
+GPs. Physicians who have opted to extra-bill may do so as long as their charges are
+set with “tact and measure,” a standard that has never been legally defined but which
+has been found, empirically, to represent a 50% to 100% increase to the negotiated
+fees. Physicians based in public hospitals are remunerated on a part-time or full-time
+salaried basis, and those in private for-profit hospitals may bill the NHI based on the
+negotiated fees.
+Before 1984, public hospitals in France were reimbursed on the basis of a retrospective, cost-based, per diem fee; after that, they were placed on global budgets
+that were later gradually adjusted for patient case mix in the 1990s. Private for-profit
+hospitals used to be reimbursed on the basis of a negotiated per diem fee; in the 1990s
+the per diem payments were also gradually adjusted for their case mix. The basis
+for case-based adjustment in France is an adaptation of the U.S. Diagnosis Related
+Group (DRG) categories known in France as GHM (groupes homogènes de malades).
+The most recent modification was introduced in 2004 (Schreyögg et al., 2006), when
+activity-based payment (ABP) was introduced to create a level playing field for reimbursement of acute-care services among public and private hospitals. As of 2012, the
+reimbursement system for public and private hospitals has been completely aligned
+based on the national ABP tariffs, which take into account each hospital’s historical
+costs. This has resulted in expected activity growth, which in turn, results in downward price adjustments because annual hospital costs are constrained by national and
+regional hospital expenditure targets (Or, 2010).
+In China, the expansion of health insurance is changing the nature of provider payment, but by the end of 2013 about half of physician payments to health care providers
+still came from FFS payments. Subnational governments in China regulate prices in an
+effort to make health care affordable and, during the past decade, provincial and local
+governments, with encouragement from the central government, have introduced
+such incentives as pay-for-performance based on treatment protocols to improve
+quality (Yip et al., 2010). Although the central government hopes that the expansion
+of health insurance will limit hospital reliance on kickback payments from medical
+device and pharmaceutical companies, such payments continue to be an important
+source of revenue for Chinese health care providers (Wang et al., 2011). Two of the distinguishing characteristics of the U.S. health care system
+are that the United States does not operate within a budget and does not
+negotiate prices with providers as aggressively as other countries. In comparison to England, Canada, France, and China, the United States pays
+significantly higher prices for medical care. Although there is a vigorous debate about
+the factors that drive U.S. health care spending, consensus is emerging that price is the
+most important factor in explaining why the United States spends so much more than
+any other health care system in the world (Anderson, Frogner, Johns, &amp; Reinhardt,
+2006). Two of the distinguishing characteristics of the U.S. health care system are that
+the United States does not operate within a budget and does not negotiate prices with
+providers as aggressively as other countries. Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 61 COORDINATION OF CARE
+All countries suffer from problems of coordination among hospitals and communitybased services. They differ, nonetheless, with regard to the size and nature of their
+delivery systems. France, for example, has more practicing doctors per 1,000 population (3.3) than the United Kingdom (2.8), the United States (2.5), Canada (2.4), or
+China (1.5) (OECD, 2013). France also has more hospital beds per 1,000 population
+(6.2) than the United States (3.1), the United Kingdom (3.0), Canada (2.8), or China
+(2.7) (OECD, 2013).
+Since its creation in 1948, the NHS has been one of the largest public service organizations in Europe. With more than one million employees, more than 2,500 hospitals, and a host of intermediary health care organizations, the NHS poses an awesome
+managerial challenge (Klein, 2013). Perhaps because Britain has fewer health care
+resources than most OECD nations, the British have been more aggressive in weeding out inefficiency than other, wealthier countries. Because the NHS faces the same
+demands as other systems to make technology available and to care for an increasingly
+aged population, British policymakers recognize they must pursue innovations that
+improve efficiency. But numerous obstacles have arisen: opposition by professional
+bodies, difficulties in firing and redeploying health care personnel, and not least, the
+tripartite structure of the NHS, which, since its inception, has created an institutional
+separation among hospitals, general practitioners, and community health programs.
+This separation is reinforced further by the fact that local authorities are responsible
+for a great deal of prevention and health promotion, as well as social care, making it
+difficult to integrate hospital and community-based care.
+In Canada less separation exists between physicians and hospitals because specialists are paid FFS and work both in community-based practice and hospitals. Hospitals are largely private nonprofit institutions with their own governing boards, but
+they are almost entirely publicly financed and subject to tight budget constraints.
+Most community-based physicians must refer their patients requiring diagnostic procedures and testing, as well as more specialized care, to local hospitals, which can lead
+to extended waiting times for elective procedures and problems in ensuring optimal
+coordination between hospital specialists and community-based providers.
+France also faces problems with the coordination of care between hospitals and
+community-based providers. There is inadequate communication between full-time,
+salaried physicians in public hospitals and solo physicians working in private practice.
+Although GPs have informal referral networks to specialists and public hospitals, no
+formal institutional relationships exist to ensure continuity of medical care, disease
+prevention and health promotion services, posthospital follow-up care, or systematic
+linkages and referral patterns among primary-, secondary-, and tertiary-level services. Schoen et al. (2012) document that the French health care system is characterized by poor hospital discharge planning and a lack of coordination among medical
+providers.
+In China, before 1978 the health care delivery system in rural areas was organized
+by communes, which provided housing, education, and social services, as well as basic
+medical care. An important feature of the communes’ Cooperative Medical System
+was the staff of paraprofessionals known as “barefoot doctors”’ (Rosenthal &amp; Greiner,
+1982). Most of the barefoot doctors were young peasants who received a few months
+of training and offered basic primary and preventive care, including health education. Copyright Springer Publishing Company, LLC 62 Part I. Health Policy If the needs of patients were more complex, the barefoot doctors would refer them
+to physicians at the commune health centers or, if necessary, to the closest hospital.
+In urban areas, the health care delivery system relied heavily on so-called first-level
+hospitals, community clinics with a modest inpatient capacity, to provide ambulatory
+care.
+With the introduction of market mechanisms in the health sector after 1978, the
+government ended its barefoot doctor program in rural areas, leaving the population
+in rural China without adequate access to health care services. It also reduced its subsidies to state-owned first-level hospitals; forced to become more self-reliant, these
+hospitals withdrew public health and primary health care services. Some first-level
+hospitals went bankrupt, and those that survived turned to profitable medical services
+rather than emphasize primary care and prevention. WORKFORCE AND INFORMATION TECHNOLOGY
+Primary care vs. specialty care balance. In most OECD health care systems, at least
+half of physicians are in primary care. The United States stands out, in contrast,
+because about 70% of physicians are specialists, and only about 30% are in primary
+care. The situation in China is far more dramatic. Only 57% of cities in China had a
+community-based primary care organization, and more than 40% of the population
+reports that it does not have convenient access to a primary care center (Wang et al.,
+2011). In addition, most general practitioners lack additional training after receiving
+their undergraduate medical education.
+Primary care is important because systems with a higher concentration of primary
+care practitioners improve coordination and continuity of care. Access to an effective
+system of primary care appears to result in higher life expectancy projection at birth,
+lower infant mortality, lower mortality from all causes, lower disease-specific mortality, and higher self-reported health status (Starfield, Shi, &amp; Macinko, 2005).
+Workforce shortages/surpluses. Concerns about the adequacy of primary care in
+the United States are reinforced by discussions about the adequacy of the health and
+social care workforce in the face of rapid population aging (Carrier, Yee, &amp; Stark, 2011).
+Increases in Alzheimer’s disease and other forms of dementia in particular have raised
+concerns about the extent to which the health and long-term care systems will have a
+sufficient number of physicians, nurses, and other medical professionals to address the
+needs of an aging society (Warshaw &amp; Bragg, 2014).
+Although a shortage of clinicians, particularly in primary care, is the major concern in the United States, France, and China, some countries in Europe, particularly
+England, now wonder whether they may have too many doctors and nurses. Before
+the global economic crisis began in 2008, many OECD countries adopted policies
+designed to increase their supply of medical professionals. After the economic slowdown, many countries expressed concern about an “oversupply” of some health care
+workers (Ono, Lafortune, &amp; Schoenstein, 2013).
+Starting in 2000, for example, the English National Health Service adopted a
+workforce redesign initiative to increase the number of doctors and nurses in the system, expand the roles of existing professionals, and redistribute responsibilities to rely
+more on teams of health care professionals. As a result, there is now concern that
+the country may have too many hospital specialists, but there are persistent concerns
+that it still does not have a large enough supply of well-trained social care workers,
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 63 particularly for providing home care to older patients (Bohmer &amp; Imison, 2013). Similarly, a recent assessment of health care needs in Ontario, Canada, concluded that
+there will be an aggregate surplus of GPs and specialists in 20 years, even though some
+specialties and areas may experience shortages (Singh et al., 2010).
+The push for electronic medical records and other forms of health care IT. Throughout the world, policymakers are searching for ways to reduce health care spending while
+improving the quality of care. The use of electronic health records and other forms of
+health information technology (HIT) are often touted as solutions to these problems.
+Harvey Fineberg (2012), the president of the Institute of Medicine, argues that over the
+long term HIT will improve the quality and efficiency of the health care system. Marmor
+and Oberlander (2012, p. 1217) dismiss the focus on HIT as a “fad” and suggest that
+the desire to find a “big fix” to the problems of cost and quality has led policy makers to
+embrace technical and managerial solutions, including the adoption of HIT, along with
+various forms of managed care, health planning, and payment reforms designed to align
+the incentives of providers and patients with public health goals.
+This argument supports James Morone’s (1993) thesis that the United States tends
+to search for a “painless prescription” to the major challenges in health care. Indeed,
+comparative analysis suggests that such technical solutions to the problems of cost
+and quality as HIT have had little effect on cost or quality in health care and that the
+United States should focus on more important structural features of other health care
+systems, such as global budgets, fee schedules, systemwide payment rules, and concentrated purchasing power.
+Advocates of HIT argue that newer developments in the use of so-called big data
+are more likely to transform medical practice because of their capacity to link information among many institutions within a health care system. They also argue that the
+United States has never adopted HIT on a widespread basis, so the failure of previous
+efforts to improve quality or lower costs is not sufficient evidence that HIT cannot
+contribute to these goals in the future.
+It seems plausible to suggest that HIT may be a valuable tool for addressing costs
+and quality in health care, but its value surely depends on the policy context in which
+it is used. For England, Canada, and France, HIT may further enhance the efficiency of
+resource allocation by providing administrators, providers, and patients with access to
+better information. In the United States, however, the effect of HIT within the context
+of a fragmented, open-ended financing system may be far more limited. Viewed from
+this perspective, it is easier to understand the arguments of those who remain skeptical of HIT’s importance. HEALTH SYSTEM PERFORMANCE
+Policymakers and researchers often want to compare the performance of different
+systems and identify lessons for health policy. Although these efforts have generated
+important information, they have often succumbed to the temptation of devising a
+composite indicator to rank health care systems against one another (Oliver, 2012).
+This practice encourages lavish attention from the media on the search for the best
+health care system, the new holy grail of performance assessments. Unfortunately, such
+an approach lacks any effort to understand, assess, and compare health care systems
+in relation to the cultural context, values, and institutions within which performance
+indicators are embedded.
+Copyright Springer Publishing Company, LLC 64 Part I. Health Policy The study of health system performance by the World Health Organization
+(WHO) is the most prominent example of the composite indicator approach to the
+comparative analysis of health systems (WHO, 2000). WHO ranked the health systems
+of 191 member states based on weighted measures of five objectives: (a) maximizing
+population health (as calculated by disability-adjusted life expectancy, or DALE);
+(b) reducing inequalities in population health; (c) maximizing health system responsiveness; (d) reducing inequalities in responsiveness; and (e) financing health care
+equitably.
+Although controversial because of its many methodological flaws and missing
+data, the WHO report generated tremendous discussion about health system performance and the criteria that should be used to assess it (Musgrove, 2003). Some of
+the controversy generated by the report can be attributed to complaints from countries unhappy with their ranking, but prominent academics also criticized the study
+for relying on incomplete and inadequate data, as well as on questionable methods
+( Williams, 2001).
+WHO’s use of DALE as a measure of health status illustrates the problem of using
+population health status to assess the performance of health care systems. DALE
+includes causes of mortality that are amenable to health care as well as a host of social
+determinants of health. As a result, this measure is not “related directly to the health
+care system” (Nolte &amp; McKee, 2003, p. 1129). Using DALE, life expectancy at birth and
+infant mortality are inadequate measures of health system performance because the
+role of health care in improving population health is small compared with interventions aimed at social and environmental determinants.
+As Bradley and Taylor (2013) argue, one reason the United States performs so
+poorly on such indicators is because it has failed to invest sufficiently in education,
+housing, employment, and other social programs that help to produce and sustain
+good health. Between those who emphasize the decisive effect of social determinants
+of health and those who focus on access to health care, there is a middle ground: attention not only to the consequences of poor social conditions, but also to barriers in
+access to what we have called effective health care services.
+There is a vast literature that measures inequities in access to health care (see
+Chapter 2). Such studies rely either on comparisons of inputs (e.g., physicians, hospital beds) or on administrative or self-reported survey data to measure service utilization. An alternative approach attempts to capture the consequences of poor access to
+disease prevention, primary care, and specialty services—in other words, mortality
+amenable to health care (amenable mortality). Of course, few causes of death are
+entirely amenable, or not amenable to health care, and as medical therapies improve
+even more deaths may be classified as potentially avoidable. Nevertheless, based on
+an OECD study, this summary provides convincing evidence that the United States
+is not performing well in comparison to other wealthy nations (Gay, Paris, Devaux,
+&amp; de Looper, 2011).
+Crossnational analysis of trends in avoidable mortality indicate that avoidable
+deaths have declined much faster over the last three decades than other causes of
+mortality (Nolte &amp; McKee, 2012). This result lends further credence to the validity
+of avoidable mortality as an indicator for the effectiveness of public health interventions and medical care. We have used this measure to compare the health systems in
+megacities located within four of the countries we highlight in this chapter: London,
+New York, Paris, and Shanghai (Gusmano, Weisz, &amp; Rodwin, 2009).
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 65 Through accountable care organizations (ACOs) in the United States (see
+Chapter 11) and various forms of disease management and integrated service delivery
+proposals in other countries, health care professionals are being encouraged to think
+about population, as well as individual, health. The effort to shift health systems in this
+direction is a positive development, but if we hope to understand the performance of
+health care systems and the relationship between health care inputs and health outputs, it is important to select such indicators as amenable mortality, which are more
+closely related to the performance of these systems than are broad measures of health
+such as life expectancy and DALEs.
+The extensive criticism of WHO’s effort to evaluate health system performance has
+not discouraged other groups from taking similar approaches. The Commonwealth Fund
+has a project designed to identify high-performing health systems within the United
+States and other wealthy nations. It also draws on more dependable data than WHO’s
+for its assessments, in part because its scope is more limited and focuses on nations for
+which population, health, and health system data are more readily available. For example,
+the Commonwealth Fund supplements many of the same data sources used by WHO
+with original surveys of patients and primary care providers fielded by Harris Interactive.
+The Commonwealth Fund (2014) uses these survey results, along with a host of
+other data sources, to compare U.S. national averages on health outcomes, quality,
+access, efficiency, and equity to “benchmarks,” which represent the performance on
+these measures “achieved by top-performing groups” (Schoen, Davis, How, &amp; Schoenbaum, 2006). In some cases, the “top-performing groups” are other countries. In other
+cases, they are regions, states, or health plans within the United States. Despite the
+more reliable empirical analysis and its contribution to stimulating attention to health
+care systems abroad, this study’s use of a single national scorecard to evaluate the performance of the U.S. health system shares many of the same problems highlighted by
+WHO’s effort to rank health systems on the basis of criteria about which policymakers
+rarely agree.
+Access to services across income groups. An important dimension of health system
+performance is the extent to which a system provides access to health care services
+by income group. In contrast to the United States, countries with universal or nearuniversal coverage enjoy a relatively equitable distribution of primary care visits (Van
+Doorslaer, Masseria, &amp; the OECD Health Equity Research Group Members, 2004).
+Lower-income residents of Australia, Canada, New Zealand, and the United Kingdom, for example, are less likely to report barriers to health care than people with
+below-median incomes in the United States (Blendon et al., 2002). Comparative studies that examine hospitalizations for ambulatory care sensitive conditions (ACSC), a
+measure of access to timely and effective primary care, find that rates are much lower
+in Canada, England, France, and Germany than in the United States and inequalities
+in rates of ACSC are smaller in these countries (Billings, Anderson, &amp; Newman, 1996;
+Gusmano, Rodwin, &amp; Weisz, 2014; Roos, Walld, Uhanova, &amp; Bond, 2005).
+A concern often voiced by conservative analysts in the United States is that socalled government-run health care systems, by which they mean both NHS and NHI
+systems, “ration” care (Goodman, Musgrave, &amp; Herrick, 2004). Because such systems operate within a budget, these analysts claim, they must limit access to specialty and surgical health care services in ways that are unacceptable. This claim is
+supported by studies that compare access to certain expensive health care services
+in England and the United States (Aaron, Schwartz, &amp; Cox, 2005). Although there is
+Copyright Springer Publishing Company, LLC 66 Part I. Health Policy evidence that some expensive technologies, including revascularization and kidney
+dialysis, are used less frequently in England than in the United States (Gusmano &amp;
+Allin, 2011), this is not the case with respect to France or Germany. For example, after
+controlling for need, the use of revascularization (coronary artery bypass and angioplasty) is comparable in France, Germany, and the United States (Gusmano et al.,
+2014).
+Even among countries that provide universal coverage there are differences in
+access to specialty services by socioeconomic status. Residents of higher-income
+neighborhoods in Winnipeg, Canada, a country that strives to eliminate financial barriers to care, receive “substantially more” specialty and surgical care than lower-income
+residents of the city (Roos &amp; Mustard, 1997). In France, Germany, and England, access
+to some specialty health care services is significantly worse among residents of lowerincome neighborhoods (Gusmano, Weisz, &amp; Rodwin, 2009). Inequalities in access
+to health care are even greater in BRIC countries and developing nations. Despite
+remarkable economic growth in recent decades, for example, there are flagrant disparities in access to health care within China.
+Cost. As was evident during the debates over the ACA, there is a widely shared
+belief among American policymakers that a national program providing for universal entitlement to health care in the United States would result in runaway costs. In
+response to this presumption, nations that entitle all of their residents to a high level
+of medical care, while spending less on administration and on health care than the
+United States, are often held up as models. The Canadian health system is the most
+celebrated example. French NHI is another case in point. England’s NHS, although
+typically considered a “painful prescription” for the United States (Aaron, Schwartz,
+&amp; Cox, 2005), nevertheless ensures first-dollar coverage for basic health services to its
+entire population and, as we have seen, spends less than half as much on health care,
+as a percent of GDP, and approximately one half as much per capita as in the United
+States (Table 4.2). Huang (2011) expects that China’s total health care expenditures
+will increase rapidly over the coming decade, but its current spending, as a percent of
+GDP, is far below the OECD average.
+Stories in the media often suggest that pressures from population aging will
+render existing welfare state commitments, including the Medicare and Medicaid
+programs in the United States, unsustainable. Despite these concerns, most studies TABLE 4.2 HEALTH CARE EXPENDITURE AS A SHARE OF GDP: SELECTED COUNTRIES, 2011 Health Expenditure as a Share of GDP, 2011
+United States 17.7% France 11.6% Canada 11.2% United Kingdom 9.4% OECD Average 9.3% China 5.2% Source: Organization for Economic Co-operation and Development (2013). Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 67 conclude there is no correlation between the percentage of the older population
+(65 years and over) and health care expenditures as a percent of GDP. The United
+States, which spends more on health care than any country in the world, is among the
+OECD countries with the youngest age cohorts. In contrast, Britain, Italy, Sweden,
+Germany, and France, with older populations than the United States, spend a far
+lower percentage of GDP on health care. Even if one excludes the United States and
+examines only the European Union, there is no correlation between population aging
+and health care spending.
+Crossnational analysis of health care expenditure data indicates that, after controlling for income, age has little effect on national health care expenditures. Proximity to death, not age, leads to an increase in health spending (Moon, 1996). An
+analysis of health spending on older people in Switzerland found that expenditures
+are concentrated in the last few months of life (Zweifel, Felder, &amp; Meiers, 1999).
+Although the OECD projects that “age-related spending for the average country
+will rise by around 6 to 7 percentage points of GDP between 2000 and 2050,” they
+acknowledge that “part of this pressure is a result of cost pressures from advances
+in medical technologies, rather than ageing per se” (Australian Department of the
+Treasury, 2007).
+Price, volume, and technology diffusion are the most important factors that drive
+health care costs; as noted earlier, however, high U.S. prices explain why the U.S.
+health care system is so expensive relative to other nations (Anderson et al., 2006).
+Although Americans spend more than any other nation, health service use in the
+United States is actually below the median for the OECD on most measures. A study
+for the McKinsey Global Institute (Angrisano, Farrell, Kocher, Laboissiere, &amp; Parker,
+2007), based on four diseases, provides further support for the role of prices in driving up U.S. health care costs. The study found that in 1990, Americans spent about
+66% more per capita on health care than Germans but received 15% fewer real health
+care resources.
+In addition to understanding the factors that drive health care spending, it
+is important to confront the question: How much spending on health care is too
+much? Most health economists argue that there is no right amount of money to
+spend on health care. Cutler (2007) argues that we should focus less on the level of
+health care expenditure and pay greater attention to whether the expenditures generate more benefits than costs. However, efforts to adopt explicit economic evaluation of health technology provoked controversy in the United States. The ACA
+forbids federal government agencies from using cost as a criterion for making coverage decisions. Among the countries compared in this chapter, France, Canada,
+and England, to varying degrees, all use economic evaluations of health technology
+to make coverage decisions. In France, economic evaluations of new drugs are recommended but not required (Sorenson, 2009). In Canada, these efforts are more
+decentralized than in England, and “only a handful” of technologies are subject to
+cost-effectiveness analysis (Menon &amp; Stafinski, 2009). In England, NICE focuses on
+new technologies only and is reputed to be the leading health technology assessment agency worldwide.
+NICE, established in 1999 in response to growing concerns about variations in
+the use of new technology, is supposed to meet three primary objectives: (a) to reduce
+unwarranted variation in prescribing patterns across England and Wales, principally through setting practice guidelines; (b) to encourage the diffusion and uptake
+Copyright Springer Publishing Company, LLC 68 Part I. Health Policy of effective health technologies; and (c) to ensure value for money for NHS investment by assessing the cost effectiveness of selected interventions. Record increases
+in NHS expenditures throughout the decade following 2000 were linked to meeting
+these objectives, particularly in terms of directing spending to facilitate widespread
+and uniform access to the most cost-effective treatments.
+NICE prides itself on its transparency, methodological rigor, stakeholder inclusiveness, consistency, independence from government, and timeliness, all of which
+appear necessary to secure the legitimacy and effectiveness of its recommendations.
+Since 2003, it has been mandatory for local NHS purchasers and providers to act on
+all positive recommendations on technology appraisals (i.e., recommendations that
+specific health care interventions be made available in the NHS) within 3 months of
+their publication.
+NICE arrives at conclusions about whether interventions are therapeutically
+beneficial and cost-effective compared with other relevant alternatives by reviewing a range of available evidence, assembled and synthesized by a publicly funded
+network of academic institutions. The role of social values in the appraisal process
+is increasingly apparent as NICE reviews complex cases, for instance, on whether
+select end-of-life cancer drugs be made available to NHS patients despite their offering insufficient value for money with respect to conventionally accepted thresholds
+of cost-effectiveness.
+There is some evidence that widespread adoption of NICE recommendations for
+specific technologies, particularly cancer drugs and the use of varenicline for smoking
+cessation, has reduced geographic variations in access to the technologies (Chalkidou,
+2009). Also, there is evidence that NICE guidance has increased costs to the NHS,
+which is not surprising because most cost-effective interventions are more expensive
+than the alternatives. This does not bode well for those in the United States who hope
+that economic evaluation of health technology will contain the growth of health care
+costs, particularly if assessment efforts are disproportionately focused on new, expensive technologies. Chalkidou (2009) estimates that since its creation, NICE’s decisions
+have cost more than £1.5 billion a year. In this context, it should be noted that cost
+containment was never one of NICE’s explicit objectives.
+Quality. The focus on quality is a relatively recent phenomenon. For many years,
+the primary concern of most policymakers, particularly in developed countries, was
+on overcoming financial barriers to the health care system. In 2002, the OECD created
+the Health Care Quality Indicators (HCQI) project to develop and implement a set of
+international indicators. The project includes representatives from 23 of the 30 OECD
+nations, as well as a number of international partners, including the Commonwealth
+Fund, the Nordic Council of Ministers Quality Project, and the International Society
+for Quality in Health Care (ISQua). The project team identified five priority areas for
+monitoring quality: (a) cardiac care, (b) diabetes mellitus, (c) mental health, (d) patient
+safety, and (e) primary care and prevention/health promotion. The OECD secretariat
+asked participating countries to identify expert panelists to review potential indicators
+(Mattke, Epstein, &amp; Leatherman, 2006). The panels were charged with reviewing existing indicators rather than developing entirely new measures. They used a consensus
+process and selected 86 indicators on the basis of relevance—including the extent to
+which the health system can influence the indicator—scientific soundness, and feasibility. Not surprisingly, the project has identified significant variation in quality as
+measured by these indicators (OECD, 2010).
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 69 Even in countries with relatively well-developed health data systems, it
+is often difﬁcult to link data with unique patient identiﬁers in ways that
+allow researchers and policymakers to understand quality of care across
+different episodes of care and different providers. Some quality indicators, such as leaving a foreign body inside patients during surgery, follow directly from the literature on medical errors that can be influenced by a
+health system. The relationships between health system quality and other indicators,
+however, are controversial. For example, higher rates of 5-year survival among patients
+diagnosed with breast or cervical cancer may reflect better access to high-quality cancer
+care. It is possible, however, that these outcomes may reflect more aggressive efforts
+to diagnose patients with cancer and have little to do with the quality of care patients
+receive. Beyond these conceptual issues, countries continue to struggle with a lack of
+relevant data for quality monitoring. Even in countries with relatively well-developed
+health data systems, it is often difficult to link data with unique patient identifiers in
+ways that allow researchers and policymakers to understand quality of care across different episodes of care and different providers (OECD, 2010).
+In 2010, the United Kingdom’s coalition government published a white paper
+entitled Equity and Excellence: Liberating the NHS, which called for the measurement of health outcomes based on a number of specific indicators. To achieve this
+goal, England has developed the NHS Outcomes Framework (Secretary of State for
+Health, 2014) with indicators that will be used to evaluate local health care arrangements across five different domains: (a) preventing people from dying prematurely;
+(b) enhancing the quality of life for people with long-term conditions; (c) helping people to recover from episodes of ill health or after injury; (d) ensuring that people have
+a positive experience of care; and (e) treating and caring for people in a safe environment and protecting them from avoidable harm.
+In France the Haute Autorité de Santé (HAS), or National Authority for Health,
+was established in 2004 as an independent public organization to promote quality
+of health services through accreditation, certification, and development of practice
+guidelines. Today, HAS leads the European Network for Patient Safety (EUNetPaS),
+which has developed a common agenda to promote patient safety. After a contaminated blood scandal in the early 1990s, the French government established new institutions to conduct disease surveillance and protect the population from unsafe foods,
+unsafe drugs, and unsafe blood. In addition, France’s Ministry of Health recently initiated a small number of aggressive safety campaigns with strong patient involvement,
+such as one supported by TV spots to improve the use of antibiotics in preventing the
+appearance of resistant bacteria. Based on a risk-scoring system for surgical wound
+infections, national prevalence rates of methicillin-resistant Staphylococcus aureus
+(MRSA) in France declined from 2001 (33%) to 2006 (27%). These results are impressive in comparison with other European countries and the United States, where MRSA
+infections have increased (Degos &amp; Rodwin, 2011).
+In 1994, the Canadian government established the Canadian Institute for Health
+Information (CIHI) to improve its capacity to assess the health care system and to identify standards for health system performance. CIHI maintains 27 databases and clinical
+Copyright Springer Publishing Company, LLC 70 Part I. Health Policy registries. The agency receives funding from the federal (80%) and provincial (20%) governments (Marchildon, 2013). In 2004, the federal government adopted a 10-year plan
+to strengthen health care. The plan increased federal health transfers to the provinces
+by 6%, and the provinces were supposed to place greater emphasis on reducing wait
+times and improving quality (Allin, 2012). Some of these funds have been used to track
+and reduce wait times. The federal government has also encouraged the use of health
+technology assessment, clinical guidelines, and best practices to enhance patient safety.
+Critics argue that despite the increase in attention to quality in individual provinces,
+Canada lacks a “guiding framework that supports” quality improvement in primary care
+(Sibbald, McPherson, &amp; Kothari, 2013, p. 2).
+In China, the issue of quality is also central to recent policy debates, but their starting point is radically different. When the Chinese government reduced its subsidies
+for health care in the late 1970s, health care organizations and providers often turned
+to pharmaceutical companies to make up for these lost revenues. Rather than focus on
+providing primary and preventive care, for example, many first-level hospitals focused
+on selling drugs to patients (Wang et al., 2011). As a result, these institutions developed a reputation for poor quality, and patients now crowd into larger hospitals and
+academic medical centers, creating overcrowding problems. Part of the motivation for
+expanding health insurance in China is to improve the quality of care across the entire
+health care system (Wang et al., 2011).
+Criteria used to evaluate the performance of health care systems—such as access
+to, cost of, and quality of health care—are often called the “three-legged stool” of
+health policy. Until recently, however, quality did not receive a great deal of attention. Since the 1970s, researchers, policymakers, and patients have been demanding
+better information about quality. In the late 1990s, the U.S. Institute of Medicine led
+the world in calling attention to the importance of this issue, based on a report that
+uncovered disturbing evidence of problems with safety and quality in the United States
+(IOM, 1999). In contrast, the SARS epidemic embarrassed the Chinese government
+and sparked efforts to improve access to and the quality of care. Finding solutions to
+such problems has been a challenge because stakeholders cling to existing practices
+and technologies, data limitations make it difficult to measure the quality of care, and
+fundamental disagreements remain about the meaning of quality and how to measure
+value for money in health care. ■ Lessons
+Based on the experience of NHI and NHS systems in the countries we have examined,
+we would highlight four lessons for policymakers in the United States:
+■ ■ ■ ■ Achieving the goal of universal health coverage requires legislation to make such
+coverage compulsory.
+Financing broader insurance coverage in the United States—beyond Medicare and
+Medicaid—requires increasing government subsidies based on ability-to-pay criteria.
+Health care systems with universal coverage rely increasingly on economic evaluation of health technology as a criterion for making coverage decisions.
+Containing health care costs has not been achieved without greater reliance than in
+the United States on price regulation and systemwide budget targets.
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 71 The ACA represents the most significant health care reforms since Medicare and
+Medicaid in 1965, because it is likely to increase significantly the share of the population with health insurance coverage and redistribute the burden of health care financing from those who are wealthier, younger, and healthier toward those who are poorer,
+older, and sicker (see Chapter 3). We would argue that this legislation draws heavily
+on the first two lessons of comparative experience (the mandate and the move toward
+ability-to-pay criteria for financing health care), less so on the third (economic evaluation of health technology), and ignores the fourth (greater price regulation and budget
+targets). This will bring the United States closer to other wealthy nations in terms of
+population coverage. Yet the U.S. health care system continues to present some striking contrasts to most other wealthy nations. It remains a patchwork system characterized by a complex combination of institutions that include an enclave of socialized
+medicine such as the VHA, a social insurance program (Medicare), and social welfare
+programs (Medicaid and CHIP); tax-subsidized employer-based private insurance for
+about one half of the population; and heavy reliance on out-of-pocket payment for the
+population that remains uninsured, similar to the situation in China, India, and most
+developing nations.
+The United States has the highest per capita expenditures; the highest salaries for
+physicians and other professionals making up the health care workforce; and the highest aggregate prices for hospitals, physicians’ services, and pharmaceuticals. Despite
+our drive to innovate and invest in the latest medical technologies, access to hightechnology services, as well as to basic primary care services, is highly inequitable
+compared with other OECD nations—but not with China, which faces not only the
+usual inequities among populations of different income and educational levels, but
+also massive inequities among its urban and rural residents, and, within cities, among
+its registered and migrant populations.
+Another way in which the U.S. health care system differs from that of wealthy
+OECD nations concerns the vast range of health insurance products we offer to our
+population, including the option (following the ACA) of not purchasing health insurance, albeit with a financial penalty. Despite the emphasis on choice of insurer many
+people find themselves confined to obtaining health care within restricted provider
+networks outside of which payment for services often becomes unaffordable. There
+is no parallel to this problem in wealthy OECD nations such as England, Canada, and
+France. In China, choice of too many insurance products is not the problem. The situation there is far worse than in the United States because a large part of the urban
+migrant population is typically excluded from health insurance coverage. The problem of internal migrants in China is substantial, but not surprising, for a system that
+spends only 3.2% of its GDP on health care and has only recently set itself the goal of
+providing universal coverage. ■ Discussion Questions
+1. What are some reasons for studying health care systems abroad?
+2. How do NHI and NHS systems compare with the health care system in the United States?
+3. How do most countries with similar levels of per capita income differ from and resemble the United States with respect to cost, quality, and access to health care?
+Copyright Springer Publishing Company, LLC 72 Part I. Health Policy
+4. What can the United States learn from other OECD countries about how to extend health coverage while containing health care expenditures?
+5. How can health system performance be measured? Compare the approaches
+adopted by WHO and the Commonwealth Fund.
+6. How are the problems and opportunities different for China than for the United
+States and other OECD countries? CASE STUDY
+You are an employee of a think tank in Washington, DC. The director has been asked
+to testify before a congressional committee on the following question: In reforming the
+ACA, what lessons should the United States learn from relevant experience abroad?
+Your job is to write a memorandum that will help the director answer this question. In
+writing this memo, you should address the following questions:
+1. How can learning from abroad help policymakers engage in a process of selfexamination of health policy at home?
+2. What is the difference between NHS and NHI systems?
+3. What should members of Congress know about China’s problems and aspirations
+in health policy?
+4. What lessons from abroad would be most relevant in reforming the ACA? ■ References
+Aaron, H., Schwartz, W., &amp; Cox, M. (2005). Can we say no? The challenge of rationing
+health care. Washington, DC: Brookings Institution Press.
+Allin, S. (2012). The Canadian health care system, 2012. In S. Thomson, R. Osborn,
+D. Squires, &amp; M. Jun (Eds.), International profiles of health care systems, 2012
+(pp. 19–25). New York, NY: The Commonwealth Fund.
+Anderson, G. F., Frogner, B. K., Johns, R. A., &amp; Reinhardt, U. E. (2006). Health care spending
+and use of information technology in OECD countries. Health Affairs, 25(1), 819–831.
+Angrisano, C., Farrell, D., Kocher, B., Laboissiere, M., &amp; Parker, S. (2007, January).
+Accounting for the cost of health care in the United States (Report). San Francisco,
+CA: McKinsey Global Institute. Retrieved from http://www.mckinsey.com/insights/
+health_systems_and_services/accounting_for_the_cost_of_health_care_in_the_
+united_states
+Australian Department of the Treasury. (2007). Intergenerational Report. http://archive.
+treasury.gov.au/documents/1239/PDF/IGR_2007_final_report.pdf. Accessed on
+January 23, 2015.
+Billings, J., Anderson, G. M., &amp; Newman, L. S. (1996). Recent findings on preventable
+hospitalizations. Health Affairs, 15(3), 239–249.
+Blendon, R., Benson, J. M., &amp; Brulé, A. (2012). Understanding health care in the 2012
+election [Special report]. New England Journal of Medicine, 367, 1658–1661.
+doi:10.1056/NEJMsr1211472
+Blendon, R., Schoen, C., DesRoches, C. M., Osborn, R., Scoles, K. L., &amp; Zapert, K. (2002).
+Inequities in health care: A five-country survey. Health Affairs, 21(3), 182–191.
+Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 73
+Blumenthal, D., &amp; Hsiao, W. (2005). Privatization and its discontents—The evolving
+Chinese health care system. New England Journal of Medicine, 353(11), 1165–1170.
+Bohmer, R. M. J., &amp; Imison, C. (2013). Lessons from England’s health care workforce
+redesign: No quick fixes. Health Affairs, 32(11), 2025–2031.
+Bradley, E. H., &amp; Taylor, L. A. (2013). The American health care paradox: Why spending
+more is getting us less. New York, NY: Public Affairs.
+Carrier, E., Yee, T., &amp; Stark, L. B. (2011). Matching supply to demand: Address the
+U.S. primary care workforce shortage (Policy Analysis No. 7). Washington, DC:
+National Institute for Health Care Reform. Retrieved from www.nihcr.org/PCP_
+Workforce
+Chalkidou, K. (2009). Comparative effectiveness review within the U.K.’s National Institute for Health and Clinical Excellence. New York, NY: The Commonwealth Fund.
+Commonwealth Fund. (2014). Retrieved from http://www.commonwealthfund.org/
+topics/current-issues/international-surveys
+Cutler, D. M. (2007). The lifetime costs and benefits of medical technology. Journal of
+Health Economics, 26(6), 1081–1100.
+de Kervasdoué, J., Kimberly, J., &amp; Rodwin, V. G. (1984). The end of an illusion: The future of
+health policy in western industrialized nations. Berkeley, CA: University of California
+Press.
+Degos, L., &amp; Rodwin, V. (2011). Two faces of patient safety and care quality: A FrancoAmerican comparison. Health Economics, Policy and Law, 6(3), 287–294.
+doi: 10.1017/S1744133111000107
+Fabre, G. (2013). The lion’s share: What’s behind China’s economic slowdown (Working
+paper). Fondation Maison des sciences de l’homme, 53. Retrieved from http://halshs.
+archives-ouvertes.fr/halshs-00874077
+Fineberg, H. (2012). A successful and sustainable health system—How to get there from
+here [Shattuck lecture]. New England Journal of Medicine, 366(11), 1020–1027.
+Gay, J. G., Paris, V., Devaux, M., &amp; de Looper, M. (2011). Mortality amenable to health
+care in 31 OECD countries: Estimates and methodological issues (OECD Health
+Working Papers No. 55). Paris: OECD Publishing. doi:10.1787/18152015
+Goodman, J., Musgrave, G., &amp; Herrick, D. (2004). Lives at risk: Single-payer national
+health insurance around the world. Oxford: Rowman &amp; Littlefield.
+Gusmano, M. K., &amp; Allin, S. (2011). Health care for older persons in England and the
+United States: A contrast of systems and values. Journal of Health Politics, Policy and
+Law, 36(1), 89–118.
+Gusmano, M. K., Rodwin, V. G., &amp; Weisz, D. (2014). Beyond “US” and “them”: Access
+dimensions of health system performance in the U.S., France, Germany, and
+England. International Journal of Health Services, 44(3), 547–559.
+Gusmano, M. K., Weisz, D., &amp; Rodwin, V. G. (2009). Achieving horizontal equity: Must
+we have a single-payer health care system? Journal of Health Politics, Policy and Law,
+34(4), 617–633.
+Hacker, J. (2006). The great risk shift: The new economic insecurity and the decline of the
+American dream. New York, NY: Oxford University Press.
+Health Force Ontario. (2014). Family practice compensation models [Web page]. Retrieved
+from http://www.healthforceontario.ca/en/Home/Physicians/Training_%7C_Practising_Outside_Ontario/Physician_Roles/Family_Practice_Models/Family_Practice_Compensation_Models
+Hipgravel, D., Guao, S., Mu, Y., Guo, Y., Yan, F., Scherpbier, R., &amp; Brixi, H. (2012).
+Chinese-Style decentralization and health system reform. PLOS Medicine, 9(11), 1–4.
+Huang, Y. (2011, November 1). China’s health costs outstrip GDP growth. The New York
+Times. Retrieved from http://www.nytimes.com/roomfordebate/2011/11/01/ischina-facing-a-health-care-crisis/chinas-health-costs-outstrip-gdp-growth Copyright Springer Publishing Company, LLC 74 Part I. Health Policy
+Institute of Medicine (IOM). (1999). To Err is Human: Building a Safer Health Care
+System. Washington, DC: National Academy Press.
+Jian, W., Chan, K. Y., Reidpath, D. D., &amp; Xu, L. (2010). China’s rural-urban care gap shrank
+for chronic disease patients, but inequities persist. Health Affairs, 29(12), 2189–2196.
+Klein, R. (1997). Learning from others: shall the last be the first? Journal of Health Politics,
+Policy and Law, 22(5), 1267–1278.
+Klein, R. (2013). The new politics of the NHS (7th ed.). London: Radcliffe.
+Marchildon, G. P. (2013). Canada: Health system review. Health Systems in Transition,
+15(1), 1–179.
+Marmor, T., Freeman, R., &amp; Okma, K. (2005). Comparative perspectives and policy learning in the world of health care. Journal of Comparative Policy Analysis: Research and
+practice, 7(4), 331–348.
+Marmor, T., &amp; Oberlander, J. (2012). From HMOs to ACOs: The quest for the holy
+grail in U.S. health policy. Journal of General Internal Medicine, 27(9), 1215–1218.
+doi:10.1007/s11606-012-2024-6
+Mattke, S., Epstein, A. M., &amp; Leatherman, S. (2006). The OECD health care quality indicators project: History and background. International Journal for Quality in Health
+Care, 18(Suppl 1), 1–4.
+Menon, D., &amp; Stafinski, T. (2009). Health technology assessment in Canada: 20 years
+strong? Value in Health, 12(2), S14–S19.
+Moon, M. (1996). Medicare Now and in the Future. The Urban Insitute.
+Morone, J. A. (1993). The health care bureaucracy: Small changes, big consequences.
+Journal of Health Politics, Policy and Law, 18(3), 723–739.
+Musgrove, P. (2003). Judging health systems: Reflections on WHO’s methods. The Lancet,
+361, 1817–1820.
+Nolte, E., &amp; McKee, M. (2003). Measuring the health of nations: Analysis of mortality
+amenable to health care. British Medical Journal, 327, 1129–1133.
+Nolte, E., &amp; McKee, M. (2012). In amenable mortality—deaths avoidable through health
+care—progress in the US lags that of three European countries. Health Affairs, 31(9),
+2114–2122.
+Oliver, A. (2012). The folly of ranking health systems. Health Economics, Policy and Law,
+7(1), 15–17.
+Ono, T., Lafortune, G., &amp; Schoenstein, M. (2013). Health workforce planning in OECD
+countries: A review of 26 projection models from 18 countries (OECD Health Working
+Papers, No. 62). Ferney-Voltaire: OCED Publishing. doi:10.1787/5k44t787zcwb-en
+Or, Z. (2010). Activity based payment in hospitals: Evaluation. Gütersloh, Germany:
+Health Policy Monitor. Retrieved from http://hpm.org/en/Surveys/IRDES_-_
+France/15/Activity_based_payment_in_hospitals__Evaluation.html
+Organization for Economic Cooperation and Development (OECD). (2010). Improving
+value in health care: Measuring quality. Paris: OECD forum on quality of care.
+Organization for Economic Cooperation and Development (OECD). (2013). Health at a
+glance 2013: OECD indicators. Paris: OECD Publishing. doi:10.1787/19991312
+Rodwin, V. G. (1984). The health planning predicament: France, Quebec, England, and the
+United States. Berkeley, CA: University of California Press.
+Rodwin, V. G., &amp; Contributors. (2006). Universal health insurance in France: How sustainable? Essays on the French health care system. Washington, DC: Embassy of
+France. Retrieved from http://www.frenchamerican.org/sites/default/files/documents/media_reports/2006_fafreport_universalhealthinsurance.pdf
+Roos, L. L., Walld, R., Uhanova, J., &amp; Bond, R. (2005). Physician visits, hospitalizations, and
+socioeconomic status: Ambulatory care sensitive conditions in a Canadian setting.
+Health Services Research, 40(4), 1167–1185. doi:10.1111/j.1475-6773.2005.00407.x Copyright Springer Publishing Company, LLC Chapter 4. Comparative Health Systems 75
+Roos, N. P., &amp; Mustard, C. (1997). Variation in health and health care use by socioeconomic status in Winnipeg, Canada: Does the system work well? Yes and no. The
+Milbank Quarterly, 75(1), 89–111.
+Roth, L. S., &amp; Adams, P. C. (2009). Variation in physician reimbursement for endoscopy
+across Canada. Canadian Journal of Gastroenterology, 23(7), 503.
+Rosenthal, M. M., &amp; Greiner, J. R. (1982). The barefoot doctors of China: from political
+creation to professionalization. Human Organization, 41(4), 330–341.
+Schoen, C., Davis, K., How, S., &amp; Schoenbaum, S. (2006). U.S. health system performance: A national scorecard. Health Affairs, 25(6), w457–w475. doi:10.1377/hlthaff
+.25.w457
+Schoen, C., Osborn, R., Squires, D., Doty, M., Rasmussen, P., Pierson, R., &amp; Applebaum,
+S. (2012). A survey of primary care doctors in ten countries shows progress in use
+of health information technology, less in other areas. Health Affairs, 31(12), 2805–
+2816.
+Schreyögg, J., Stargardt, T., Tiemann, O., &amp; Busse, R. (2006). Methods to determine reimbursement rates for diagnosis related groups (DRG): a comparison of nine European
+countries. Health Care Management Science, 9(3), 215–223.
+Secretary of State for Health (2014). Equity and excellence: Liberating the NHS. UK
+Department of Health.
+Sibbald, S. L., McPherson, C., &amp; Kothari, A. (2013). Ontario primary care reform and
+quality improvement activities: An environmental scan. BMC Health Services
+Research, 13(209), 1–11.
+Singh, D., Lalani, H., Kralj, B., Newman, E., Goodyear, J., Hellyer, D., &amp; Tepper, J.
+(2010). Ontario population needs-based physician simulation model: Final report.
+Ontario Ministry of Health and Long-Term Care and Ontario Medical Association.
+Smith, R. D. (2006). Responding to global infectious disease outbreaks: Lessons from
+SARS on the role of risk perception, communication and management. Journal of
+Social Science and Medicine, 63, 3113–3123.
+Sorenson, C. (2009). The role of HTA in coverage and pricing decisions: A cross-country
+comparison. Euro Observer, 11(1), 1–12.
+Starfield, B., Shi, L., &amp; Macinko, J. (2005). Contribution of primary care to health systems
+and health. The Milbank Quarterly, 83(3), 457–502.
+Thomson, S., Osborn, R., Squires, D., Reed, S. J. (2012). International profiles of health
+care systems. New York, NY: The Commonwealth Fund.
+Valentine, V. (2005, November 4). Health for the masses: China’s “barefoot doctors”
+[Radio broadcast]. Washington, DC: National Public Radio. Retrieved from http://
+www.npr.org/templates/story/story.phpstoryId = 4990242
+van Doorslaer, E., &amp; Masseria, C. (2004). Income-related inequality in the use of medical
+care in 21 OECD countries (OECD Health Working Papers, 14). Paris: OCED Publishing. doi:10.1787/687501760705
+Wang, H., Gusmano, M. K., &amp; Cao, Q. (2011). Review and evaluation of community
+health organizations in China: Will the priority of new healthcare reform in China
+be a success? Health Policy, 99(1), 37–43. doi:10.1016/j.healthpol.2010.07.003
+Warshaw, G. A., &amp; Bragg, E. J. (2014). Preparing the health care workforce to care
+for adults with Alzheimer’s disease and related dementias. Health Affairs, 33(4),
+633–641.
+Williams, A. (2001). Science or marketing at WHO? A commentary on ‘World Health
+2000’. Health Economics, 10, 93–100.
+World Health Organization (WHO). World Health Report 2000. Retrieved from http://
+www.who.int/whr/2001/archives/2000/en/index.htm. Accessed January 23, 2015. Copyright Springer Publishing Company, LLC 76 Part I. Health Policy
+Yip, W. C. M., Hsiao, W., Meng, Q., Chen, W., &amp; Sun, X. (2010). Realignment of incentives for health-care providers in China. The Lancet, 375(9720), 1120–1130.
+Zweifel, P., Felder, S., &amp; Meiers, M. (1999). Ageing of population and health care expenditure: A red herring? Health Economics, 8, 485–496 Copyright Springer Publishing Company, LLC ...
+                                            <br/>
+                                                                                            <a rel="nofollow" id="link-after-text-preview"
+                                                   href="/registerForm.php?reg_only=1"
+                                                   data-ch-mixpanel-conversion-tracking="Link after text preview">View
+                                                    Full
+                                                    Document <i class="fa fa-fw fa-chevron-right"></i></a>
+                                                                                    </p>
+                                    </div>
+                                    <div id="bdp_doc-viewer-text_end" class="bdp_doc-viewer_end"></div>
+                                </div>
+                                                                                    <div class="ch_docInfo_container">
+    <ul class="ch_docInfo_bundle">
+                    <li>
+                <label>TERM</label>
+                Fall &#039;14
+            </li>
+        
+                    <li>
+                <label>PROFESSOR</label>
+                Jane Smith
+            </li>
+                
+                    <li class="ch_docTags_list">
+                <label>TAGS</label>
+                                    <span class="ch_docTagsName_text" itemprop="keywords">
+                                                                                                                        <a
+                                                                                                                                                                rel = "nofollow"
+                                                                                                        href='/lit/The-American/'> The American,                                             </a>
+                                                                                                                                                                <a
+                                                                                                                                                                rel = "nofollow"
+                                                                                                        href='/lit/The-Land/'> The Land                                            </a>
+                                                                                                                </span>
+            </li>
+                            <li>
+                <section class="ch_taggingEdit_link" data-ng-controller="IncorrectTagCtrl" data-ng-init="init({&quot;school_name&quot;:&quot;UCLA&quot;,&quot;prof_name&quot;:&quot;Jane Smith&quot;,&quot;dept_acro&quot;:&quot;GM&quot;,&quot;term_string&quot;:&quot;Fall&quot;,&quot;course_id&quot;:5507647,&quot;canonical_course_id&quot;:5507647,&quot;school_id&quot;:394,&quot;dept_id&quot;:703627,&quot;course_num&quot;:&quot;538&quot;,&quot;year&quot;:2014,&quot;term&quot;:1,&quot;prof_id&quot;:1198102,&quot;course_name&quot;:&quot;Org. Devel.&quot;,&quot;professor&quot;:{&quot;prof_pk&quot;:1198102,&quot;prof_id&quot;:1198102,&quot;school_id&quot;:394,&quot;dept_id&quot;:0,&quot;name&quot;:&quot;Jane Smith&quot;},&quot;resource_url&quot;:&quot;https:\/\/www.coursehero.com\/sitemap\/schools\/394-UCLA\/courses\/5507647-GM538\/&quot;}, 'Gusmano.Rodwintextbook_chapter.9780826125279_Chapter_04.pdf', 'notes', {&quot;lesson&quot;:&quot;Lesson Plan&quot;,&quot;notes&quot;:&quot;Notes&quot;,&quot;test_prep&quot;:&quot;Test Prep&quot;,&quot;homework&quot;:&quot;Homework Help&quot;,&quot;essay&quot;:&quot;Essay&quot;,&quot;lab&quot;:&quot;Lab Report&quot;}, '')">
+    
+            <a class="ch_docEditInfo_link" href="/registerForm.php?login_user_type=document&user_action=retag&user_action_id=16170471" rel="nofollow" data-ch-mixpanel-conversion-tracking="Edit Document Button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42" enable-background="new 0 0 42 42"><switch><g><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m12.3 38.3l-11.4 2.6 2.7-11.4 27.5-27.5c1.4-1.4 3.6-1.4 5 0l3.7 3.7c1.4 1.4 1.4 3.6 0 5l-27.5 27.6z"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m38.6 12l-8.7-8.8"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m36.1 14.5l-8.7-8.8"/><path fill="none" class="isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M 12.8,37.8 4,29.1"/></g></switch></svg>
+    <span class="ch_docEditInfo_tooltip">Click to edit the document details</span>
+    </a>
+</section>
+
+            </li>
+            </ul>
+</div>
+                            <div class="ch_docBottomActions_content">
+        <div class="ch_docsAppShare_panel">
+        <ul class="ch_docSocialShare_bundle">
+            <li><a href="" onclick="shareOnFacebook()"><img src="/assets/img/doc-landing/fb.svg" alt="Facebook Icon"/></a></li>
+            <li><a href="" onclick="shareOnTwitter()"><img src="/assets/img/doc-landing/twitter.svg" alt="Twitter Icon"/></a></li>
+            <li><a href="" onclick="shareThroughEmail()"><img src="/assets/img/doc-landing/email.svg" alt="Email Icon"/></a></li>
+            <li class="doc_shareUrl_container"><a href="#"><img src="/assets/img/doc-landing/url.svg" alt="URL Icon"/>
+            <div class="doc_shareUrl_dialog">
+                <h5>Share this link with a friend:</h5>
+                <div class="ch_referral_link_panel" ch-clipboard ch-clipboard-target="#js-referral-link" ch-clipboard-indicator="#js-referral-copied" >
+                <fieldset class="ch_referral_link_field">
+                    <label class="ch_referral_link_label"></label>
+                    <input id="js-referral-link" type="text" ng-model="referral.link">
+                    <span id="js-referral-copied" class="ch_referral_copied_text">Copied!</span>
+                </fieldset>
+                </div>
+            </div>
+            </a>
+            </li>
+
+        </ul>
+    </div>
+    
+                
+<div class="ch_flag_container">
+    <a class="ch-docLandingFlag_link isActive" href="/registerForm.php?login_user_type=document&user_action=flag&user_action_id=16170471" rel="nofollow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28.7" enable-background="new 0 0 24 28.7"><switch><g><path fill="none" class="ch_docLandingFlag_icon isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m1.1.9v26.4"/><path fill="none" class="ch_docLandingFlag_icon isActive" stroke="#0aaae7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m22.9 4c0 0-9.7 2.6-9.7-.8s-9.7 0-9.7 0v13.8c0 0 9.7-3.4 9.7 0s9.7.8 9.7.8v-13.8z"/></g></switch></svg>
+                <span class="ch_docReport_text">Report</span>
+    </a>
+</div>
+  
+
+        <link rel="stylesheet" href="https://www.coursehero.com//sym-assets/css/02c8d8b-b6ca18c.css">
+    
+    </div>
+
+<script>
+    var currentUrl = window.location.href;
+    var shareOnFacebook = function() {
+        FB.init({
+            appId   : window.facebookAppId,
+            status  : true,
+            cookie  : true,
+            oauth   : true,
+            version : 'v2.5'
+        });
+
+        FB.ui({
+            method: 'share',
+            href: currentUrl,
+        }, function(response){});
+    }
+
+    var shareOnTwitter = function() {
+        window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl));
+    }
+
+    var shareThroughEmail = function() {
+        window.open("mailto:?to=&subject=" + encodeURIComponent("Check out this awesome document from Course Hero!") + "&body=" + encodeURIComponent(currentUrl));
+    }
+
+    // Share URL on logged out/basic pages
+    $(".doc_shareUrl_container").click(function(e) {
+        $("#js-referral-link").val(currentUrl);
+        $("#js-referral-link").select();
+        document.execCommand("copy");
+        $(".doc_shareUrl_dialog").toggle();
+        e.preventDefault();
+    });
+
+
+</script>
+                                                    </main>
+
+
+                                                    <aside class="bdp_narrow_sidebar" data-ng-controller="DocLandingSidebarCtrl">
+                        
+                                
+                                                                
+                                                                
+                                                                    <div class="bdp_popularDocAside_container">
+                                                                                                                                                                                        <h4 class="ch_docs-related_section_title">Most Popular Documents for GM 538</h4>
+                                                                                                <ul id="bdp_documentsAsideNarrow_bundle"
+                                                    class="  bdp_documents_bundle ch_grid-view title-fix">
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/16562303/Walk-through-for-Problem-4-10-Using-QMpptx/" class="" data-ch-mixpanel-doc-thumb-tracking="1">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">6 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/f3/0f/f30f5326586083c7051c208ee7dc51942e4cddd4_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=f30f5326586083c7051c208ee7dc51942e4cddd4&size=180')" alt="Walk through for Problem 4-10 Using QM.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Walk through for Problem 4-10 Using QM.pptx
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Using QM
+To start
+ Open QM for Windows
+ Choose Module &gt;Forecasting
+ Then File &gt; Least
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Walk through for Problem 4-10 Using QM.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/17056106/Kovner-PPT-ch-10-11e-033015pptx/" class="" data-ch-mixpanel-doc-thumb-tracking="2">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">14 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/94/f1/94f155636c2aab75f5a1f751401302938410c27b_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=94f155636c2aab75f5a1f751401302938410c27b&size=180')" alt="Kovner PPT ch 10_11e_033015.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Kovner PPT ch 10_11e_033015.pptx
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 10:
+The Health Workforce
+Joanne Spetz and
+Susan A. Chapman
+Learning Objective
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Kovner PPT ch 10_11e_033015.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/17272733/Kovner-PPT-ch-11-11e-033015pptx/" class="" data-ch-mixpanel-doc-thumb-tracking="3">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">14 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/11/75/1175caee7d876ad579ede0c26633feaab25cbd90_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=1175caee7d876ad579ede0c26633feaab25cbd90&size=180')" alt="Kovner PPT ch 11_11e_033015.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Kovner PPT ch 11_11e_033015.pptx
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 11:
+Health Care Financing
+James R. Knickman
+Learning Objectives
+ Understand t
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Kovner PPT ch 11_11e_033015.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/15194919/GM-538-41-Organizational-Development-Unit-6-case-study-3-Discussionpptx/" class="" data-ch-mixpanel-doc-thumb-tracking="4">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">5 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/e0/f9/e0f9b46dac63ee3260f0f3294cf0509ecc78dd77_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=e0f9b46dac63ee3260f0f3294cf0509ecc78dd77&size=180')" alt="GM 538 41 Organizational Development - Unit 6 - case study 3 Discussion.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            GM 538 41 Organizational Development - Unit 6 - case study 3 Discussion.pptx
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        GM 538 41
+ORGANIZATION
+AL
+DEVELOPMENT
+Step 3:Diagnosing Data
+&amp; Feedback
+Introductions
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>GM 538 41 Organizational Development - Unit 6 - case study 3 Discussion.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/15194945/Ch8-slidesppt/" class="" data-ch-mixpanel-doc-thumb-tracking="5">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">9 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/7d/e9/7de9e3380ac45bb685c1eaf0876e40479dd97354_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=7de9e3380ac45bb685c1eaf0876e40479dd97354&size=180')" alt="Ch8_slides.ppt" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Ch8_slides.ppt
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 8: The Culture Connection:
+Hardwiring Consistent Quality Delivery
+Chapter Out
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Ch8_slides.ppt</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                                                                                        <li class="bdp_documents_list-item has-six">
+                                                                
+                                                                <div class="premier-doc-landing_docs-related_list-item">
+                                                
+    	<a href="/file/15194953/Ch2-slidesppt/" class="" data-ch-mixpanel-doc-thumb-tracking="6">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">21 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/7c/16/7c16abe16cd1a100bdaee2c89826ca365b67b2c7_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=7c16abe16cd1a100bdaee2c89826ca365b67b2c7&size=180')" alt="Ch2_slides.ppt" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Ch2_slides.ppt
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 2: Basic Concepts of Healthcare Quality
+Chapter Outline
+ Definition-Related C
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Ch2_slides.ppt</p>
+</div>		</div>
+	</a>
+
+</div>
+                                                            </li>
+                                                                                                                    
+                                                                                                    </ul>
+                                                                                                                                                                                                                                                            <a rel="nofollow" data-ng-show="showCourseDocsLink"
+                                               class="bdp-viewMore_cta"
+                                               id="view-more-related"
+                                               href="/sitemap/schools/394-UCLA/courses/5507647-GM538/">View
+                                                more</a>
+                                                                            </div>
+                                                                                                                    <div class="bdp_satisfactionTest_wrapper">
+                                    <img src="/assets/img/doc-landing/satisfaction-seal.svg"
+                                         alt="satisfaction guaranteed seal">
+                                </div>
+                                <div class="bdp_valuePropPlaceholder_panel"
+                                     data-ng-hide="displayPlaceholder === false"></div>
+                                <div data-ng-include="'/document_sidebar_marketing/'" onload="hidePlaceholder()">
+                                </div>
+                                                        <!--googleoff: snippet-->
+                                                        <!--googleon: snippet-->
+
+                                                <div class="ch_appDownload_bundle">
+                            <h4>Study on the go</h4>
+                            <ul>
+                                <li class="ch_appIcons_single"><p><span class="ch_app_icons"><i
+                                                    class="fa fa-apple fa-2x"></i></span><a
+                                                href="https://itunes.apple.com/app/apple-store/id922208952?pt=108036802&ct=doc_landing&mt=8"
+                                                rel="nofollow"
+                                                data-ch-mixpanel-conversion-tracking="Download iOS App Button">Download
+                                            the iOS app</a></p></li>
+                                <li class="ch_appIcons_single"><p><span class="ch_app_icons"><i
+                                                    class="fa fa-android fa-2x"></i></span><a
+                                                href="https://play.google.com/store/apps/details?id=com.coursehero.coursehero&referrer=utm_source%3Dcoursehero%26utm_campaign%3Ddoc_landing"
+                                                rel="nofollow"
+                                                data-ch-mixpanel-conversion-tracking="Download Android App Button">Download
+                                            the Android app</a></p></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <section class="bdp_sectionGray_container">
+                                                                                                                    <div id="bdp-related-2"
+                                 class="bdp_related_carousel_container has-six">
+                                <h4 class="ch_docs-related_section_title">Other Related Materials</h4>
+<div class="ch_docs-related_bundle ch_grid-view">
+    	<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/p13g5j7/Health-System-Models-contd-NHI-systems-Based-on-model-devised-by-Bismarck-Found/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">15 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/07/62/0762aa1bf388c9b51a3d3c247c4281e0988139a2_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=0762aa1bf388c9b51a3d3c247c4281e0988139a2&size=180')" alt="Kovner PPT ch 04_11e_033015.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Health System Models contd NHI systems Based on model devised by Bismarck Found
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 4:
+Comparative
+Health Systems
+Michael K. Gusmano and
+Victor G. Rodwin
+Learnin
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Kovner PPT ch 04_11e_033015.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+		<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/p3mcvdc/Proponents-of-the-law-had-argued-that-the-penalty-imposed-by-the-individual/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">20 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/b9/8f/b98f775e3f21f98c6c7eea8cea18518a92d08321_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=b98f775e3f21f98c6c7eea8cea18518a92d08321&size=180')" alt="Jonas and Kovner ACA Chapter Supplement.pdf" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Proponents of the law had argued that the penalty imposed by the individual
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        M
+any significant changes have occurred since the Patient Protection and Affordable C
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Jonas and Kovner ACA Chapter Supplement.pdf</p>
+</div>		</div>
+	</a>
+
+</div>
+		<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/16169200/Kovner-PPT-ch-02-11e-033015pptx/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">15 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/2f/34/2f34012e7ccaaf159ec29cba346becf86d81ff1d_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=2f34012e7ccaaf159ec29cba346becf86d81ff1d&size=180')" alt="Kovner PPT ch 02_11e_033015.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Kovner PPT ch 02_11e_033015.pptx
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 2:
+A Visual Overview of
+Health Care Delivery in the
+United States
+Catherine K
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Kovner PPT ch 02_11e_033015.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+		<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/p182lju/providing-affordable-care-to-all-then-our-health-care-policy-would-be-in-much/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">7 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/9d/0d/9d0d19f11a6eacd68101ceb9c95a2d15de398078_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=9d0d19f11a6eacd68101ceb9c95a2d15de398078&size=180')" alt="Module 3 Assignment.docx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            providing affordable care to all then our health care policy would be in much
+        </li>
+        <li class="ch_product_document_meta-school">
+                    Franklin Pierce
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 594
+                            -
+                            Fall 2016
+            </li>
+    <li class="ch_product_document_excerpt">
+        Health Care Memorandum
+1
+Health Care Memorandum
+Shiloh Flint
+Franklin Pierce Universi
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Module 3 Assignment.docx</p>
+</div>		</div>
+	</a>
+
+</div>
+		<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/p1v9v1t/Employer-mandate-strategy-failed-Focus-on-coverage-for-children-SCHIP-in-1997/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">14 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/0a/d5/0ad5e82c7c5ca68333f0b7a2aa19318c76860658_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=0ad5e82c7c5ca68333f0b7a2aa19318c76860658&size=180')" alt="Kovner PPT ch 03_11e_033015.pptx" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            Employer mandate strategy failed Focus on coverage for children SCHIP in 1997
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 3:
+Government and Health Insurance: The Policy
+Process
+Michael S. Sparer and
+
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Kovner PPT ch 03_11e_033015.pptx</p>
+</div>		</div>
+	</a>
+
+</div>
+		<div class="premier-doc-landing_docs-related_list-item">
+                                                    
+                    
+    	<a href="/file/p45qn2e/reduce-the-cost-of-quality-healthcare-for-individuals-families-employers-and/" class="ch_product_document" data-ch-mixpanel-doc-thumb-tracking="">
+		<div class="ch_product_document">
+			<div class="ch_product_document_thumbnail">
+            <span class="ch_product_document_count">12 pages</span>
+        <img class="ch_product_document_thumbnail-image"  src="/thumb/f6/83/f6833e509ee72ef7d5bdf5bda59d0e6f54661635_180.jpg" onerror="image_error_backup(this, '/view_thumbnail.php?filehash=f6833e509ee72ef7d5bdf5bda59d0e6f54661635&size=180')" alt="Ch18_slides.ppt" />
+    </div>
+<ul class="ch_product_document_details">
+            <li class="ch_product_document_title">
+            reduce the cost of quality healthcare for individuals families employers and
+        </li>
+        <li class="ch_product_document_meta-school">
+                    UCLA
+            </li>
+    <li class="ch_product_document_meta-course-name">
+            </li>
+    <li class="ch_product_document_meta-course">
+                    GM 538
+                            -
+                            Fall 2014
+            </li>
+    <li class="ch_product_document_excerpt">
+        Chapter 18: The Quality Improvement Landscape
+Chapter Outline
+Quality Improvement Org
+    </li>
+        </ul>
+<div class="ch_product_document_footer">
+    <p>Ch18_slides.ppt</p>
+</div>		</div>
+	</a>
+
+</div>
+	</div>
+
+
+
+
+
+                            </div>
+                                                            </section>
+
+            </div>
+        </div>
+
+        
+        
+        <div data-ng-include="'/document_marketing/0/'">
+        </div>
+    </div>
+	</div>
+
+	    <div id="ch-footer" class="ch-wrapper">
+            <div class="ch-trust-seals_wrapper">
+            <div class="ch-trust-seals_container">
+                <a target="_blank"
+                   href="javascript:window.open('https://trustsealinfo.websecurity.norton.com/splash?form_file=fdf/splash.fdf&dn=www.coursehero.com&lang=en', 'SymantecSeal', 'location=yes,status=yes,resizable=yes,scrollbars=yes,width=560,height=500');"
+                   rel="nofollow"
+                   class="ch-trust-seals_verisign-icon"
+                        ></a>
+                <span class="ch-trust-seals_bbb-icon"></span>
+                <div id="fb2f890b-c797-4871-8a9b-d0350de5fd5f" class="ch-trust-seals_truste-icon">
+                    <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Course-Hero/asc?rid=fb2f890b-c797-4871-8a9b-d0350de5fd5f">
+                    </script>
+                    <a href="//privacy.truste.com/privacy-seal/CourseHero/validation?rid=a50533b3-15e2-472e-a9fc-0fcdc0471ef1"
+                       title="TRUSTe online privacy certification" target="_blank">
+                        <img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Course-Hero/seal?rid=a50533b3-15e2-472e-a9fc-0fcdc0471ef1" alt="TRUSTe online privacy certification"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="ch-footer-links_wrapper">
+                    <ul class="ch-footer-links_container" id="ch-footer-links_container">
+                <li>
+                    <h6>Company</h6>
+                    <a href="/about-us/">About Us</a>
+                    <a href="/scholarships/">Scholarships</a>
+                    <a href="/sitemap/">Sitemap</a>
+                    <a href="/standardized-tests/">Standardized Tests</a>
+                    <!--<a href="/api/intro.php">API</a>-->
+                </li>
+                <li>
+                    <h6>Get Course Hero</h6>
+                    <a href="https://itunes.apple.com/app/apple-store/id922208952?pt=108036802&ct=footer&mt=8" target="_blank">iOS</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.coursehero.coursehero&referrer=utm_source%3Dcoursehero%26utm_campaign%3Dfooter" target="_blank">Android</a>
+                    <a href="/educators/">Educators</a>
+                </li>
+                <!--<li>
+                    <h6>Resources</h6>
+                    <a href="/sitemap/">Sitemap</a>
+                </li>-->
+                <li>
+                    <h6>Careers</h6>
+                    <a href="/our-team/">Our Team</a>
+                    <a href="/jobs/">Jobs</a>
+                    <a href="/business-internship/">Internship</a>
+                </li>
+                <li>
+                    <h6>Help</h6>
+                    <a href="https://support.coursehero.com">Contact Us</a>
+                    <a href="https://support.coursehero.com">FAQ</a>
+                    <a href="/feedback.php">Feedback</a>
+                </li>
+                <li>
+                    <h6>Legal</h6>
+                    <a href="/copyright/">Copyright Policy</a>
+                    <a href="/honor-code/">Honor Code</a>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <a href="/terms-of-use/">Terms of Use</a>
+                </li>
+                <li>
+                    <h6>Connect with Us</h6>
+                    <a href="/blog/">Blog</a>
+                    <a href="https://www.facebook.com/coursehero" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/CourseHero" target="_blank">Twitter</a>
+                    <a href="https://www.linkedin.com/company/course-hero-inc." target="_blank">LinkedIn</a>
+                </li>
+            </ul>
+                <div class="ch-copyright_wrapper">
+            <div class="ch-copyright_container">
+                <p class="ch-copyright_info">
+                    Copyright © 2016. Course Hero, Inc.
+                                    </p>
+                <p class="ch-copyright_fyi">Course Hero is not sponsored or endorsed by any college or university.</p>
+            </div>
+        </div>
+    </div>
+
+            <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1389869-2']);
+    _gaq.push(['_setCustomVar', 1, 'usertype', "visitor", 2]);
+    _gaq.push(['_setCustomVar', 2, 'conversion', "false", 2]);
+        if (typeof utmx !== 'undefined' && utmx('combination') != undefined) {
+        var l = document.location, s = l.search;
+        s = s + (s.length ? '&' : '?') + 'combination=' + utmx('combination');
+        _gaq.push(['_trackPageview', l.pathname + s]);
+    } else{
+        _gaq.push(['_trackPageview']);
+    }
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+
+<script type="text/javascript">
+    
+    adroll_adv_id = "RMA4JRK3LBCRFDGPVVO45A";
+    adroll_pix_id = "4D6DGYEGP5GENH5XDDV55J";
+    (function () {
+        var oldonload = window.onload;
+        window.onload = function(){
+            __adroll_loaded=true;
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ?
+                    "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            document.body.appendChild(scr);
+            if(oldonload){oldonload()}};
+    }());
+</script>
+
+        <!-- BEGIN: Marin Software Tracking Script (Landing Page) -->
+    <script type='text/javascript'>
+        var _mTrack = _mTrack || [];
+        _mTrack.push(['trackPage']);
+
+        (function() {
+            var mClientId = '518m4q45325';
+            var mProto = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+            var mHost = 'tracker.marinsm.com';
+
+            var mt = document.createElement('script'); mt.type = 'text/javascript'; mt.async = true; mt.src = mProto + mHost + '/' + 'tracker/' + 'async/' + mClientId + '.js';
+            var fscr = document.getElementsByTagName('script')[0]; fscr.parentNode.insertBefore(mt, fscr);
+        })();
+    </script>
+    <noscript>
+        <img width="1" height="1" src="https://tracker.marinsm.com/tp?act=1&cid=518m4q45325&script=no" alt="tracker img"/>
+    </noscript>
+    <!-- END: Copyright Marin Software -->
+
+    <!-- Google Code for Remarketing Tag -->
+    <!--
+    Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+    -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 1029779469;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none; position:absolute;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1029779469/?value=0&amp;guid=ON&amp;script=0"/>
+        </div>
+    </noscript>
+
+</div>
+
+
+			    <div id="ch_askQuestionTray_wrapper" data-ng-module="qa.askAQuestion">
+                <div class="ch_askQuestionTray_tab">
+            <i class="ch_askQTrayTab_icon fa fa-comments"></i>
+            <span>Ask a homework question</span>
+            <small><i class="ch_askQTrayOnline_icon fa fa-fw fa-circle"></i> <span data-num-online-tutors>-</span> tutors are online</small>
+            <span><i class="ch_askQTrayToggle_icon fa fa-chevron-up"></i><i class="ch_askQTrayToggle_icon fa fa-chevron-down"></i></span>
+        </div>
+        <div class="ch_askQuestionTray_container">
+            <div id="dashboard-ask-question-widget">
+    <div class="follow-message-wrapper-js" style="display:none;">
+        <div class="message-box-red error follow-message-wrapper">
+            <ul class="follow-messages">
+            </ul>
+        </div>
+    </div>
+    <div id="ask-question-widget-full">
+        <div data-ask-a-question data-user-id="" data-is-basic-default="1" data-current-user-id=""> </div>
+    </div>
+</div>
+        </div>
+    </div>
+    <script src="/assets/js/vendor/jquery.waypoint.js"></script>
+    <script type="text/javascript">
+        var registerWayPoint = function(){
+            jQuery("#ch-footer").waypoint(function(direction){
+                if(direction == "up"){
+                    $("#ch_askQuestionTray_wrapper").removeClass("isNotSticky");
+                }
+                else{
+                    $("#ch_askQuestionTray_wrapper").addClass("isNotSticky");
+                }
+            }, { offset: "100%" });
+        };
+
+        var initAskQuestionTab = function(){
+            registerWayPoint();
+
+            jQuery("#ch_askQuestionTray_wrapper > .ch_askQuestionTray_tab").on("click", function() {
+                $("#ch_askQuestionTray_wrapper").toggleClass("isOpen");
+                // Mixpanel Tracking
+                if (typeof tracker !== 'undefined') {
+                    var properties = {};
+                    var toggleStatus = $("#ch_askQuestionTray_wrapper").hasClass("isOpen") ? "Open" : "Close";
+                    if (toggleStatus) {
+                        properties['Status'] = toggleStatus;
+                    }
+                    tracker.track('Toggle Sitewide Ask a Question Widget', properties);
+                }
+            });
+        };
+
+        jQuery(document).ready(function(){
+            initAskQuestionTab();
+
+            // dynamic pages need to recalculate viewport
+            window.setInterval(function(){
+                registerWayPoint();
+            }, 300);
+        });
+
+    </script>
+	
+					<script src="https://www.coursehero.com//sym-assets/js/b4ef71f-1747fac.js" type="text/javascript"></script>
+		
+							
+		<script>
+		var appId = 126130834105126;
+		</script>
+
+		<!--[if IE 9]>
+				<script src="https://www.coursehero.com//sym-assets/js/7f36ca4-579bc8b.js" type="text/javascript"></script>
+				<script>
+			$('input:not([data-ng-model]), textarea:not([data-ng-model])').placeholder();
+		</script>
+		<![endif]-->
+	
+	    <script>
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    var facebookAppId = 126130834105126;
+</script>
+
+        <script type="text/javascript" src="https://www.coursehero.com//sym-assets/js/fe8508e-46aa121.js"></script>
+    
+    <script type="text/javascript">
+        // For Mixpanel Tracking
+        var tracker = new MixpanelEventTracking();
+        tracker.super_properties['Page Name'] = 'Document - Basic';
+        var pageNum = 1;
+        var endPage = 1;
+        var openPopup = function (e) {
+            $("html").addClass("ch_popup_enabled");
+            $("#ch_basicDocPage_popup").removeClass("mfp-hide");
+
+            $.ajax({
+                url: "/api/v1/update-have-seen-account-creation-popup/",
+                type: "POST",
+                success: function () {
+                },
+                error: function () {
+                }
+            });
+        };
+
+                var course = {"school_name":"UCLA","prof_name":"Jane Smith","dept_acro":"GM","term_string":"Fall","course_id":5507647,"canonical_course_id":5507647,"school_id":394,"dept_id":703627,"course_num":"538","year":2014,"term":1,"prof_id":1198102,"course_name":"Org. Devel.","professor":{"prof_pk":1198102,"prof_id":1198102,"school_id":394,"dept_id":0,"name":"Jane Smith"},"resource_url":"https:\/\/www.coursehero.com\/sitemap\/schools\/394-UCLA\/courses\/5507647-GM538\/"};
+        
+        var closePopup = function (e) {
+            $("html").removeClass("ch_popup_enabled");
+            $("#ch_basicDocPage_popup").addClass("mfp-hide");
+        }
+
+                
+        
+        $("#view-more-related").click(function () {
+            tracker.track("View More Button Click", {"Type": "Doc"});
+        });
+
+        $("[data-ch-mixpanel-doc-thumb-tracking]").on('click', function (event) {
+            var document_number = jQuery(event.delegateTarget).attr('data-ch-mixpanel-doc-thumb-tracking');
+            if (document_number) {
+                var properties = {};
+                properties['Bucket Number'] = 0;
+                if (document_number) {
+                    properties['Document Number'] = document_number;
+                }
+                tracker.track("Most Popular Document Clicks", properties);
+            }
+        });
+
+        var courseStatsABTestData = null;
+            </script>
+
+
+        <script type="text/javascript">
+        setTimeout(function(){var a=document.createElement("script");
+            var b=document.getElementsByTagName("script")[0];
+            a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0034/4159.js?"+Math.floor(new Date().getTime()/3600000);
+            a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+        <script type="text/javascript">
+        var _kiq = _kiq || [];
+        (function(){
+            setTimeout(function(){
+                var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+                s.async = true; s.src = '//s3.amazonaws.com/ki.js/59766/dqn.js'; f.parentNode.insertBefore(s, f);
+            }, 1);
+        })();
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+    	_kiq.push(['identify', '']);
+    </script>
+
+		<script type="text/javascript">
+  var _user_id = ''; // Set to the user's ID, username, or email address, or '' if not yet known.
+  var _session_id = 'd04l3dlvs9fft464lcg3av97o2'; // Set to a unique session ID for the visitor's current browsing session.
+
+  var _sift = window._sift = window._sift || [];
+  _sift.push(['_setAccount', 'c7f42e8b35']);
+  _sift.push(['_setUserId', _user_id]);
+  _sift.push(['_setSessionId', _session_id]);
+  _sift.push(['_trackPageview']);
+
+ (function() {
+   function ls() {
+     var e = document.createElement('script');
+     e.src = 'https://cdn.siftscience.com/s.js';
+     document.body.appendChild(e);
+   }
+   if (window.attachEvent) {
+     window.attachEvent('onload', ls);
+   } else {
+     window.addEventListener('load', ls, false);
+   }
+ })();
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"404bf9505f","applicationID":"4237716","transactionName":"NVFbZUFUC0RTAEcLXQwbekRAQQpaHQdcAUcPUVdFbFkEWVYKXQU=","queueTime":0,"applicationTime":398,"atts":"GRZYEwlOGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

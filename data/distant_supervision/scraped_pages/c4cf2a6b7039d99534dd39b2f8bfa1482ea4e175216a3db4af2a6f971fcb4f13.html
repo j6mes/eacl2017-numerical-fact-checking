@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.4/handlebars.min.js"></script>
+    <script type="text/javascript" src="//lb88-ttgt.accessdomain.com/drupal/themes/historyofvaccines/js/vis.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="/themes/historyofvaccines/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="http://www.historyofvaccines.org/content/graph-us-measles-cases" />
+<link rel="alternate" hreflang="es" href="http://www.historyofvaccines.org/es/content/graph-us-measles-cases-0" />
+<link rel="canonical" href="/content/graph-us-measles-cases" />
+<link rel="shortlink" href="/node/1198" />
+<link rel="delete-form" href="/node/1198/delete" />
+<link rel="edit-form" href="/node/1198/edit" />
+<link rel="version-history" href="/node/1198/revisions" />
+<link rel="revision" href="/content/graph-us-measles-cases" />
+<link rel="devel-render" href="/devel/node/1198/render" />
+<link rel="devel-load" href="/devel/node/1198" />
+<link rel="drupal:content-translation-overview" href="/node/1198/translations" />
+<link rel="drupal:content-translation-add" href="/node/1198/translations/add" />
+<link rel="drupal:content-translation-edit" href="/node/1198/translations/edit" />
+<link rel="drupal:content-translation-delete" href="/node/1198/translations/delete" />
+
+    <title>Graph of U.S. Measles Cases | History of Vaccines</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/core/themes/stable/css/system/components/ajax-progress.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/align.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/autocomplete-loading.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/fieldgroup.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/container-inline.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/clearfix.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/details.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/hidden.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/item-list.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/js.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/nowrap.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/position-container.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/progress.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/reset-appearance.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/resize.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/sticky-header.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/tabledrag.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/tablesort.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/core/themes/stable/css/system/components/tree-child.module.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/themes/historyofvaccines/css/lib/bootstrap.min.css?ohrss1" media="all" />
+<link rel="stylesheet" href="/themes/historyofvaccines/css/main.css?ohrss1" media="all" />
+
+    
+<!--[if lte IE 8]>
+<script src="/core/assets/vendor/html5shiv/html5shiv.min.js?v=3.7.3"></script>
+<![endif]-->
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=2.1.4"></script>
+<script src="/themes/historyofvaccines/js/lib/jquery-ui.min.js?v=1.12.1"></script>
+<script src="/themes/historyofvaccines/js/lib/jquery.ui.touch-punch.min.js?v=0.2.3"></script>
+<script src="/themes/historyofvaccines/js/lib/bootstrap.min.js?v=3.3.2"></script>
+  
+    
+    
+    <style type='text/css'>
+    
+    .timeline-overview img {
+	    float:left;
+	    margin-right:20px;
+    }
+    
+    #views-exposed-form-timeline-page-1 div.checkbox.child {margin-left:20px;}
+    
+    .timeline-modal-image #body-mediaitem-switcher {
+	    margin-top:10px;
+    }
+
+
+.modal-popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+
+.modal-popup .home-modal {
+  width: 400px;
+    /* margin: 150px auto 0; */
+    background: white;
+    padding: 25px 25px 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    color:#454545;
+}
+
+.modal-popup .home-modal p {
+  font-size: 16px;
+  line-height: 25px;
+  color:#454545;
+}
+
+.modal-popup .btn-outline {
+  border-color: #303A49;
+  color:#303A49;
+}
+
+.modal-popup .btn-outline:hover {
+  border-color: #303A49;
+  color:#FFF;
+  background: #303A49;
+  font-weight: bold;
+}
+
+.modal-popup .btn-escape {
+	display: inline-block;
+    padding: 6px 18px;
+    border-width: 3px;
+    color: #26A862;
+    border-color: #26A862;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.modal-popup .btn-escape:hover {
+	border: 3px solid #fff;
+	background: #26A862;
+	color:#FFF;
+}
+
+.modal-popup:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+.modal-popup .close {
+  float: right;
+  margin-right: -40px;
+  margin-top: -40px;
+  background: white;
+  border-radius: 100px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.6);
+  padding: 6px;
+  padding-bottom: 3px;
+}
+
+.modal-popup .close a {
+  padding: 0;
+}
+
+.modal-popup .close a img {
+  width: 12px;
+  padding: 7px 6px 5px 7px;
+}
+
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1024px;
+    height: 768px;
+    background-color: black;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+#modal-content {
+	padding: 50px;
+    position: absolute;
+    width: 320px;
+    z-index: 1000;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 120px;
+    z-index: 1000;
+    display: none;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color:#454545;
+    text-align: center;
+}
+
+#modal-background.active, #modal-content.active {
+    display: block;
+}​
+    </style> 
+
+</head>
+<body  class="fade-in" data-spy="scroll" data-target="#artwork-scrollspy" data-offset="200">
+	<a href="#main-content" class="visually-hidden focusable">
+      Skip to main content
+    </a>
+    
+    <div class="header">
+	<div class="container">
+		<div class="site-header">
+			<div class="row">
+				<div class="pull-right">
+					<ul class="list-inline social-icons hidden-sm hidden-xs">
+                                                                            						<li>
+							<img src="/themes/historyofvaccines/images/share_txt.jpg" />
+						</li>
+						<li>
+							<a href="https://www.facebook.com/dialog/share?app_id=140586622674265&display=popup&href=http%3A%2F%2Fwww.historyofvaccines.org%2Fnode%2F1198%23.V3Ldw-JwCDE.facebook&picture=&title=Graph of U.S. Measles Cases%E2%80%94+A+Vaccine+History+Project+of+The+College+of+Physicians+of+Philadelphia&description=A+Vaccine+History+Project+of+The+College+of+Physicians+of+Philadelphia&redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fthankyou.html"><img src="/themes/historyofvaccines/images/facebook.svg" alt="Facebook" class="facebook" /></a>
+						</li>
+						<li>
+							<a href="https://twitter.com/intent/tweet?text=Graph of U.S. Measles Cases%E2%80%94+A+Vaccine+History+Project+of+The+College+of+Physicians+of+Philadelphia&url=http%3A%2F%2Fwww.historyofvaccines.org%2Fnode%2F1198%23.V3LdsNp47R8.twitter&related="><img src="/themes/historyofvaccines/images/twitter.svg" alt="Twitter" class="twitter" /></a>
+						</li>
+						<li>
+							<a href="https://www.google.com/bookmarks/mark?op=add&bkmk=http%3A%2F%2Fwww.historyofvaccines.org%2Fnode%2F1198%23.V3Ld1gG7aM4.google&title=Graph of U.S. Measles Cases%E2%80%94+A+Vaccine+History+Project+of+The+College+of+Physicians+of+Philadelphia&annotation="><img src="/themes/historyofvaccines/images/google.svg" alt="Google+" class="google" /></a>
+						</li>
+					</ul>
+				</div>
+				
+				
+			</div>
+			
+			<div class="row">
+			
+				<div class="pull-left">
+                  <a href="/"><img src="/themes/historyofvaccines/images/hov_text.png" /></a>
+                  <div>
+                  <a id="a_project_of" class="hidden-sm hidden-xs" href="http://www.collegeofphysicians.org/" rel="external" target="_blank" title="A Vaccine History Project of The College of Physicians of Philadelphia"><span><img src="/themes/historyofvaccines/images/an_educational_res.png" /></span></a></div>
+				</div>    
+				
+				<div class="pull-right">
+					<div class="header-search hidden-sm hidden-xs">
+						<form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8" data-drupal-form-fields="edit-keys">
+              
+	<div class="search-area">
+		<input title="Enter the terms you wish to search for." autocomplete="off" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-control" placeholder="Enter the terms you wish to search for.">
+	</div>
+
+</form>
+					</div>
+				</div>  
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	<div class="container">
+	<nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="pull-left  mobile-logo hidden-md hidden-lg">
+          	 <a href="/"><img src="/themes/historyofvaccines/images/hov_text.png" style="width:65%;" /></a>
+          </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span style="display:none;" class="glyphicon glyphicon-menu-hamburger"></span> <span class="glyphicon glyphicon-remove"></span> MENU
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav left-menu main-nav">
+               <li class=" ">
+                  <a href="/timeline" data-drupal-link-system-path="timeline">Timeline</a>
+              </li>
+          <li class=" ">
+                  <a href="/activities" data-drupal-link-system-path="activities">Activities</a>
+              </li>
+          <li class=" ">
+                  <a href="/articles" data-drupal-link-system-path="articles">Articles</a>
+              </li>
+          <li class=" ">
+                  <a href="/gallery" data-drupal-link-system-path="gallery">Gallery</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right small-links hidden-xs">
+              	<li class=" ">
+		                  <a href="/content/about" data-drupal-link-system-path="node/645">About</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/blog" data-drupal-link-system-path="blog">Blog</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/content/educators" data-drupal-link-system-path="node/643">Educators</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/content/faq" data-drupal-link-system-path="node/647">FAQ</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/glossary" data-drupal-link-system-path="glossary">Glossary</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/content/media" data-drupal-link-system-path="node/644">Media</a>
+		              </li>
+		          <li class=" ">
+		                  <a href="/content/parents" data-drupal-link-system-path="node/642">Parents</a>
+		              </li>
+              	<li>
+    				<a href="/es/content"> Español</a>
+    			</li>
+            </ul>
+            
+            
+    
+    <div class="hidden-md hidden-lg hidden-sm mobile-nav">
+    	
+    			<ul class="list-unstyled col-xs-6 clearfix" style="padding:0;">
+    				<li>
+    					<a href="/es/content">Español</a>
+    				</li>
+                    <li class=" ">
+		                  <a href="/content/about" data-drupal-link-system-path="node/645">About</a>
+		              </li>
+    		          <li class=" ">
+    		                  <a href="/blog" data-drupal-link-system-path="blog">Blog</a>
+    		              </li>
+    		          <li class=" ">
+    		                  <a href="/content/educators" data-drupal-link-system-path="node/643">Educators</a>
+    		              </li>
+    		          <li class=" ">
+    		                  <a href="/content/faq" data-drupal-link-system-path="node/647">FAQ</a>
+    		              </li>
+    		          <li class=" ">
+    		                  <a href="/glossary" data-drupal-link-system-path="glossary">Glossary</a>
+    		              </li>
+    		          <li class=" ">
+    		                  <a href="/content/media" data-drupal-link-system-path="node/644">Media</a>
+    		              </li>
+    		          <li class=" ">
+    		                  <a href="/content/parents" data-drupal-link-system-path="node/642">Parents</a>
+    		              </li>
+    			</ul>
+    			
+				<ul class="list-unstyled col-xs-6 clearfix" style="padding:0;">
+					<li class=" ">
+		                  <a href="/content/legal-and-privacy" data-drupal-link-system-path="node/1012">Legal</a>
+		              </li>
+			          <li class=" ">
+			                  <a href="/content/resources" data-drupal-link-system-path="node/1011">Resources</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/glossary" data-drupal-link-system-path="glossary">Glossary</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/credits" data-drupal-link-system-path="node/1008">Credits</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/email-sign" data-drupal-link-system-path="node/1010">E-mail Sign-up</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/donors" data-drupal-link-system-path="node/1112">Donors</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/contact" data-drupal-link-system-path="node/1007">Contact</a>
+			           </li>
+				</ul>
+    	</div>
+    </div>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+    </div>
+	
+</div>
+<main class="container">
+	<div class="main-content">
+	        
+
+    
+  <h1 class="js-quickedit-page-title"><span>Graph of U.S. Measles Cases</span>
+</h1>
+
+
+
+
+    
+<script>
+                
+    
+	
+    
+    var data = [];
+    data["999991"] = {
+        root: "999991",
+        title: "Graph of U.S. Measles Cases",
+        description: "This graph shows the number of reported measles cases per year in the United States. Actual cases were likely much higher: Alexander Langmuir estimated that about 4 million measles cases occurred in each year shortly before vaccine introduction (Langmuir AD. Medical importance of measles. Am J Dis Child 1962;103:54-56). Note the drop in cases after the introduction of the first measles vaccine in the early 1960s. Source: CDC/MMWR Summary of Notifiable Diseases, United States, 1993; CDC/MMWR Summary of Notifiable Diseases, United States, 2008.  ",
+        caption: "Measles cases in the United States by year, 1954-2008"
+    };
+    
+</script>
+
+<div class="mobile-panel mobile-filter hidden-md hidden-lg" style="width:100%;">
+
+
+	<div class="panel-group " id="accordion">
+		<div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                	<a data-toggle="collapse" data-parent="#accordion" href="#filtersList">
+                		FILTER MEDIA
+						<span class="pull-right" style="font-size:10px;">[<span class="glyphicon glyphicon-plus" style="top:2px;"></span>]</span>
+                	</a>
+                </h4>
+            </div>
+            
+            <div id="filtersList" class="panel-collapse collapse">
+            	<div class="panel-body">
+            		
+
+    
+<div class="">
+    <div class="">
+        <div>
+            <form action="/gallery" method="get" id="views-exposed-form-gallery-gallery" accept-charset="UTF-8">
+              <div class="js-form-item form-item js-form-type-select form-item-field-timeline-categories-target-id js-form-item-field-timeline-categories-target-id">
+      <label for="edit-field-timeline-categories-target-id">Categories</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="49" > Diseases &amp; Vaccines
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="50" > -Diphtheria
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="51" > -Measles
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="52" > -Polio
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="53" > -Smallpox
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="54" > -Yellow Fever
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="55" > -Others
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="56" > Pioneers
+                </label></div>
+        </div>
+<div class="js-form-item form-item js-form-type-select form-item-field-taxonomy-target-id js-form-item-field-taxonomy-target-id">
+      <label for="edit-field-taxonomy-target-id">Media Type</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-taxonomy-target-id" multiple="multiple" name="field_taxonomy_target_id[]" id="edit-field-taxonomy-target-id" size="2" class="form-select" value="36" > Image
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-taxonomy-target-id" multiple="multiple" name="field_taxonomy_target_id[]" id="edit-field-taxonomy-target-id" size="2" class="form-select" value="37" > Video
+                </label></div>
+        </div>
+<div class="js-form-item form-item js-form-type-select form-item-field-timeline-date-ranges-target-id js-form-item-field-timeline-date-ranges-target-id">
+      <label for="edit-field-timeline-date-ranges-target-id">Date Range</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="60" > Pre 1700
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="57" > 1700 - 1799
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="58" > 1800 - 1899
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="59" > 1900 - present
+                </label></div>
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-gallery" type="submit" id="edit-submit-gallery" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+            	</div>
+            </div>
+		</div>
+        
+    </div>
+
+</div>
+<div class="article-node gallery">
+	<div class="row">
+		<div class="col-md-3 hidden-sm hidden-xs">
+			<div class="sidebar">
+				<div class="sidebar-item">
+					<h5>FILTER MEDIA</h5>
+					
+					<ul class="link-list gallery-form">
+						
+
+    
+<div class="">
+    <div class="">
+        <div>
+            <form action="/gallery" method="get" id="views-exposed-form-gallery-gallery" accept-charset="UTF-8">
+              <div class="js-form-item form-item js-form-type-select form-item-field-timeline-categories-target-id js-form-item-field-timeline-categories-target-id">
+      <label for="edit-field-timeline-categories-target-id">Categories</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="49" > Diseases &amp; Vaccines
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="50" > -Diphtheria
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="51" > -Measles
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="52" > -Polio
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="53" > -Smallpox
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="54" > -Yellow Fever
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="55" > -Others
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-categories-target-id" multiple="multiple" name="field_timeline_categories_target_id[]" id="edit-field-timeline-categories-target-id" size="8" class="form-select" value="56" > Pioneers
+                </label></div>
+        </div>
+<div class="js-form-item form-item js-form-type-select form-item-field-taxonomy-target-id js-form-item-field-taxonomy-target-id">
+      <label for="edit-field-taxonomy-target-id">Media Type</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-taxonomy-target-id" multiple="multiple" name="field_taxonomy_target_id[]" id="edit-field-taxonomy-target-id" size="2" class="form-select" value="36" > Image
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-taxonomy-target-id" multiple="multiple" name="field_taxonomy_target_id[]" id="edit-field-taxonomy-target-id" size="2" class="form-select" value="37" > Video
+                </label></div>
+        </div>
+<div class="js-form-item form-item js-form-type-select form-item-field-timeline-date-ranges-target-id js-form-item-field-timeline-date-ranges-target-id">
+      <label for="edit-field-timeline-date-ranges-target-id">Date Range</label>
+        <div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="60" > Pre 1700
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="57" > 1700 - 1799
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="58" > 1800 - 1899
+                </label></div><div class="checkbox"><label><input type="checkbox"  data-drupal-selector="edit-field-timeline-date-ranges-target-id" multiple="multiple" name="field_timeline_date_ranges_target_id[]" id="edit-field-timeline-date-ranges-target-id" size="4" class="form-select" value="59" > 1900 - present
+                </label></div>
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-gallery" type="submit" id="edit-submit-gallery" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-md-9">
+			
+			<div class="gallery-item">
+                <a href="/gallery" class="back-to-results">&laquo; Back to results</a>
+				<h1>Graph of U.S. Measles Cases</h1>
+
+                                    <div class="gallery-image-container">
+                        <div 
+                            class="show-modal" 
+                            data-filename="999991"
+                            >+</div>
+                        <img src="http://media.historyofvaccines.org/images/999991_540.jpg" alt="Graph of U.S. Measles Cases" />
+                    </div>
+                
+                <dl class="dl-horizontal">
+                                            <dt>Caption:</dt>
+                        <dd>Measles cases in the United States by year, 1954-2008</dd>
+                                                                <dt>Description:</dt>
+                        <dd><p>This graph shows the number of reported measles cases per year in the United States. Actual cases were likely much higher: Alexander Langmuir estimated that about 4 million measles cases occurred in each year shortly before vaccine introduction (Langmuir AD. Medical importance of measles. Am J Dis Child 1962;103:54-56). Note the drop in cases after the introduction of the first measles vaccine in the early 1960s. Source: CDC/MMWR Summary of Notifiable Diseases, United States, 1993; CDC/MMWR Summary of Notifiable Diseases, United States, 2008.</p>
+</dd>
+                                                                                                        <dt>Timeline Category:</dt>
+                                                    <dd><a href=""></a></dd>
+                                                    <dd><a href=""></a></dd>
+                                                    <dd><a href=""></a></dd>
+                                                    <dd><a href=""></a></dd>
+                                                                                </dl>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+				
+
+
+	</div>
+</main>
+          
+<footer class="container">
+		<div class="row">
+			<div class="col-md-12">
+				
+				<div class="pull-left logo">
+					<a href="http://www.collegeofphysicians.org/"><img src="/themes/historyofvaccines/images/cop_logo.jpg" /></a>
+				</div>
+			
+				<div class="pull-right">
+					<ul class="list-inline hidden-xs hidden-sm">
+						<li class=" ">
+		                  <a href="/content/legal-and-privacy" data-drupal-link-system-path="node/1012">Legal</a>
+		              </li>
+			          <li class=" ">
+			                  <a href="/content/resources" data-drupal-link-system-path="node/1011">Resources</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/glossary" data-drupal-link-system-path="glossary">Glossary</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/credits" data-drupal-link-system-path="node/1008">Credits</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/email-sign" data-drupal-link-system-path="node/1010">E-mail Sign-up</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/donors" data-drupal-link-system-path="node/1112">Donors</a>
+			              </li>
+			          <li class=" ">
+			                  <a href="/content/contact" data-drupal-link-system-path="node/1007">Contact</a>
+			           </li>
+					</ul>
+					
+					<p class="text-right">
+						<small>
+							© 2016 <a href="http://www.collegeofphysicians.org/">The College of Physicians of Philadelphia</a>
+						</small>
+					</p>
+				</div>
+			</div>
+		</div>
+</footer>
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1198","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","statistics":{"data":{"nid":"1198"},"url":"\/core\/modules\/statistics\/statistics.php"},"ajaxTrustedUrl":{"\/gallery":true},"user":{"uid":0,"permissionsHash":"6b8983a6b2144b3fdf6be30e1e7a8acb951ef434e42d2357dc8717e8db9373f8"}}</script>
+<script src="/core/assets/vendor/domready/ready.min.js?v=1.0.8"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=8.1.3"></script>
+<script src="/core/misc/drupal.js?v=8.1.3"></script>
+<script src="/themes/historyofvaccines/js/lib/openseadragon/openseadragon.min.js?v=2.2.1"></script>
+<script src="/themes/historyofvaccines/js/main.js?v=1.x"></script>
+<script src="/core/modules/statistics/statistics.js?v=8.1.3"></script>
+
+    <div id="viewer"><div id="viewer-inner"></div></div>
+    
+    
+    <script type="text/javascript">
+    	document.getElementById("edit-keys").addEventListener("keyup", function(e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (event.keyCode == 13) {
+				var search = "?keys=" + document.getElementById('edit-keys').value + "&f[0]=type:article&f[1]=type:page&f[2]=type:simulation&f[2]=type:timeline_entry";
+				var searchLink = window.location.origin + '/search/node' + search;
+				window.location = searchLink;
+			}
+		});
+		
+		
+		
+    </script>
+    
+    
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		if( document.getElementById("mollom") !== null ) {
+			var html = $('.article-node').next('div').html();
+			$('.article-node').next('div').hide();
+			
+			$('.article-node .comments').html(html);
+		}
+        $('.blog img').each(function(index){
+            if (!$(this).attr('title') && $(this).attr('alt')){
+                $(this).attr('title', $(this).attr('alt'));
+            }
+        });
+	});
+	
+</script>
+    
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5755a6c926eeffb8"></script>
+	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-12840640-3','auto');ga('send','pageview');</script>
+	
+	
+	
+	<a href="#open-modal" id="MobileActivityLink" style="display:none;">On Mobile</a>
+	
+	<div id="open-modal" class="modal-popup">
+                <div>
+                    <div class="home-modal">
+                        <div style="text-align:center; color:#454545 !important;">
+                            <p>
+                                This activity is best viewed on larger screens.
+                            </p>
+                            <a class="btn btn-outline btn-escape btn-back-home" href="#close">
+                            Dismiss
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+</body>
+</html>

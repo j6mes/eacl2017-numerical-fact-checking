@@ -1,0 +1,42 @@
+*Investment advisory services in North America are provided through four different SEC-registered investment advisers using the brand Insight Investment: Cutwater Asset Management Corp., Cutwater Investor Services Corp., Pareto New York LLC and Pareto Investment Management Limited. The Insight Investment Group includes Insight Investment Management (Global) Limited, Pareto Investment Management Limited, Insight Investment Funds Management Limited, Cutwater Asset Management Corp. and Cutwater Investor Services Corp.
+Dates shown are posting dates to the website and do not necessarily reflect the article creation date.
+1 BNY Mellon Investment Management EMEA Limited is the distributor of the capabilities of its investment managers in Europe, Middle East, Africa and Latin America. Investment managers are appointed by BNY Mellon Investment Management EMEA Limited or affiliated fund operating companies to undertake portfolio management services in respect of the products and services provided by BNY Mellon Investment Management EMEA Limited or the fund operating companies. These products and services are governed by bilateral contracts entered into by BNY Mellon Investment Management EMEA Limited and its clients or by the Prospectus and associated documents related to the funds.
+Some sections of this site utilize secondary windows for content delivery. This may require you to disable pop-up blocking for Dreyfus.com.
+Investors should consider the investment objectives, risks, charges, and expenses of the fund carefully before investing. Download  a prospectus, or summary prospectus, if available, that contains this and other information about the fund, and read it carefully before investing. There is no guarantee that any investment strategy or approach will be successful or achieve any particular level of results. All investment products involve risk of principal loss.
+The products and services described on this Web site are available only to U.S. residents and the information on this Web site is only for such persons. The information on this Web site is not an offer to sell or a solicitation of an offer to buy, any security, nor shall any such security be offered or sold to any person in any jurisdiction in which such offer, solicitation, purchase or sale may not lawfully be made. Past performance is no guarantee of future results. Share price, yield and investment returns of mutual funds fluctuate such that an investor's shares may be worth more or less than original cost upon redemption. Diversification and asset allocation cannot ensure a profit or protect against loss.
+Financial intermediary and institutional investor activities are serviced by Dreyfus Investments, a division of MBSC Securities Corporation, distributor of the Dreyfus Family of Funds. BNY Mellon Investment Management encompasses BNY Mellon’s affiliated investment management firms, wealth management services and global distribution companies, including Dreyfus.
+$(document).ready(function () {
+$('.outer').hover(
+function () {
+$(this).find('.hover-overlay').fadeIn(500);
+function () {
+$(this).find('.hover-overlay').fadeOut(500);
+$('.filter-select').click(function () {
+$('.filters').fadeIn(250);
+var currentFilter;
+$('.filters li').click(function (e) {
+e.stopPropagation();
+$('.filter-select .selected').text($(this).text());
+var filter = $(this).attr('data-filter');
+if (filter != currentFilter) {
+if (filter != '.all') {
+$('.outer').fadeOut(250);
+$('.outer').promise().done(function () {
+$(filter).fadeIn(250);
+} else {
+$('.outer').fadeIn(250);
+$('.filters').fadeOut(250);
+$(document).click(function (e) {
+var container = $('.filter-select');
+if (!container.is(e.target) // if the target of the click isn't the container...
+&& container.has(e.target).length === 0) // ... nor a descendant of the container
+$('.filters').fadeOut(250);
+container.unbind('click', document);
+function placeVideoButtons(){
+$('.outer').not('.large').find('.video-play').each( function(){
+var p =  $(this).closest('.image');
+var ih = p.height();
+var hh = p.find('.bottomleft').outerHeight();
+$(this).css({top: (ih-hh)/2})
+placeVideoButtons();
+$(window).resize( placeVideoButtons );

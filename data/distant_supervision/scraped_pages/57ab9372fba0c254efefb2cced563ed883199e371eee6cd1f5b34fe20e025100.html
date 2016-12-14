@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:article="http://ogp.me/ns/article#"
+  xmlns:book="http://ogp.me/ns/book#"
+  xmlns:profile="http://ogp.me/ns/profile#"
+  xmlns:video="http://ogp.me/ns/video#"
+  xmlns:product="http://ogp.me/ns/product#"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if IE]><![endif]-->
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<![endif]--><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://www.cnsnews.com/sites/all/themes/cns_bootstrap/image/CNSNewsFavicon.png" type="image/png" />
+<link rel="canonical" href="http://www.cnsnews.com/news/article/michael-w-chapman/nyc-more-black-babies-killed-abortion-born" />
+<meta property="fb:app_id" content="1701987513383789" />
+<meta property="og:site_name" content="CNS News" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cnsnews.com/news/article/michael-w-chapman/nyc-more-black-babies-killed-abortion-born" />
+<meta property="og:title" content="NYC: More Black Babies Killed by Abortion Than Born" />
+<meta property="og:updated_time" content="2014-02-20T13:28:53-05:00" />
+<meta property="og:image" content="https://cdn.cnsnews.com/images/bm-image-739617.jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@cnsnews" />
+<meta name="twitter:url" content="http://www.cnsnews.com/news/article/michael-w-chapman/nyc-more-black-babies-killed-abortion-born" />
+<meta name="twitter:title" content="NYC: More Black Babies Killed by Abortion Than Born" />
+<meta name="twitter:image" content="http://cdn.cnsnews.com/images/bm-image-739617.jpeg" />
+<meta property="article:published_time" content="2014-02-20T11:31:29-05:00" />
+<meta property="article:modified_time" content="2014-02-20T13:28:53-05:00" />
+  <title>NYC: More Black Babies Killed by Abortion Than Born</title>
+  <link type="text/css" rel="stylesheet" href="//www.cnsnews.com/sites/default/files/advagg_css/css__dPl_lK-pstjG4AxE6PglRCzpjm1u1SOC__ANNay60CY__4-As8CwqBqJHgpehC9SstT7U6hZ_k3u655HBKjrWvwU__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//www.cnsnews.com/sites/default/files/advagg_css/css__OZmf_D3Bw8Rn9GMxgOOIIMIqijCwUNNd8ja5EWuZJPY__Co4afjpDnRwYKYI439ti0NSsLf0Ng-l_kLV131BBQLQ__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//www.cnsnews.com/sites/default/files/advagg_css/css__RWVaWj6xHsxJHQa_OZhZKQXxoJ0YP4P3nv1gN3rnFXc__EGVir4P9eky7-div_sizCsavbV06SqozPn1X9oJb7WI__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//www.cnsnews.com/sites/default/files/advagg_css/css___hIZD5KYFuVK75uInAgO9H6uiBO32R97yEgCSGT8MsM__E4H5J_773-gWHnao1jo2exdSPtOccxPPSiwViRL7VVM__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")</script>
+<script src="//www.cnsnews.com/sites/default/files/advagg_js/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__p930YZ_ODW6ZjDLOJmxJnRL7juGStYuszD6uNS8_FFo__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.js"></script>
+<script src="//cdn.intermarkets.net/u/Intermarkets/CNSNews/CNSNews_targeting.js"></script>
+<script>;jQuery.extend(Drupal.settings,{'basePath':'\/','pathPrefix':'','ajaxPageState':{'theme':'cns_bootstrap','theme_token':'Bl09D8NSEKYWggmIv9cXV2j3Hvl1NTpPZonfCrjvt2g','css':{'modules\/system\/system.base.css':1,'sites\/all\/modules\/contrib\/date\/date_api\/date.css':1,'sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css':1,'modules\/field\/theme\/field.css':1,'sites\/all\/modules\/contrib\/video_filter\/video_filter.css':1,'sites\/all\/modules\/contrib\/views\/css\/views.css':1,'sites\/all\/modules\/contrib\/colorbox\/styles\/plain\/colorbox_style.css':1,'sites\/all\/modules\/contrib\/ctools\/css\/ctools.css':1,'sites\/all\/modules\/contrib\/panels\/css\/panels.css':1,'sites\/all\/modules\/contrib\/print\/print_ui\/css\/print_ui.theme.css':1,'sites\/all\/modules\/contrib\/pullquote\/css\/pullquote_style_1.css':1,'http:\/\/netdna.bootstrapcdn.com\/font-awesome\/4.0.3\/css\/font-awesome.min.css':1,'\/\/netdna.bootstrapcdn.com\/bootstrap\/3.3.5\/css\/bootstrap.min.css':1,'sites\/all\/themes\/bootstrap\/css\/overrides.css':1,'sites\/all\/themes\/cns_bootstrap\/css\/style.css':1},'js':{'\/\/netdna.bootstrapcdn.com\/bootstrap\/3.3.5\/js\/bootstrap.min.js':1,'sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js':1,'sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js':1,'sites\/all\/modules\/contrib\/colorbox\/styles\/plain\/colorbox_style.js':1,'sites\/all\/modules\/contrib\/disqus\/disqus.js':1,'sites\/all\/modules\/contrib\/pullquote\/pullquote.js':1,'https:\/\/use.typekit.net\/eoq0ypl.js':1,'sites\/all\/themes\/cns_bootstrap\/cns_bootstrap.js':1,'sites\/all\/themes\/cns_bootstrap\/js\/jquery-simplemodal\/jquery.simplemodal.1.4.4.min.js':1,'sites\/all\/themes\/cns_bootstrap\/js\/jquery-cookie\/jquery.cookie.js':1,'sites\/all\/themes\/cns_bootstrap\/js\/countUp.min.js':1,'\/\/s7.addthis.com\/js\/300\/addthis_widget.js#pubid=ra-5344425e2f8996a8':1,'\/\/cdn.intermarkets.net\/u\/Intermarkets\/CNSNews\/CNSNews_postview.js':1,'sites\/all\/themes\/bootstrap\/js\/bootstrap.js':1,'\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js':1,'misc\/jquery.once.js':1,'misc\/drupal.js':1,'\/\/cdn.intermarkets.net\/u\/Intermarkets\/CNSNews\/CNSNews_targeting.js':1}},'colorbox':{'opacity':'0.85','current':'{current} of {total}','previous':'\u00ab Prev','next':'Next \u00bb','close':'Close','maxWidth':'98%','maxHeight':'98%','fixed':!0,'mobiledetect':!0,'mobiledevicewidth':'480px'},'disqus':{'domain':'cnsnews','url':'http:\/\/www.cnsnews.com\/news\/article\/michael-w-chapman\/nyc-more-black-babies-killed-abortion-born','title':'NYC: More Black Babies Killed by Abortion Than Born','identifier':'node\/765799'},'bootstrap':{'anchorsFix':1,'anchorsSmoothScrolling':1,'popoverEnabled':1,'popoverOptions':{'animation':1,'html':0,'placement':'right','selector':'','trigger':'click','title':'','content':'','delay':0,'container':'body'},'tooltipEnabled':1,'tooltipOptions':{'animation':1,'html':0,'placement':'auto left','selector':'','trigger':'hover focus','delay':0,'container':'body'}}});</script>
+</head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-67578 node-type-article" >
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K2MVZ7"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K2MVZ7');</script>
+  <!-- End Google Tag Manager -->
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <div id="pullout-menu" class="hidden" style="width:0;">
+  <div class="pullout-nav">
+    <p class="pullout-title">Sections</p>
+    <div class="primary-pullout">
+              <ul class="menu nav navbar-nav"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/category/washington" title="">Washington</a></li>
+<li class="leaf"><a href="/category/national" title="">National</a></li>
+<li class="leaf"><a href="/category/culture" title="">Culture</a></li>
+<li class="leaf"><a href="/category/international" title="">International</a></li>
+<li class="leaf"><a href="/category/entertainment" title="">Entertainment</a></li>
+<li class="leaf"><a href="/category/sports" title="">Sports</a></li>
+<li class="leaf"><a href="/category/health" title="">Health</a></li>
+<li class="leaf"><a href="/category/business" title="">Business</a></li>
+<li class="leaf"><a href="/category/weird-news" title="">Weird News</a></li>
+<li class="last leaf"><a href="/newswire" title="">News Wire</a></li>
+</ul>          </div>
+            <div class="region region-secondary-navigation">
+    <section id="block-menu-menu-top-tertiary" class="block block-menu clearfix">
+
+      
+  <ul class="menu nav"><li class="first leaf"><a href="/opinion/commentary" title="">Commentary</a></li>
+<li class="leaf"><a href="/video" title="CNS Commentary page">Video</a></li>
+<li class="leaf"><a href="/opinion/blog" title="">Blog</a></li>
+<li class="last leaf"><a href="/cartoons" title="">Cartoons</a></li>
+</ul>
+</section> <!-- /.block -->
+  </div>
+        <p class="pullout-title">Social</p>
+    <div class="nav-social">
+      <a href="https://www.mrc.org/newsletter?utm_source=cnsnewsebrief&utm_medium=signup&utm_content=cnsbutton&utm_campaign=newslettersignup" target="_blank" class="nav-ebrief"><i class="fa fa-envelope-o"></i> E-Brief</a>
+      <a href="https://www.facebook.com/cnsnewscom?ref=ts" target="_blank" class="nav-fb">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="http://twitter.com/#!/cnsnews" target="_blank" class="nav-twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="/feeds/all" target="_blank" class="rss">
+        <i class="fa fa-rss"></i>
+      </a>
+    </div>
+    <p class="pullout-title">Information</p>
+          <ul class="menu nav navbar-nav secondary"><li class="first leaf"><a href="/about-us" title="About CNS News">About Us</a></li>
+<li class="leaf"><a href="https://www.mrc.org/newsletter?utm_source=newsbusters&amp;utm_medium=signup&amp;utm_content=newsletters&amp;utm_campaign=newslettersignup" title="">Subscribe</a></li>
+<li class="leaf"><a href="/contact-us" title="CNS contact form">Contact Us</a></li>
+<li class="last leaf"><a href="https://www.cnsnews.com/join-movement" title="Donate to MRC">Donate</a></li>
+</ul>      </div>
+</div>
+<header class="mini">
+
+  <div class="navbar navbar-inverse navbar-fixed-top smallnav hidden-xs" role="navigation">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a style="font-size: 12px;color:rgba(201,146,14,.65);" href="http://www.mrc.org" target="_blank">Media Research Center</a></li>
+        <li><a href="/">CNSNews.com</a></li>
+        <li><a href="http://www.newsbusters.org" target="_blank">NewsBusters</a></li>
+        <li><a href="http://www.mrctv.org" target="_blank">MRCTV</a></li>
+        <li><a href="http://newsbusters.org/latino" target="_blank">MRC Latino</a></li>
+        <li><a href="http://newsbusters.org/business" target="_blank">MRC Business</a></li>
+        <li><a href="http://newsbusters.org/culture" target="_blank">MRC Culture</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="container navcontainer">
+    <button type="button" class="miniPullout-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </span>
+      <p class="hidden-xs">sections</p>
+    </button>
+    <div class="mini-social-icons">
+      <a href="/search" target="_blank" class="nav-search">
+        <i class="fa fa-search"></i>
+      </a>
+            <a href="/print/67578" target="_blank" class="nav-print">
+        <i class="fa fa-print"></i>
+      </a>
+            <a href="http://www.facebook.com/cnsnewscom?ref=ts" target="_blank" class="nav-fb">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="http://twitter.com/#!/cnsnews" target="_blank" class="nav-twitter">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a href="/feeds/all" target="_blank" class="rss">
+        <i class="fa fa-rss"></i>
+      </a>
+      <a href="/join-movement" target="_blank" class="nav-donate">
+        <i class="fa navdon">DONATE</i>
+      </a>
+    </div>
+<!--    <div class="search">-->
+<!--      <gcse:search></gcse:search>-->
+<!--    </div>-->
+    <div class="header-title"><h1><a href="/"><span class="title-bold">cns</span>news.com<sup class="title-tm">TM</sup></a></h1></div>
+    <div class="search-button">
+      <i class="fa fa-search"></i></div>
+    </div>
+    </div>
+  </div>
+</header>
+<div id="page">
+  <div class="main-container container">
+    <div role="banner" id="page-header">
+      
+          </div> <!-- /#page-header -->
+
+
+          <div class="row">
+          <div class="region region-top-ad">
+    <section id="block-block-11" class="block block-block clearfix">
+
+      
+  <!--JavaScript Tag  // Placement: CNSNews_ROS_Top_970xFlex (3554566) -->
+
+<div class="hidden-xs center-block text-center">
+<div id="3554566" style="height:105px;" class="center-block"></div>
+</div>
+
+<script>function readyHandler_3554566() {}</script>
+</section> <!-- /.block -->
+  </div>
+    </div>
+      
+
+
+      <section class="col-sm-12 col-md-7 col-md-offset-1">
+                        <a id="main-content"></a>
+                          <h1 class="page-header">NYC: More Black Babies Killed by Abortion Than Born</h1>
+                                                                            <div class="region region-content">
+    <section id="block-system-main" class="block block-system clearfix">
+
+      
+  <div id="node-67578" class="node node-article clearfix" about="/news/article/michael-w-chapman/nyc-more-black-babies-killed-abortion-born" typeof="sioc:Item foaf:Document">
+
+  
+      <span property="dc:title" content="NYC: More Black Babies Killed by Abortion Than Born" class="rdf-meta element-hidden"></span>      <div class="authors">
+              By <a href="/author/michael-w-chapman" title="View user profile." class="username">Michael W. Chapman</a> | February 20, 2014 | 11:31 AM EST          </div>
+  
+      <div class="addthis_jumbo_share"></div>
+  
+  <div class="content">
+    <div class="view view-slides view-id-slides view-display-id-entity_view_slides view-dom-id-157921b0b624b78e99c215778dc0d25b">
+      
+  
+  
+      <div class="view-content">
+        <div>
+      
+  <div class="views-field views-field-field-slides-field-slide-image">        <div class="field-content"></div>  </div>  
+  <div>        <h3></h3>  </div>  
+  <div>        <div></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div> <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p><b> </b></p>
+<div class="insert-box"><img class="insert-image" typeof="foaf:Image" src="http://cns7prod.s3.amazonaws.com/styles/ap_image/s3/images/bm-image-739617_0.jpeg" width="200" /><p class="insert-caption">(AP Photo)</p></div>
+<p><b>(CNSNews.com)</b> – In 2012, there were more black babies killed by  abortion (31,328) in New York City than were born there (24,758), and  the black children killed comprised 42.4% of the total number of  abortions in the Big Apple, according to a report by the New York City  Department of Health and Mental Hygiene.</p>
+<p>The report is entitled, <i>Summary of Vital Statistics 2012 The City of  New York, Pregnancy Outcomes</i>, and was prepared by the New York City  Department of Health and Mental Hygiene, Office of Vital Statistics. (See  <a href="/sites/default/files/documents/Pregnancy%20Outcomes%20%20NYC%20Health%202012.pdf">Pregnancy Outcomes  NYC Health 2012.pdf</a>)</p>
+<p>Table 1 of the report presents the total number of live births,  spontaneous terminations (miscarriages), and induced terminations  (abortions) for women in different age brackets between 15 and 49 years  of age. The table also breaks that data down by race – Hispanic, Asian  and Pacific Islander, Non-Hispanic White, Non-Hispanic Black – and also  by borough of residence: Manhattan, Bronx, Brooklyn, Queens, Staten  Island.</p>
+<p>The numbers show that in 2012, there were 31,328 induced terminations  (abortions) among non-Hispanic black women in New York City.  That same  year, there were 24,758 live births for non-Hispanic black women in New  York City.  There were  6,570 more abortions than live births of black  children.</p>
+<p>In total, there were 73,815 abortions, which means the 31,328 black babies aborted comprised 42.4% of the total abortions.</p>
+<p>For Hispanic women, there were 22,917 abortions in New York City in 2012, which is 31% of the total abortions.</p>
+<p>
+<div class="insert-box"><img class="insert-image" typeof="foaf:Image" src="http://cns7prod.s3.amazonaws.com/styles/ap_image/s3/images/pregnant-black-woman.jpg" width="200" /><p class="insert-caption">ype="node" title="abortion</p></div>Black and Hispanic abortions combined, 54,245 babies, is 73% of the total abortions in the Big Apple in 2012.</p>
+<p>The number of non-Hispanic white abortions was 9,704, and the number of Asian and Pacific Islander abortions was 4,493.</p>
+<p>The total number of live births in New York City in 2012 for women  ages 15-49 was 123,231. That is a rate of 14.8 live births per 1,000  women, which is the lowest rate since 1979, according to the report. In  addition, the live birth rate (per 1,000 women) has declined 3.9% since  2003, when it was a 15.4 rate, states the report. (See <a href="/sites/default/files/documents/Pregnancy%20Outcomes%20%20NYC%20Health%202012.pdf">Pregnancy Outcomes  NYC Health 2012.pdf</a>)</p>
+<p>In addition, while there were 73,815 abortions in New York City in  2012, the rate of abortions per 1,000 women is down 8.6% since 2011,  according to the report.</p>
+<p>Although the Centers for Disease Control and Prevention (CDC) have  not published their abortion statistics for 2011 or 2012 yet, they do  have data for 2010.  (See <a href=" http://www.cdc.gov/mmwr/preview/mmwrhtml/ss6208a1.htm?s_cid=ss6208a1_w">Table 12</a>.)   In the CDC’s numbers, there were 38,574 black babies killed by abortion  in New York City in 2010; Hispanic babies aborted, 27,112; white babies  killed by abortion, 9,220; and “other” aborted, 5,368.  The total  abortions in New York City in 2010 “reported by known race/ethnicity”  were 80,274, according to the CDC.</p></div></div></div><div class="field field-name-field-attachment field-type-file field-label-inline clearfix"><div class="field-label">Attachment:&nbsp;</div><div class="field-items"><div class="field-item even"><span class="file"><img class="file-icon" alt="PDF icon" title="application/pdf" src="/modules/file/icons/application-pdf.png" /> <a href="http://cdn.cnsnews.com/documents/Pregnancy Outcomes  NYC Health 2012.pdf" type="application/pdf; length=1575059">Pregnancy Outcomes  NYC Health 2012.pdf</a></span></div></div></div>  </div>
+  
+  
+      <div class="authors">
+              <div class="author"><div class="author-info span7"><div class="author-img"><img typeof="foaf:Image" src="http://cdn.cnsnews.com/styles/author/s3/pictures/picture-497-1429718429.jpg?itok=uZdhAkQ4" width="100" height="100" alt="Michael W. Chapman" title="Michael W. Chapman" /></div><div class="author-text"><div class="author-follow"><a href="http://www.twitter.com/ChapmanCNSNews"><i class="fa fa-twitter"></i> Follow</a></div><div class="author-name">Michael W. Chapman</div><div class="author-links"><a href="http://www.cnsnews.com/author/michael-w-chapman">Bio</a> | <a href="http://www.cnsnews.com/author/michael-w-chapman">Archive</a></div><div class="author-job">Michael W. Chapman</div ><div class="author-more"><a href="http://www.cnsnews.com/author/michael-w-chapman">More from Michael W. Chapman</a></div></div></div></div>          </div>
+  
+  <ul class="links list-inline"><li class="print_html first last"><a href="/print/news/article/michael-w-chapman/nyc-more-black-babies-killed-abortion-born" title="Display a printer-friendly version of this page." class="print-page" onclick="window.open(this.href); return false" rel="nofollow">Printer-friendly version</a></li>
+</ul>      <div class="addthis_jumbo_share"></div>
+    <div id="taboola-below-article-thumbnails"></div>
+    <script type="text/javascript">
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'thumbnails-a',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails',
+        target_type: 'mix'
+      });
+    </script>
+    
+        
+  <div id="disqus_thread"><noscript><p><a href="http://cnsnews.disqus.com/?url=http%3A%2F%2Fwww.cnsnews.com%2Fnews%2Farticle%2Fmichael-w-chapman%2Fnyc-more-black-babies-killed-abortion-born">View the discussion thread.</a></p></noscript></div>
+</div>
+</section> <!-- /.block -->
+  </div>
+      </section>
+
+
+              <aside class="col-xs-12 col-sm-8 col-md-4" role="complementary">
+          <div class="pull-right">  <div class="region region-sidebar">
+    <section id="block-block-3" class="block block-block adfix ad row col-xs-12 col-sm-6 col-md-4 clearfix">
+
+      
+  <style type="text/css">.adfix{float:none;}
+</style>
+<!-- BEGIN TAG - BODY--><div id="marketo_300x250_internal" style="height: 250px;">&nbsp;</div><!--END TAG - BODY -->
+</section> <!-- /.block -->
+<section id="block-block-26" class="block block-block clearfix">
+
+      
+  <div id="mrkto_monbomb"><span style="display:none;">RTP</span></div>
+</section> <!-- /.block -->
+<section id="block-block-10" class="block block-block ad intermarkets clearfix">
+
+      
+  <!--JavaScript Tag  // Placement: CNSNews_ROS_Top_300xFlex (3556506) -->
+<div id="3556506" style="height:265px"></div>
+<script>function readyHandler_3556506() {}</script>
+</section> <!-- /.block -->
+<section id="block-block-20" class="block block-block clearfix">
+
+      
+  <p><a href="http://www.cafepress.com/themrcstore" target="_blank"><img src="https://s3.amazonaws.com/mrc-static/Static/Images/gear_red.jpg" style="width:300px;height:auto;margin-bottom:20px;" /></a></p>
+</section> <!-- /.block -->
+<section id="block-block-14" class="block block-block taboola clearfix">
+
+      
+  <div id="taboola-right-rail-thumbnails-2nd" style="min-height: 784px; width: 300px;"></div>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({
+    mode: 'organic-thumbnails-a',
+    container: 'taboola-right-rail-thumbnails-2nd',
+    placement: 'Right Rail Thumbnails 2nd',
+    target_type: 'mix'
+  });
+</script>
+</section> <!-- /.block -->
+<section id="block-block-17" class="block block-block ad intermarkets clearfix">
+
+      
+  <!--JavaScript Tag  // Placement: CNSNews_ROS_Bottom_300xFlex (3556507) -->
+<div id="3556507" style="height: 265px"></div>
+<script>function readyHandler_3556507() {}</script>
+</section> <!-- /.block -->
+<section id="block-block-9" class="block block-block ad intermarkets clearfix">
+
+      
+  <!--JavaScript Tag  // Placement: CNSNews_ROS_Top_Right_160x600 (3556485) -->
+<div class="hidden-xs center-block text-center">
+<div id="3556485" style="height: 615px;"></div>
+</div>
+<!-- End of JavaScript Tag -->
+</section> <!-- /.block -->
+  </div>
+</div>
+        </aside>  <!-- /#sidebar-second -->
+                <div class="row">
+      <div class="col-xs-12">
+          <div class="region region-bottom-ad">
+    <section id="block-block-12" class="block block-block ad intermarkets center-block text-center clearfix">
+
+      
+  <!--JavaScript Tag  // Placement: CNSNews_ROS_Bottom_970xFlex (3557875) -->
+<div class="hidden-xs" class="center-block text-center">
+<div id="3557875" style="height: 105px;"></div>
+</div>
+<div class="visible-xs avmt-bottom">
+<div id="ym_1154114692585994765" class="ym"></div>
+<div id="ym_1154115477927475727" class="ym"></div>
+</div>
+<script>function readyHandler_3557875() {}</script>
+</section> <!-- /.block -->
+  </div>
+      </div>
+    </div>
+        </div>
+  <footer class="footer container-fluid">
+    <div class="container">
+        <div class="region region-footer">
+    <section id="block-system-main-menu" class="block block-system block-menu clearfix">
+
+      
+  <ul class="menu nav"><li class="first leaf"><a href="/">Home</a></li>
+<li class="leaf"><a href="/category/washington" title="">Washington</a></li>
+<li class="leaf"><a href="/category/national" title="">National</a></li>
+<li class="leaf"><a href="/category/culture" title="">Culture</a></li>
+<li class="leaf"><a href="/category/international" title="">International</a></li>
+<li class="leaf"><a href="/category/entertainment" title="">Entertainment</a></li>
+<li class="leaf"><a href="/category/sports" title="">Sports</a></li>
+<li class="leaf"><a href="/category/health" title="">Health</a></li>
+<li class="leaf"><a href="/category/business" title="">Business</a></li>
+<li class="leaf"><a href="/category/weird-news" title="">Weird News</a></li>
+<li class="last leaf"><a href="/newswire" title="">News Wire</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-menu-menu-footer-secondary-menu" class="block block-menu clearfix">
+
+      
+  <ul class="menu nav"><li class="first leaf"><a href="/about-us" title="About CNS News">About Us</a></li>
+<li class="leaf"><a href="/privacy-policy" title="CNS News privacy policy">Privacy Policy</a></li>
+<li class="leaf"><a href="/terms-use-agreement" title="Terms of Use agreement for CNSNews.com">Terms of Use</a></li>
+<li class="leaf"><a href="http://www.cnsnews.com/join-movement" title="Donate to CNS News">Donate</a></li>
+<li class="leaf"><a href="/video" title="CNS Video page">Video</a></li>
+<li class="leaf"><a href="/opinion/blog" title="CNS News blog page">Blog</a></li>
+<li class="leaf"><a href="/opinion/commentary" title="CNS News Commentary page">Commentary</a></li>
+<li class="leaf"><a href="/opinion/editorial" title="CNS News Editorials page">Editorials</a></li>
+<li class="leaf"><a href="/cartoons" title="CNS News Cartoons">Cartoons</a></li>
+<li class="leaf"><a href="http://www.intermarkets.net/advertiser-solutions/portfolio/cnsnews" title="">Advertise</a></li>
+<li class="last leaf"><a href="/feeds/all" title="">RSS</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-block-18" class="block block-block clearfix">
+
+      
+  <script type="text/javascript">
+(function ($) {
+ Drupal.behaviors.placeInContent = {
+    attach: function (context, settings) {
+   $('div.avmt-in-content').insertAfter('div.node > div.content > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div.field-items > div.field-item > p:first-of-type');
+   $('div.avmt-bottom').insertAfter('div.node > div.content > div.field.field-name-body.field-type-text-with-summary.field-label-hidden > div.field-items > div.field-item > p:last-of-type');
+  }
+ }
+})(jQuery);
+</script><script type="text/javascript">(function(e,t){if(t._ym===void 0){t._ym="";var m=e.createElement("script");m.type="text/javascript",m.async=!0,m.src="//static.yieldmo.com/ym.m5.js",(e.getElementsByTagName("head")[0]||e.getElementsByTagName("body")[0]).appendChild(m)}else t._ym instanceof String||void 0===t._ym.chkPls||t._ym.chkPls()})(document,window);</script>
+</section> <!-- /.block -->
+  </div>
+      <p class="copyright">Copyright 1998-2016 CNSNews.com.</p>
+      <div style="margin-left: 12px;" class="CFC">
+        <p>CNSNews.com is a division of the Media Research Center.</p>
+        <p><a href="http://www.mrc.org"><img src="//cdn.mrc.org/images/mrc_stackedblocklogo.png" width="150" /></a></p>
+        <p>The mission of the <a target="_blank" href="http://www.mrc.org">Media Research Center</a> is to create a media culture in America where truth and liberty flourish. The MRC is a research and education organization operating under <a target="_blank" href="http://www.mrc.org/static/about-us">Section 501(c)(3)</a> of the Internal Revenue Code, and <a target="_blank" href="https://www.mrc.org/action/join-the-movement">contributions</a> to the MRC are tax-deductible. Copyright © 2014, Media Research Center. All Rights Reserved.  Federal employees and military personnel can donate to the Media Research Center through the Combined Federal Campaign or CFC. To donate to the MRC, use CFC #12489. <a target="_blank" href="http://www.cfcnca.org/">Visit the CFC website</a> for more information about giving opportunities in your workplace.</p>
+        <!--Center Image-->
+        <p><a target="_blank" href="http://www.cfcnca.org/"><img src="//mrc.org/sites/default/files/uploads/marketing/CFC/cfc_logo_white.png" /></a></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      window._taboola = window._taboola || [];
+      _taboola.push({flush: true});
+      function downloadJSAtOnload() {
+        var d1 = document.querySelector(".at-svc-link");
+        d1.insertAdjacentHTML('afterend', '<a href="/print/67578" target="_blank"><span class="at4-visually-hidden">Share to Print</span><span class="at-icon-wrapper" style="background-color: rgb(38, 38, 38);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="at-icon at-icon-print"><g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g></svg></span></a>' );
+      }
+      if (window.addEventListener)
+        window.addEventListener("load", downloadJSAtOnload, false);
+      else if (window.attachEvent)
+        window.attachEvent("onload", downloadJSAtOnload);
+      else window.onload = downloadJSAtOnload;
+    </script>
+  </footer>
+</div>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//www.cnsnews.com/sites/default/files/advagg_js/js__D6KZHIfR_Fwn9N7xBZifJgJxcXyuDNBTDiLcPeI97qg__tiRfTNgVBuf8bEi5ZOA7kAPT_SjmUkUuGQSqBvf65GQ__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.js"></script>
+<script>;var addthis_share=addthis_share||{};addthis_share={passthrough:{twitter:{text:'NYC: More Black Babies Killed by Abortion Than Born'}}};</script>
+<script src="//www.cnsnews.com/sites/default/files/advagg_js/js__lKytj5Mt27IPlS70b-6sNNle_Wh8CQDAFhOOu0heFUY__5V7TrE88XQONyYTGQBE4qVah4xWJ-LgJh9tJmsPXQCU__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.js"></script>
+<script src="//use.typekit.net/eoq0ypl.js"></script>
+<script>;try{Typekit.load({async:!0})}catch(c$){};</script>
+<script src="//www.cnsnews.com/sites/default/files/advagg_js/js__DLrQg0kox0A_PFOltubMbJDJYQeZORxvrr_4qxRU2Q8__NlMRIqy1S1D5V-mJQXUj1KWD14d0Kq-1aEYtUqxMX_M__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.js"></script>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5344425e2f8996a8"></script>
+<script src="//cdn.intermarkets.net/u/Intermarkets/CNSNews/CNSNews_postview.js"></script>
+<script src="//www.cnsnews.com/sites/default/files/advagg_js/js__i11V-7AETPhfL9YzRpXBpECwVkYyQ_ahu2eHxES_mK0__Tgy2Gm7LmUJY8GXZeWxVbS51f3txED35LX1ul4UiOfk__nrzFYZOtr-t-shuUFkXKGhfTdElbmiiupxaf0CZM0_M.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cf83e2217b","applicationID":"14961335","transactionName":"MlZUNUUCDBEEARZeXwscdwJDCg0MSgwNU1U6Q1cGUjwUCwAV","queueTime":0,"applicationTime":295,"atts":"HhFXQw0YHx8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

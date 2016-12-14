@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAAEUVdaGwUAV1NQDwk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"38c569029c","agent":"","transactionName":"MwcHNksEChcAUhZcDgpNIxdXBhANDl9NVBEUTA0DVwEIARNCWFEOBxcIB1cRFw==","applicationID":"6032288","errorBeacon":"bam.nr-data.net","applicationTime":259}</script><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" href="http://classroom.synonym.com/style.css" type="text/css"><link rel="shortcut icon" href="http://classroom.synonym.com/favicon.ico"><link href="https://fonts.googleapis.com/css?family=Merriweather:300" rel="stylesheet" type="text/css"><link rel="icon" href="http://classroom.synonym.com/favicon.ico"><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script><!-- Custom Dimension dataLayer --><script type="text/javascript">
+
+    var ancestorCategories = [];
+    var categories = {};
+    var keywords = [];
+    var hasImage = false;
+
+    var dataLayer = [{
+        'pagetype': 'Article',
+        'subpagetype': 'Topic View',
+        'studioid': 'fc5943bc-aa63-4756-b73f-4002abe495d8',
+        'content_name': 'What Percentage of High School Students Attend College After Graduation?',
+        'publish_date': '2013-03-22 18:32:53.715000',
+        'rating': '5',
+        'structure_rating': '4'
+    }];
+
+    
+                ancestorCategories.push("Higher Education Prep");
+            
+                ancestorCategories.push("");
+            
+
+    categories["category"] = "Preparing for College &amp; Grad School";
+
+    keywords.push("percent attend college");keywords.push("high school college");keywords.push("graduates attend college");
+
+    
+        hasImage = true;
+    
+
+    // Set dataLayer ancestorCategories
+    if (ancestorCategories.length > 0) {
+        for (var i = 0; i < ancestorCategories.length; i++) {
+            var ancestorCategoryKey = 'ancestor_category' + (i + 1);
+            dataLayer[0][ancestorCategoryKey] = ancestorCategories[i];
+        }
+    }
+
+    // Set dataLayer categories
+    for (var key in categories) {
+        if (categories.hasOwnProperty(key)) {
+            dataLayer[0][key] = categories[key];
+        }
+    }
+
+    // Set dataLayer keywords
+    if (keywords.length > 0) {
+        for (var i = 0; i < keywords.length; i++) {
+            var keywordKey = 'keyword' + (i + 1);
+            dataLayer[0][keywordKey] = keywords[i];
+        }
+    }
+
+    // Set dataLayer has_image
+    if (hasImage) {
+        dataLayer[0]["has_image"] = "TRUE";
+    } else {
+        dataLayer[0]["has_image"] = "FALSE";
+    }
+
+    // Remove dataLayer keys that have no value for the given page
+    for (var key in dataLayer[0]) {
+        if (dataLayer[0].hasOwnProperty(key)) {
+            if (dataLayer[0][key] == "") {
+                delete dataLayer[0][key];
+            }
+        }
+    }
+
+</script><!-- End Custom Dimension dataLayer --><!-- Bing Webmaster Tool Auth --><meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3"><script type="text/javascript">
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+
+		(function() {
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') +
+			'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+		})();
+	</script><title>What Percentage of High School Students Attend College After Graduation? | The Classroom | Synonym</title><meta name="description" content="A college degree is increasingly important in a service and skill-oriented world, and many good jobs require at least some college education. While college attendance is rapidly increasing among high ..."><meta property="og:type" content="article"><meta property="og:description" content="A college degree is increasingly important in a service and skill-oriented world, and many good jobs require at least some college education. While college attendance is rapidly increasing among high ..."><meta property="og:title" content="What Percentage of High School Students Attend College After Graduation? | The Classroom | Synonym"><meta property="og:image" content="http://photos.demandstudios.com/getty/article/56/32/86528401_XS.jpg"><link rel="canonical" href="http://classroom.synonym.com/percentage-high-school-students-attend-college-after-graduation-1423.html"><script type="text/javascript" src="http://classroom.synonym.com/scripts/google_ad_request.js"></script><!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><script src="//cdn.optimizely.com/js/7431252.js"></script><script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u) {
+    e.async = 1;
+    e.src = u;
+    f.parentNode.insertBefore(e, f);
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/demandmedia-network/loader.js');
+</script></head><body id="article-template" class="Article Topic-View"><!-- body-top --> <!-- google tag manager --> <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WGZCHF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');</script> <!-- end google tag manager --><!-- end body-top --><div class="col-width"><header id="header" class="clearfix"> <div id="top-logo"> <a href="http://classroom.synonym.com/"><span id="logo">Synonym</span></a> </div> <div id="top-leaderboard"></div> </header> <div id="page" class="container"><a href="#main" id="skipLink">Skip to main content.</a> <div id="content" class="clearfix"><div id="main"> <div class="main-wrap clearfix"> <header id="title"> <h1>What Percentage of High School Students Attend College After Graduation?</h1> <cite> by Van Thompson </cite> </header> <nav id="breadcrumbs"> <ol class="clearfix"> <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://classroom.synonym.com/" itemprop="url"> <span itemprop="title">The Classroom</span> </a> <span class="sep">&raquo;</span> </li> <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://classroom.synonym.com/higher-education-prep/" itemprop="url"> <span itemprop="title">Higher Education Prep</span> </a> <span class="sep">&raquo;</span> </li> <li class="last" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"> <a href="http://classroom.synonym.com/percentage-high-school-students-attend-college-after-graduation-1423.html" itemprop="url"> <span itemprop="title">What Percentage of High School Students Attend College After Graduation?</span> </a> </li> </ol> </nav> <article id="article-section"> <div id="top-section" class=" clearfix"> <figure id="main-article-photo" class="article-image"> <a class="article-image-link" href="//img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/56/32/86528401.jpg" title="What Percentage of High School Students Attend College After Graduation?"> <img src="//img-aws.ehowcdn.com/390x390p/photos.demandstudios.com/getty/article/56/32/86528401_XS.jpg" alt="College attendance can increase a high school graduate's chances for success." title="Jupiterimages/Comstock/Getty Images"> </a> <figcaption class="article-image-credits"> <p class="photo-cap">College attendance can increase a high school graduate's chances for success.</p> </figcaption> </figure><div id="main-related-articles" class="widget"> <h3>Related Articles</h3> <div class="arrow-down"></div> <div class="inner-widget"> <ul> <li><a href="//classroom.synonym.com/comparison-earnings-college-high-school-graduates-1682.html">Comparison of the Earnings of College & High School Graduates</a></li> <li><a href="//classroom.synonym.com/importance-college-preparation-2104.html">Importance of College Preparation</a></li> <li><a href="//classroom.synonym.com/attendance-online-classes-versus-traditional-classrooms-1725.html">Attendance in Online Classes Versus Traditional Classrooms</a></li> <li><a href="//classroom.synonym.com/helping-high-school-graduates-prepare-real-world-college-1877.html">Helping High School Graduates Prepare for the Real World Without College</a></li> </ul> </div> </div> </div> <div id="section-0" class="section"> <p>A college degree is increasingly important in a service and skill-oriented world, and many good jobs require at least some college education. While college attendance is rapidly increasing among high school graduates, not all students attend college, and many either take more than four years to finish or drop out. Students living in poverty are less likely to attend college than other students, and several other factors can affect college attendance.</p> </div> <div id="DMINSTR_2" type="adimpression" data-type="adTracking" name="DMINSTR2"> <div id="google-article-single"> <script type="text/javascript">
+			google_ad_channel = '2708727948';
+			google_ad_client = 'pub-3235755782694080';
+			google_ad_output = 'js';
+			google_max_num_ads = '1';
+			google_ad_type = 'text';
+			google_image_size = '180x150';
+			google_feedback = 'on';
+			google_skip = google_adnum;
+			google_url = 'bottom';
+			google_label = 'top';
+			google_label_text = 'Sponsored link';
+		</script> <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> </div> </div> <div id="section-1" class="section"> <h2>College Attendance Rates</h2> <span class="stepNum"></span><div id="section-2" class="section"> <p>In 2011, the most recent year for which statistics are available, the Bureau of Labor Statistics reported that 68.3 percent of students who graduated high school in 2011 were enrolled in college. About 43 percent of these students are enrolled in community colleges, according to a 2011 report issued by the Higher Education Research and Development Institute.</p></div> </div> <div id="mobile-inline"></div> <div id="section-3" class="section"> <h2>College Attendance Factors</h2> <span class="stepNum"></span><div id="section-4" class="section"> <p>A number of factors play a role in a student's decision to attend college. Family environment is particularly important; children whose parents don't value education, don't encourage them to go to college and don't help them with the college application process are less likely to choose higher education. Poverty is also a significant factor; the cost of a college application can be prohibitive for some students, and many of these students are concerned that they will be unable to afford college or are worried about getting a job to help support their families. Teen pregnancy, learning disabilities and academic difficulties during high school can also decrease the likelihood that a student will attend college.</p></div> </div> <div id="section-5" class="section"> <h2>College Graduation Rates</h2> <span class="stepNum"></span><div id="section-6" class="section"> <p>Although most students enroll in college, many of them don't graduate. According to the National Center for Education Statistics, about 58 percent of college students finish their degrees within six years. About 40 percent of students graduate within four years, according to College Planning Partnerships. According to the U.S. Census Bureau, about 30 percent of adults had a college degree as of 2009, and this number has been steadily climbing over the past several decades.</p></div> </div> <div id="section-7" class="section"> <h2>Factors Affecting Graduation</h2> <span class="stepNum"></span><div id="section-8" class="section"> <p>Race and ethnicity play major roles in whether or not a student graduates, with Asian students having the highest graduation rate, and African American and American Indian students having the lowest graduation rates, according to the National Center for Education Statistics. Students living in poverty -- who are often racial minorities -- often have more difficulty graduating. The pressure to get a job and make money can make leaving school tempting. "The Fiscal Times" also reports that the structure of college courses can interfere with graduation; a student who can't get into a particular class might have her graduation delayed by an entire year.</p></div> </div> <div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=4185461140&amp;ad_unit_type=CNT&amp;ad_unit_network=GAS&amp;revenue_basis=CPC&amp;ad_position=C1&amp;revenue_tag=pub-3235755782694080"> <div id="google-article-block"> <script type="text/javascript">
+			google_ad_client = 'pub-3235755782694080';
+			google_ad_channel = '4185461140';
+			google_ad_output = 'js';
+			google_max_num_ads = '4';
+			google_ad_type = 'text';
+			google_image_size = '336x280';
+			google_feedback = 'on';
+			google_skip = google_adnum;
+			google_url ='bottom';
+			google_label_text = 'Sponsored links';
+		</script> <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> </div> </div> <div id="synonym-taboola-below-article-thumbnails"></div> <script type="text/javascript">
+	  window._taboola = window._taboola || [];
+	  _taboola.push({
+	     mode: 'thumbnails-a',
+	     container: 'synonym-taboola-below-article-thumbnails',
+	     placement: 'Below Article Thumbnails synonym-taboola-below-article-thumbnails',
+	     target_type: 'mix'
+	  });
+        </script> <div id="references" class="section"> <h4>References</h4> <ul><li><a href="http://www.bls.gov/news.release/hsgec.nr0.htm" rel="nofollow">Bureau of Labor Statistics: College Enrollment and Work Activity of 2011 High School Graduates</a></li><li><a href="http://nces.ed.gov/fastfacts/display.asp?id=372" rel="nofollow">National Center for Education Statistics: Back to School Statistics</a></li><li><a href="http://nces.ed.gov/fastfacts/display.asp?id=40" rel="nofollow">National Center for Education Statistics: Graduation Rates</a></li><li><a href="http://www.satprepct.com/sixty-percent-of-all-college-freshmen-do-not-graduate-in-four-years/" rel="nofollow">College Planning Partnerships: Sixty Percent of All College Freshmen Do Not Graduate in Four Years</a></li><li><a href="http://www.thefiscaltimes.com/Articles/2011/12/19/Why-Americas-College-Students-Dont-Graduate.aspx#page1" rel="nofollow">The Fiscal Times: Why America's College Students Don't Graduate</a></li><li><a href="http://economix.blogs.nytimes.com/2013/02/26/only-half-of-first-time-college-students-graduate-in-6-years/" rel="nofollow">The New York Times: Only Half of First-Time College Students Graduate in Six Years</a></li><li><a href="http://www.csmonitor.com/USA/2008/0319/p02s03-usgn.html" rel="nofollow">The Christian Science Monitor: Why Good Students Don't Reach College</a></li><li><a href="http://herdi.org/community-college-market-2/interesting-facts-about-community-colleges/" rel="nofollow">Higher Education Research and Development Institute: Interesting Facts About Community Colleges</a></li><li><a href="http://www.census.gov/prod/2012pubs/p20-566.pdf" rel="nofollow">U.S. Census Bureau: Educational Attainment in the United States -- 2009</a></li></ul> </div> <div id="author" class="section"> <h4>About the Author</h4> <p>Van Thompson is an attorney and writer. A former martial arts instructor, he holds bachelor's degrees in music and computer science from Westchester University, and a juris doctor from Georgia State University. He is the recipient of numerous writing awards, including a 2009 CALI Legal Writing Award. </p> </div> <div id="photo-credits" class="section"> <h4>Photo Credits</h4> <ul> <li>Jupiterimages/Comstock/Getty Images</li> </ul> </div> </article> </div> </div> <aside id="sidebar"> <div id="radlinks" class="widget"> <h3>Related Searches</h3> <div class="arrow-down"></div> <div class="inner-widget"><script language="JavaScript">
+<!--
+function google_radlink_request_done(radlinks) {
+if (radlinks.length < 1)
+return;
+for(i=0; i < radlinks.length; ++i) {
+document.write("<ul><li class=\"entry\"><a target=\"_top\" href=\"" +
+"http://classroom.synonym.com/rad-results.html?google_kw=" +
+radlinks[i].url_escaped_term +"&category=classroom.synonym.com/higher-education-prep/" +
+"&subcategory=What+Percentage+of+High+School+Students+Attend+College+After+Graduation?" +"&media_type=Article" +"&channel=5662194342" +"&google_rt=" + radlinks[i].radlink_token +
+"&google_page_url=" +
+encodeURIComponent(window.location) + "\">" +
+radlinks[i].term +
+"</a></li></ul>\n");
+}
+}
+// -->
+</script> <script language="JavaScript">
+<!--
+google_ad_client = 'ca-pub-3235755782694080';
+google_ad_channel = '';
+google_ad_output = 'js';
+google_max_num_ads = '0';
+google_language = 'en';
+google_encoding = 'utf8';
+google_safe = 'high';
+google_num_radlinks = '6';
+google_max_radlink_len = '30';
+google_num_radlinks_per_unit = '3,4,5';
+google_rl_mode = 'relevance';
+// -->
+</script> <script language="JavaScript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script></div> <!-- inner-widget --> </div> <div id="top-300" class="widget"></div> <div id="related-articles" class="thumbnail widget"> <h3>Higher Education Prep</h3> <div class="arrow-down"></div> <div class="inner-widget"> <ul> <li><a href="//classroom.synonym.com/top-colleges-optometry-2965.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/83/199/78023726_XS.jpg" alt="Top Colleges of Optometry" width="100" height="70"></div>Top Colleges of Optometry</a></li> <li><a href="//classroom.synonym.com/advantages-taking-college-courses-during-high-school-1241.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/148/207/87786176_XS.jpg" alt="The Advantages of Taking College Courses During High School" width="100" height="70"></div>The Advantages of Taking College Courses During High School</a></li> <li><a href="//classroom.synonym.com/motivates-adult-students-back-college-1077.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/184/252/89794950_XS.jpg" alt="What Motivates Adult Students to Go Back to College?" width="100" height="70"></div>What Motivates Adult Students to Go Back to College?</a></li> <li><a href="//classroom.synonym.com/become-distance-learning-teacher-1285.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/165/236/86542526_XS.jpg" alt="How to Become a Distance Learning Teacher" width="100" height="70"></div>How to Become a Distance Learning Teacher</a></li> <li><a href="//classroom.synonym.com/college-education-vs-high-school-diploma-1947.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/83/170/86541164_XS.jpg" alt="College Education Vs. High School Diploma" width="100" height="70"></div>College Education Vs. High School Diploma</a></li> </ul> </div> </div> <div id="middle-300" class="widget"></div> <div id="more-related-articles" class="thumbnail widget"> <h3>Editor's Picks</h3> <div class="arrow-down"></div> <div class="inner-widget"> <ul> <li><a href="//classroom.synonym.com/people-college-study-want-become-teacher-2334.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/170/198/AA039550_XS.jpg" alt="What Do People in College Have to Study If They Want to Become a Teacher?" width="100" height="70"></div>What Do People in College Have to Study If They Want to Become a Teacher?</a></li> <li><a href="//classroom.synonym.com/there-benefit-rotc-college-3193.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/26/44/200301671-001_XS.jpg" alt="Is There Any Benefit to ROTC in College?" width="100" height="70"></div>Is There Any Benefit to ROTC in College?</a></li> <li><a href="//classroom.synonym.com/happens-dont-graduate-high-school-1560.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/110/128/86520583_XS.jpg" alt="What Happens If You Don't Graduate High School?" width="100" height="70"></div>What Happens If You Don't Graduate High School?</a></li> <li><a href="//classroom.synonym.com/scholarships-lowincome-innercity-youth-14538.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/104/89/200500898-001_XS.jpg" alt="Scholarships for Low-Income Inner-City Youth" width="100" height="70"></div>Scholarships for Low-Income Inner-City Youth</a></li> <li><a href="//classroom.synonym.com/statistics-importance-college-1464.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/178/95/87800868_XS.jpg" alt="The Statistics on the Importance of College" width="100" height="70"></div>The Statistics on the Importance of College</a></li> <li><a href="//classroom.synonym.com/hardest-art-colleges-america-2331.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/114/16/71019433_XS.jpg" alt="Hardest Art Colleges to Get Into in America" width="100" height="70"></div>Hardest Art Colleges to Get Into in America</a></li> <li><a href="//classroom.synonym.com/cheapest-online-colleges-2498.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/14/238/fotolia_2265429_XS.jpg" alt="The Cheapest Online Colleges" width="100" height="70"></div>The Cheapest Online Colleges</a></li> <li><a href="//classroom.synonym.com/community-college-university-better-long-run-3582.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/178/134/78365384_XS.jpg" alt="Is Community College or a University Better in the Long Run?" width="100" height="70"></div>Is Community College or a University Better in the Long Run?</a></li> <li><a href="//classroom.synonym.com/difference-between-college-grants-college-scholarships-1445.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/154/5/200309780-001_XS.jpg" alt="What is the Difference Between College Grants and College Scholarships?" width="100" height="70"></div>What is the Difference Between College Grants and College Scholarships?</a></li> <li><a href="//classroom.synonym.com/top-degrees-demand-4160.html"><div class="sidebar-image"><img src="//img-aws.ehowcdn.com/100x70/photos.demandstudios.com/getty/article/251/184/78424629_XS.jpg" alt="The Top Degrees in Demand" width="100" height="70"></div>The Top Degrees in Demand</a></li> </ul> </div> </div> </aside> </div> </div> <footer> <div id="footer-container"> <div class="bricks"> <ul> <li><a href="http://www.leafgroup.com">Leaf Group Ltd.</a></li> <li><a href="http://www.synonym.com">Synonym.com</a></li> <li><a href="http://www.ehow.com/education/">eHow Education</a><li> </ul> <ul> <li><a href="http://classroom.synonym.com/terms-of-use">Terms of Use</a></li> <li><a href="http://classroom.synonym.com/privacy-policy">Privacy Policy</a></li> <li><a href="http://classroom.synonym.com/copyright-policy">Copyright Policy</a></li> </ul> </div> <div class="copyright">Synonym.com &copy; 2001-2016, Leaf Group Ltd., all rights reserved. The database based on Word Net is a lexical database for the English Language. See <a href="http://www.synonym.com/disclaimer/">disclaimer</a>.</div> </div> <div id="OOP"></div> </footer></div> <script async src="http://classroom.synonym.com/scripts/custom.js"></script> <script type="text/javascript">
+var VIEWPORT_WIDTH = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var gptAdSlots, is_mobile = (VIEWPORT_WIDTH <= 1010);
+
+
+function generateDiv(slotName) {
+  var slotDiv = document.createElement('div');
+  slotDiv.id = slotName;
+  return slotDiv;
+}	      
+
+
+function minimalAds() {
+    var ads = [{'slotSizes': [[300, 250]],
+	       'slotName': '300x250_ATF','target': 'atf'},
+               {'slotSizes': [[300, 250]],
+	       	'slotName': '300x250_BTF','target': 'btf'}];
+		
+    $("#mobile-inline").append(generateDiv(ads[0].slotName));
+    $("#middle-300").append(generateDiv(ads[1].slotName));
+    return ads;
+}
+
+function maximumAds() {
+    var ads = [{'slotSizes': [[728, 90]],'slotName': '728x90_ATF','target': 'atf'},
+               {'slotSizes': [[300, 250], [300, 600]],
+	       'slotName': '300x250_300x600_ATF',
+	       'target': 'atf'},
+               {'slotSizes': [[300, 250]],
+	       	'slotName': '300x250_BTF',
+		'target': 'btf'}];
+		
+    $("#top-leaderboard").append(generateDiv(ads[0].slotName));
+    $("#top-300").append(generateDiv(ads[1].slotName));
+    $("#middle-300").append(generateDiv(ads[2].slotName));
+    return ads;
+}
+
+
+
+if (is_mobile) {
+  gptAdSlots = minimalAds();
+} else {
+  gptAdSlots = maximumAds();
+}
+
+
+googletag.cmd.push(function() {
+    gptAdSlots.forEach(function(entry) {
+      googletag.
+	defineSlot('/6117/Synonym.com/classroom',entry.slotSizes,entry.slotName).
+	setTargeting('loc',[entry.target]).
+	addService(googletag.pubads());
+    });
+    
+    googletag.defineOutOfPageSlot("/6117/Synonym.com/classroom", "outofpage").addService(googletag.pubads());
+    googletag.pubads().setTargeting("ctype","classroom");
+    googletag.pubads().setTargeting("envr","");
+    googletag.pubads().enableAsyncRendering();
+    googletag.pubads().collapseEmptyDivs();   
+    googletag.enableServices();
+});
+
+
+googletag.cmd.push(function() {
+  gptAdSlots.forEach(function(entry) {
+    googletag.display(entry.slotName);
+  });
+});
+</script> <div id="outofpage"> <script type="text/javascript">
+        googletag.cmd.push(function() { googletag.display('outofpage'); });
+    </script> </div> <script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script> </body> </html>

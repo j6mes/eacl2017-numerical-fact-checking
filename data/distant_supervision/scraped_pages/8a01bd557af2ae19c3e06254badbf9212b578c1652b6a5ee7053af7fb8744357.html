@@ -1,0 +1,341 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 8 ]> <html dir="ltr" lang="en" class="modernizr-no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html dir="ltr" lang="en" class="modernizr-no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html dir="ltr" lang="en" class="modernizr-no-js"><!--<![endif]-->
+
+<!-- DoSomething.org Platform v2.7.34 -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="csrf-token" content="Szy9SsZ6njc2FR1ZFmx20WQys5HhAO-YJ1Lp-Rv3plU">
+  <meta name="drupal-user-id" content="0">
+
+  <title>11 Facts About High School Dropout Rates | DoSomething.org | Volunteer for Social Change</title>
+
+  <link type="text/css" rel="stylesheet" href="https://www.dosomething.org/profiles/dosomething/themes/dosomething/paraneue_dosomething/dist/app.css?oi4paz" media="all" />
+
+  <!--[if lte IE 8]>
+      <script type="text/javascript" src="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/html5shiv/dist/html5shiv.min.js"></script>
+      <script type="text/javascript" src="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/es5-shim/es5-shim.min.js"></script>
+      <script type="text/javascript" src="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/es5-shim/es5-sham.min.js"></script>
+      <script type="text/javascript" src="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/respond.js/dest/respond.min.js"></script>
+  <![endif]-->
+
+  <link rel="shortcut icon" href="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/@dosomething/forge/assets/images/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="/profiles/dosomething/themes/dosomething/paraneue_dosomething/node_modules/@dosomething/forge/assets/images/apple-touch-icon-precomposed.png">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="NOODP" />
+<meta name="p:domain_verify" content="14e81c42e6c4ff0ca4ec7be173a4799f" />
+<meta name="description" content="Get high school dropout facts and statistics and learn why dropping out of high school can have negative affects on a young person&#039;s life. Find high school dropout prevention solutions." />
+<meta name="abstract" content="7,000 students drop out every day." />
+<meta name="keywords" content="11 Facts About High School Dropout Rates, Education" />
+<link rel="canonical" href="https://www.dosomething.org/us/facts/11-facts-about-high-school-dropout-rates" />
+<link rel="shortlink" href="https://www.dosomething.org/us/node/640" />
+<meta name="twitter:title" content="11 Facts About High School Dropout Rates" />
+
+  <script type="text/javascript" src="/profiles/dosomething/themes/dosomething/paraneue_dosomething/dist/modernizr.js"></script>
+</head>
+
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-640 node-type-fact-page i18n-en" >
+  <div class="chrome">
+        
+<!--[if lt IE 8 ]><div class="messages error">You're using an unsupported browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to make sure everything works nicely!</div><![endif]-->
+
+
+<div class="wrapper">
+  
+<nav class="navigation -white -floating">
+  <a class="navigation__logo" href="/"><span>DoSomething.org</span></a>
+  <a class="navigation__toggle js-navigation-toggle" href="#"><span>Show Menu</span></a>
+  <div class="navigation__menu">
+    <ul class="navigation__primary">
+      <li>
+        <a href="/campaigns">
+          <strong class="navigation__title">Explore Campaigns</strong>
+          <span class="navigation__subtitle">Any cause, anytime, anywhere.</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="/us/about/who-we-are">
+          <strong class="navigation__title">What Is DoSomething.org?</strong>
+          <span class="navigation__subtitle">Young people + social change.</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navigation__secondary">
+      <li>
+        <form action="/us/search/apachesolr_search" method="post" id="search-block-form" accept-charset="UTF-8"><div>
+<div class="form-item form-type-textfield form-item-search-block-form">
+ <input type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="text-field -search" />
+</div>
+<input type="hidden" name="form_build_id" value="form-YhsTYVrOZ7SLsV7yyn0TR4NzI_q_m6FHTxlkWGmnh_c" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div></form>      </li>
+              <li class="login"><a href="/us/user/login" id="link--login" data-modal-href="#modal--login" data-track-category="Link" data-track-action="Click" data-track-label="Login" class="secondary-nav-item">Log In</a> <a href="/us/user/authorize" id="link--openid-connect-login" data-track-category="Link" data-track-action="Click" data-track-label="Login" class="secondary-nav-item" style="display: none">Log In</a></li>
+          </ul>
+  </div>
+</nav>
+  
+  <main role="main">
+      <div class="region region-content">
+    
+
+<article id="node-640" class="node node-fact-page node-promoted">
+  <header role="banner" class="header ">
+    <div class="wrapper">
+      <h1 class="header__title">11 Facts About High School Dropout Rates</h1>
+          </div>
+  </header>
+
+      <section class="container">
+      <div class="wrapper">
+        <div class="container__block -narrow">
+          <p>Welcome to <a href="/">DoSomething.org</a>, a global movement of 5.5 million young people making positive change, online and off! The 11 facts you want are below, and the sources for the facts are at the very bottom of the page. After you learn something, do something! Find out how to <a href="/campaigns">take action here</a>.</p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="container -padded">
+    <div class="wrapper">
+      <div class="container__block">
+                  <aside class="fact-aside">
+            <img src="/sites/default/files/styles/550x300/public/images/high%20school%20dropout.jpg?itok=CdNg2cdK" alt="intro_image">          </aside>
+        
+        <ol class="list">
+                      <li>Every year, over 1.2 million students drop out of high school in the United States alone. That’s a student every 26 seconds – or 7,000 a day.
+</li>
+                      <li>About 25% of high school freshmen fail to graduate from high school on time.</li>
+                      <li>The U.S., which had some of the highest graduation rates of any developed country, now ranks 22nd out of 27 developed countries.
+</li>
+                      <li>The dropout rate has fallen 3% from 1990 to 2010 (12.1% to 7.4%).
+</li>
+                      <li>The percentage of graduating Latino students has significantly increased. In 2010, 71.4% received their diploma vs. 61.4% in 2006. However, Asian-American and white students are still far more likely to graduate than Latino & African-American students.
+</li>
+                  </ol>
+      </div>
+    </div>
+  </section>
+  
+      <div class="container -padded">
+      <div class="cta">
+        <div class="wrapper">
+          <h2 class="cta__message">Tackle a campaign to make the world suck less.</h2>
+          <a href="https://www.dosomething.org/us/campaigns" class="button">Explore Campaigns</a>        </div>
+      </div>
+    </div>
+  
+  <section class="container -padded">
+    <div class="wrapper">
+      <div class="container__block with-lists">
+                  <ol class="list" start="6">
+                          <li>A high school dropout will earn $200,000 less than a high school graduate over his lifetime. And almost a million dollars less than a college graduate.
+</li>
+                          <li>In 2010, 38 states had higher graduation rates. Vermont had the highest rate, with 91.4% graduating. And Nevada had the lowest with 57.8% of students graduating.
+</li>
+                          <li>Almost 2,000 high schools across the U.S. graduate less than 60% of their students.
+</li>
+                          <li>These “dropout factories” account for over 50% of the students who leave school every year.
+</li>
+                          <li>1 in 6 students attend a dropout factory. 1 in 3 minority students (32%) attend a dropout factory, compared to 8% of white students.
+</li>
+                          <li>In the U.S., high school dropouts commit about 75% of crimes.</li>
+                      </ol>
+              </div>
+
+              <div class="container__block">
+          <section class="footnote">
+            <h4 class="js-footnote-toggle">Sources</h4>
+            <ul class="js-footnote-hidden">
+                              <li><sup>1</sup> <p>Miller, Tony. "Partnering for Education Reform." U.S. Department of Education.  Accessed February 18, 2015. .</p>
+</li>
+                              <li><sup>2</sup> <p>Silver, David, Marisa Saunders, and Estela Zarate. "What Factors Predict High School Graduation in the Los Angeles Unified School District." Attendance Counts. Accessed February 18, 2015. .</p>
+</li>
+                              <li><sup>3</sup> <p>BANCHERO, STEPHANIE. "High-School Graduation Rate Inches Up." The Wall Street Journal. Accessed February 27, 2014, http://online.wsj.com/news/articles/SB10001424127887323301104578256142504828724.</p>
+</li>
+                              <li><sup>4</sup> <p>U.S. Department of Education. "Fast Facts: Dropout Rates." Institute of Education Sciences. Accessed February 26, 2014, https://nces.ed.gov/fastfacts/display.asp?id=16.</p>
+</li>
+                              <li><sup>5</sup> <p>Resmovits, Joy. "Graduation Rate Hits Record High For High School Students: Government Report." The Huffington Post. Accessed February 26, 2014. http://www.huffingtonpost.com/2013/01/22/graduation-rate-record-high-school-students_n_2522128.html.</p>
+</li>
+                              <li><sup>6</sup> <p>Cheeseman Day, Jennifer, and Eric C. Newburger. "The Big Payoff: Educational Attainment and Synthetic Estimates of Work-Life Earnings." United States Census Bureau. Accessed February 26, 2014, https://www.census.gov/prod/2002pubs/p23-210.pdf.</p>
+</li>
+                              <li><sup>7</sup> <p>Layton, Lyndsey. "National public high school graduation rate at a four-decade high." Washington Post. Accessed February 26, 2014, http://www.washingtonpost.com/local/education/national-high-school-graduation-rates-at-a-four-decade-high/2013/01/21/012cd7da-63e7-11e2-85f5-a8a9228e55e7_story.html.</p>
+</li>
+                              <li><sup>8</sup> <p>Balfanz, Robert, and Nettie Legters. "LOCATING THE DROPOUT CRISIS ." Center for Social Organization of Schools at Johns Hopkins University's School of Education. Accessed February 26 26,2014, http://www.csos.jhu.edu/crespar/techReports/Report70.pdf.</p>
+</li>
+                              <li><sup>9</sup> <p>Sparks, Sarah D.. "Study Points to Fewer 'Dropout Factory' Schools." Education Week. Accessed February 18, 2015. .</p>
+</li>
+                              <li><sup>10</sup> <p>Balfanz, Robert, and Nettie Legters. "LOCATING THE DROPOUT CRISIS ." Center for Social Organization of Schools at Johns Hopkins University's School of Education. Accessed February 26, 2014, http://www.csos.jhu.edu/crespar/techReports/Report70.pdf.</p>
+</li>
+                              <li><sup>11</sup> <p>Smiley, Travis. "Fact Sheet: Is the Dropout Problem Real?." Travis Smiley Reports. Accessed February 26, 2014. http://www.pbs.org/wnet/tavissmiley/tsr/education-under-arrest/fact-sheet-drop-out-rates-of-african-american-boys/.</p>
+</li>
+                          </ul>
+          </section>
+        </div>
+          </div>
+  </section>
+
+      <div class="container">
+      <div class="cta">
+        <div class="wrapper">
+          <h2 class="cta__message">Tackle a campaign to make the world suck less.</h2>
+          <a href="https://www.dosomething.org/us/campaigns" class="button">Explore Campaigns</a>        </div>
+      </div>
+    </div>
+  
+  </article>
+  </div>
+  </main>
+
+  
+<footer class="footer">
+  <div class="footer__columns">
+    <div class="footer__column -social">
+      <ul>
+      <li>
+      <a href="https://www.facebook.com/dosomething" class="social-icon -facebook" title="dosomething on Facebook"><span>dosomething on Facebook</span></a>    </li>
+      <li>
+      <a href="https://twitter.com/dosomething" class="social-icon -twitter" title="@dosomething on Twitter"><span>@dosomething on Twitter</span></a>    </li>
+      <li>
+      <a href="https://www.snapchat.com/add/dosomething" class="social-icon -snapchat" title="dosomething on Snapchat"><span>dosomething on Snapchat</span></a>    </li>
+      <li>
+      <a href="http://weheartit.com/dosomething" class="social-icon -weheartit" title="dosomething on We Heart It"><span>dosomething on We Heart It</span></a>    </li>
+      <li>
+      <a href="http://instagram.com/dosomething" class="social-icon -instagram" title="@dosomething on Instagram"><span>@dosomething on Instagram</span></a>    </li>
+      <li>
+      <a href="http://www.youtube.com/user/DoSomething1" class="social-icon -youtube" title="dosomething1 on YouTube"><span>dosomething1 on YouTube</span></a>    </li>
+  </ul>
+
+    </div>
+
+          <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Who We Are</h4>
+                  <ul>
+                          <li><a href="/us/about/who-we-are">What is DoSomething.org?</a></li>
+                          <li><a href="/us/about/our-people">Our Team</a></li>
+                          <li><a href="/us/about/sexy-financials">Sexy Financials</a></li>
+                          <li><a href="http://xyzfactor.org/">XYZ Factor</a></li>
+                          <li><a href="https://app.dosomething.org/">Mobile App</a></li>
+                          <li><a href="/us/about/our-press">Press</a></li>
+                          <li><a href="https://blog.dosomething.org/">Blog</a></li>
+                      </ul>
+              </div>
+          <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Our Friends</h4>
+                  <ul>
+                          <li><a href="http://www.tmiagency.org">TMI Agency</a></li>
+                          <li><a href="/us/about/our-partners">Partners</a></li>
+                          <li><a href="/us/about/old-people">Old People</a></li>
+                          <li><a href="/us/about/hotline-list">Crisis Hotlines</a></li>
+                      </ul>
+              </div>
+          <div class="footer__column -links">
+        <h4 class="js-toggle-collapsed">Get Involved</h4>
+                  <ul>
+                          <li><a href="/us/about/easy-scholarships">Scholarships</a></li>
+                          <li><a href="/us/about/join-our-team">Jobs</a></li>
+                          <li><a href="/us/about/internships">Internships</a></li>
+                          <li><a href="/us/about/donate">Donate</a></li>
+                          <li><a href="https://help.dosomething.org/hc/en-us">Help Center</a></li>
+                      </ul>
+              </div>
+      </div>
+
+  <div class="footer__subfooter">
+    <ul>
+      <li><a href="/us/about/terms-service">Terms of Service</a></li>
+      <li><a href="/us/about/privacy-policy">Privacy Policy</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
+  </div>
+
+  <script type="text/javascript" src="https://www.dosomething.org/profiles/dosomething/themes/dosomething/paraneue_dosomething/dist/lib.js?oi4paz"></script>
+<script type="text/javascript" src="https://www.dosomething.org/misc/drupal.js?oi4paz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"us\/","ajaxPageState":{"theme":"paraneue_dosomething","theme_token":"2oZGnR3ihl4kgq71DqVmb89V5be2aKZvlCobq-Az650","js":[],"css":{"profiles\/dosomething\/themes\/dosomething\/paraneue_dosomething\/dist\/app.css":1}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"dosomethingSearch":{"solrURL":"\/\/search.dosomething.org\/solr\/","collection":"collection1","language":"en"},"urlIsAjaxTrusted":{"\/us\/search\/apachesolr_search":true,"\/user\/login":true,"\/user\/register":true},"dosomethingUser":{"schoolFinderAPIEndpoint":"https:\/\/lofischools.herokuapp.com\/search"},"dsValidation":{"dateFormat":"DD\/MM\/YYYY"},"dosomethingSetting":{"globeUrl":"https:\/\/dsrealtimefeed.herokuapp.com\/services\/drupal","countryCode":"GB"},"password":{"strengthTitle":"Password strength:","hasWeaknesses":"To make your password stronger:","tooShort":"Make it at least 6 characters","addLowerCase":"Add lowercase letters","addUpperCase":"Add uppercase letters","addNumbers":"Add numbers","addPunctuation":"Add punctuation","sameAsUsername":"Make it different from your username","confirmSuccess":"yes","confirmFailure":"no","weak":"Weak","fair":"Fair","good":"Good","strong":"Strong","confirmTitle":"Passwords match:","username":""}});
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.dosomething.org/profiles/dosomething/themes/dosomething/paraneue_dosomething/dist/app.js?oi4paz"></script>
+<script type="text/javascript" src="//cdn.optimizely.com/js/2090121062.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-493209-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+  <div data-modal id="modal--login" role="dialog" hidden><div class="modal__block"><form action="/user/login" method="post" id="user-login-form" accept-charset="UTF-8"><div><div id="edit-header" class="form-item form-type-item">
+ <h2 class="auth-heading">Log in to get started!</h2>
+</div>
+<div class="form-item form-type-textfield form-item-name">
+  <label class="field-label" for="edit-name">Email address or cell number <span class="form-required" title="This field is required.">*</span></label>
+ <input  type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="text-field required" />
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label class="field-label" for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="text-field required" />
+</div>
+<input type="hidden" name="form_build_id" value="form-slAC7ZCt1PxC-vzDsyPaNs0VB7BFpm-s5XVpzqyZhOo" />
+<input type="hidden" name="form_id" value="user_login_block" />
+<div class="form-actions form-wrapper" id="edit-actions"><input class="button form-submit" type="submit" id="edit-submit" name="op" value="Log In" /></div><div id="edit-create-account-link" class="form-item form-type-item">
+ <p class="auth-toggle-link"><a href="/user/register" id="link--register" data-modal-href="#modal--register">Create a DoSomething.org account</a><br/><a href="/us/user/password">Forgot password?</a></p>
+</div>
+</div></form></div></div><div data-modal id="modal--register" role="dialog" hidden><div class="modal__block"><form class="user-info-from-cookie" action="/user/register" method="post" id="user-register-form" accept-charset="UTF-8"><div><div id="edit-message" class="form-item form-type-item">
+ <h2 class="auth-heading">Create a DoSomething.org account to get started!</h2>
+</div>
+<div class="auth-twocol form-wrapper" id="edit-field-first-name"><div id="field-first-name-add-more-wrapper"><div class="form-item form-type-textfield form-item-field-first-name-und-0-value">
+  <label class="field-label" for="edit-field-first-name-und-0-value">First Name <span class="form-required" title="This field is required.">*</span></label>
+ <input  class="js-validate text-field required" placeholder="What do we call you?" data-validate="name" data-validate-required="" type="text" id="edit-field-first-name-und-0-value" name="field_first_name[und][0][value]" value="" size="60" maxlength="255" />
+</div>
+</div></div><div class="form-item form-type-container">
+ <div id="field-birthdate-add-more-wrapper"><fieldset class="form-wrapper"><legend><span class="fieldset-legend">  <span class="form-required" title="This field is required.">*</span></span></legend><div class="fieldset-wrapper"><div  class="date-no-float container-inline-date"><div class="form-item form-type-date-text form-item-field-birthdate-und-0-value">
+ <div id="edit-field-birthdate-und-0-value"  class="date-padding clearfix"><div class="form-item form-type-textfield form-item-field-birthdate-und-0-value-date">
+  <label class="field-label" for="edit-field-birthdate-und-0-value-date">Birthday </label>
+ <div class="date-date"><input  class="js-validate text-field" placeholder="DD/MM/YYYY" data-validate="birthday" data-validate-required="" type="text" id="edit-field-birthdate-und-0-value-date" name="field_birthdate[und][0][value][date]" value="" size="60" maxlength="128" /></div>
+</div>
+</div>
+</div>
+</div></div></fieldset>
+</div>
+</div>
+<div id="edit-account" class="form-wrapper"><input class="username" type="hidden" name="name" value="5hppsnycXv" />
+<input type="hidden" name="timezone" value="UTC" />
+<div class="form-item form-type-textfield form-item-mail">
+  <label class="field-label" for="edit-mail">Email <span class="form-required" title="This field is required.">*</span></label>
+ <input  placeholder="your_email@example.com" class="js-validate text-field required" data-validate="email" data-validate-required="" type="text" id="edit-mail" name="mail" value="" size="60" maxlength="254" />
+</div>
+<div class="field-type-text field-name-field-mobile field-widget-text-textfield form-wrapper" id="edit-field-mobile"><div id="field-mobile-add-more-wrapper"><div class="form-item form-type-textfield form-item-field-mobile-und-0-value">
+  <label class="field-label" for="edit-field-mobile-und-0-value">Cell Number <em>(optional)</em> </label>
+ <input  class="js-validate text-field" placeholder="(555) 555-5555" data-validate="phone" type="text" id="edit-field-mobile-und-0-value" name="field_mobile[und][0][value]" value="" size="60" maxlength="255" />
+</div>
+</div></div><div class="form-item form-type-password-confirm form-item-pass">
+ <div class="form-item form-type-password form-item-pass-pass1">
+  <label class="field-label" for="edit-pass-pass1">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input class="js-validate text-field required" placeholder="6+ characters... make it tricky!" data-validate="password" data-validate-required="" data-validate-trigger="#edit-pass-pass2" type="password" id="edit-pass-pass1" name="pass[pass1]" size="25" maxlength="128" />
+</div>
+<div class="form-item form-type-password form-item-pass-pass2">
+  <label class="field-label" for="edit-pass-pass2">Confirm Password <span class="form-required" title="This field is required.">*</span></label>
+ <input class="js-validate text-field required" placeholder="Just double checking!" data-validate="match" data-validate-required="" data-validate-match="#edit-pass-pass1" type="password" id="edit-pass-pass2" name="pass[pass2]" size="25" maxlength="128" />
+</div>
+
+</div>
+</div><input type="hidden" name="form_build_id" value="form--gS9LbC9nlI1YqLavs8etsTfuuEGFRRw93QFl4X1xbk" />
+<input type="hidden" name="form_id" value="user_register_form" />
+<div class="form-actions form-wrapper" id="edit-actions--2"><input class="button form-submit" type="submit" id="edit-submit--2" name="op" value="Create new account" /></div><div id="edit-create-account-link--2" class="form-item form-type-item">
+ <p class="auth-toggle-link"><a href="/user/login" data-modal-href="#modal--login">Log in to an existing account</a></p>
+</div>
+<div id="edit-legal-text" class="form-item form-type-item">
+ <p class="footnote">Creating an account means you agree to our <a href="/us/about/terms-service">Terms of Service</a> & <a href="/us/about/privacy-policy">Privacy Policy</a> and to receive our weekly update. Message & data rates may apply. Text STOP to opt-out, HELP for help</p>
+</div>
+</div></form></div></div>
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ee99636967","applicationID":"23661280","transactionName":"NAYHNxRTCEEABUxcWg1MJAASWwlcTghXUVA8EwQEA20QWwQR","queueTime":0,"applicationTime":271,"atts":"GEEEQVxJG08=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>

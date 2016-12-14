@@ -1,0 +1,849 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head><script type="text/javascript">/* <![CDATA[ */_cf_loadingtexthtml="<img alt=' ' src='/CFIDE/scripts/ajax/resources/cf/images/loading.gif'/>";
+_cf_contextpath="";
+_cf_ajaxscriptsrc="/CFIDE/scripts/ajax";
+_cf_jsonprefix='//';
+_cf_websocket_port=8577;
+_cf_flash_policy_port=1243;
+_cf_clientid='683A09F7FA783242D03712AE3BB9168C';/* ]]> */</script><script type="text/javascript" src="/CFIDE/scripts/ajax/messages/cfmessage.js"></script>
+<script type="text/javascript" src="/CFIDE/scripts/ajax/package/cfajax.js"></script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	ColdFusion.Ajax.importTag('CFAJAXPROXY');
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_slideshow=ColdFusion.AjaxProxy.init('/plugins/cfc/bymedia/website/slideshow.cfc','jsSlideshow');
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_gallery=ColdFusion.AjaxProxy.init('/plugins/cfc/bymedia/website/gallery.cfc','jsGallery');
+	_cf_gallery.prototype.fncDisplay=function(gallery_cat_id,isMobile,isNewsletter,webroot,maxwidth,datasource,album,isAjax,blockid,iframe_preview,HIDEFOLDERS,page) { return ColdFusion.AjaxProxy.invoke(this, "fncDisplay","7CB69BC4", {gallery_cat_id:gallery_cat_id,isMobile:isMobile,isNewsletter:isNewsletter,webroot:webroot,maxwidth:maxwidth,datasource:datasource,album:album,isAjax:isAjax,blockid:blockid,iframe_preview:iframe_preview,HIDEFOLDERS:HIDEFOLDERS,page:page});};
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_documentstore=ColdFusion.AjaxProxy.init('/plugins/cfc/bymedia/website/documentstore.cfc','jsDocumentStore');
+	_cf_documentstore.prototype.fncDisplay=function(datasource,gallery_cat_id,blockid) { return ColdFusion.AjaxProxy.invoke(this, "fncDisplay","7CB69BC4", {datasource:datasource,gallery_cat_id:gallery_cat_id,blockid:blockid});};
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_calendar=ColdFusion.AjaxProxy.init('/plugins/cfc/bycontentid/website/calendar.cfc','jsCalendar');
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_newslist=ColdFusion.AjaxProxy.init('/plugins/cfc/bycontentid/website/newslist.cfc','jsNewsList');
+	_cf_newslist.prototype.fncDisplay=function(content_id,id,isMobile,isNewsletter,webroot,maxwidth,datasource,pageno) { return ColdFusion.AjaxProxy.invoke(this, "fncDisplay","7CB69BC4", {content_id:content_id,id:id,isMobile:isMobile,isNewsletter:isNewsletter,webroot:webroot,maxwidth:maxwidth,datasource:datasource,pageno:pageno});};
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_eventblock=ColdFusion.AjaxProxy.init('/plugins/cfc/bycontentid/website/eventblock.cfc','jsEventBlock');
+	_cf_eventblock.prototype.fncDisplay=function(datasource,cat_id,OriginalPageContentID,day,month,year,page,ajax,unqID) { return ColdFusion.AjaxProxy.invoke(this, "fncDisplay","7CB69BC4", {datasource:datasource,cat_id:cat_id,OriginalPageContentID:OriginalPageContentID,day:day,month:month,year:year,page:page,ajax:ajax,unqID:unqID});};
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_blog=ColdFusion.AjaxProxy.init('/plugins/cfc/bycontentid/website/blog.cfc','jsBlog');
+	_cf_blog.prototype.fncDisplay=function(datasource,cat_id,OriginalPageContentID,month,year,page,ajax,unqID) { return ColdFusion.AjaxProxy.invoke(this, "fncDisplay","7CB69BC4", {datasource:datasource,cat_id:cat_id,OriginalPageContentID:OriginalPageContentID,month:month,year:year,page:page,ajax:ajax,unqID:unqID});};
+/* ]]> */</script>
+
+<script type="text/javascript">/* <![CDATA[ */
+	var _cf_signup_newsletter=ColdFusion.AjaxProxy.init('/plugins/cfc/basic/website/signup_newsletter.cfc','jsSignUpNewsletter');
+	_cf_signup_newsletter.prototype.fncProcessNewsletter=function(email,firstname,surname) { return ColdFusion.AjaxProxy.invoke(this, "fncProcessNewsletter","7CB69BC4", {email:email,firstname:firstname,surname:surname});};
+/* ]]> */</script>
+
+
+<link rel="alternate" type="application/rss+xml" title="News" href="rss.xml" />
+
+
+      <title>KEGS | Home</title>
+      <meta name="description" content="Home" />
+      <meta name="keywords" content="" />
+      <meta name="distribution" content="Global" /> 
+      <meta name="copyright" content="Copyright  2011. All rights reserved." /> 
+      <meta name="resource-type" content="document" /> 
+      <meta name="author" content="" /> 
+      <meta name="robots" content="index,follow" />
+      <meta name="rating" content="General" /> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if IE 9]>
+<link rel="stylesheet" href="/style/IE9.css" type="text/css" media="screen" />
+<![endif]-->
+<script src="/js/jquery-ui-1.9.1.custom.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+<script type="text/javascript" src="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript" src="/js/thickbox.js"></script>
+<script type="text/javascript" src="/js/cycle.js"></script>
+<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="/js/parent_portal.js"></script>
+
+	
+
+<link rel="stylesheet" type="text/css" href="/style/skin.css" />
+<link rel='stylesheet' type='text/css' href='/fullcalendar/fullcalendar.css' />
+<link rel='stylesheet' type='text/css' href='/fullcalendar/fullcalendar.print.css' media='print' />
+<script type='text/javascript' src='/fullcalendar/fullcalendar_front.js'></script>
+<script src="/js/hover_caption.js" type="text/javascript" charset="utf-8"></script>
+
+<link rel="StyleSheet" href="/style/thickbox.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/style/slideshow.css" type="text/css"  media="screen" />
+<link rel='stylesheet' href="/css/style.css" type="text/css" media='screen' />
+<link rel="stylesheet" type="text/css" href="/style/shadowbox.css" />
+
+<script type="text/javascript" src="/js/shadowbox.js"></script>
+
+<link rel="stylesheet" href="/style/style.css" type="text/css" media="screen" />
+
+<link href="/js/css/ui-lightness/jquery-ui-1.9.1.custom.css" rel="stylesheet">
+<link rel="stylesheet" href="/style/tabs.css" />
+<script src="/js/slides.jquery.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/js/ticker-style.css" />
+<script src="/js/ticker.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function() {		
+		$( "#accordion" ).accordion({
+				heightStyle: "content"
+				});
+		$( "#tabs" ).tabs();
+			   });
+</script>
+<script type="text/javascript">
+     $(function () {
+        $('#js-news').ticker({displayType: 'fade',speed:2000});
+				 })
+</script>
+
+<script type="text/javascript">
+
+		var maxPage = 1;
+		
+	
+	
+	var movePos=1;	
+
+	function moveNext()
+	{
+		movePos = movePos + 1;
+
+		if(movePos>maxPage)
+		{
+			movePos=1;	
+		}
+		newsTop(movePos);
+		
+					
+	}
+
+	function newsTop(page)
+	{
+		if(page ==1)
+		{
+			$("#newsMove").animate({top: -5}, 1000);
+			document.getElementById('homenews1').setAttribute("class","hmPagOn");
+			document.getElementById('homenews2').setAttribute("class","hmPag");
+			
+		}
+		else if(page ==2)
+		{
+			$("#newsMove").animate({top: -245}, 1000);
+			document.getElementById('homenews1').setAttribute("class","hmPag");
+			document.getElementById('homenews2').setAttribute("class","hmPagOn");
+			
+		}
+		else if(page ==3)
+		{
+			$("#newsMove").animate({top: -490}, 1000);
+			document.getElementById('homenews1').setAttribute("class","hmPag");
+			document.getElementById('homenews2').setAttribute("class","hmPag");
+			
+		}	
+	}
+
+
+		var maxEPage = 3;
+		
+	
+	
+	var moveEPos=1;	
+
+	function moveENext()
+	{
+		moveEPos = moveEPos + 1;
+
+		if(moveEPos>maxEPage)
+		{
+			moveEPos=1;	
+		}
+		eventTop(moveEPos);
+		
+					
+	}
+
+	function eventTop(page)
+	{
+		if(page ==1)
+		{
+			$("#eventMove").animate({top: -5}, 1000);
+			document.getElementById('homevent1').setAttribute("class","hmPagOn");
+			document.getElementById('homevent2').setAttribute("class","hmPag");
+			document.getElementById('homevent3').setAttribute("class","hmPag");
+		}
+		else if(page ==2)
+		{
+			$("#eventMove").animate({top: -245}, 1000);
+			document.getElementById('homevent1').setAttribute("class","hmPag");
+			document.getElementById('homevent2').setAttribute("class","hmPagOn");
+			document.getElementById('homevent3').setAttribute("class","hmPag");
+		}
+		else if(page ==3)
+		{
+			$("#eventMove").animate({top: -490}, 1000);
+			document.getElementById('homevent1').setAttribute("class","hmPag");
+			document.getElementById('homevent2').setAttribute("class","hmPag");
+			document.getElementById('homevent3').setAttribute("class","hmPagOn");
+		}	
+	}
+
+	setInterval('moveENext()',5000);
+
+
+
+	function twitterLoad(page)
+	{
+		if(page ==1)
+		{
+			$("#tweet3").fadeOut('fast', function() {
+				$("#tweet2").fadeOut('fast', function() {
+    					$("#tweet1").fadeIn('fast');
+ 				 });
+  			});
+
+
+
+			document.getElementById('twitter1').setAttribute("class","hmPagOn");
+			document.getElementById('twitter2').setAttribute("class","hmPag");
+			document.getElementById('twitter3').setAttribute("class","hmPag");
+		}
+		else if(page ==2)
+		{
+	$("#tweet1").fadeOut('fast', function() {
+				$("#tweet3").fadeOut('fast', function() {
+    					$("#tweet2").fadeIn('fast');
+ 				 });
+  			});
+		
+			document.getElementById('twitter1').setAttribute("class","hmPag");
+			document.getElementById('twitter2').setAttribute("class","hmPagOn");
+			document.getElementById('twitter3').setAttribute("class","hmPag");
+		}
+		else if(page ==3)
+		{
+	$("#tweet1").fadeOut('fast', function() {
+				$("#tweet2").fadeOut('fast', function() {
+    					$("#tweet3").fadeIn('fast');
+ 				 });
+  			});
+			document.getElementById('twitter1').setAttribute("class","hmPag");
+			document.getElementById('twitter2').setAttribute("class","hmPag");
+			document.getElementById('twitter3').setAttribute("class","hmPagOn");
+		}	
+	}
+</script>
+
+
+
+<meta name="google-site-verification" content="4TXC3x2Q6hxKbWe7IQORTBYux4CZ0khR47o55v29x6Y" />
+</head>
+
+<body>
+<div id="push">
+
+
+<!--st cont-->
+<div id="container">
+
+<!--st main-->
+<div id="main">
+
+
+
+<!--st header-->
+<div id="header">
+
+	<a href="/"><img class="logo" src="/images/template/KEGS-logo.jpg" width="569" height="84" alt="King Edwards VI Grammar School, Chelmsford" /></a>
+    <div class="topLinks"><!--st tl-->
+    <ul>
+	
+	
+	
+    	<li><a href="/privacy/2534.html">Privacy</a></li>
+        <li><a href="/sitemap/2533.html">Sitemap</a></li>
+	
+        <li><a href="https://webmail.kegs.org.uk" target="_blank">Webmail</a></li>
+ <li><a href="http://kegsnet.org.uk/" target="_blank">KEGSNET</a></li>
+<li><a href="/kegs-school-fund2/145914.html ">School Fund</a></li>
+    </ul>
+    <!--st search-->
+    <div id="search">
+    		<div id="search1" class="searchbar">
+				<form action="/searchresults.cfm" method="get">
+				<input style="float:left;" type="text" name="search" onfocus="this.value = (this.value == 'Search...') ? '' : this.value" value="Search..." />
+                
+                <input type="image" value="Search" name="searchbutton" onmouseout="this.src='/images/template/search-btn.jpg'" onmouseover="this.src='/images/template/search-btn_up.jpg'" src="/images/template/search-btn_up.jpg" style="float:left;height:28px;margin-top:0px;">
+                
+                
+				
+				</form>
+			</div>
+    </div>
+    <!--end search-->
+    </div><!--end tl-->
+    
+    <!--st nav-->
+    <div class="nav">
+    	<ul>
+	
+		
+       	 	<li>
+			<a href="/" class="active" >
+				HOME
+			</a>
+		</li>	
+	
+		<li>
+			<a href="/headteachers-welcome/2660.html"  >
+				ABOUT
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/introduction4/2671.html"  >
+				ADMISSIONS
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/introduction5/2700.html"  >
+				PARENTS
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/introduction6/2701.html"  >
+				STUDENTS
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/introduction2/2653.html"  >
+				SIXTH FORM
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/introduction3/2654.html"  >
+				PREMISES HIRE
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/news/2548.html"  >
+				NEWS & EVENTS
+			</a>
+		</li>	
+		
+		<li>
+			<a href="/contact-us2/2655.html"  >
+				CONTACT US
+			</a>
+		</li>	
+		
+        </ul>
+    </div>
+    <!--end nav-->
+    
+</div>
+<!--end header-->
+
+<!--st center-->
+<div id="center">
+
+    <!--st home panel-->
+    <div id="homeSection">
+    
+    	<!--st welcome panel-->
+        <div class="homeWelcome">
+        <h3>WELCOME</h3>
+        <p><p>
+	Welcome to KEGS. I hope that our website conveys a sense of the passion and dynamism that students and staff bring to all that they do, making KEGS such a wonderful place to learn and to work.</p>
+</p>
+        <a class="wContinue" href="/headteachers-welcome/2660.html">CONTINUE READING</a>
+        </div>
+        <!--end welcome-->
+      	
+	
+
+  <!--st banner-->
+        <div id="banner">
+
+        <div id="slides">
+        <div class="slides_container">
+	
+
+        <img src="/media/images/user-uploads/original/P10006721.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop 2 chemistry yr10.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop General_002.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop biology yr 7.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop Orchestra_019.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop PE_Yr10_006.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop Chemistry_Yr10_001.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop Art_Yr13_001.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/crop Chemistry_Yr10_009.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/cropped French_Yr09_003.jpg" width="660" height="250"  />
+	
+        
+
+        <img src="/media/images/user-uploads/original/Les Mis for website.jpg" width="660" height="250"  />
+	
+        
+        </div>
+        </div>
+
+
+
+        </div>
+        <!--end banner-->
+
+
+
+    </div>
+    <!--end home panel-->
+    
+  
+
+  <!--st message-->
+    <div class="message ">
+    	<div class="alertH">SCHOOL ALERTS</div>
+        <div class="alert">
+        <ul id="js-news" class="js-hidden">
+
+   <li class="news-item"><a href="/kegs-a-level-preu-and-gcse-results/568581.html">KEGS A LEVEL, PRE-U AND GCSE RESULTS </a></li>
+
+
+  
+</ul>
+        </div>
+    </div>
+    <!--end message-->
+
+
+
+<!--st sidebar-->
+    <div id="homeSidebar">
+    <div id="accordion">			
+			<h3 class="acc_trigger"><a href="#">CURRENT PARENTS</a></h3>
+			<div><!--start acc cont 1-->
+					<ul>
+
+                    <li><a href="http://www.kegs.org.uk/force_download.cfm?id=1790"  >Latest Newsletter</a></li>
+
+                    <li><a href="http://www.wisepay.co.uk/store/generic/template.asp?mID=4101&ACT=nav" target="_blank" >Wisepay</a></li>
+
+                    <li><a href="http://www.kegs.org.uk/force_download.cfm?id=1738"  >Term & Holiday Dates 2016-17</a></li>
+
+                    <li><a href="/kegs-pupil-premium/413968.html"  >KEGS Pupil Premium</a></li>
+
+                    <li><a href="/parents-association/2612.html"  >Parents' Association</a></li>
+                   
+                    </ul>
+			</div><!--end acc cont 1-->
+			
+			<h3 class="acc_trigger"><a href="#">PROSPECTIVE PARENTS</a></h3>
+			<div><!--start acc cont 1-->
+				<ul>
+
+                    <li><a href="/how-to-apply2/2625.html"  >How to Apply</a></li>
+
+                    <li><a href="/admissions-policy/2626.html"  >Admissions Policy</a></li>
+   
+                    </ul>
+			</div><!--end acc cont 1-->
+			
+			<h3 class="acc_trigger"><a href="#">STUDENTS</a></h3>
+			<div><!--start acc cont 1-->
+				<ul>
+
+                    <li><a href="http://http://kegsnet.org.uk" target="_blank" >KEGSNET</a></li>
+
+                    <li><a href="/exam-information3/2599.html"  >Exam Information</a></li>
+
+                    <li><a href="/clubs--activities/2598.html"  >Clubs & Activities</a></li>
+   
+                    </ul>
+			</div><!--end acc cont 1-->	
+
+  	
+<h3 class="acc_trigger"><a href="#">KEGS ALUMNI NETWORK</a></h3>
+			<div><!--start acc cont 1-->
+				<ul>
+
+                    <li><a href="/kegs-alumni-network/2648.html">Welcome to KEGS Alumni Network</a></li>
+                    <li><a href="/kegs-alumni-network-registration/298746.html">Join KEGS Alumni Network</a></li>
+        </ul>
+			</div><!--end acc cont 1-->	
+
+
+                	
+		
+</div>
+
+
+    </div>
+    <!--end sidebar-->  <!--st home tabbed-->
+    <div id="homeTabbed">
+    <div id="tabs">
+	<ul>
+		<li><a class="first" href="#tabs-1">LATEST NEWS</a></li>
+		<li><a href="#tabs-2">UPCOMING EVENTS</a></li>
+	</ul>
+	<div id="tabs-1">
+
+<div style="position:relative;top:0px;left:0px;height:240px;margin-bottom:10px;width:380px;">	<div style="position:absolute;right:0px;bottom:-25px;" id="readNews"><a href="/news/2548.html">Read More</a></div>
+<div id="newsContainer" style="position:absolute;top:0px;left:0px;height:240px;overflow:hidden;width:380px;">
+<div id="newsMove" style="height:240px;position:absolute;top:-5px;left:0px;width:380px;">
+ <ul class="tabs">
+
+  
+                 	<li>
+
+
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">KEGS A LEVEL, PRE-U AND GCSE RESULTS ...</p>
+                    <p class="date">Published on 18 August 16</p>
+                    <p class="Rmore"><a href="/kegs-a-level-preu-and-gcse-results/568582.html">CONTINUE READING</a></p>
+                    </div>
+                    </li>
+
+                	</ul>
+</div>
+</div>
+</div>
+
+<div style="float:left;">
+	
+	
+		<div id="homenews1" class="hmPagOn"></div>
+		
+	
+</div>
+	
+
+    </div>
+	<div id="tabs-2">
+<div style="position:relative;top:0px;left:0px;height:240px;margin-bottom:10px;width:380px;"><div style="position:absolute;right:0px;bottom:-25px;" id="readNews"><a href="/calendar--daily-events/2618.html">Read More</a></div>
+<div id="eventContainer" style="position:absolute;top:0px;left:0px;height:240px;overflow:hidden;width:380px;">
+<div id="eventMove" style="height:240px;position:absolute;top:-5px;left:0px;width:380px;">
+    <ul class="tabs" >
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">Carol Service (Hd)...</p>
+                   <p class="date">14 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">Project 9 (9S/T with 8C/D/E)...</p>
+                   <p class="date">15 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">Project 9 (9H/M with 8 A/B)...</p>
+                   <p class="date">16 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">WEEK A...</p>
+                   <p class="date">19 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">Y12 Local Primary School Drama Tour (Fr)...</p>
+                   <p class="date">19 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+    <li>
+
+
+
+						
+<div style="height:80px;width:80px;overflow:hidden;float:left;">
+						<img class="Hthumb" alt="" src="/images/content/content_news.jpg"   height="100%"  />
+					</div>
+                    <div class="hnc">
+                    <p class="excerpt">Prize Giving (Pt)...</p>
+                   <p class="date">20 December 16</p>
+                    <p class="Rmore"><a href="/calendar--daily-events/2618.html">VIEW EVENT</a></p>
+                    </div>
+                    </li>
+
+
+                   
+                	</ul>
+</div>
+</div>
+</div>
+
+<div style="float:left;">
+	
+	
+		<div id="homevent1" class="hmPagOn" onclick="eventTop(1);"></div>
+		<div id="homevent2" class="hmPag" onclick="eventTop(2);"></div>
+		<div id="homevent3" class="hmPag" onclick="eventTop(3);"></div>
+		
+	
+	
+
+	
+ </div>
+    </div>
+</div>
+    </div>
+    <!--end home tabbed-->  
+
+    <!--st right sidebar-->
+    <div class="homeRSidebar">
+    <a class="nl" href="/force_download.cfm?id=1790" title="Latest Newsletters">LATEST NEWSLETTERS</a>
+    <a class="ll" href="/leading-edge-and-learning-lessons-vol-4--vol-5/2628.html" title="Learning Lessons">LEARNING LESSONS</a>
+    
+    <!--feed the bird-->
+    <div id="tweets">
+    <h5>LATEST TWEETS</h5>
+
+
+
+<div id="tweet1">
+<div style="height:105px;border-bottom:1px solid #ccc">
+<p>Daniel and Elliot, our resident chess prodigies, are taking on all comers at the Christmas Fayre https://t.co/NaC6SUSD6r</p></div>
+<span style="display:block;padding-top:8px;color:#999;font-size:11px;">Posted: 03 Dec</span>
+
+</div>
+<div id="tweet2" style="display:none;"><div style="height:105px;border-bottom:1px solid #ccc">
+<p>Interested in joining KEGS Sixth Form in Sept 2017? It's our Info evening tonight. 5-8pm. For all Y11s and parents. No booking required.</p></div>
+<span style="display:block;padding-top:8px;color:#999;font-size:11px;">Posted: 30 Nov</span>
+</div>
+<div id="tweet3" style="display:none;"><div style="height:105px;border-bottom:1px solid #ccc">
+<p>Sports Hall. Theatre. Science lab. New social & study space. We're looking forward to presenting our plans tonight. Parents' Forum. 6.30pm.</p></div>
+<span style="display:block;padding-top:8px;color:#999;font-size:11px;">Posted: 28 Nov</span>
+</div>
+
+
+<div style="position:absolute;width:46px;height:12px;right:0px;bottom:0px;">
+	<div id="twitter1" class="hmPagOn" onclick="twitterLoad(1);"></div>
+	<div id="twitter2" class="hmPag" onclick="twitterLoad(2);"></div>
+	<div id="twitter3" class="hmPag" onclick="twitterLoad(3);" style="margin-right:0px;"></div>
+</div>      
+</div>
+
+
+    <!--stop feeding the bird-->
+    
+    </div>
+    <!--end right sidebar-->
+
+</div>
+<!--end center-->
+
+</div>
+<!--end main-->
+
+
+</div>
+<!--end cont-->
+
+</div>
+<!--end push-->
+
+
+<!--start banner function-->
+<script type="text/javascript">
+  $(document).ready(function () {
+
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				effect: 'fade',
+				crossfade: true,
+				fadeSpeed: 550
+			});
+		});
+});
+
+	</script>
+<!--end banner function-->
+
+	<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="/js/cookieControl-5.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">//<![CDATA[
+  cookieControl({
+      introText:'<p>This site uses some unobtrusive cookies to store information on your computer.</p>',
+      fullText:'<p>We use traffic log cookies to identify which pages are being used. This helps us analyse data about web page traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.</p><p>You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.</p><p>By using our site you accept the terms of our <a href="/privacy/2534.html">Privacy Policy</a>.</p>',
+      position:'left', // left or right
+      shape:'triangle', // triangle or diamond
+      theme:'light', // light or dark
+      startOpen:false,
+      autoHide:0,
+      subdomains:false,
+      protectedCookies: [], //list the cookies you do not want deleted ['analytics', 'twitter']
+      consentModel:'implicit',
+      onAccept:function(){ccAddAnalytics()},
+      onReady:function(){},
+      onCookiesAllowed:function(){ccAddAnalytics()},
+      onCookiesNotAllowed:function(){},
+      countries:'United Kingdom,Netherlands' // Or supply a list ['United Kingdom', 'Greece']
+      });
+
+      function ccAddAnalytics() {
+       
+      }
+   //]]>
+</script>
+<style type="text/css">
+.ccc-about{display:none}
+</style> 
+<!--st footer-->
+<div id="footer">
+
+<!--st foot cntre-->
+<div id="footCntre">
+	<div class="fleft">
+    King Edward VI Grammar School
+    <p class="address">
+    Broomfield Road, Chelmsford<br />
+    Essex CM1 3SX<br />
+    United Kingdom
+    </p>
+    <p class="contact">
+    T: (01245) 35 35 10<br />
+    F: (01245) 34 47 41<br />
+    E: <a href="mailto:office@kegs.org.uk">office@kegs.org.uk</a>
+    </p>
+    <p class="HT">Headteacher: Thomas Carter MA MBA NPQH</p>
+    </div>
+    <div class="fright">
+    <div class="social">
+    <a class="tw" href="http://www.twitter.com/KEGS_Chelmsford" target="_blank">Twitter</a>
+    <a class="sh addthis_button" href="http://www.addthis.com/bookmark.php">Share</a>
+    <a class="rss" href="/rss.xml">RSS</a>
+    </div>
+    <p class="cprgh">&copy; Copyright, 2016 King Edward VI Grammar School</p>
+    <p class="lnk"><a href="http://www.concept4.com/education-services/122.html" target="_blank">School web design</a> by Concept4</p>
+    </div>
+</div>
+<!--end foot cntre-->
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+
+<script type="text/javascript">
+var addthis_config = {
+ui_click: true,
+services_exclude: 'print'
+} 
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47514718-1', 'kegs.org.uk');
+  ga('send', 'pageview');
+
+</script>
+</div>
+<!--end footer-->
+
+</body>
+</html>

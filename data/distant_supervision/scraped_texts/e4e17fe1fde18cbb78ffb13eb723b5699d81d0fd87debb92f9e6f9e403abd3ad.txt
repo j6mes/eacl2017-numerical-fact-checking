@@ -1,0 +1,75 @@
+Spring arrives for a very short period in Chicago between April and May. Whilst fog is most frequent during this season, the uppermost regular day temperature is 15°C with the lowest average temperature 5°C.
+Thunderstorms are prevalent during spring time in Chicago, with the season a largely unpredictable one. The highest temperature recorded in this season is 33°C in May, with -22°C the lowest temperature recorded in preceding month of March.
+Spanning across June-August, summers in Chicago usually feature moderately high temperatures that regularly climb to 32°C.
+Summer is both the rainiest and sunniest season in Chicago, with the season prone to thunderstorms but also a vast amount of possible sunshine.
+The average maximum temperature reaches 28°C in Chicago, with the highest temperature recorded as 41C in July and the lowest average temperature standing at 16°C.
+The extreme heat from the summer in Chicago can offer persist into the autumn season, with weather relatively unpredictable during the September-November months.
+Whilst still hot, Chicago can be chilly, rainy or even a tad moist during autumn. September can produce the highest temperature of up to 36°C, whilst November will usually experience a lower temperature of 13°C.
+The winter is often in vast comparison to the summers of Chicago, with snowfall a regular feature that provides an average of 38 inches of snow on average.
+Snow will often cover the Chicago land for a few weeks, but temperatures on the whole can be quite variable. The highest average temperature is 10°C, with the lowest average temperature around -9°C.
+Extremes have been known to hit Chicago during this season, with visitors in January potentially experiencing a rather intolerable -29°C and contrastingly, 22°C in February.
+$(function () {
+var chart;
+$(document).ready(function() {
+chart = new Highcharts.Chart({
+chart: {
+renderTo: 'tempchartcontainer',
+type: 'spline'
+credits: {
+enabled: false
+colors: ['#FF8533', '#4572A7'],
+title: {
+text: 'Average Temperature (°c) Graph for Chicago'
+xAxis: {
+categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+labels: {
+rotation: 270           ,
+yAxis: {
+title: {
+text: 'Temperature (°c)'
+tooltip: {
+enabled: true
+plotOptions: {
+spline: {
+dataLabels: {
+enabled: true
+enableMouseTracking: false
+series: [{
+name: 'Average High Temp (°c)', color: '#FF8533',
+data: [1, 4, 10, 17, 22, 26, 29, 28, 25, 18, 11, 3]},
+name: 'Average Low Temp (°c)', color: '#4572A7',
+data: [-6, -4, 0, 6, 11, 16, 20, 19, 15, 9, 3, -4]}
+$(function () {
+$('#precipchartcontainer').highcharts({
+chart: {
+zoomType: 'xy'
+credits: {
+enabled: false
+title: {
+text: 'Average Rainfall (mm Graph for Chicago)'
+xAxis: [{
+categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+labels: {
+rotation: 270           ,
+yAxis: [{ // Primary yAxis
+title: {
+text: 'Average Rainfall days'        }
+min: 0,
+max: 30,
+tickInterval: 5
+}, { // Secondary yAxis
+title: {
+text: 'Precipitation (mm)',
+style: {
+color: '#4572A7'
+opposite: true
+tooltip: {
+shared: true
+series: [{
+name: 'Precipitation (mm)', type: 'column', yAxis: 1, color: '#38A1C1',
+data: [17.4, 25.0, 39.5, 57.9, 108.9, 87.4, 94.8, 98.1, 59.6, 66.0, 61.8, 31.0],
+tooltip: {
+valueSuffix: ' mm'
+name: 'Average Rainfall Days', type: 'spline', color: '#CC9900',
+data: [8, 7, 13, 12, 17, 12, 12, 13, 10, 13, 14, 9]}
+Note: The data for charts above are taken from year 2000 to 2012.

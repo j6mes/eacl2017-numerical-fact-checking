@@ -1,0 +1,879 @@
+
+        <!doctype html>
+        <html xmlns:og="http://ogp.me/ns#">
+            <head>
+                <meta charset="utf-8">
+                
+        <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[/s](d+.d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"32a39e099b",applicationID:"21536736",sa:1}</script>
+    
+                
+                
+        <link rel="stylesheet" type="text/css" href="https://assets.bwbx.io/font-service/css/NHaasGroteskTXPro-55Rg,NHaasGroteskDSPro-75Bd,TiemposTextWeb-Regular,TiemposTextWeb-RegularItalic,TiemposHeadlineWeb-Bold,AvenirNext-Demi/font-face.css">
+    
+                <link href="https://assets.bwbx.io/javelin/public/css/application/application-bb74794f8e.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://www.bbthat.com/assets/v1.2.1/that.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/font-service/css/Bloomberg,NHaasGroteskTXPro-55Rg,NHaasGroteskDSPro-75Bd,NHaasGroteskDSPro-95Blk,AvenirNext-Demi/font-face.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://nav.bloomberg.com/public/stylesheets/bb-global-nav-8daee387bc.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/nav/bb/nav-7925ef46ee.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/components/breaking_news_placeholder/breaking_news-a6270d5f8e.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-5035d81885.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-96d239dc7c.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-feab898b86.small_desktop.css" media="(min-width:1021px) and (max-width:1280px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-a69847c3fa.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-18b13ea089.tablet.css" media="(min-width:761px) and (max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/layout/basic/basic-80068e7b37.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/ads/leaderboard/leaderboard-bf966d32e6.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ads/leaderboard/leaderboard-290beb4fc2.tablet-desktop.css" media="(min-width:761px)" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/components/abstract/abstract-c1458b6375.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/components/author_tout/author_tout-1f08dd3eb5.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/author_tout/author_tout-e273b6df99.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/components/author_details/author_details-79b4455612.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-df7b52d884.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/newsletter_tout-7653bbce42.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-9104c48870.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/in_article_ad-238ed3378a.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-e74c024d6f.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/newsletter_tout-5887db8153.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-e886f59cb3.tablet-desktop.css" media="(min-width:761px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/mobile_ads-10915d4c59.tablet-desktop.css" media="(min-width:761px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-0b68e3319e.tablet.css" media="(min-width:761px) and (max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/in_article_ad-1f3cd7d393.tablet.css" media="(min-width:761px) and (max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/in_article_ad-da16ca24ed.mobile-tablet.css" media="(max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/body-2cfdf98971.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/in_article_ad-4f5a3665c2.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/mobile_ads-1a98e3a413.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/body/basic/newsletter_tout-12eaa8fd13.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/small_image/small_image-df9743c48e.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/small_image/small_image-a136207353.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/small_image/small_image-3c1ad74a1a.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-a7a63d4786.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-341bfa3052.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-6a33ad34f5.small_desktop.css" media="(min-width:1021px) and (max-width:1280px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-b17a45ed53.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-a274b68c4a.tablet.css" media="(min-width:761px) and (max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ledes/basic/text_only/text_only-45fe32f1b1.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/components/recirc/recirc-54a5451ab9.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/ads/terminal_tout/terminal_tout-06ffd4bb61.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/ads/terminal_tout/terminal_tout-b55b132f21.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/themes/default/default-d04a06822d.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://assets.bwbx.io/javelin/public/css/components/recirc/recirc-54a5451ab9.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/ads/native/native-15685ecbee.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/components/image_viewer/image_viewer-b050485e3d.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/image_viewer/image_viewer-44ae116396.desktop.css" media="(min-width:1021px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/image_viewer/image_viewer-90a9b24409.mobile-tablet.css" media="(max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/image_viewer/image_viewer-0e5ec91ea4.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/print/print-1c3cb980b3.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/javelin/public/css/components/truste/truste-28f6157d69.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/truste/truste-323c682892.small_desktop.css" media="(min-width:1021px) and (max-width:1280px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/truste/truste-5679a9f67c.large_desktop.css" media="(min-width:1281px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/truste/truste-932ba91b49.tablet.css" media="(min-width:761px) and (max-width:1020px)" property="stylesheet" rel="stylesheet" type="text/css">
+<link href="https://assets.bwbx.io/javelin/public/css/components/truste/truste-53c717658f.mobile.css" media="(max-width:760px)" property="stylesheet" rel="stylesheet" type="text/css">
+                <link href="https://assets.bwbx.io/font-service/css/Bloomberg/font-face.css" media="all" property="stylesheet" rel="stylesheet" type="text/css"><link href="https://nav.bloomberg.com/public/stylesheets/bb-global-footer-52168e87bc.css" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+                
+        <title>Exxon Sells $12 Billion in Bonds to Build War Chest - Bloomberg</title>
+        <link rel="canonical" href="https://www.bloomberg.com/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat">
+        <meta name="description" content="Exxon Mobil Corp. raised $12 billion in its biggest bond sale on record and may use the funds to snap up rivals amid a commodities bust.">
+        <meta name="referrer" content="unsafe-url">
+        <meta name="referrer" content="always">
+        <meta property="og:description" content="Exxon Mobil Corp. raised $12 billion in its biggest bond sale on record and may use the funds to snap up rivals amid a commodities bust.">
+        <meta property="og:image" content="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/-1x-1.jpg">
+        <meta property="og:site_name" content="Bloomberg.com">
+        <meta property="og:title" content="Exxon Sells $12 Billion in Bonds to Build War Chest">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="https://www.bloomberg.com/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat">
+        <meta name="fb:status" content="Exxon Mobil Corp. raised $12 billion in its biggest bond sale on record and may use the funds to snap up rivals amid a commodities bust.">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:description" content="Exxon Mobil Corp. raised $12 billion in its biggest bond sale on record and may use the funds to snap up rivals amid a commodities bust.">
+        <meta name="twitter:image" content="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/-1x-1.jpg">
+        <meta name="twitter:site" content="@business">
+        <meta name="twitter:title" content="Exxon Sells $12 Billion in Bonds to Build War Chest">
+        <meta name="parsely-title" content="Exxon Sells $12 Billion in Bonds to Build War Chest">
+        <meta name="parsely-link" content="https://www.bloomberg.com/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat">
+        <meta name="parsely-type" content="post">
+        <meta name="parsely-image-url" content="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/-1x-1.jpg">
+        <meta name="parsely-pub-date" content="2016-02-29T14:36:00.366Z">
+        <meta name="parsely-section" content="personal-finance">
+        <meta name="parsely-tags" content="Markets,Exxon Mobil Corp,Bonds,Debt,War,Oil,Region: Global,Page: article">
+        <meta name="parsely-post-id" content="O3BAXJ6JIJVV01">
+        <meta name="parsely-author" content="Aleksandra Gjorgievska">
+        
+        <script id="gtm-tracking-metadata" type="application/json">
+            {
+        "adcode": "business/news/industries/article",
+        "author": "Aleksandra Gjorgievska",
+        "publishedAt": "2016-02-29T14:36:00.366Z",
+        "storyId": "O3BAXJ6JIJVV01",
+        "contentType": "content-article",
+        "pageType": "content",
+        "template": "javelin-article-html",
+        "vertical": "personal-finance",
+        "topic": "Markets",
+        "attributor": "bn",
+        
+        "transporter": "false",
+        "refresh": "false",
+        "headline": "Exxon Sells $12 Billion in Bonds to Build War Chest",
+        "slug": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+        
+
+        "legacy_bb_c_type": "article",
+        "legacy_bb_topic1": "Markets",
+        "legacy_bb_topic2": "Energy Industry,Space,Money Manager,Fixed Income,Capital Expenditures,Shopping,Cash Flow,Credit Rating,Acquisitions,Energy,Oil,War,Debt,Bonds",
+        "legacy_bb_people": "Andrew S Brenner",
+        
+        "legacy_bb_category": "personal-finance"
+    }
+        </script>
+    
+        
+    <link rel="icon"
+        type="image/png"
+        href="https://assets.bwbx.io/javelin/public/images/favicon-business-4b63d80936.png">
+    
+    
+                
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+            </head>
+            <body data-theme="default">
+                <script type="text/javascript">window.__bloomberg__=window.__bloomberg__||{};window.__bloomberg__.environment={"videoPlayerUrl":"","playlistPlayerEnabled":false,"psznTrackingUrl":"https://tracking.bloomberg.com/images/tracking-pixel.gif"};</script>
+                
+        <script type="text/javascript">
+            (function () {
+                if(typeof window.CustomEvent === "function") return false;
+                function CustomEvent(event, p) {
+                    p = p || {bubbles: false, cancelable: false, detail: undefined};
+                    var e = document.createEvent("CustomEvent");
+                    e.initCustomEvent(event, p.bubbles, p.cancelable, p.detail);
+                    return e;
+                }
+                CustomEvent.prototype = window.Event.prototype;
+                window.CustomEvent = CustomEvent;
+            })();
+        </script>
+    
+                
+        <script type="text/javascript">
+            window.__bloomberg__.ads = {};
+            window.__bloomberg__.ads.queue = [];
+
+            window.__bloomberg__.ads.adsOff = false;
+
+            window.__bloomberg__.ads.enqueue = function(id) {
+                if (window.__bloomberg__.ads.render) {
+                    return window.__bloomberg__.ads.render(id);
+                }
+                window.__bloomberg__.ads.queue.push(id);
+            };
+        </script>
+    
+                
+    <div class="leaderboard-container">
+        <div id="leaderboard-DiIw4Rk" class="leaderboard" data-position="leaderboard">
+            <script type="text/javascript">
+                window.__bloomberg__.ads.enqueue("leaderboard-DiIw4Rk");
+            </script>
+            <script class="params" type="text/ld+json">
+                {
+                    "byzantium": {
+                        "contentId": "O3BAXJ6JIJVV01"
+                    },
+                    "position": "leaderboard",
+                    "dimensions": {
+                        "large_desktop": [
+                            [728, 90],
+                            [970, 250],
+                            [5, 16],
+                            [1, 1]
+                        ],
+                        "small_desktop": [
+                            [728, 90],
+                            [970, 250],
+                            [5, 16],
+                            [1, 1]
+                        ],
+                        "tablet": [
+                            [728, 90],
+                            [5, 16],
+                            [1, 1]
+                        ],
+                        "mobile": [
+                            [5, 16],
+                            [1, 1]
+                        ]
+                    },
+                    "strategy": "always",
+                    "adCode": "business/news/industries/article",
+                    "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                    "type": "Top Leaderboard Ad",
+                    "positionIncrement": 1,
+                    "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"leaderboard","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                    "containerId": "leaderboard-DiIw4Rk"
+                }
+            </script>
+            <div class="leaderboard-ad-dummy"></div>
+        </div>
+    </div>
+    
+                
+        <div class="truste">
+            <div id="consent_blackbar"></div>
+        </div>
+    
+                <div id="bb-that">
+    <nav class="bb-that">
+        <header class="bb-that-header bb-that--container">
+        <a class="bb-that-header__link bb-that-header--sitemap-trigger" href="http://www.bloomberg.com/company/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg the Company &amp; Its Products</a><a class="bb-that-header__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bcom"><span>Bloomberg Anywhere Remote Login</span><span>Bloomberg Anywhere Login</span></a><a class="bb-that-header__link" href="http://www.bloomberg.com/professional/bcom-demo/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-CORE-bbgmenu-demo">Bloomberg Terminal Demo Request</a>    </header>
+        <div class="bb-that__sitemap bb-that--container">
+    <div class="bb-that__close"></div>
+
+        <ul class="bb-that__sitemap-sections bb-that--visible-md bb-that--visible-lg">
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Bloomberg</h2>
+    <div class="bb-that-category__content"><p class="bb-that-category__text">Connecting decision makers to a dynamic network of information, people and ideas, Bloomberg quickly and accurately delivers business and financial information, news and insight around the world.</p></div></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Customer Support</h2>
+    <div class="bb-that-category__content"><p class="bb-that-category__text">Americas<br />
++1 212 318 2000</p><p class="bb-that-category__text">Europe, Middle East, &amp; Africa<br />
++44 20 7330 7500</p><p class="bb-that-category__text">Asia Pacific<br />
++65 6212 1000</p></div></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Company</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/careers/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Careers</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/diversity-inclusion/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Diversity &#038; Inclusion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/bcause/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Sustainability</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.techatbloomberg.com?utm_source=bloomberg-menu&amp;utm_medium=bcom">Technology</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/bloomberg-facts/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Facts &#038; Spaces</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/philanthropy/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Philanthropy &#038; Engagement</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/london/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg London</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Communications</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/announcements/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Press Announcements</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/press-contacts/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Press Contacts</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Follow Us</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a href="http://www.facebook.com/Bloomberglp" class="bb-that-category__social-link bb-that--icon-facebook" target="_blank">Facebook</a></li><li class="bb-that-category__item"><a href="https://twitter.com/bloomberg" class="bb-that-category__social-link bb-that--icon-twitter" target="_blank">Twitter</a></li><li class="bb-that-category__item"><a href="https://www.linkedin.com/company/2494" class="bb-that-category__social-link bb-that--icon-linkedin" target="_blank">LinkedIn</a></li><li class="bb-that-category__item"><a href="https://www.instagram.com/bloomberg/" class="bb-that-category__social-link bb-that--icon-instagram" target="_blank">Instagram</a></li><li class="bb-that-category__item"><a href="https://vimeo.com/bloomberg" class="bb-that-category__social-link bb-that--icon-vimeo" target="_blank">Vimeo</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Financial Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-CORE-bbgmenu">Bloomberg Terminal</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergtradebook.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-02-13-TBOOK-bbgmenu">Bloomberg Tradebook</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergbriefs.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Briefs</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergindices.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-05-13-Indices-bbgmenu">Bloomberg Indices</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergsef.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-08-13-SEF-bbgmenu">Bloomberg SEF</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bloomberginstitute.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Institute</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Bloomberg Customers</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Anywhere Remote Login</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/downloads/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Download Software</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://service.bloomberg.com/portal/sessions/new?utm_source=bloomberg-menu&amp;utm_medium=bcom">Service Center</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Enterprise Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/enterprise/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-ES-bbgmenu">Enterprise Solutions</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/trading-solutions/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-TS-bbgmenu">Trading Solutions</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/vault/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-ES-BVAULT-bbgmenu">Bloomberg Vault</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergpolarlake.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg PolarLake</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Industry Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bgov.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Government</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bna.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Law/BNA</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bol.bna.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Big Law</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bnef.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg New Energy Finance</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--md">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Media</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg.com</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/politics/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Politics</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergview.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg View</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/gadfly/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Gadfly</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/live?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Television</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/radio/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Radio</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/mobile/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Mobile Apps</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/news-bureaus/?utm_source=bloomberg-menu&amp;utm_medium=bcom">News Bureaus</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Media Services</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberglive.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Live Conferences</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/distribution?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Media Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergmedia.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Advertising</a></li></ul></section>    </li>
+            </ul>
+
+        <ul class="bb-that__sitemap-sections bb-that--visible-sm">
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Bloomberg</h2>
+    <div class="bb-that-category__content"><p class="bb-that-category__text">Connecting decision makers to a dynamic network of information, people and ideas, Bloomberg quickly and accurately delivers business and financial information, news and insight around the world.</p></div></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Customer Support</h2>
+    <div class="bb-that-category__content"><p class="bb-that-category__text">Americas<br />
++1 212 318 2000</p><p class="bb-that-category__text">Europe, Middle East, &amp; Africa<br />
++44 20 7330 7500</p><p class="bb-that-category__text">Asia Pacific<br />
++65 6212 1000</p></div></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Communications</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/announcements/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Press Announcements</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/press-contacts/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Press Contacts</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Follow Us</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a href="http://www.facebook.com/Bloomberglp" class="bb-that-category__social-link bb-that--icon-facebook" target="_blank">Facebook</a></li><li class="bb-that-category__item"><a href="https://twitter.com/bloomberg" class="bb-that-category__social-link bb-that--icon-twitter" target="_blank">Twitter</a></li><li class="bb-that-category__item"><a href="https://www.linkedin.com/company/2494" class="bb-that-category__social-link bb-that--icon-linkedin" target="_blank">LinkedIn</a></li><li class="bb-that-category__item"><a href="https://www.instagram.com/bloomberg/" class="bb-that-category__social-link bb-that--icon-instagram" target="_blank">Instagram</a></li><li class="bb-that-category__item"><a href="https://vimeo.com/bloomberg" class="bb-that-category__social-link bb-that--icon-vimeo" target="_blank">Vimeo</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Company</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/careers/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Careers</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/diversity-inclusion/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Diversity &#038; Inclusion</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/philanthropy/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Philanthropy &#038; Engagement</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/bcause/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Sustainability</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.techatbloomberg.com?utm_source=bloomberg-menu&amp;utm_medium=bcom">Technology</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/bloomberg-facts/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Facts &#038; Spaces</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/london/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg London</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Media</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg.com</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/politics/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Politics</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergview.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg View</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://www.bloomberg.com/gadfly/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Gadfly</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/live?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Television</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/radio/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Radio</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/mobile/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Mobile Apps</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/company/news-bureaus/?utm_source=bloomberg-menu&amp;utm_medium=bcom">News Bureaus</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Media Services</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergmedia.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Advertising</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/distribution?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Media Distribution</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberglive.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Live Conferences</a></li></ul></section>    </li>
+                    <li class="bb-that__col bb-that__col--sm">
+            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Financial Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-CORE-bbgmenu">Bloomberg Terminal</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergtradebook.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-02-13-TBOOK-bbgmenu">Bloomberg Tradebook</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergbriefs.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Briefs</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergindices.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-05-13-Indices-bbgmenu">Bloomberg Indices</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergsef.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-08-13-SEF-bbgmenu">Bloomberg SEF</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bloomberginstitute.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Institute</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Enterprise Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/enterprise/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-ES-bbgmenu">Enterprise Solutions</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/trading-solutions/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-TS-bbgmenu">Trading Solutions</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/vault/?utm_source=bloomberg-menu&amp;utm_medium=bcom&amp;bbgsum=DG-WS-09-13-ES-BVAULT-bbgmenu">Bloomberg Vault</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloombergpolarlake.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg PolarLake</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Industry Products</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bgov.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Government</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bna.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Law/BNA</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bol.bna.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Big Law</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://about.bnef.com/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg New Energy Finance</a></li></ul></section>            <section class="bb-that-category">
+    <h2 class="bb-that-category__title">Bloomberg Customers</h2>
+    <ul class="bb-that-category__content"><li class="bb-that-category__item"><a class="bb-that-category__link" href="https://bba.bloomberg.net/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Bloomberg Anywhere Remote Login</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://www.bloomberg.com/professional/downloads/?utm_source=bloomberg-menu&amp;utm_medium=bcom">Download Software</a></li><li class="bb-that-category__item"><a class="bb-that-category__link" href="http://service.bloomberg.com/portal/sessions/new?utm_source=bloomberg-menu&amp;utm_medium=bcom">Service Center</a></li></ul></section>    </li>
+            </ul>
+</div>    </nav>
+</div>
+                
+        <script id="nav-data" type="application/ld+json">
+            {
+                "headline": "Exxon Sells $12 Billion in Bonds to Build War Chest",
+                "shortUrl": "http://bloom.bg/1XV9R6O",
+                "twitterText": "Exxon Sells $12 Billion in Bonds to Build War Chest",
+                "twitterHandle": "business"
+            }
+        </script>
+        <div class="bb-nav-placeholder">
+            <div class="bb-nav-root"> <nav is="bb-nav" class="bb-nav" id="bb-nav" data-nav-version="1.30.1" data-theme="default" data-persist-for="content" data-mode="index" data-reg-env="production" data-progress="0" data-headline="" data-base="https://nav.bloomberg.com" data-tracker-category="nav" data-tracker-events="click" data-tracker-label="header" data-site="global" data-persist-for="none" > <div class="bb-nav__container"> <div class="bb-nav__content"> <h1 class="bb-nav-logo" is="bb-nav-logo"> <div class="bb-nav-logo__rubix" data-tracker-label="bomb.open.rubix_button" data-tracker-action="click"></div> <div class="bb-nav-logo__menu" data-tracker-label="bomb.open.menu_button" data-tracker-action="click"> <div class="bb-nav-logo__menu-link">MENU</div> </div> <a href="http://www.bloomberg.com" class="bb-nav-logo__link" data-tracker-label="logo" data-tracker-action="click"> </a> <div class="bb-nav-logo__arrow"></div> </h1><div class="bb-nav-content-logo" is="bb-nav-content-logo"> <h1 class="bb-nav-content-logo__headline" data-tracker-label="content"> <a href="http://www.bloomberg.com" class="bb-nav-content-logo__site" data-tracker-label="logo" data-tracker-action="click"></a> </h1> <div class="bb-nav-content-logo__down-arrow" data-tracker-label="expand" data-tracker-action="click"></div> </div><h2 class="bb-nav-headline"></h2><bb-experience-select class="bb-nav-experience-select"></bb-experience-select><div class="bb-nav-categories"> <ul class="bb-nav-categories__container"> <li class="bb-nav-categories__home"> <a href="http://www.bloomberg.com" class="bb-nav-categories__home-link"> Homepage </a> </li> <li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="markets" data-vertical="markets" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <a href="http://www.bloomberg.com/markets" class="bb-nav-categories__link" data-category-path="/markets" data-category-vertical="markets" target="_self" data-tracker-action="click">Markets</a> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_stocks" href="http://www.bloomberg.com/markets/stocks" data-tracker-label="stocks" data-tracker-action="click"> Stocks </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_currencies" href="http://www.bloomberg.com/markets/currencies" data-tracker-label="currencies" data-tracker-action="click"> Currencies </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_commodities" href="http://www.bloomberg.com/markets/commodities" data-tracker-label="commodities" data-tracker-action="click"> Commodities </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_rates_bonds" href="http://www.bloomberg.com/markets/rates-bonds" data-tracker-label="rates_plus_bonds" data-tracker-action="click"> Rates + Bonds </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_economics" href="http://www.bloomberg.com/markets/economics" data-tracker-label="economics" data-tracker-action="click"> Economics </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_magazine" href="http://www.bloomberg.com/markets/markets-magazine" data-tracker-label="magazine" data-tracker-action="click"> Magazine </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_benchmark" href="http://www.bloomberg.com/markets/benchmark" data-tracker-label="benchmark" data-tracker-action="click"> Benchmark </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_watchlist" href="http://www.bloomberg.com/markets/watchlist" data-tracker-label="watchlist" data-tracker-action="click"> Watchlist </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/markets_economic_calendar" href="http://www.bloomberg.com/markets/economic-calendar" data-tracker-label="economic_calendar" data-tracker-action="click"> Economic Calendar </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="marketsnav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="technology" data-vertical="technology" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <a href="http://www.bloomberg.com/technology" class="bb-nav-categories__link" data-category-path="/technology" data-category-vertical="technology" target="_self" data-tracker-action="click">Tech</a> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_us" href="http://www.bloomberg.com/topics/silicon-valley" data-tracker-label="us" data-tracker-action="click"> U.S. </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_global" href="http://www.bloomberg.com/topics/global-tech" data-tracker-label="global" data-tracker-action="click"> Global </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_start_ups" href="http://www.bloomberg.com/topics/startups" data-tracker-label="startups" data-tracker-action="click"> Startups </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_cybersecurity" href="http://www.bloomberg.com/topics/cybersecurity" data-tracker-label="cybersecurity" data-tracker-action="click"> Cybersecurity </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_gaming" href="http://www.bloomberg.com/topics/entertainment" data-tracker-label="digital_media" data-tracker-action="click"> Digital Media </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_bloomberg_tv" href="http://www.bloomberg.com/shows/bloomberg-technology" data-tracker-label="bloomberg_technology_tv" data-tracker-action="click"> Bloomberg Technology TV </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_hello_world" href="http://www.bloomberg.com/features/2016-hello-world/" data-tracker-label="hello_world" data-tracker-action="click"> Hello World </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/technology_studio_1" href="http://www.bloomberg.com/shows/studio-1" data-tracker-label="studio_10" data-tracker-action="click"> Studio 1.0 </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="technav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="pursuits" data-vertical="pursuits" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <a href="http://www.bloomberg.com/pursuits" class="bb-nav-categories__link" data-category-path="/pursuits" data-category-vertical="pursuits" target="_self" data-tracker-action="click">Pursuits</a> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_autos" href="http://www.bloomberg.com/pursuits/cars-bikes" data-tracker-label="cars_and_bikes" data-tracker-action="click"> Cars & Bikes </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_style" href="http://www.bloomberg.com/pursuits/style-grooming" data-tracker-label="style_and_grooming" data-tracker-action="click"> Style & Grooming </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_scene" href="http://www.bloomberg.com/pursuits/spend" data-tracker-label="spend" data-tracker-action="click"> Spend </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_timepieces" href="http://www.bloomberg.com/pursuits/watches-gadgets" data-tracker-label="watches_and_gadgets" data-tracker-action="click"> Watches & Gadgets </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_food" href="http://www.bloomberg.com/pursuits/food-drinks" data-tracker-label="food_and_drinks" data-tracker-action="click"> Food & Drinks </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_travel" href="http://www.bloomberg.com/pursuits/travel" data-tracker-label="travel" data-tracker-action="click"> Travel </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_property" href="http://www.bloomberg.com/pursuits/real-estate" data-tracker-label="real_estate" data-tracker-action="click"> Real Estate </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/pursuits_art" href="http://www.bloomberg.com/pursuits/art-design" data-tracker-label="art_and_design" data-tracker-action="click"> Art & Design </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="pursuitsnav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="politics" data-vertical="politics" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <a href="http://www.bloomberg.com/politics" class="bb-nav-categories__link" data-category-path="/politics" data-category-vertical="politics" target="_self" data-tracker-action="click">Politics</a> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/politics_with_all_due_respect" href="http://www.bloomberg.com/politics/topics/wadr-full-episode" data-tracker-label="with_all_due_respect" data-tracker-action="click"> With All Due Respect </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/politics/graphics/2016-poll-decoder/" data-tracker-label="poll_decoder" data-tracker-action="click"> Poll Decoder </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/politics_culture_caucus_podcast" href="http://www.bloomberg.com/podcasts/culture_caucus" data-tracker-label="culture_caucus_podcast" data-tracker-action="click"> Culture Caucus Podcast </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/politics_masters_in_politics_podcast" href="http://www.bloomberg.com/podcasts/masters_in_politics" data-tracker-label="masters_in_politics_podcast" data-tracker-action="click"> Masters In Politics Podcast </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/politics/graphics/2016-presidential-campaign-tv-ads/" data-tracker-label="ad_tracker" data-tracker-action="click"> Ad Tracker </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/news/special-reports/battlegrounds-2016" data-tracker-label="battlegrounds_2016" data-tracker-action="click"> Battlegrounds 2016 </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="politicsnav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="opinion" data-vertical="opinion" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <span class="bb-nav-categories__link" data-category-path="/opinion" data-category-vertical="opinion" target="_self" data-tracker-action="click">Opinion</span> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/opinion_view" href="http://www.bloomberg.com/view/" data-tracker-label="view" data-tracker-action="click"> View </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/opinion_gadfly" href="https://www.bloomberg.com/gadfly/" data-tracker-label="gadfly" data-tracker-action="click"> Gadfly </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="opinionnav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="businessweek" data-vertical="businessweek" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <a href="http://www.bloomberg.com/businessweek" class="bb-nav-categories__link" data-category-path="/businessweek" data-category-vertical="businessweek" target="_self" data-tracker-action="click">Businessweek</a> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_subscribe" href="https://subscribe.businessweek.com/servlet/OrdersGateway?cds_mag_code=BWK&cds_page_id=200920" data-tracker-label="subscribe" data-tracker-action="click"> Subscribe </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_cover_stories" href="http://www.bloomberg.com/topics/cover-story" data-tracker-label="cover_stories" data-tracker-action="click"> Cover Stories </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_opening_remarks" href="http://www.bloomberg.com/topics/opening-remarks" data-tracker-label="opening_remarks" data-tracker-action="click"> Opening Remarks </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_etc" href="http://www.bloomberg.com/topics/etc" data-tracker-label="etc" data-tracker-action="click"> Etc </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_features" href="http://www.bloomberg.com/topics/features" data-tracker-label="features" data-tracker-action="click"> Features </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_85th_anniversary_issue" href="http://www.businessweek.com/features/85ideas/" data-tracker-label="85th_anniversary_issue" data-tracker-action="click"> 85th Anniversary Issue </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="https://nav.bloomberg.com/global/api/businessweek_behind_the_cover" href="http://www.bloomberg.com/topics/behind-the-cover" data-tracker-label="behind_the_cover" data-tracker-action="click"> Behind The Cover </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="bweeknav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="footer" data-vertical="footer" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <span class="bb-nav-categories__link" data-category-path="/footer" data-category-vertical="footer" target="_self" data-tracker-action="click">More</span> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/news/science-energy" data-tracker-label="science_plus_energy" data-tracker-action="click"> Science + Energy </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/graphics" data-tracker-label="graphics" data-tracker-action="click"> Graphics </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/game-plan" data-tracker-label="game_plan" data-tracker-action="click"> Game Plan </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/small-business" data-tracker-label="small_business" data-tracker-action="click"> Small Business </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/personal-finance" data-tracker-label="personal_finance" data-tracker-action="click"> Personal Finance </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/segments/inspire-go" data-tracker-label="inspire_go" data-tracker-action="click"> Inspire GO </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/features/2016-peer-to-peer/" data-tracker-label="the_david_rubenstein_show" data-tracker-action="click"> The David Rubenstein Show </a> </li><li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/sponsor/partnerships/" data-tracker-label="sponsored_content" data-tracker-action="click"> Sponsored Content </a> </li> <li class="bb-nav-submenu__ad"><bb-ad ad-code="bloomberg/nav" position="footernav1" target="bloomberg/nav" dimensions='{"tablet":[[5,14]],"small_desktop":[[5,14]],"large_desktop":[[5,14]]}' ></bb-ad></li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li><li is="bb-nav-category" class="bb-nav-categories__category has-submenu " data-tracker-label="bloomberg" data-vertical="bloomberg" > <div class="bb-nav-categories__category-container"> <div class="bb-nav-categories__notch"></div> <span class="bb-nav-categories__link" data-category-path="/bloomberg" data-category-vertical="bloomberg" target="_self" data-tracker-action="click">Bloomberg</span> </div> <div class="bb-nav-submenu" is="bb-nav-submenu"> <div class="bb-nav-submenu__content"> <div class="bb-nav-submenu__inner"> <ul class="bb-nav-submenu__categories"> <li class="bb-nav-submenu__category"> <a class="bb-nav-submenu__category-link" data-subroute="" href="http://www.bloomberg.com/company/" data-tracker-label="about_the_company" data-tracker-action="click"> About The Company </a> </li> </ul> <div class="bb-nav-submenu__cards" hidden></div> </div> </div> </div> </li> <li class="bb-nav-categories__category bb-nav-categories__sign-in"> <a id="bb-nav-dropdown-sign-in" class="bb-nav-categories__sign-in-link" href="https://login.bloomberg.com/" data-tracker-label="sign_in" data-tracker-action="click"> Sign In </a> </li> <li class="bb-nav-categories__category bb-nav-categories__experience"> <bb-experience-select class="bb-nav-mobile-experience-select"></bb-experience-select> </li> </ul> </div><div class="bb-nav-touts" is="bb-nav-touts" data-tracker-label="tout"> <a target="_self" id="bb-nav-sign-in" class="bb-nav-touts__link" href="https://login.bloomberg.com/" data-tracker-label="sign_in" data-tracker-action="click">Sign In</a> <a target="_blank" class="bb-nav-touts__subscribe-link" href="http://businessweekmag.com/navbartextlink" data-vertical-target="businessweek" data-tracker-label="subscribe" data-tracker-action="click">Subscribe</a> </div><div class="bb-nav-social-container"> <bb-social class="bb-nav-social"></bb-social> </div><div class="bb-nav-search" is="bb-nav-search" data-tracker-label="search"> <form class="bb-nav-search__form" action="/search" method="get" autocomplete="false"> <input type="text" class="bb-nav-search__input" placeholder="What are you searching for?" name="query" autocomplete="off"/> </form> <div class="bb-search-drawer" tabindex="0"> <div class="bb-search-drawer__content"> <bb-quick-links></bb-quick-links> <bb-search-suggestions></bb-search-suggestions> </div> </div> </div> <span class="bb-nav-search__icon" data-tracker-label="search.icon" data-tracker-action="click"></span> </div> </div> <div class="bb-progress"> <div class="bb-progress__status"></div> </div> </nav> </div>
+        </div>
+    
+                <div class='breaking-news-placeholder'></div>
+                <main class="transporter-container">
+                    <div class="transporter-item current">
+                        
+            <article data-story-id="O3BAXJ6JIJVV01" data-theme="default" itemscope itemtype="http://schema.org/Article">
+                <script id="article-info-O3BAXJ6JIJVV01" type="application/json">{"id":"O3BAXJ6JIJVV01","contentType":"article","tags":{"editorialTopics":[],"people":[{"id":"17994546","slug":"ARKTMh3Jm9M/andrew-s-brenner","fullName":"Andrew S Brenner","score":0.14563397129186603}],"niCodes":[{"id":"BGOVALL"},{"id":"BGOVENERG"},{"id":"BIZNEWS"},{"id":"BNALL"},{"id":"BNCOPY"},{"id":"BNCOPY2"},{"id":"BNSTAFF"},{"id":"BNTEAMS"},{"id":"BON"},{"id":"BUSINESS"},{"id":"CMD"},{"id":"CORRECT"},{"id":"DEBTME"},{"id":"FACTCX"},{"id":"FINNEWS"},{"id":"GOWEB"},{"id":"HLNOVEL"},{"id":"HLNOVELTY9"},{"id":"MARKETS"},{"id":"MSCINAMER"},{"id":"MAJOR"},{"id":"NORTHAM"},{"id":"NOVEL"},{"id":"NOVELTY9"},{"id":"NRG"},{"id":"NYX"},{"id":"OIL"},{"id":"ONWEB"},{"id":"TX"},{"id":"US"},{"id":"USBNX"},{"id":"USCORPFIN"},{"id":"USSW"},{"id":"WORLD"},{"id":"ANON"},{"id":"ANONYMOUS"},{"id":"BBPROFILE"},{"id":"BGOVBILLGO"},{"id":"BGOVCODES"},{"id":"BNCITESBI"},{"id":"BNK"},{"id":"BONDWIRES"},{"id":"CMDKEY"},{"id":"CMDKEY2"},{"id":"COEVNT"},{"id":"CORPFIN"},{"id":"COS"},{"id":"CPNYCNT1"},{"id":"WEBELIG"},{"id":"CREDITKEY"},{"id":"CREDITKEYA"},{"id":"DEBTKEY"},{"id":"SRCRANK1"},{"id":"FIALL"},{"id":"SPREGIONS"},{"id":"FIDESNEWS"},{"id":"FIN"},{"id":"FIRPT"},{"id":"FISUB"},{"id":"NRGKEY"},{"id":"NEWBON"},{"id":"MISC"},{"id":"GD"},{"id":"GDBONDISS"},{"id":"INDUSTRIES"},{"id":"INTERNAL"},{"id":"ISSUE"},{"id":"LEAST"},{"id":"MSCIWORLD"},{"id":"G7MEMB"},{"id":"G10MEMB"},{"id":"OILGASCOAL"},{"id":"CRA"},{"id":"DRA"},{"id":"PADD3"},{"id":"PADDIST"},{"id":"ALLSTATES"},{"id":"FIASST"},{"id":"MMK"},{"id":"FXKEY"}],"tickers":[{"id":"JNJ:US","longName":"Johnson & Johnson","score":0.1674641148325359},{"id":"MSFT:US","longName":"Microsoft Corp","score":0.173444976076555},{"id":"BAC:US","longName":"Bank of America Corp","score":0.6928827751196172},{"id":"MCO:US","longName":"Moody's Corp","score":0.9799641148325359},{"id":"XOM:US","longName":"Exxon Mobil Corp","score":14.058612440191387,"type":"ticker"}],"indexes":[],"labels":[],"topics":[{"id":"energy-industry","name":"Energy Industry","score":0.12529904306220097,"slug":"energy-industry"},{"id":"space","name":"Space","score":0.24162679425837322,"slug":"space"},{"id":"money-manager","name":"Money Manager","score":0.5547248803827751,"slug":"money-manager"},{"id":"fixed-income","name":"Fixed Income","score":0.6345693779904306,"slug":"fixed-income"},{"id":"capital-expenditures","name":"Capital Expenditures","score":0.7048444976076556,"slug":"capital-expenditures"},{"id":"shopping","name":"Shopping","score":0.7395334928229665,"slug":"shopping"},{"id":"cash-flow","name":"Cash Flow","score":0.8591507177033493,"slug":"cash-flow"},{"id":"credit-rating","name":"Credit Rating","score":0.937200956937799,"slug":"credit-rating"},{"id":"acquisitions","name":"Acquisitions","score":1.3071172248803826,"slug":"acquisitions"},{"id":"energy","name":"Energy","score":1.7589712918660287,"slug":"energy"},{"id":"oil","name":"Oil","score":2.6716507177033493,"slug":"oil","type":"topic"},{"id":"war","name":"War","score":2.9411764705882355,"slug":"war","type":"topic"},{"id":"debt","name":"Debt","score":3.7586722488038276,"slug":"debt","type":"topic"},{"id":"bonds","name":"Bonds","score":4.149257669575007,"slug":"bonds","type":"topic"},{"id":"markets","name":"Markets","score":14.07568690405117,"slug":"markets","type":"topic"}]}}</script>
+                
+    <div class="lede-text-only lede">
+        <div class="lede-text-only__background">
+            <div class="background-image"></div>
+            <div class="background-dots"></div>
+            <div class="background-fade"></div>
+        </div>
+        <div class="lede-text-only__container">
+            <div class="lede-text-only__content">
+                
+                <h1 class="lede-text-only__hed"><span class="lede-text-only__highlight">Exxon Sells $12 Billion in Bonds to Build War Chest</span></h1>
+                
+                <address class="lede-text-only__byline">
+                    by <div class="author">Aleksandra Gjorgievska
+        <div class="author__modal">
+            <a class="author__modal-social" data-feed="twitter" href="https://www.twitter.com/alekswrites" target="_blank">@alekswrites</a>
+            
+            <a class="author__modal-bio" href="https://www.bloomberg.com/authors/ASS6gw1QQHw/aleksandra-gjorgievska" rel="author">More stories by Aleksandra Gjorgievska</a>
+        </div>
+    </div>
+                </address>
+                <div class="lede-text-only__times">
+                    
+        <time id="time-0.8573104133829474" itemprop="datePublished" datetime="2016-02-29T14:36:00.366Z">
+            <noscript>February 29, 2016, 9:36 AM EST</noscript>
+            <script type="text/javascript">
+                (function(d) {
+                    var el = d.getElementById("time-0.8573104133829474");
+                    el.textContent = new Date("2016-02-29T14:36:00.366Z").toLocaleString([], {"year":"numeric","month":"long","day":"numeric","hour":"numeric","minute":"numeric","timeZoneName":"short"});
+                })(document);
+            </script>
+        </time>
+    
+                    
+        <time id="time-0.21009521605446935" itemprop="dateModified" datetime="2016-03-01T15:29:34.739Z">
+            <noscript>March 1, 2016, 10:29 AM EST</noscript>
+            <script type="text/javascript">
+                (function(d) {
+                    var el = d.getElementById("time-0.21009521605446935");
+                    el.textContent = new Date("2016-03-01T15:29:34.739Z").toLocaleString([], {"year":"numeric","month":"long","day":"numeric","hour":"numeric","minute":"numeric","timeZoneName":"short"});
+                })(document);
+            </script>
+        </time>
+    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+                
+        <script type="text/javascript">
+            (function(p) { p && p.mark("LedeRendered"); })(window.performance);
+        </script>
+    
+                <div class="content-well">
+                    <section class="main-column">
+                        
+                        
+    <figure class="lede-media-image lede figure-expandable">
+        <div class="image">
+            <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/640x-1.jpg" srcset="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/640x-1.jpg 640w, https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/680x-1.jpg 680w, https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/840x-1.jpg 840w" sizes="(min-width:761px) and (max-width:1020px) 680px, (min-width:1021px) and (max-width:1280px) 640px, (min-width:1281px) 840px, 100vw" data-native-src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i_ZKBQsVp5aM/v3/-1x-1.jpg">
+        </div>
+        
+        <figcaption>
+            
+            <span class="lede-media-image__caption caption"><p>ExxonMobil Corp. signage glows at a gas station in Richmond, Kentucky, on April 29, 2015.</p>
+</span>
+            
+            <span class="lede-media-image__credit credit">Photographer: Luke Sharrett/Bloomberg</span>
+        </figcaption>
+    </figure>
+                        
+        <div class="body-copy">
+            <p>Exxon Mobil Corp. raised $12 billion in its biggest bond sale on record and may use the funds to snap up rivals amid a commodities bust.</p><p>The world&#x2019;s largest oil company, which is at risk of losing its&#xA0;top-notch credit rating, sold the debt in eight parts at above average yields, according to data compiled by Bloomberg. The sale comes after Moody&#x2019;s Investors Service cut Exxon&#x2019;s outlook to negative from stable on Feb. 25 and warned that the oil-market collapse imperils cash flow needed to cover debt payments and new investments.</p><p>&quot;If you are Exxon, you have to be looking around at all of the wreckage in the energy sector these days and feel like a kid in a candy store,&#x201D; said Spencer Cutter, an analyst at Bloomberg Intelligence. The debt offer is a sign that Exxon may &quot;start picking up great assets at fire-sale prices&quot; and &quot;take advantage of the downturn and start shopping,&quot; he said.</p>
+        <div id="box-RWdkm6X" class="page-ad" data-position="mobile-box">
+            <script class="params" type="application/ld+json">
+                {
+                    "byzantium": {
+                        "contentId": "O3BAXJ6JIJVV01"
+                    },
+                    "position": "box",
+                    "dimensions": {
+                        "mobile": [
+                            [300, 250],
+                            [1, 1]
+                        ]
+                    },
+                    "adCode": "business/news/industries/article",
+                    "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                    "type": "Mobile Body Box Ad",
+                    "positionIncrement": 1,
+                    "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"box1","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                    "containerId": "box-RWdkm6X"
+                }
+            </script>
+            <div class="mobile-box-ad-dummy"></div>
+        </div>
+        <p>Exxon said proceeds from the sale may be used toward &quot;funding for working capital, acquisitions, capital expenditures, refinancing a portion of our existing commercial paper borrowings and other business opportunities,&quot; according to a Monday regulatory filing.</p><h3>&#x2018;Generational Opportunity&#x2019;</h3><p>With oil prices falling to a 12-year low earlier this month, many energy companies have lost much of their market value.</p><p>&quot;We are very surprised there have not been more acquisitions by the big guys -- it seems a generational opportunity if you are one of the strongest and biggest,&quot; according to Timothy Doubek, a money manager at Columbia Threadneedle Investments,&#xA0;which has about $176 billion in fixed-income assets under management. &quot;You have to move the needle -- you can&#x2019;t just do little tiny things.&quot;</p><p>
+        <aside class="inline-newsletter" data-state="ready">
+            <div class="inline-newsletter__main">
+                <div class="inline-newsletter__content">
+                    <div class="inline-newsletter__main-tout">
+                        Your cheat sheet on life, in one weekly email.
+                    </div>
+                    <div class="inline-newsletter__sub-tout">
+                        Get our weekly Game Plan newsletter.
+                    </div>
+                    <div class="inline-newsletter__subscribe">
+                        <form action="" class="inline-newsletter__form" method="post" data-newsletter="Weekly Game Plan">
+                            <input type="hidden" name="vars[source]" value="article_inline">
+                            <input class="inline-newsletter__input" placeholder="Enter your email" type="text">
+                            <button class="inline-newsletter__button" type="submit">
+                                    Sign Up
+                            </button>
+                        </form>
+                        <div class="inline-newsletter__message">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inline-newsletter__arrow">
+            </div>
+            <div class="inline-newsletter__slideout">
+                
+        <div for="bbiz" class="inline-newsletter__slideout-option bbiz" data-newsletter="Business Daily" data-state="ready">
+            <div class="inline-newsletter__slideout-text">
+                <div class="inline-newsletter__slideout-title">Business</div>
+                <div class="inline-newsletter__slideout-tout">Your guide to the most important business stories of the day, every day.</div>
+            </div>
+            <div class="inline-newsletter__slideout-option-confirm">
+                You will now receive the Business newsletter
+                <div class="inline-newsletter__slideout-option-confirm-nubbin"></div>
+            </div>
+            <span class="inline-newsletter__slideout-checkbox undefined"></span>
+        </div>
+        <div for="bpol" class="inline-newsletter__slideout-option bpol" data-newsletter="The Brief" data-state="ready">
+            <div class="inline-newsletter__slideout-text">
+                <div class="inline-newsletter__slideout-title">Politics</div>
+                <div class="inline-newsletter__slideout-tout">The latest political news, analysis, charts, and dispatches from Washington.</div>
+            </div>
+            <div class="inline-newsletter__slideout-option-confirm">
+                You will now receive the Politics newsletter
+                <div class="inline-newsletter__slideout-option-confirm-nubbin"></div>
+            </div>
+            <span class="inline-newsletter__slideout-checkbox undefined"></span>
+        </div>
+        <div for="markets" class="inline-newsletter__slideout-option markets" data-newsletter="Markets Daily" data-state="ready">
+            <div class="inline-newsletter__slideout-text">
+                <div class="inline-newsletter__slideout-title">Markets</div>
+                <div class="inline-newsletter__slideout-tout">The most important market news of the day. So you can sleep an extra five minutes.</div>
+            </div>
+            <div class="inline-newsletter__slideout-option-confirm">
+                You will now receive the Markets newsletter
+                <div class="inline-newsletter__slideout-option-confirm-nubbin"></div>
+            </div>
+            <span class="inline-newsletter__slideout-checkbox undefined"></span>
+        </div>
+        <div for="technology" class="inline-newsletter__slideout-option technology" data-newsletter="technology" data-state="ready">
+            <div class="inline-newsletter__slideout-text">
+                <div class="inline-newsletter__slideout-title">Technology</div>
+                <div class="inline-newsletter__slideout-tout">Insights into what you&apos;ll be paying for, downloading and plugging in tomorrow and 10 years from now.</div>
+            </div>
+            <div class="inline-newsletter__slideout-option-confirm">
+                You will now receive the Technology newsletter
+                <div class="inline-newsletter__slideout-option-confirm-nubbin"></div>
+            </div>
+            <span class="inline-newsletter__slideout-checkbox undefined"></span>
+        </div>
+        <div for="pursuits" class="inline-newsletter__slideout-option pursuits" data-newsletter="Pursuits Weekly" data-state="ready">
+            <div class="inline-newsletter__slideout-text">
+                <div class="inline-newsletter__slideout-title">Pursuits</div>
+                <div class="inline-newsletter__slideout-tout">What to eat, drink, wear and drive &#x2013; in real life and your dreams.</div>
+            </div>
+            <div class="inline-newsletter__slideout-option-confirm">
+                You will now receive the Pursuits newsletter
+                <div class="inline-newsletter__slideout-option-confirm-nubbin"></div>
+            </div>
+            <span class="inline-newsletter__slideout-checkbox undefined"></span>
+        </div>
+            </div>
+        </aside>The longest portion of Exxon&#x2019;s debt sale is $2.5 billion in 4.114 percent 30-year bonds yielding 150 basis points more than comparable government debt. While that&#x2019;s lower than an originally offered premium of as much as 180 basis points, according to a person with knowledge of the matter, it&#x2019;s six basis points more than the average yield on corporate debt of similar maturity and rating, according to Bank of America Merrill Lynch Indexes.</p><p>Exxon&#x2019;s $2.5 billion tranche of 3.043-percent 10-year notes sold at 130 basis points more than comparable Treasuries -- a 48 basis-point premium to comparable debt, Bank of America Merrill Lynch data shows.</p><h3>AAA Ratings</h3>
+        <div id="in-article-P8EioIm" class="page-ad" data-position="in-article">
+            <script class="params" type="application/ld+json">
+                {
+                    "byzantium": {
+                        "contentId": "O3BAXJ6JIJVV01"
+                    },
+                    "position": "in-article",
+                    "dimensions": {
+                        "mobile": [
+                            [5, 19],
+                            [300, 250],
+                            [1, 1]
+                        ],
+                        "tablet": [
+                            [5, 19],
+                            [728, 90],
+                            [1, 1]
+                        ]
+                    },
+                    "adCode": "business/news/industries/article",
+                    "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                    "type": "In Article Flex Native Ad",
+                    "positionIncrement": 1,
+                    "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"in-article","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                    "containerId": "in-article-P8EioIm"
+                }
+            </script>
+            <div class="in-article-ad-dummy"></div>
+        </div>
+        <p>Standard &amp; Poor&#x2019;s placed Exxon on credit watch with negative implications on Feb. 2, saying that Exxon&#x2019;s credit measures will probably remain weak through 2018.</p><p>Despite the volatility in the energy space, the investment-grade market is increasingly drawn to names like Exxon for their quality and liquidity,&#xA0;said Doubek. The oil giant is one of three U.S. corporate issuers with AAA ratings from Standard &amp; Poor&#x2019;s, along with Microsoft Corp. and Johnson &amp; Johnson.</p><p>That Exxon is at risk of being downgraded isn&#x2019;t weighing on its borrowing costs as much as the outlook for the rest of the energy industry, according to Andrew Brenner,&#xA0;head of international fixed income at National Alliance Capital Markets in New York, since cuts by Moody&#x2019;s and S&amp;P are lagging indicators.</p><p>&quot;If energy was not in the headlines over the last year, the 30-year would probably come to market at somewhere around 125 basis points,&#x201D; Brenner said. &#x201C;Exxon is a great company in what is perceived to be a terrible industry right now.&quot;</p><div class="trashline">(<span itemprop="description">Corrects Exxon&apos;s rating outlook in 2nd paragraph of story published Feb. 29.</span>)</div>
+        <noscript>
+            <ol class="noscript-footnotes"></ol>
+        </noscript>
+        
+        </div>
+    
+                        
+    <div class="terminal-tout-container">
+        <div class="terminal-tout">
+            <span class="terminal-tout__text">Before it's here, it's on the Bloomberg Terminal.</span>
+            <div class="terminal-tout__icon"></div>
+            <a href="https://bloom.bg/dg-ws-core-bcom-a1" class="terminal-tout__link">LEARN MORE</a>
+        </div>
+    </div>
+                        
+                        
+                        
+                        
+        <div id="taboola-below-article-thumbnails-N6FL2GB" class="taboola"></div>
+    
+                    </section>
+                    <aside class="right-rail">
+                        <div class="sticky-container">
+                            
+                            
+    <div id="box-RAjmspE" class="box rotation-item page-ad" data-position="box">
+        <script class="params" type="text/ld+json">
+            {
+                "byzantium": {
+                    "contentId": "O3BAXJ6JIJVV01"
+                },
+                "position": "box",
+                "dimensions": {
+                    "small_desktop": [
+                        [300, 600],
+                        [300, 250],
+                        [1, 1]
+                    ],
+                    "large_desktop": [
+                        [300, 600],
+                        [300, 250],
+                        [1, 1]
+                    ]
+                },
+                "adCode": "business/news/industries/article",
+                "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                "positionIncrement": 1,
+                "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"box1","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                "containerId": "box-RAjmspE"
+            }
+        </script>
+    </div>
+    
+                            
+                            
+        <div class="recirc rotation-item">
+            <div class="recirc__title">Trending Now</div>
+            <ol class="recirc__list">
+                
+        <li class="recirc__list-item recirc__list-item-article">
+            <a class="recirc__list-item-article-link" href="http://www.bloomberg.com/politics/articles/2016-12-12/mcconnell-warning-of-dangerous-debt-wants-tax-cut-offsets">McConnell, Warning of &#x2018;Dangerous&#x2019; Debt, Wants Tax Cut Offsets</a>
+        </li>
+        <li class="recirc__list-item recirc__list-item-article">
+            <a class="recirc__list-item-article-link" href="http://www.bloomberg.com/politics/articles/2016-12-13/trump-said-to-pick-exxon-mobil-s-tillerson-as-secretary-of-state">Trump Picks Exxon Mobil&#x2019;s Tillerson as Secretary of State</a>
+        </li>
+        <li class="recirc__list-item recirc__list-item-article">
+            <a class="recirc__list-item-article-link" href="http://www.bloomberg.com/news/articles/2016-12-13/disney-wins-bid-to-shut-down-sanitized-movie-streaming-service">Disney, Fox Win Bid to Shut Sanitized Streaming Service</a>
+        </li>
+        <li class="recirc__list-item recirc__list-item-article">
+            <a class="recirc__list-item-article-link" href="http://www.bloomberg.com/news/articles/2016-12-13/tweeter-in-chief-trump-faces-test-after-yellen-s-rate-decision">Tweeter-in-Chief Trump Faces Test After Yellen&#x2019;s Rate Decision</a>
+        </li>
+        <li class="recirc__list-item recirc__list-item-article">
+            <a class="recirc__list-item-article-link" href="http://www.bloomberg.com/politics/articles/2016-12-12/mcconnell-backs-cia-despite-trump-s-attacks-over-hacking-probe">McConnell, Ryan Back CIA After Trump Attacks Hacking Probe</a>
+        </li>
+            
+    <li id="trendingnow-Lu4ODdP" class="recirc__list-item recirc__list-item-ad" data-position="trendingnow">
+        <script class="params" type="text/ld+json">
+            {
+                "byzantium": {
+                    "contentId": "O3BAXJ6JIJVV01"
+                },
+                "position": "trendingnow",
+                "dimensions": {
+                    "small_desktop": [
+                        [5, 18],
+                        [1, 1]
+                    ],
+                    "large_desktop": [
+                        [5, 18],
+                        [1, 1]
+                    ]
+                },
+                "adCode": "business/news/industries/article",
+                "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                "positionIncrement": 1,
+                "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"trendingnow1","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                "containerId": "trendingnow-Lu4ODdP"
+            }
+        </script>
+    </li></ol>
+        </div>
+                        </div>
+                    </aside>
+                </div>
+            </article>
+        
+                        
+    <div id="native-yoFUOe0" class="native" data-position="native">
+        <script type="text/javascript">
+            window.__bloomberg__.ads.enqueue("native-yoFUOe0");
+        </script>
+        <script class="params" type="text/ld+json">
+            {
+                "byzantium": {
+                    "contentId": "O3BAXJ6JIJVV01"
+                },
+                "position": "native",
+                "dimensions": {
+                    "all": [
+                        [5, 16],
+                        [5, 5],
+                        [5, 2],
+                        [1, 1]
+                    ],
+                    "mobile": [
+                        [300, 250]
+                    ]
+                },
+                "adCode": "business/news/industries/article",
+                "url": "2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat",
+                "type": "Native Transporter Ad",
+                "positionIncrement": 1,
+                "targeting": {"suid":"O3BAXJ6JIJVV01","page":"articlejav","currentResource":"Story|O3BAXJ6JIJVV01","ni":["BGOVALL","BGOVENERG","BIZNEWS","BNALL","BNCOPY","BNCOPY2","BNSTAFF","BNTEAMS","BON","BUSINESS","CMD","CORRECT","DEBTME","FACTCX","FINNEWS","GOWEB","HLNOVEL","HLNOVELTY9","MARKETS","MSCINAMER","MAJOR","NORTHAM","NOVEL","NOVELTY9","NRG","NYX","OIL","ONWEB","TX","US","USBNX","USCORPFIN","USSW","WORLD","ANON","ANONYMOUS","BBPROFILE","BGOVBILLGO","BGOVCODES","BNCITESBI","BNK","BONDWIRES","CMDKEY","CMDKEY2","COEVNT","CORPFIN","COS","CPNYCNT1","WEBELIG","CREDITKEY","CREDITKEYA","DEBTKEY","SRCRANK1","FIALL","SPREGIONS","FIDESNEWS","FIN","FIRPT","FISUB","NRGKEY","NEWBON","MISC","GD","GDBONDISS","INDUSTRIES","INTERNAL","ISSUE","LEAST","MSCIWORLD","G7MEMB","G10MEMB","OILGASCOAL","CRA","DRA","PADD3","PADDIST","ALLSTATES","FIASST","MMK","FXKEY"],"tickers":[{"id":"XOM:US","score":14.06}],"tagr":["energy","style"],"kwl":["biz_bankofamerica_exclusion","biz_goldman_q2","biz_accenture","biz_capone","biz_ibm","biz_testing123","biz_exxonmobil","biz_microsoft","biz_ishares","biz_hsbc","biz_pitney","biz_ubsbannedlist","biz_nationwide","biz_bp_keywords","biz_accentureindia1","biz_citrix","biz_Samsung","biz_capitalone","biz_wellsfargosept","biz_pnc","biz_googlelist","biz_googlelisttwo","biz_technologykeywords","biz_citi","biz_vices","biz_autocompetitors","biz_trowe"],"position":"native1","positionIncrement":1,"url":"/news/articles/2016-02-29/exxon-said-to-plan-bond-offering-after-rating-downgrade-threat"},
+                "containerId": "native-yoFUOe0"
+            }
+        </script>
+    </div>
+    
+                    </div>
+                </main>
+                
+                <footer class="bb-global-footer"> <div class="bb-global-footer__content"> <div class="bb-global-footer__group"> <a class="bb-global-footer__link" href="http://www.bloomberg.com/tos">Terms of Service</a> <a class="bb-global-footer__link" href="http://www.bloomberg.com/trademarks">Trademarks</a> <a class="bb-global-footer__link" href="http://www.bloomberg.com/privacy">Privacy Policy</a> <small class="bb-global-footer__copyright">©2016 Bloomberg L.P. All Rights Reserved</small> </div> <div class="bb-global-footer__group"> <a class="bb-global-footer__link" href="http://www.bloomberg.com/careers/?utm_source=dotcom&utm_medium=footer">Careers</a> <a class="bb-global-footer__link" href="http://nytm.org/made-in-nyc">Made in NYC</a> <a class="bb-global-footer__link" href="http://bloombergmedia.com/">Advertise</a> <a class="bb-global-footer__link bb-global-footer__ad-choices" href="http://www.bloomberg.com/privacy#advertisements">Ad Choices</a> <a class="bb-global-footer__link" href="http://www.bloomberg.com/feedback">Website Feedback</a> <a class="bb-global-footer__link" href="http://www.bloomberg.com/help">Help</a> </div> </div> </footer>
+                
+        <script>
+            window["jvln-asset-prefix"] = "https://assets.bwbx.io/javelin";
+        </script>
+        <script class="dependencies" type="application/json">
+            {"css":["/public/css/application/application-bb74794f8e.css","/public/css/layout/basic/basic-5035d81885.css","/public/css/layout/basic/basic-96d239dc7c.desktop.css","/public/css/layout/basic/basic-feab898b86.small_desktop.css","/public/css/layout/basic/basic-a69847c3fa.large_desktop.css","/public/css/layout/basic/basic-18b13ea089.tablet.css","/public/css/layout/basic/basic-80068e7b37.mobile.css","/public/css/nav/bb/nav-7925ef46ee.css","/public/css/components/breaking_news_placeholder/breaking_news-a6270d5f8e.desktop.css","/public/css/components/image_viewer/image_viewer-b050485e3d.css","/public/css/components/image_viewer/image_viewer-44ae116396.desktop.css","/public/css/components/image_viewer/image_viewer-90a9b24409.mobile-tablet.css","/public/css/components/image_viewer/image_viewer-0e5ec91ea4.mobile.css","/public/css/print/print-1c3cb980b3.css","/public/css/components/truste/truste-28f6157d69.css","/public/css/components/truste/truste-323c682892.small_desktop.css","/public/css/components/truste/truste-5679a9f67c.large_desktop.css","/public/css/components/truste/truste-932ba91b49.tablet.css","/public/css/components/truste/truste-53c717658f.mobile.css","/public/css/ads/leaderboard/leaderboard-bf966d32e6.css","/public/css/ads/leaderboard/leaderboard-290beb4fc2.tablet-desktop.css","/public/css/ads/native/native-15685ecbee.css","/public/css/components/abstract/abstract-c1458b6375.css","/public/css/components/author_tout/author_tout-1f08dd3eb5.css","/public/css/components/author_tout/author_tout-e273b6df99.mobile.css","/public/css/body/basic/body-df7b52d884.css","/public/css/body/basic/newsletter_tout-7653bbce42.css","/public/css/body/basic/body-9104c48870.desktop.css","/public/css/body/basic/in_article_ad-238ed3378a.desktop.css","/public/css/body/basic/body-e74c024d6f.large_desktop.css","/public/css/body/basic/newsletter_tout-5887db8153.large_desktop.css","/public/css/body/basic/body-e886f59cb3.tablet-desktop.css","/public/css/body/basic/mobile_ads-10915d4c59.tablet-desktop.css","/public/css/body/basic/body-0b68e3319e.tablet.css","/public/css/body/basic/in_article_ad-1f3cd7d393.tablet.css","/public/css/body/basic/in_article_ad-da16ca24ed.mobile-tablet.css","/public/css/body/basic/body-2cfdf98971.mobile.css","/public/css/body/basic/in_article_ad-4f5a3665c2.mobile.css","/public/css/body/basic/mobile_ads-1a98e3a413.mobile.css","/public/css/body/basic/newsletter_tout-12eaa8fd13.mobile.css","/public/css/ledes/basic/small_image/small_image-df9743c48e.css","/public/css/ledes/basic/small_image/small_image-a136207353.large_desktop.css","/public/css/ledes/basic/small_image/small_image-3c1ad74a1a.mobile.css","/public/css/ledes/basic/text_only/text_only-a7a63d4786.css","/public/css/ledes/basic/text_only/text_only-341bfa3052.desktop.css","/public/css/ledes/basic/text_only/text_only-6a33ad34f5.small_desktop.css","/public/css/ledes/basic/text_only/text_only-b17a45ed53.large_desktop.css","/public/css/ledes/basic/text_only/text_only-a274b68c4a.tablet.css","/public/css/ledes/basic/text_only/text_only-45fe32f1b1.mobile.css","/public/css/components/author_details/author_details-79b4455612.css","/public/css/components/recirc/recirc-54a5451ab9.css","/public/css/ads/terminal_tout/terminal_tout-06ffd4bb61.css","/public/css/ads/terminal_tout/terminal_tout-b55b132f21.mobile.css","/public/css/themes/default/default-d04a06822d.css","/public/css/components/recirc/recirc-54a5451ab9.css"],"js":["/public/js/layout/basic/right_rail-7fd1bb46e6.desktop.js","/public/js/nav/bb/nav-b37202fd33.js","/public/js/components/breaking_news_placeholder/breaking_news_placeholder-90352a67e8.js","/public/js/components/image_viewer/image_viewer-1286fdbee3.js","/public/js/ads/initialize/initialize_ads-b6de33a687.js","/public/js/transporter/transporter-9efc97d72a.js","/public/js/components/truste/truste-6ac723d3b5.js","/public/js/ads/leaderboard/leaderboard-31b77097ad.tablet-desktop.js","/public/js/components/video_player/video_player-6ce03acb98.js","/public/js/body/basic/footnotes-38a28ff6d1.js","/public/js/body/basic/newsletter_tout-543457c2a8.js","/public/js/body/basic/third_party_embed-8109483a70.js","/public/js/components/author_details/author_details-06d9d1cb95.js","/public/js/ads/taboola/taboola-cf10b9b3f8.js","/public/js/components/miniplayer/miniplayer-bae2db47a8.desktop.js","/public/js/dependencies/dependencies-d4f7452ec9.js"]}
+        </script>
+                
+        <script class="content-data" type="application/json">
+            %7B%22adCode%22%3A%22business%2Fnews%2Findustries%2Farticle%22%2C%22byline%22%3A%22Aleksandra%20Gjorgievska%22%2C%22id%22%3A%22O3BAXJ6JIJVV01%22%2C%22primaryCategory%22%3A%22personal-finance%22%2C%22publishedAt%22%3A%222016-02-29T14%3A36%3A00.366Z%22%2C%22seoHeadline%22%3A%22Exxon%20Sells%20%2412%20Billion%20in%20Bonds%20to%20Build%20War%20Chest%22%2C%22slug%22%3A%222016-02-29%2Fexxon-said-to-plan-bond-offering-after-rating-downgrade-threat%22%2C%22shortUrl%22%3A%22http%3A%2F%2Fbloom.bg%2F1XV9R6O%22%2C%22tags%22%3A%7B%22editorialTopics%22%3A%5B%5D%2C%22people%22%3A%5B%7B%22id%22%3A%2217994546%22%2C%22slug%22%3A%22ARKTMh3Jm9M%2Fandrew-s-brenner%22%2C%22fullName%22%3A%22Andrew%20S%20Brenner%22%2C%22score%22%3A0.14563397129186603%7D%5D%2C%22niCodes%22%3A%5B%7B%22id%22%3A%22BGOVALL%22%7D%2C%7B%22id%22%3A%22BGOVENERG%22%7D%2C%7B%22id%22%3A%22BIZNEWS%22%7D%2C%7B%22id%22%3A%22BNALL%22%7D%2C%7B%22id%22%3A%22BNCOPY%22%7D%2C%7B%22id%22%3A%22BNCOPY2%22%7D%2C%7B%22id%22%3A%22BNSTAFF%22%7D%2C%7B%22id%22%3A%22BNTEAMS%22%7D%2C%7B%22id%22%3A%22BON%22%7D%2C%7B%22id%22%3A%22BUSINESS%22%7D%2C%7B%22id%22%3A%22CMD%22%7D%2C%7B%22id%22%3A%22CORRECT%22%7D%2C%7B%22id%22%3A%22DEBTME%22%7D%2C%7B%22id%22%3A%22FACTCX%22%7D%2C%7B%22id%22%3A%22FINNEWS%22%7D%2C%7B%22id%22%3A%22GOWEB%22%7D%2C%7B%22id%22%3A%22HLNOVEL%22%7D%2C%7B%22id%22%3A%22HLNOVELTY9%22%7D%2C%7B%22id%22%3A%22MARKETS%22%7D%2C%7B%22id%22%3A%22MSCINAMER%22%7D%2C%7B%22id%22%3A%22MAJOR%22%7D%2C%7B%22id%22%3A%22NORTHAM%22%7D%2C%7B%22id%22%3A%22NOVEL%22%7D%2C%7B%22id%22%3A%22NOVELTY9%22%7D%2C%7B%22id%22%3A%22NRG%22%7D%2C%7B%22id%22%3A%22NYX%22%7D%2C%7B%22id%22%3A%22OIL%22%7D%2C%7B%22id%22%3A%22ONWEB%22%7D%2C%7B%22id%22%3A%22TX%22%7D%2C%7B%22id%22%3A%22US%22%7D%2C%7B%22id%22%3A%22USBNX%22%7D%2C%7B%22id%22%3A%22USCORPFIN%22%7D%2C%7B%22id%22%3A%22USSW%22%7D%2C%7B%22id%22%3A%22WORLD%22%7D%2C%7B%22id%22%3A%22ANON%22%7D%2C%7B%22id%22%3A%22ANONYMOUS%22%7D%2C%7B%22id%22%3A%22BBPROFILE%22%7D%2C%7B%22id%22%3A%22BGOVBILLGO%22%7D%2C%7B%22id%22%3A%22BGOVCODES%22%7D%2C%7B%22id%22%3A%22BNCITESBI%22%7D%2C%7B%22id%22%3A%22BNK%22%7D%2C%7B%22id%22%3A%22BONDWIRES%22%7D%2C%7B%22id%22%3A%22CMDKEY%22%7D%2C%7B%22id%22%3A%22CMDKEY2%22%7D%2C%7B%22id%22%3A%22COEVNT%22%7D%2C%7B%22id%22%3A%22CORPFIN%22%7D%2C%7B%22id%22%3A%22COS%22%7D%2C%7B%22id%22%3A%22CPNYCNT1%22%7D%2C%7B%22id%22%3A%22WEBELIG%22%7D%2C%7B%22id%22%3A%22CREDITKEY%22%7D%2C%7B%22id%22%3A%22CREDITKEYA%22%7D%2C%7B%22id%22%3A%22DEBTKEY%22%7D%2C%7B%22id%22%3A%22SRCRANK1%22%7D%2C%7B%22id%22%3A%22FIALL%22%7D%2C%7B%22id%22%3A%22SPREGIONS%22%7D%2C%7B%22id%22%3A%22FIDESNEWS%22%7D%2C%7B%22id%22%3A%22FIN%22%7D%2C%7B%22id%22%3A%22FIRPT%22%7D%2C%7B%22id%22%3A%22FISUB%22%7D%2C%7B%22id%22%3A%22NRGKEY%22%7D%2C%7B%22id%22%3A%22NEWBON%22%7D%2C%7B%22id%22%3A%22MISC%22%7D%2C%7B%22id%22%3A%22GD%22%7D%2C%7B%22id%22%3A%22GDBONDISS%22%7D%2C%7B%22id%22%3A%22INDUSTRIES%22%7D%2C%7B%22id%22%3A%22INTERNAL%22%7D%2C%7B%22id%22%3A%22ISSUE%22%7D%2C%7B%22id%22%3A%22LEAST%22%7D%2C%7B%22id%22%3A%22MSCIWORLD%22%7D%2C%7B%22id%22%3A%22G7MEMB%22%7D%2C%7B%22id%22%3A%22G10MEMB%22%7D%2C%7B%22id%22%3A%22OILGASCOAL%22%7D%2C%7B%22id%22%3A%22CRA%22%7D%2C%7B%22id%22%3A%22DRA%22%7D%2C%7B%22id%22%3A%22PADD3%22%7D%2C%7B%22id%22%3A%22PADDIST%22%7D%2C%7B%22id%22%3A%22ALLSTATES%22%7D%2C%7B%22id%22%3A%22FIASST%22%7D%2C%7B%22id%22%3A%22MMK%22%7D%2C%7B%22id%22%3A%22FXKEY%22%7D%5D%2C%22tickers%22%3A%5B%7B%22id%22%3A%22JNJ%3AUS%22%2C%22longName%22%3A%22Johnson%20%26%20Johnson%22%2C%22score%22%3A0.1674641148325359%7D%2C%7B%22id%22%3A%22MSFT%3AUS%22%2C%22longName%22%3A%22Microsoft%20Corp%22%2C%22score%22%3A0.173444976076555%7D%2C%7B%22id%22%3A%22BAC%3AUS%22%2C%22longName%22%3A%22Bank%20of%20America%20Corp%22%2C%22score%22%3A0.6928827751196172%7D%2C%7B%22id%22%3A%22MCO%3AUS%22%2C%22longName%22%3A%22Moody's%20Corp%22%2C%22score%22%3A0.9799641148325359%7D%2C%7B%22id%22%3A%22XOM%3AUS%22%2C%22longName%22%3A%22Exxon%20Mobil%20Corp%22%2C%22score%22%3A14.058612440191387%2C%22type%22%3A%22ticker%22%7D%5D%2C%22indexes%22%3A%5B%5D%2C%22labels%22%3A%5B%5D%2C%22topics%22%3A%5B%7B%22id%22%3A%22energy-industry%22%2C%22name%22%3A%22Energy%20Industry%22%2C%22score%22%3A0.12529904306220097%2C%22slug%22%3A%22energy-industry%22%7D%2C%7B%22id%22%3A%22space%22%2C%22name%22%3A%22Space%22%2C%22score%22%3A0.24162679425837322%2C%22slug%22%3A%22space%22%7D%2C%7B%22id%22%3A%22money-manager%22%2C%22name%22%3A%22Money%20Manager%22%2C%22score%22%3A0.5547248803827751%2C%22slug%22%3A%22money-manager%22%7D%2C%7B%22id%22%3A%22fixed-income%22%2C%22name%22%3A%22Fixed%20Income%22%2C%22score%22%3A0.6345693779904306%2C%22slug%22%3A%22fixed-income%22%7D%2C%7B%22id%22%3A%22capital-expenditures%22%2C%22name%22%3A%22Capital%20Expenditures%22%2C%22score%22%3A0.7048444976076556%2C%22slug%22%3A%22capital-expenditures%22%7D%2C%7B%22id%22%3A%22shopping%22%2C%22name%22%3A%22Shopping%22%2C%22score%22%3A0.7395334928229665%2C%22slug%22%3A%22shopping%22%7D%2C%7B%22id%22%3A%22cash-flow%22%2C%22name%22%3A%22Cash%20Flow%22%2C%22score%22%3A0.8591507177033493%2C%22slug%22%3A%22cash-flow%22%7D%2C%7B%22id%22%3A%22credit-rating%22%2C%22name%22%3A%22Credit%20Rating%22%2C%22score%22%3A0.937200956937799%2C%22slug%22%3A%22credit-rating%22%7D%2C%7B%22id%22%3A%22acquisitions%22%2C%22name%22%3A%22Acquisitions%22%2C%22score%22%3A1.3071172248803826%2C%22slug%22%3A%22acquisitions%22%7D%2C%7B%22id%22%3A%22energy%22%2C%22name%22%3A%22Energy%22%2C%22score%22%3A1.7589712918660287%2C%22slug%22%3A%22energy%22%7D%2C%7B%22id%22%3A%22oil%22%2C%22name%22%3A%22Oil%22%2C%22score%22%3A2.6716507177033493%2C%22slug%22%3A%22oil%22%2C%22type%22%3A%22topic%22%7D%2C%7B%22id%22%3A%22war%22%2C%22name%22%3A%22War%22%2C%22score%22%3A2.9411764705882355%2C%22slug%22%3A%22war%22%2C%22type%22%3A%22topic%22%7D%2C%7B%22id%22%3A%22debt%22%2C%22name%22%3A%22Debt%22%2C%22score%22%3A3.7586722488038276%2C%22slug%22%3A%22debt%22%2C%22type%22%3A%22topic%22%7D%2C%7B%22id%22%3A%22bonds%22%2C%22name%22%3A%22Bonds%22%2C%22score%22%3A4.149257669575007%2C%22slug%22%3A%22bonds%22%2C%22type%22%3A%22topic%22%7D%2C%7B%22id%22%3A%22markets%22%2C%22name%22%3A%22Markets%22%2C%22score%22%3A14.07568690405117%2C%22slug%22%3A%22markets%22%2C%22type%22%3A%22topic%22%7D%5D%7D%2C%22textHeadline%22%3A%22Exxon%20Sells%20%2412%20Billion%20in%20Bonds%20to%20Build%20War%20Chest%22%2C%22theme%22%3A%22default%22%2C%22twitterText%22%3A%22Exxon%20Sells%20%2412%20Billion%20in%20Bonds%20to%20Build%20War%20Chest%22%2C%22twitterHandle%22%3A%22business%22%2C%22type%22%3A%22article%22%2C%22url%22%3A%22https%3A%2F%2Fwww.bloomberg.com%2Fnews%2Farticles%2F2016-02-29%2Fexxon-said-to-plan-bond-offering-after-rating-downgrade-threat%22%2C%22webOriginal%22%3Afalse%7D
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/ads/initialize/initialize_ads-b6de33a687.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("(min-width:761px)").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/ads/leaderboard/leaderboard-31b77097ad.tablet-desktop.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/breaking_news_placeholder/breaking_news_placeholder-90352a67e8.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/video_player/video_player-6ce03acb98.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("(min-width:1021px)").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/miniplayer/miniplayer-bae2db47a8.desktop.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("(min-width:1021px)").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/layout/basic/right_rail-7fd1bb46e6.desktop.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/author_details/author_details-06d9d1cb95.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/body/basic/footnotes-38a28ff6d1.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/body/basic/newsletter_tout-543457c2a8.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/body/basic/third_party_embed-8109483a70.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/ads/taboola/taboola-cf10b9b3f8.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/transporter/transporter-9efc97d72a.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                <script type="text/javascript">(function(d){var s=d.createElement("script");s.async=true;s.src="https://www.bbthat.com/assets/v1.2.1/that.js";s.type="text/javascript";d.head.appendChild(s);})(document);</script>
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/nav/bb/nav-b37202fd33.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                <script type="text/javascript">(function(d){var s=d.createElement("script");s.async=true;s.src="https://nav.bloomberg.com/public/javascripts/global/bb-global-nav-09ff93bb1d.js";s.type="text/javascript";d.head.appendChild(s);})(document);</script>
+                
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/image_viewer/image_viewer-1286fdbee3.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/dependencies/dependencies-d4f7452ec9.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                <script type="text/javascript"> (function(windough, doc) { (function polyfillCustomEvent() { try { new windough.CustomEvent("test"); } catch(e) { var CustomEvent = function(event, params) { params = params || { bubbles: false, cancelable: false, detail: undefined };var evt = doc.createEvent("CustomEvent"); evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail); return evt; };CustomEvent.prototype = windough.Event.prototype; windough.CustomEvent = CustomEvent; } })();function $header() { return doc.getElementById("bb-nav"); }function $unsupportedText() { return document.querySelector(".bb-unsupported-message__text"); }function customMessage() { var customMsgNode = document.getElementById("bb_unsupported_custom_message"); if (customMsgNode) { return JSON.parse(customMsgNode.innerHTML).message; } }if ( doc.documentMode === 9 || doc.documentMode === 10 || (!windough.CSSMediaRule && !windough.matchMedia && !windough.msMatchMedia) ) { function message() { var css = "body.bb-unsupported-browser .bb-nav-placeholder{height:auto}body.bb-unsupported-browser #bb-that,body.bb-unsupported-browser .bb-nav-root{display:none;height:auto}body.bb-unsupported-browser .bb-nav-root{display:block}.bb-unsupported-message{background-color:#000;padding:20px 0}@media screen and (max-width: 63.6875rem){.bb-unsupported-message__logo-box{padding-bottom:10px}.bb-unsupported-message__copy{margin:0}}@media screen and (min-width: 63.75rem){.bb-unsupported-message__content{font-size:12px;display:table-cell;padding-left:50px}.bb-unsupported-message__logo-box{display:table-cell;vertical-align:middle}.bb-unsupported-message__copy{margin:1em 0}}.bb-unsupported-message__logo-box{padding-bottom:10px}.bb-unsupported-message__copy{margin:0}.bb-unsupported-message__message{width:70%;margin:0 auto;color:#fff}.bb-unsupported-message__content{font-size:12px}.bb-unsupported-message__logo:before{content:\"\";display:block;background:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjExNSAtOS42IDI1Ny44IDQ3LjYiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xMTUtOS42aDE4LjljMy42IDAgNi4zLjkgOC4zIDIuNCAyLjIgMS44IDMuNCA0LjQgMy40IDcuNiAwIDMuNy0xLjUgNi00LjUgNy40VjhjNCAxLjMgNi4zIDQuOSA2LjMgOS4yIDAgNC4xLTEuNiA3LjMtNC4yIDkuMy0yLjIgMS42LTUgMi4zLTguOCAyLjNIMTE1Vi05LjZ6bTE3IDE1YzIgMCAzLjUtMS4xIDMuNS0zLjQgMC0yLjItMS41LTMuMy0zLjYtMy4zaC02LjV2Ni42aDYuNnptLjkgMTQuOWMyLjMgMCA0LTEuNCA0LTMuOSAwLTIuNy0xLjgtMy45LTQtMy45aC03LjR2Ny45aDcuNHpNMTQ5LjEtOS42aDkuOXYzOC41aC05LjlWLTkuNnpNMTYxIDE1LjJDMTYxIDYuNSAxNjYuNi43IDE3NS4zLjdzMTQuMiA1LjkgMTQuMiAxNC41YzAgOC43LTUuNSAxNC41LTE0LjIgMTQuNVMxNjEgMjMuOSAxNjEgMTUuMnptMTguNiAwYzAtNC44LTEuNS03LjgtNC41LTcuOHMtNC40IDMtNC40IDcuOCAxLjQgNy45IDQuNCA3LjljMy0uMSA0LjUtMy4xIDQuNS03Ljl6TTE5MC42IDE1LjJjMC04LjcgNS42LTE0LjUgMTQuMy0xNC41UzIxOSA2LjUgMjE5IDE1LjJzLTUuNSAxNC41LTE0LjIgMTQuNWMtOC42IDAtMTQuMi01LjgtMTQuMi0xNC41em0xOC42IDBjMC00LjgtMS41LTcuOC00LjUtNy44cy00LjQgMy00LjQgNy44IDEuNCA3LjkgNC40IDcuOWMzLS4xIDQuNS0zLjEgNC41LTcuOXpNMjIxIDEuNGg5LjJ2NC4xaC4yYzEuOC0zLjIgNC4zLTQuOSA4LjMtNC45IDMuNSAwIDYuMSAxLjcgNy40IDQuN2guMmMyLjItMy42IDUuMS00LjcgOC41LTQuNyA2LjQgMCA5LjEgNC43IDkuMSAxMXYxNy4yaC05LjZWMTMuM2MwLTIuOC0uOS00LjYtMy4zLTQuNnMtMy42IDIuMi0zLjYgNS4ydjE0LjloLTkuNlYxMy4zYzAtMi44LS45LTQuNi0zLjMtNC42cy0zLjYgMi4yLTMuNiA1LjJ2MTQuOUgyMjFWMS40ek0yNzYgMjUuMmgtLjF2My42aC05LjJWLTkuNmg5LjZWNC4yaC4yYzEuOC0yLjQgNC4zLTMuNyA3LjgtMy43IDYuOSAwIDEwLjkgNi4yIDEwLjkgMTQuNSAwIDkuMy00LjMgMTQuNy0xMS41IDE0LjctMyAwLTYuMS0xLjQtNy43LTQuNXptOS4zLTEwLjNjMC00LjQtMS42LTcuMy00LjUtNy4zLTMgMC00LjggMi45LTQuOCA3LjNzMS45IDcuMyA0LjggNy4zIDQuNS0yLjggNC41LTcuM3pNMjk2LjMgMTUuMWMwLTguNiA1LjctMTQuNSAxMy45LTE0LjUgNC4xIDAgNy4yIDEuMyA5LjYgMy42IDMuMiAzLjEgNC42IDcuOSA0LjUgMTMuNWgtMTguNGMuNCAzLjQgMiA1LjIgNC45IDUuMiAxLjcgMCAzLjItLjggMy44LTIuNmg5LjNjLTEuNiA2LjMtNi41IDkuNC0xMy40IDkuNC04LjUtLjEtMTQuMi01LjktMTQuMi0xNC42em05LjYtMi45aDguOGMtLjItMy4zLTItNS00LjMtNS0yLjctLjEtNC4yIDEuOC00LjUgNXpNMzM1LjIgNi4xaC4yYzItMy44IDQuNi01LjMgNy45LTUuMy44IDAgMS4zLjEgMS42LjN2OC40aC0uMmMtNS43LTEtOSAxLjctOSA3Ljl2MTEuNUgzMjZWMS40aDkuMnY0Ljd6TTM0NS45IDI4LjloOS4zYy40IDEuMiAxLjYgMi4zIDMuOSAyLjMgMy4xIDAgNC4yLTEuOSA0LjItNC44di0yaC0uMmMtMS41IDEuOC0zLjYgMy4xLTYuNiAzLjEtNS45IDAtMTEuMS00LjQtMTEuMS0xMyAwLTcuOSA0LjItMTQgMTAuNi0xNCAzLjcgMCA1LjkgMS41IDcuNCAzLjhoLjJ2LTNoOS4ydjIzLjhjMCA0LjQtMS41IDcuOC0zLjggOS44LTIuNCAyLjEtNS44IDMtOS43IDMtNy40LjEtMTIuNS0yLjktMTMuNC05em0xNy44LTE0LjhjMC0zLjQtMS42LTYuMi00LjQtNi4yLTIuNyAwLTQuNCAyLjQtNC40IDYuMiAwIDMuNyAxLjcgNi4zIDQuNCA2LjNzNC40LTIuNyA0LjQtNi4zeiIvPjwvc3ZnPg==\") no-repeat;width:7.8125rem;height:1.5rem}.bb-unsupported-message__copy-link{color:#fff;text-decoration:underline}.bb-unsupported-message a:hover{color:#eee}"; var head = doc.head; var style = doc.createElement("style"); var customMsg = customMessage();head.appendChild(style);if (style.styleSheet) { style.styleSheet.cssText = css; } else { style.innerHTML = css; }doc.body.className += " bb-unsupported-browser"; $header().outerHTML = "<div class=\"bb-unsupported-message\"> <div class=\"bb-unsupported-message__message\"> <div class=\"bb-unsupported-message__logo-box\"> <a href=\"//www.bloomberg.co.jp\" class=\"bb-unsupported-message__logo\"></a> </div> <div class=\"bb-unsupported-message__content\"> <p class=\"bb-unsupported-message__copy\"> <span class=\"bb-unsupported-message__text\"> <strong>Your browser is no longer supported.</strong> You can still use the site, but some features may not work as expected. Please consider upgrading to one of the following browsers. </span> <a href=\"http://www.google.com/chrome?hl=en\" class=\"bb-unsupported-message__copy-link\">Chrome</a>, <a href=\"http://www.mozilla.com/firefox/\" class=\"bb-unsupported-message__copy-link\">Firefox</a>, <a href=\"https://itunes.apple.com//app/os-x-mavericks/id675248567?mt=12&uo=4\" class=\"bb-unsupported-message__copy-link\">Safari</a>, <a href=\"http://www.opera.com/browser/\" class=\"bb-unsupported-message__copy-link\">Opera</a> or <a href=\"http://windows.microsoft.com/en-us/internet-explorer/download-ie\" class=\"bb-unsupported-message__copy-link\">Edge / Internet Explorer</a>. </p> </div> </div> </div>"; windough["bb-unsupported-browser"] = true; windough.dispatchEvent(new windough.CustomEvent("bb-unsupported-browser"));if (customMsg) { $unsupportedText().innerHTML = customMsg; } }if (doc.addEventListener) { doc.addEventListener("DOMContentLoaded", message); } else { windough.attachEvent("onload", message); } } })(window, document); </script>
+                <!-- Google Tag Manager --><noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-PWSXPT'height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PWSXPT');</script><!-- End Google Tag Manager -->
+                
+        <div id="parsely-root" style="display: none">
+             <div id="parsely-cfg" data-parsely-site="bloomberg.com"></div>
+        </div>
+        <script>
+            (function(s, p, d) {
+            var h=d.location.protocol, i=p+"-"+s,
+               e=d.getElementById(i), r=d.getElementById(p+"-root"),
+               u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
+               :"static."+p+".com";
+            if (e) return;
+            e = d.createElement(s); e.id = i; e.async = true;
+            e.src = h+"//"+u+"/p.js"; r.appendChild(e);
+            })("script", "parsely", document);
+        </script>
+     
+                
+        <script type="text/javascript">
+            if (window.matchMedia("all").matches) {
+                var s = document.createElement("script");
+                s.src = "https://assets.bwbx.io/javelin/public/js/components/truste/truste-6ac723d3b5.js";
+                s.type = "text/javascript";
+                s.async = true;
+                document.head.appendChild(s);
+            }
+        </script>
+    
+                <!-- Categories: industries, personal-finance, world -->
+<!-- Article is not blocked because : publish date in UTC is 2/29/2016 -->
+            </body>
+        </html>
+    

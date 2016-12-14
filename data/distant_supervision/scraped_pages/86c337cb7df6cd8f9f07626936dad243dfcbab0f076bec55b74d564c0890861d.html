@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>World Weather Information Service</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; chrome=1">
+		<link rel="SHORTCUT ICON" href="../images/wmo.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../styles/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="../styles/common.css" />
+		<script type="text/javascript" src="../scripts/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="../scripts/jquery-ui.js"></script>
+	<script type="text/javascript">var pageLang = "en";var default_search_text = "Please enter city / country / territory name";var cookie_msg = "Cookie has to be enabled on your browser to display the WMO's World Weather Information Services website.";var wxinfo = "[#Place Name#] Weather Information";var hello = "Hello,";var share_msg = "Here is the weather information for [#Place Name#] on the WMO\'s WWIS.";var share_msg1 = "Weather information for [#Place Name#] on the WMO\'s WWIS:";var share_msg2 = "[#Place Name#] Weather Information on the WMO\'s WWIS.";var share_fav = "Here is the weather information for you on the WMO\'s WWIS.";var city_not_found = "No such city found!";var isArLang = false;var src_path = "..";var base_layer = "The base layer";var additional_layer = "Additional layers";var gray_base_map = "Gray base map";var color_base_map = "Color base map";</script>	<script type="text/javascript" src="../scripts/sessvars.js"></script>
+	<script type="text/javascript" src="../scripts/common.js"></script>
+	<script type="text/javascript" src="../scripts/moment-with-langs.min.js"></script>
+				<script type="text/javascript" src="../scripts/OpenLayers.js"></script>
+	<script type="text/javascript" src="../scripts/osm.js"></script>
+			<script type="text/javascript">
+	var json_data;
+	var capCityObj;
+	var regionArray = new Array();
+	var t;
+	
+	function change_temp_unit() {
+		var unit = getCookie('tempUnit_e') || sessvars.tempUnit;
+		if(isCookieEnabled) {
+			if(unit == "C") {
+				setCookie('tempUnit_e', 'F', 30);
+			} else {
+				setCookie('tempUnit_e', 'C', 30);
+			}
+		} else {
+			if(unit == "C") {
+				sessvars.tempUnit = "F";
+			} else {
+				sessvars.tempUnit = "C";
+			}
+		}
+		var capitalCityObj = getObjects(memberObj, 'isCapital', true);
+		var currentTempUnit = getCookie('tempUnit_e') || sessvars.tempUnit;
+		if(capitalCityObj.length > 0) {
+			load_capital_forecast(currentTempUnit);
+		}
+		initialize_temp_unit(currentTempUnit);
+	}
+	function initialize_temp_unit(unit) {
+		var c = (unit == "C") ? '<strong>°C</strong>' : '°C';
+		var f = (unit == "F") ? '<strong>°F</strong>' : '°F';
+		$('#temp_unit').html(c + '|' + f).attr({'title': 'Click here to show temperature in °' + ((unit == "C") ? "F" : "C")});
+	}
+	
+	function updateFavBtnImg(cid, icon_name) {
+		if(icon_name == 'add') {
+			$('#favButton' + cid).attr({'href': 'javascript:addToMyFavoriteList(' + cid + ', \'c\', \'no\', false);', 'title': 'Click here to add city as my favourite'}).removeClass('link_icon_remove').addClass('link_icon_add').html('<span class="img_set top_left_icon_set ico_add"></span>Add');
+		}
+		if(icon_name == 'remove') {
+			$('#favButton' + cid).attr({'href': 'javascript:removeFromMyFavoriteList(' + cid + ', \'c\', \'no\', false);', 'title': 'Click here to remove city from MyFavourites page'}).removeClass('link_icon_add').addClass('link_icon_remove').html('<span class="img_set top_left_icon_set ico_remove"></span>Remove');
+		}
+	}
+	
+	//load list of city belong to the country into table
+	function load_city_table(cityPool) {
+		var unit = getCookie('tempUnit_e') || sessvars.tempUnit;
+		
+		$('#listTable').each(function() {
+			$('table', this).remove();
+		});
+		
+					cityPool = cityPool.sort(SortByCityName);
+				
+		var city_tbl = $('<table></table>').attr({ 'class': 'listTable', 'cellpadding': '5', 'cellspacing': '2' });
+		//table header
+		var header = $('<tr></tr>').css({'color':'#000000','background-color':'#FF8C00'}).appendTo(city_tbl);
+		$('<th></th>').css({'width': '350px'}).html("City").appendTo(header);
+		$('<th></th>').css({'width': '100px'}).html("MyFavourites").appendTo(header);
+		$('<th></th>').css({'width': '200px'}).html("Forecast Available").appendTo(header);
+		$('<th></th>').css({'width': '260px'}).html("Climatological Information Available").appendTo(header);
+		
+		for(var i = 0; i < cityPool.length; i++) {
+			var row_color = (i % 2) ? '#e9edf4' : '#d0d8e8';
+			
+			var row = $('<tr></tr>').appendTo(city_tbl);
+			if(cityPool[i].isCapital) {
+				$('<td></td>').attr({'align': 'left'}).css({'padding-left': '10px', 'font-weight': 'bold', 'color':'#000000','background-color':row_color}).html('<a href="./city.html?cityId=' + cityPool[i].cityId + '">' + cityPool[i].cityName.toUpperCase() + '</a>').appendTo(row);
+			} else {
+				$('<td></td>').attr({'align': 'left'}).css({'padding-left': '10px', 'color':'#000000','background-color':row_color}).html('<a href="./city.html?cityId=' + cityPool[i].cityId + '">' + cityPool[i].cityName + '</a>').appendTo(row);
+			}
+			
+			if(!isExistInCookie('myFavorite_e', '|', 'c#' + cityPool[i].cityId)) {
+				$('<td></td>').attr({'align': 'center'}).css({'background-color':row_color}).html('<a id="favButton' + cityPool[i].cityId + '" class="link_icon_add" href="javascript:addToMyFavoriteList(' + cityPool[i].cityId + ', \'c\', \'no\', false);" title="Click here to add city as my favourite"><span class="img_set top_left_icon_set ico_add"></span>Add</a>').appendTo(row);
+			} else {
+				$('<td></td>').attr({'align': 'center'}).css({'background-color':row_color}).html('<a id="favButton' + cityPool[i].cityId + '" class="link_icon_remove" href="javascript:removeFromMyFavoriteList(' + cityPool[i].cityId + ', \'c\', \'no\', false);" title="Click here to remove city from MyFavourites page"><span class="img_set top_left_icon_set ico_remove"></span>Remove</a>').appendTo(row);
+			}
+			
+			if(cityPool[i].forecast == "Y") {
+				$('<td></td>').attr({'align': 'center'}).css({'color':'#008800','font-weight':'bold','background-color':row_color}).html('&nbsp;&#10004;&nbsp;').appendTo(row);
+			} else {
+				$('<td></td>').attr({'align': 'center'}).css({'color':'#D70000','font-weight':'bold','background-color':row_color}).html('&nbsp;&#10008;&nbsp;').appendTo(row);
+			}
+			
+			if(cityPool[i].climate == "N") {
+				$('<td></td>').attr({'align': 'center'}).css({'color':'#D70000','font-weight':'bold','background-color':row_color}).html('&nbsp;&#10008;&nbsp;').appendTo(row);
+			} else {
+				$('<td></td>').attr({'align': 'center'}).css({'color':'#008800','font-weight':'bold','background-color':row_color}).html('&nbsp;&#10004;&nbsp;').appendTo(row);
+			}
+		}
+		
+		city_tbl.appendTo($("#listTable"));
+		
+		t = setTimeout(function(){clearTimeout(t);initialize_map(cityPool);},150);
+		
+			}
+	
+	//load capital city weather forecast information
+	function load_capital_forecast(unit) {
+		var wx_forecast_cap_city = 'Weather forecast of [#City Name#] (capital city)';
+		$('#capital_title').html("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\"><tr><td>" + wx_forecast_cap_city.replace(/\[#City Name#\]/g,capCityObj[0].cityName) + "<a id=\"more1\" title=\"More Forecast\"><span class=\"more\"></span></a></td></tr></table>");
+	
+		$('#more1').attr({'href': './city.html?cityId=' + capCityObj[0].cityId});
+	
+		$('#capital_forecast').html('');
+		var forecastObj = capCityObj[0].forecast.forecastDay;
+		for(var i = 0; i < forecastObj.length; i++) {
+			if(i < 5) {
+				var maxTemp = (unit == "C") ? ((forecastObj[i].maxTemp != null && forecastObj[i].maxTemp != '') ? forecastObj[i].maxTemp + '°' + unit : '') : ((forecastObj[i].maxTempF != null && forecastObj[i].maxTempF != '') ? forecastObj[i].maxTempF + '°' + unit : '');
+				var minTemp = (unit == "C") ? ((forecastObj[i].minTemp != null && forecastObj[i].minTemp != '') ? forecastObj[i].minTemp + '°' + unit : '') : ((forecastObj[i].minTempF != null && forecastObj[i].minTempF != '') ? forecastObj[i].minTempF + '°' + unit : '');
+				var symbol = (maxTemp != '' && minTemp != '') ? ' / ' : '';
+				symbol = (maxTemp == '' && minTemp == '') ? '-' : symbol;
+
+				var icon = forecastObj[i].weatherIcon.toString().substr(0, (forecastObj[i].weatherIcon.toString().length - 2));
+				if(icon.length == 1)
+					icon = "0" + icon;
+				
+				var f_d = moment(forecastObj[i].forecastDate).lang(localLang).format('D MMM [(]ddd[)]');
+				if(localLang == 'zh-cn' || localLang == 'zh-tw' || localLang == 'ja') {
+					f_d = moment(forecastObj[i].forecastDate).lang(localLang).format('ll [(]ddd[)]');
+					f_d = f_d.substr(5).replace("周", "").replace("週", "");
+				}
+				if(localLang == 'de') {
+					f_d = moment(forecastObj[i].forecastDate).lang(localLang).format('D[.] MMM [(]ddd[)]');
+				}
+				if(localLang == 'kr') {
+					f_d = moment(forecastObj[i].forecastDate).lang('ko').format('MMM Do [(]ddd[)]');
+				}
+								
+				var wxdesc = forecastObj[i].weather;
+				if(forecastObj[i].wxdesc.length > 0) {
+					wxdesc = forecastObj[i].wxdesc;
+				}
+								
+								$('#capital_forecast').append('<div class="forecast_day_object" align="center">' + f_d + '<br><div class="img_set wxicon_div wxicon_' + icon + '" title="' + wxdesc + '"></div><span style="color: #0000FF;" dir="ltr">' + minTemp + '</span>' + symbol + '<span style="color: #D70000;" dir="ltr">' + maxTemp + '</span></div> ');
+			}
+		}
+		
+		if(forecastObj.length == 0) {
+			$('#no_weather_forecast').html('<div class="not_available">Weather forecast information is not available at this moment.</div>');
+		} else {
+		
+		var tz = '';
+		switch(capCityObj[0].forecast.timeZone) {
+			case "Local":
+				tz = "Local Time";
+				break;
+			case "UTC":
+				tz = "Coordinated Universal Time";
+				break;
+			case "EDT":
+				tz = "Eastern Daylight Time";
+				break;
+		}
+		var i_d = moment(capCityObj[0].forecast.issueDate).lang(localLang).format('ll');
+		var i_t = moment(capCityObj[0].forecast.issueDate).lang(localLang).format('LT');
+				$('#issue_date').html('Issued at ' + i_t + ' \(' + tz + '\) ' + i_d);		}
+	}
+	
+	//Sort the array by city name
+	function SortByCityName(a, b){
+		var aName = a.enName.toLowerCase();
+		var bName = b.enName.toLowerCase(); 
+		return aName.localeCompare(bName);
+	}
+	
+	//build the website breadcrumb
+	function build_breadcrumb() {
+		$('#breadcrumb').append('<li><a href="./region.html?ra=' + memberObj[0].ra + '">' + regionArray[(memberObj[0].ra - 1)] + '</a> &gt;</li>');
+		$('#breadcrumb').append('<li><a href="./country.html?countryCode=' + memberObj[0].memId + '">' + memberObj[0].memName + '</a></li>');
+	}
+	
+	//setup content include breadcrumb, country info, capital city info (if exist)
+	//      , initaialize map and alphabetical index search
+	function setup_content() {
+		//for Alphabetical Index search
+		var prefix = GetURLParameter('prefix');
+		if(!prefix)
+			prefix = "All";
+		
+		var sortCityArray = [];
+		var city_name_list = "";
+		
+		$('title').html("World Weather Information Service - " + memberObj[0].memName);
+		
+		$('#country_name1').html(memberObj[0].memName);
+		if(memberObj[0].logo.length > 0) {
+			$('#logo').html('<a href="http://' + memberObj[0].url + '" target="_blank"><img src="../images/logo/' + memberObj[0].logo + '" alt="' + memberObj[0].orgName + '"></a>');
+		}
+		if(memberObj[0].url.length > 0) {
+			$('#website').html('<a href="http://' + memberObj[0].url + '" target="_blank">' + memberObj[0].orgName + '</a>');
+		} else {
+			if(memberObj[0].orgName != null)
+				$('#website').html('<span style="font-size:150%;font-family:Verdana;">' + memberObj[0].orgName + '</span>');
+		}
+		
+		if(memberObj[0].city.length == 0) {
+			$('#listTable').html('<div class="not_available">No city record found.</div>');
+			$('#no_weather_forecast').html('<div class="not_available">Weather forecast information is not available at this moment.</div><br><br><br><br><br><br><br><br><br><br><br>');
+			initialize_map(memberObj[0].city);
+		} else {
+			$('.country_list_info').css('display', 'block');
+			if(prefix != "All" && pageLang != 'zh') {
+				for(var i = 0; i < memberObj[0].city.length; i++) {
+					//check prefix of city
+					if (memberObj[0].city[i].enName.charAt(0).toUpperCase() == prefix) {
+						sortCityArray.push(memberObj[0].city[i]);
+					}
+				}
+			} else {
+				sortCityArray = memberObj[0].city;
+			}
+							sortCityArray = sortCityArray.sort(SortByCityName);
+						
+			//prepare load capital city information
+			var capitalCityObj = getObjects(memberObj, 'isCapital', true);
+			if(capitalCityObj.length > 0) {
+				ajax_get_city_info(capitalCityObj[0].cityId);//,true
+			} 
+									
+			//generate city index link
+			var atoz = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			$('div#alpha_index ul').append('<li><a ' + ((prefix == "All") ? 'class="cur_alpha_index"' : '') + ' href="./country.html?countryCode=' + GetURLParameter('countryCode') + '">All</a> <span class="separator">|</span> </li>');
+			for(var i = 0; i < atoz.length; i++) {
+				var alpha_exist = false;
+				for(var j = 0; j < memberObj[0].city.length; j++) {
+					if (memberObj[0].city[j].enName.charAt(0).toUpperCase() == atoz.charAt(i)) {
+						$('div#alpha_index ul').append('<li><a ' + ((prefix == atoz.charAt(i)) ? 'class="cur_alpha_index"' : '') + ' href="./country.html?countryCode=' + GetURLParameter('countryCode') + '&prefix=' + atoz.charAt(i) + '">' + atoz.charAt(i) + '</a> <span class="separator">|</span> </li>');
+						alpha_exist = true;
+						break;
+					}
+				}
+				if(!alpha_exist) {
+					$('div#alpha_index ul').append('<li><span class="no_select">' + atoz.charAt(i) + '</span> <span class="separator">|</span> </li>');
+				}
+			}
+						
+			load_city_table(sortCityArray);
+		}
+		var currentTempUnit = getCookie('tempUnit_e') || sessvars.tempUnit;
+		initialize_temp_unit(currentTempUnit);
+	}
+	
+	function initialize_map(cityPool) {
+		var currentMapType = getCookie('mapType_e') || sessvars.mapType;
+		if(pageLang == 'zh')
+			currentMapType = getCookie('mapTypeC_e') || sessvars.mapTypeC;
+		switch(currentMapType) {
+												case 'openstreet':
+				init_openstreetmap(parseFloat(memberObj[0].countryLatitude), parseFloat(memberObj[0].countryLongitude), 'country_openstreetmap_canvas', memberObj[0].szmlv, cityPool, 'city');
+				break;
+									default:
+				//do nothing;
+		}
+	}
+	
+	//Get region name from JSON file
+	function ajax_get_region_info() {
+		$.ajax({
+			url: "./json/Region_en.xml",
+			type: "GET",
+			dataType: "text",
+			success: function(Jdata) {
+				var regionObj = getObjects(JSON.parse(Jdata), 'id', '');
+				if(regionObj.length > 0) {
+					for(var i = 0; i < regionObj.length; i++) {
+						regionArray.push(regionObj[i].name);
+					}
+					build_breadcrumb();
+				} else {
+					console.log('nothing');
+				}
+			},
+			error: function() {
+				console.log("ERROR!!!");
+			}
+		});
+	}
+	
+	//Use city id to get capital city info from JSON file
+	function ajax_get_city_info(cityId) {//, isGetCapital
+		$.ajax({
+			url: "./json/" + cityId + "_en.xml",
+			type: "GET",
+			dataType: "text",
+			success: function(Jdata) {
+				capCityObj = getObjects(JSON.parse(Jdata), 'cityId', cityId);
+				if(capCityObj.length > 0) {
+					var currentTempUnit = getCookie('tempUnit_e') || sessvars.tempUnit;
+					load_capital_forecast(currentTempUnit);
+				} else {
+					console.log('No capital city record found');
+				}
+			},
+			error: function() {
+				console.log("ERROR!!!");
+			}
+		});
+	}
+	
+	//Use member id to get WMO Member info from JSON file
+	function ajax_get_member_info(memId) {
+		$.ajax({
+			url: "./json/Country_en.xml",
+			type: "GET",
+			dataType: "text",
+			success: function(Jdata) {
+				json_data = JSON.parse(Jdata);
+				memberObj = getObjects(json_data, 'memId', memId);
+				if(memberObj.length > 0) {
+					ajax_get_region_info();
+					setup_content();
+				} else {
+					window.location.href = './error.html';
+				}
+			},
+			error: function() {
+				console.log("ERROR!!!");
+			}
+		});
+	}
+	
+	//Map the WMO member ID by using Pub5 Country Code from JSON file
+	function ajax_map_member_id(key) {
+		$.ajax({
+			url: "../json/Pub5CountryCode.xml",
+			type: "GET",
+			dataType: "text",
+			success: function(Jdata) {
+				json_data = JSON.parse(Jdata);
+				var mappingObj = getObjects(json_data, 'countryCode', key);
+				if(mappingObj.length > 0) {
+					ajax_get_member_info(mappingObj[0].memId);
+				} else {
+					window.location.href = './error.html';
+				}
+			},
+			error: function() {
+				console.log("ERROR!!!");
+			}
+		});
+	}
+		$(document).ready(function() {
+		if(isCookieEnabled && getCookie('fontsize_e') != null)
+			changeFontSize(getCookie('fontsize_e'));
+		else {
+			var fsv = sessvars.fontsize || '0';
+			changeFontSize(fsv);
+		}
+		
+								$('#country_openstreetmap_canvas').css({'display': 'none'});
+						
+		var currentMapType = getCookie('mapType_e') || sessvars.mapType;
+		if(pageLang == 'zh')
+			currentMapType = getCookie('mapTypeC_e') || sessvars.mapTypeC;
+		$('#country_' + currentMapType + 'map_canvas').css({'display': 'block'});
+	
+		var param_val = GetURLParameter('countryCode');
+		
+		$('.linktop').attr({'href': './country.html?countryCode=' + param_val + '#top'});
+		
+		if(/[A-Z]{3}/.test(param_val)) {
+			ajax_map_member_id(param_val);
+		} else {
+			if((/^([1-9]|[1-9][0-9]|[1-9][0-9][0-9])$/.test(param_val)) || (/^(00[1-9]|0[1-9][0-9]|[1-9][0-9][0-9])$/.test(param_val))) {
+				ajax_get_member_info(param_val);
+			} else {
+				window.location.href = './error.html';
+			}
+		}
+		$('#capital_forecast').css({'margin-top':'10px'});
+		$('.temp_unit1').css({'margin-left': '220px'});
+	});
+	</script>
+</head>
+<body>
+	<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+<link rel="apple-touch-icon-precomposed" href="../images/apple-touch-icon.png" />
+<link rel="image_src" href="../images/wmo_original_size_logo.png" />
+
+<a name="top" id="top"></a>
+
+<div align="center" class="content_bg">
+<div id="body_container" align="center">
+
+<div id="headerwrap" align="center">
+	<div class="header_top">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td align="left">
+				<div id="icon_link">
+					<ul>
+												<li><div><span class="img_set top_left_icon_set ico_print"></span><a href="javascript:window.print();">Print</a></div></li>
+						<li><div id="fs"></div></li>
+												<li><div><span class="img_set top_left_icon_set ico_apps"></span><a href="./apps.html">Apps</a></div></li>
+												<li><div><span class="img_set top_left_icon_set ico_mobile"></span><a href="../m/en/index.html">Mobile</a></div></li>
+												<li><div><span class="img_set top_left_icon_set ico_settings"></span><a href="./settings.html">Settings</a></div></li>
+											</ul>
+				</div>
+			</td>
+			<td align="right">
+				<div id="lang_link">
+				<script type="text/javascript" src="http://worldweather.wmo.int/scripts/domain.js" charset="utf-8"></script>
+								</div>
+			</td>
+		</tr>
+		</table>
+	</div>
+	<div class="header_website_name_banner" align="center">
+		<table cellpadding="0" cellspacing="0" style="width:100%;height:98px;" border="0">
+		<tr>
+			<td style="width: 100px;" rowspan="2"><a href="http://public.wmo.int/en/our-mandate/weather/weather-forecast" target="_blank"><div style="width: 100px; height: 98px;"></div></a></td>
+			<td align="center" style="height: 73px; padding-left: 60px; cursor: pointer;" valign="bottom" onClick="window.location.href='./home.html';"><span class="wmo_text_all">WMO Programmes</span><br><span class="wwis_text_en">World Weather Information Service</span></td>
+			<td style="width: 100px; cursor: pointer;" rowspan="2" onClick="window.location.href='./home.html';"></td>
+		</tr>
+		<tr>
+			<td align="center" style="height: 25px; padding-left: 60px; cursor: pointer;" valign="top" onClick="window.location.href='./home.html';"><span class="wwis_slogan_en">Official Forecasts</span></td>
+		</tr>
+		</table>
+	</div>
+	<div class="header_main_menu">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td align="left">
+				<ul id="menu_link">
+					<li><a class="li_selected" href="./home.html">Home</a></li><li><a  href="./myfavourites.html">MyFavourites</a></li><li><a  href="./whatsnew.html">What's New</a></li><li><a href="javascript:sub_menu_control_1();">Related links</a><div style="position:relative;"><div id="sub_menu_box_1"><ul id="sub_menu_link_1"><li><a href="http://www.wmo.int" target="_blank">WMO Programmes</a></li><li><a href="http://severe.worldweather.wmo.int/TCFW/" target="_blank">Tropical Cyclone Forecaster Website</a></li><li><a href="http://wrd.mgm.gov.tr/default.aspx?l=en" target="_blank">WMO Radar Database</a></li><li><a href="http://www.droughtmanagement.info/" target="_blank">Integrated Drought Management Programme</a></li><li><a href="http://www.wamis.org/" target="_blank">World AgroMeteorological Information Service</a></li><li><a href="http://wmo.asu.edu/" target="_blank">World Weather / Climate Extremes Archive</a></li><li><a href="https://www.wmo.int/cpdb/" target="_blank">WMO Country Profile Database</a></li><li><a href="http://wmoica.org/" target="_blank">WMO International Cloud Atlas</a></li><li><a href="http://tv.wmo.int" target="_blank">WMO TV Channel</a></li></ul></div></div></li><li><a  href="javascript:sub_menu_control();">About Us</a><div style="position: relative;"><div id="sub_menu_box"><ul id="sub_menu_link"><li><a href="./pilot.html">About this website</a></li><li><a href="./members.html">Participating Members</a></li><li><a href="./wxicons.html">Weather Icons</a></li><li><a href="http://www.worldweather.org/event/nomination.doc" target="_blank">Nomination Form</a></li></ul></div></div></li><li><a  href="javascript:sub_menu_control_2();">Support</a><div style="position: relative;"><div id="sub_menu_box_2"><ul id="sub_menu_link_2"><li><a href="mailto:webmaster@worldweather.org">Contact Us</a></li><li><a href="./howtouse.html">User Guide</a></li><li><a href="./settings.html">Settings</a></li><li><a href="./dataguide.html">Download</a></li></ul></div></div></li><li><a  href="./sitemap.html">Site Map</a></li><li><a href="http://severe.worldweather.wmo.int/" target="_blank">Severe Weather Information Centre</a></li><li><a href="http://dcpc.worldweather.org/" target="_blank" title="Data Collection or Production Centre">DCPC</a></li>				</ul>
+			</td>
+			<td align="right">
+								<div id="footer_follow_wmo_on">
+					<div class="follow_text"></div>
+					<div class="follow_icon"><a href="http://www.facebook.com/pages/World-Meteorological-Organization/71741701887" target="_blank" title="Facebook"><span class="img_set menu_icon_set ico_facebook"></span></a></div>					<div class="follow_icon"><a href="http://twitter.com/WMO" target="_blank" title="Twitter"><span class="img_set menu_icon_set ico_twitter"></span></a></div>
+					<div class="follow_icon"><a href="https://www.flickr.com/photos/worldmeteorologicalorganization/sets/" target="_blank" title="flickr"><span class="img_set menu_icon_set ico_flickr"></span></a></div>
+					<div class="follow_icon"><a href="https://www.instagram.com/wmo_omm/" target="_blank" title="instagram"><span class="img_set menu_icon_set ico_instagram"></span></a></div>
+				</div>
+							</td>
+		</tr>
+		</table>
+	</div>
+		<div align="center">
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tr>
+			<td valign="middle">
+				<div class="search_label_txt">Search for City/Country: </div>
+			</td>
+			<td style="width: 5px;"></td>
+			<td>
+				<div id="search_box"><div id="top_searchcontainer"><form name="searchForm" id="searchForm" method="get" onsubmit="return searchFormSubmit('searchForm');" action=""><input type="text" class="top_searchbox" name="query" id="q_search" value="Please enter city / country / territory name" title="Please enter city / country / territory name" /><input type="hidden" name="page" value="other" /><input name="submit" type="submit" class="top_searchbox_submit" value="" title="Search" /></form></div></div>
+			</td>
+		</tr>
+		</table>
+	</div>
+	</div>
+<div style="min-height: 800px;">	
+	<div id="breadcrumbwrap" align="center">
+		<table cellpadding="0" style="/*width: 948px;*/width: 1180px;" align="center" border="0">
+		<tr>
+			<td align="left">
+				<ul id="breadcrumb">
+					<li><a href="./home.html">Home</a> &gt;</li>
+				</ul>
+			</td>
+			<td align="right"></td>
+		</tr>
+		</table>
+	</div>
+	
+	<div align="center">
+		<div class="country_forecast_info">
+			<table cellpadding="0" cellspacing="0" width="100%" border="0">
+			<tr>
+				<td style="width: 685px; padding: 5px;" valign="top">
+				<div id="country_name1" align="left"></div>
+				<div id="logo" align="left"></div>
+				<div id="website" align="left"></div>
+				<div id="capital_title" align="left"></div>
+				
+				<div id="capital_forecast" align="left"></div>
+				<div id="issue_date" align="left"></div>
+				<div id="no_weather_forecast" align="left"></div>
+				
+				</td>
+				<td style="width: 495px;" valign="top" align="right" id="right_content">
+					<div id="icon_link1">
+						<ul>
+							<li><div><span class="img_set top_left_icon_set ico_share"></span><a href="javascript:share_box_control();" title="Share the weather forecast">Share</a></div><div style="position: relative;"><div id="share_box" style="position:absolute; top: -38px; left:6px; padding: 0px; display:none; z-index:99; height: 50px;"><div class="share_btn_item"><div id="shareItem" class="share_content1" align="center"><div style="margin-top: 15px;"><a href="javascript:;" onclick="shareFacebook('country');" title="Share this weather information on Facebook"><span class="img_set share_icon_set btn_facebook"></span></a><a href="javascript:;" onclick="shareTwitter('country');" title="Share this weather information on Twitter"><span class="img_set share_icon_set btn_twitter"></span></a><a href="javascript:;" onclick="shareWeibo('country');" title="Share this weather information on Weibo"><span class="img_set share_icon_set btn_weibo"></span></a><a href="javascript:;" onclick="shareLinkedIn('country');" title="Share this weather information on LinkedIn"><span class="img_set share_icon_set btn_linkedin"></span></a><a href="javascript:;" onclick="shareGooglePlus('country');" title="Share this weather information on Google+"><span class="img_set share_icon_set btn_googleplus"></span></a><a href="javascript:;" onclick="emailFriend('country');" title="Share this weather information by Email"><span class="img_set share_icon_set btn_email"></span></a></div></div></div></div></div></li>
+							<li><span class="img_set top_left_icon_set ico_temp"></span><div style="display: inline;" dir="ltr"><a id="temp_unit" href="javascript:change_temp_unit();"></a></div></li>
+						</ul>
+					</div>
+					<div style="margin-top: 43px; margin-right: 5px;" dir="ltr">
+																				<div id="country_openstreetmap_canvas"></div>
+															</div>
+					<div id="map_instruction" align="left">Click a city on the map to see forecast and/or climatological information.</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+		
+		<div class="country_list_info">
+			<table cellpadding="5" cellspacing="0" width="100%" border="0">
+			<tr>
+				<td style="border-bottom: 1px solid #000000;" align="left"><div id="white_container_title">City <span class="remark_text">(In alphabetical order)</span></div></td>
+			</tr>
+						<tr>
+				<td style="border-bottom: 1px solid #000000;" align="left"><div id="alpha_index"><ul></ul></div></td>
+			</tr>
+						<tr>
+				<td valign="top">
+					<div id="listTable"></div>
+					<div class="back_to_top" align="right">[ <a class="linktop" href="">Back to top</a> ]</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+
+	</div>
+<div id="footerwrap" align="center">
+	<div class="host_info" align="center">
+		This web site is operated on behalf of WMO by <a href='http://www.hko.gov.hk' target='_blank'>Hong Kong Observatory</a> of Hong Kong, China.	</div>
+	<div class="footer_lower">
+		<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td align="left" width="75%">
+				<div id="footer_links">
+				Copyright &#169; 2014 | <a href="./privacy.html">Privacy Policy</a> | <a href="mailto:webmaster@worldweather.org">Contact</a> | <a href="./disclaimer.html">Disclaimer</a> | <a href="./note.html">Note to User</a> | <a href="http://www.wmo.int/pages/prog/amp/pwsp/" target="_blank">WMO Extranet</a> | <a href="http://www.w3.org/WAI/WCAG2AA-Conformance" target="_blank" title="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0"><span class="img_set wcag_logo"></span></a>
+				</div>
+			</td>
+			<td align="right" width="25%" valign="top">
+				<div id="footer_last_update"></div>
+				<script type="text/javascript">
+					$('#footer_last_update').html(moment('2016-10-31').lang(localLang).format('[Updated on ]ll'));
+				</script>
+			</td>
+		</tr>
+		</table>
+	</div>
+</div>
+<div id="vc">1.2.3</div>
+</div>
+</div>
+</body>
+</html>

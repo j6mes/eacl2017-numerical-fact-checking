@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="no-js ie iem7 not-responsive" lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="no-js ie lt-ie9 lt-ie8 lt-ie7 not-responsive" lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="no-js ie lt-ie9 lt-ie8 not-responsive" lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="no-js ie lt-ie9 not-responsive" lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js ie responsive" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><![endif]-->
+<!--[if !IE]><!--><html class="no-js responsive" lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+<script>(window.NREUM||(NREUM={})).loader_config={xpid:"XQcPUVZVGwUGVlhbAQg="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+<meta http-equiv="cleartype" content="on" />
+<link rel="apple-touch-icon-precomposed" href="https://www.atf.gov/n/sites/all/themes/custom/atf/apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="https://www.atf.gov/n/sites/all/themes/custom/atf/apple-touch-icon-precomposed-72x72.png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="https://www.atf.gov/n/sites/all/themes/custom/atf/apple-touch-icon-precomposed-144x144.png" sizes="144x144" />
+<meta name="MobileOptimized" content="width" />
+<link rel="apple-touch-icon-precomposed" href="https://www.atf.gov/n/sites/all/themes/custom/atf/apple-touch-icon-precomposed-114x114.png" sizes="114x114" />
+<link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
+<link rel="canonical" href="/resource-center/data-statistics" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="/node/27446" />
+<!--[if lte IE 8]><script src="/sites/all/modules/contrib/personalize/js/personalize.ie8.js" />
+</script><![endif]--><meta name="HandheldFriendly" content="true" />
+<link rel="shortcut icon" href="https://www.atf.gov/n/sites/all/themes/custom/atf/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width" />
+  <title>Data &amp; Statistics | Bureau of Alcohol, Tobacco, Firearms and Explosives</title>
+  <link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_xQl-KeaOlrEXSHw_VeR9v1ZSs-g5_eWAt3x5sv7ThJE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_s8qVBV7I94rpwEmRK_SPVKizjPsr31hePeT4pa93X-U.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:400,600" media="all" />
+<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Slabo+13px" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_AjWrLsm7TwHXkLSGBgT_RdxYOO8gWTU441FtCRwUVTE.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_v8_kMlEp_mEmx69o7O61vabu6ML6mTj-sqEBWj_nsvY.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_t8279r0QUK5FL2qFi5n5XVNp7n1QRr58b7URGnq7f1Q.css" media="print" />
+
+<!--[if lte IE 8]>
+<link type="text/css" rel="stylesheet" href="https://www.atf.gov/n/sites/default/files/cdn/css/https/css_V_wTRFHXJAxJtNgSZ7VS7xw2u1z3D5CNMlPjSMoUUmg.css" media="all" />
+<![endif]-->
+  <script src="https://www.atf.gov/n/sites/default/files/js/js_Iu231mfdeiEoaLXCWaLUWEw3lvVKe8tL-KJCcJMguXo.js"></script>
+<script>jQuery.migrateMute=true;jQuery.migrateTrace=false;</script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_Q-oY2m2kqpcvoi3ifPHeWlYSMZB4W1Fpr5kMtAvKEW8.js"></script>
+<script>var _tcaq = _tcaq || [];
+var _tcwq = _tcwq || [];
+_tcaq.push(['setAccount', 'ATF', 'atf-prod']);</script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_WnoUJmxx5_ukg0bqBTd4YCJztILB1gP6Y8pf950ohvg.js"></script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_bJRqMtcVGWo_gADpFOBnsBvth449q6hH87zGfbq9TLM.js"></script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_aOTsKKlIL5ar8dEg_PN0v7B1CNYS188cabpv22YOiOA.js"></script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_rszu8Po-BO7QceWsmtkI5Bcpu5-kOA5D4Aj7G5gwMWI.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"atf","theme_token":"gr4j9GRN50md79ZuL3DA3a28GNDCQ3eUPf3xpLxgmDY","jquery_version":"1.10","css":{"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.base.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.menus.theme.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.messages.theme.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/aggregator\/aggregator.theme.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/panopoly_magic\/css\/panopoly-magic.css":1,"sites\/all\/modules\/contrib\/panopoly_magic\/css\/panopoly-modal.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/field\/field.theme.css":1,"sites\/all\/modules\/contrib\/extlink\/extlink.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/search\/search.theme.css":1,"sites\/all\/modules\/contrib\/lingotek\/style\/base.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/user\/user.base.css":1,"sites\/all\/themes\/contrib\/omega\/omega\/css\/modules\/user\/user.theme.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/meanmenu.min.css":1,"sites\/all\/modules\/contrib\/extlink_extra\/extlink_extra.508.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"\/\/fonts.googleapis.com\/css?family=Work+Sans:400,600":1,"\/\/fonts.googleapis.com\/css?family=Slabo+13px":1,"sites\/all\/modules\/contrib\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/libraries\/flexslider\/flexslider.css":1,"sites\/all\/themes\/custom\/atf\/css\/atf.normalize.css":1,"sites\/all\/themes\/custom\/atf\/css\/atf.hacks.css":1,"sites\/all\/themes\/custom\/atf\/css\/atf.styles.css":1,"sites\/all\/themes\/custom\/atf\/css\/atf.print.css":1,"sites\/all\/themes\/custom\/atf\/css\/atf.no-query.css":1},"js":{"https:\/\/cdn.lift.acquia.com\/ATF\/tc.js":1,"sites\/all\/modules\/contrib\/personalize\/js\/personalize.storage.js":1,"sites\/all\/modules\/contrib\/personalize\/js\/promise-1.0.0.min.js":1,"sites\/all\/modules\/contrib\/personalize\/js\/personalize.js":1,"sites\/all\/modules\/contrib\/personalize\/js\/personalize.debug.js":1,"sites\/all\/modules\/contrib\/visitor_actions\/js\/visitor_actions.js":1,"sites\/all\/modules\/contrib\/acquia_lift\/js\/acquia_lift.api.js":1,"sites\/all\/modules\/contrib\/acquia_lift\/js\/acquia_lift.page.js":1,"sites\/all\/modules\/contrib\/acquia_lift\/js\/acquia_lift.goals_queue.js":1,"sites\/all\/modules\/contrib\/extlink_extra\/extlink_extra.js":1,"0":1,"1":1,"2":1,"3":1,"sites\/all\/modules\/contrib\/flexslider\/assets\/js\/flexslider.load.js":1,"4":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"5":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery-migrate\/1.2.1\/jquery-migrate.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/contrib\/omega\/omega\/js\/no-js.js":1,"sites\/all\/modules\/contrib\/visitor_actions\/modules\/visitor_actions_ui\/js\/jquery\/alias.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/external\/jquery.cookie.js":1,"6":1,"sites\/all\/libraries\/jquery.maphilight\/jquery.maphilight.min.js":1,"misc\/jquery.ba-bbq.js":1,"sites\/all\/modules\/contrib\/visitor_actions\/modules\/visitor_actions_ui\/js\/jquery\/ducktape.events.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/contrib\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/contrib\/panopoly_magic\/panopoly-magic.js":1,"sites\/all\/modules\/contrib\/personalize_pages\/js\/personalize_pages.js":1,"sites\/all\/modules\/contrib\/extlink\/extlink.js":1,"sites\/all\/themes\/custom\/atf\/libraries\/html5shiv\/html5shiv.min.js":1,"sites\/all\/themes\/custom\/atf\/libraries\/html5shiv\/html5shiv-printshiv.min.js":1,"sites\/all\/themes\/custom\/atf\/libraries\/selectivizr\/selectivizr.min.js":1,"sites\/all\/modules\/contrib\/acquia_lift\/acquia_lift_profiles\/js\/acquia_lift_profiles.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/jq_maphilight\/jq_maphilight.js":1,"sites\/all\/modules\/features\/atf_library\/js\/download_tracking.js":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/jquery.meanmenu.min.js":1,"sites\/all\/modules\/contrib\/responsive_menus\/styles\/meanMenu\/responsive_menus_mean_menu.js":1,"sites\/all\/libraries\/flexslider\/jquery.flexslider-min.js":1,"misc\/progress.js":1,"sites\/all\/modules\/contrib\/personalize\/modules\/personalize_elements\/js\/personalize_elements.js":1,"sites\/all\/modules\/contrib\/personalize\/modules\/personalize_taxonomy_context\/js\/personalize_taxonomy_context.js":1,"sites\/all\/themes\/custom\/atf\/libraries\/ng-responsive-tables\/responsive-table.js":1,"sites\/all\/themes\/custom\/atf\/js\/atf.behaviors.min.js":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"jq_maphilight":{"fill":"true","fillColor":"000000","fillOpacity":0.2,"stroke":"true","strokeColor":"ff0000","strokeOpacity":1,"strokeWidth":"2","fade":"true","alwaysOn":"false","neverOn":"false","groupBy":"true","allMapsEnabled":"true"},"CToolsModal":{"modalSize":{"type":"scale","width":".9","height":".9","addWidth":0,"addHeight":0,"contentRight":25,"contentBottom":75},"modalOptions":{"opacity":".55","background-color":"#FFF"},"animationSpeed":"fast","modalTheme":"CToolsModalDialog","throbberTheme":"CToolsModalThrobber"},"better_exposed_filters":{"views":{"og_sidebar":{"displays":{"block":{"filters":[]}}}}},"responsive_menus":[{"selectors":".responsive .block--system-main-menu, .responsive .l-region--navigation .block__content","container":"body","trigger_txt":"\u003Cspan \/\u003E\u003Cspan \/\u003E\u003Cspan \/\u003E","close_txt":"X","close_size":"18px","position":"right","media_size":"704","show_children":"1","expand_children":"1","expand_txt":"+","contract_txt":"-","remove_attrs":"1","responsive_menus_style":"mean_menu"}],"extlink":{"extTarget":0,"extClass":"ext","extLabel":"(link is external)","extImgClass":0,"extSubdomains":1,"extExclude":"\\.(gov|mil|fed\\.us)(\\\/.*)?$","extInclude":"","extCssExclude":"","extCssExplicit":".l-content","extAlert":0,"extAlertText":{"value":"\u003Ch2\u003EYou are leaving the Bureau of Alcohol, Tobacco, Firearms, and Explosives website\u003C\/h2\u003E\r\n\r\n\u003Cp\u003EThe Bureau of Alcohol, Tobacco, Firearms, and Explosives does not endorse the organizations or views represented by this site and takes no responsibility for, and exercises no control over, the accuracy, accessibility, copyright or trademark compliance or legality of the material contained on this site.\u003C\/p\u003E\r\n\r\n\u003Cp\u003EThank you for visiting our site.\u003C\/p\u003E\r\n\r\n\u003Cdiv\u003E [extlink:timer]\u003C\/div\u003E\r\n  \u003Cdiv class=\u0022extlink-extra-actions\u0022\u003E\r\n      \u003Cdiv class=\u0022extlink-extra-back-action\u0022\u003E\u003Ca title=\u0022Cancel\u0022 href=\u0022[extlink:back-url]\u0022\u003ECancel\u003C\/a\u003E\u003C\/div\u003E\r\n      \u003Cdiv class=\u0022extlink-extra-go-action\u0022\u003E\u003Ca class=\u0022ext-override\u0022 title=\u0022Go to link\u0022 href=\u0022[extlink:external-url]\u0022\u003EGo to link\u003C\/a\u003E\u003C\/div\u003E\r\n  \u003C\/div\u003E","format":"raw_html"},"mailtoClass":"mailto","mailtoLabel":"(link sends e-mail)"},"extlink_extra":{"extlink_alert_type":"page","extlink_alert_timer":"30","extlink_alert_url":"\/now-leaving","extlink_cache_fix":1,"extlink_exclude_warning":"\\.(gov|mil|fed\\.us)(\\\/.*)?$","extlink_508_fix":1,"extlink_508_text":" [external link]","extlink_url_override":1,"extlink_url_params":{"external_url":null,"back_url":null}},"urlIsAjaxTrusted":{"https:\/\/search.usa.gov\/search":true},"ogContext":{"groupType":"node","gid":"226"},"acquia_lift_profiles":{"request_url":"https:\/\/www.atf.gov\/resource-center\/data-statistics","available_segments":["test","homepage-short-barreled-rifles","homepage-ffl","homepage-Form 4473","homepage-Form-1","homepage Validity-FFL","homepage - contact","homepage-NFA","homepage-silencers","homepage-GCA-silencer","homepage-become-SA","41f_nfa_users"],"apiUrl":"api-liftweb-us1.lift.acquia.com","currentPath":"node\/27446","captureIdentity":0,"mappings":{"person":{"person_udf1":"taxonomy_context__field_division"},"event":{"event_udf1":"taxonomy_context__field_division"},"field":{"content_keywords":"taxonomy_context__topics","persona":"taxonomy_context__audience"}},"mappingContextSeparator":"__","pageContext":{"content_type":"page","content_title":"Data \u0026 Statistics","published_date":"1432053838","post_id":"27446","author":"Nancy.M.Clarke@usdoj.gov","page_type":"node page","thumbnail_url":""},"tracked_actions":["scroll_to_bottom","clicks_final_rule_41f_nfa_visitors"],"engagement_scores":{"scroll_to_bottom":1,"clicks_final_rule_41f_nfa_visitors":1},"global_values":{"scroll_to_bottom":1,"clicks_final_rule_41f_nfa_visitors":1}},"personalize":{"optionPreselectParam":"personalize-preselection","controlOptionName":"control-variation","controlOptionLabel":"Control variation","cacheExpiration":{"decisions":"session","lift":"session"},"debugMode":true},"personalize_elements":[],"personalize_taxonomy_context":{"vocabularies":{"audience":"General Public,Students,Federal Explosives Licensees,Federal Firearms Licensees,Law Enforcement Officers","topics":"Bomb,Bomb Arson Tracking System (BATS),Explosives,Firearms,National Firearms Act,Theft \/ Loss"}},"visitor_actions":{"currentPath":"node\/27446","actions":{"scroll_to_bottom":{"event":"scrollToBottom","actionable_element":"page"},"clicks_final_rule_41f_nfa_visitors":{"identifier":"[data-personalize=osid-91]","event":"click","actionable_element":"link","options":{"auto_created":"91"}}},"actionableElementTypes":[{"type":"page","selector":null},{"type":"form","selector":"form[action]"},{"type":"base_form","selector":"form[action]"},{"type":"link","selector":"a[href]"}],"pageContext":{"InternalPath":"node\/27446","RequestPath":"resource-center\/data-statistics","Taxonomy":{"Audience":["General Public","Students","Federal Explosives Licensees","Federal Firearms Licensees","Law Enforcement Officers"],"Topics":["Bomb","Bomb Arson Tracking System (BATS)","Explosives","Firearms","National Firearms Act","Theft \/ Loss"]},"ContentType":"page"}},"acquia_lift_learn":{"baseUrl":"https:\/\/us-east-1-decision.lift.acquia.com","clientId":"750854e8-d3ea-4cb5-aa0d-ff286892900a","applicationHash":"atf-prod"},"acquia_lift":{"api_class":"acquiaLiftAPI","account_name":"ATF","customer_site":"atf-prod"}});</script>
+</head>
+<body class="html not-front not-logged-in page-node page-node- page-node-27446 node-type-page og-context og-context-node og-context-node-226 i18n-en section-resource-center one-sidebar sidebar-first">
+  <a name="page-top"></a>
+  <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+    <div class="mobile-branding">
+  <a href="/" title="Home" rel="home" class="site-logo">
+    <img class='mobile-emblem' src="/sites/all/themes/custom/atf/images/atf-logo.png" title="Click the seal to navigate to the homepage." alt="ATF - Bureau of Alcohol, Tobacco, Firearms, and Explosives seal" />
+    <img src="/sites/all/themes/custom/atf/images/atf-head-logo-sm.png" title="Click the logo to navigate to the homepage." alt="ATF - Bureau of Alcohol, Tobacco, Firearms, and Explosives logo" />
+  </a>
+</div>
+
+<div class="l-page">
+  <header class="l-header" role="banner">
+
+    <div class="l-branding">
+      <div class="branding-container">
+        <a href="/" title="Home" rel="home" class="site-logo">
+          <img class='mobile-emblem' src="/sites/all/themes/custom/atf/images/atf-logo.png" title="Click the seal to navigate to the homepage." alt="ATF - Bureau of Alcohol, Tobacco, Firearms, and Explosives seal" />
+          <img src="/sites/all/themes/custom/atf/images/atf-head-logo-sm.png" title="Click the logo to navigate to the homepage." alt="ATF - Bureau of Alcohol, Tobacco, Firearms, and Explosives logo" />
+        </a>
+
+                  <h1 class="site-name">
+            <a href="/" title="Home" rel="home"><span>Bureau of Alcohol, Tobacco, Firearms and Explosives</span></a>
+          </h1>
+        
+                  <div class="l-region l-region--header">
+    <div data-personalize-entity-id="block/search-form" id="block-search-form" role="search" class="block block--search block--search-form">
+        <div class="block__content">
+    <form class="search-block-form" action="https://search.usa.gov/search" method="get" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input class="usagov-search-autocomplete ui-autocomplete-input ui-corner-all form-text" autocomplete="off" type ="text" name="query" type="text" id="edit-search-block-form--2" value="" size="15" maxlength="128" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit" /></div><input type="hidden" name="affiliate" value="atf" />
+</div>
+</div></form>  </div>
+</div>
+  </div>
+      </div>
+    </div>
+
+      <div class="l-region l-region--navigation">
+    <nav data-personalize-entity-id="block/system-main-menu" id="block-system-main-menu" role="navigation" class="block block--system block--menu block--system-main-menu">
+        <h2 class="block__title">Main menu</h2>
+    
+  <ul class="menu"><li class="expanded menu-item menu-item--depth-1"><a href="/about/who-we-are" title="The Bureau of Alcohol, Tobacco, Firearms, and Explosives (ATF) was established as a separate component within the Department of Justice pursuant to Title XI of the Homeland Security Act of 2002, Public Law 107-296, on January 17, 2003." class="menu-link menu-link--depth-1"><span class="title">Who We Are</span></a><div class="menu-level menu-level--2"><div class="menu-content"><ul class="menu"><li class="expanded menu-item menu-item--depth-2"><a href="/about" class="menu-link menu-link--depth-2"><span class="title">About</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/about/executive-staff" title="" class="menu-link menu-link--depth-3"><span class="title">Executive Staff</span></a></li><li class="menu-item menu-item--depth-3"><a href="https://www.atf.gov/content/About/organization-structure" title="" class="menu-link menu-link--depth-3"><span class="title">Organization Structure</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/our-history/our-history" title="Our History Menu" class="menu-link menu-link--depth-3"><span class="title">Our History</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/contact" title="" class="menu-link menu-link--depth-2"><span class="title">Contact</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/contact/contact-atf-headquarters" title="" class="menu-link menu-link--depth-3"><span class="title">Headquarters</span></a></li><li class="menu-item menu-item--depth-3"><a href="/news/press-and-media-contacts" title="" class="menu-link menu-link--depth-3"><span class="title">Media Contacts</span></a></li><li class="menu-item menu-item--depth-3"><a href="/contact/licensing-and-other-services" title="" class="menu-link menu-link--depth-3"><span class="title">Licensing Services</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/contact/hotlines" title="" class="menu-link menu-link--depth-3"><span class="title">Hotlines</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/careers" title="Careers section of the ATF website.  Job opportunities are listed here." class="menu-link menu-link--depth-2"><span class="title">Careers</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/careers/becoming-special-agent" title="" class="menu-link menu-link--depth-3"><span class="title">Special Agent</span></a></li><li class="menu-item menu-item--depth-3"><a href="/careers/becoming-industry-operations-investigator" title="" class="menu-link menu-link--depth-3"><span class="title">IO Investigator</span></a></li><li class="menu-item menu-item--depth-3"><a href="/careers/attorneys" title="" class="menu-link menu-link--depth-3"><span class="title">Attorneys</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/careers/professionaltechnical" title="" class="menu-link menu-link--depth-3"><span class="title">Professional/Technical</span></a></li></ul></div></li><li class="last expanded menu-item menu-item--depth-2"><a href="/contact/atf-field-divisions" title="" class="menu-link menu-link--depth-2"><span class="title">Local ATF Offices</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/charlotte-field-division" title="" class="menu-link menu-link--depth-3"><span class="title">Charlotte</span></a></li><li class="menu-item menu-item--depth-3"><a href="/nashville-field-division" title="" class="menu-link menu-link--depth-3"><span class="title">Nashville</span></a></li><li class="menu-item menu-item--depth-3"><a href="/san-francisco-field-division" title="" class="menu-link menu-link--depth-3"><span class="title">San Francisco</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/contact/international-offices" title="" class="menu-link menu-link--depth-3"><span class="title">International Offices</span></a></li></ul></div></li></ul></div></div></li><li class="expanded menu-item menu-item--depth-1"><a href="/about/what-we-do" title="ATF&#039;s responsibilities include the investigation and prevention of federal offenses involving the unlawful use, manufacture, and possession of firearms and explosives; acts of arson and bombings; and illegal trafficking of alcohol and tobacco products. The ATF also regulates, via licensing, the sale, possession, and transportation of firearms, ammunition, and explosives in interstate commerce. " class="menu-link menu-link--depth-1"><span class="title">What We Do</span></a><div class="menu-level menu-level--2"><div class="menu-content"><ul class="menu"><li class="expanded menu-item menu-item--depth-2"><a href="/about/mission-areas" title="" class="menu-link menu-link--depth-2"><span class="title">Mission Areas</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/firearms" class="menu-link menu-link--depth-3"><span class="title">Firearms</span></a></li><li class="menu-item menu-item--depth-3"><a href="/explosives" title="Explosives industry members play an integral role in maintaining and improving our quality of life in the United States and work to bring countless benefits to our everyday lives in areas such as mining, oil and gas exploration; demolition; avalanche control; and the use of explosives in special industrial tools, fire extinguishers, air bag inflators, fireworks; and special effects in the entertainment industry." class="menu-link menu-link--depth-3"><span class="title">Explosives</span></a></li><li class="menu-item menu-item--depth-3"><a href="http://www.atf.gov/content/arson" title="" class="menu-link menu-link--depth-3"><span class="title">Arson</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/alcohol-tobacco" title="" class="menu-link menu-link--depth-3"><span class="title">Alcohol & Tobacco</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/rules-and-regulations" title="ATF regulations are published as Title 27, Chapter II, Code of Federal Regulations (CFR) by the Government Printing Office. Consult the official legal version of 27 CFR (updated April 1 of each year) and any more recent final/interim rules to learn the requirements that apply to you." class="menu-link menu-link--depth-2"><span class="title">Regulations</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/rules-and-regulations/laws-alcohol-tobacco-firearms-and-explosives" title="" class="menu-link menu-link--depth-3"><span class="title">Laws</span></a></li><li class="menu-item menu-item--depth-3"><a href="/rules-and-regulations/regulations-alcohol-tobacco-firearms-and-explosives" title="" class="menu-link menu-link--depth-3"><span class="title">Regulations</span></a></li><li class="menu-item menu-item--depth-3"><a href="/rules-and-regulations/federal-register-actions" title="" class="menu-link menu-link--depth-3"><span class="title">Federal Register</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/rules-and-regulations/rulings" title="" class="menu-link menu-link--depth-3"><span class="title">Rulings</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/news" title="" class="menu-link menu-link--depth-2"><span class="title">News</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/news/advisories" title="" class="menu-link menu-link--depth-3"><span class="title">Advisories</span></a></li><li class="menu-item menu-item--depth-3"><a href="/news/press-releases" title="" class="menu-link menu-link--depth-3"><span class="title">Press Releases</span></a></li><li class="menu-item menu-item--depth-3"><a href="/news/social-media" title="" class="menu-link menu-link--depth-3"><span class="title">Social Media</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/news/press-and-media-contacts" title="" class="menu-link menu-link--depth-3"><span class="title">Media Contacts</span></a></li></ul></div></li><li class="last expanded menu-item menu-item--depth-2"><a href="/most-wanted" title="" class="menu-link menu-link--depth-2"><span class="title">Most Wanted</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="last menu-item menu-item--depth-3"><a href="/news/reward-notices" title="" class="menu-link menu-link--depth-3"><span class="title">Reward Notices</span></a></li></ul></div></li></ul></div></div></li><li class="last expanded active-trail menu-item menu-item--depth-1"><a href="/resource-center" title="" class="active-trail menu-link menu-link--depth-1"><span class="title">Resources</span></a><div class="menu-level menu-level--2"><div class="menu-content"><ul class="menu"><li class="expanded menu-item menu-item--depth-2"><a href="/resource-center/forms-library" title="" class="menu-link menu-link--depth-2"><span class="title">Download Forms</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="last menu-item menu-item--depth-3"><a href="/distribution-center-order-form" title="" class="menu-link menu-link--depth-3"><span class="title">Order Paper Forms</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/resource-center/atf-photo-galleries" title="" class="menu-link menu-link--depth-2"><span class="title">Photo Galleries</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/firearms/firearms-photo-gallery" title="" class="menu-link menu-link--depth-3"><span class="title">Firearms Gallery</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/about/canine-gallery" title="" class="menu-link menu-link--depth-3"><span class="title">K-9 Gallery</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/resource-center/publications-library" title="" class="menu-link menu-link--depth-2"><span class="title">Publications</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/resource-center/foia-library" title="" class="menu-link menu-link--depth-3"><span class="title">FOIA Library</span></a></li><li class="menu-item menu-item--depth-3"><a href="/resource-center/fact-sheets" title="" class="menu-link menu-link--depth-3"><span class="title">Fact Sheets</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/rules-and-regulations/rules-and-regulations-library" title="" class="menu-link menu-link--depth-3"><span class="title">Regulations Library</span></a></li></ul></div></li><li class="expanded menu-item menu-item--depth-2"><a href="/questions-and-answers" class="menu-link menu-link--depth-2"><span class="title">Q&A</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/questions-and-answers/firearms-qas" title="Firearms Questions and Answers" class="menu-link menu-link--depth-3"><span class="title">Firearms</span></a></li><li class="menu-item menu-item--depth-3"><a href="/questions-and-answers/explosives-qas" title="" class="menu-link menu-link--depth-3"><span class="title">Explosives</span></a></li><li class="last menu-item menu-item--depth-3"><a href="/questions-and-answers/careers-qas" title="" class="menu-link menu-link--depth-3"><span class="title">Careers</span></a></li></ul></div></li><li class="last expanded active-trail menu-item menu-item--depth-2"><a href="/resource-center/data-statistics" title="" class="active-trail menu-link menu-link--depth-2 active"><span class="title">Data & Statistics</span></a><div class="menu-level menu-level--3"><ul class="menu"><li class="menu-item menu-item--depth-3"><a href="/about/firearms-trace-data-2015" title="" class="menu-link menu-link--depth-3"><span class="title">U.S. Firearms Trace Data</span></a></li><li class="menu-item menu-item--depth-3"><a href="https://www.atf.gov/resource-center/docs/2016-firearms-commerce-united-states/download" title="" class="menu-link menu-link--depth-3"><span class="title">U.S. Firearms Commerce Report</span></a></li><li class="last menu-item menu-item--depth-3"><a href="https://www.atf.gov/file/97936/download" title="" class="menu-link menu-link--depth-3"><span class="title">AFMER</span></a></li></ul></div></li></ul></div></div></li></ul></nav>
+  </div>
+
+  </header>
+
+  <div class="l-main">
+    <h2 class="element-invisible">You are here</h2><div class="breadcrumb"><a href="/">Home</a> &raquo; <a href="/resource-center">Resource Center</a></div>
+      <aside class="l-region l-region--sidebar-first">
+    <div class="sidebar-content-wrapper">
+      <div data-personalize-entity-id="block/og_menu-og_single_menu_block" id="block-og-menu-og-single-menu-block" role="navigation" aria-label="secondary" class="block block--og-menu block--og-menu-og-single-menu-block">
+        <h2 class="block__title">Resource Center Menu</h2>
+      <div class="block__content">
+    <ul class="menu"><li class="first leaf"><a href="/resource-center" title="">Resource Center Home</a></li>
+<li class="leaf"><a href="/resource-center/forms-library" title="">Download Forms</a></li>
+<li class="leaf"><a href="/distribution-center-order-form" title="">Order Paper Forms</a></li>
+<li class="leaf active-trail"><a href="/resource-center/data-statistics" title="" class="active-trail active">Data &amp; Statistics</a></li>
+<li class="leaf"><a href="/resource-center/fact-sheets" title="">Factsheets</a></li>
+<li class="leaf"><a href="/news/atf-infographics" title="">Infographics</a></li>
+<li class="leaf"><a href="/resource-center/atf-photo-galleries" title="">ATF Photo Gallery</a></li>
+<li class="leaf"><a href="/resource-center/publications-library" title="">Publications Library</a></li>
+<li class="leaf"><a href="/our-history/our-history" title="">Our History</a></li>
+<li class="leaf"><a href="https://www.youtube.com/user/ATFHQ" title="">Video Gallery</a></li>
+<li class="leaf"><a href="/resource-center/asset-forfeiture" title="">Asset Forfeiture</a></li>
+<li class="collapsed"><a href="/resource-center/freedom-information-act-foia" title="">Freedom of Information Act</a></li>
+<li class="leaf"><a href="/resource-center/business-opportunities" title="">Business Opportunities</a></li>
+<li class="last leaf"><a href="/resource-center/accessibility-policy" title="ATF&#039;s accessibility policy ">Accessibility Policy</a></li>
+</ul>  </div>
+</div>
+    </div>
+  </aside>
+
+    <div class="l-content" role="main">
+            <a id="main-content"></a>
+                    <h1>Data &amp; Statistics</h1>
+                                          <article about="/resource-center/data-statistics" typeof="foaf:Document" role="article" class="node node--page node--full node--page--full">
+      <header>
+                  <span property="dc:title" content="Data &amp; Statistics" class="rdf-meta element-hidden"></span>    </header>
+  
+  
+  <div class="node__content">
+    <div class="field field--name-body field--type-text-with-summary field--label-hidden"><div class="field__items"><div class="field__item even" property="content:encoded"><p></p><div id="file-101676" class="file file-image file-image-jpeg">
+
+  <figure class="content"><img alt="Image of a graph on a table" title="Image of a graph on a table" height="210" width="700" class="media-element file-default" typeof="foaf:Image" src="https://www.atf.gov/n/n/n/sites/default/files/media/2016/01/image_of_a_graph_on_a_table_000077650491_datapage.jpg" /></figure></div>
+
+<p>Available from no other source, this comprehensive collection of ATF-related data from national surveys, state-based surveys, other collected license statistics, and other data sources documents trends in firearms, commerce and use of federal services in the United States.</p>
+<p> </p>
+<h3>United States Bomb Data Center (USBDC)</h3>
+<p>The annual Explosives Incident Report (EIR) and Arson Incident Report (AIR) reviews bombing and explosives and arson related incidents and threats from information reported to the United States Bomb Data Center through the Bomb Arson Tracking System (BATS).</p>
+<p>Please note, the reports in PDF format below are not not fully Section 508 compliant.  We are working quickly to ensure they are accessible for all users of our site.</p>
+<p><a href="/rules-and-regulations/docs/report/2015usbdcexplosiveincidentreportpdf/download">2015 Explosive Incident Report</a></p>
+<p><a href="/arson/docs/report/2015usbdcarsonincidentreportpdf/download">2015 Arson Incident Report</a></p>
+<p> </p>
+<h3>Listing of Federal Firearms Licensees</h3>
+<p>A list of all federally licensed manufacturers, dealers, collectors and importers of firearms and destructive devices are available by state for each month of the calendar year.</p>
+<p><a href="/firearms/listing-federal-firearms-licensees-ffls-2016">Federal Firearms Licensees </a></p>
+<h3> </h3>
+<h3>Firearms Trace Data</h3>
+<p>A key component of the Bureau of Alcohol, Tobacco, Firearms and Explosives' (ATF) enforcement mission is the tracing of firearms on behalf of thousands of Federal, State, local and foreign law enforcement agencies. Firearms trace data is critically important information developed by ATF. ATF has prepared the following state-by-state reports utilizing trace data which is intended to provide the public with insight into firearms recoveries.</p>
+<p> </p>
+<p><strong><em>Please select a report by year below:</em> </strong></p>
+<table style="width:400px"><thead><tr><th>
+<p>U.S. Firearms Trace Data</p>
+</th>
+<th>
+<p>International Firearms Trace Data</p>
+</th>
+</tr></thead><tr><td><a href="/about/firearms-trace-data-2015">2015</a></td>
+<td><a href="/docs/internationalfirearmstracedatacanadacy2010-2015pdf/download">Canada 2010 - 2015</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2014">2014</a></td>
+<td><a href="/docs/internationalfirearmstracedatacaribbeancy2015pdf/download">Caribbean 2015</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2013">2013</a></td>
+<td><a href="/docs/internationalfirearmstracedatacentralamericacy2015pdf/download">Central America 2015</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2012">2012</a></td>
+<td><a href="/docs/internationalfirearmstracedatamexicocy2010-2015pdf/download">Mexico 2010 - 2015</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2011">2011</a></td>
+<td><a href="/sites/default/files/assets/statistics/tracedata-2012/canada_cy09-14.pdf">Canada 2009 - 2014</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2010">2010</a></td>
+<td><a href="/sites/default/files/assets/statistics/TraceData/TraceData_Intl/2014/caribbean_cy14_.pdf">Caribbean 2014</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2009">2009</a></td>
+<td><a href="/sites/default/files/assets/statistics/tracedata-2012/central_america_-_cy_2014.pdf">Central America 2014</a></td>
+</tr><tr><td><a href="/about/firearms-trace-data-2008">2008</a></td>
+<td><a href="/sites/default/files/assets/statistics/tracedata-2012/mexico_cy09-14.pdf">Mexico 2009 - 2014</a></td>
+</tr></table><p> </p>
+<h3>Annual Firearms Manufacturers And Export Report</h3>
+<p></p><div id="file-23886" class="file file-image file-image-jpeg">
+
+  <figure class="content"><img alt="Picture of a pencil and calculator." title="Picture of a pencil and calculator." height="344" width="458" style="width: 250px; height: 188px; float: right;" class="media-element file-default" typeof="foaf:Image" src="https://www.atf.gov/n/n/n/sites/default/files/statspagepenandcalc.jpg" /></figure></div>
+All federally licensed manufacturers of firearms and destructive devices (Federal Firearms License types 07 and 10) are required to submit a production report of manufacturing and export activity to ATF by April 1 of each year. The information must be reported using the <a href="/files/forms/download/atf-f-5300-11.pdf"><u>Annual Firearms Manufacturing and Exportation Report Under 18 U.S.C. Chapter 44, Firearms</u></a> (ATF Form 5300.11). The report covers activity for the calendar year ended the previous December 31. For example, calendar year 2009 data was due to ATF by April 1, 2010.
+<p>ATF compiles the submitted data and releases it here each January, with a one year delay to comply with the Trade Secrets Act. For example, data released in January 2013 was for calendar year 2011. The January 2014 data release will cover calendar year 2012 activity. In response to requests from the industry, ATF released interim AFMER data for the first time in July 2010. This release included aggregate data only and did not identify any specific industry member (to comply with the Trade Secrets Act).</p>
+<p>Questions about the AFMER program and data should be directed to Program Analyst Tom DiDomenico at 304-616-4590.</p>
+<p> </p>
+<p><strong><em>Please select a report by year below:</em> </strong></p>
+<table style="width:200px"><tr><td><a href="/resource-center/docs/report/afmer-interim-report-2015/download">2015</a></td>
+<td><a href="/resource-center/docs/2010-final-firearms-manufacturing-export-reportpdf/download">2010</a></td>
+</tr><tr><td><a href="/firearms/docs/afmer-2014-final-report-cover-revised-format-2-17-16/download">2014</a></td>
+<td><a href="/resource-center/docs/2009-firearms-manufacturers-export-reportpdf/download">2009</a></td>
+</tr><tr><td><a href="/resource-center/docs/afmer2013finalwebreportpdf/download">2013</a></td>
+<td><a href="/resource-center/docs/2008-firearms-manufacturers-export-reportpdf/download">2008</a></td>
+</tr><tr><td><a href="/resource-center/docs/afmer2012finalwebreport17jan2014pdf/download">2012</a></td>
+<td><a href="/resource-center/docs/2007-firearms-manufacturers-export-reportpdf/download">2007</a></td>
+</tr><tr><td><a href="/resource-center/docs/cy2011-final-firearms-manufacturing-export-reportpdf/download">2011</a></td>
+<td> </td>
+</tr><tr><td colspan="2"><a href="http://data.atf.gov/">See raw data at data.atf.gov.</a></td>
+</tr></table><h3> </h3>
+<h3>Firearms Commerce Report in the United States</h3>
+<p>This report presents data drawn from a number of ATF reports and records in one comprehensive document. It also provides comparative data from as far back as 1975 for context, analyses of trends over the years, and a fuller picture of the state of firearms commerce in the United States today.</p>
+<p>Please note, the reports in PDF format below are not fully Section 508 compliant.  We are working quickly to ensure they are accessible for all users of our site.</p>
+<p><a href="/resource-center/docs/2016-firearms-commerce-united-states/download">2016 Report on Firearms Commerce in the U.S.</a></p>
+<p><a href="/about/docs/report/2015-report-firearms-commerce-us/download">2015 Report on Firearms Commerce in the U.S.</a> (This publication has been updated to correct 2013 firearms manufactured total in Exhibit 1.)</p>
+<p><a href="/sites/default/files/assets/statistics/CommerceReport/firearms_commerce_annual_statistical_report_2014.pdf">2014 Report on Firearms Commerce in the U.S</a></p>
+<p><a href="/firearms/docs/report/firearms-commerce-us-annual-statistical-update-2013/download">2013 Report on Firearms Commerce in the U.S.</a></p>
+<p><a href="/resource-center/docs/report/firearms-commerce-us-annual-statistical-update-2012/download">2012 Report on Firearms Commerce in the U.S.</a></p>
+<p><a href="/firearms/docs/report/firearms-commerce-united-states-2011/download">2011 Report on Firearms Commerce in the U.S.</a></p>
+<p> </p>
+<h3>Federal Firearms Licensee Statistics Theft / Loss Reports</h3>
+<p>Federal firearms licensees (FFLs) must report to ATF each missing, lost, or stolen firearm within 48 hours of discovery of the loss or theft by completing and forwarding a Federal Firearms Licensee Theft/Loss Report. In addition, the FFL must also report the firearm theft or loss to the appropriate local law enforcement agency.</p>
+<p> </p>
+<p><strong><em>Please select a report by year below:</em> </strong></p>
+<table style="width:342px"><tr><td><a href="/firearms/docs/report/2015-summary-firearms-reported-lost-and-stolen/download">2015 Summary: Firearms Reported Lost and Stolen</a></td>
+</tr><tr><td><a href="/resource-center/docs/2014-summary-firearms-reported-lost-and-stolenpdf/download">2014 Summary: Firearms Reported Lost and Stolen</a></td>
+</tr><tr><td><a href="/resource-center/docs/2013summary-firearmsreportedlostandstolenpdf/download">2013 Summary: Firearms Reported Lost and Stolen</a></td>
+</tr><tr><td><a href="/resource-center/docs/2012-firearms-reported-lost-and-stolenpdf-0/download">2012 Summary: Firearms Reported Lost and Stolen</a></td>
+</tr></table><p> </p>
+<p><a href="https://www.research.net/s/FESD_Final"><u>FESD Customer Service Survey</u> </a></p>
+<h3> </h3>
+<h3>National Firearms Act (NFA)</h3>
+<p>The National Firearms Act Branch is responsible for the administration of the National Firearms Act (NFA) as amended, and regulations issued pursuant to the Act. It maintains the National Firearms Registration and Transfer Record (NFRTR), the central registry of all NFA firearms in the United States. The branch acts on all applications to make, export, transfer and register NFA firearms; and processes notices of NFA firearms manufactured or imported.</p>
+<p></p><div id="file-107436" class="file file-image file-image-gif">
+
+  <figure class="content"><img alt="Number of NFA Firearms Processed by Fiscal Year" title="Number of NFA Firerams Procesed by Fiscal Year" height="644" width="1164" style="width: 100%; height: 530px;" class="media-element file-default" typeof="foaf:Image" src="https://www.atf.gov/n/n/n/sites/default/files/media/2016/07/firarms-processed-2015.gif" /><div class="field-item even">
+      <figcaption class="offscreen">
+        Bar graph depicting the numbrer of National Firearms Act (NFA) firearms processed by fiscal year.      </figcaption></div>
+  
+  </figure></div>
+
+<p>The graph above is the Number of National Firearms Act Firearms processed in a year. - The bar graph depicts the number of National Firearms Act firearms processed from applications captured in the National Firearms Registration and Transfer Record by Fiscal Year (FY) from FY 2005 to FY 2014.  The number of NFA firearms the NFA branch processed were: 147,484 NFA firearms in FY 2005; 296,127 NFA firearms in FY 2006; 563,127 NFA firearms in FY 2007; 981,303 NFA firearms in FY 2008; 834,328 NFA firearms in FY 2009; 828,462 NFA firearms in FY 2010; 992,975 NFA firearms in FY 2011; 1,112,041 NFA firearms in FY 2012; 1,152,163 NFA firearms in FY 2013; and 1,383,677 NFA firearms in FY 2014.</p>
+<p> </p>
+<h4 class="rtecenter">Number of NFA Firearms Processed by Fiscal Year</h4>
+<table style="width:200px"><thead><tr><th>
+<p>Fiscal Year</p>
+</th>
+<th>
+<p>Firearms Processed</p>
+</th>
+</tr></thead><tr><td style="border:1px solid rgb(204, 204, 204)">2015</td>
+<td style="border:1px solid rgb(204, 204, 204)">1,426,211</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2014</td>
+<td style="border:1px solid rgb(204, 204, 204)">1,383,677</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2013</td>
+<td style="border:1px solid rgb(204, 204, 204)">1,152,163</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2012</td>
+<td style="border:1px solid rgb(204, 204, 204)">1,112,041</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2011</td>
+<td style="border:1px solid rgb(204, 204, 204)">992,975</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2010</td>
+<td style="border:1px solid rgb(204, 204, 204)">828,462</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2009</td>
+<td style="border:1px solid rgb(204, 204, 204)">834,328</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2008</td>
+<td style="border:1px solid rgb(204, 204, 204)">981,303</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2007</td>
+<td style="border:1px solid rgb(204, 204, 204)">563,127</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2006</td>
+<td style="border:1px solid rgb(204, 204, 204)">296,127</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2005</td>
+<td style="border:1px solid rgb(204, 204, 204)">147,484</td>
+</tr></table><h4> </h4>
+<p></p><div id="file-107151" class="file file-image file-image-gif">
+
+  <figure class="content"><img alt="Bar Number of NFA Forms Processed by Fiscal Year" title="Bar Number of NFA Forms Processed by Fiscal Year" height="644" width="1164" style="width: 100%; height: 530px;" class="media-element file-default" typeof="foaf:Image" src="https://www.atf.gov/n/n/n/sites/default/files/media/2016/06/2016-number-of-nfa-forms-processed-by-fiscal-year.gif" /><div class="field-item even">
+      <figcaption class="offscreen">
+        Bar graph image of the number of NFA forms processed by fiscal year      </figcaption></div>
+  
+  </figure></div>
+
+<p> </p>
+<p>The graph above is the Number of National Firearms Act Forms Processed - The bar graph depicts the volume of applications captured in the National Firearms Registration and Transfer Record that were processed by the National Firearms Act Branch by Fiscal Year (FY) to include FY 2005 to FY 2014.  NFA Branch was able to process: 41,579 applications in FY 2005; 57,783 applications in FY 2006; 66,560 applications in FY 2007; 72,808 applications in FY 2008; 86,753 applications in FY 2009; 91,949 applications in FY 2010; 105,373 applications in FY 2011; 137,649 applications in FY 2012; 163,691 applications in FY 2013; and 236,290 applications in FY 2014.</p>
+<p> </p>
+<h4 class="rtecenter">Number of NFA Forms Processed by Fiscal Year</h4>
+<table style="width:200px"><thead><tr><th>
+<p>Fiscal Year</p>
+</th>
+<th>
+<p>Forms Processed</p>
+</th>
+</tr></thead><tr><td style="border:1px solid rgb(204, 204, 204)">2015</td>
+<td style="border:1px solid rgb(204, 204, 204)">308,563</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2014</td>
+<td style="border:1px solid rgb(204, 204, 204)">236,290</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2013</td>
+<td style="border:1px solid rgb(204, 204, 204)">163,691</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2012</td>
+<td style="border:1px solid rgb(204, 204, 204)">137,649</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2011</td>
+<td style="border:1px solid rgb(204, 204, 204)">105,373</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2010</td>
+<td style="border:1px solid rgb(204, 204, 204)">91,949</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2009</td>
+<td style="border:1px solid rgb(204, 204, 204)">86,753</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2008</td>
+<td style="border:1px solid rgb(204, 204, 204)">72,808</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2007</td>
+<td style="border:1px solid rgb(204, 204, 204)">66,560</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2006</td>
+<td style="border:1px solid rgb(204, 204, 204)">57,783</td>
+</tr><tr><td style="border:1px solid rgb(204, 204, 204)">2005</td>
+<td style="border:1px solid rgb(204, 204, 204)">41,579</td>
+</tr></table><p> </p>
+<h3>Open Data and Resources for Developers</h3>
+<p>In addition to the published format of the U.S. Firearms Trace Data above, the data is available in an open interactive format (as a pilot). The interactive data contains no different or additional data than the U.S. Firearms Trace Data ATF has traditionally published, above. The open data is being published in accordance with the President's <a href="http://www.whitehouse.gov/digitalgov/about"><u>Digital Government Strategy</u></a> and the <a href="http://www.whitehouse.gov/the-press-office/2013/05/09/executive-order-making-open-and-machine-readable-new-default-government-"><u>Executive Order on open data</u></a>. The interactive data can also be used by developers to build applications, and is located at <a href="http://data.atf.gov/"><u>data.atf.gov</u></a>.</p>
+</div></div></div>  </div>
+
+        <div class='nodetimestamp'>Last Reviewed September 26, 2016</div></article>
+          </div>
+
+      </div>
+
+  <footer class="l-footer" role="contentinfo">
+      <div class="l-region l-region--footer">
+    <div data-personalize-entity-id="block/block-11" id="block-block-11" class="block block--block block--block-11">
+        <div class="block__content">
+    <p class="social-text">Keep up with the latest ATF updates:</p>
+<p class="icons"><a class="extlink" href="http://www.facebook.com/HQATF"><i class="social-icons facebook"><b class="description">facebook</b></i></a> <a class="extlink" href="http://www.twitter.com/atfhq"><i class="social-icons twitter"><b class="description">twitter</b></i></a> <a class="extlink" href="https://instagram.com/atfhq/"><i class="social-icons instagram"><b class="description">instagram</b></i></a> <a class="extlink" href="http://www.youtube.com/user/ATFHQ"><i class="social-icons youtube"><b class="description">youtube</b></i></a> <a class="extlink" href="https://public.govdelivery.com/accounts/USATF/subscriber/new?"><i class="social-icons envelope"><b class="description">email</b></i></a></p>
+  </div>
+</div>
+<nav data-personalize-entity-id="block/menu-menu-footer" id="block-menu-menu-footer" role="navigation" class="block block--menu block--menu-menu-footer">
+      
+  <ul class="menu"><li class="first expanded"><a href="/about/who-we-are" title="">Who We Are </a><ul class="menu"><li class="first leaf"><a href="/about" title="">About</a></li>
+<li class="leaf"><a href="/about/executive-staff" title="">Executive Staff</a></li>
+<li class="leaf"><a href="/about/organization-structure" title="Displays the Organizational Structure of the ATF Agency">Organization Structure</a></li>
+<li class="last leaf"><a href="https://www.atf.gov/our-history/our-history" title="Our History Pages">Our History</a></li>
+</ul></li>
+<li class="expanded"><a href="/about/what-we-do" title="">What We Do</a><ul class="menu"><li class="first leaf"><a href="https://www.atf.gov/firearms" title="ATF recognizes the role that firearms play in violent crimes and pursues an integrated regulatory and enforcement strategy. Investigative priorities focus on armed violent offenders and career criminals, narcotics traffickers, narco-terrorists, violent gangs, and domestic and international arms traffickers.">Firearms</a></li>
+<li class="leaf"><a href="https://www.atf.gov/explosives" title="Explosives industry members play an integral role in maintaining and improving our quality of life in the United States and work to bring countless benefits to our everyday lives in areas such as mining, oil and gas exploration; demolition; avalanche control; and the use of explosives in special industrial tools, fire extinguishers, air bag inflators, fireworks; and special effects in the entertainment industry.">Explosives</a></li>
+<li class="leaf"><a href="https://www.atf.gov/arson" title="The Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) is the Federal agency primarily responsible for administering and enforcing the criminal and regulatory provisions of the Federal laws pertaining to destructive devices (bombs), explosives, and arson. ">Arson</a></li>
+<li class="last leaf"><a href="/alcohol-tobacco" title="">Alcohol &amp; Tobacco</a></li>
+</ul></li>
+<li class="expanded"><a href="https://www.atf.gov/news" title="ATF Press Releases">News</a><ul class="menu"><li class="first leaf"><a href="https://www.atf.gov/news/press-releases" title="">Press Releases</a></li>
+<li class="leaf"><a href="https://www.atf.gov/news/advisories" title="">Advisories</a></li>
+<li class="leaf"><a href="https://www.atf.gov/news/reward-notices" title="">Reward Notices</a></li>
+<li class="last leaf"><a href="/news/press-and-media-contacts" title="">Media Contacts</a></li>
+</ul></li>
+<li class="expanded"><a href="/careers" title="At the Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF), we conduct criminal investigations, regulate the firearms and explosives industries and assist other law enforcement agencies. We help to prevent terrorism, reduce violent crime and protect the public in a manner that is faithful to the Constitution and the laws of the United States.">Careers</a><ul class="menu"><li class="first leaf"><a href="https://www.atf.gov/careers/becoming-special-agent" title="">Becoming a Special Agent</a></li>
+<li class="last leaf"><a href="https://www.atf.gov/careers/becoming-industry-operations-investigator" title="">Becoming an Industry Operations Investigator</a></li>
+</ul></li>
+<li class="expanded"><a href="https://www.atf.gov/resource-center" title="">Resource Center</a><ul class="menu"><li class="first leaf"><a href="https://www.atf.gov/content/About/statistics/" title="">Statistics</a></li>
+<li class="leaf"><a href="/resource-center/freedom-information-act-foia" title="">Freedom of Information Act</a></li>
+<li class="leaf"><a href="https://www.atf.gov/content/ATF-most-wanted" title="">ATF&#039;s Most Wanted</a></li>
+<li class="leaf"><a href="https://www.atf.gov/local-fugitives/list" title="">Local Fugitives</a></li>
+<li class="last leaf"><a href="https://www.atf.gov/resource-center/forms-library" title="">Download Forms</a></li>
+</ul></li>
+<li class="last expanded"><a href="http://www.justice.gov/open" title="">Open Government</a><ul class="menu"><li class="first leaf"><a href="http://www.justice.gov/doj/privacy-policy" title="">Privacy Policy</a></li>
+<li class="leaf"><a href="http://www.justice.gov/legalpolicies" title="">Legal Policies &amp; Disclaimers</a></li>
+<li class="leaf"><a href="http://www.usa.gov/" title="">USA.gov</a></li>
+<li class="last leaf"><a href="http://www.justice.gov/jmd/eeo-program-status-report" title="">No Fear Act</a></li>
+</ul></li>
+</ul></nav>
+<div data-personalize-entity-id="block/block-2" id="block-block-2" class="block block--block block--block-2">
+        <div class="block__content">
+    <div class="footer-bottom-left"><a href="/home/site-map">Site Map</a><br /><a href="/content/about/accessibility-policy">Accessibility &amp; Plug-Ins</a><br /><a href="https://www.atf.gov">ATF.gov</a> is an official site of the <a href="http://www.justice.gov">U.S. Department of Justice</a></div>
+<div class="footer-bottom-right"><img alt="ATF: Protecting the public.  Serving our nation." src="https://www.atf.gov/n/sites/all/themes/custom/atf/images/atf-logo-horizontal-v2.png" /></div>
+  </div>
+</div>
+  </div>
+  </footer>
+</div>
+  <script src="https://cdn.lift.acquia.com/ATF/tc.js?v=7.52"></script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_0BAWmo_V-YRjGB4irIT2Ic1ggWTsYSS0NsG19us6aWg.js"></script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_jAbcqqedYY3TJExNd_Omwpxq87Ga5DMGwH4yF-icsa0.js"></script>
+<script>var script = document.createElement('script');
+script.async = 'true';
+script.type = 'text/javascript';
+script.src = '//dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?&agency=DOJ&subagency=ATF&sp=find&yt=true';
+script.id = '_fed_an_ua_tag';
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
+<script>var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//content.govdelivery.com/overlay/js/1322.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(script, s);
+</script>
+<script>var sz = document.createElement('script');
+sz.type = 'text/javascript';
+sz.async = 'true';
+sz.src = '//siteimproveanalytics.com/js/siteanalyze_6020567.js?928806488';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(sz, s);
+</script>
+<script>var usasearch_config = { siteHandle:'atf' };
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://search.usa.gov/javascripts/remote.loader.js';
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
+<script src="https://www.atf.gov/n/sites/default/files/js/js_5idECjjAo-X5YdkT65CaIiodkWmZlZv-WjSkHlWhoYk.js"></script>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"aa22ff0d73","applicationID":"6629969","transactionName":"YVQBNhdSDUdRUBUKWlgeNhAMHApaVFYZTUVeQQ==","queueTime":0,"applicationTime":247,"atts":"TRMCQF9IHkk=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>

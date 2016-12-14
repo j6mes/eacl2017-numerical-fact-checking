@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <title>Guttmacher Institute | Good reproductive health policy starts with credible research</title>
+  <link rel="shortcut icon" href="https://www.guttmacher.org/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="VXOV-TZBfhTRWsP4AOSzz7E4wtUHDw40k0szecaRpXA" /><noscript><link href="https://www.guttmacher.org/sites/all/themes/gutt/build/img/svg/icons.fallback.css" rel="stylesheet"></noscript><meta name="description" content="The Guttmacher Institute is a leading research and policy organization committed to advancing sexual and reproductive health and rights in the United States and globally." /><meta http-equiv="cleartype" content="on" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.guttmacher.org/" />
+<link rel="shortlink" href="https://www.guttmacher.org/" />
+<meta property="og:site_name" content="Guttmacher Institute" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.guttmacher.org/" />
+<meta property="og:title" content="Guttmacher Institute" />
+<meta property="og:description" content="Good reproductive health policy starts with credible research" />
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.guttmacher.org/sites/default/files/favicon.ico" />
+  <link type="text/css" rel="stylesheet" href="https://www.guttmacher.org/sites/default/files/css/css_2su0cYKV9YJRwssqGgF-TJpLdynBEjY2wejrKDeFgVk.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.guttmacher.org/sites/default/files/css/css_ZYX9NEE34CV0zLbtrcnpwX1eJXLfZLV0ht0sm7hy7y0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cloud.typography.com/7141574/630228/css/fonts.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.guttmacher.org/sites/default/files/css/css_DgLJ_PfVIctiZyU_FZeuKMMqwBeROB0B76fEAnCwXFo.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.guttmacher.org/sites/default/files/css/css_hYRCuxwDRjztdVD9X0A27QnHz-UNYpx5X8U8OXs-9yg.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://www.guttmacher.org/sites/default/files/css/css_3kwM2amJnHoPxqR8BpLUeHpns54SUUxZ5Sgy2fAYxtg.css" media="print" />
+  <script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_Iu231mfdeiEoaLXCWaLUWEw3lvVKe8tL-KJCcJMguXo.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.migrateMute=false;jQuery.migrateTrace=true;
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_zoceiGtlfpH19cOMtqfU6r6LztkMP_nhDwC66GCJhxA.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.createElement( "picture" );
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_D513xrHxkFzR3xMs-U1B-okOiPuXCy6MX1kwfrKN5Ls.js"></script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_36EjFROoYws4b6h70iIfzo06IZoB5Semae2BWLM3O5w.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.CKEDITOR_BASEPATH = '/profiles/aten_dev_base/libraries/ckeditor/'
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_sKVKVwwixSehh-N_tYzXxB8p1JE5dL8hoNQk2cyIVdI.js"></script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_xD3uA7MOndt8TutwBReRRSbEcJ8X9kGynzF4SYfz6pY.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"gutt","theme_token":"DfoT_Sxt_i2otlCj9eCArh8G6iIbiLd5ILznR5N9tA0","js":{"sites\/all\/modules\/patched\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/patched\/picture\/picture.min.js":1,"sites\/all\/themes\/gutt\/build\/img\/svg\/grunticon.loader.js":1,"0":1,"https:\/\/couchdb.guttmacher.org\/_utils\/script\/jquery.couch.js":1,"sites\/all\/modules\/custom\/gutt_state_policy\/build\/js\/gutt_state_policy.home.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"1":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery-migrate\/1.2.1\/jquery-migrate.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"2":1,"sites\/all\/modules\/patched\/apachesolr_sort\/apachesolr_sort.js":1,"sites\/all\/modules\/custom\/gutt_front\/js\/gutt_front_twitter.js":1,"3":1,"sites\/all\/libraries\/remodal\/dist\/remodal.js":1,"sites\/all\/themes\/gutt\/build\/js\/main.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/patched\/footnotes\/footnotes.css":1,"profiles\/aten_dev_base\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/aten_dev_base\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/aten_dev_base\/modules\/contrib\/logintoboggan\/logintoboggan.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/patched\/picture\/picture_wysiwyg.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/aten_dev_base\/modules\/contrib\/views\/css\/views.css":1,"profiles\/aten_dev_base\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/aten_dev_base\/modules\/patched\/node_embed\/plugins\/node_embed\/node_embed.css":1,"\/\/cloud.typography.com\/7141574\/630228\/css\/fonts.css":1,"sites\/all\/libraries\/fontawesome\/css\/font-awesome.css":1,"sites\/all\/libraries\/remodal\/dist\/remodal.css":1,"sites\/all\/libraries\/remodal\/dist\/remodal-default-theme.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/ctools.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/field.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/node.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/system.messages.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/system.menus.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/user.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/views.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/kill\/field_collection.theme.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/keep\/system.base.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/keep\/system.theme.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/keep\/search.css":1,"profiles\/aten_dev_base\/themes\/center\/css\/override\/keep\/vertical-tabs.css":1,"sites\/all\/themes\/gutt\/build\/css\/screen.css":1,"sites\/all\/themes\/gutt\/build\/css\/jplayer.css":1,"sites\/all\/themes\/gutt\/build\/css\/print.css":1}},"better_exposed_filters":{"views":{"home_primary_feature":{"displays":{"block":{"filters":[]}}},"home_secondary_features":{"displays":{"block":{"filters":[]}}},"latest_from_guttmacher":{"displays":{"block":{"filters":[]}}},"latest_from_journals":{"displays":{"block":{"filters":[]}}},"now":{"displays":{"block":{"filters":[]}}}}},"urlIsAjaxTrusted":{"\/":true},"gutt_state_policy_date":"2016-12-01 00:00:00","gutt":{"gutt_default_tab":"us","state_policy_api_base_url":"https:\/\/couchdb.guttmacher.org"},"statePolicyHeading":"Updates on State-Level Sexual and Reproductive Health Policies in the United States as of December 1, 2016","statePolicyView":"policy_updates\/state_date"});
+//--><!]]>
+</script>
+</head>
+
+<body class="html front not-logged-in no-sidebars" >
+  <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-59CQSP"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-59CQSP');</script>
+<!-- End Google Tag Manager -->
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+  <div id="page" class="page full-header">
+  <header id="header--sticky" class="header" aria-role="banner">
+  <div id="header-control-panel" class="header-control-panel clearfix">
+    <div class="header-branding">
+      <h1 class="header-title"><a href="/"><b>Guttmacher</b> Institute</a></h1>
+    </div>
+    <button class="header-toggle toggle" aria-expanded="false" aria-controls="header-drawer">Menu</button>
+          <button class="header-donate-button toggle" aria-controls="donate-nav-sticky">Donate Now</button>
+      <nav id="donate-nav-sticky" aria-expanded="false" class="donate-nav-container">
+        <div id="block-menu-block-gutt-global-elements-donate" class="block block-menu-block donate-nav">
+
+      
+  <div  class="block-content block-content">
+    <div class="menu-block-wrapper menu-block-gutt_global_elements-donate menu-name-donate-menu parent-mlid-0 menu-level-1">
+  <ul class="nav"><li class="first leaf menu-mlid-46215 nav-item"><a href="/donate" title="" class="nav-link">Make a gift today</a></li>
+<li class="leaf menu-mlid-46216 nav-item"><a href="/donate/monthly" title="" class="nav-link">Make a monthly gift</a></li>
+<li class="last leaf menu-mlid-46218 nav-item"><a href="/donate/other" title="" class="nav-link">Other ways to give</a></li>
+</ul></div>
+  </div>
+</div>
+      </nav>
+              <div class="header-social">
+          <h2 class="block-title element-invisible">Connect With Us</h2>
+<div class="item-list"><ul class="nav nav--social"><li class="nav-item first"><a href="https://www.facebook.com/guttmacher" class="nav-link nav-link--social nav-link--facebook" title="Facebook">Facebook</a></li>
+<li class="nav-item last"><a href="https://twitter.com/Guttmacher" class="nav-link nav-link--social nav-link--twitter" title="Twitter">Twitter</a></li>
+</ul></div>      </div>
+             <div class="header-search-form">
+       <form class="search-form" action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <input title="Enter the terms you wish to search for." class="form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" />
+</div>
+<input class="icon_search search-button form-submit" type="submit" id="edit-submit" name="op" value="Search" /><input type="hidden" name="form_build_id" value="form-fbt2BChyYTlag6OU_Cy82BJ8KERGahb2NJj5cCg-WYE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>     </div>
+      </div>
+  <div id="header-drawer" class="header-drawer">
+    <div class="header-utilities clearfix">
+              <form class="search-form" action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <input title="Enter the terms you wish to search for." class="form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" />
+</div>
+<input class="icon_search search-button form-submit" type="submit" id="edit-submit" name="op" value="Search" /><input type="hidden" name="form_build_id" value="form-fbt2BChyYTlag6OU_Cy82BJ8KERGahb2NJj5cCg-WYE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>                    <div class="header-drawer-social">
+            <h2 class="block-title element-invisible">Connect With Us</h2>
+<div class="item-list"><ul class="nav nav--social"><li class="nav-item first"><a href="https://www.facebook.com/guttmacher" class="nav-link nav-link--social nav-link--facebook" title="Facebook">Facebook</a></li>
+<li class="nav-item last"><a href="https://twitter.com/Guttmacher" class="nav-link nav-link--social nav-link--twitter" title="Twitter">Twitter</a></li>
+</ul></div>        </div>
+          </div>
+    <div class="header-regions">
+      <div class="header-region-tabs clearfix">
+                  <button class="header-region-tab header-region-tab--us" role="tab" aria-selected="true" aria-controls="header-region--us--sticky">United States</button>
+                          <button class="header-region-tab header-region-tab--world" role="tab" aria-selected="false" aria-controls="header-region--world--sticky">International</button>
+              </div>
+      <div class="header-regions-panels clearfix">
+                  <nav id="header-region--us--sticky" class="header-region-panel" role="tabpanel" aria-hidden="false" data-region="us">
+              <h2 class="block-title element-invisible">United States Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-us menu-name-united-states-menu parent-mlid-0 menu-level-1">
+  <ul class="nav nav--region"><li class="first leaf menu-mlid-19939 nav-item"><a href="/united-states/abortion" class="nav-link">Abortion</a></li>
+<li class="leaf menu-mlid-19940 nav-item"><a href="/united-states/contraception" class="nav-link">Contraception</a></li>
+<li class="leaf menu-mlid-19941 nav-item"><a href="/united-states/hiv-stis" class="nav-link">HIV &amp; STIs</a></li>
+<li class="leaf menu-mlid-19943 nav-item"><a href="/united-states/pregnancy" class="nav-link">Pregnancy</a></li>
+<li class="last leaf menu-mlid-19942 nav-item"><a href="/united-states/teens" class="nav-link">Teens</a></li>
+</ul></div>
+          </nav>
+                          <nav id="header-region--world--sticky" role="tabpanel" class="header-region-panel" aria-hidden="true" data-region="world">
+              <h2 class="block-title element-invisible">International Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-int menu-name-international-menu parent-mlid-0 menu-level-1">
+  <ul class="nav nav--region"><li class="first leaf menu-mlid-19944 nav-item"><a href="/international/abortion" class="nav-link">Abortion</a></li>
+<li class="leaf menu-mlid-19945 nav-item"><a href="/international/contraception" class="nav-link">Contraception</a></li>
+<li class="leaf menu-mlid-19946 nav-item"><a href="/international/hiv/stis" class="nav-link">HIV &amp; STIs</a></li>
+<li class="leaf menu-mlid-19948 nav-item"><a href="/international/pregnancy" class="nav-link">Pregnancy</a></li>
+<li class="last leaf menu-mlid-19947 nav-item"><a href="/international/teens" class="nav-link">Teens</a></li>
+</ul></div>
+          </nav>
+        
+                  <div id="block-boxes-front-pitch" class="block block-boxes block-boxes-simple pitch">
+
+          <h2 class="block-title pitch-title">Good reproductive health policy starts with credible research</h2>
+  
+  <div  class="block-content block-content pitch-content">
+    <p><span> </span></p>
+  </div>
+</div>
+              </div>
+    </div>
+    <nav class="header-menu">
+                <h2 class="block-title element-invisible">About Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-utility menu-name-utility-menu parent-mlid-0 menu-level-1">
+  <ul class="header-nav"><li class="first last expanded menu-mlid-48017 nav-item"><a href="/about" class="nav-link">About</a><ul class="header-nav"><li class="first leaf menu-mlid-48018 nav-item"><a href="/about/staff" class="nav-link">Staff</a></li>
+<li class="leaf menu-mlid-48241 nav-item"><a href="/about/partnerships-collaborations" title="" class="nav-link">Partnerships &amp; Collaborations</a></li>
+<li class="leaf menu-mlid-48048 nav-item"><a href="/about/board" class="nav-link">Board</a></li>
+<li class="leaf menu-mlid-48049 nav-item"><a href="/about/job-opportunities" class="nav-link">Job Opportunities</a></li>
+<li class="leaf menu-mlid-48022 nav-item"><a href="/about/financials" class="nav-link">Financials</a></li>
+<li class="leaf menu-mlid-48023 nav-item"><a href="/about/history" class="nav-link">History</a></li>
+<li class="last leaf menu-mlid-48019 nav-item"><a href="/about/contact" class="nav-link">Contact</a></li>
+</ul></li>
+</ul></div>
+      
+              <div id="block-menu-block-gutt-global-elements-our-work" class="block block-menu-block">
+
+          <h2 class="block-title">Our Work by</h2>
+  
+  <div  class="block-content block-content">
+    <div class="menu-block-wrapper menu-block-gutt_global_elements-our-work menu-name-menu-our-work parent-mlid-0 menu-level-1">
+  <ul class="header-nav"><li class="first expanded menu-mlid-49543 nav-item"><a href="/geography" title="" class="nav-link">Geography</a><ul class="header-nav"><li class="first leaf menu-mlid-49574 nav-item"><a href="/geography/global" title="" class="nav-link">Global</a></li>
+<li class="leaf menu-mlid-49544 nav-item"><a href="/geography/asia" title="" class="nav-link">Asia</a></li>
+<li class="leaf menu-mlid-49545 nav-item"><a href="/geography/latin-america-caribbean" title="" class="nav-link">Latin America &amp; the Caribbean</a></li>
+<li class="leaf menu-mlid-49546 nav-item"><a href="/geography/sub-saharan-africa" title="" class="nav-link">Sub-Saharan Africa</a></li>
+<li class="last leaf menu-mlid-49547 nav-item"><a href="/geography/united-states" title="" class="nav-link">United States</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-49548 nav-item"><a href="/type" title="" class="nav-link">Type</a><ul class="header-nav"><li class="first leaf menu-mlid-49549 nav-item"><a href="/news-releases" title="" class="nav-link">News Releases</a></li>
+<li class="leaf menu-mlid-49550 nav-item"><a href="https://data.guttmacher.org/" title="" class="nav-link">Data Center</a></li>
+<li class="expanded menu-mlid-49551 nav-item"><a href="/gpr" title="" class="nav-link">Guttmacher Policy Review</a><ul class="header-nav"><li class="first last leaf menu-mlid-49563 nav-item"><a href="/gpr/current" title="" class="nav-link">View current GPR articles</a></li>
+</ul></li>
+<li class="expanded menu-mlid-49552 nav-item"><a href="/journals" title="" class="nav-link">Peer-Reviewed Journals</a><ul class="header-nav"><li class="first leaf has-children menu-mlid-49555 nav-item"><a href="/journals/ipsrh/current" title="" class="nav-link">International Perspectives on Sexual and Reproductive Health</a></li>
+<li class="last leaf has-children menu-mlid-49556 nav-item"><a href="/journals/psrh/current" title="" class="nav-link">Perspectives on Sexual and Reproductive Health</a></li>
+</ul></li>
+<li class="expanded menu-mlid-49553 nav-item"><a href="/population-center" title="" class="nav-link">Population Center</a><ul class="header-nav"><li class="first leaf menu-mlid-49564 nav-item"><a href="/population-center/about" title="" class="nav-link">About the Center</a></li>
+<li class="leaf menu-mlid-49565 nav-item"><a href="/population-center/datasets" title="" class="nav-link">Datasets</a></li>
+<li class="last leaf menu-mlid-49566 nav-item"><a href="/population-center/events" title="" class="nav-link">Events</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-49554 nav-item"><a href="/lancet-commission" title="" class="nav-link">Lancet Commission</a><ul class="header-nav"><li class="first leaf has-children menu-mlid-49567 nav-item"><a href="/lancet-commission/about" title="" class="nav-link">About Us</a></li>
+<li class="leaf menu-mlid-49572 nav-item"><a href="/lancet-commission/events" title="" class="nav-link">Events</a></li>
+<li class="last leaf menu-mlid-49573 nav-item"><a href="/lancet-commission/news" title="" class="nav-link">News &amp; Views</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+  </div>
+</div>
+          </nav>
+  </div>
+</header>
+<div id="header-overlay"></div>
+  <header id="header--desktop" class="header" aria-role="banner">
+  <div class="header-desktop-branding l--constrained">
+    <a href="/" class="header-logo link--block">
+      <img src="/sites/all/themes/gutt/logo.svg" alt="Guttmacher Institute" onerror="this.onerror=null; this.src='/sites/all/themes/gutt/logo.png'" />
+    </a>
+  </div>
+  <div class="header-desktop-utilities l--constrained">
+          <button class="header-donate-button toggle" aria-controls="donate-nav-desktop">Donate Now</button>
+      <nav id="donate-nav-desktop" aria-expanded="false" class="donate-nav-container">
+        <div id="block-menu-block-gutt-global-elements-donate" class="block block-menu-block donate-nav">
+
+      
+  <div  class="block-content block-content">
+    <div class="menu-block-wrapper menu-block-gutt_global_elements-donate menu-name-donate-menu parent-mlid-0 menu-level-1">
+  <ul class="nav"><li class="first leaf menu-mlid-46215 nav-item"><a href="/donate" title="" class="nav-link">Make a gift today</a></li>
+<li class="leaf menu-mlid-46216 nav-item"><a href="/donate/monthly" title="" class="nav-link">Make a monthly gift</a></li>
+<li class="last leaf menu-mlid-46218 nav-item"><a href="/donate/other" title="" class="nav-link">Other ways to give</a></li>
+</ul></div>
+  </div>
+</div>
+      </nav>
+              <div class="header-social">
+          <h2 class="block-title element-invisible">Connect With Us</h2>
+<div class="item-list"><ul class="nav nav--social"><li class="nav-item first"><a href="https://www.facebook.com/guttmacher" class="nav-link nav-link--social nav-link--facebook" title="Facebook">Facebook</a></li>
+<li class="nav-item last"><a href="https://twitter.com/Guttmacher" class="nav-link nav-link--social nav-link--twitter" title="Twitter">Twitter</a></li>
+</ul></div>      </div>
+              <div class="header-search-form">
+        <form class="search-form" action="/" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <input title="Enter the terms you wish to search for." class="form-text" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" />
+</div>
+<input class="icon_search search-button form-submit" type="submit" id="edit-submit" name="op" value="Search" /><input type="hidden" name="form_build_id" value="form-fbt2BChyYTlag6OU_Cy82BJ8KERGahb2NJj5cCg-WYE" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>      </div>
+        <nav class="header-utility-menu clearfix">
+                <h2 class="block-title element-invisible">About Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-utility menu-name-utility-menu parent-mlid-0 menu-level-1">
+  <ul class="header-nav"><li class="first last expanded menu-mlid-48017 nav-item"><a href="/about" class="nav-link">About</a><ul class="header-nav"><li class="first leaf menu-mlid-48018 nav-item"><a href="/about/staff" class="nav-link">Staff</a></li>
+<li class="leaf menu-mlid-48241 nav-item"><a href="/about/partnerships-collaborations" title="" class="nav-link">Partnerships &amp; Collaborations</a></li>
+<li class="leaf menu-mlid-48048 nav-item"><a href="/about/board" class="nav-link">Board</a></li>
+<li class="leaf menu-mlid-48049 nav-item"><a href="/about/job-opportunities" class="nav-link">Job Opportunities</a></li>
+<li class="leaf menu-mlid-48022 nav-item"><a href="/about/financials" class="nav-link">Financials</a></li>
+<li class="leaf menu-mlid-48023 nav-item"><a href="/about/history" class="nav-link">History</a></li>
+<li class="last leaf menu-mlid-48019 nav-item"><a href="/about/contact" class="nav-link">Contact</a></li>
+</ul></li>
+</ul></div>
+                    <div id="block-menu-block-gutt-global-elements-our-work" class="block block-menu-block">
+
+          <h2 class="block-title">Our Work by</h2>
+  
+  <div  class="block-content block-content">
+    <div class="menu-block-wrapper menu-block-gutt_global_elements-our-work menu-name-menu-our-work parent-mlid-0 menu-level-1">
+  <ul class="header-nav"><li class="first expanded menu-mlid-49543 nav-item"><a href="/geography" title="" class="nav-link">Geography</a><ul class="header-nav"><li class="first leaf menu-mlid-49574 nav-item"><a href="/geography/global" title="" class="nav-link">Global</a></li>
+<li class="leaf menu-mlid-49544 nav-item"><a href="/geography/asia" title="" class="nav-link">Asia</a></li>
+<li class="leaf menu-mlid-49545 nav-item"><a href="/geography/latin-america-caribbean" title="" class="nav-link">Latin America &amp; the Caribbean</a></li>
+<li class="leaf menu-mlid-49546 nav-item"><a href="/geography/sub-saharan-africa" title="" class="nav-link">Sub-Saharan Africa</a></li>
+<li class="last leaf menu-mlid-49547 nav-item"><a href="/geography/united-states" title="" class="nav-link">United States</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-49548 nav-item"><a href="/type" title="" class="nav-link">Type</a><ul class="header-nav"><li class="first leaf menu-mlid-49549 nav-item"><a href="/news-releases" title="" class="nav-link">News Releases</a></li>
+<li class="leaf menu-mlid-49550 nav-item"><a href="https://data.guttmacher.org/" title="" class="nav-link">Data Center</a></li>
+<li class="expanded menu-mlid-49551 nav-item"><a href="/gpr" title="" class="nav-link">Guttmacher Policy Review</a><ul class="header-nav"><li class="first last leaf menu-mlid-49563 nav-item"><a href="/gpr/current" title="" class="nav-link">View current GPR articles</a></li>
+</ul></li>
+<li class="expanded menu-mlid-49552 nav-item"><a href="/journals" title="" class="nav-link">Peer-Reviewed Journals</a><ul class="header-nav"><li class="first leaf has-children menu-mlid-49555 nav-item"><a href="/journals/ipsrh/current" title="" class="nav-link">International Perspectives on Sexual and Reproductive Health</a></li>
+<li class="last leaf has-children menu-mlid-49556 nav-item"><a href="/journals/psrh/current" title="" class="nav-link">Perspectives on Sexual and Reproductive Health</a></li>
+</ul></li>
+<li class="expanded menu-mlid-49553 nav-item"><a href="/population-center" title="" class="nav-link">Population Center</a><ul class="header-nav"><li class="first leaf menu-mlid-49564 nav-item"><a href="/population-center/about" title="" class="nav-link">About the Center</a></li>
+<li class="leaf menu-mlid-49565 nav-item"><a href="/population-center/datasets" title="" class="nav-link">Datasets</a></li>
+<li class="last leaf menu-mlid-49566 nav-item"><a href="/population-center/events" title="" class="nav-link">Events</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-49554 nav-item"><a href="/lancet-commission" title="" class="nav-link">Lancet Commission</a><ul class="header-nav"><li class="first leaf has-children menu-mlid-49567 nav-item"><a href="/lancet-commission/about" title="" class="nav-link">About Us</a></li>
+<li class="leaf menu-mlid-49572 nav-item"><a href="/lancet-commission/events" title="" class="nav-link">Events</a></li>
+<li class="last leaf menu-mlid-49573 nav-item"><a href="/lancet-commission/news" title="" class="nav-link">News &amp; Views</a></li>
+</ul></li>
+</ul></li>
+</ul></div>
+  </div>
+</div>
+          </nav>
+
+          <div id="block-boxes-front-pitch" class="block block-boxes block-boxes-simple pitch">
+
+          <h2 class="block-title pitch-title">Good reproductive health policy starts with credible research</h2>
+  
+  <div  class="block-content block-content pitch-content">
+    <p><span> </span></p>
+  </div>
+</div>
+      </div>
+  <div class="header-regions">
+    <div class="header-region-tabs">
+      <div class="header-region-tabs-inner l--constrained clearfix">
+                  <button class="header-region-tab header-region-tab--us" role="tab" aria-selected="true" aria-controls="header-region--us">United States</button>
+                          <button class="header-region-tab header-region-tab--world" role="tab" aria-selected="false" aria-controls="header-region--world">International</button>
+              </div>
+    </div>
+    <div class="header-regions-panels">      <div class="header-regions-panels-inner l--constrained">
+        <nav id="header-region--us" class="header-region-panel" role="tabpanel" aria-hidden="false" data-region="us">
+            <h2 class="block-title element-invisible">United States Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-us menu-name-united-states-menu parent-mlid-0 menu-level-1">
+  <ul class="nav nav--region"><li class="first leaf menu-mlid-19939 nav-item"><a href="/united-states/abortion" class="nav-link">Abortion</a></li>
+<li class="leaf menu-mlid-19940 nav-item"><a href="/united-states/contraception" class="nav-link">Contraception</a></li>
+<li class="leaf menu-mlid-19941 nav-item"><a href="/united-states/hiv-stis" class="nav-link">HIV &amp; STIs</a></li>
+<li class="leaf menu-mlid-19943 nav-item"><a href="/united-states/pregnancy" class="nav-link">Pregnancy</a></li>
+<li class="last leaf menu-mlid-19942 nav-item"><a href="/united-states/teens" class="nav-link">Teens</a></li>
+</ul></div>
+        </nav>
+                    <nav id="header-region--world" role="tabpanel" class="header-region-panel" aria-hidden="true" data-region="world">
+            <h2 class="block-title element-invisible">International Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-int menu-name-international-menu parent-mlid-0 menu-level-1">
+  <ul class="nav nav--region"><li class="first leaf menu-mlid-19944 nav-item"><a href="/international/abortion" class="nav-link">Abortion</a></li>
+<li class="leaf menu-mlid-19945 nav-item"><a href="/international/contraception" class="nav-link">Contraception</a></li>
+<li class="leaf menu-mlid-19946 nav-item"><a href="/international/hiv/stis" class="nav-link">HIV &amp; STIs</a></li>
+<li class="leaf menu-mlid-19948 nav-item"><a href="/international/pregnancy" class="nav-link">Pregnancy</a></li>
+<li class="last leaf menu-mlid-19947 nav-item"><a href="/international/teens" class="nav-link">Teens</a></li>
+</ul></div>
+        </nav>
+      </div>
+    </div>
+  </div>
+      <div id="block-views-now-block" class="block block-views header-now l--constrained clearfix">
+
+          <h2 class="block-title header-now-heading">Now</h2>
+  
+  <div  class="block-content block-content">
+    <div class="view view-now view-id-now view-display-id-block view-dom-id-823ac016c382dbdb5cc948bdb6618ad7">
+      
+
+      
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    <a href="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under" class="header-now-title">Yes. Many more women of reproductive age have insurance thanks to ACA</a>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+  </header>
+  <div class="main">
+        
+    
+    
+    
+          <div class="content-above">
+        <div  >
+              <div id="block-views-home-primary-feature-block" class="block block-views l--constrained l--bleed">
+
+      
+  <div  class="block-content block-content">
+    <div class="view view-home-primary-feature view-id-home_primary_feature view-display-id-block view-dom-id-0d33cbbf698873bee01313c3f2ee8caa">
+      
+
+      
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+    <article class="hero clearfix node node-article node-promoted"  about="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Uninsured Rate Among Women of Reproductive Age Has Fallen More Than One-Third Under the Affordable Care Act" class="rdf-meta element-hidden"></span>
+      <div class="hero-image">
+      <a href="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/nic_hero_image.png?itok=jGCfsyqw&amp;timestamp=1479332021 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/nic_hero_image.png?itok=elZPyAaO&amp;timestamp=1479332021 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/nic_hero_image.png?itok=SRxF5v0h&amp;timestamp=1479332021 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nic_hero_image.png?itok=ddIg9FYy&amp;timestamp=1479332021 375w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_640x512/public/images/nic_hero_image.png?itok=q-EFMEcf&amp;timestamp=1479332021 640w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_750x600/public/images/nic_hero_image.png?itok=O8YQm3W8&amp;timestamp=1479332021 750w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_1280x1024/public/images/nic_hero_image.png?itok=2MPoUidO&amp;timestamp=1479332021 1280w" sizes="(min-width: 37.5em) calc(100vw - 72px),  calc(100vw - 40px)" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nic_hero_image.png?itok=ddIg9FYy&amp;timestamp=1479332021" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </div>
+  
+  <div class="hero-content">
+    <h3 class="hero-title"><a href="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under">Uninsured Rate Among Women of Reproductive Age Has Fallen More Than One-Third Under the Affordable Care Act</a></h3>
+
+    
+    
+          <div class="hero-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4></div>      </div>
+      </div>
+
+</article>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-views-home-secondary-features-block" class="block block-views l--constrained l--bleed">
+
+      
+  <div  class="block-content block-content">
+    <div class="view view-home-secondary-features view-id-home_secondary_features view-display-id-block view-dom-id-967a703abdbea86980ad6b4f6a24b616">
+      
+
+      
+      <div class="view-content">
+      <div class="item-list">    <ul class="list--3up">          <li class="views-row-odd views-row-first list-item"><article class="featured clearfix node node-external-resource"  about="/content/guttmacher-institute-mourns-loss-michael-vlassoff" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="The Guttmacher Institute Mourns the Loss of Michael Vlassoff" class="rdf-meta element-hidden"></span>
+      <figure class="featured-image">
+      <a href="https://www.guttmacher.org/guttmacher-institute-mourns-loss-michael-vlassoff">
+        <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/vlassoff.jpg?itok=jtC7w9n1&amp;timestamp=1481119479 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/vlassoff.jpg?itok=PQgB6XDp&amp;timestamp=1481119479 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/vlassoff.jpg?itok=oTo2y38n&amp;timestamp=1481119479 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/vlassoff.jpg?itok=wISg0gkp&amp;timestamp=1481119479 375w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_640x512/public/images/vlassoff.jpg?itok=fiRAIaYA&amp;timestamp=1481119479 640w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_750x600/public/images/vlassoff.jpg?itok=gX1Mqyd-&amp;timestamp=1481119479 750w" sizes="(min-width: 93.75em) 450px,  (min-width: 62.25em) calc((100vw - 4em) / 3),   (min-width: 48em) calc((100vw - 4em) / 2),  calc((100vw - 2em) / 3)" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/vlassoff.jpg?itok=NHzKLXmt&amp;timestamp=1481119479" alt="" title="" />
+</picture>    </figure>
+      </a>
+    </figure>
+  
+    <h3 class="featured-title"><a href="https://www.guttmacher.org/guttmacher-institute-mourns-loss-michael-vlassoff">The Guttmacher Institute Mourns the Loss of Michael Vlassoff</a></h3>
+  
+  </article>
+</li>
+          <li class="views-row-even list-item"><article class="featured clearfix node node-news-release node-promoted"  about="/news-release/2016/number-women-need-publicly-funded-family-planning-services-increased-one-million" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Number of Women in Need of Publicly Funded Family Planning Services  Increased by One Million Between 2010 and 2014" class="rdf-meta element-hidden"></span>
+      <div class="featured-image">
+      <a href="/news-release/2016/number-women-need-publicly-funded-family-planning-services-increased-one-million">
+        <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/titlexhero.png?itok=KUHiEFiG&amp;timestamp=1474980198 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/titlexhero.png?itok=w_lHHnmG&amp;timestamp=1474980198 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/titlexhero.png?itok=3pczejCM&amp;timestamp=1474980198 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/titlexhero.png?itok=vWTvKfp9&amp;timestamp=1474980198 375w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_640x512/public/images/titlexhero.png?itok=kfMAjqDM&amp;timestamp=1474980198 640w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_750x600/public/images/titlexhero.png?itok=8232lYKT&amp;timestamp=1474980198 750w" sizes="(min-width: 93.75em) 450px,  (min-width: 62.25em) calc((100vw - 4em) / 3),   (min-width: 48em) calc((100vw - 4em) / 2),  calc((100vw - 2em) / 3)" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/titlexhero.png?itok=Q4x8EuNu&amp;timestamp=1474980198" alt="" title="" />
+</picture>    </figure>
+      </a>
+    </div>
+  
+      <div class="featured-type">
+              News Release          </div>
+  
+      <h3 class="featured-title"><a href="/news-release/2016/number-women-need-publicly-funded-family-planning-services-increased-one-million">Number of Women in Need of Publicly Funded Family Planning Services  Increased by One Million Between 2010 and 2014</a></h3>
+  
+      <div class="featured-topics">
+      <div class="terms"><h4 class="terms-subheading">United States</h4></div>    </div>
+  </article>
+</li>
+          <li class="views-row-odd views-row-last list-item"><article class="featured clearfix node node-fact-sheet"  about="/fact-sheet/facts-abortion-africa" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Abortion in Africa" class="rdf-meta element-hidden"></span>
+      <div class="featured-image">
+      <a href="/fact-sheet/facts-abortion-africa">
+        <figure class="figure-image">
+      <picture  title="map of Africa">
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/africa.png?itok=k19Ka8SC&amp;timestamp=1480952677 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/africa.png?itok=-7Umi6Ui&amp;timestamp=1480952677 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/africa.png?itok=4Hmz3h0R&amp;timestamp=1480952677 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/africa.png?itok=G1qIT488&amp;timestamp=1480952677 375w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_640x512/public/images/africa.png?itok=Ue_ayHR8&amp;timestamp=1480952677 640w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_750x600/public/images/africa.png?itok=et5l1doE&amp;timestamp=1480952677 750w" sizes="(min-width: 93.75em) 450px,  (min-width: 62.25em) calc((100vw - 4em) / 3),   (min-width: 48em) calc((100vw - 4em) / 2),  calc((100vw - 2em) / 3)" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/africa.png?itok=DJ2hM8gJ&amp;timestamp=1480952677" alt="map of Africa" title="map of Africa" />
+</picture>    </figure>
+      </a>
+    </div>
+  
+      <div class="featured-type">
+              Fact Sheet          </div>
+  
+      <h3 class="featured-title"><a href="/fact-sheet/facts-abortion-africa">Abortion in Africa</a></h3>
+  
+      <div class="featured-topics">
+      <div class="terms"><h4 class="terms-subheading">International</h4></div>    </div>
+  </article>
+</li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-boxes-data-promo" class="block block-boxes block-boxes-simple data-promo">
+
+      
+  <div  class="block-content block-content data-promo-inner">
+    <a class="data-promo-link" href="https://data.guttmacher.org">Explore our Data</a><p class="data-promo-text">Build, download and share custom tables, graphs and maps</p>  </div>
+</div>
+        </div>
+      </div>
+    
+    <div class="content l--constrained clearfix">
+      <div class="content-primary">
+                    <a href="/state-policy" class="link--more" id="state-policy-placeholder">View State Policy Updates</a><div id="block-views-latest-from-guttmacher-block" class="block block-views latest-from-guttmacher">
+
+          <h2 class="latest-from-guttmacher-heading">The Latest<br>from <strong>Guttmacher</strong></h2>
+  
+  <div  class="block-content block-content latest-from-guttmacher-content">
+    <div class="view view-latest-from-guttmacher view-id-latest_from_guttmacher view-display-id-block latest view-dom-id-45bd3cf1064667bb49646705017f78df">
+      
+
+      
+      <div class="view-content">
+      <div class="latest-content">    <ul class="latest-list">          <li class="views-row-odd views-row-first latest-item"><article class="teaser clearfix node node-article node-promoted node-teaser"  about="/gpr/2016/12/how-and-why-integrate-reproductive-health-delivery-system-and-payment-reform" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="How and Why to Integrate Reproductive Health into Delivery System and Payment Reform" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/gpr/2016/12/how-and-why-integrate-reproductive-health-delivery-system-and-payment-reform">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/gpr.reproreformarticle.png?itok=W4LXhol0&amp;timestamp=1481567516 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/gpr.reproreformarticle.png?itok=OMwplQbz&amp;timestamp=1481567516 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/gpr.reproreformarticle.png?itok=XlzWqFZU&amp;timestamp=1481567516 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/gpr.reproreformarticle.png?itok=MBvdxEJO&amp;timestamp=1481567516 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/gpr.reproreformarticle.png?itok=PmvNOD9P&amp;timestamp=1481567516" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-12-12T00:00:00-05:00">December 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=im_field_article_type%3A3">Policy Analysis</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/gpr/2016/12/how-and-why-integrate-reproductive-health-delivery-system-and-payment-reform">How and Why to Integrate Reproductive Health into Delivery System and Payment Reform</a></h3>
+
+          <div class="teaser-byline">
+        <span class="author-name">Adam Sonfield</span><span class="author-seperator">,</span><em>Guttmacher Policy Review</em>      </div>
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/abortion" class="terms-link-primary">Abortion</a></li><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-even latest-item"><article class="teaser clearfix node node-news-release node-promoted node-teaser"  about="/news-release/2016/reproductive-health-must-be-integral-broader-reform-health-care-delivery-and" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Reproductive Health Must Be Integral to Broader Reform of Health Care Delivery and Payment Systems" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/news-release/2016/reproductive-health-must-be-integral-broader-reform-health-care-delivery-and">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/gpr.reproreform.png?itok=JZZnlGRt&amp;timestamp=1481564941 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/gpr.reproreform.png?itok=EEqsUDUl&amp;timestamp=1481564941 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/gpr.reproreform.png?itok=oPHxvyQ9&amp;timestamp=1481564941 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/gpr.reproreform.png?itok=jvkF7-4e&amp;timestamp=1481564941 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/gpr.reproreform.png?itok=cDtJaiVg&amp;timestamp=1481564941" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-12-12T00:00:00-05:00">December 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Anews_release">News Release</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/news-release/2016/reproductive-health-must-be-integral-broader-reform-health-care-delivery-and">Reproductive Health Must Be Integral to Broader Reform of Health Care Delivery and Payment Systems</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/abortion" class="terms-link-primary">Abortion</a></li><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-odd latest-item"><article class="teaser clearfix node node-article node-promoted node-teaser"  about="/article/2016/12/principles-for-reproductive-health-in-delivery-system-and-payment-reform" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Principles for Reproductive Health in Delivery System and Payment Reform" class="rdf-meta element-hidden"></span>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-12-01T00:00:00-05:00">December 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=im_field_article_type%3A5">Blog / Letter / Op-ed</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/article/2016/12/principles-for-reproductive-health-in-delivery-system-and-payment-reform">Principles for Reproductive Health in Delivery System and Payment Reform</a></h3>
+
+    
+      </div>
+
+</article>
+</li>
+          <li class="views-row-even latest-item"><article class="teaser clearfix node node-news-release node-promoted node-teaser"  about="/news-release/2016/coalition-brings-together-experts-africa-regional-conference-abortion-research" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Coalition Brings Together Experts for the Africa Regional Conference on Abortion: From Research to Policy" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/news-release/2016/coalition-brings-together-experts-africa-regional-conference-abortion-research">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/addisababaherofinal.png?itok=Ay0xTPjs&amp;timestamp=1479909259 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/addisababaherofinal.png?itok=Lsc2E88X&amp;timestamp=1479909259 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/addisababaherofinal.png?itok=GGbHsNVM&amp;timestamp=1479909259 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/addisababaherofinal.png?itok=qWQI19dK&amp;timestamp=1479909259 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/addisababaherofinal.png?itok=WewB603M&amp;timestamp=1479909259" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-28T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Anews_release">News Release</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/news-release/2016/coalition-brings-together-experts-africa-regional-conference-abortion-research">Coalition Brings Together Experts for the Africa Regional Conference on Abortion: From Research to Policy</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">International</h4><ul class="terms-list"><li class="terms-item"><a href="/international/abortion" class="terms-link-primary">Abortion</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-odd latest-item"><article class="teaser clearfix node node-news-release node-promoted node-teaser"  about="/news-release/2016/publicly-funded-family-planning-clinics-continue-provide-critical-access-wide" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Publicly Funded Family Planning Clinics Continue to  Provide Critical Access to a Wide Range of Services " class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/news-release/2016/publicly-funded-family-planning-clinics-continue-provide-critical-access-wide">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/heroimage.jpg?itok=_CxUCVyO&amp;timestamp=1479759160 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/heroimage.jpg?itok=zgcyZV2L&amp;timestamp=1479759160 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/heroimage.jpg?itok=-rOYlhbw&amp;timestamp=1479759160 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/heroimage.jpg?itok=xwiTX5tF&amp;timestamp=1479759160 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/heroimage.jpg?itok=xogFFHwu&amp;timestamp=1479759160" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-22T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Anews_release">News Release</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/news-release/2016/publicly-funded-family-planning-clinics-continue-provide-critical-access-wide">Publicly Funded Family Planning Clinics Continue to  Provide Critical Access to a Wide Range of Services </a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-even latest-item"><article class="teaser clearfix node node-article node-promoted node-teaser"  about="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Uninsured Rate Among Women of Reproductive Age Has Fallen More Than One-Third Under the Affordable Care Act" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/nic_hero_image.png?itok=jGCfsyqw&amp;timestamp=1479332021 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/nic_hero_image.png?itok=elZPyAaO&amp;timestamp=1479332021 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/nic_hero_image.png?itok=SRxF5v0h&amp;timestamp=1479332021 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nic_hero_image.png?itok=ddIg9FYy&amp;timestamp=1479332021 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/nic_hero_image.png?itok=tJD5dvGf&amp;timestamp=1479332021" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-17T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=im_field_article_type%3A4">News in Context</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/article/2016/11/uninsured-rate-among-women-reproductive-age-has-fallen-more-one-third-under">Uninsured Rate Among Women of Reproductive Age Has Fallen More Than One-Third Under the Affordable Care Act</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-odd latest-item"><article class="teaser clearfix node node-infographic node-promoted node-teaser"  about="/infographic/2016/fewer-us-women-reproductive-age-were-uninsured-2015" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Fewer U.S. Women of Reproductive Age Were Uninsured in 2015" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/infographic/2016/fewer-us-women-reproductive-age-were-uninsured-2015">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/nicgraphics1.png?itok=EzhVzVpn&amp;timestamp=1479319536 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/nicgraphics1.png?itok=rYGMMied&amp;timestamp=1479319536 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/nicgraphics1.png?itok=QI_W-bMC&amp;timestamp=1479319536 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nicgraphics1.png?itok=reeYLATK&amp;timestamp=1479319536 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/nicgraphics1.png?itok=yuupXROw&amp;timestamp=1479319536" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-17T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Ainfographic">Infographic</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/infographic/2016/fewer-us-women-reproductive-age-were-uninsured-2015">Fewer U.S. Women of Reproductive Age Were Uninsured in 2015</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-even latest-item"><article class="teaser clearfix node node-infographic node-promoted node-teaser"  about="/infographic/2016/disparities-health-coverage-persist-despite-affordable-care-act" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Disparities in Health Coverage Persist, Despite the Affordable Care Act" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/infographic/2016/disparities-health-coverage-persist-despite-affordable-care-act">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/nicgraphics2.png?itok=3Q0unVIa&amp;timestamp=1479321402 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/nicgraphics2.png?itok=TfmT33mR&amp;timestamp=1479321402 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/nicgraphics2.png?itok=ZVVStdNl&amp;timestamp=1479321402 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nicgraphics2.png?itok=uuKkTWe7&amp;timestamp=1479321402 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/nicgraphics2.png?itok=ltWJgA2E&amp;timestamp=1479321402" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-17T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Ainfographic">Infographic</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/infographic/2016/disparities-health-coverage-persist-despite-affordable-care-act">Disparities in Health Coverage Persist, Despite the Affordable Care Act</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-odd latest-item"><article class="teaser clearfix node node-infographic node-promoted node-teaser"  about="/infographic/2016/immigrant-women-need-health-coverage-not-legal-barriers-0" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Immigrant Women Need Health Coverage, Not Legal Barriers" class="rdf-meta element-hidden"></span>
+      <figure class="teaser-image">
+      <a href="/infographic/2016/immigrant-women-need-health-coverage-not-legal-barriers-0">
+                  <figure class="figure-image">
+      <picture >
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="https://www.guttmacher.org/sites/default/files/styles/5%3A4_90x72/public/images/nicgraphics3.png?itok=iieb4Na7&amp;timestamp=1479321954 90w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_180x144/public/images/nicgraphics3.png?itok=0bhDG9Pl&amp;timestamp=1479321954 180w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_235x188/public/images/nicgraphics3.png?itok=NhnXpp45&amp;timestamp=1479321954 235w, https://www.guttmacher.org/sites/default/files/styles/5%3A4_375x300/public/images/nicgraphics3.png?itok=Pmc1G4rn&amp;timestamp=1479321954 375w" sizes="(min-width: 37.5em) 180px,  72px" />
+<!--[if IE 9]></video><![endif]-->
+<img  src="https://www.guttmacher.org/sites/default/files/styles/focal_point_preview/public/images/nicgraphics3.png?itok=l3-GuoEI&amp;timestamp=1479321954" alt="" title="" />
+</picture>    </figure>
+              </a>
+    </figure>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-17T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=bundle%3Ainfographic">Infographic</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/infographic/2016/immigrant-women-need-health-coverage-not-legal-barriers-0">Immigrant Women Need Health Coverage, Not Legal Barriers</a></h3>
+
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/contraception" class="terms-link-primary">Contraception</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+          <li class="views-row-even views-row-last latest-item"><article class="teaser clearfix node node-article node-promoted node-teaser"  about="/article/2016/11/are-uncertain-fertility-intentions-temporary-or-long-term-outlook-findings-panel" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Are Uncertain Fertility Intentions a Temporary or Long-term Outlook? Findings from a Panel Study" class="rdf-meta element-hidden"></span>
+  
+  <div class="teaser-content">
+          <span class="teaser-dateline">
+                  <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2016-11-16T00:00:00-05:00">November 2016</span>              </span>
+    
+          <span class="teaser-type">
+                  <a href="/search/site?f[0]=im_field_article_type%3A1">Research Article</a>              </span>
+    
+    <h3 class="teaser-title"><a href="/article/2016/11/are-uncertain-fertility-intentions-temporary-or-long-term-outlook-findings-panel">Are Uncertain Fertility Intentions a Temporary or Long-term Outlook? Findings from a Panel Study</a></h3>
+
+          <div class="teaser-byline">
+        <span class="author-name">Rachel K. Jones</span><span class="author-seperator">,</span><em>Women&#039;s Health Issues</em>      </div>
+    
+          <div class="teaser-topics">
+        <div class="terms"><h4 class="terms-subheading">United States</h4><ul class="terms-list"><li class="terms-item"><a href="/united-states/pregnancy" class="terms-link-primary">Pregnancy</a></li></ul></div>      </div>
+      </div>
+
+</article>
+</li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+      </div>
+
+              <div class="content-secondary">
+              <div id="block-views-latest-from-journals-block" class="block block-views latest-from-journals">
+
+          <h2 class="latest-from-journals-heading">Latest from our<br><strong><a href="/journals">Peer-reviewed Journals</a></strong></h2>
+  
+  <div  class="block-content block-content">
+    <div class="view view-latest-from-journals view-id-latest_from_journals view-display-id-block latest view-dom-id-7b9bf44d74fbc5610732a88952765574">
+      
+
+      
+      <div class="view-content">
+      <div class="latest-content">    <ul class="latest-list">          <li class="views-row-odd views-row-first latest-item"><article class="recent node node-article node-promoted"  about="/journals/psrh/2016/11/womens-pathways-abortion-care-south-carolina-qualitative-study-obstacles-and" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Women&#039;s Pathways to Abortion Care in South Carolina: A Qualitative Study of Obstacles and Supports" class="rdf-meta element-hidden"></span>      <div class="recent-publication psrh">
+      <strong>Perspectives</strong> on Sexual and Reproductive Health    </div>
+    <h3 class="recent-title"><a href="/journals/psrh/2016/11/womens-pathways-abortion-care-south-carolina-qualitative-study-obstacles-and">Women&#039;s Pathways to Abortion Care in South Carolina: A Qualitative Study of Obstacles and Supports</a></h3>
+      <div class="recent-byline">
+      <span class="author-name">Judy Margo</span><span class="author-seperator">,</span><span class="author-name">Lois McCloskey</span><span class="author-seperator">,</span><span class="author-name">Gouri Gupte</span><span class="author-seperator">,</span><span class="author-name">Melanie Zurek</span><span class="author-seperator">,</span><span class="author-name">Seema Bhakta</span><span class="author-conjunction">and</span><span class="author-name">Emily Feinberg</span>    </div>
+  </article>
+</li>
+          <li class="views-row-even latest-item"><article class="recent node node-article node-promoted"  about="/journals/ipsrh/2016/11/estimated-incidence-induced-abortion-ethiopia-2014-changes-provision-services" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="The Estimated Incidence of Induced Abortion in Ethiopia, 2014: Changes in the Provision of Services Since 2008" class="rdf-meta element-hidden"></span>      <div class="recent-publication ipsrh">
+      <strong>International Perspectives</strong> on Sexual and Reproductive Health    </div>
+    <h3 class="recent-title"><a href="/journals/ipsrh/2016/11/estimated-incidence-induced-abortion-ethiopia-2014-changes-provision-services">The Estimated Incidence of Induced Abortion in Ethiopia, 2014: Changes in the Provision of Services Since 2008</a></h3>
+      <div class="recent-byline">
+      <span class="author-name">Ann M. Moore</span><span class="author-seperator">,</span><span class="author-name">Yirgu Gebrehiwot</span><span class="author-seperator">,</span><span class="author-name">Tamara Fetters</span><span class="author-seperator">,</span><span class="author-name">Yohannes Dibaba Wado</span><span class="author-seperator">,</span><span class="author-name">Akinrinola Bankole</span><span class="author-seperator">,</span><span class="author-name">Susheela Singh</span><span class="author-seperator">,</span><span class="author-name">Hailemichael Gebreselassie</span><span class="author-conjunction">and</span><span class="author-name">Yonas Getachew</span>    </div>
+  </article>
+</li>
+          <li class="views-row-odd latest-item"><article class="recent node node-article node-promoted"  about="/journals/ipsrh/2016/11/examining-progress-and-equity-information-received-women-using-modern-method" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Examining Progress and Equity in Information Received by Women Using a Modern Method in 25 Developing Countries" class="rdf-meta element-hidden"></span>      <div class="recent-publication ipsrh">
+      <strong>International Perspectives</strong> on Sexual and Reproductive Health    </div>
+    <h3 class="recent-title"><a href="/journals/ipsrh/2016/11/examining-progress-and-equity-information-received-women-using-modern-method">Examining Progress and Equity in Information Received by Women Using a Modern Method in 25 Developing Countries</a></h3>
+      <div class="recent-byline">
+      <span class="author-name">Anrudh K. Jain</span>    </div>
+  </article>
+</li>
+          <li class="views-row-even views-row-last latest-item"><article class="recent node node-article node-promoted"  about="/journals/psrh/2016/11/correlates-young-mens-intention-discuss-birth-control-female-partners" typeof="sioc:Item foaf:Document">
+    <span property="dc:title" content="Correlates of Young Men&#039;s Intention to Discuss Birth Control with Female Partners" class="rdf-meta element-hidden"></span>      <div class="recent-publication psrh">
+      <strong>Perspectives</strong> on Sexual and Reproductive Health    </div>
+    <h3 class="recent-title"><a href="/journals/psrh/2016/11/correlates-young-mens-intention-discuss-birth-control-female-partners">Correlates of Young Men&#039;s Intention to Discuss Birth Control with Female Partners</a></h3>
+      <div class="recent-byline">
+      <span class="author-name">N. Tatiana Masters</span><span class="author-seperator">,</span><span class="author-name">Diane M. Morrison</span><span class="author-seperator">,</span><span class="author-name">Katherine Querna</span><span class="author-seperator">,</span><span class="author-name">Erin A. Casey</span><span class="author-conjunction">and</span><span class="author-name">Blair Beadnell</span>    </div>
+  </article>
+</li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>  </div>
+</div>
+<div id="block-gutt-front-gutt-front-twitter" class="block block-gutt-front twitter-feed">
+
+          <h2 class="twitter-feed-heading">Follow Us <strong>on Twitter</strong></h2>
+  
+  <div  class="block-content block-content">
+    <a href="https://twitter.com/Guttmacher" class="twitter-timeline" data-dnt="true" data-widget-id="657293046459924480" data-tweet-limit="3">Tweets by @Guttmacher</a>  </div>
+</div>
+        </div>
+          </div>
+      </div>
+  <section class="support l--constrained clearfix">
+    <div id="block-gutt-global-elements-support" class="block block-gutt-global-elements">
+
+      
+  <div  class="block-content block-content">
+    <header class="support-header">
+  <h2 class="support-heading">Support Our Work</h2>
+  <p class="support-description">Your support enables the Guttmacher Institute to advance sexual and reproductive health and rights in the United States and worldwide through our interrelated program of research, public education and policy analysis.</header>
+
+<div class="support-donate">
+  <div class="support-buttons">
+    <a href="/donate" class="support-button">Donate Now</a>
+  </div>
+</div>
+  </div>
+</div>
+</section>
+<footer class="footer" aria-role="content-info">
+  <div class="footer-inner l--constrained clearfix">
+    <div class="footer-logo">
+      <a href="/" class="link--block footer-logo-link">
+        <img class="footer-logo-image" src="/sites/all/themes/gutt/logo.svg" alt="Guttmacher Institute"  onerror="this.onerror=null; this.src='/sites/all/themes/gutt/logo.png'" />
+      </a>
+    </div>
+          <div class="footer-popcenter">
+        <a href="/population-center" id="logo--popcenter" class="link--block footer-popcenter-link"><img class="footer-popcenter-image" src="/sites/all/modules/custom/gutt_global_elements/img/popcenter-logo.svg" alt="Guttmacher Center for Population Research Innovation and Dissemination"  onerror="this.onerror=null; this.src='/sites/all/modules/custom/gutt_global_elements/img/popcenter-logo.png'" /></a>      </div>
+              <div class="footer-updates">
+          <h2 class="block-title footer-updates-heading">Sign Up for Guttmacher Updates</h2>
+<form class="mailchimp-signup-subscribe-form footer-updates-form" action="/" method="post" id="mailchimp-signup-subscribe-block-general-updates-form" accept-charset="UTF-8"><div><div class="mailchimp-signup-subscribe-form-description"></div><input type="hidden" name="mailchimp_lists[interest_groups][7509]" value="Guttmacher Update" />
+<div id="mailchimp-newsletter-513777-mergefields" class="mailchimp-newsletter-mergefields"><div class="form-item form-type-textfield form-item-mergevars-EMAIL">
+  <label class="form-item-label element-invisible" for="edit-mergevars-email">E-mail Address <span class="form-required" title="This field is required.">*</span></label>
+ <input placeholder="Enter an email address" class="footer-updates-form-input form-text required" type="text" id="edit-mergevars-email" name="mergevars[EMAIL]" value="" size="25" maxlength="128" />
+</div>
+</div><input type="hidden" name="form_build_id" value="form-GtOjC6ijTRg5OCXSdnzU8Er7J9tjbbl2f0PGl38ZdZ0" />
+<input type="hidden" name="form_id" value="mailchimp_signup_subscribe_block_general_updates_form" />
+<div class="form-actions form-wrapper" id="edit-actions"><input class="footer-updates-form-submit form-submit" type="submit" id="edit-submit--2" name="op" value="Sign Up" /></div></div></form>      </div>
+              <div class="footer-social">
+          <h2 class="block-title element-invisible">Connect With Us</h2>
+<div class="item-list"><ul class="nav nav--social"><li class="nav-item first"><a href="https://www.facebook.com/guttmacher" class="nav-link nav-link--social nav-link--facebook" title="Facebook">Facebook</a></li>
+<li class="nav-item"><a href="https://twitter.com/Guttmacher" class="nav-link nav-link--social nav-link--twitter" title="Twitter">Twitter</a></li>
+<li class="nav-item"><a href="http://guttmacher.tumblr.com/" class="nav-link nav-link--social nav-link--tumblr" title="Tumblr">Tumblr</a></li>
+<li class="nav-item"><a href="https://www.youtube.com/user/Guttmacher" class="nav-link nav-link--social nav-link--youtube" title="YouTube">YouTube</a></li>
+<li class="nav-item last"><a href="https://www.linkedin.com/company/guttmacher-institute" class="nav-link nav-link--social nav-link--linkedin" title="LinkedIn">LinkedIn</a></li>
+</ul></div>      </div>
+        <div class="footer-colophon">
+              <div class="footer-menu">
+            <h2 class="block-title element-invisible">Footer Menu</h2>
+<div class="menu-block-wrapper menu-block-gutt_global_elements-footer menu-name-footer-menu parent-mlid-0 menu-level-1">
+  <ul class="footer-nav"><li class="first leaf menu-mlid-29308 nav-item"><a href="/privacy-policy" class="nav-link">Privacy Policy</a></li>
+<li class="leaf menu-mlid-29309 nav-item"><a href="/statement-accuracy-and-user-agreement" class="nav-link">Statement of Accuracy</a></li>
+<li class="last leaf menu-mlid-48243 nav-item"><a href="/updates?type=new" title="" class="nav-link">Updates Sign-up</a></li>
+</ul></div>
+        </div>
+                    <div class="footer-copyright">
+          &copy; Copyright 2016 Guttmacher Institute        </div>
+          </div>
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_7Ukqb3ierdBEL0eowfOKzTkNu-Le97OPm-UqTS5NENU.js"></script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_aVNC6-O__-ronYfLPE01FQPRVvYI-VPspKj2bB8YMmw.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+grunticon(["https://www.guttmacher.org/sites/all/themes/gutt/build/img/svg/icons.data.svg.css", "https://www.guttmacher.org/sites/all/themes/gutt/build/img/svg/icons.data.png.css", "https://www.guttmacher.org/sites/all/themes/gutt/build/img/svg/icons.fallback.css"]);
+//--><!]]>
+</script>
+<script type="text/javascript" src="https://www.guttmacher.org/sites/default/files/js/js_z8lk05fFjJ216Vtwketn7GBLD2woq8JypTsXlkiTZ74.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fd60cacc1d","applicationID":"14780357","transactionName":"YlFUMRMHDURWVEYNXlsbYxcISUxeWVNXHB9FXEY=","queueTime":0,"applicationTime":13,"atts":"ThZXR1sdHko=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

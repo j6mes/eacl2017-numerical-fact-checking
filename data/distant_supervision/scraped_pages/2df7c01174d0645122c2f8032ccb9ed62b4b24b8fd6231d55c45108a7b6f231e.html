@@ -1,0 +1,389 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/menu-min.css">
+<link rel="stylesheet" href="/css/custom-theme/jquery-ui-1.8.22.custom.css">
+<link rel="stylesheet" href="/css/tabs_theme/jquery-ui-1.10.3.custom.css" /><link rel="stylesheet" type="text/css" href="/css/jchartfx.css" />
+<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<meta name="copyright" content="US Climate Data">
+<meta name="author" content="US Climate Data">
+<meta name="Distribution" content="Global">
+<meta name="google-site-verification" content="YZ0ca6l60VXXsJQ6xmJlgIGawHVFuXmAJcVFQ4hVnkY" />
+<meta name="robots" content="index, follow"><meta name="description" content="The climate in Massachusetts. The average temperatures and precipitation amounts for more than 67 cities in Massachusetts - MA. This includes a climate chart for your city, indicating the monthly high temperatures and rainfall data." />
+<meta name="keywords" content="climate, Massachusetts, cities, state,  regional, location, city, region, chart Boston, United States, climograph, sunshine, precipitation, high, low, MA, rainfall data" />
+<title>Climate Massachusetts - temperature, rainfall and average</title>
+<script type="text/javascript" src="/javascript/jquery-1.10.2.min.js"></script>	
+<script type="text/javascript" src="/javascript/jquery-ui-1.10.3-custom-min.js"></script>
+<script async type="text/javascript" src="/javascript/jquery.ui.autocomplete.html.js"></script>
+<script async type="text/javascript" src="/javascript/formdefaults.js"></script>
+<script async type="text/javascript" src="/javascript/search.js"></script>
+<script async type="text/javascript" src="/javascript/jquery.cookies.js"></script>
+
+<script type="text/javascript" src="/javascript/jchartfx/jchartfx.system.js"></script>
+<script type="text/javascript" src="/javascript/jchartfx/jchartfx.coreBasic.js"></script>
+<script type="text/javascript" src="http://www.geoplugin.net/extras/cookielaw.js"></script>
+<script type="text/javascript" src="/javascript/loadScript.js"></script>
+<script type="text/javascript">	
+jQuery(document).ready(function($)
+{
+	$(function() { $( "#tabs" ).tabs();});	
+	$('.system').html("°F");
+	$('.precip_system').html("inch");
+	/* Change Climate Data when click on the Celcius or Fahrenheit button */
+	$(".btn").click(function() 
+	{	
+		var system = this.id;			
+	
+		$.ajax({ 		
+			url: "/php/scale-system.php", 
+    		type: 'POST',
+			dataType: "json",
+    		data: {	
+				weather_id: 'USMA0601',
+				type: system,
+				altitude: '15'					
+			},
+    		success: function(data) 
+			{						
+				$('#climate_table').html(data.climate_table);
+				$('.system').html(data.temperature_system);
+				$('.precip_system').html(data.precipitation_system);				
+				$('#climate_totals').html(data.climate_totals);			
+			}
+		});
+	});
+});
+</script>
+<script type="text/javascript" language="javascript">
+jQuery(document).ready(function($)
+{
+	//Reload graph with metric or american value
+	$(".btn").click(function() 
+	{	
+		$('#ChartDiv').html("");
+		var system_graph = this.id;		
+		
+		$.ajax({ 		
+			url: "/php/graph.php", 
+    		type: 'POST',
+			dataType: "json",
+    		data: {	
+				weather_id: 'USMA0601',				
+				type: system_graph,								
+			},
+    		success: function(data) 
+			{						
+				var min_temp_graph = data.min_temp_graph;										
+				var max_temp_graph = data.max_temp_graph;				
+				var the_data = data.new_data;
+				var precipitation_step = data.precipitation_step;							
+				var precipitation_max = data.precipitation_max;				
+				var system_standards = data.system_standards;					
+				var system_name = data.system_name;					
+				var steppy = data.step;							
+				loadChart(min_temp_graph,max_temp_graph,the_data,precipitation_max,precipitation_step,steppy,system_standards,system_name);				
+			}
+		});
+		
+	});		
+	var min_temp_graph = 10;
+	var max_temp_graph = 90;	
+	var the_data = '[{"Month": "Jan", "Low":22, "High":36, "Precipitation": 3.35},{"Month": "Feb", "Low":25, "High":39, "Precipitation": 3.23},{"Month": "Mar", "Low":31, "High":45, "Precipitation": 4.29},{"Month": "Apr", "Low":41, "High":56, "Precipitation": 3.74},{"Month": "May", "Low":50, "High":66, "Precipitation": 3.46},{"Month": "Jun", "Low":60, "High":76, "Precipitation": 3.66},{"Month": "Jul", "Low":65, "High":81, "Precipitation": 3.43},{"Month": "Aug", "Low":65, "High":80, "Precipitation": 3.27},{"Month": "Sep", "Low":57, "High":72, "Precipitation": 3.43},{"Month": "Oct", "Low":47, "High":61, "Precipitation": 3.94},{"Month": "Nov", "Low":38, "High":51, "Precipitation": 3.98},{"Month": "Dec", "Low":28, "High":41, "Precipitation": 3.78}]';		
+	var precipitation_max = 5;
+	var precipitation_step = 1;
+
+	var steppy = 20;	
+	var system_standards = "°F";
+	var system_name = "american";
+    var chart1;
+	
+	loadChart(min_temp_graph,max_temp_graph,the_data,precipitation_max,precipitation_step,steppy,system_standards,system_name);
+    function loadChart(min_temp_graph,max_temp_graph,the_data,precipitation_max,precipitation_step,steppy,system_standards,system_name)
+    {
+            chart1 = new cfx.Chart();
+            chart1.getData().setSeries(3);
+			chart1.setBackground(null);
+			
+			/* Temperature */					
+           	chart1.getAxisY().setMin(min_temp_graph); //Low
+           	chart1.getAxisY().setMax(max_temp_graph); // High
+		   	chart1.getAxisY().setStep(10);
+			if(system_name == "american")
+			{
+				chart1.getAxisY().getLabels().setItem(0,"10°F");chart1.getAxisY().getLabels().setItem(20,"30°F");chart1.getAxisY().getLabels().setItem(40,"50°F");chart1.getAxisY().getLabels().setItem(60,"70°F");chart1.getAxisY().getLabels().setItem(80,"90°F");			}
+			if(system_name == "metric")
+			{
+				chart1.getAxisY().getLabels().setItem(0,"-10°C");chart1.getAxisY().getLabels().setItem(10,"0°C");chart1.getAxisY().getLabels().setItem(20,"10°C");chart1.getAxisY().getLabels().setItem(30,"20°C");chart1.getAxisY().getLabels().setItem(40,"30°C");			}
+			/* Precipitation */			
+			chart1.getAxisY2().setMin(0); 
+            chart1.getAxisY2().setMax(precipitation_max);
+			chart1.getAxisY2().setStep(precipitation_step);	
+			if(system_name == "american")
+			{	
+			  chart1.getAxisY2().getLabels().setItem(0,"0inch");chart1.getAxisY2().getLabels().setItem(1,"1inch");chart1.getAxisY2().getLabels().setItem(2,"2inch");chart1.getAxisY2().getLabels().setItem(3,"3inch");chart1.getAxisY2().getLabels().setItem(4,"4inch");chart1.getAxisY2().getLabels().setItem(5,"5inch");			}	
+			if(system_name == "metric")
+			{	
+			  chart1.getAxisY2().getLabels().setItem(0,"0mm");chart1.getAxisY2().getLabels().setItem(20,"20mm");chart1.getAxisY2().getLabels().setItem(40,"40mm");chart1.getAxisY2().getLabels().setItem(60,"60mm");chart1.getAxisY2().getLabels().setItem(80,"80mm");chart1.getAxisY2().getLabels().setItem(100,"100mm");chart1.getAxisY2().getLabels().setItem(120,"120mm");			}								
+            var series1 = chart1.getSeries().getItem(0);
+            var series2 = chart1.getSeries().getItem(1);
+			var series3 = chart1.getSeries().getItem(2);
+			
+			/* Second Y-Axis - Precipitation */
+			series3.setAxisY(chart1.getAxisY2());
+            series1.setGallery(cfx.Gallery.Lines);
+			series2.setGallery(cfx.Gallery.Lines);
+            series3.setGallery(cfx.Gallery.Bar);
+			chart1.getLegendBox().setDock(cfx.DockArea.Bottom);
+			chart1.getAllSeries().setMarkerShape(cfx.MarkerShape.None);
+			/* Climate Data */			
+
+            var data = JSON.parse(the_data);
+
+            chart1.setDataSource(data);
+            var divHolder = document.getElementById('ChartDiv');
+        	chart1.create(divHolder);
+      }
+}); 
+</script>
+</head>
+<body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2018376-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-2018376-13";
+</script><!-- Start header **** -->
+<header>
+	<!-- Wrap -->
+	<div class="wrap">
+		<!-- Logo & Slogan -->		
+  		<div id="logo">
+        	<!-- Slogan -->
+			<div id="slogan">
+				<h1>Temperature - Precipitation - Sunshine - Snowfall</h1>
+			</div>
+            <!-- End slogan -->
+    	</div>
+        <!-- End Logo & Slogan -->
+        <!-- Social media -->
+        <div id="sociale-media">
+			<div id=scale>
+  <span class="sociale-media-text">US Climate Data on </span>
+  <a title='US Climate Data on Facebook' href='http://www.facebook.com/usclimatedata'>
+	  <img src='/images/icons/facebook.png' width='16' height='16' alt='US Climate Data on Facebook' />
+  </a>
+  <a title='US Climate Data on Twitter' href='https://twitter.com/usclimatedata'>
+	  <img src='/images/icons/twitter.png' width='16' height='16' alt='US Climate Data on Twitter' />
+  </a>
+</div>    
+        </div>
+    </div>
+    <!-- End wrap -->
+</header>
+<!-- End header **** -->
+<!-- Navigation **** -->
+<nav>
+	<div class="wrapper_menu_full menu_light_theme">
+	<!-- Begin menu wrapper -->
+    <div class="menu menu_blue">
+    	<!-- Begin menu -->
+        <div class="wrap">
+        <ul class="menu_whole_width">
+        	<!-- Home -->
+			<li class="nodrop"><a title="Climate" href="http://www.usclimatedata.com">Home</a></li>
+            <!-- United States -->
+            <li class="nodrop"><a title="Climate United States" href="/climate/united-states/us">United States</a></li>
+            <li class="nodrop"><a href="/climate/massachusetts/united-states/3191" title="Climate Massachusetts">Massachusetts</a></li>            <!-- World -->  
+            <!--        
+            <li><a title="Climate of the World" href="#" class="drop">World</a>
+            -->
+           		<!-- Subitems -->
+                <!--
+            	<div class="dropdown_1column">
+                    <div class="col_1 firstcolumn">                    
+                        <ul class="levels">                        
+                            <li><a title="Climate Africa" href="/normals/africa/2">Africa</a></li>                            
+                            <li><a title="Climate Asia" href="/normals/asia/142">Asia</a></li>
+                            <li><a title="Climate Europe" href="/normals/europe/150">Europe</a></li>
+                            <li><a title="Climate North-Central America" href="/normals/north-central-america/19">North-Central America</a></li>
+                            <li><a title="Climate South America" href="/normals/south-america/20">South America</a></li>
+                            <li><a title="Climate Oceania" href="/normals/oceania/9">Oceania</a></li>
+                        </ul> 
+                    </div>
+                </div>
+                -->
+            </li>            
+            <div id="search">
+            	
+         		<input value="Enter a location" class="form-text" id="searchfield"> 
+           		
+           </div> 
+           <!-- My location -->             
+          </ul> 
+       </div>		
+    </div>
+ </div></nav>
+<!-- End navigation **** -->
+<!-- Content **** -->
+<div id="content">
+	<!-- Wrap -->    	
+	<div class="wrap">
+		<!-- Climate -->
+		<div id="climate">        	
+        	<!-- Site Tabs -->
+			<div class="site_tabs">
+            	<!-- Tabs -->
+				<div id="tabs">            	
+				<ul>
+                	<li><a class="summary" href="#summary">Monthly</a></li>     
+                    <!-- Breadcrumbs -->			              
+                    <p class="breadcrumbs">You are here: <a href="/climate/united-states/us" title="Climate United States">United States</a> > <a href="/climate/massachusetts/united-states/3191" title="Climate Massachusetts">Massachusetts</a> > <a href="/climate/boston/massachusetts/united-states/usma0601" title="Climate Boston - Weather averages Boston">Boston</a></p>
+                    <!-- end Breadcrumbs -->
+		        </ul>
+                <!-- end SimpleTabsNavigaton --> 
+                
+                <!-- simpleTabsContent -->    
+		       	<div id="summary">
+                  <!-- left_column --> 						
+                  <div class="left_column">
+                      <h1 class="h1_title">Climate Massachusetts - Boston</h1>
+                      <span class="choose_system"><a rel="nofollow" class="btn" id="metric" href="#">°C</a> | <a rel="nofollow" class="btn" id="american" href="#">°F</a></span>                      <!-- Climate table --> 
+                      <div id="climate_table">
+                     	<table><tr><th>&nbsp;</th><th class="climate_table_data_td">Jan</th><th class="climate_table_data_td">Feb</th><th class="climate_table_data_td">Mar</th><th class="climate_table_data_td">Apr</th><th class="climate_table_data_td">May</th><th class="climate_table_data_td">Jun</th></tr><tr><td class="climate_table_info">Average high in <span class=system></span>:</td><td class="align_right temperature_red">36</td><td class="align_right temperature_red">39</td><td class="align_right temperature_red">45</td><td class="align_right temperature_red">56</td><td class="align_right temperature_red">66</td><td class="align_right temperature_red">76</td></tr><tr><td class="climate_table_info">Average low in <span class=system></span>:</td><td class="align_right temperature_blue">22</td><td class="align_right temperature_blue">25</td><td class="align_right temperature_blue">31</td><td class="align_right temperature_blue">41</td><td class="align_right temperature_blue">50</td><td class="align_right temperature_blue">60</td></tr><tr><td class="climate_table_info">Av. precipitation in <span class=precip_system></span>:</td><td class="align_right">3.35</td><td class="align_right">3.23</td><td class="align_right">4.29</td><td class="align_right">3.74</td><td class="align_right">3.46</td><td class="align_right">3.66</td></tr><tr><td class="climate_table_info">Days with precipitation:</td><td class="align_right">11</td><td class="align_right">9</td><td class="align_right">11</td><td class="align_right">11</td><td class="align_right">12</td><td class="align_right">10</td></tr><tr><td class="climate_table_info">Hours of sunshine:</td><td class="align_right">164</td><td class="align_right">169</td><td class="align_right">213</td><td class="align_right">228</td><td class="align_right">266</td><td class="align_right">288</td></tr></table><table class="climate_table_margin_top"><tr><th>&nbsp;</th><th class="climate_table_data_td">Jul</th><th class="climate_table_data_td">Aug</th><th class="climate_table_data_td">Sep</th><th class="climate_table_data_td">Oct</th><th class="climate_table_data_td">Nov</th><th class="climate_table_data_td">Dec</th></tr><tr><td class="climate_table_info">Average high in <span class=system></span>:</td><td class="align_right temperature_red">81</td><td class="align_right temperature_red">80</td><td class="align_right temperature_red">72</td><td class="align_right temperature_red">61</td><td class="align_right temperature_red">51</td><td class="align_right temperature_red">41</td></tr><tr><td class="climate_table_info">Average low in <span class=system></span>:</td><td class="align_right temperature_blue">65</td><td class="align_right temperature_blue">65</td><td class="align_right temperature_blue">57</td><td class="align_right temperature_blue">47</td><td class="align_right temperature_blue">38</td><td class="align_right temperature_blue">28</td></tr><tr><td class="climate_table_info">Av. precipitation in <span class=precip_system></span>:</td><td class="align_right">3.43</td><td class="align_right">3.27</td><td class="align_right">3.43</td><td class="align_right">3.94</td><td class="align_right">3.98</td><td class="align_right">3.78</td></tr><tr><td class="climate_table_info">Days with precipitation:</td><td class="align_right">9</td><td class="align_right">9</td><td class="align_right">8</td><td class="align_right">9</td><td class="align_right">10</td><td class="align_right">11</td></tr><tr><td class="climate_table_info">Hours of sunshine:</td><td class="align_right">300</td><td class="align_right">275</td><td class="align_right">237</td><td class="align_right">207</td><td class="align_right">144</td><td class="align_right">142</td></tr></table>                      </div>
+                      <!-- end Climate table --> 
+                       <!-- Google Ad Content Left -->  
+             		  <div id="google-ad-content_left">
+             				<p style=padding-top:4px>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9519329606981542";
+/* Weernetwerk2012Content */
+google_ad_slot = "4359484752";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>
+                	  </div>  
+                      <!-- end Climograph -->
+                      <!-- Climograph -->
+                      <div id="climograph">
+                          <h2>
+                              Boston Climate Graph - Massachusetts climograph                          </h2>
+                          <div id="ChartDiv" style="width:430px;height:340px"></div>
+                      </div>
+                      <!-- end Climograph -->   
+                      <h2>Totals and averages</h2>
+                      <!-- Climate Totals -->
+                      <div id="climate_totals">
+                          <table><tr><td class="totals_left_column">Annual high temperature:</td><td class="temperature_red totals_right_column">58.7°F</td></tr><tr><td>Annual low temperature:</td><td class="temperature_blue">44.1°F</td></tr><tr><td>Average temperature:</td><td>51.4°F</td></tr><tr><td>Average annual precipitation - rainfall:</td><td>43.56 inch</td></tr><tr><td>Days per year with precipitation - rainfall:</td><td>120 days</td></tr><tr><td>Annual hours of sunshine:</td><td>2633 hours</td></tr><tr><td>Av. annual snowfall:</td><td>-</td></tr></table>                      </div>
+                      <!-- end climate totals -->
+                       <!-- Normal period -->
+                      <div id="extra_info">
+                       		<p>Climate data for Boston, MA - 2108 - 1981-2010 normals - weather</p>                     
+                      </div>
+                      <!-- end Normal period -->  
+                      <!-- Legend -->
+                      <div id="legend">
+                      	   <p>Jan: January, Feb: February, Mar: March, Apr: April, May: May, Jun: June, Jul: July, Aug: August, Sep: September, Oct: October, Nov: November, Dec: December</p>
+                      </div>
+                      <!-- end Legend -->
+                      <!-- Share -->
+                      <div id="buttons">        
+		<div class="addthis_toolbox addthis_default_style">	
+        	<a class="addthis_button_facebook"></a>
+			<a class="addthis_button_twitter"></a>				
+            <a class="addthis_button_google_plusone" g:plusone:count="false"></a> 
+			<a class="addthis_button_preferred_5"></a>	
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>                               	
+		</div>
+	<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+	<script async type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e3ca9c46c176e26"></script>
+</div>                                   <!-- end Share -->
+              </div>
+              <!-- end left_column --> 
+              <!-- end right_column -->     
+              <div class="right_column">
+                  <h3>Select a city by name</h3>
+                  <table><tr><td class="three_column"><a href="/climate/amherst/massachusetts/united-states/usma0009" title="Climate Amherst">Amherst</a></td><td class="three_column"><a href="/climate/framingham/massachusetts/united-states/usma0147" title="Climate Framingham">Framingham</a></td><td class="three_column"><a href="/climate/north-adams/massachusetts/united-states/usma0940" title="Climate North Adams">North Adams</a></td><tr><td class="three_column"><a href="/climate/ashburnham/massachusetts/united-states/usma0585" title="Climate Ashburnham">Ashburnham</a></td><td class="three_column"><a href="/climate/franklin/massachusetts/united-states/usma0755" title="Climate Franklin">Franklin</a></td><td class="three_column"><a href="/climate/norton/massachusetts/united-states/usma0948" title="Climate Norton">Norton</a></td><tr><td class="three_column"><a href="/climate/ashfield/massachusetts/united-states/usma0862" title="Climate Ashfield">Ashfield</a></td><td class="three_column"><a href="/climate/great-barrington/massachusetts/united-states/usma0158" title="Climate Great Barrington">Great Barrington</a></td><td class="three_column"><a href="/climate/norwood/massachusetts/united-states/usma0650" title="Climate Norwood">Norwood</a></td><tr><td class="three_column"><a href="/climate/athol/massachusetts/united-states/usma0865" title="Climate Athol">Athol</a></td><td class="three_column"><a href="/climate/greenfield/massachusetts/united-states/usma0906" title="Climate Greenfield">Greenfield</a></td><td class="three_column"><a href="/climate/orange/massachusetts/united-states/usma0951" title="Climate Orange">Orange</a></td><tr><td class="three_column"><a href="/climate/barnstable/massachusetts/united-states/usma0593" title="Climate Barnstable">Barnstable</a></td><td class="three_column"><a href="/climate/groveland/massachusetts/united-states/usma0770" title="Climate Groveland">Groveland</a></td><td class="three_column"><a href="/climate/peabody/massachusetts/united-states/usma0657" title="Climate Peabody">Peabody</a></td><tr><td class="three_column"><a href="/climate/barre/massachusetts/united-states/usma0029" title="Climate Barre">Barre</a></td><td class="three_column"><a href="/climate/hadley/massachusetts/united-states/usma0907" title="Climate Hadley">Hadley</a></td><td class="three_column"><a href="/climate/pittsfield/massachusetts/united-states/usma0956" title="Climate Pittsfield">Pittsfield</a></td><tr><td class="three_column"><a href="/climate/bedford/massachusetts/united-states/usma0031" title="Climate Bedford">Bedford</a></td><td class="three_column"><a href="/climate/haverhill/massachusetts/united-states/usma0177" title="Climate Haverhill">Haverhill</a></td><td class="three_column"><a href="/climate/plymouth/massachusetts/united-states/usma0333" title="Climate Plymouth">Plymouth</a></td><tr><td class="three_column"><a href="/climate/belchertown/massachusetts/united-states/usma0870" title="Climate Belchertown">Belchertown</a></td><td class="three_column"><a href="/climate/hingham/massachusetts/united-states/usma0180" title="Climate Hingham">Hingham</a></td><td class="three_column"><a href="/climate/provincetown/massachusetts/united-states/usma0338" title="Climate Provincetown">Provincetown</a></td><tr><td class="three_column"><a href="/climate/beverly/massachusetts/united-states/usma0597" title="Climate Beverly">Beverly</a></td><td class="three_column"><a href="/climate/huntington/massachusetts/united-states/usma0916" title="Climate Huntington">Huntington</a></td><td class="three_column"><a href="/climate/reading/massachusetts/united-states/usma0343" title="Climate Reading">Reading</a></td><tr><td class="three_column"><a href="/climate/blandford/massachusetts/united-states/usma0872" title="Climate Blandford">Blandford</a></td><td class="three_column"><a href="/climate/hyannis/massachusetts/united-states/usma0195" title="Climate Hyannis">Hyannis</a></td><td class="three_column"><a href="/climate/rochester/massachusetts/united-states/usma0349" title="Climate Rochester">Rochester</a></td><tr><td class="three_column"><a href="/climate/boston/massachusetts/united-states/usma0046" title="Climate Boston">Boston</a></td><td class="three_column"><a href="/climate/kingston/massachusetts/united-states/usma0856" title="Climate Kingston">Kingston</a></td><td class="three_column"><a href="/climate/rockland/massachusetts/united-states/usma0667" title="Climate Rockland">Rockland</a></td><tr><td class="three_column"><a href="/climate/boston/massachusetts/united-states/usma0601" title="Climate Boston">Boston</a></td><td class="three_column"><a href="/climate/lawrence/massachusetts/united-states/usma0210" title="Climate Lawrence">Lawrence</a></td><td class="three_column"><a href="/climate/royalston/massachusetts/united-states/usma0866" title="Climate Royalston">Royalston</a></td><tr><td class="three_column"><a href="/climate/bridgewater/massachusetts/united-states/usma0626" title="Climate Bridgewater">Bridgewater</a></td><td class="three_column"><a href="/climate/lenox/massachusetts/united-states/usma0923" title="Climate Lenox">Lenox</a></td><td class="three_column"><a href="/climate/savoy/massachusetts/united-states/usma0859" title="Climate Savoy">Savoy</a></td><tr><td class="three_column"><a href="/climate/brockton/massachusetts/united-states/usma0056" title="Climate Brockton">Brockton</a></td><td class="three_column"><a href="/climate/leominster/massachusetts/united-states/usma0789" title="Climate Leominster">Leominster</a></td><td class="three_column"><a href="/climate/southbridge/massachusetts/united-states/usma0686" title="Climate Southbridge">Southbridge</a></td><tr><td class="three_column"><a href="/climate/charlton/massachusetts/united-states/usma0638" title="Climate Charlton">Charlton</a></td><td class="three_column"><a href="/climate/lowell/massachusetts/united-states/usma0223" title="Climate Lowell">Lowell</a></td><td class="three_column"><a href="/climate/southwick/massachusetts/united-states/usma0979" title="Climate Southwick">Southwick</a></td><tr><td class="three_column"><a href="/climate/chatham/massachusetts/united-states/usma0079" title="Climate Chatham">Chatham</a></td><td class="three_column"><a href="/climate/marblehead/massachusetts/united-states/usma0233" title="Climate Marblehead">Marblehead</a></td><td class="three_column"><a href="/climate/sturbridge/massachusetts/united-states/usma0706" title="Climate Sturbridge">Sturbridge</a></td><tr><td class="three_column"><a href="/climate/chester/massachusetts/united-states/usma0084" title="Climate Chester">Chester</a></td><td class="three_column"><a href="/climate/maynard/massachusetts/united-states/usma0811" title="Climate Maynard">Maynard</a></td><td class="three_column"><a href="/climate/taunton/massachusetts/united-states/usma0418" title="Climate Taunton">Taunton</a></td><tr><td class="three_column"><a href="/climate/clinton/massachusetts/united-states/usma0089" title="Climate Clinton">Clinton</a></td><td class="three_column"><a href="/climate/middleton/massachusetts/united-states/usma0254" title="Climate Middleton">Middleton</a></td><td class="three_column"><a href="/climate/walpole/massachusetts/united-states/usma0437" title="Climate Walpole">Walpole</a></td><tr><td class="three_column"><a href="/climate/cummington/massachusetts/united-states/usma0096" title="Climate Cummington">Cummington</a></td><td class="three_column"><a href="/climate/milton/massachusetts/united-states/usma0530" title="Climate Milton">Milton</a></td><td class="three_column"><a href="/climate/wareham/massachusetts/united-states/usma0720" title="Climate Wareham">Wareham</a></td><tr><td class="three_column"><a href="/climate/dalton/massachusetts/united-states/usma0887" title="Climate Dalton">Dalton</a></td><td class="three_column"><a href="/climate/monterey/massachusetts/united-states/usma0933" title="Climate Monterey">Monterey</a></td><td class="three_column"><a href="/climate/westfield/massachusetts/united-states/usma0999" title="Climate Westfield">Westfield</a></td><tr><td class="three_column"><a href="/climate/danvers/massachusetts/united-states/usma0726" title="Climate Danvers">Danvers</a></td><td class="three_column"><a href="/climate/nantucket/massachusetts/united-states/usma0271" title="Climate Nantucket">Nantucket</a></td><td class="three_column"><a href="/climate/worcester/massachusetts/united-states/usma0502" title="Climate Worcester">Worcester</a></td><tr><td class="three_column"><a href="/climate/east-wareham/massachusetts/united-states/usma0128" title="Climate East Wareham">East Wareham</a></td><td class="three_column"><a href="/climate/natick/massachusetts/united-states/usma0562" title="Climate Natick">Natick</a></td><td class="three_column"></td><tr><td class="three_column"><a href="/climate/edgartown/massachusetts/united-states/usma0132" title="Climate Edgartown">Edgartown</a></td><td class="three_column"><a href="/climate/new-bedford/massachusetts/united-states/usma0275" title="Climate New Bedford">New Bedford</a></td><td class="three_column"></td></table>                  <div id="google_ad_content_right">
+                      <script type="text/javascript"><!--
+google_ad_client = "ca-pub-9519329606981542";
+/* Buien */
+google_ad_slot = "7324511460";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>                  </div>
+                  <!-- end google_ad_content_right -->     
+              </div>
+              <!-- end right_column --> 
+          </div>
+          <!-- end summary -->  
+	 	</div>
+        <!-- end tabs -->  
+        </div>
+     	<!-- end Site Tabs -->     
+	</div>
+	<!-- end Climate -->
+    <!-- publicity_right -->
+    <div id="publicity_right">
+		<p>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9519329606981542";
+/* Weernetwerk2012Rechts */
+google_ad_slot = "7175471954";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</p>    </div> 
+	</div> 
+	<!-- end wrap --> 
+	<!-- Footer **** -->  
+	<footer>
+		<div class="wrap">
+			<div id="footer-left">
+	<p>© 2016 US Climate Data | version 2.2 | Programming & Design by <!-- <a href="http://www.belsoft.cl" title="web diseño, diseño gráfico, crear pagina web, software para web">Belsoft SpA</a> --> <a href="http://www.yourweatherservice.com" title="Your Weather Service">Your Weather Service</a> | <a href="http://www.climatedata.eu" title="World Climate">World Climate</a> <!-- | <a href="http://www.weernetwerk.nl" title="Weer en klimaat">Weernetwerk</a> --></p>
+</div> 
+<div id="footer-right">
+	<p><a href="/about-us.php" title="About us">About us</a> | <a href="/disclaimer.php" title="Disclaimer">Disclaimer</a> | <a href="/cookies.php" title="Cookies">Cookies</a></p>
+</div>
+    	</div>
+	</footer>
+     <!-- end Footer **** -->
+</div>
+<!-- end Content **** -->
+<script type="text/javascript">
+jQuery(document).ready(function($)
+{	
+	console.log(geop1ugin_cookieConsent());
+	if(geop1ugin_cookieConsent() === true)
+	{
+		loadScript("/javascript/climate-cookie.js",function () { console.log("Cookie bar activated"); });
+	};
+});	
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1483d504f0","applicationID":"18031501","transactionName":"ZV0GMBZTDUBQAURcV1wXMRYNHRBHUBZVG0haSA==","queueTime":0,"applicationTime":28,"atts":"SRoFRl5JHk4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

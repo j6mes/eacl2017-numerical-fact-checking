@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8 ie7" lang="en-US"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9 ie8" lang="en-US"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--
+	generated in 0.693 seconds
+	77872 bytes batcached for 300 seconds
+-->
+<head>
+	
+	<meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQFVFFUDxABUlhWAQQDVA=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+
+	<title>A key analysis of ExxonMobil’s enterprise value - Market Realist</title>
+
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,300,500,700'>
+	<link rel="alternate" type="application/rss+xml" href="http://marketrealist.com/feed/" title="Market Realist latest posts" />
+	<link rel="pingback" href="http://marketrealist.com/xmlrpc.php" />
+
+	
+	<link rel="shortcut icon" type="image/x-icon" href="http://marketrealist.com/wp-content/themes/marketrealist/images/favicon.ico" />
+
+	<script type="text/javascript">
+		var ajaxurl = 'http://marketrealist.com/wp-admin/admin-ajax.php';	</script>
+
+			<script type="text/javascript">
+		var ajaxurl = 'http://marketrealist.com/wp-admin/admin-ajax.php';
+		</script>
+		
+<!-- This site is optimized with the Yoast SEO plugin v2.3.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/" />
+<link rel="publisher" href="https://plus.google.com/118171003027300879018"/>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Market Realist &raquo; Feed" href="http://marketrealist.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Market Realist &raquo; Comments Feed" href="http://marketrealist.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/marketrealist.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='marketrealist-css-font-roboto-css'  href='http://fonts.googleapis.com/css?family=Roboto%3A400%2C700&#038;ver=2016.11.29' type='text/css' media='all' />
+<link rel='stylesheet' id='marketrealist-css-font-droid-css'  href='http://fonts.googleapis.com/css?family=Droid+Serif%3A400%2C700&#038;ver=2016.11.29' type='text/css' media='all' />
+<link rel='stylesheet' id='marketrealist-css-font-noto-css'  href='http://fonts.googleapis.com/css?family=Noto+Sans&#038;ver=2016.11.29' type='text/css' media='all' />
+<link rel='stylesheet' id='marketrealist-css-font-opensans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700&#038;ver=2016.11.29' type='text/css' media='all' />
+<link rel='stylesheet' id='marketrealist-css-css'  href='http://marketrealist.com/wp-content/themes/marketrealist/styles.min.css?ver=2016.11.29-1481195814' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://marketrealist.com/api-v2/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://marketrealist.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://marketrealist.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel='shortlink' href='http://marketrealist.com/?p=209850' />
+<link rel="alternate" type="application/json+oembed" href="http://marketrealist.com/api-v2/oembed/1.0/embed?url=http%3A%2F%2Fmarketrealist.com%2F2015%2F01%2Fkey-analysis-exxonmobils-enterprise-value%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://marketrealist.com/api-v2/oembed/1.0/embed?url=http%3A%2F%2Fmarketrealist.com%2F2015%2F01%2Fkey-analysis-exxonmobils-enterprise-value%2F&#038;format=xml" />
+		<script type='text/javascript'>
+			(function() {
+				var useSSL = 'https:' == document.location.protocol;
+				var src = (useSSL ? 'https:' : 'http:') +
+					'//www.googletagservices.com/tag/js/gpt.js';
+				document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+			})();
+		</script>
+
+		<script type='text/javascript'>
+
+			if ( typeof( mrDfpAdSlots ) == 'undefined' ) {
+				var mrDfpAdSlots = {};
+			}
+
+			// Load GPT
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function(){
+				var gads = document.createElement('script');
+				gads.async = true;
+				var useSSL = 'https:' == document.location.protocol;
+				gads.src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+
+			// Infinite scroll requires SRA
+			googletag.pubads().enableSingleRequest();
+
+			// Disable initial load, we will use refresh() to fetch ads.
+			// Calling this function means that display() calls just
+			// register the slot as ready, but do not fetch ads for it.
+			googletag.pubads().disableInitialLoad();
+
+
+			// Enable services
+			googletag.enableServices();
+
+		</script>
+		<link rel='https://github.com/WP-API/WP-API' href='http://marketrealist.com/wp-json' />
+	<script>
+	  (function loadTypekit(d) {
+		var config = {
+		  kitId: 'fjc0hhe',
+		  scriptTimeout: 3000
+		},
+		h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	  })(document);
+	</script>
+
+<link rel="amphtml" href="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/amp/" />	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<script>
+		var mrScreenCurrentWidth = window.screen.width < window.outerWidth ? window.screen.width : window.outerWidth;
+
+		/**
+		 * There is a bug in IOS 8 where window.outerWidth is set to 0,
+		 * this is documented at https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-8.0/index.html
+		 *
+		 * We work around it by using window.screen.width instead
+		 */
+		if ( mrScreenCurrentWidth === 0 ) {
+			mrScreenCurrentWidth = window.screen.width;
+		}
+
+		if ( mrScreenCurrentWidth && typeof( mrScreenCurrentWidth ) == 'number' && mrScreenCurrentWidth <= 480 ) {
+			document.documentElement.className += " small-width compact";
+		} else {
+			document.documentElement.className += " standard-width";
+		}
+	</script>
+
+	<!-- Cxense script begin -->
+<script>
+  (function (w,d,s) {
+    function gd(o) { var a; return w.localStorage ? w.localStorage[o] || "" : (a = d.cookie.match(o + "=([^;]*)"), a && a[1] || "") }
+    _ml = w._ml || {};
+    _ml.eid = '50100';
+    _ml.fpi = gd('_ccmaid');
+    var a = d.getElementsByTagName(s)[0], cd = new Date(), mltag = d.createElement(s);
+    mltag.type = 'text/javascript'; mltag.async = true;
+    mltag.src = '//ml314.com/tag.aspx?' + cd.getDate() + cd.getMonth() + cd.getFullYear();
+    a.parentNode.insertBefore(mltag, a);
+  })(window, document, 'script'); 
+</script>
+
+<!-- Cxense script begin -->
+<script>
+  var cX = cX || {}; cX.callQueue = cX.callQueue || [];
+  var ids = {
+    'marketrealist.com': '1129401457174309594',
+    'staging.marketrealist.com': '1133921199769333116',
+    'wordpress.local.aws.marketrealist.com': '1136173772612494306',
+	'qa.aws.marketrealist.com' : '1146323732611990952'
+  };
+  cX.callQueue.push(['setSiteId', ids[document.domain]]);
+  if (typeof _ml != 'undefined' && _ml.fpi != '') {
+    cX.callQueue.push(['addExternalId', { 'id': _ml.fpi, 'type': 'mre' }]);
+  }
+    cX.callQueue.push(['sendPageViewEvent']);
+  cX.callQueue.push(['sync','liveramp2']);
+</script>
+<script type="text/javascript">
+	(function(d,s,e,t){e=d.createElement(s);e.type='text/java'+s;e.async='async';
+		e.src='http'+('https:'===location.protocol?'s://s':'://')+'cdn.cxense.com/cx.js';
+		t=d.getElementsByTagName(s)[0];t.parentNode.insertBefore(e,t);})(document,'script');
+</script>
+<!-- Cxense script end -->
+
+
+	<!-- Tickers -->
+	
+					<meta name="cXenseParse:mre-primary-ticker" content="xle"/>
+					<meta name="cXenseParse:mre-secondary-ticker" content="xom"/>
+					<meta name="cXenseParse:mre-secondary-ticker" content="spy"/>
+					<meta name="cXenseParse:mre-secondary-ticker" content="rds-a"/>
+					<meta name="cXenseParse:mre-secondary-ticker" content="cvx"/>
+		
+	
+	<!-- Author -->
+			<meta name="cXenseParse:mre-author" content="Manas Chowgule"/>
+	
+	<!-- Content type -->
+			<meta name="cXenseParse:mre-content-type" content="Company Key Performance Indicators"/>
+	
+	<!-- Value drivers -->
+	
+					<meta name="cXenseParse:mre-value-driver" content="Financial Analysis"/>
+		
+	
+	<!-- Industries -->
+	
+					<meta name="cXenseParse:mre-industry" content="Integrated Oil &amp; Gas"/>
+		
+	
+	<!-- Sectors -->
+	
+					<meta name="cXenseParse:mre-sector" content="Energy and Power"/>
+		
+	
+	<!-- Sections -->
+	
+					<meta name="cXenseParse:mre-section" content="Sector Analysis"/>
+		
+	
+
+	<!-- Post type -->
+	<meta name="cXenseParse:mre-page-type" content="post"/>
+
+	<!-- Moat Analytics script begin --> 
+<script>
+(function(){function t(){for(var a=[8],e=1;2>=e;e++)a.push(8+e),a.push(8-e);a=a[Math.floor(Math.random()*a.length)];return{b:a,a:0==Math.floor(Math.random()*a)}}function k(a){var e=a=a.replace(":","");try{for(var b=0;100>b&&(a=decodeURIComponent(a),e!=a)&&!a.match(/^http(s)?\:/);b++)e=a}catch(c){}return a.replace(/(^\s+|\s+$)/g,"")}try{if(!location||!location.hostname||!location.pathname)return!1;var c=document.location.hostname.replace(/^www\./,""),u=function(){for(var a,b=document.getElementsByTagName("meta"),
+c,d=0,f=b.length;d<f;d++)if(c=b[d],"og:title"===c.getAttribute("property")){a=c.getAttribute("content");break}a||(a=document.title||"Untitled");return a}(),b={},b=function(a,b,c){a.l1=b;a.l2=c;a.l3="__page__";a.l4="-";return a}(b,c,u),l=(new Date).getTime(),m=Math.floor(Math.random()*Math.pow(10,12)),d,f;f=t();f.a?d=f.b:d=0;b.zmoatab_cm=d;b.t=l;b.de=m;b.zMoatAB_SNPT=!0;var g;d?g=d:g=1;var n;n=f?f.a?!0:!1:!0;var c=[],p=[k(b.l1),k(b.l2),k(b.l3),k(b.l4)].join(":"),v="https://gc56joigku8f-a.akamaihd.net/z.gif?e=17&d="+
+encodeURIComponent(p)+"&de="+m+"&t="+l+"&i=MARKETREALISTCONTENT1&cm="+g+"&mp=1&ac=1&pl=1&bq=10&vc=2&cs=0",w="https://px.moatads.com/pixel.gif?e=17&d="+encodeURIComponent(p)+"&de="+m+"&t="+l+"&i=MARKETREALISTCONTENT1&cm="+g+"&mp=0&ac=1&pl=1&bq=10&ad_type=img&vc=2&cs=0",x="https://px.moatads.com/pixel.gif?e=17&d="+encodeURIComponent(p)+"&de="+m+"&t="+l+"&i=MARKETREALISTCONTENT1&cm="+g+"&ku=1&ac=1&pl=1&bq=10&ad_type=img&vc=2&cs=0";n&&((new Image).src=v,(new Image).src=w);for(var q in b)c.push(q+"="+
+encodeURIComponent(b[q]));var c=c.join("&"),c=c+"&vc=2",h=document.createElement("script");h.type="text/javascript";h.async=!0;n&&(h.onerror=function(){(new Image).src=x});var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(h,r);h.src="https://z.moatads.com/marketrealist748993030/moatcontent.js#"+c}catch(a){try{var y="//pixel.moatads.com/pixel.gif?e=24&d=data%3Adata%3Adata%3Adata&i=MOATCONTENTABSNIPPET1&vc=2&ac=1&k="+encodeURIComponent(a)+"&j="+encodeURIComponent(document.referrer)+
+"&cs="+(new Date).getTime();(new Image).src=y}catch(e){}}})();
+</script>
+<!-- Moat Analytics script end -->
+</head>
+
+<body class="single single-post postid-209850 single-format-standard single-multipart-post single-multipart-post-6 compact single-multipart-post-subsequent-part">
+	
+<div class="welcome-overlay" >
+	<div class="welcome-ad">		<div data-id="overlay-welcome" data-unit-name="/11060405/overlay-welcome" data-width="640" data-height="480" class="mr-dfp-ad mr-dfp-ad-overlay-welcome" style=" width: 640px; height: 480px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+			<div class="close-overlay">X</div>
+	</div>
+</div>
+		<div id="overlay" class="overlay"></div>
+	<section id="popups">
+    <div id="popup" class="popup" style="display:none">
+        <h2>Welcome to Market Realist</h2>
+        <h3>Thank you for registering.</h3>
+    </div>
+
+    <input type="hidden" data-user-status value=''/>
+</section>
+	
+	
+	<script type="text/javascript">
+
+	/* Class manager for handling a survey */
+	var MRSurveyManager = function (args) {
+
+		var self = this;
+
+		self.args = args;
+		self._submissionData = null;
+		self._isViewed = null;
+
+		self.isDisplayPending = false;
+
+		//Init the survey after document has loaded - Check display requirements and display if possible
+		self.init = function () {
+
+			if (jQuery('html').hasClass('small-width')) {
+				return;
+			}
+
+			if (self.isViewed() || self.isCompleted()) {
+				return;
+			}
+
+			self.pushView();
+
+			//Handle collapse+expand of the modal
+			jQuery(self.args.targetElement).find('.mr-form-dismiss').click(function () {
+
+				self.toggleCollapseModal();
+			});
+
+			// Handle survey progression and submission
+			jQuery(self.args.targetElement).find('form').find('input').click(function () {
+
+				var input = jQuery(this);
+				var group = ( jQuery(this).attr('data-group') ) ? '.group-' + jQuery(this).attr('data-group') : '';
+
+				if (input.closest('.mr-form-question').siblings('.mr-form-question' + group).get(0)) {
+
+					input.closest('.mr-form-question').hide().siblings('.mr-form-question' + group).show();
+
+				} else {
+
+					self.submit();
+				}
+
+			});
+		};
+
+		self.pushView = function () {
+
+			if (self.isViewed() || self.isCompleted()) {
+				return;
+			}
+
+			if (self.getViews() >= self.args.displayRules.pageViews && !self.isDisplayPending) {
+
+				self.isDisplayPending = true;
+
+				setTimeout(function () {
+					self.displayModal();
+					self.resetViews();
+					self.setIsViewed(true);
+				}, ( self.args.displayRules.timeOnPage * 1000 ));
+
+			} else {
+				self.incrementViews();
+			}
+		}
+
+		self.toggleCollapseModal = function () {
+
+			jQuery(self.args.targetElement).find('.mr-form-min').toggle();
+			jQuery(self.args.targetElement).find('.mr-form-max').toggle();
+			jQuery(self.args.targetElement).find('form').toggle();
+
+		};
+
+		self.submit = function () {
+
+			var data = self.getFormData();
+
+			self.setSubmissionData(data);
+
+			data['survey-name'] = self.args.name;
+
+			MR_User_Tracking.trackEvent('Survey Submitted', data);
+
+			jQuery(self.args.targetElement).find('form').hide();
+			jQuery(self.args.targetElement).find('.mr-form-complete').show();
+
+			setTimeout(function () {
+
+				jQuery(self.args.targetElement).hide();
+
+			}, 1500);
+		};
+
+		self.displayModal = function () {
+
+			jQuery(self.args.targetElement).show();
+		};
+
+		self.hideModal = function () {
+
+			jQuery(self.args.targetElement).hide();
+		};
+
+		self.getViews = function () {
+
+			return self.getCookie(self.args.cookieName + '_view_count');
+		};
+
+		self.setViews = function (value) {
+
+			self.setCookie(self.args.cookieName + '_view_count', value, 999);
+		};
+
+		self.resetViews = function () {
+
+			self.setViews(0);
+		};
+
+		self.incrementViews = function () {
+
+			var count = self.getViews();
+
+			if (!count)
+				count = 0;
+
+			self.setViews(++count);
+		};
+
+		self.isViewed = function () {
+
+			if (self._isViewed !== null) {
+				return self._isViewed;
+			}
+
+			return self.getCookie(self.args.cookieName + '_is_viewed');
+		};
+
+		self.setIsViewed = function (bool) {
+
+			self._isViewed = bool;
+
+			self.setCookie(self.args.cookieName + '_is_viewed', bool, 14);
+			self.resetViews();
+		};
+
+		self.isCompleted = function () {
+
+			return ( self.getSubmissionData() );
+		};
+
+		self.setSubmissionData = function (completedValue) {
+
+			self.resetViews();
+			self.setCookie(self.args.cookieName + '_is_completed', completedValue, 999);
+			self._submissionData = null;
+		};
+
+		self.getSubmissionData = function () {
+
+			if (self._submissionData !== null) {
+				return self._submissionData;
+			}
+
+			return self._submissionData = self.getCookie(self.args.cookieName + '_is_completed');
+		};
+
+		self.getCookie = function (cookieName) {
+
+			if (document.cookie.length > 0) {
+				c_start = document.cookie.indexOf(cookieName + "=");
+
+				if (c_start != -1) {
+					c_start = c_start + cookieName.length + 1;
+					c_end = document.cookie.indexOf(";", c_start);
+
+					if (c_end == -1) {
+						c_end = document.cookie.length;
+					}
+
+					return JSON.parse(unescape(document.cookie.substring(c_start, c_end)));
+				}
+			}
+			return "";
+		};
+
+		self.setCookie = function (cookieName, cookieValue, cookieDays) {
+
+			cookieValue = JSON.stringify(cookieValue);
+
+			if (cookieDays) {
+				var date = new Date();
+				date.setTime(date.getTime() + ( cookieDays * 24 * 60 * 60 * 1000 ));
+				var expires = "; expires=" + date.toGMTString();
+			} else {
+				var expires = "";
+			}
+
+			document.cookie = cookieName + "=" + cookieValue + expires + "; path=/";
+
+		};
+
+		self.getFormData = function () {
+
+			var paramObj = {};
+
+			jQuery.each(jQuery(self.args.targetElement).find('form').serializeArray(), function (_, kv) {
+				if (paramObj.hasOwnProperty(kv.name)) {
+					paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
+					paramObj[kv.name].push(kv.value);
+				}
+				else {
+					paramObj[kv.name] = kv.value;
+				}
+			});
+
+			return paramObj;
+		}
+	};
+
+	//Don't bother loading the surveys if JSON is not available
+	if (typeof( JSON ) !== 'undefined' && typeof( JSON.stringify ) !== 'undefined') {
+
+		//Surveys data goes here
+		var MRSurveysData = [
+			{
+				name: 'investor-type-survey',
+				targetElement: '.investor-type-survey',
+				cookieName: 'investor_type_survey',
+				displayRules: {pageViews: 3, timeOnPage: 10}
+			}
+		];
+
+		//Manage all surveys with instances of MRSurveyManager classes
+		var MRSurveys = new function () {
+
+			var self = this;
+			self.surveys = [];
+
+			self.getByName = function (name) {
+
+				var survey = false;
+
+				var index;
+
+				for (index = 0; index < self.surveys.length; ++index) {
+
+					if (name === self.surveys[index].args.name) {
+						survey = self.surveys[index];
+					}
+				}
+
+				return survey;
+			}
+		};
+
+		var MRSurveysIndex;
+
+		for (MRSurveysIndex = 0; MRSurveysIndex < MRSurveysData.length; ++MRSurveysIndex) {
+
+			var survey = new MRSurveyManager(MRSurveysData[MRSurveysIndex]);
+
+			MRSurveys.surveys.push(survey);
+		}
+	}
+
+</script>
+	
+
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	_gaq.push(['_setAccount', 'UA-32347913-1']);
+	_gaq.push(['_setDomainName', 'marketrealist.com']);
+
+	  		_gaq.push(['_setCustomVar', 1, 'Industry', 'Integrated Oil &amp; Gas', 3 ] );
+  	
+			_gaq.push(['_setCustomVar', 2, 'Analyst', 'Magnus Tchekhov', 3 ] );
+	
+			_gaq.push(['_setCustomVar', 3, 'Series', 'Analyzing ExxonMobil’s financial foundations during these trying times', 3 ] );
+	
+			_gaq.push(['_setCustomVar', 4, 'Terms', ' 17960 303 49 17800 13726 4355 38 317 750 297 ', 3 ] );
+	
+	if ( typeof( MRSurveys ) !== 'undefined' ) {
+
+		//If user has submitted investor type survey, push that data as custom variable
+		var MRInvestorTypeSurvey = MRSurveys.getByName( 'investor-type-survey' );
+
+		if ( MRInvestorTypeSurvey && typeof( MRInvestorTypeSurvey.getSubmissionData()['investor-type'] ) !== 'undefined'  ) {
+
+			_gaq.push( [ '_setCustomVar', 5, 'Investor Type', MRInvestorTypeSurvey.getSubmissionData()['investor-type'], 1 ] );
+		}
+
+	}
+
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-75714942-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+	<div id="wrap">
+
+		
+<div class="header-mobile">
+	<form autocomplete="off" action="/search/">
+		<div class="header-left">
+			<button class="mobile-nav-entry" type="button">
+				<i class="icon-justify"></i>
+			</button>
+			<button class="mobile-search-dismiss" type="button">
+				<i class="icon-dismiss"></i>
+			</button>
+			<button class="mobile-modal-dismiss" type="button">
+				<i class="icon-dismiss"></i>
+			</button>
+			<a href="http://marketrealist.com" class="compact-home-button"><</a>
+		</div>
+		<div class="header-center">
+			<a class="logo" href="http://marketrealist.com/"></a>
+			<input class="mobile-search not-logged"
+			       autocomplete="off" name="search_term" type="text" placeholder="Search..."   style="display:none"/>
+		</div>
+		<div class="header-right">
+			<button class="mobile-search-entry" type="button">
+				<i class="icon-search"></i>
+			</button>
+			<button class="mobile-search-submit" type="submit">
+				<i class="icon-search"></i>
+			</button>
+		</div>
+	</form>
+
+	<!--nav dropdown start-->
+	<ul class="compact-drop" style="display:none;">
+		<li class="compact-li fourcol">
+			<span class="compact-heading">
+									<a id="link_main_nav_etfs" href="http://marketrealist.com/analysis/etf-analysis/">
+						Global ETF Analysis					</a>
+							</span>
+
+			
+				
+					<a tabindex="-1" class="" id="link_main_nav_etfs_item_1" href="http://marketrealist.com/analysis/etf-analysis/international-equities/">Global Equity ETFs</a>
+
+											<span class="comma">, </span>
+					
+				
+					<a tabindex="-1" class="" id="link_main_nav_etfs_item_2" href="http://marketrealist.com/analysis/etf-analysis/exchange-traded-fund/">Exchanged Traded Funds</a>
+
+											<span class="comma">, </span>
+					
+				
+					<a tabindex="-1" class="" id="link_main_nav_etfs_item_3" href="http://marketrealist.com/analysis/etf-analysis/european-equity-etfs/">European Equity ETFs</a>
+
+											<span class="comma">, </span>
+					
+				
+					<a tabindex="-1" class="" id="link_main_nav_etfs_item_4" href="http://marketrealist.com/analysis/etf-analysis/em-markets/">Emerging Markets</a>
+
+											<span class="comma">, </span>
+					
+				
+					<a tabindex="-1" class="last-child" id="link_main_nav_etfs_item_5" href="http://marketrealist.com/analysis/etf-analysis/country-etfs/">Country ETFs</a>
+
+					
+				
+			
+		</li>
+
+					<li class="compact-li fourcol"><span class="compact-heading"><a id="link_main_nav_income" href="http://marketrealist.com/analysis/income-analysis/">Income ETF Analysis</a></span>
+
+				
+					
+						<a tabindex="-1" class="" id="link_main_nav_income_item_1" href="http://marketrealist.com/analysis/income-analysis/reits/">Real Estate Investment Trusts</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_income_item_2" href="http://marketrealist.com/analysis/income-analysis/master-limited-partnerships/">Master Limited Partnerships</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="last-child" id="link_main_nav_income_item_3" href="http://marketrealist.com/analysis/income-analysis/fixed-income/">Fixed Income ETFs</a>
+
+						
+					
+				
+			</li>
+		
+					<li class="compact-li fourcol">
+				<span class="compact-heading">
+					<a id="link_main_nav_stocks" href="http://marketrealist.com/analysis/stock-analysis/">
+						Sector Analysis					</a>
+				</span>
+
+				
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_1" href="http://marketrealist.com/analysis/stock-analysis/materials/">Basic Materials</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_2" href="http://marketrealist.com/analysis/stock-analysis/consumer/">Consumer Discretionary</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_3" href="http://marketrealist.com/analysis/stock-analysis/consumer_staples/">Consumer Staples</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_4" href="http://marketrealist.com/analysis/stock-analysis/energy-power/">Energy and Power</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_5" href="http://marketrealist.com/analysis/stock-analysis/financials/">Financials</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_6" href="http://marketrealist.com/analysis/stock-analysis/healthcare/">Healthcare</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_7" href="http://marketrealist.com/analysis/stock-analysis/industrials/">Industrials</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_8" href="http://marketrealist.com/analysis/stock-analysis/real-estate/">Real Estate</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="" id="link_main_nav_stocks_item_9" href="http://marketrealist.com/analysis/stock-analysis/technology/">Tech, Media, and Telecom</a>
+
+													<span class="comma">, </span>
+						
+					
+						<a tabindex="-1" class="last-child" id="link_main_nav_stocks_item_10" href="http://marketrealist.com/analysis/stock-analysis/utilities-sector/">Utilities</a>
+
+						
+					
+				
+			</li>
+		
+		<li class="compact-li fourcol"><span class="compact-heading"><a href="/analysis/active-management/">Active Management</a></span>
+			<a tabindex="-1" class="" id="link_main_nav_about_item_1" href="/analysis/active-management/mutual-funds-active-management/">Mutual Funds</a>
+			<span class="comma">, </span>
+			<a tabindex="-1" class="" id="link_main_nav_about_item_1" href="/analysis/active-management/hedge-funds-institutional-ownership/">Hedge Funds</a>
+			<span class="comma">, </span>
+			<a tabindex="-1" class="" id="link_main_nav_about_item_1" href="/analysis/active-management/closed-end-funds-financials/">Closed-end Funds</a>
+		</li>
+
+		
+		
+			<li class="compact-li fourcol"><span class="compact-heading"><a href="http://marketrealist.com/about/">About</a></span>
+
+				
+					
+						<a tabindex="-1" class="" id="link_main_nav_about_item_1" href="http://marketrealist.com/about/about-us/">About Us</a>
+
+						
+						
+					
+				
+			</li>
+
+		
+	</ul>
+	<!--nav dropdown end-->
+</div>
+
+<script>
+
+	(function() {
+		var cx = '017743911808385136334:zg9bdosd9pg';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		gcse.async = true;
+		gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(gcse, s);
+	})();
+
+</script>
+
+<header class="site-header">
+
+	<div id="print-header">
+		<img src="http://marketrealist.com/wp-content/themes/marketrealist/images/logo-bw.png?w=500&h=310&fit=max&auto=format" />
+	</div>
+
+	<div id="header">
+		<div class="header-wrapper fix_fixed_position_offset_x">
+			<nav class="nav-bar">
+				<div class="nav-brand">
+					<div class="logo"><a class="link-logo" href="http://marketrealist.com"><img src="http://marketrealist.com/wp-content/themes/marketrealist/images/mr_logo_white.svg" width="295" height="30"></a></div>
+				</div>
+				<div id="search" class="nav-search">
+					<form autocomplete="off" action="/search/">
+						<div class="nav-search-input">
+							<input id="search_term" class="not-logged" autocomplete="off" name="search_term" type="text" placeholder="Search Ticker or Keyword here" />
+						</div>
+						<div class="nav-hints">
+							<button type="submit" class="search">search</button>
+						</div>
+					</form>
+				</div>
+				<div class="nav-buttons ">
+					<ul class="menuitems">
+						<li><a id="header_action_home" href="http://marketrealist.com">Home</a></li>
+						<li class="dropdown jumbo">
+							<a href="#" id="header_action_research" class="dropdown-toggle">Research<span class="caret"></span></a>
+							<div class="dropdown-menu large">
+								<div class="colum padd">
+									<h2 class="title">Research Coverage</h2>
+									<div class="colum flex">
+																					<ul class="links ">
+
+												
+													
+														
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/etf-analysis/" 
+																id="header_research_coverage_585134964af8c">
+																Global ETF Analysis															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/income-analysis/fixed-income/" 
+																id="header_research_coverage_585134964b076">
+																Fixed Income ETFs															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/etf-analysis/international-equities/" 
+																id="header_research_coverage_585134964b15a">
+																Global Equity ETFs															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/us-equity-etfs/us-equities/" 
+																id="header_research_coverage_585134964b23c">
+																US Equity ETFs															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/us-equity-etfs/" 
+																id="header_research_coverage_585134964b31e">
+																US Index ETFs															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/income-analysis/" 
+																id="header_research_coverage_585134964b3ff">
+																Income ETF Analysis															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/income-analysis/master-limited-partnerships/" 
+																id="header_research_coverage_585134964b4e2">
+																Master Limited Partnerships															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/income-analysis/reits/" 
+																id="header_research_coverage_585134964b5c3">
+																Real Estate Investment Trusts															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/commodity_etf_analysis/commodity-etfs/" 
+																id="header_research_coverage_585134964b6a6">
+																Commodity ETFs															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/stock-analysis/" 
+																id="header_research_coverage_585134964b772">
+																Sector Analysis															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/materials/" 
+																id="header_research_coverage_585134964b853">
+																Basic Materials															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/consumer/" 
+																id="header_research_coverage_585134964b935">
+																Consumer Discretionary															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/consumer_staples/" 
+																id="header_research_coverage_585134964ba21">
+																Consumer Staples															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/industrials/diversified/earnings-overview-diversified/" 
+																id="header_research_coverage_585134964bb36">
+																Earnings Overview															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/energy-power/" 
+																id="header_research_coverage_585134964bc19">
+																Energy and Power															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/financials/" 
+																id="header_research_coverage_585134964bcd9">
+																Financials															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/healthcare/" 
+																id="header_research_coverage_585134964bdba">
+																Healthcare															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/industrials/" 
+																id="header_research_coverage_585134964be9b">
+																Industrials															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/real-estate/" 
+																id="header_research_coverage_585134964bf7c">
+																Real Estate															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/stock-analysis/technology/" 
+																id="header_research_coverage_585134964c05c">
+																Tech, Media, and Telecom															</a>
+														</li>
+
+													
+																							</ul>
+																					<ul class="links next-row">
+
+												
+													
+														
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/analysis/active-management/" 
+																id="header_research_coverage_585134964c13f">
+																Active Management															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/active-management/closed-end-funds-financials/" 
+																id="header_research_coverage_585134964c223">
+																Closed-End Funds															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/active-management/hedge-funds-institutional-ownership/" 
+																id="header_research_coverage_585134964c305">
+																Hedge Funds															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/active-management/mutual-funds-active-management/" 
+																id="header_research_coverage_585134964c3e8">
+																Mutual Funds															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/analysis/active-management/personal-finance/" 
+																id="header_research_coverage_585134964c4c9">
+																Personal Finance															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="#" 
+																id="header_research_coverage_585134964c5a2">
+																Featured Themes															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/generic-pharmaceuticals-top-picks/" 
+																id="header_research_coverage_585134964c683">
+																Generic Pharma															</a>
+														</li>
+
+													
+																							</ul>
+										
+									</div>
+								</div>
+								<div class="colum padd">
+									<h2 class="title">Research Type</h2>
+									<div class="colum flex">
+																					<ul class="links ">
+
+												
+													
+														
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/experts/"
+																id="header_research_type_585134964c76a">
+																Expert Insights															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/earnings-reports/"
+																id="header_research_type_585134964c84f">
+																Earnings Highlights															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/post-release-earnings-reports/"
+																id="header_research_type_585134964c932">
+																Post-Release Earnings Reports															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/pre-release-earnings-reports/"
+																id="header_research_type_585134964c9da">
+																Pre-Release Earnings Reports															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/event-driven/"
+																id="header_research_type_585134964cacf">
+																Event-Driven															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/company-management/"
+																id="header_research_type_585134964cbb4">
+																Company Management															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/debt-and-equity-issuance/"
+																id="header_research_type_585134964cc99">
+																Debt and Equity Issuance															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/dividend-announcements/"
+																id="header_research_type_585134964cd81">
+																Dividend Announcements															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/geopolitical-issues/"
+																id="header_research_type_585134964ce65">
+																Geopolitical Issues															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/legal-and-regulatory-issues/"
+																id="header_research_type_585134964cf4a">
+																Legal and Regulatory Issues															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/ma-event-driven/"
+																id="header_research_type_585134964d02f">
+																Mergers &amp; Acquisitions (M&amp;A)															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/product-strategy/"
+																id="header_research_type_585134964d14b">
+																Product Strategies															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/institutional-investor-activity/"
+																id="header_research_type_585134964d233">
+																Institutional Investor Activity															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/activist-investors/"
+																id="header_research_type_585134964d318">
+																Activist Investors															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/fund-flows/"
+																id="header_research_type_585134964d3ff">
+																Fund Flows															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/insider-trading/"
+																id="header_research_type_585134964d4e3">
+																Insider Trading															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/institutional-investor-holdings/"
+																id="header_research_type_585134964d5c8">
+																Institutional Investor Holdings															</a>
+														</li>
+
+													
+												
+											</ul>
+																					<ul class="links next-row">
+
+												
+													
+														
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/investment-style/"
+																id="header_research_type_585134964d6af">
+																Investment Styles															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/growth-investing/"
+																id="header_research_type_585134964d794">
+																Growth Investing															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/opportunistic-investing/"
+																id="header_research_type_585134964d878">
+																Opportunistic Investing															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/value-investing/"
+																id="header_research_type_585134964d960">
+																Value Investing															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/investor-education/"
+																id="header_research_type_585134964da46">
+																Investor Education															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/asset-allocation/"
+																id="header_research_type_585134964db2a">
+																Asset Allocation															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/asset-classes/"
+																id="header_research_type_585134964dc0d">
+																Asset Classes															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/investor-biases/"
+																id="header_research_type_585134964dcf1">
+																Investor Biases															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/products-investment-vehicle/"
+																id="header_research_type_585134964ddd5">
+																Products (Investment Vehicles)															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/market-indicators/"
+																id="header_research_type_585134964debf">
+																Market Indicators															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/company-key-performance-indicators/"
+																id="header_research_type_585134964dfa4">
+																Company Key Performance Indicators															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/industry-indicators-market-indicators/"
+																id="header_research_type_585134964e089">
+																Industry Indicators															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/macroeconomic-indicators/"
+																id="header_research_type_585134964e16d">
+																Macroeconomic Indicators															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/overviews/"
+																id="header_research_type_585134964e253">
+																Overviews															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/company-description/"
+																id="header_research_type_585134964e336">
+																Company Overviews															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/country-overview/"
+																id="header_research_type_585134964e41d">
+																Country Overview															</a>
+														</li>
+
+													
+														
+														
+														<li class="">
+															<a href="http://marketrealist.com/content-type/industry-overview/"
+																id="header_research_type_585134964e502">
+																Industry Overview															</a>
+														</li>
+
+													
+												
+													
+														
+																													<li class="spacer"></li>
+														
+														<li class="menu-title">
+															<a href="http://marketrealist.com/content-type/personal-finance/"
+																id="header_research_type_585134964e5e8">
+																Personal Finance															</a>
+														</li>
+
+													
+												
+											</ul>
+																			</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle">Tools<span class="caret"></span></a>
+							<div class="dropdown-menu">
+								<div class="colum padd small-margin">
+									<ul class="links">
+										<li>
+											<a id="header_tool_portfolio_manager" href="http://marketrealist.com/portfolio/">
+												<i class="menuitem-icon icon-portfolio"></i>
+												Portfolio Manager
+											</a>
+										</li>
+										<li>
+																						<a id="header_tool_email_alerts" href="http://marketrealist.com/login/?redirect_to=http://marketrealist.com/profile/subscriptions/">
+												<i class="menuitem-icon icon-mail"></i>
+												Email alerts
+											</a>
+										</li>
+																													</ul>
+								</div>
+							</div>
+						</li>
+						<li class="menuitem">
+							<a id="header_action_about" href="http://marketrealist.com/about/about-us/">About</a>
+						</li>
+													<li class="menuitem">
+								<a id="header_action_login" href="http://marketrealist.com/login/">Login</a>
+							</li>
+							<li class="menuitem">
+								<a class="sign-up" id="header_action_signin" href="http://marketrealist.com/sign-up/">Sign Up</a>
+							</li>
+											</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
+
+		
+		<div id="content" class="wrapper">
+
+		
+</div>
+
+<!-- Header - Multipart -->
+
+<div class="fixed-header-wrap">
+	<header class="fixed-header fix_fixed_position_offset_x" style="behavior: url( 'http://marketrealist.com/wp-content/themes/marketrealist/simplepie/PIE.htc' )">
+		<div class="wrapper">
+			
+
+<div class="fixed-title">
+
+	<h3>Analyzing ExxonMobil’s financial foundations during these trying times</h3>
+	
+</div>
+
+<div class="article-toc">
+
+	<div class="toc-parts">
+		<div class="part-text">
+		PART:
+		</div>
+		
+			<a id="links_tabs_research_1" href="http://marketrealist.com/2015/01/essential-analysis-exxonmobils-balance-sheet/" class=" article-tab-part part-1" data-post-id="209843">1</a>
+
+		
+			<a id="links_tabs_research_2" href="http://marketrealist.com/2015/01/must-know-exxonmobils-working-capital-management/" class=" article-tab-part part-2" data-post-id="209844">2</a>
+
+		
+			<a id="links_tabs_research_3" href="http://marketrealist.com/2015/01/operating-cash-flows-bulwark-exxonmobils-solid-fundamentals/" class=" article-tab-part part-3" data-post-id="209846">3</a>
+
+		
+			<a id="links_tabs_research_4" href="http://marketrealist.com/2015/01/exxonmobils-rising-cash-flow-investing-activities-not-necessarily-good-sign/" class=" article-tab-part part-4" data-post-id="209848">4</a>
+
+		
+			<a id="links_tabs_research_5" href="http://marketrealist.com/2015/01/analyzing-exxonmobils-stellar-shareholder-returns-via-cash-flow-financing-activities/" class=" article-tab-part part-5" data-post-id="209849">5</a>
+
+		
+			<a id="links_tabs_research_6" href="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/" class="active article-tab-part part-6" data-post-id="209850">6</a>
+
+		
+			<a id="links_tabs_research_7" href="http://marketrealist.com/2015/01/vital-evaluation-exxonmobils-equity-ratios/" class=" article-tab-part part-7" data-post-id="209851">7</a>
+
+		
+			<a id="links_tabs_research_8" href="http://marketrealist.com/2015/01/exxonmobils-debt-levels-make-right-horse-ride-energy-rout/" class=" article-tab-part part-8" data-post-id="209852">8</a>
+
+		
+			<a id="links_tabs_research_9" href="http://marketrealist.com/2015/01/snapshot-exxonmobils-returns-quality/" class=" article-tab-part part-9" data-post-id="209853">9</a>
+
+		
+			<a id="links_tabs_research_10" href="http://marketrealist.com/2015/01/exxonmobils-compare-peers-broad-market/" class=" article-tab-part part-10" data-post-id="209942">10</a>
+
+		
+	</div>
+
+</div>		</div>
+	</header>
+</div>
+
+<div class="wrapper">
+
+	<div class="multipartseries-wrapper" data-id="17960" data-next-id="17967" data-boost="false" >
+		
+<div class="multipart-article-wrap article-209850" data-post-id="209850" data-multipart-item="6" data-post-url="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/">
+
+	
+		<div class="multipart-article-wrap-header"><span>Part 6</span></div>
+
+	
+	<div class="multipart-sidebar-left">
+	<div class="mr-left-rail-large">
+<div class="sidebar-left-top sidebar-item">
+			<div data-id="sidebar-left-top" data-unit-name="/11060405/sidebar_left_top" data-width="160" data-height="600" class="mr-dfp-ad mr-dfp-ad-sidebar-left-top" style=" width: 160px; height: 600px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div></div>
+	<div class="mr-left-rail-small" >
+<div class="sidebar-item">
+	<div class="left-rail-ad-small"></div>
+	<div class="left-rail-ad-small"></div>
+	<div class="left-rail-ad-small"></div>
+</div></div>
+</div>
+
+	<div class="a-b-col tab-contents" id="tab-research">
+
+		
+<div class="article" data-post-id="209850" data-multipart-item="6" data-post-url="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/">
+
+	<div class="series-title-mobile">
+		Analyzing ExxonMobil’s financial foundations during these trying times <span class="part">PART 6 OF 10</span>
+	</div>
+
+	<h1 class="multipart-article-title" style="position:relative">
+		<span class="title-span">A key analysis of ExxonMobil’s enterprise value</span>
+	</h1>
+
+	<div class="byline">
+
+		
+			<span class="author">By Magnus Tchekhov  
+
+					</span>
+
+			<span class="authored_date">
+
+				<span class="authored_date_separator">
+					&nbsp;&#124;
+				</span>
+
+				Jan 16, 2015				4:02 pm EST            </span>
+
+			<span class="meta-button-wrap multipart-meta">
+
+				<a class="meta-button meta-facebook" data-url="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/" data-title="A key analysis of ExxonMobil’s enterprise value" title="Share via Facebook" id="link_header_facebook" href="http://www.facebook.com/share.php?u=http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/"><span aria-hidden="true" class="icon-facebook"></span></a>
+				
+				<a class="meta-button meta-twitter" data-url="http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/" data-title="A key analysis of ExxonMobil’s enterprise value" title="Share via Twitter" id="link_header_twitter" href="http://twitter.com/home?status=A key analysis of ExxonMobil’s enterprise value &raquo; Market Realist http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/"><span aria-hidden="true" class="icon-twitter"></span></a>
+				
+				<a class="meta-button meta-linkedin" title="Share via LinkedIn" id="link_header_linkedin" onclick="share=window.open('https://www.linkedin.com/cws/share?url=http://marketrealist.com/2015/01/key-analysis-exxonmobils-enterprise-value/&token=&isFramed=true&lang=en_US','shareWindow','height=440,width=500'); return false;" href=""><span aria-hidden="true" class="icon-linkedin"></span></a>
+				
+				<a class="meta-button meta-email" title="Share via email" id="link_header_email" href="mailto:?subject=A%20key%20analysis%20of%20ExxonMobil%E2%80%99s%20enterprise%20value%20-%20Market%20Realist&body=Subjective%20metrics%20So%20far%2C%20we%E2%80%99ve%20discussed%20ExxonMobil%E2%80%99s%20%28XOM%29%20financial%20statements%20objectively.%20Now%2C%20let%E2%80%99s%20start%20looking%20at%20its%20metrics%20subjectively.%20First%20up%2C%20let%E2%80%99s%20take%20a%20look%20at%20its%20enterprise%20value%20%28or...%0D%0A%0D%0Ahttp%3A%2F%2Fmarketrealist.com%2F2015%2F01%2Fkey-analysis-exxonmobils-enterprise-value%2F">
+					<span aria-hidden="true" class="icon-email"></span>
+				</a>
+				<a class="meta-button meta-print" title="Print" id="link_header_print" href="javascript:window.print();"><span aria-hidden="true" class="icon-print"></span></a>
+
+			</span>
+
+	</div>
+	
+	<h2>Subjective metrics</h2>
+<p>So far, we’ve discussed ExxonMobil’s (<a href="/quote-page/xom/" id="link_content_ticker_item_1">XOM</a>) financial statements objectively. Now, let’s start looking at its metrics subjectively.</p>
+<p>First up, let’s take a look at its enterprise value (or EV), the “complete” value of the company, including the market value of its equity (market capitalization) and its net debt (debt less cash). Think of a company’s EV as the minimum amount that you would be on the hook for if you decided to take over the entire company.</p>
+<div class="image-anchor" id="209861"></div><p><img class="alignnone size-medium wp-image-209861" src="https://marketrealist.imgix.net/uploads/2015/01/P6-EV.png?w=660&amp;fit=max&amp;auto=format" alt="A key analysis of ExxonMobil’s enterprise value" width="660" height="467" data-img-id="209861" title="A key analysis of ExxonMobil’s enterprise value"></p><div class="ad-after-chart-large">
+	</div>
+<div class="ad-after-chart-small">
+					<div data-id="after-chart-small-1" data-unit-name="/11060405/after-chart-small-1" data-width="120" data-height="60" class="mr-dfp-ad mr-dfp-ad-after-chart-small-1" style=" width: 120px; height: 60px;" data-tracking='{"sector":["energy-power"],"industry":["integrated-oil-gas"],"val_driver":["financial-analysis-emerging-markets-integrated-oil-gas"],"cont_types":["company-key-performance-indicators"],"tickers":["XLE","XOM","SPY","RDS.A","CVX"],"series":17960,"series_pos":6,"author":"Manas","arch_type":false,"is_archive":false,"post_id":209850,"post_type":"post","is_home":false,"campaign":""}'>
+		</div>
+										<div data-id="after-chart-small-3" data-unit-name="/11060405/after-chart-small-3" data-width="120" data-height="60" class="mr-dfp-ad mr-dfp-ad-after-chart-small-3" style=" width: 120px; height: 60px;" data-tracking='{"sector":["energy-power"],"industry":["integrated-oil-gas"],"val_driver":["financial-analysis-emerging-markets-integrated-oil-gas"],"cont_types":["company-key-performance-indicators"],"tickers":["XLE","XOM","SPY","RDS.A","CVX"],"series":17960,"series_pos":6,"author":"Manas","arch_type":false,"is_archive":false,"post_id":209850,"post_type":"post","is_home":false,"campaign":""}'>
+		</div>
+						</div>
+
+<h2><strong>ExxonMobil’s enterprise value</strong></h2>
+<p>XOM’s EV is down by ~16% since 2007—the biggest contribution for which has come from a ~20% smaller market capitalization today. But this doesn’t mean the company has eroded value.</p><div class="ad-in-article-wrap">
+		<div data-id="in-article" data-unit-name="/11060405/in_article" data-width="300" data-height="250" class="mr-dfp-ad mr-dfp-ad-in-article" style=" width: 300px; height: 250px;" data-tracking='{"sector":["energy-power"],"industry":["integrated-oil-gas"],"val_driver":["financial-analysis-emerging-markets-integrated-oil-gas"],"cont_types":["company-key-performance-indicators"],"tickers":["XLE","XOM","SPY","RDS.A","CVX"],"series":17960,"series_pos":6,"author":"Manas","arch_type":false,"is_archive":false,"post_id":209850,"post_type":"post","is_home":false,"campaign":""}'>
+		</div>
+		</div>
+<p>On the contrary, the company has spent almost a quarter of a trillion dollars rewarding shareholders via dividends and buybacks over the last seven years. About 1.3 billion fewer XOM shares trade today compared to the 2007 level.</p>
+<p>Plus, ExxonMobil’s cash levels have come down from well in excess of $34 billion at the end of 2007 to just under $5 billion now.</p>
+<p>On the other hand, a doubling of its debt since 2007 has contributed about $10 billion to its EV.</p>
+<p>Currently, XOM trades at an EV of ~$400 billion. For context, its global peers Chevron (<a href="/quote-page/cvx/" id="link_content_ticker_item_2">CVX</a>) and Royal Dutch Shell (RDS.A) trade at EVs of~$210 billion and ~$220 billion, respectively.</p>
+<p>ExxonMobil is the largest holding of the Energy Select Sector SPDR Fund (<a href="/quote-page/xle/" id="link_content_ticker_item_3">XLE</a>), at ~17%, and the second-largest holding of the SPDR S&amp;P 500 ETF (<a href="/quote-page/spy/" id="link_content_ticker_item_4">SPY</a>), at ~2%.</p>
+<h2><strong>EV ratios</strong></h2>
+<p>XOM’s debt has been quite low in the context of its total capital and EV. Even after its recent debt raising, its debt as a ratio of its EV has remained quite low, at barely ~5%. The ratio in terms of net debt is even lower.</p>
+<p>This means that XOM has some headroom to raise debt. This should come quite handy for the company when its earnings face some strain from the recent sharp drop in energy prices. We’ll analyze XOM’s debt metrics in a later part of this series.</p>
+<p>Looking at XOM’s valuation in terms of its sales, EBITDA, and EBIT, we can see that it’s traded in a narrow range of EV multiples to these in the past. This isn’t surprising for a mature company like ExxonMobil.</p>
+</div>
+	</div>
+
+	<div class="c-col clearfix tab-sidebar">
+
+	<aside class="sidebar" style="margin-top: 30px; display: none;">
+
+		
+					<div class="ad-container-wrap" style="">
+				<div class="ad-container ad-container-top">
+					
+<div class="sidebar-item">
+			<div data-id="sidebar-right-top" data-unit-name="/11060405/sidebar_right_top" data-width="300" data-height="250" class="mr-dfp-ad mr-dfp-ad-sidebar-right-top" style=" width: 300px; height: 250px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div>				</div>
+			</div>
+		
+					<div class="historical-price-chart-unit">
+			<div class="marketrealist-chart-container visibility-hidden">
+			<div class="marketrealist-historical-price-chart">{"metrics":["Open"],"tickers":["XLE","XOM","SPY","RDS.A","CVX"],"ticker_names":["Energy Select Sector SPDR (ETF)","Exxon Mobil Corporation","SPDR S&amp;P 500 ETF Trust","Royal Dutch Shell plc","Chevron Corporation"]}</div>
+		</div>
+		</div>		
+		
+		
+		<div class="ad-container-wrap mr-sticky-ad" style="">
+			<div class="ad-container ad-container-bottom">
+				
+<div class="sidebar-item">
+			<div data-id="sidebar-right-bottom" data-unit-name="/11060405/sidebar_right_bottom" data-width="300" data-height="600" class="mr-dfp-ad mr-dfp-ad-sidebar-right-bottom" style=" width: 300px; height: 600px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div>			</div>
+		</div>
+
+	</aside>
+
+</div>
+
+	<div class="clearfix"></div>
+
+	<div class="ad-container-center inline-unit desktop-only" style="margin-left: auto; margin-right: auto;">
+		<div data-id="body-center-content-medium" data-unit-name="/11060405/body_center_content_medium" data-width="970" data-height="250" class="mr-dfp-ad mr-dfp-ad-body-center-content-medium" style=" width: 970px; height: 250px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div>
+<div class="ad-container-interstitial mobile-only">
+	
+<div class="sidebar-item">
+			<div data-id="sidebar-right-bottom" data-unit-name="/11060405/sidebar_right_bottom" data-width="300" data-height="250" class="mr-dfp-ad mr-dfp-ad-sidebar-right-bottom" style=" width: 300px; height: 250px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div></div>	
+<div class="sidebar-item">
+			<div data-id="body-pixel" data-unit-name="/11060405/body_pixel" data-width="1" data-height="1" class="mr-dfp-tracking-pixel" style=" width: 1px; height: 1px;" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div>
+</div>
+		<div class="multipart-loading ajax-loading" style=""></div>
+	</div>
+
+</div>
+
+
+				<div class="clearfix"></div>
+
+			</div>
+
+		</div>
+
+							<div class="signup-bar">
+	<div class="close-button" onclick="">X</div>
+	<div class="wrapper">
+		<div class="profession-choice">
+				<h3>Please select a profession that best describes you:</h3>
+				<div class="link-groups">
+					<div class="link-group">
+						<a href="#" data-occupation="individual" data-investor-type="individual-investor" class="profession-link">Individual Investor</a>
+						<a href="#" data-occupation="business-exec" data-investor-type="business-executive" class="profession-link">Business Executive</a>
+						<a href="#" data-occupation="wirehouse" data-investor-type="wirehouse-advisor" class="profession-link short">Wirehouse</a>
+					</div>
+					<div class="link-group">
+						<a href="#" data-occupation="fa" data-investor-type="financial-advisor" class="profession-link">Financial Advisor</a>
+						<a href="#" data-occupation="ria" data-investor-type="ria" class="profession-link short">RIA</a>
+						<a href="#" data-occupation="institutional" data-investor-type="institutional-investor" class="profession-link">Institutional Investor</a>
+					</div>
+				</div>
+		</div>
+		<div class="email-signup">
+			<h3 class="title">For Market Realist updates, enter your email below</h3>
+			<form id="forced-sign-up" action="/welcome/username-password/" method="get">
+				<div class="signup-form-group">
+					<input type="email" id="user_email_visible" placeholder="Enter Email">
+					<input type="hidden" name="user_email">
+					<input type="hidden" name="from_forced_reg" value="true">
+					<div class="signup-button-container">
+						<button class="btn-addon">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="signup-thanks">
+			<h3 class="title">Thank you!</h3>
+		</div>
+	</div>
+</div>			
+<div class="content-bar-container" style="display:none">
+			<div data-id="content-bar" data-unit-name="/11060405/content-bar" data-width="960" data-height="120" class="mr-dfp-ad" style=" width: 960px; height: 120px;" data-out-of-page="1" data-tracking="{&quot;sector&quot;:[&quot;energy-power&quot;],&quot;industry&quot;:[&quot;integrated-oil-gas&quot;],&quot;val_driver&quot;:[&quot;financial-analysis-emerging-markets-integrated-oil-gas&quot;],&quot;cont_types&quot;:[&quot;company-key-performance-indicators&quot;],&quot;tickers&quot;:[&quot;XLE&quot;,&quot;XOM&quot;,&quot;SPY&quot;,&quot;RDS.A&quot;,&quot;CVX&quot;],&quot;series&quot;:17960,&quot;series_pos&quot;:6,&quot;author&quot;:&quot;Manas&quot;,&quot;arch_type&quot;:false,&quot;is_archive&quot;:false,&quot;post_id&quot;:209850,&quot;post_type&quot;:&quot;post&quot;,&quot;is_home&quot;:false,&quot;campaign&quot;:&quot;&quot;}">
+		</div>
+		</div>				<div id="footer-wrapper">
+	<div id="page-footer">
+		<footer>
+			<div class="wrapper">
+				<div id="footer-tagline">
+					<span>Democratizing investment management</span>
+				</div>
+				<div id="footer-buttons">
+					<a id="link_footer_twitter" target="_blank" class="button-twitter" href="https://twitter.com/marketrealist">Follow us on Twitter</a>
+					<a id="link_footer_facebook" target="_blank" class="button-facebook" href="https://www.facebook.com/MarketRealist">Like us on Facebook</a>
+					<a id="link_footer_rss" target="_blank" class="button-rss" href="http://marketrealist.com/feed/">Grab our RSS Feed</a>
+				</div>
+				<nav id="footer-links">
+					<a id="link_footer_contact" target="_blank" href="http://marketrealist.com/contact/">Contact us</a> &bull;
+					<a id="link_footer_about" target="_blank" href="http://marketrealist.com/about/about-us/">About us</a> &bull;
+					<a id="link_footer_terms" target="_blank" href="http://marketrealist.com/terms-of-use/">Terms</a> &bull;
+					<a id="link_footer_privacy" target="_blank" href="http://marketrealist.com/privacy/">Privacy</a> &bull;
+					&copy; 2016 Market Realist, Inc.
+
+					<p>Quote data by <a target="_blank" href="https://www.xignite.com/" class="xignite">Xignite</a></p>
+				</nav>
+			</div>
+		</footer>
+	</div>
+</div>
+
+<div id="footer-compact">
+	<div id="footer-tagline-compact">
+	</div>
+	<div id="footer-buttons">
+		<a target="_blank" id="link_footer_twitter_compact" href="https://twitter.com/marketrealist">
+			<span aria-hidden="true" class="icon-twitter"></span>
+			Follow us on Twitter
+		</a>
+	</div>
+</div>		
+			<script type="text/javascript" src="http://loadus.exelator.com/load/?lb=ADC128D"></script>
+		
+	<script type="text/javascript">
+		document.cookie = 'hm_messages=""; path=/';
+		document.cookie = 'hm_messages_hash=c970917450724463bda67e249cd938e2; path=/';
+	</script>
+	
+<link rel='stylesheet' id='jquery-ui-core-css'  href='http://marketrealist.com/wp-content/mu-plugins/marketrealist-core/js/lib/jquery-ui-datepicker/jquery-ui.min.css?ver=4.4.2' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var localize = {"siteurl":"http:\/\/marketrealist.com"};
+var MarketRealist = {"json_nonce":"809672923a"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://marketrealist.com/wp-content/themes/marketrealist/js/mr.min.js?ver=2016.11.29-1481195815'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-content/mu-plugins/marketrealist-charts/js/historical-price-chart.js?ver=1'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-content/mu-plugins/marketrealist-charts/js/sidebar-historical-price-chart.js?ver=1'></script>
+<script type='text/javascript' src='http://marketrealist.com/wp-content/mu-plugins/marketrealist-charts/js/sspdr-historical-price-chart.js?ver=1'></script>
+
+			<!-- Quantcast Tag -->
+	<script type="text/javascript">
+	var _qevents = _qevents || [];
+
+	(function() {
+	var elem = document.createElement('script');
+	elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+	elem.async = true;
+	elem.type = "text/javascript";
+	var scpt = document.getElementsByTagName('script')[0];
+	scpt.parentNode.insertBefore(elem, scpt);
+	})();
+
+	_qevents.push({
+	qacct:"p-F3xwkwk-56BtS"
+	});
+	</script>
+
+	<noscript>
+	<div style="display:none;">
+	<img src="//pixel.quantserve.com/pixel/p-F3xwkwk-56BtS.gif" border="0" height="1" width="1" alt="Quantcast"/>
+	</div>
+	</noscript>
+	<!-- End Quantcast tag -->
+		
+<script type="text/javascript">
+			
+	// from http://briancray.com/
+	
+	window.mr_time_event_tracked_count = 0;
+	var _gaq = _gaq || [];
+ 
+	(function (tos) {
+	  
+	 	timerId = window.setInterval( function () {
+
+	 		if ( mr_time_event_tracked_count === 3 )
+	 			clearInterval( timerId );
+
+	 		else {
+
+		 		window.mr_time_event_tracked_count++
+	 
+		        // Every 10,000 milliseconds, calculate the time
+			    tos = ( function (t) {
+			    	return t[0] == 50 ? ( parseInt(t[1]) + 1 ) + ':00' : ( t[1] || '0' ) + ':' + ( parseInt(t[0]) + 10 );
+			    } )( tos.split( ':').reverse() );
+	 
+	            // Collect and send the time to Google Analytics
+		    	window.pageTracker ? pageTracker._trackEvent('Time', 'Log', tos) : _gaq.push(['_trackEvent', 'Time', 'Log', tos]);
+
+		    }
+ 
+	 	}, 10000 );
+	
+	} )( '00' );
+ 
+</script>		<img height="1" width="1" src="http://s3-pixel.c1exchange.com/pubpixel/83176" style="display:none;">
+		<img height="1" width="1" src="http://adadvisor.net/adscores/g.pixel?sid=9212271498" width="1" height="1" alt="" style="display:none;"/>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"90e6240573","applicationID":"16946542","transactionName":"YlNSZkNUCxIAWkwKWFsZc0dCQQoMThFjUxoMa0sGTBxKSToJFVpqTgccAEwcSkk6Zxc+HBweDwgeHT5RTABlSB4cCR8NFQ==","queueTime":0,"applicationTime":698,"atts":"ThRREAtOGBw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

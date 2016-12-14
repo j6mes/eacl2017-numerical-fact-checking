@@ -1,0 +1,2164 @@
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+  
+  
+	
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	
+	<script type="text/javascript" src="JS/styleswitcher.js"></script>	
+	<script src="JS/common.js" type="text/javascript"></script>
+	<script src="JS/javaScriptUtil4.js" language="JavaScript"></script>
+	
+	
+	<!-- New GOA Stylesheets -->
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/default.css" title="default" />
+    <link rel="stylesheet" type="text/css" media="print" href="CSS/print.css" title="print" />
+    <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="CSS/iestyle.css" /><![endif]-->
+	<title>Interactive Health Data Application - Select Data Set</title>
+
+	<script type="text/javascript">
+		var criteriaRegistry = new Array();
+	</script>
+	
+	<script type="text/javascript">
+	
+		function determineResultsButtonState()
+		{
+			var isAllowedResults = true;
+			
+			if (criteriaRegistry.length == 0) {
+				isAllowedResults = false;
+			}
+
+			for (var i = 0; i < criteriaRegistry.length; ++i) {
+				var criteria = document.getElementById(criteriaRegistry[i]);
+				if (criteria == null) {
+					isAllowedResults = false;
+					break;
+				}
+				
+				if (criteria.selectedIndex == -1)
+				{
+					isAllowedResults = false;
+					break;
+				}
+			}
+			
+			// Set state of the results button
+			var goToResultButton = document.getElementById("goToResults");
+			if (typeof(goToResultButton) != 'undefined' && goToResultButton != null) {
+				goToResultButton.disabled = !isAllowedResults;
+			}			
+		}		
+		
+		function selectAll(selectElementId)
+		{
+			var selectElement = document.getElementById(selectElementId);
+			for (var i = 0; i < selectElement.options.length; i++)
+			{
+				selectElement.options[i].selected = true;
+			}
+			determineResultsButtonState();
+		}
+		
+		function selectAllGroup(selectElementId, selectGroupElementId)
+		{
+			var selectElement = document.getElementById(selectElementId);
+			var selectGroupElement = document.getElementById(selectGroupElementId);
+						
+			for (var i = 0; i < selectGroupElement.options.length; i++) {
+				for (var j = 0; j < selectElement.options.length; j++) {
+					if (selectElement.options[j].value == selectGroupElement.options[i].text) {
+						selectElement.options[j].selected = true;
+						break;
+					}
+				}
+			}
+			
+			determineResultsButtonState();
+		}
+
+		function deselectAll(selectElementId)
+		{
+			var selectElement = document.getElementById(selectElementId);
+			for (var i = 0; i < selectElement.options.length; i++)
+			{
+				selectElement.options[i].selected = false;
+			}
+			determineResultsButtonState();
+		}
+		
+		function clearSection() {
+		}
+		
+	</script>
+	
+</head>
+<body>
+
+	<!-- start outer table -->
+	<div id="pageWrap">
+    	<div id="page">                        
+			<!--HEADER STARTS HERE -->
+	
+	<!--HEADER STARTS HERE -->
+	
+
+<div id="header">
+	<div id="logo">
+    	<a href="http://www.alberta.ca/" title="Link to Government of Alberta home page" target="_blank">
+    		<img src="/IHDA_Retrieval/images/interface/Alberta-logo.png"   		
+            alt="Government of Alberta"/>
+        </a>
+       	<div id="siteName">IHDA</div>
+        
+	</div>
+ 		 
+			    <ul id="metaNav">			      
+			        
+			         <li>|&nbsp;<b> Production</b> </li>
+			        		   			     		    			        			      		      			    					      				      			      		      			    
+                  <li><a href="http://alberta.ca/contact.cfm">Contact Government</a></li>
+                  <li><a href="http://programs.alberta.ca">Services</a> |</li>
+	              <li><a href="http://alberta.ca/ministries.cfm">Ministries</a> |</li>
+	              <li><a href="http://alberta.ca/">Government of Alberta Home</a> |</li>		      
+			    </ul>				    	
+              <form ID="searchForm" method="get" action="http://alberta.ca/home/googlesearch/searchpage.aspx" NAME="formTopSearch" >
+                <INPUT TYPE=text NAME="as_q" MAXLENGTH="256" VALUE="" TITLE="Search all Government of Alberta" class="searchInput" />                    
+                <button class="searchButton" value="search" type="submit" TITLE="Search all Government of Alberta"></button>
+              </form>
+   			
+</div><!-- close header -->
+<!-- HEADER ENDS HERE -->
+                 
+	<!--HEADER STARTS HERE -->
+	
+<!-- BREADCRUMB TRAIL STARTS HERE -->
+<div id="breadcrumb">
+       <ul id="textResizer">
+           <li><img src="/IHDA_Retrieval/images/interface/resizer2Sm.gif" alt="Make Text Smaller" id="resizerSmImg" /></li>
+           <li><img src="/IHDA_Retrieval/images/interface/resizer2Lg.gif" alt="Make Text Bigger" id="resizerLgImg" /></li>
+       </ul>
+    <p>
+	<a href="http://www.alberta.ca/" title="Go to Government of Alberta home page">Alberta.ca</a> 
+	<img src="/IHDA_Retrieval/images/interface/Breadcrumb-arrow.png" border="0"> 
+	<a href="http://www.health.alberta.ca" title="Go to Health home page">
+		Health</a> 
+	<img src="/IHDA_Retrieval/images/interface/Breadcrumb-arrow.png" border="0"> 
+	<a href="." title="Go to Interactive Health Data Application home page">Interactive Health Data Application</a>
+   </p>
+</div>
+<!-- BREADCRUMB TRAIL ENDS HERE -->
+
+<!-- HEADER ENDS HERE -->
+                 
+
+<!-- HEADER ENDS HERE -->
+                 
+            
+            <!-- SUB PAGE CONTENT STARTS HERE -->   
+            <div id="contentColumn">     
+            	<div id="content">
+                	<div class="columnLeftFull">                          
+						<!-- start breadcrumb -->
+						<table style="background: #eee;" 
+							cellpadding="10" cellspacing="0" border="0" width="100%" align="center">
+							<tbody>
+								<tr>
+									<td style="width: 100%; border-top: 1px dotted black; border-bottom: 1px dotted black; padding: 10px">
+										<a href="selectCategory.do">1: Select category</a> &gt;
+										<strong>2: Select data set</strong> &gt;
+										3: Display results
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- end breadcrumb -->
+						
+						<br />
+
+						<!-- table to display the messages -->
+						
+						<table cellpadding="10" cellspacing="0" border="0" width="100%" 
+									align="center" style="background: #fff;">
+							<tbody>
+								<!-- Data Set choooser -->		
+								<tr>
+									<td>
+										<form name="selectSubCategory" method="post" action="/IHDA_Retrieval/selectSubCategory.do">
+											<input type="hidden" name="command" />
+											<!--<table style="background-color: #F9E9B2; padding: 5px; table-layout:fixed; overflow:hidden; word-break:break-all"  
+													border="0" cellpadding="10" cellspacing="0" width="100%">
+											-->
+											<table style="background-color: #F9E9B2; padding: 5px; overflow:hidden; word-break:break-all"  
+													border="0" cellpadding="10" cellspacing="0" width="100%">
+													
+												<tbody>
+													<tr>
+														<td colspan="3" style="padding:5px">
+															<strong>
+																a. Pick a data set from Geographic Profiles
+															</strong>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="3" style="padding:5px" >
+															Press the drop down button to see available data sets and 
+															click the 'Go' button to see additional detail selections.<br/>
+															Note: You must click on the 'Go' button each time you wish to change your data set selection.
+														</td>
+													</tr>
+													<tr>
+													
+														
+															<td colspan="3" style="padding:5px">
+																<select name="displayObject.id" onchange="doSubmit(this.form, 'handleSelectionChange')" id="subCategorySelect"><option value="-99">   </option>
+<option value="793" selected="selected">Alberta</option>
+<option value="794">Local Areas</option>
+<option value="894">Szones</option>
+<option value="792">Zone</option></select>
+																
+																	<input type="button" 
+																		value="Go" 
+																		onclick="doSubmit(this.form, 'doSelect')" />
+																
+															</td>
+															
+															
+														
+														
+													</tr>
+													
+													
+														<tr>
+														<td colspan="3" style="padding:5px">
+															&nbsp;&nbsp;
+															Click 
+																<a href="#" 
+															onclick="notesWindow=window.open('ShowMetaDataNotesServlet?1621','','scrollbars=yes,menubar=no,resizable=yes,toolbar=no,location=no,status=no,height=650,width=750');
+																notesWindow.focus();">
+																here
+																</a> 
+																to view data notes (source, data collection, etc).
+														</td>
+														<td>&nbsp;</td>
+														</tr>
+														<tr>
+														<td colspan="3" style="padding:5px">
+															&nbsp;&nbsp;
+															Click 
+																<a href="#" onclick="urlWindow=window.open('generateURL.do','');urlWindow.focus();">
+																here
+																</a> 
+																to generate URL to directly return back to this page.
+														</td>
+														<td>&nbsp;</td>
+														</tr>
+														
+													
+												</tbody>
+											</table>
+										</form>
+									</td>
+								</tr>
+								
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								
+								<!-- Subcategory Parameters -->
+								<tr>
+									<td>
+										<form name="selectSubCategoryParameters" method="post" action="/IHDA_Retrieval/selectSubCategoryParameters.do">
+											<input type="hidden" name="command" />
+											<table border="0" cellpadding="10" cellspacing="0" width="100%">
+												<tbody>
+													
+													<tr>
+														<td colspan="2" style="padding:5px">
+															<strong>b. Provide some additional details</strong>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2" style="padding:5px">
+															For the data set you have selected, 
+															make additional selections to narrow down what results you wish to view. <br/>
+
+															Note: <br />
+															&nbsp;&bull;
+															Maps and charts are not available for all selections; click 
+															"Help" for more information. <br />
+															&nbsp;&bull;
+															These fields and elements are <b>dynamically</b> created 
+															depending on the data set that is selected. <br />
+															&nbsp;&bull;
+															Hold the Ctrl key to make more than one selection 
+															for each criteria.	
+														</td>
+													</tr>
+													
+													
+													
+													
+													
+													
+													
+													
+														<tr>
+															<td style="padding:10px">
+																<b>Sex</b>
+															</td>
+															<td style="padding:10px">
+																<script type="text/javascript">
+																	criteriaRegistry.push("selectSexCriteria");
+																</script>
+																<select name="dataBean.selectedSexCriteriaId" multiple="multiple" size="7" onchange="determineResultsButtonState()" style="float: left; margin-right: 5px" id="selectSexCriteria"><option value="239725">BOTH</option>
+<option value="239726">FEMALE</option>
+<option value="239727">MALE</option></select>
+																
+																<table style="float:left;">
+																<tr><td>
+																	<input type="button" 
+																	value="Select All" 
+																	style="width:7em"
+																	onclick="selectAll('selectSexCriteria')" />
+																</td></tr>
+																<tr><td>
+																    <input type="button" 
+																	value="Deselect All" 
+																	style="width:7em"
+																	onclick="deselectAll('selectSexCriteria')" />
+																</td></tr>
+																</table>
+																
+																<table>
+																
+																</table>
+															</td>
+														</tr>
+													
+													
+													
+						
+													
+														<tr>
+															<td style="padding:10px">
+																<b>
+																	Indicator
+																</b>
+															</td>
+															<td style="padding:10px">
+																<script type="text/javascript">
+																	criteriaRegistry.push("selectColumn5Criteria");
+																</script>
+																<select name="dataBean.selectedColumn5CriteriaId" multiple="multiple" size="7" onchange="determineResultsButtonState()" style="float: left; margin-right: 5px" id="selectColumn5Criteria"><option value="239728">Acute Myocardial Infarction - Age Standardized Occurrence Rate-2013</option>
+<option value="239729">Anorexia Nervosa - Age-Standardized Incidence Rate-2013</option>
+<option value="239730">Chronic Obstructive Pulmonary Disease - Age-Standardized Incidence Rate-2013</option>
+<option value="239731">Chronic Obstructive Pulmonary Disease - Age-Standardized Prevalence-2013</option>
+<option value="239732">Dementia - Age-Standardized Incidence Rate-2014</option>
+<option value="239733">Dementia - Age-Standardized Prevalence-2012</option>
+<option value="239734">Diabetes - Age-Standardized Incidence Rate-2014</option>
+<option value="239735">Diabetes - Age-Standardized Prevalence-2014</option>
+<option value="239736">End Stage Renal Disease - Age-Standardized Incidence Rate-2014</option>
+<option value="239737">End Stage Renal Disease - Age-Standardized Prevalence-2014</option>
+<option value="239738">Epilepsy - Age-Standardized Incidence Rate-2013</option>
+<option value="239739">Epilepsy - Age-Standardized Prevalence-2013</option>
+<option value="239740">Gestational Diabetes - Age-Standardized Prevalence-[AS_PERC]- 2012</option>
+<option value="239741">Hypertension - Age-Standardized Incidence Rate-2014</option>
+<option value="239742">Hypertension - Age-Standardized Prevalence-2014</option>
+<option value="239743">Inflammatory Bowel Disease - Age-Standardized Incidence Rate-[ALL IBD]- 2012</option>
+<option value="239744">Inflammatory Bowel Disease - Age-Standardized Incidence Rate-[CROHNS DISEASE]- 2012</option>
+<option value="239745">Inflammatory Bowel Disease - Age-Standardized Incidence Rate-[ULCERATIVE COLITIS]- 2012</option>
+<option value="239746">Ischemic Heart Disease - Age-Standardized Incidence Rate-2014</option>
+<option value="239747">Ischemic Heart Disease - Age-Standardized Prevalence-2014</option>
+<option value="239748">Multiple Sclerosis - Age-Standardized Incidence Rate-2014</option>
+<option value="239749">Multiple Sclerosis - Age-Standardized Prevalence Rate-2014</option>
+<option value="239750">Osteoporosis - Age-Standardized Incidence Rate-2011</option>
+<option value="239751">Osteoporosis - Age-Standardized Prevalence-2011</option>
+<option value="239752">Parkinson&#39;s Disease - Age-Standardized Incidence Rate-2014</option>
+<option value="239753">Parkinson&#39;s Disease - Age-Standardized Prevalence-2014</option>
+<option value="239754">Stroke - Age-Standardized Incidence Rate-[ACUTE ISCHEMIC]- 2014</option>
+<option value="239755">Stroke - Age-Standardized Incidence Rate-[INTRACEREBRAL HEMORRHAGE]- 2014</option>
+<option value="239756">Stroke - Age-Standardized Incidence Rate-[SUBARACHNOID HEMORRHAGE]- 2014</option>
+<option value="239757">Stroke - Age-Standardized Incidence Rate-[TRANSIENT ISCHEMIC ATTACK]- 2014</option>
+<option value="239758">Stroke - Age-Standardized Occurrence Rate-[ACUTE ISCHEMIC]- 2014</option>
+<option value="239759">Stroke - Age-Standardized Occurrence Rate-[INTRACEREBRAL HEMORRHAGE]- 2014</option>
+<option value="239760">Stroke - Age-Standardized Occurrence Rate-[SUBARACHNOID HEMORRHAGE]- 2014</option>
+<option value="239761">Stroke - Age-Standardized Occurrence Rate-[TRANSIENT ISCHEMIC ATTACK]- 2014</option>
+<option value="239762">Mean Age of Fertility-2013</option>
+<option value="239763">Median Age of Population-2014</option>
+<option value="239764">Total Fertility Rates-2014</option>
+<option value="239765">Diabetes - Age-Standardized Incidence Rates by First Nations Status-2013</option>
+<option value="239766">Diabetes - Age-Standardized Prevalence Rates by First Nations Status-2013</option>
+<option value="239767">Infant Mortality Rate by-[FN Status:BOTH ;And Baby Types:BOTH]- 2014</option>
+<option value="239768">Infant Mortality Rate by-[FN Status:BOTH ;And Baby Types:NEON]- 2014</option>
+<option value="239769">Infant Mortality Rate by-[FN Status:BOTH ;And Baby Types:POST]- 2014</option>
+<option value="239770">Infant Mortality Rate by-[FN Status:FN   ;And Baby Types:BOTH]- 2014</option>
+<option value="239771">Infant Mortality Rate by-[FN Status:FN   ;And Baby Types:NEON]- 2014</option>
+<option value="239772">Infant Mortality Rate by-[FN Status:FN   ;And Baby Types:POST]- 2014</option>
+<option value="239773">Infant Mortality Rate by-[FN Status:NONFN;And Baby Types:BOTH]- 2014</option>
+<option value="239774">Infant Mortality Rate by-[FN Status:NONFN;And Baby Types:NEON]- 2014</option>
+<option value="239775">Infant Mortality Rate by-[FN Status:NONFN;And Baby Types:POST]- 2014</option>
+<option value="239776">Life Expectancy at Birth by First Nations Status-[FN]- 2014</option>
+<option value="239777">Human Immunodeficiency Virus (HIV) Incidence Rate-2014</option>
+<option value="239778">Notifiable Disease - Incidence Rate (Measles)-2014</option>
+<option value="239779">Notifiable Diseases - Incidence Rate (common diseases)-[AMOEBIASIS]- 2014</option>
+<option value="239780">Notifiable Diseases - Incidence Rate (common diseases)-[CAMPYLOBACTERIOSIS]- 2014</option>
+<option value="239781">Notifiable Diseases - Incidence Rate (common diseases)-[CRYPTOSPORIDIOSIS]- 2014</option>
+<option value="239782">Notifiable Diseases - Incidence Rate (common diseases)-[DENGUE FEVER]- 2014</option>
+<option value="239783">Notifiable Diseases - Incidence Rate (common diseases)-[GIARDIASIS]- 2014</option>
+<option value="239784">Notifiable Diseases - Incidence Rate (common diseases)-[HAEMOPHILUS INFLUENZAE-NON-SEROTYPE B  INVASIVE]- 2014</option>
+<option value="239785">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS A]- 2014</option>
+<option value="239786">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS B  ACUTE CASES]- 2014</option>
+<option value="239787">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS B  CARRIER STATUS UNKNOWN]- 2014</option>
+<option value="239788">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS B  CHRONIC CARRIERS]- 2014</option>
+<option value="239789">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS C  ACUTE CASES]- 2014</option>
+<option value="239790">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS C  CARRIER STATUS UNKNOWN]- 2014</option>
+<option value="239791">Notifiable Diseases - Incidence Rate (common diseases)-[HEPATITIS C  CHRONIC CARRIERS]- 2014</option>
+<option value="239792">Notifiable Diseases - Incidence Rate (common diseases)-[MALARIA]- 2014</option>
+<option value="239793">Notifiable Diseases - Incidence Rate (common diseases)-[MENINGOCOCCAL DISEASE (INVASIVE)]- 2014</option>
+<option value="239794">Notifiable Diseases - Incidence Rate (common diseases)-[MUMPS]- 2014</option>
+<option value="239795">Notifiable Diseases - Incidence Rate (common diseases)-[PERTUSSIS]- 2014</option>
+<option value="239796">Notifiable Diseases - Incidence Rate (common diseases)-[PNEUMOCOCCAL DISEASE (INVASIVE)]- 2014</option>
+<option value="239797">Notifiable Diseases - Incidence Rate (common diseases)-[SALMONELLOSIS]- 2014</option>
+<option value="239798">Notifiable Diseases - Incidence Rate (common diseases)-[SHIGELLOSIS]- 2014</option>
+<option value="239799">Notifiable Diseases - Incidence Rate (common diseases)-[STREPTOCOCCAL DISEASE-GROUP A (INVASIVE/SEVERE)]- 2014</option>
+<option value="239800">Notifiable Diseases - Incidence Rate (common diseases)-[VARICELLA (CHICKENPOX)]- 2014</option>
+<option value="239801">Notifiable Diseases - Incidence Rate (common diseases)-[VARICELLA ZOSTER (SHINGLES)]- 2014</option>
+<option value="239802">Notifiable Diseases - Incidence Rate (uncommon diseases)-[HAEMOPHILUS INFLUENZAE-SEROTYPE B  INVASIVE]- 2014</option>
+<option value="239803">Notifiable Diseases - Incidence Rate (uncommon diseases)-[HANTAVIRUS PULMONARY SYNDROME]- 2014</option>
+<option value="239804">Notifiable Diseases - Incidence Rate (uncommon diseases)-[LEGIONELLOSIS]- 2014</option>
+<option value="239805">Notifiable Diseases - Incidence Rate (uncommon diseases)-[RUBELLA]- 2009</option>
+<option value="239806">Notifiable Diseases - Incidence Rate (uncommon diseases)-[TETANUS]- 2012</option>
+<option value="239807">Sexually Transmitted Infections (STI) - Incidence Rate-[CHLAMYDIA]- 2014</option>
+<option value="239808">Sexually Transmitted Infections (STI) - Incidence Rate-[GONORRHEA]- 2014</option>
+<option value="239809">Sexually Transmitted Infections (STI) - Incidence Rate-[INFECTIOUS SYPHILIS]- 2014</option>
+<option value="239810">Sexually Transmitted Infections (STI) - Incidence Rate-[MUCOPURULENT CERVICITIS]- 2014</option>
+<option value="239811">Sexually Transmitted Infections (STI) - Incidence Rate-[NON-GONOCOCCAL URETHRITIS]- 2014</option>
+<option value="239812">Injury - Age-Standardized Emergency Department Visit Rates-[0.5 ALL INJURY]- 2014</option>
+<option value="239813">Injury - Age-Standardized Emergency Department Visit Rates-[0.6 ALL INJURY excl AE]- 2014</option>
+<option value="239814">Injury - Age-Standardized Emergency Department Visit Rates-[0.7 Poisoning unk/unintent]- 2014</option>
+<option value="239815">Injury - Age-Standardized Emergency Department Visit Rates-[0.8 All Falls incl Sport]- 2014</option>
+<option value="239816">Injury - Age-Standardized Emergency Department Visit Rates-[0.9 MOTOR VEHICLE ALL]- 2014</option>
+<option value="239817">Injury - Age-Standardized Emergency Department Visit Rates-[1 MOTOR VEHICLE TRAFFIC]- 2014</option>
+<option value="239818">Injury - Age-Standardized Emergency Department Visit Rates-[10 SPORTS RELATED INJURIES]- 2014</option>
+<option value="239819">Injury - Age-Standardized Emergency Department Visit Rates-[11 FIRE AND FLAMES]- 2014</option>
+<option value="239820">Injury - Age-Standardized Emergency Department Visit Rates-[14 SUICIDE AND SELF INFLICTED INJURY]- 2014</option>
+<option value="239821">Injury - Age-Standardized Emergency Department Visit Rates-[15 UNINTENTIONAL POISONING]- 2014</option>
+<option value="239822">Injury - Age-Standardized Emergency Department Visit Rates-[17 VIOLENCE AND INJURY PURPOSELY INFLICTED]- 2014</option>
+<option value="239823">Injury - Age-Standardized Emergency Department Visit Rates-[18 SUFFOCATION/FOREIGN BODY/CHOKING]- 2014</option>
+<option value="239824">Injury - Age-Standardized Emergency Department Visit Rates-[19 CUTTING/PIERCING]- 2014</option>
+<option value="239825">Injury - Age-Standardized Emergency Department Visit Rates-[2 MOTOR VEHICLE NON-TRAFFIC]- 2014</option>
+<option value="239826">Injury - Age-Standardized Emergency Department Visit Rates-[21 MACHINERY]- 2014</option>
+<option value="239827">Injury - Age-Standardized Emergency Department Visit Rates-[22 OVEREXERTION/STRENOUS MOVEMENT]- 2014</option>
+<option value="239828">Injury - Age-Standardized Emergency Department Visit Rates-[23 STRUCK BY OR AGAINST OBJECTS/PERSONS]- 2014</option>
+<option value="239829">Injury - Age-Standardized Emergency Department Visit Rates-[26 NATURAL AND ENVIRONMENTAL FACTORS]- 2014</option>
+<option value="239830">Injury - Age-Standardized Emergency Department Visit Rates-[27 ADVERSE EVENTS]- 2014</option>
+<option value="239831">Injury - Age-Standardized Emergency Department Visit Rates-[28 LATE EFFECTS]- 2014</option>
+<option value="239832">Injury - Age-Standardized Emergency Department Visit Rates-[3 MOTOR VEHICLE BOARDING/ALIGHTING]- 2014</option>
+<option value="239833">Injury - Age-Standardized Emergency Department Visit Rates-[5 OTHER ROAD VEHICLE]- 2014</option>
+<option value="239834">Injury - Age-Standardized Emergency Department Visit Rates-[9 UNINTENTIONAL FALLS]- 2014</option>
+<option value="239835">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[0.5 ALL INJURY]- 2014</option>
+<option value="239836">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[0.6 ALL INJURY excl AE]- 2014</option>
+<option value="239837">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[0.7 Poisoning unk/unintent]- 2014</option>
+<option value="239838">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[0.8 All Falls incl Sport]- 2014</option>
+<option value="239839">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[0.9 MOTOR VEHICLE ALL]- 2014</option>
+<option value="239840">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1 MOTOR VEHICLE TRAFFIC]- 2014</option>
+<option value="239841">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.1 Driver]- 2014</option>
+<option value="239842">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.2 Passenger]- 2014</option>
+<option value="239843">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.3 Motorcycle Driver]- 2014</option>
+<option value="239844">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.4 Motorcycle Passenger]- 2014</option>
+<option value="239845">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.5 Pedestrian]- 2014</option>
+<option value="239846">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.6 Pedal Cycle]- 2014</option>
+<option value="239847">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[1.7 Other/Unspec]- 2014</option>
+<option value="239848">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[10 SPORTS RELATED INJURIES]- 2014</option>
+<option value="239849">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[10.1 Fall]- 2014</option>
+<option value="239850">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[10.2 Struck by Person/Object]- 2014</option>
+<option value="239851">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[11 FIRE AND FLAMES]- 2014</option>
+<option value="239852">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[11.1 Fire  flames]- 2014</option>
+<option value="239853">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[11.2 Hot Sustance/Object]- 2014</option>
+<option value="239854">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[11.3 Household Appliances]- 2014</option>
+<option value="239855">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[12 DROWNING]- 2014</option>
+<option value="239856">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[12.1 Water Transport Related]- 2014</option>
+<option value="239857">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[12.2 Other]- 2014</option>
+<option value="239858">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[13 OPERATIONS OF WAR/LEGAL INTERVENTION]- 2014</option>
+<option value="239859">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[13.1 War]- 2014</option>
+<option value="239860">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[13.2 Legal]- 2014</option>
+<option value="239861">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14 SUICIDE AND SELF INFLICTED INJURY]- 2014</option>
+<option value="239862">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.1 Poisoning Solid/Liquid]- 2014</option>
+<option value="239863">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.2 Gas/Vapours]- 2014</option>
+<option value="239864">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.3 Hanging]- 2014</option>
+<option value="239865">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.4 Firearms]- 2014</option>
+<option value="239866">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.5 Cutting/Piercing]- 2014</option>
+<option value="239867">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[14.6 Other]- 2014</option>
+<option value="239868">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[15 UNINTENTIONAL POISONING]- 2014</option>
+<option value="239869">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[15.1 Unintent Poisoning]- 2014</option>
+<option value="239870">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16 UNDETERMINED (UNINTENTIONALLY OR PURPOSELY INFLICTED)]- 2014</option>
+<option value="239871">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16.1 Drugs/Liquid/Gas]- 2014</option>
+<option value="239872">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16.2 Undet/Hanging]- 2014</option>
+<option value="239873">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16.3 Undet/Drowning]- 2014</option>
+<option value="239874">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16.4 Undet/Firearms]- 2014</option>
+<option value="239875">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[16.5 Undet/Other]- 2014</option>
+<option value="239876">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17 VIOLENCE AND INJURY PURPOSELY INFLICTED]- 2014</option>
+<option value="239877">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.1 Firearms]- 2014</option>
+<option value="239878">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.2 Fight/Brawl]- 2014</option>
+<option value="239879">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.3 Sexual Assault]- 2014</option>
+<option value="239880">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.4 Cutting/Piercing]- 2014</option>
+<option value="239881">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.5 Maltreatment]- 2014</option>
+<option value="239882">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.6 Drugs/Liquids]- 2014</option>
+<option value="239883">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.7 Other]- 2014</option>
+<option value="239884">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.8 Neglect/ Abandoment]- 2014</option>
+<option value="239885">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[17.9 Blunt Object]- 2014</option>
+<option value="239886">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[18 SUFFOCATION/FOREIGN BODY/CHOKING]- 2014</option>
+<option value="239887">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[18.1 Suffocation]- 2014</option>
+<option value="239888">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[18.2 Foreign body]- 2014</option>
+<option value="239889">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[18.3 Choking]- 2014</option>
+<option value="239890">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[19 CUTTING/PIERCING]- 2014</option>
+<option value="239891">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[19.1 Cutting/Piercing]- 2014</option>
+<option value="239892">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[19.2 Foreign Body thru Skin]- 2014</option>
+<option value="239893">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2 MOTOR VEHICLE NON-TRAFFIC]- 2014</option>
+<option value="239894">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.1 Driver]- 2014</option>
+<option value="239895">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.2 Passenger]- 2014</option>
+<option value="239896">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.3 Motorcycle Driver]- 2014</option>
+<option value="239897">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.4 Motorcycle Passenger]- 2014</option>
+<option value="239898">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.5 Pedestrian]- 2014</option>
+<option value="239899">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.6 Pedal Cycle]- 2014</option>
+<option value="239900">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[2.7 Other/Unspec]- 2014</option>
+<option value="239901">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[20 FIREARMS]- 2014</option>
+<option value="239902">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[20.1 Firearms]- 2014</option>
+<option value="239903">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[21 MACHINERY]- 2014</option>
+<option value="239904">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[21.1 Machines]- 2014</option>
+<option value="239905">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[21.2 Hot]- 2014</option>
+<option value="239906">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[22 OVEREXERTION/STRENOUS MOVEMENT]- 2014</option>
+<option value="239907">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[22.1 Overexertion]- 2014</option>
+<option value="239908">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[23 STRUCK BY OR AGAINST OBJECTS/PERSONS]- 2014</option>
+<option value="239909">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[23.1 Struck by Person/Object]- 2014</option>
+<option value="239910">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[23.2 Caught/Crushed]- 2014</option>
+<option value="239911">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[24 OTHER CLASSIFIABLE]- 2014</option>
+<option value="239912">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[24.1 Explosive]- 2014</option>
+<option value="239913">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[24.2 Electric Current]- 2014</option>
+<option value="239914">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[24.3 Pressure Vessel]- 2014</option>
+<option value="239915">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[24.4 Radiation]- 2014</option>
+<option value="239916">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[25 OTHER/UNSPECIFIED]- 2014</option>
+<option value="239917">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[25.1 Other/Unspec]- 2014</option>
+<option value="239918">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26 NATURAL AND ENVIRONMENTAL FACTORS]- 2014</option>
+<option value="239919">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.1 Bites/Stings]- 2014</option>
+<option value="239920">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.2 Venomous Plant/Animal]- 2014</option>
+<option value="239921">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.3 Dog Bites]- 2014</option>
+<option value="239922">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.4 Lack of Food/Water]- 2014</option>
+<option value="239923">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.5 Excessive Heat-weather]- 2014</option>
+<option value="239924">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.6 Excessive Cold-weather]- 2014</option>
+<option value="239925">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.7 Other CIHI included]- 2014</option>
+<option value="239926">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[26.8 Other CIHI excluded]- 2014</option>
+<option value="239927">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[27 ADVERSE EVENTS]- 2014</option>
+<option value="239928">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[27.1 Surg/Med]- 2014</option>
+<option value="239929">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[27.2 Drugs]- 2014</option>
+<option value="239930">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28 LATE EFFECTS]- 2014</option>
+<option value="239931">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28.1 Transport Accident]- 2014</option>
+<option value="239932">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28.2 Other Accident]- 2014</option>
+<option value="239933">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28.3 Self-harm/Violence]- 2014</option>
+<option value="239934">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28.4 Surgical/Medical]- 2014</option>
+<option value="239935">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[28.5 Other External Causes]- 2014</option>
+<option value="239936">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[3 MOTOR VEHICLE BOARDING/ALIGHTING]- 2014</option>
+<option value="239937">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[3.1 Boarding/Alighting]- 2014</option>
+<option value="239938">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[4 RAILWAY]- 2014</option>
+<option value="239939">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[4.1 Occupant]- 2014</option>
+<option value="239940">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[4.2 Pedestrian]- 2014</option>
+<option value="239941">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[4.3 Pedal Cycle]- 2014</option>
+<option value="239942">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[4.4 Other]- 2014</option>
+<option value="239943">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5 OTHER ROAD VEHICLE]- 2014</option>
+<option value="239944">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5.1 Pedestrian]- 2014</option>
+<option value="239945">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5.2 Pedal Cyclist]- 2014</option>
+<option value="239946">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5.3 Animals]- 2014</option>
+<option value="239947">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5.4 Streetcar]- 2014</option>
+<option value="239948">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[5.5 Other]- 2014</option>
+<option value="239949">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[50 All-Terrain or Other Off-Road Motor or Snowmobile]- 2014</option>
+<option value="239950">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[50.1 All-Terrain / Other Off-Road Motor Vehicle]- 2014</option>
+<option value="239951">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[50.2 Snowmobile]- 2014</option>
+<option value="239952">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[6 WATER TRANSPORT]- 2014</option>
+<option value="239953">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[6.1 Watercraft-Not Drowning  Submersion]- 2014</option>
+<option value="239954">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[6.2 Other]- 2014</option>
+<option value="239955">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[7 AIR AND SPACE TRANSPORT]- 2014</option>
+<option value="239956">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[7.1 Air and Space]- 2014</option>
+<option value="239957">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[8 VEHICLE INCIDENTS NOT ELSEWHERE CLASSIFIED]- 2014</option>
+<option value="239958">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[8.1 Vehicle Incidents NEC]- 2014</option>
+<option value="239959">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9 UNINTENTIONAL FALLS]- 2014</option>
+<option value="239960">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.1 same level from slipping  tripping and stumbling]- 2014</option>
+<option value="239961">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.11 Furniture]- 2014</option>
+<option value="239962">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.2 same level due to collision with or pushing by another person]- 2014</option>
+<option value="239963">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.3 Stairs steps]- 2014</option>
+<option value="239964">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.4 Ladder  scaffolding]- 2014</option>
+<option value="239965">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.5 Building  structure]- 2014</option>
+<option value="239966">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.6 One level to another]- 2014</option>
+<option value="239967">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.7 Other unspecified]- 2014</option>
+<option value="239968">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.8 Ice snow]- 2014</option>
+<option value="239969">Injury - Age-Standardized Hospital Separation Rates - Fine-level Injury Gro-[9.9 Playground Equipment]- 2014</option>
+<option value="239970">Age-Standardized Mortality Rates by Cause of Death-[01-Infectious Disease (A00-B99)]- 2013</option>
+<option value="239971">Age-Standardized Mortality Rates by Cause of Death-[02-Neoplasms (C00-D48)]- 2013</option>
+<option value="239972">Age-Standardized Mortality Rates by Cause of Death-[03-Diseases of the blood &amp; certain immune disorders (D50-D89)]- 2013</option>
+<option value="239973">Age-Standardized Mortality Rates by Cause of Death-[04-Endocrine nutritional &amp; metabolic diseases (E00-E90)]- 2013</option>
+<option value="239974">Age-Standardized Mortality Rates by Cause of Death-[05-Mental and behavioral disorders (F00-F99)]- 2013</option>
+<option value="239975">Age-Standardized Mortality Rates by Cause of Death-[06-Diseases of the nervous system (G00-G99)]- 2013</option>
+<option value="239976">Age-Standardized Mortality Rates by Cause of Death-[07-Diseases of the eye (H00-H59)]- 2013</option>
+<option value="239977">Age-Standardized Mortality Rates by Cause of Death-[08-Diseases of the ear (H60-H95)]- 2013</option>
+<option value="239978">Age-Standardized Mortality Rates by Cause of Death-[09-Diseases of the circulatory system (I00-I99)]- 2013</option>
+<option value="239979">Age-Standardized Mortality Rates by Cause of Death-[10-Diseases of the respiratory system (J00-J99)]- 2013</option>
+<option value="239980">Age-Standardized Mortality Rates by Cause of Death-[11-Diseases of the digestive system (K00-K93)]- 2013</option>
+<option value="239981">Age-Standardized Mortality Rates by Cause of Death-[12-Diseases of the skin (L00-L99)]- 2013</option>
+<option value="239982">Age-Standardized Mortality Rates by Cause of Death-[13-Diseases of the musculoskeletal system (M00-M99)]- 2013</option>
+<option value="239983">Age-Standardized Mortality Rates by Cause of Death-[14-Diseases of the genitourinary system (N00-N99)]- 2013</option>
+<option value="239984">Age-Standardized Mortality Rates by Cause of Death-[15-Pregnancy and childbirth (O00-O99)]- 2013</option>
+<option value="239985">Age-Standardized Mortality Rates by Cause of Death-[16-Certain conditions of the perinatal period (P00-P96)]- 2013</option>
+<option value="239986">Age-Standardized Mortality Rates by Cause of Death-[17-Congenital malformations (Q00-Q99)]- 2013</option>
+<option value="239987">Age-Standardized Mortality Rates by Cause of Death-[18-Symptoms and signs (R00-R99)]- 2013</option>
+<option value="239988">Age-Standardized Mortality Rates by Cause of Death-[20-External Causes (Injury) (V01-Y98)]- 2013</option>
+<option value="239989">Age-Standardized Mortality Rates by Cause of Death-[ALL CAUSES]- 2013</option>
+<option value="239990">Age-Standardized Mortality Rates by Cause of Death-[Accidental drowning (W65-W74)]- 2013</option>
+<option value="239991">Age-Standardized Mortality Rates by Cause of Death-[Acute rheumatic fever &amp; Chronic rheumatic heart disease (I00-I09)]- 2013</option>
+<option value="239992">Age-Standardized Mortality Rates by Cause of Death-[Acute/Subsequent myocardial infarction (heart attack) (I21-I22)]- 2013</option>
+<option value="239993">Age-Standardized Mortality Rates by Cause of Death-[Alcoholic liver disease (K70)]- 2013</option>
+<option value="239994">Age-Standardized Mortality Rates by Cause of Death-[All other congenital malformations (Q00-Q18 Q30-Q99)]- 2013</option>
+<option value="239995">Age-Standardized Mortality Rates by Cause of Death-[All other diseases of the blood (D65-D89)]- 2013</option>
+<option value="239996">Age-Standardized Mortality Rates by Cause of Death-[All other diseases of the respiratory system (J00-J06 J20-J39 J85-J99)]- 2013</option>
+<option value="239997">Age-Standardized Mortality Rates by Cause of Death-[All other endocrine/nutritional/metabolic (E00-E07 E15-E35 E65-E68)]- 2013</option>
+<option value="239998">Age-Standardized Mortality Rates by Cause of Death-[All other infectious disease (A00-A09 A20-A28 A50-B09 B25-B29)]- 2013</option>
+<option value="239999">Age-Standardized Mortality Rates by Cause of Death-[All other injury (Y35-Y36 Y89.0-Y89.1 Y90-Y98)]- 2013</option>
+<option value="240000">Age-Standardized Mortality Rates by Cause of Death-[All other mental and behavioral disorders (F20-F99)]- 2013</option>
+<option value="240001">Age-Standardized Mortality Rates by Cause of Death-[All other symptoms and signs (R00-R53 R55-R94 R96-R99)]- 2013</option>
+<option value="240002">Age-Standardized Mortality Rates by Cause of Death-[Alzheimer&#39;s disease (G30)]- 2013</option>
+<option value="240003">Age-Standardized Mortality Rates by Cause of Death-[Anemias (D50-D64)]- 2013</option>
+<option value="240004">Age-Standardized Mortality Rates by Cause of Death-[Aortic Aneurysm (I71)]- 2013</option>
+<option value="240005">Age-Standardized Mortality Rates by Cause of Death-[Assault (homicide) (X85-Y09 Y87.1)]- 2013</option>
+<option value="240006">Age-Standardized Mortality Rates by Cause of Death-[Asthma (J45-J46)]- 2013</option>
+<option value="240007">Age-Standardized Mortality Rates by Cause of Death-[Atherosclerosis (hardening of the arteries) (I70)]- 2013</option>
+<option value="240008">Age-Standardized Mortality Rates by Cause of Death-[Atherosclerotic cardiovascular disease (I25.0)]- 2013</option>
+<option value="240009">Age-Standardized Mortality Rates by Cause of Death-[Atrial fibrillation and flutter (I48)]- 2013</option>
+<option value="240010">Age-Standardized Mortality Rates by Cause of Death-[Bladder cancer (C67)]- 2013</option>
+<option value="240011">Age-Standardized Mortality Rates by Cause of Death-[Brain cancer (C70-C72)]- 2013</option>
+<option value="240012">Age-Standardized Mortality Rates by Cause of Death-[Breast cancer (C50)]- 2013</option>
+<option value="240013">Age-Standardized Mortality Rates by Cause of Death-[Cancer (C00-C97)]- 2013</option>
+<option value="240014">Age-Standardized Mortality Rates by Cause of Death-[Cancer of bone and articular cartilage (C40-C41)]- 2013</option>
+<option value="240015">Age-Standardized Mortality Rates by Cause of Death-[Cancer of digestive organs (C15-C26)]- 2013</option>
+<option value="240016">Age-Standardized Mortality Rates by Cause of Death-[Cancer of eye/ brain/ and other parts of CNS (C69-C72)]- 2013</option>
+<option value="240017">Age-Standardized Mortality Rates by Cause of Death-[Cancer of female genital organs (C51-C58)]- 2013</option>
+<option value="240018">Age-Standardized Mortality Rates by Cause of Death-[Cancer of ill-defined/ secondary/ &amp; unspecified sites (C76-C80)]- 2013</option>
+<option value="240019">Age-Standardized Mortality Rates by Cause of Death-[Cancer of independent multiple sites (C97)]- 2013</option>
+<option value="240020">Age-Standardized Mortality Rates by Cause of Death-[Cancer of lip/ oral cavity/ and pharynx (C00-C14)]- 2013</option>
+<option value="240021">Age-Standardized Mortality Rates by Cause of Death-[Cancer of lymphoid/ haematopoietic/ &amp; related tissue (C81-C96)]- 2013</option>
+<option value="240022">Age-Standardized Mortality Rates by Cause of Death-[Cancer of male genital organs (C60-C63)]- 2013</option>
+<option value="240023">Age-Standardized Mortality Rates by Cause of Death-[Cancer of mesothelial and soft tissue (C45-C49)]- 2013</option>
+<option value="240024">Age-Standardized Mortality Rates by Cause of Death-[Cancer of respiratory and intrathoracic organs (C30-C39)]- 2013</option>
+<option value="240025">Age-Standardized Mortality Rates by Cause of Death-[Cancer of the esophagus (C15)]- 2013</option>
+<option value="240026">Age-Standardized Mortality Rates by Cause of Death-[Cancer of the kidney (and renal pelvis) (C64-C65)]- 2013</option>
+<option value="240027">Age-Standardized Mortality Rates by Cause of Death-[Cancer of the liver (and intrahepatic bile ducts) (C22)]- 2013</option>
+<option value="240028">Age-Standardized Mortality Rates by Cause of Death-[Cancer of thyroid and endocrine glands (C73-C75)]- 2013</option>
+<option value="240029">Age-Standardized Mortality Rates by Cause of Death-[Cancer of urinary tract (C64-C68)]- 2013</option>
+<option value="240030">Age-Standardized Mortality Rates by Cause of Death-[Cerebral infarction (I63)]- 2013</option>
+<option value="240031">Age-Standardized Mortality Rates by Cause of Death-[Cerebrovascular disease (stroke) (I60-I69)]- 2013</option>
+<option value="240032">Age-Standardized Mortality Rates by Cause of Death-[Cervical cancer (C53)]- 2013</option>
+<option value="240033">Age-Standardized Mortality Rates by Cause of Death-[Chronic liver disease and cirrhosis (K70 K73-K74)]- 2013</option>
+<option value="240034">Age-Standardized Mortality Rates by Cause of Death-[Chronic lower respiratory diseases (COPD) (J40-J47)]- 2013</option>
+<option value="240035">Age-Standardized Mortality Rates by Cause of Death-[Chronic lower respiratory diseases excluding asthma (J40-J44 J47)]- 2013</option>
+<option value="240036">Age-Standardized Mortality Rates by Cause of Death-[Colo-rectal cancer (C18-C21)]- 2013</option>
+<option value="240037">Age-Standardized Mortality Rates by Cause of Death-[Complications of medical and surgical care(Y40-Y84 Y88)]- 2013</option>
+<option value="240038">Age-Standardized Mortality Rates by Cause of Death-[Congenital malformations of the circulatory system (Q20-Q28)]- 2013</option>
+<option value="240039">Age-Standardized Mortality Rates by Cause of Death-[Diabetes mellitus (E10-E14)]- 2013</option>
+<option value="240040">Age-Standardized Mortality Rates by Cause of Death-[Diseases digestive system (K00-K46 K65-K67 K80-K93)]- 2013</option>
+<option value="240041">Age-Standardized Mortality Rates by Cause of Death-[Diseases of arteries/ arterioles/ and capillaries (I70-I79)]- 2013</option>
+<option value="240042">Age-Standardized Mortality Rates by Cause of Death-[Diseases of the Heart (I00-I09 I11 I13 I20-I51)]- 2013</option>
+<option value="240043">Age-Standardized Mortality Rates by Cause of Death-[Diseases of the genitourinary system (N08-N16 N20-N23 N28 N40-N99)]- 2013</option>
+<option value="240044">Age-Standardized Mortality Rates by Cause of Death-[Diseases of the liver (K70-K77)]- 2013</option>
+<option value="240045">Age-Standardized Mortality Rates by Cause of Death-[Diseases of veins lymphatic vessels and lymph nodes (I80-I89)]- 2013</option>
+<option value="240046">Age-Standardized Mortality Rates by Cause of Death-[Diverticular disease of intestine (K57)]- 2013</option>
+<option value="240047">Age-Standardized Mortality Rates by Cause of Death-[Emphysema (J43)]- 2013</option>
+<option value="240048">Age-Standardized Mortality Rates by Cause of Death-[Event of undetermined intent (Y10-Y34)]- 2013</option>
+<option value="240049">Age-Standardized Mortality Rates by Cause of Death-[Exposure to smoke fire and flames (X00-X09)]- 2013</option>
+<option value="240050">Age-Standardized Mortality Rates by Cause of Death-[Exposure to unspecified factor (X59)]- 2013</option>
+<option value="240051">Age-Standardized Mortality Rates by Cause of Death-[Falls (W00-W19)]- 2013</option>
+<option value="240052">Age-Standardized Mortality Rates by Cause of Death-[HIV/AIDS (B20-B24)]- 2013</option>
+<option value="240053">Age-Standardized Mortality Rates by Cause of Death-[Heart failure (I50)]- 2013</option>
+<option value="240054">Age-Standardized Mortality Rates by Cause of Death-[Hypertensive diseases (I10-I15)]- 2013</option>
+<option value="240055">Age-Standardized Mortality Rates by Cause of Death-[Hypertensive heart disease (I11)]- 2013</option>
+<option value="240056">Age-Standardized Mortality Rates by Cause of Death-[In situ/ benign/ uncertain/ &amp; unknown neoplasms (D00-D48)]- 2013</option>
+<option value="240057">Age-Standardized Mortality Rates by Cause of Death-[Influenza (J10-J11)]- 2013</option>
+<option value="240058">Age-Standardized Mortality Rates by Cause of Death-[Influenza and pneumonia (J09-J18)]- 2013</option>
+<option value="240059">Age-Standardized Mortality Rates by Cause of Death-[Intentional self-harm (Suicide) (X60-X84 Y87.0)]- 2013</option>
+<option value="240060">Age-Standardized Mortality Rates by Cause of Death-[Intracranial haemorrhage (I60-I62)]- 2013</option>
+<option value="240061">Age-Standardized Mortality Rates by Cause of Death-[Ischaemic heart diseases (I20-I25)]- 2013</option>
+<option value="240062">Age-Standardized Mortality Rates by Cause of Death-[Land transport (V01-V89)]- 2013</option>
+<option value="240063">Age-Standardized Mortality Rates by Cause of Death-[Leukemia (C91-C95)]- 2013</option>
+<option value="240064">Age-Standardized Mortality Rates by Cause of Death-[Lung Cancer (C33-C34)]- 2013</option>
+<option value="240065">Age-Standardized Mortality Rates by Cause of Death-[Lung diseases due to external agents (J60-J70)]- 2013</option>
+<option value="240066">Age-Standardized Mortality Rates by Cause of Death-[Major cardiovascular diseases (I00-I78)]- 2013</option>
+<option value="240067">Age-Standardized Mortality Rates by Cause of Death-[Malnutrition (E40-E46)]- 2013</option>
+<option value="240068">Age-Standardized Mortality Rates by Cause of Death-[Meningococcal Infection (A39)]- 2013</option>
+<option value="240069">Age-Standardized Mortality Rates by Cause of Death-[Mental and behavioral disorders due to psychoactive substance use (F10-F19)]- 2013</option>
+<option value="240070">Age-Standardized Mortality Rates by Cause of Death-[Mental and behavioral disorders due to use of alcohol (F10)]- 2013</option>
+<option value="240071">Age-Standardized Mortality Rates by Cause of Death-[Metabolic disorders (E70-E90)]- 2013</option>
+<option value="240072">Age-Standardized Mortality Rates by Cause of Death-[Motor neuron disease (G12.2)]- 2013</option>
+<option value="240073">Age-Standardized Mortality Rates by Cause of Death-[Motor vehicle]- 2013</option>
+<option value="240074">Age-Standardized Mortality Rates by Cause of Death-[Multiple myeloma (&amp; immunoproliferative neoplasms) (C88 C90)]- 2013</option>
+<option value="240075">Age-Standardized Mortality Rates by Cause of Death-[Multiple sclerosis (G35)]- 2013</option>
+<option value="240076">Age-Standardized Mortality Rates by Cause of Death-[Neoplasms of uncertain or unknown behaviour (D37-D48)]- 2013</option>
+<option value="240077">Age-Standardized Mortality Rates by Cause of Death-[Nephritis and Nephrosis (kidney disease) (N00-N07 N17-N19 N25-N27)]- 2013</option>
+<option value="240078">Age-Standardized Mortality Rates by Cause of Death-[Nervous sys. Diseases(G:00-11;12.0-12.1;12.8-12.9;13;22-26;31;36-99)]- 2013</option>
+<option value="240079">Age-Standardized Mortality Rates by Cause of Death-[Non-Hodgkin&#39;s lymphoma (C82-C85)]- 2013</option>
+<option value="240080">Age-Standardized Mortality Rates by Cause of Death-[Noninfective enteritis and colitis (K50-K52)]- 2013</option>
+<option value="240081">Age-Standardized Mortality Rates by Cause of Death-[Nutritional deficiencies (E40-E64)]- 2013</option>
+<option value="240082">Age-Standardized Mortality Rates by Cause of Death-[Organic including symptomatic mental disorders (F00-F09)]- 2013</option>
+<option value="240083">Age-Standardized Mortality Rates by Cause of Death-[Other and unspecified disorders of the circulatory system (I95-I99)]- 2013</option>
+<option value="240084">Age-Standardized Mortality Rates by Cause of Death-[Other bacterial diseases (A30-A49)]- 2013</option>
+<option value="240085">Age-Standardized Mortality Rates by Cause of Death-[Other diseases of intestines (K55-K63)]- 2013</option>
+<option value="240086">Age-Standardized Mortality Rates by Cause of Death-[Other diseases of the urinary system (N30-N39)]- 2013</option>
+<option value="240087">Age-Standardized Mortality Rates by Cause of Death-[Other external causes of unintentional injury (W00-X59 Y86)]- 2013</option>
+<option value="240088">Age-Standardized Mortality Rates by Cause of Death-[Other forms of heart disease (I30-I52)]- 2013</option>
+<option value="240089">Age-Standardized Mortality Rates by Cause of Death-[Other resp. diseases principally affecting the interstitium (J80-J84)]- 2013</option>
+<option value="240090">Age-Standardized Mortality Rates by Cause of Death-[Ovarian cancer (C56)]- 2013</option>
+<option value="240091">Age-Standardized Mortality Rates by Cause of Death-[Pancreatic cancer (C25)]- 2013</option>
+<option value="240092">Age-Standardized Mortality Rates by Cause of Death-[Parkinson&#39;s disease (G20-G21)]- 2013</option>
+<option value="240093">Age-Standardized Mortality Rates by Cause of Death-[Pneumonia (J12-J18)]- 2013</option>
+<option value="240094">Age-Standardized Mortality Rates by Cause of Death-[Pneumonitis due to solids and liquids (food and vomit) (J69)]- 2013</option>
+<option value="240095">Age-Standardized Mortality Rates by Cause of Death-[Poisoning (X40-X49)]- 2013</option>
+<option value="240096">Age-Standardized Mortality Rates by Cause of Death-[Poisoning by drugs (X40-X44)]- 2013</option>
+<option value="240097">Age-Standardized Mortality Rates by Cause of Death-[Poisoning of undetermined intent (Y10-Y19)]- 2013</option>
+<option value="240098">Age-Standardized Mortality Rates by Cause of Death-[Prostate cancer (C61)]- 2013</option>
+<option value="240099">Age-Standardized Mortality Rates by Cause of Death-[Pulmonary heart disease &amp; diseases of pulmonary circ (I26-I28)]- 2013</option>
+<option value="240100">Age-Standardized Mortality Rates by Cause of Death-[Renal failure (N17-N19)]- 2013</option>
+<option value="240101">Age-Standardized Mortality Rates by Cause of Death-[Senility (R54)]- 2013</option>
+<option value="240102">Age-Standardized Mortality Rates by Cause of Death-[Septicemia (A40-A41)]- 2013</option>
+<option value="240103">Age-Standardized Mortality Rates by Cause of Death-[Skin cancer (C43-C44)]- 2013</option>
+<option value="240104">Age-Standardized Mortality Rates by Cause of Death-[Stomach cancer (C16)]- 2013</option>
+<option value="240105">Age-Standardized Mortality Rates by Cause of Death-[Stroke not specified as haemorrhage or infarction (I64)]- 2013</option>
+<option value="240106">Age-Standardized Mortality Rates by Cause of Death-[Sudden infant death syndrome (R95)]- 2013</option>
+<option value="240107">Age-Standardized Mortality Rates by Cause of Death-[Suicide by exposure to gases &amp; vapours (X67)]- 2013</option>
+<option value="240108">Age-Standardized Mortality Rates by Cause of Death-[Suicide by firearm (X72-X74)]- 2013</option>
+<option value="240109">Age-Standardized Mortality Rates by Cause of Death-[Suicide by hanging/ stangulation/ suffocation (X70)]- 2013</option>
+<option value="240110">Age-Standardized Mortality Rates by Cause of Death-[Transport (V01-V99 Y85)]- 2013</option>
+<option value="240111">Age-Standardized Mortality Rates by Cause of Death-[Tuberculosis (A15-A19)]- 2013</option>
+<option value="240112">Age-Standardized Mortality Rates by Cause of Death-[Unintentional Injury (V01-X59 Y85-Y86)]- 2013</option>
+<option value="240113">Age-Standardized Mortality Rates by Cause of Death-[Vascular and unspecified dementia (F01-F03)]- 2013</option>
+<option value="240114">Age-Standardized Mortality Rates by Cause of Death-[Viral hepatitis (B15-B19)]- 2013</option>
+<option value="240115">Cancer - Age-Standardized Mortality Rate-[Bladder]- 2012</option>
+<option value="240116">Cancer - Age-Standardized Mortality Rate-[Breast]- 2012</option>
+<option value="240117">Cancer - Age-Standardized Mortality Rate-[Colorectal]- 2012</option>
+<option value="240118">Cancer - Age-Standardized Mortality Rate-[Lung]- 2012</option>
+<option value="240119">Cancer - Age-Standardized Mortality Rate-[Melanoma]- 2012</option>
+<option value="240120">Cancer - Age-Standardized Mortality Rate-[NHL]- 2012</option>
+<option value="240121">Cancer - Age-Standardized Mortality Rate-[Prostate]- 2012</option>
+<option value="240122">Health Adjusted Life Expectancy-[Age(00)]- 2014</option>
+<option value="240123">Health Adjusted Life Expectancy-[Age(01)]- 2014</option>
+<option value="240124">Health Adjusted Life Expectancy-[Age(02)]- 2014</option>
+<option value="240125">Health Adjusted Life Expectancy-[Age(03)]- 2014</option>
+<option value="240126">Health Adjusted Life Expectancy-[Age(04)]- 2014</option>
+<option value="240127">Health Adjusted Life Expectancy-[Age(05)]- 2014</option>
+<option value="240128">Health Adjusted Life Expectancy-[Age(06)]- 2014</option>
+<option value="240129">Health Adjusted Life Expectancy-[Age(07)]- 2014</option>
+<option value="240130">Health Adjusted Life Expectancy-[Age(08)]- 2014</option>
+<option value="240131">Health Adjusted Life Expectancy-[Age(09)]- 2014</option>
+<option value="240132">Health Adjusted Life Expectancy-[Age(10)]- 2014</option>
+<option value="240133">Health Adjusted Life Expectancy-[Age(11)]- 2014</option>
+<option value="240134">Health Adjusted Life Expectancy-[Age(12)]- 2014</option>
+<option value="240135">Health Adjusted Life Expectancy-[Age(13)]- 2014</option>
+<option value="240136">Health Adjusted Life Expectancy-[Age(14)]- 2014</option>
+<option value="240137">Health Adjusted Life Expectancy-[Age(15)]- 2014</option>
+<option value="240138">Health Adjusted Life Expectancy-[Age(16)]- 2014</option>
+<option value="240139">Health Adjusted Life Expectancy-[Age(17)]- 2014</option>
+<option value="240140">Health Adjusted Life Expectancy-[Age(18)]- 2014</option>
+<option value="240141">Health Adjusted Life Expectancy-[Age(19)]- 2014</option>
+<option value="240142">Health Adjusted Life Expectancy-[Age(20)]- 2014</option>
+<option value="240143">Health Adjusted Life Expectancy-[Age(21)]- 2014</option>
+<option value="240144">Health Adjusted Life Expectancy-[Age(22)]- 2014</option>
+<option value="240145">Health Adjusted Life Expectancy-[Age(23)]- 2014</option>
+<option value="240146">Health Adjusted Life Expectancy-[Age(24)]- 2014</option>
+<option value="240147">Health Adjusted Life Expectancy-[Age(25)]- 2014</option>
+<option value="240148">Health Adjusted Life Expectancy-[Age(26)]- 2014</option>
+<option value="240149">Health Adjusted Life Expectancy-[Age(27)]- 2014</option>
+<option value="240150">Health Adjusted Life Expectancy-[Age(28)]- 2014</option>
+<option value="240151">Health Adjusted Life Expectancy-[Age(29)]- 2014</option>
+<option value="240152">Health Adjusted Life Expectancy-[Age(30)]- 2014</option>
+<option value="240153">Health Adjusted Life Expectancy-[Age(31)]- 2014</option>
+<option value="240154">Health Adjusted Life Expectancy-[Age(32)]- 2014</option>
+<option value="240155">Health Adjusted Life Expectancy-[Age(33)]- 2014</option>
+<option value="240156">Health Adjusted Life Expectancy-[Age(34)]- 2014</option>
+<option value="240157">Health Adjusted Life Expectancy-[Age(35)]- 2014</option>
+<option value="240158">Health Adjusted Life Expectancy-[Age(36)]- 2014</option>
+<option value="240159">Health Adjusted Life Expectancy-[Age(37)]- 2014</option>
+<option value="240160">Health Adjusted Life Expectancy-[Age(38)]- 2014</option>
+<option value="240161">Health Adjusted Life Expectancy-[Age(39)]- 2014</option>
+<option value="240162">Health Adjusted Life Expectancy-[Age(40)]- 2014</option>
+<option value="240163">Health Adjusted Life Expectancy-[Age(41)]- 2014</option>
+<option value="240164">Health Adjusted Life Expectancy-[Age(42)]- 2014</option>
+<option value="240165">Health Adjusted Life Expectancy-[Age(43)]- 2014</option>
+<option value="240166">Health Adjusted Life Expectancy-[Age(44)]- 2014</option>
+<option value="240167">Health Adjusted Life Expectancy-[Age(45)]- 2014</option>
+<option value="240168">Health Adjusted Life Expectancy-[Age(46)]- 2014</option>
+<option value="240169">Health Adjusted Life Expectancy-[Age(47)]- 2014</option>
+<option value="240170">Health Adjusted Life Expectancy-[Age(48)]- 2014</option>
+<option value="240171">Health Adjusted Life Expectancy-[Age(49)]- 2014</option>
+<option value="240172">Health Adjusted Life Expectancy-[Age(50)]- 2014</option>
+<option value="240173">Health Adjusted Life Expectancy-[Age(51)]- 2014</option>
+<option value="240174">Health Adjusted Life Expectancy-[Age(52)]- 2014</option>
+<option value="240175">Health Adjusted Life Expectancy-[Age(53)]- 2014</option>
+<option value="240176">Health Adjusted Life Expectancy-[Age(54)]- 2014</option>
+<option value="240177">Health Adjusted Life Expectancy-[Age(55)]- 2014</option>
+<option value="240178">Health Adjusted Life Expectancy-[Age(56)]- 2014</option>
+<option value="240179">Health Adjusted Life Expectancy-[Age(57)]- 2014</option>
+<option value="240180">Health Adjusted Life Expectancy-[Age(58)]- 2014</option>
+<option value="240181">Health Adjusted Life Expectancy-[Age(59)]- 2014</option>
+<option value="240182">Health Adjusted Life Expectancy-[Age(60)]- 2014</option>
+<option value="240183">Health Adjusted Life Expectancy-[Age(61)]- 2014</option>
+<option value="240184">Health Adjusted Life Expectancy-[Age(62)]- 2014</option>
+<option value="240185">Health Adjusted Life Expectancy-[Age(63)]- 2014</option>
+<option value="240186">Health Adjusted Life Expectancy-[Age(64)]- 2014</option>
+<option value="240187">Health Adjusted Life Expectancy-[Age(65)]- 2014</option>
+<option value="240188">Life Expectancy at Birth-2014</option>
+<option value="240189">Potential of Life Lost - Age-Standardized by Cause of Death-[09-Diseases of the circulatory system (I00-I99)]- 2013</option>
+<option value="240190">Potential of Life Lost - Age-Standardized by Cause of Death-[10-Diseases of the respiratory system (J00-J99)]- 2013</option>
+<option value="240191">Potential of Life Lost - Age-Standardized by Cause of Death-[20-External Causes (Injury) (V01-Y98)]- 2013</option>
+<option value="240192">Potential of Life Lost - Age-Standardized by Cause of Death-[ALL CAUSES]- 2013</option>
+<option value="240193">Potential of Life Lost - Age-Standardized by Cause of Death-[Breast cancer (C50)]- 2013</option>
+<option value="240194">Potential of Life Lost - Age-Standardized by Cause of Death-[Cancer (C00-C97)]- 2013</option>
+<option value="240195">Potential of Life Lost - Age-Standardized by Cause of Death-[Cerebrovascular disease (stroke) (I60-I69)]- 2013</option>
+<option value="240196">Potential of Life Lost - Age-Standardized by Cause of Death-[Colo-rectal cancer (C18-C21)]- 2013</option>
+<option value="240197">Potential of Life Lost - Age-Standardized by Cause of Death-[Intentional self-harm (Suicide) (X60-X84 Y87.0)]- 2013</option>
+<option value="240198">Potential of Life Lost - Age-Standardized by Cause of Death-[Ischaemic heart diseases (I20-I25)]- 2013</option>
+<option value="240199">Potential of Life Lost - Age-Standardized by Cause of Death-[Land transport (V01-V89)]- 2013</option>
+<option value="240200">Potential of Life Lost - Age-Standardized by Cause of Death-[Lung Cancer (C33-C34)]- 2013</option>
+<option value="240201">Potential of Life Lost - Age-Standardized by Cause of Death-[Prostate cancer (C61)]- 2013</option>
+<option value="240202">Potential of Life Lost - Age-Standardized by Cause of Death-[Unintentional Injury (V01-X59 Y85-Y86)]- 2013</option>
+<option value="240203">BMI (Pravalance)-[Normal Weight]- 2014</option>
+<option value="240204">BMI (Pravalance)-[Obese]- 2014</option>
+<option value="240205">BMI (Pravalance)-[Over Weight]- 2014</option>
+<option value="240206">Binge Dringking (Pravalence)-[Five or more drinks two or more times per month]- 2014</option>
+<option value="240207">Binge Dringking (Pravalence)-[Not a binge drinker]- 2014</option>
+<option value="240208">Breast Cancer Screening (Pravalance)-[Not up to date]- 2014</option>
+<option value="240209">Breast Cancer Screening (Pravalance)-[Up to date in screening]- 2014</option>
+<option value="240210">Current Smoking (Pravalence)-[Daily smokers]- 2014</option>
+<option value="240211">Current Smoking (Pravalence)-[Daily/occasional smokers]- 2014</option>
+<option value="240212">Current Smoking (Pravalence)-[Never/former smokers]- 2014</option>
+<option value="240213">Current Smoking (Pravalence)-[Never/former/occasional smokers]- 2014</option>
+<option value="240214">Eating Fruits and Vegetables (Pravalence)-[Five or more servings of fruit and vegetables per day]- 2014</option>
+<option value="240215">Eating Fruits and Vegetables (Pravalence)-[Less than five servings of fruit and vegetables per day]- 2014</option>
+<option value="240216">Healthy Alberta Trend Index (HATi)(Mean)-2014</option>
+<option value="240217">Heavy Drinking (Pravelance)-[Five or more drinks at least once per month]- 2014</option>
+<option value="240218">Heavy Drinking (Pravelance)-[Not a heavy drinker]- 2014</option>
+<option value="240219">Helmet Use - Bicycle(Pravalence)-[Rarely or never wears a helmet]- 2014</option>
+<option value="240220">Helmet Use - Bicycle(Pravalence)-[Wears a helmet always or most of the time]- 2014</option>
+<option value="240221">Helmet Use - Snowboard (Pravalence)-[Rarely or never wears a helmet]- 2014</option>
+<option value="240222">Helmet Use - Snowboard (Pravalence)-[Wears a helmet always or most of the time]- 2014</option>
+<option value="240223">Life Stress (Pravalence)-[Extremely/quite a bit stressful]- 2014</option>
+<option value="240224">Life Stress (Pravalence)-[Not at all/not very/a bit stressful]- 2014</option>
+<option value="240225">Overweight (Pravalence)-[Normal or underweight]- 2014</option>
+<option value="240226">Overweight (Pravalence)-[Overweight or obese]- 2014</option>
+<option value="240227">Physical Activity (Pravalence)-[Active or moderately active]- 2014</option>
+<option value="240228">Physical Activity (Pravalence)-[Inactive]- 2014</option>
+<option value="240229">Select Health Conditions - Prevalence by Geography-[Does not have condition: Arthritis]- 2014</option>
+<option value="240230">Select Health Conditions - Prevalence by Geography-[Does not have condition: Asthma]- 2014</option>
+<option value="240231">Select Health Conditions - Prevalence by Geography-[Does not have condition: BackProblems]- 2014</option>
+<option value="240232">Select Health Conditions - Prevalence by Geography-[Does not have condition: HeartDisease]- 2014</option>
+<option value="240233">Select Health Conditions - Prevalence by Geography-[Does not have condition: HighBloodPressure]- 2014</option>
+<option value="240234">Select Health Conditions - Prevalence by Geography-[Does not have condition: Migraine]- 2014</option>
+<option value="240235">Select Health Conditions - Prevalence by Geography-[Has condition          : Arthritis]- 2014</option>
+<option value="240236">Select Health Conditions - Prevalence by Geography-[Has condition          : Asthma]- 2014</option>
+<option value="240237">Select Health Conditions - Prevalence by Geography-[Has condition          : BackProblems]- 2014</option>
+<option value="240238">Select Health Conditions - Prevalence by Geography-[Has condition          : HeartDisease]- 2014</option>
+<option value="240239">Select Health Conditions - Prevalence by Geography-[Has condition          : HighBloodPressure]- 2014</option>
+<option value="240240">Select Health Conditions - Prevalence by Geography-[Has condition          : Migraine]- 2014</option>
+<option value="240241">Select Health Conditions - Prevalence in Alberta-[Does not have condition: BowelDisorder]- 2014</option>
+<option value="240242">Select Health Conditions - Prevalence in Alberta-[Does not have condition: COPD]- 2014</option>
+<option value="240243">Select Health Conditions - Prevalence in Alberta-[Does not have condition: Cancer]- 2014</option>
+<option value="240244">Select Health Conditions - Prevalence in Alberta-[Does not have condition: Ulcers]- 2014</option>
+<option value="240245">Select Health Conditions - Prevalence in Alberta-[Does not have condition: UrinaryIncontinence]- 2014</option>
+<option value="240246">Select Health Conditions - Prevalence in Alberta-[Has condition          : BowelDisorder]- 2014</option>
+<option value="240247">Select Health Conditions - Prevalence in Alberta-[Has condition          : COPD]- 2014</option>
+<option value="240248">Select Health Conditions - Prevalence in Alberta-[Has condition          : Cancer]- 2014</option>
+<option value="240249">Select Health Conditions - Prevalence in Alberta-[Has condition          : Ulcers]- 2014</option>
+<option value="240250">Select Health Conditions - Prevalence in Alberta-[Has condition          : UrinaryIncontinence]- 2014</option>
+<option value="240251">Self Perceived Health (Pravalence)-[Excellent or Very Good]- 2014</option>
+<option value="240252">Self Perceived Health (Pravalence)-[Poor Fair or Good]- 2014</option>
+<option value="240253">Self Perceived Mental Health (Pravalence)-[Excellent or Very Good]- 2014</option>
+<option value="240254">Self Perceived Mental Health (Pravalence)-[Poor Fair or Good]- 2014</option></select>
+																
+																
+																<table style="float:left;">
+																<tr><td>
+																	<input type="button" 
+																	value="Select All" 
+																	style="width:7em"
+																	onclick="selectAll('selectColumn5Criteria')" />
+																</td></tr>
+																<tr><td>
+																    <input type="button" 
+																	value="Deselect All" 
+																	style="width:7em"
+																	onclick="deselectAll('selectColumn5Criteria')" />
+																</td></tr>
+																</table>
+																
+																<table>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup0" id="selectColumn5CriteriaGroup0" style="display:none;">
+																	
+																	  			<option>239736</option>
+																	
+																	  			<option>239737</option>
+																	
+																	  			<option>239738</option>
+																	
+																	  			<option>239739</option>
+																	
+																	  			<option>239740</option>
+																	
+																	  			<option>239741</option>
+																	
+																	  			<option>239742</option>
+																	
+																	  			<option>239743</option>
+																	
+																	  			<option>239744</option>
+																	
+																	  			<option>239745</option>
+																	
+																	  			<option>239746</option>
+																	
+																	  			<option>239747</option>
+																	
+																	  			<option>239748</option>
+																	
+																	  			<option>239749</option>
+																	
+																	  			<option>239750</option>
+																	
+																	  			<option>239751</option>
+																	
+																	  			<option>239752</option>
+																	
+																	  			<option>239753</option>
+																	
+																	  			<option>239754</option>
+																	
+																	  			<option>239755</option>
+																	
+																	  			<option>239756</option>
+																	
+																	  			<option>239757</option>
+																	
+																	  			<option>239758</option>
+																	
+																	  			<option>239759</option>
+																	
+																	  			<option>239760</option>
+																	
+																	  			<option>239761</option>
+																	
+																	  			<option>239728</option>
+																	
+																	  			<option>239729</option>
+																	
+																	  			<option>239730</option>
+																	
+																	  			<option>239731</option>
+																	
+																	  			<option>239732</option>
+																	
+																	  			<option>239733</option>
+																	
+																	  			<option>239734</option>
+																	
+																	  			<option>239735</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all Chronic Disease Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup0')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup1" id="selectColumn5CriteriaGroup1" style="display:none;">
+																	
+																	  			<option>239762</option>
+																	
+																	  			<option>239763</option>
+																	
+																	  			<option>239764</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all Demographic Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup1')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup2" id="selectColumn5CriteriaGroup2" style="display:none;">
+																	
+																	  			<option>239765</option>
+																	
+																	  			<option>239766</option>
+																	
+																	  			<option>239767</option>
+																	
+																	  			<option>239768</option>
+																	
+																	  			<option>239769</option>
+																	
+																	  			<option>239770</option>
+																	
+																	  			<option>239771</option>
+																	
+																	  			<option>239772</option>
+																	
+																	  			<option>239773</option>
+																	
+																	  			<option>239774</option>
+																	
+																	  			<option>239775</option>
+																	
+																	  			<option>239776</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all First Nations Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup2')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup3" id="selectColumn5CriteriaGroup3" style="display:none;">
+																	
+																	  			<option>239804</option>
+																	
+																	  			<option>239805</option>
+																	
+																	  			<option>239806</option>
+																	
+																	  			<option>239807</option>
+																	
+																	  			<option>239808</option>
+																	
+																	  			<option>239809</option>
+																	
+																	  			<option>239810</option>
+																	
+																	  			<option>239811</option>
+																	
+																	  			<option>239777</option>
+																	
+																	  			<option>239778</option>
+																	
+																	  			<option>239779</option>
+																	
+																	  			<option>239780</option>
+																	
+																	  			<option>239781</option>
+																	
+																	  			<option>239782</option>
+																	
+																	  			<option>239783</option>
+																	
+																	  			<option>239784</option>
+																	
+																	  			<option>239785</option>
+																	
+																	  			<option>239786</option>
+																	
+																	  			<option>239787</option>
+																	
+																	  			<option>239788</option>
+																	
+																	  			<option>239789</option>
+																	
+																	  			<option>239790</option>
+																	
+																	  			<option>239791</option>
+																	
+																	  			<option>239792</option>
+																	
+																	  			<option>239793</option>
+																	
+																	  			<option>239794</option>
+																	
+																	  			<option>239795</option>
+																	
+																	  			<option>239796</option>
+																	
+																	  			<option>239797</option>
+																	
+																	  			<option>239798</option>
+																	
+																	  			<option>239799</option>
+																	
+																	  			<option>239800</option>
+																	
+																	  			<option>239801</option>
+																	
+																	  			<option>239802</option>
+																	
+																	  			<option>239803</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all Infectious Disease Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup3')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup4" id="selectColumn5CriteriaGroup4" style="display:none;">
+																	
+																	  			<option>239928</option>
+																	
+																	  			<option>239929</option>
+																	
+																	  			<option>239930</option>
+																	
+																	  			<option>239931</option>
+																	
+																	  			<option>239932</option>
+																	
+																	  			<option>239933</option>
+																	
+																	  			<option>239934</option>
+																	
+																	  			<option>239939</option>
+																	
+																	  			<option>239940</option>
+																	
+																	  			<option>239941</option>
+																	
+																	  			<option>239942</option>
+																	
+																	  			<option>239943</option>
+																	
+																	  			<option>239944</option>
+																	
+																	  			<option>239945</option>
+																	
+																	  			<option>239946</option>
+																	
+																	  			<option>239947</option>
+																	
+																	  			<option>239948</option>
+																	
+																	  			<option>239949</option>
+																	
+																	  			<option>239950</option>
+																	
+																	  			<option>239951</option>
+																	
+																	  			<option>239952</option>
+																	
+																	  			<option>239935</option>
+																	
+																	  			<option>239936</option>
+																	
+																	  			<option>239937</option>
+																	
+																	  			<option>239938</option>
+																	
+																	  			<option>239953</option>
+																	
+																	  			<option>239954</option>
+																	
+																	  			<option>239955</option>
+																	
+																	  			<option>239956</option>
+																	
+																	  			<option>239957</option>
+																	
+																	  			<option>239958</option>
+																	
+																	  			<option>239959</option>
+																	
+																	  			<option>239960</option>
+																	
+																	  			<option>239961</option>
+																	
+																	  			<option>239962</option>
+																	
+																	  			<option>239963</option>
+																	
+																	  			<option>239964</option>
+																	
+																	  			<option>239965</option>
+																	
+																	  			<option>239966</option>
+																	
+																	  			<option>239967</option>
+																	
+																	  			<option>239968</option>
+																	
+																	  			<option>239969</option>
+																	
+																	  			<option>239812</option>
+																	
+																	  			<option>239813</option>
+																	
+																	  			<option>239814</option>
+																	
+																	  			<option>239815</option>
+																	
+																	  			<option>239816</option>
+																	
+																	  			<option>239817</option>
+																	
+																	  			<option>239818</option>
+																	
+																	  			<option>239819</option>
+																	
+																	  			<option>239820</option>
+																	
+																	  			<option>239821</option>
+																	
+																	  			<option>239822</option>
+																	
+																	  			<option>239823</option>
+																	
+																	  			<option>239824</option>
+																	
+																	  			<option>239825</option>
+																	
+																	  			<option>239826</option>
+																	
+																	  			<option>239856</option>
+																	
+																	  			<option>239857</option>
+																	
+																	  			<option>239858</option>
+																	
+																	  			<option>239859</option>
+																	
+																	  			<option>239860</option>
+																	
+																	  			<option>239861</option>
+																	
+																	  			<option>239862</option>
+																	
+																	  			<option>239863</option>
+																	
+																	  			<option>239864</option>
+																	
+																	  			<option>239865</option>
+																	
+																	  			<option>239866</option>
+																	
+																	  			<option>239867</option>
+																	
+																	  			<option>239868</option>
+																	
+																	  			<option>239869</option>
+																	
+																	  			<option>239870</option>
+																	
+																	  			<option>239871</option>
+																	
+																	  			<option>239872</option>
+																	
+																	  			<option>239873</option>
+																	
+																	  			<option>239874</option>
+																	
+																	  			<option>239875</option>
+																	
+																	  			<option>239876</option>
+																	
+																	  			<option>239877</option>
+																	
+																	  			<option>239878</option>
+																	
+																	  			<option>239879</option>
+																	
+																	  			<option>239880</option>
+																	
+																	  			<option>239881</option>
+																	
+																	  			<option>239882</option>
+																	
+																	  			<option>239883</option>
+																	
+																	  			<option>239884</option>
+																	
+																	  			<option>239885</option>
+																	
+																	  			<option>239886</option>
+																	
+																	  			<option>239887</option>
+																	
+																	  			<option>239888</option>
+																	
+																	  			<option>239889</option>
+																	
+																	  			<option>239890</option>
+																	
+																	  			<option>239891</option>
+																	
+																	  			<option>239892</option>
+																	
+																	  			<option>239893</option>
+																	
+																	  			<option>239894</option>
+																	
+																	  			<option>239827</option>
+																	
+																	  			<option>239828</option>
+																	
+																	  			<option>239829</option>
+																	
+																	  			<option>239830</option>
+																	
+																	  			<option>239831</option>
+																	
+																	  			<option>239832</option>
+																	
+																	  			<option>239833</option>
+																	
+																	  			<option>239834</option>
+																	
+																	  			<option>239835</option>
+																	
+																	  			<option>239836</option>
+																	
+																	  			<option>239837</option>
+																	
+																	  			<option>239838</option>
+																	
+																	  			<option>239839</option>
+																	
+																	  			<option>239840</option>
+																	
+																	  			<option>239841</option>
+																	
+																	  			<option>239842</option>
+																	
+																	  			<option>239843</option>
+																	
+																	  			<option>239844</option>
+																	
+																	  			<option>239845</option>
+																	
+																	  			<option>239846</option>
+																	
+																	  			<option>239847</option>
+																	
+																	  			<option>239848</option>
+																	
+																	  			<option>239849</option>
+																	
+																	  			<option>239850</option>
+																	
+																	  			<option>239851</option>
+																	
+																	  			<option>239852</option>
+																	
+																	  			<option>239853</option>
+																	
+																	  			<option>239854</option>
+																	
+																	  			<option>239855</option>
+																	
+																	  			<option>239895</option>
+																	
+																	  			<option>239896</option>
+																	
+																	  			<option>239897</option>
+																	
+																	  			<option>239898</option>
+																	
+																	  			<option>239899</option>
+																	
+																	  			<option>239900</option>
+																	
+																	  			<option>239901</option>
+																	
+																	  			<option>239902</option>
+																	
+																	  			<option>239903</option>
+																	
+																	  			<option>239904</option>
+																	
+																	  			<option>239905</option>
+																	
+																	  			<option>239906</option>
+																	
+																	  			<option>239907</option>
+																	
+																	  			<option>239908</option>
+																	
+																	  			<option>239909</option>
+																	
+																	  			<option>239910</option>
+																	
+																	  			<option>239911</option>
+																	
+																	  			<option>239912</option>
+																	
+																	  			<option>239913</option>
+																	
+																	  			<option>239914</option>
+																	
+																	  			<option>239915</option>
+																	
+																	  			<option>239916</option>
+																	
+																	  			<option>239917</option>
+																	
+																	  			<option>239918</option>
+																	
+																	  			<option>239919</option>
+																	
+																	  			<option>239920</option>
+																	
+																	  			<option>239921</option>
+																	
+																	  			<option>239922</option>
+																	
+																	  			<option>239923</option>
+																	
+																	  			<option>239924</option>
+																	
+																	  			<option>239925</option>
+																	
+																	  			<option>239926</option>
+																	
+																	  			<option>239927</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all Injury Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup4')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup5" id="selectColumn5CriteriaGroup5" style="display:none;">
+																	
+																	  			<option>239990</option>
+																	
+																	  			<option>239991</option>
+																	
+																	  			<option>239992</option>
+																	
+																	  			<option>239993</option>
+																	
+																	  			<option>239994</option>
+																	
+																	  			<option>239995</option>
+																	
+																	  			<option>239996</option>
+																	
+																	  			<option>239997</option>
+																	
+																	  			<option>239970</option>
+																	
+																	  			<option>239971</option>
+																	
+																	  			<option>239972</option>
+																	
+																	  			<option>239973</option>
+																	
+																	  			<option>239974</option>
+																	
+																	  			<option>239975</option>
+																	
+																	  			<option>239976</option>
+																	
+																	  			<option>239977</option>
+																	
+																	  			<option>239978</option>
+																	
+																	  			<option>239979</option>
+																	
+																	  			<option>239980</option>
+																	
+																	  			<option>239981</option>
+																	
+																	  			<option>239982</option>
+																	
+																	  			<option>239983</option>
+																	
+																	  			<option>239984</option>
+																	
+																	  			<option>239985</option>
+																	
+																	  			<option>239986</option>
+																	
+																	  			<option>239987</option>
+																	
+																	  			<option>239988</option>
+																	
+																	  			<option>239989</option>
+																	
+																	  			<option>240052</option>
+																	
+																	  			<option>240053</option>
+																	
+																	  			<option>240054</option>
+																	
+																	  			<option>240055</option>
+																	
+																	  			<option>240056</option>
+																	
+																	  			<option>240057</option>
+																	
+																	  			<option>240058</option>
+																	
+																	  			<option>240059</option>
+																	
+																	  			<option>240060</option>
+																	
+																	  			<option>239998</option>
+																	
+																	  			<option>239999</option>
+																	
+																	  			<option>240000</option>
+																	
+																	  			<option>240001</option>
+																	
+																	  			<option>240002</option>
+																	
+																	  			<option>240003</option>
+																	
+																	  			<option>240004</option>
+																	
+																	  			<option>240005</option>
+																	
+																	  			<option>240006</option>
+																	
+																	  			<option>240007</option>
+																	
+																	  			<option>240008</option>
+																	
+																	  			<option>240009</option>
+																	
+																	  			<option>240010</option>
+																	
+																	  			<option>240011</option>
+																	
+																	  			<option>240012</option>
+																	
+																	  			<option>240013</option>
+																	
+																	  			<option>240014</option>
+																	
+																	  			<option>240015</option>
+																	
+																	  			<option>240016</option>
+																	
+																	  			<option>240017</option>
+																	
+																	  			<option>240018</option>
+																	
+																	  			<option>240019</option>
+																	
+																	  			<option>240020</option>
+																	
+																	  			<option>240021</option>
+																	
+																	  			<option>240022</option>
+																	
+																	  			<option>240023</option>
+																	
+																	  			<option>240024</option>
+																	
+																	  			<option>240025</option>
+																	
+																	  			<option>240026</option>
+																	
+																	  			<option>240027</option>
+																	
+																	  			<option>240028</option>
+																	
+																	  			<option>240029</option>
+																	
+																	  			<option>240030</option>
+																	
+																	  			<option>240031</option>
+																	
+																	  			<option>240032</option>
+																	
+																	  			<option>240033</option>
+																	
+																	  			<option>240034</option>
+																	
+																	  			<option>240035</option>
+																	
+																	  			<option>240036</option>
+																	
+																	  			<option>240037</option>
+																	
+																	  			<option>240038</option>
+																	
+																	  			<option>240039</option>
+																	
+																	  			<option>240040</option>
+																	
+																	  			<option>240041</option>
+																	
+																	  			<option>240042</option>
+																	
+																	  			<option>240043</option>
+																	
+																	  			<option>240044</option>
+																	
+																	  			<option>240045</option>
+																	
+																	  			<option>240046</option>
+																	
+																	  			<option>240047</option>
+																	
+																	  			<option>240048</option>
+																	
+																	  			<option>240049</option>
+																	
+																	  			<option>240050</option>
+																	
+																	  			<option>240051</option>
+																	
+																	  			<option>240091</option>
+																	
+																	  			<option>240092</option>
+																	
+																	  			<option>240093</option>
+																	
+																	  			<option>240094</option>
+																	
+																	  			<option>240095</option>
+																	
+																	  			<option>240096</option>
+																	
+																	  			<option>240097</option>
+																	
+																	  			<option>240098</option>
+																	
+																	  			<option>240099</option>
+																	
+																	  			<option>240061</option>
+																	
+																	  			<option>240062</option>
+																	
+																	  			<option>240063</option>
+																	
+																	  			<option>240064</option>
+																	
+																	  			<option>240065</option>
+																	
+																	  			<option>240066</option>
+																	
+																	  			<option>240067</option>
+																	
+																	  			<option>240068</option>
+																	
+																	  			<option>240069</option>
+																	
+																	  			<option>240070</option>
+																	
+																	  			<option>240071</option>
+																	
+																	  			<option>240072</option>
+																	
+																	  			<option>240073</option>
+																	
+																	  			<option>240074</option>
+																	
+																	  			<option>240075</option>
+																	
+																	  			<option>240076</option>
+																	
+																	  			<option>240077</option>
+																	
+																	  			<option>240078</option>
+																	
+																	  			<option>240079</option>
+																	
+																	  			<option>240080</option>
+																	
+																	  			<option>240081</option>
+																	
+																	  			<option>240082</option>
+																	
+																	  			<option>240083</option>
+																	
+																	  			<option>240084</option>
+																	
+																	  			<option>240085</option>
+																	
+																	  			<option>240086</option>
+																	
+																	  			<option>240087</option>
+																	
+																	  			<option>240088</option>
+																	
+																	  			<option>240089</option>
+																	
+																	  			<option>240090</option>
+																	
+																	  			<option>240120</option>
+																	
+																	  			<option>240121</option>
+																	
+																	  			<option>240122</option>
+																	
+																	  			<option>240123</option>
+																	
+																	  			<option>240124</option>
+																	
+																	  			<option>240125</option>
+																	
+																	  			<option>240126</option>
+																	
+																	  			<option>240127</option>
+																	
+																	  			<option>240128</option>
+																	
+																	  			<option>240100</option>
+																	
+																	  			<option>240101</option>
+																	
+																	  			<option>240102</option>
+																	
+																	  			<option>240103</option>
+																	
+																	  			<option>240104</option>
+																	
+																	  			<option>240105</option>
+																	
+																	  			<option>240106</option>
+																	
+																	  			<option>240107</option>
+																	
+																	  			<option>240108</option>
+																	
+																	  			<option>240109</option>
+																	
+																	  			<option>240110</option>
+																	
+																	  			<option>240111</option>
+																	
+																	  			<option>240112</option>
+																	
+																	  			<option>240113</option>
+																	
+																	  			<option>240114</option>
+																	
+																	  			<option>240115</option>
+																	
+																	  			<option>240116</option>
+																	
+																	  			<option>240117</option>
+																	
+																	  			<option>240118</option>
+																	
+																	  			<option>240119</option>
+																	
+																	  			<option>240129</option>
+																	
+																	  			<option>240130</option>
+																	
+																	  			<option>240131</option>
+																	
+																	  			<option>240132</option>
+																	
+																	  			<option>240133</option>
+																	
+																	  			<option>240134</option>
+																	
+																	  			<option>240135</option>
+																	
+																	  			<option>240136</option>
+																	
+																	  			<option>240137</option>
+																	
+																	  			<option>240138</option>
+																	
+																	  			<option>240139</option>
+																	
+																	  			<option>240140</option>
+																	
+																	  			<option>240141</option>
+																	
+																	  			<option>240142</option>
+																	
+																	  			<option>240143</option>
+																	
+																	  			<option>240144</option>
+																	
+																	  			<option>240145</option>
+																	
+																	  			<option>240146</option>
+																	
+																	  			<option>240151</option>
+																	
+																	  			<option>240152</option>
+																	
+																	  			<option>240153</option>
+																	
+																	  			<option>240154</option>
+																	
+																	  			<option>240155</option>
+																	
+																	  			<option>240156</option>
+																	
+																	  			<option>240157</option>
+																	
+																	  			<option>240158</option>
+																	
+																	  			<option>240159</option>
+																	
+																	  			<option>240160</option>
+																	
+																	  			<option>240161</option>
+																	
+																	  			<option>240162</option>
+																	
+																	  			<option>240163</option>
+																	
+																	  			<option>240164</option>
+																	
+																	  			<option>240165</option>
+																	
+																	  			<option>240166</option>
+																	
+																	  			<option>240167</option>
+																	
+																	  			<option>240168</option>
+																	
+																	  			<option>240169</option>
+																	
+																	  			<option>240170</option>
+																	
+																	  			<option>240147</option>
+																	
+																	  			<option>240148</option>
+																	
+																	  			<option>240149</option>
+																	
+																	  			<option>240150</option>
+																	
+																	  			<option>240171</option>
+																	
+																	  			<option>240172</option>
+																	
+																	  			<option>240173</option>
+																	
+																	  			<option>240174</option>
+																	
+																	  			<option>240175</option>
+																	
+																	  			<option>240176</option>
+																	
+																	  			<option>240177</option>
+																	
+																	  			<option>240178</option>
+																	
+																	  			<option>240179</option>
+																	
+																	  			<option>240180</option>
+																	
+																	  			<option>240181</option>
+																	
+																	  			<option>240182</option>
+																	
+																	  			<option>240183</option>
+																	
+																	  			<option>240184</option>
+																	
+																	  			<option>240185</option>
+																	
+																	  			<option>240186</option>
+																	
+																	  			<option>240187</option>
+																	
+																	  			<option>240188</option>
+																	
+																	  			<option>240189</option>
+																	
+																	  			<option>240190</option>
+																	
+																	  			<option>240191</option>
+																	
+																	  			<option>240192</option>
+																	
+																	  			<option>240193</option>
+																	
+																	  			<option>240194</option>
+																	
+																	  			<option>240195</option>
+																	
+																	  			<option>240196</option>
+																	
+																	  			<option>240197</option>
+																	
+																	  			<option>240198</option>
+																	
+																	  			<option>240199</option>
+																	
+																	  			<option>240200</option>
+																	
+																	  			<option>240201</option>
+																	
+																	  			<option>240202</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all Mortality Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup5')" />
+																</td></tr>
+																
+																<tr><td>
+																<select name="selectColumn5CriteriaGroup6" id="selectColumn5CriteriaGroup6" style="display:none;">
+																	
+																	  			<option>240203</option>
+																	
+																	  			<option>240204</option>
+																	
+																	  			<option>240219</option>
+																	
+																	  			<option>240220</option>
+																	
+																	  			<option>240221</option>
+																	
+																	  			<option>240222</option>
+																	
+																	  			<option>240223</option>
+																	
+																	  			<option>240224</option>
+																	
+																	  			<option>240225</option>
+																	
+																	  			<option>240226</option>
+																	
+																	  			<option>240227</option>
+																	
+																	  			<option>240228</option>
+																	
+																	  			<option>240229</option>
+																	
+																	  			<option>240230</option>
+																	
+																	  			<option>240231</option>
+																	
+																	  			<option>240232</option>
+																	
+																	  			<option>240233</option>
+																	
+																	  			<option>240234</option>
+																	
+																	  			<option>240235</option>
+																	
+																	  			<option>240236</option>
+																	
+																	  			<option>240237</option>
+																	
+																	  			<option>240238</option>
+																	
+																	  			<option>240239</option>
+																	
+																	  			<option>240240</option>
+																	
+																	  			<option>240241</option>
+																	
+																	  			<option>240242</option>
+																	
+																	  			<option>240243</option>
+																	
+																	  			<option>240244</option>
+																	
+																	  			<option>240245</option>
+																	
+																	  			<option>240246</option>
+																	
+																	  			<option>240247</option>
+																	
+																	  			<option>240248</option>
+																	
+																	  			<option>240249</option>
+																	
+																	  			<option>240250</option>
+																	
+																	  			<option>240251</option>
+																	
+																	  			<option>240252</option>
+																	
+																	  			<option>240253</option>
+																	
+																	  			<option>240254</option>
+																	
+																	  			<option>240205</option>
+																	
+																	  			<option>240206</option>
+																	
+																	  			<option>240207</option>
+																	
+																	  			<option>240208</option>
+																	
+																	  			<option>240209</option>
+																	
+																	  			<option>240210</option>
+																	
+																	  			<option>240211</option>
+																	
+																	  			<option>240212</option>
+																	
+																	  			<option>240213</option>
+																	
+																	  			<option>240214</option>
+																	
+																	  			<option>240215</option>
+																	
+																	  			<option>240216</option>
+																	
+																	  			<option>240217</option>
+																	
+																	  			<option>240218</option>
+																																		  
+																</select>
+																<input type="button" 
+																	value="Select all CCHS Survey Indicators"
+																	onclick="selectAllGroup('selectColumn5Criteria', 'selectColumn5CriteriaGroup6')" />
+																</td></tr>
+																
+																</table>																	
+															</td>
+														</tr>
+													
+												
+													
+												
+													
+												
+												</tbody>
+											</table>
+											
+											<br />
+											
+											
+											<table border="0" cellpadding="10" cellspacing="0" width="100%">
+												<tbody>
+													<tr>
+														<td style="padding:5px">
+															<strong>c. Generate results</strong>
+														</td>
+													</tr>
+													<tr>
+														<td style="padding:5px">
+															Click on this button to generate results based on the information
+															you have provided.</td>
+													</tr>
+													<tr>
+														<td style="padding:5px 10px 5px">
+															<input type="button" 
+																value="Go to results >" 
+																id="goToResults" 
+																onclick="doSubmit(this.form, 'doGenerateResults')" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+										</form>
+										
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<script type="text/javascript">
+							// Set initial state of the get results button
+							determineResultsButtonState();
+						</script>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- SUB PAGE CONTENT ENDS HERE -->
+			<!--FOOTER BEGINS HERE-->
+
+	
+
+<!-- Spacer -->
+<div>&nbsp;</div>
+		
+<div id="footer">
+    <div id="footerLogo">
+        <a href="http://www.alberta.ca/" title="Link to Government of Alberta home page" target="_blank">
+        	<!--<img src="/IHDA_Retrieval/images/interface/logoFooter.gif"/></a>-->
+        	<!--<img src="/IHDA_Retrieval/images/interface/page-footer-logo.png"/-->
+        	<img src="/IHDA_Retrieval/images/interface/Alberta-logo-Footer.png"/
+        	alt="Government of Alberta" />
+        </a>
+    </div>
+    <ul id="goaLinks"> 
+	    <li><a href="http://alberta.ca/usingthissite.cfm" target="_blank" title="Using this Site">Using this Site</a></li>			      
+        <li><a href="http://alberta.ca/accessibility.cfm" target="_blank" title="Accessibility">Accessibility</a>&nbsp; |</li>
+        <li><a href="http://www.health.alberta.ca/search.html" target="_blank" title="Search AHW - it does not search this page">Search</a>&nbsp; |</li>	      	
+    	<li><a href="#" title="Contact Us" 
+			onClick="window.open('/IHDA_Retrieval/contact.jsp','');">Contact Us</a>
+	    &nbsp; |
+	    </li>
+	    <li><a href="#" title="Help"
+	        onclick="helpWindow = window.open('file/IHDA_Help.pdf','','scrollbars=no,menubar=no,resizable=yes,toolbar=no,location=no,status=no,height=650,width=750');
+				helpWindow.focus();">Help</a>
+	    &nbsp; |
+	    </li>
+	    <li><a href="#" title="Links"
+		  onClick="window.open('/IHDA_Retrieval/link.jsp','');">Links</a>
+	    &nbsp; |
+	    </li>
+	    <li><a href="http://www.health.alberta.ca" target="_blank" title="Health">Health</a>&nbsp; |</li>	    
+    </ul>
+ 	<p id="copyright">&copy; 1983&ndash;2016 
+ 	     <a title="Government of Alberta"
+ 	        href="http://alberta.ca/"
+ 	        target="_blank">
+ 	        Government of Alberta
+ 	     </a>
+ 	     &nbsp; | 
+		 <a title="Copyright and Disclaimer" 
+       		href="http://alberta.ca/copyright.cfm" 
+       		target="_blank">
+       		Copyright and Disclaimer
+       	 </a>
+       	 &nbsp; |
+       	 <a title="Privacy"
+       	    href="http://alberta.ca/privacystatement.cfm" 
+       	    target="_blank">
+       	    Privacy
+       	 </a>
+	</p>    
+</div><!-- close footer -->
+
+<!-- FOOTER OF THE PAGE ENDS HERE --> 
+
+                
+		</div>
+	</div>
+	<!-- textresizer js -->
+	<script language="Javascript">
+	  detectCookie();
+	</script>	
+</body>
+</html>

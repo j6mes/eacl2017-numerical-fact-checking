@@ -1,0 +1,515 @@
+
+<html>
+
+<head>	
+	
+	<title>Number of Abortions in US & Worldwide - Number of abortions since 1973</title>
+	<meta name="description" content="number of abortions this year, US Abortion clock, worldwide abortion clock, number of abortions due to rape or incest, Planned Parenthood Abortion Count.  The most accurate set of abortion counters on the web" />
+	<meta name="keywords" content="Number,abortions,statistics, US, United States, worldwide, rape, incest, counter,Roe, Wade,Guttmacher,USdebtclock" />
+
+	<!-- Copyright 2016, numberofabortions.com. All Rights Reserved. We will take legal action against those who copy our HTML content, CSS style sheets and JavaScript functions. --> 
+
+
+	<!-- BEGIN CSS STYLES -->
+	<!--  span#-->
+	<style type="text/css">
+		body{
+			font-size:20px;
+		}
+
+		 /* common attributes for all counters below */
+                span.counter{
+			display:block;
+                        background-color:black;
+                        color:white;
+                        border:1px solid silver;
+                        padding:6px;
+                        font-family:verdana;
+                        font-weight:bold;
+			font-size:17px;
+                        width:220px;
+                        text-align:center;
+                        letter-spacing:5px;
+
+                }
+		span#counter_a{
+			color:white;
+		}
+		span#counter_b{
+			color:white;
+		}
+		span#counter_c{
+			color:white;
+		}
+		
+		span#counter_d{
+			color:white;
+		}
+		span#counter_e{
+			color:yellow;
+		}
+		span#counter_f{
+			color:yellow;
+		}		
+		span#counter_g{
+			color:yellow;
+		}
+		span#counter_h{
+			color:yellow;
+		}
+		span#counter_i{
+			color:white;
+		}
+
+		span#counter_j{
+			color:white;
+		}
+		span#counter_k{
+			color:white;
+		}
+		span#counter_l{
+			color:white;
+		}
+
+		form#load_time{
+			display:none;
+		};
+
+		/* wide column that covers entire screen */
+		div.full{
+			float:left;
+			width:100%;
+                        min-width:550px;
+		}
+		/* block within full column that will create padding */
+		div.full div{
+			margin:12px;
+		}
+		/* shared properties for left, center, right columns */
+		div.column{
+			float:left;
+			width:30%;
+                        min-width:200px;
+			min-height:400px;
+			font-size:14px;
+			font-family:verdana;
+			font-weight:bold;	
+			
+		}
+		/* properties for left column only */
+		div.left{
+			background-color:PowderBlue;	
+		}
+		/* properties for center column only */
+		div.center{
+			background-color:PowderBlue;
+		}
+		/* properties for right column only */
+		div.right{
+			background-color:PowderBlue;
+		}
+		
+
+			
+	</style>
+	<!-- END CSS STYLES -->
+
+
+
+<script language="javascript" type="text/javascript"> 
+// number formatting function
+// copyright Stephen Chapman 24th March 2006, 22nd August 2008
+// permission to use this function is granted provided
+// that this copyright notice is retained intact
+
+function formatNumber(num,dec,thou,pnt,curr1,curr2,n1,n2) 
+{
+		var x = Math.round(num * Math.pow(10,dec));
+		if (x >= 0) {n1=n2='';}
+		var y = (''+Math.abs(x)).split('');
+		var z = y.length - dec; if (z<0) z--; 
+		for(var i = z; i < 0; i++) y.unshift('0'); 
+		if (z<0) z = 1; y.splice(z, 0, pnt); 
+		if(y[0] == pnt) y.unshift('0');
+		while (z > 3) {z-=3; y.splice(z,0,thou);}
+		var r = curr1+n1+y.join('')+n2+curr2;return r;
+}
+
+//alert('a');document.getElementById("warning").display='none';alert('b');
+
+</script>
+
+
+
+	<script type="text/javascript">
+	//Google analytics log routine. To get statistical results on web access
+	//
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-4309842-2']);
+	  _gaq.push(['_trackPageview']);
+
+		  (function() {
+ 		   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+	</script>
+
+
+
+</head>
+
+
+
+<body onload="updateCounter();setInterval('updateCounter()',1000);" style="background-color:PowderBlue;">
+
+	<div class="full">
+		<!-- BEGIN HTML, output, span id html reference, define -->
+
+
+		<center><h1>Number of Abortions - Abortion Counters</h1></center>  
+		Each real-time abortion counter is based on the most current statistics* for the number of abortions in the US & the number of abortions Worldwide.<br>
+		<br>
+		<p><center><span style="background-color:yellow"; >US Abortion Clock.org</span> </center></p>
+		<br>
+		<!-- BEGIN static variables used for loaddate -->
+		<form>
+
+			<input type="hidden" id="load_unixt" value="0">
+			<input type="hidden" id="load_hour" value="0">
+			<input type="hidden" id="load_minute" value="0">
+			<input type="hidden" id="load_second" value="0">
+		</form>
+		<!-- END static variables used for loaddate -->
+	</div>
+
+        	<div class="column left">
+        		In United States today <br>
+        		<span id="counter_a" class="counter">&nbsp;</span>
+        		<br> <br>
+        		US since 1973: Roe vs Wade <br>  <style="text-align:center"> <span id="counter_b" class="counter">&nbsp;</span>
+        		<br> <br>
+        		By Planned Parenthood since 1970<br>
+          		<span id="counter_j" class="counter">&nbsp;</span>
+        		<br> <br>
+        		By Planned Parenthood this year<br>
+        		<span id="counter_k" class="counter">&nbsp;</span>
+        		<br> <br>
+
+
+        	</div>
+        	<div class="column center">
+        		United States this Year <br> <span id="counter_c" class="counter">&nbsp;</span>
+        		<br> <br>
+        		US this Year after <br> 16 weeks gestation <br> <span id="counter_d" class="counter">&nbsp;</span>
+        		<br> <br>
+        		US this Year due to rape<br> or incest<br> <span id="counter_i" class="counter">&nbsp;</span>
+        		<br> <br>
+        		Black babies since '73 in US<br> <span id="counter_l" class="counter">&nbsp;</span>
+        		<br> <br>
+
+				
+        	</div>
+        	<div class="column right">
+        		Worldwide since 1980 <br> <span id="counter_e" class="counter">&nbsp;</span>
+        		<br> <br>
+        		Worldwide this Year <br> <span id="counter_f" class="counter">&nbsp;</span>
+        		<br> <br>
+        		WW since you loaded this page <br> <span id="counter_g" class="counter">&nbsp;</span>
+        		<br> <br>
+        		Worldwide Today <br> <span id="counter_h" class="counter">&nbsp;</span>
+
+
+        	</div>
+	<br clear="both">
+	<div class="full">
+
+
+	<!--Footer text here-->
+
+
+
+	<!--DISPLAY DATE & TIME  -->
+
+	<table style="border-style:none;border-bottom-width:4;border-top-width:3;border-left-width:3;border-right-width:3;border-bottom-color:#000000;border-top-color:#000000;border-right-color:#000000;border-left-color:#000000;" cellpadding=4><tr><td>
+	<font color="#3366CC" face="verdana">
+	<form name="time"><input type=text name="box" style="font-style:none;color:#000000;font-family:verdana;font-size:1.5em; border:;" size=20>
+	<SCRIPT LANGUAGE="JavaScript">
+	function runClock(){
+		theTime = window.setTimeout("runClock()", 1000);var RightNow = new Date();
+		var hrNow = RightNow.getHours();
+		var mnNow = RightNow.getMinutes();
+		var scNow = RightNow.getSeconds();
+		var miNow = RightNow.getTime();
+		var mon = RightNow.getMonth() + 1;
+		var date = RightNow.getDate();
+		var year = RightNow.getFullYear();
+		var year2 = RightNow.getFullYear() - 2000;
+		if(year2<=9){year2='0'+year2;}
+		var day = RightNow.getDay();
+
+		if(hrNow == 0) {hour = 12;var ap = " AM";}
+			else if(hrNow <= 11) {ap = " AM";hour = hrNow;}
+			else if(hrNow == 12) {ap = " PM";hour = 12;} 
+			else if (hrNow >= 13) {hour = (hrNow - 12);ap = " PM";}
+		if(hrNow >= 13) {hour = hrNow - 12;}
+		if(mnNow <= 9) {min = "0" + mnNow;}
+			else{min = mnNow}
+		if (scNow <= 9) {secs = "0" + scNow;}
+			else {secs = scNow;}
+
+// fix for 2 bb counter room		document.time.box.value=""+mon+"/"+date+"/"+year+" "  +hour+":"+min+":"+secs+ap+" ";}
+		document.time.box.value=""+mon+"/"+date+"/"+year+" "  +hour+":"+min+" "+ap+"";}
+		runClock();
+	</script>
+
+
+	<noscript><H1> enable Scripts/ActiveX for counters to display</H1></noscript></font></td></tr></table></form>
+
+
+	<a href="http://www.lifematterstv.org/abortioncounters.html">
+	* Documentation for the basis for the Abortion Counters (Guttmacher, etc.) </a>
+	</div>
+	<!-- END HTML-->
+	
+	<!-- BEGIN JAVASCRIPT -->
+        <script type="text/javascript">
+		
+		//create static?date object for time of page loading
+		var loaddate = new Date();
+		
+		//assign date info to static html
+		document.getElementById("load_unixt").value = loaddate.getTime()
+		document.getElementById("load_hour").value = loaddate.getHours()
+		document.getElementById("load_minute").value = loaddate.getMinutes();
+		document.getElementById("load_second").value = loaddate.getSeconds();
+		
+
+		//function updatecounter()
+		function updateCounter(){
+                        //create jvascrpt date object
+			var now = new Date();
+			
+			
+
+			// unixt at time of page load
+			var unixt = document.getElementById("load_unixt").value;
+			//hour at time of page load
+			var loadhour = document.getElementById("load_hour").value;
+			//minute at time of page load
+			var loadminute = document.getElementById("load_minute").value;
+			//second at time of page load
+			var loadsecond = document.getElementById("load_second").value;
+
+
+
+
+                        //set time variables
+			var hour        = now.getHours();
+                        var minute      = now.getMinutes();
+                        var second      = now.getSeconds();
+                        var monthnumber = now.getMonth();
+                        var monthday    = now.getDate();
+                        var year        = now.getYear();
+			var unixtNow 	= now.getTime();
+			unixtNow 	= unixtNow/1000
+	
+
+			//calc here - tbd 
+
+
+			unixt = unixt/1000
+
+			//sincePageLoad 	= ((minute * 60) + second) - ((loadminute * 60) + loadsecond);
+			
+			//var staticseconds 	=  (loadhour * 3600) + (loadminute * 60) 
+			//var newseconds 	= (hour * 3600) + (minute * 60) + (second)
+
+			var diffseconds 	=  unixtNow  - unixt
+
+			var ABsUSlastYr = 1058490*1.03;
+
+
+			var ABsPP1970thru2005 = 4068749;
+			var ABsPP2006 =  289750;
+			var ABsPP2007 =  305310;
+			var ABsPP2008 = 324008;
+			var ABsPP2009 = 331796;
+			var ABsPP2010 = 329445;
+			var ABsPP2011 = 333964;
+			var ABsPP2012 = 327166;
+			var ABsPP2013 = 327166;
+			var ABsPP2014 = 323999;
+			var ABsPP2015 = 323999;
+
+			var ABsPPthru2010 = ABsPP1970thru2005 +ABsPP2006 +ABsPP2007+ABsPP2008 +ABsPP2009 +ABsPP2010;
+			var ABsPPthru2011 = ABsPPthru2010 +ABsPP2011;	
+			var ABsPPthru2012 = ABsPPthru2011 + ABsPP2012;
+			var ABsPPthru2013 = ABsPPthru2012 + ABsPP2013;
+			var ABsPPthru2014 = ABsPPthru2013 + ABsPP2014;
+			var ABsPPthru2015 = ABsPPthru2010 +ABsPP2011 +ABsPP2012 +ABsPP2013 +ABsPP2014
+			
+			
+			var PPPercent = ABsPP2015/ABsUSlastYr;
+
+
+			var ABsperdy= ABsUSlastYr/365;
+
+			var ABsperhr = ABsUSlastYr/(24*365);
+
+			var ABspermn =ABsUSlastYr/(24*365*60);
+
+			var ABspersc  =ABsUSlastYr/(24*365*60*60);
+//document.write('<p>monthnumber: ' + monthnumber + '<br>monthday: ' + monthday + '</p>');
+			var dayinyear = (monthnumber)*30.42 + monthday;
+
+			//if (monthnumber = 12) this if needs to be cleaned up
+			//	{
+			//		dayinyear = 334 + monthday;
+			//	}
+
+
+			var ABsthisYrTD = ABsUSlastYr*(dayinyear-1)/365;
+			
+//document.write('<p>dayinyear: ' + dayinyear + '<br>ABsthisYrTD: ' + ABsthisYrTD + '</p>');
+			var ABstoday1=(hour)*ABsperhr + (minute)*ABspermn +(second)*ABspersc + 0.3;
+			var ABstoday = formatNumber(ABstoday1,1,',','.','','','-','');
+
+  
+
+			var ABsinceRvWthru15=58586255;
+			var totalABsinUSsinceRvW1 = ABsinceRvWthru15 +ABsthisYrTD + ABstoday1;
+			var totalABsinUSsinceRvW = formatNumber(totalABsinUSsinceRvW1,1,',','.','','','-','');
+
+
+					
+			var ABsinUSthisYr1= ABsthisYrTD + ABstoday1;
+			var ABsinUSthisYr = formatNumber(ABsinUSthisYr1,1,',','.','','','-','');
+
+			var PPthisYR1 = PPPercent*ABsinUSthisYr1;
+			var PPthisYR = formatNumber(PPthisYR1,1,',','.','','','-','');
+
+			var ABsPP2007thrutoday1 = PPthisYR1 + ABsPPthru2015;
+			var ABsPP2007thrutoday = formatNumber(ABsPP2007thrutoday1,1,',','.','','','-','');
+
+			var ABsdueRapeIncest = ABsinUSthisYr1*(0.0097)
+			ABsdueRapeIncest = formatNumber(ABsdueRapeIncest,1,',','.','','','-','');
+// add calc for bb
+			var ABsthisyearblackbbabies = ABsinUSthisYr1*(0.3)
+			ABsthisyearblackbbabies = formatNumber(ABsthisyearblackbbabies,1,',','.','','','-','');
+			
+			var ABsSince73ofBlackbabies = totalABsinUSsinceRvW1*(0.3)
+			ABsSince73ofBlackbabies = formatNumber(ABsSince73ofBlackbabies,1,',','.','','','-','');		
+//document.write('<p>bb this year: ' + ABsthisyearblackbbabies + '<br>bb sinc73: ' + ABsSince73ofBlackbabies + '</p>');			
+			
+			var ABsthisYrafter16weeks1 = ABsinUSthisYr1*(0.048);
+			var ABsthisYrafter16weeks = formatNumber(ABsthisYrafter16weeks1,1,',','.','','','-','');
+
+			<!--start World-Wide Calc here-->
+			
+
+			var ABsWWlastYr = 40000000;
+
+			var ABsperdyWW= ABsWWlastYr/365;
+
+			var ABsperhrWW = ABsWWlastYr/(24*365);
+
+			var ABspermnWW =ABsWWlastYr/(24*365*60);
+		
+			var ABsperscWW  =ABsWWlastYr/(24*365*60*60);
+
+			var sincePageLoad =  diffseconds*ABsperscWW;
+
+			sincePageLoad = formatNumber(sincePageLoad,0,',',' ','','','-','');
+
+			var ABsthisYrTDWW = ABsWWlastYr*(dayinyear-1)/365;
+
+			var ABstodayWW=(hour)*ABsperhrWW + (minute)*ABspermnWW +(second)*ABsperscWW;
+			ABstodayWW1 = formatNumber(ABstodayWW,0,',',' ','','','-','');
+
+			var ABsince1980thru09=1160000000;
+			var ABsince1980thru10 = ABsince1980thru09 + ABsWWlastYr
+			var ABsince1980thru11 = ABsince1980thru10 + ABsWWlastYr
+			var ABsince1980thru12 = ABsince1980thru11 + ABsWWlastYr
+			var ABsince1980thru13 = ABsince1980thru12 + ABsWWlastYr
+			var ABsince1980thru15 = (2015-1980)*ABsWWlastYr 
+			
+			
+			var totalABsWWsince1980 = ABsince1980thru15 +ABsthisYrTDWW + ABstodayWW;
+
+
+			totalABsWWsince1980 = formatNumber(totalABsWWsince1980,0,',',' ','','','-','');
+
+			var ABsWWthisYear= ABsthisYrTDWW*1.012 + ABstodayWW +7.3;
+			
+			
+			ABsWWthisYear = formatNumber(ABsWWthisYear,0,',',' ','','','-','');
+
+
+
+
+
+
+			//write dynamic info to html using id to reference
+			// 
+			document.getElementById("counter_a").firstChild.nodeValue = ABstoday;			
+			document.getElementById("counter_b").firstChild.nodeValue = totalABsinUSsinceRvW;
+			document.getElementById("counter_c").firstChild.nodeValue = ABsinUSthisYr;
+			document.getElementById("counter_d").firstChild.nodeValue = ABsthisYrafter16weeks;
+			document.getElementById("counter_e").firstChild.nodeValue = totalABsWWsince1980;
+			document.getElementById("counter_f").firstChild.nodeValue = ABsWWthisYear;
+			document.getElementById("counter_g").firstChild.nodeValue = sincePageLoad;
+			document.getElementById("counter_h").firstChild.nodeValue = ABstodayWW1;		
+			document.getElementById("counter_i").firstChild.nodeValue = ABsdueRapeIncest;		
+			document.getElementById("counter_j").firstChild.nodeValue = ABsPP2007thrutoday;		
+			document.getElementById("counter_k").firstChild.nodeValue = PPthisYR;		
+			document.getElementById("counter_l").firstChild.nodeValue = ABsSince73ofBlackbabies;		
+
+                }//updateCounter
+
+		
+        </script>
+	<!-- END JAVASCRIPT -->
+
+
+
+		<br> <br>
+
+
+
+
+
+		<a href="http://www.lifematterstv.org">
+		Return to Life Matters TV </a>
+
+		<br />
+<!--add backup sources here. cut&paste from lmtv page-->
+
+<span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" size="3" color="#000000"><span editor_id="mce_editor_0" face="'times new roman', times, serif">Below are the sources for the statistics used and rationale for&nbsp;the number of abortions used in <a EDITOR_ID="mce_editor_0" HREF="http://www.numberofabortions.com/" TARGET="_blank" MCE_REAL_HREF="http://www.numberofabortions.com/" ><span style="font-size: medium; font-family: arial, verdana, sans-serif;" size="4"><em>the&nbsp;abortion counters</em></span></a>. Each abortion counter is a real-time estimate&nbsp;of the number of abortion in the US and the number of abortions worldwide based on the very latest data of the actual number of abortions performed in past years.&nbsp; Most of the abortions reported in these numbers are surgically induced.&nbsp;&nbsp;The&nbsp;eleven abortion&nbsp;counters include: number of abortions in the US today, number of abortions in the US since Roe versus Wade (1973), number of abortions in the&nbsp;US this year, number of abortions in the US this year due to rape or incest, number of abortions in the US this year after 16 weeks gestation, number of abortions by Planned Parenthood since 1970, and the number of aborions by planned Parenthood this year, number of abortions worldwide since 1980, number of abortions worldwide this year, and number of abortions worldwide today.<br /></span></span><span size="3"><span style="color: #000000;" color="#000000" face="'times new roman', times, serif">&nbsp;<br /></span></span><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" size="3"><span face="'times new roman', times, serif">*&nbsp;</span></span></span>Note that the abortions in the counters on this site are almost all &ldquo;surgical abortions&rdquo;. &nbsp;&nbsp;We have made no attempt to tally the totals for &ldquo;chemically-induced abortions&rdquo; here. &nbsp;The Pharmacists for Life organization estimates that their have been approximately 250 million babies aborted chemically since 1973 in the USA: <a href="http://www.pfli.org/"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">http://www.pfli.org/</span></a></span></div>
+<div></div>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" size="3"><span face="'times new roman', times, serif"><br /></span></span></span></span></div>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" size="3"><span face="'times new roman', times, serif">* The Guttmacher Institute, formed as a division of Planned Parenthood of America, reported 42 million abortions World-Wide in 2003 which was down from 46 million in 1995.<span editor_id="mce_editor_0">&nbsp; </span></span><a EDITOR_ID="mce_editor_0" HREF="http://apha.confex.com/recording/apha/135am/pdf/free/4db77adf5df9fff0d3caf5cafe28f496/paper161142_1.pdf" TARGET="_blank" MCE_REAL_HREF="http://apha.confex.com/recording/apha/135am/pdf/free/4db77adf5df9fff0d3caf5cafe28f496/paper161142_1.pdf" ><span style="font-size: medium; font-family: arial, verdana, sans-serif;" editor_id="mce_editor_0" size="2" face="'times new roman', times, serif"><em><strong>The study</strong></em></span></a><span face="'times new roman', times, serif"> was funded by the World Health Organization, an agency of the UN and the World Bank.<br /></span></span></span><span size="3"><span style="color: #000000;" color="#000000" face="'times new roman', times, serif">&nbsp;<br /></span></span><span size="3"><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" face="'times new roman', times, serif">* In January 2014, the Guttmacher Institute reported:&nbsp; * 1.05 million abortions in the US in 2012;&nbsp;* 4.8% of abortions in the US occurred from week 16 of pregnancy to week 32. </span></span></span><span face="'times new roman', times, serif"><span size="3"><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0">&nbsp;US 2014 STUDY on abortions:&nbsp;&nbsp;</span></span></span>&nbsp;</span></span><br /><span size="3" face="'times new roman', times, serif" style="font-family: arial, verdana, sans-serif; font-size: medium;"><a href="http://www.guttmacher.org/pubs/fb_induced_abortion.html"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">http://www.guttmacher.org/pubs/fb_induced_abortion.html</span></a>&nbsp;<br /></span></div>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span editor_id="mce_editor_0"><span editor_id="mce_editor_0" size="3" face="'times new roman', times, serif">World Wide STUDY on abortions: </span></span><a HREF="http://www.guttmacher.org/pubs/Abortion-Worldwide.pdf" TARGET="_blank" MCE_REAL_HREF="http://www.guttmacher.org/pubs/Abortion-Worldwide.pdf" ><span style="font-family: arial, verdana, sans-serif; font-size: medium;" editor_id="mce_editor_0" size="3" face="'times new roman', times, serif">http://www.guttmacher.org/pubs/fb_IAW.pdf</span></a><span style="color: #000000;" editor_id="mce_editor_0" size="3" color="#000000" face="'times new roman', times, serif">&nbsp;&nbsp;</span><span style="color: #000000;" size="3" color="#000000" face="'times new roman', times, serif"> <br /></span></span></div>
+<div><span size="3" style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><br /></span></span></div>
+<p><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3">&nbsp;*&nbsp; The National Right to Life Committee reported on their&nbsp;2/2015 fact sheet &nbsp;(<a href="http://www.nrlc.org/uploads/factsheets/FS01AbortionintheUS.pdf"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">http://www.nrlc.org/uploads/factsheets/FS01AbortionintheUS.pdf</span></a></span></span></span><span style="color: #000000;" editor_id="mce_editor_0" color="#000000" face="'times new roman', times, serif">&nbsp;)&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #000000;" color="#000000"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3">that the total of&nbsp;&nbsp;US abortions since 1973 (RVW) through 2014&nbsp;<span editor_id="mce_editor_0">&nbsp;was 57496011&nbsp;based&nbsp; on state government health organization data &amp; the Guttmacher Institute data including factoring in the possible 3% undercount cited by GI for their own figures.</span><br /><br />*<span>&nbsp;Planned Parenthood reports the number of abortions performed each year in their annual report.</span><span>&nbsp;</span><span editor_id="mce_editor_0"><span editor_id="mce_editor_0">Planned Parenthood&rsquo;s 2005-2006 annual report states that they committed 264,943 abortions in the USA in 2005 and from 1977 through 2005, Planned Parenthood performed 4,068,749 abortions in the USA.&nbsp; More recent PP annual reports show they committed 289,750 in 2006, 305,310 in 2007, 324,008 in 2008, 331796 in 2009,&nbsp; and 329,445 in 2010.</span></span>&nbsp;</span></span></span></span><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3">&nbsp;They reported 329,445 in 2010, 333,924 in 2011, 327,166 in 2012, 327166 in 2013 and 323999&nbsp;in 2014 :&nbsp;2013<a HREF="http://www.plannedparenthood.org/files/AR-FY13_111213_vF_rev3_ISSUU.pdf" TARGET="_blank" ><span style="text-decoration: underline; font-family: arial, verdana, sans-serif; font-size: medium;"><em><strong>&nbsp;report</strong></em></span></a>.</span></span></span></span><span color="#000000" style="color: #000000;"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3"> , </span></span></span><span color="#000000" style="color: #000000;"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3"><a HREF="https://www.plannedparenthood.org/files/2114/5089/0863/2014-2015_PPFA_Annual_Report_.pdf" TARGET="_blank" >2014 report&nbsp;</a></span></span></span></p>
+<p><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span face="'times new roman', times, serif"><span editor_id="mce_editor_0" size="3"><br /><span editor_id="mce_editor_0">* The World Wide abortion counters uses one of the more conservative estimates on the number of abortions world-wide since 1980 (40 Million per year for 30years)&nbsp; and this equals&nbsp;1,200,000 Billion (from Lifesitenews.com: </span></span></span></span><a href="http://www.lifesitenews.com/ldn/2009/oct/09101604.html"><span style="font-family: arial, verdana, sans-serif; font-size: medium;" editor_id="mce_editor_0" size="3" face="'times new roman', times, serif">http://www.lifesitenews.com/ldn/2009/oct/09101604.html</span></a>&nbsp;<span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" size="4" face="'times new roman', times, serif">)&nbsp; <br /></span></span><span style="color: #000000;" color="#000000"><span size="3" face="'times new roman', times, serif"><br /></span></span></span></p>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" editor_id="mce_editor_0" size="3" color="#000000"><span editor_id="mce_editor_0" face="'times new roman', times, serif">* All the US abortion counters show results with one decimal place displayed.&nbsp; This was originally done to show that these abortion counters are active and not a static count.&nbsp; If you look at abortion procedures like Dilation &amp; Evacuation&nbsp;</span><span face="'times new roman', times, serif"><span style="color: #000000;" editor_id="mce_editor_0" size="3" color="#000000">&nbsp;</span>&nbsp;or Partial-Birth abortion (<a href="http://www.nrlc.org/uploads/factsheets/FS04AbortionTechniques.pdf"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">http://www.nrlc.org/uploads/factsheets/FS04AbortionTechniques.pdf</span></a></span><span face="'times new roman', times, serif">), you realize that the abortion takes place in pieces over time so the decimal places do represent some reality.</span></span><span style="color: #000000;" editor_id="mce_editor_0" size="3" color="#000000" face="'times new roman', times, serif">&nbsp; </span></span></div>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" editor_id="mce_editor_0" size="3" color="#000000" face="'times new roman', times, serif"><br /></span></span></div>
+<div><span size="3" style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000" face="'times new roman', times, serif">&nbsp;* Why did we<span id="docs-internal-guid-79147772-2c9d-1e68-7702-b1555e914390">&nbsp;include a &ldquo;black baby counter&rdquo;: &nbsp;Two African-American Religious-based web sites asked us to put in a black baby counter to highlight the disparity of the high number of abortions in the black population. &nbsp;Margaret Sanger, the founder of Planned Parenthood, had this as objective in her eugenics plan.</span></span></span></div>
+<div><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span size="3"><span style="color: #000000;" color="#000000" face="'times new roman', times, serif"><br /></span></span><span size="3"><span style="color: #000000;" color="#000000" face="'times new roman', times, serif">&nbsp;</span></span><span style="color: #000000;" color="#000000"><span editor_id="mce_editor_0" size="3" face="'times new roman', times, serif">* Why is there a "After 16 weeks gestation" abortion counter?&nbsp; There is a lot of argument about "When does life begin" ?&nbsp; It would seem to be pretty hard for anyone to argue that a baby at 16 weeks gestation "is just a blob of tissue" based on what&nbsp;the scientific community&nbsp;knows today about the development of a baby at 16 weeks:</span><span face="'times new roman', times, serif"> <br /><br /></span></span></span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- The body is fully formed, the fingers and toes have fingerprints &amp; nails.</span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- Is about 5 inches long and weighs&nbsp; about 3 ounces, about the size of a large avacado. </span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- The baby is moving about: may grasp for the umbilical cord , suck it's thumb, and &nbsp;is capable of making facial expressions and kicking&nbsp;at the amniotic sac.</span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- The heart &amp; circulatory system and the urinary tract are fully functioning. and the blood is pumping through these tiny veins</span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- The baby is inhaling and exhaling the amniotic fluid through the lungs.</span></div>
+<div><span size="3" style="font-family: arial, verdana, sans-serif; font-size: medium;"><span style="color: #000000;" color="#000000"><span face="'times new roman', times, serif">&nbsp;-The eyes are in the proper position, and the baby can see straight ahead &amp; blink his/her eyelids. </span></span></span></div>
+<div><span style="color: #000000; font-family: arial, verdana, sans-serif; font-size: medium;" size="3" color="#000000" face="'times new roman', times, serif">- The genitals have formed. In the case of a girl, the uterus has already developed and the ovaries are in the proper place.</span></div>
+<div><span size="3" style="font-family: arial, verdana, sans-serif; font-size: medium;"><span size="3"><span style="color: #000000;" editor_id="mce_editor_0" color="#000000" face="'times new roman', times, serif">- Umberto Castiello, University of Padova, Italy&nbsp; reported&nbsp;unborn babies have the ability to interact as early as 14 weeks into the pregnancy: "We conclude that performance of movements towards the co-twin is not accidental: already starting from the 14th week of gestation twin fetuses execute movements specifically aimed at the co-twin." <br /><br /><span style="color: #555555;">* This site is also accessible by </span><a href="http://www.usabortionclock.org/"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">www.usabortionclock.org</span></a><span style="color: #555555;">.&nbsp; The original idea a page of abortion counters came from the site </span><a href="http://www.usdebtclock.org/" editor_id="mce_editor_0"><span style="font-family: arial, verdana, sans-serif; font-size: medium;">www.usdebtclock.org</span></a><span style="color: #555555;">&nbsp;is a very interesting perspective on the magnitude of the US debt obligations.</span></span></span></span></div>
+<div><br /><br /><span style="font-family: arial, verdana, sans-serif; font-size: medium;"><span editor_id="mce_editor_0" size="4">To view&nbsp;the active count of the number of abortions in the US and the numbers of abortions worldwide return to </span><a href="http://www.abortioncounters.com/" editor_id="mce_editor_0"><span style="color: #0066cc; font-size: medium; font-family: arial, verdana, sans-serif;" size="4" color="#0066cc" face="'times new roman', times, serif"><em><strong>www.abortioncounters.com</strong></em></span></a><span editor_id="mce_editor_0" size="4" face="'times new roman', times, serif"> web page.</span></span></div><br>
+<div></div>
+
+
+</body>
+
+</html>

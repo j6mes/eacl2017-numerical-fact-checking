@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<haml_loud> I18n.locale </haml_loud>"> <![endif]-->
+<!--[if IE 7 ]> <html class="ie ie7" lang="<haml_loud> I18n.locale </haml_loud>"> <![endif]-->
+<!--[if IE 8 ]> <html class="ie ie8" lang="<haml_loud> I18n.locale </haml_loud>"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie ie9" lang="<haml_loud> I18n.locale </haml_loud>"> <![endif]-->
+<!--[if gt IE 9]> ><! <![endif]-->
+<html lang='en'>
+<!-- <![endif] -->
+<head data-hook='inside_head'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"e40f50b9e3","applicationID":"17091934","transactionName":"cV5eEkMNWFkHE0pUFEZYUwpUERtGCg4S","queueTime":44,"applicationTime":272,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+<script type="text/javascript">var _rollbarConfig = {};</script>
+<script type="text/javascript">!function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);</script>
+<meta content='True' name='HandheldFriendly'>
+<meta content='320' name='MobileOptimized'>
+<meta content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
+<meta content='on' http-equiv='cleartype'>
+<meta content='telephone=no' name='format-detection'>
+<meta content='F059F4F28D166EA49DD678043950FC8A' name='msvalidate.01'>
+<meta content='be58a1590d0e6c74d315ce4763ba3354' name='p:domain_verify'>
+<script>
+  // Google Analytics
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+  LH_GA_KEY = 'UA-76953419-1'
+  ga('create', LH_GA_KEY, 'auto');
+  var vglnk = { key: 'ce77bf6971492c4bcc18da96366725da' };
+</script>
+
+<link href="https://www.livinghealthy.com/articles/measles-vaccination-rates-in-african-countries-surpass-north-america" rel="canonical" />
+
+<link rel="shortcut icon" type="image/x-icon" href="https://d2zjb685spa8zx.cloudfront.net/assets/favicon-6812925e8b1f88c2959f51abdae4c4570847d278ad0f1b5181829f7a79a49f76.ico" />
+<link rel="apple-touch-icon" type="image/x-icon" href="https://d2zjb685spa8zx.cloudfront.net/assets/AppIcon60x60-1bfee7061b1b875349bbcea53b992f10d6ad973c231c619f54279ee96dbb5c18.png" />
+<link rel="apple-touch-icon" type="image/x-icon" href="https://d2zjb685spa8zx.cloudfront.net/assets/AppIcon76x76-d753780ef9b4b2f025b24d3114e76a4f04c3f5722b77cb50c25e9dfb0a938dc3.png" sizes="76x76" />
+<link rel="apple-touch-icon" type="image/x-icon" href="https://d2zjb685spa8zx.cloudfront.net/assets/AppIcon60x60@2x-9fdef754b802544ace64e7a0dd26ad9f5d9d7716eeb55c8632e6a165d66df94e.png" sizes="120x120" />
+<link rel="apple-touch-icon" type="image/x-icon" href="https://d2zjb685spa8zx.cloudfront.net/assets/AppIcon76x76@2x-06396281bc26a3e0e00a847b58b6bfeaccf76dcc52d70e27a2ff76b6a354cfcc.png" sizes="152x152" />
+
+<title>Measles Vaccination Rates in African Countries Surpass North America</title>
+<meta name="description" content="While parts of North America are experiencing the worst measles outbreak in 15 years, a new report shows that Africa ..." />
+
+<script type='application/ld+json'>
+
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Measles Vaccination Rates in African Countries Surpass North America",
+  "url": "http://livinghealthy.com/articles/measles-vaccination-rates-in-parts-of-africa-surpass-those-in-north-america",
+  "thumbnailUrl": "https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/sidebar_image/397/thumb_measles-vaccine-266x267.jpg",
+  "image": "https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/hero_image/397/header_measles-vaccine-846x480.jpg",
+  "dateCreated": "2015-02-10T12:15:00Z",
+  "datePublished": "2015-02-10T12:15:00Z",
+  "articleSection": "wellness",
+  "creator": ["Valaer Murray"],
+  "keywords": ["Measles", "Vaccine", "Autism", "North America", "Vaccination", "Toronto", "Vaccines", "Immunity", "United Nations", "The Americas", "United States", "Infectious Diseases", "Canada", "Anti-Vaxxer", "Anti-Vax", "Herd Immunity"]
+}
+
+
+
+</script>
+
+
+<!-- Open Graph Tags -->
+<meta content='733354756748659' property='fb:app_id'>
+<meta content='article' property='og:type'>
+<meta content='https://www.livinghealthy.com/articles/measles-vaccination-rates-in-african-countries-surpass-north-america' property='og:url'>
+<meta content='Measles Vaccination Rates in African Countries Surpass North America' property='og:title'>
+<meta content='https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/hero_image/397/header_measles-vaccine-846x480.jpg' property='og:image'>
+<meta content='While parts of North America are experiencing the worst measles outbreak in 15 years, a new report shows that Africa ...' property='og:description'>
+<meta content='LivingHealthy' property='og:site_name'>
+<meta content='wellness,energy-vitality,Measles,Vaccine,Autism,North America,Vaccination,Toronto,Vaccines,Immunity,United Nations,The Americas,United States,Infectious Diseases,Canada,Anti-Vaxxer,Anti-Vax,Herd Immunity' name='sailthru.tags'>
+<meta content='https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/hero_image/397/header_measles-vaccine-846x480.jpg' name='sailthru.image.full'>
+<meta content='https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/sidebar_image/397/thumb_measles-vaccine-266x267.jpg' name='sailthru.image.thumb'>
+<meta content='true' name='sailthru.spider'>
+
+<link rel="stylesheet" media="all" href="https://d2zjb685spa8zx.cloudfront.net/assets/application-49aeefbc7e118b22757541110cb8b948f19da4957d29da32f00482d502d2202c.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" defer="defer"></script>
+<script src="https://d2zjb685spa8zx.cloudfront.net/assets/application-5b5fc4b6e909faa3dc0d1bb29e808f6a0b5f4f131680562923dea2154c987943.js" defer="defer"></script>
+<script src="//cdn.viglink.com/api/vglnk.js" defer="defer"></script>
+<script>
+  WebFontConfig = {
+     google: { families: [ 'Source+Sans+Pro:400,400italic,600,600italic,700,700italic,300,300italic:latin,latin-ext', 'Montserrat:400,700:latin', 'Droid+Serif:400,400italic,700,700italic:latin' ] }
+     , active: function () {$(document).trigger('fontsFinished'); if (document.readyState === 'complete') {$(document).trigger('layoutUpdated');}}
+     , inactive: function () {$(document).trigger('fontsFinished')}
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
+<script>
+  // Include the Twitter Library
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+  
+  // On ready, register the callback
+  twttr.ready(function (twttr) {
+    twttr.events.bind('click', function (event) {
+      var url = getShareUrl(event);
+      LH.GATracker.trackShareEvent('Twitter', 'Click', url);
+      LH.GATracker.trackSocial('Twitter', 'Click', url);
+    });
+  
+    twttr.events.bind('tweet', function (event) {
+      var url = getShareUrl(event);
+      Cookies.remove('share_url');
+      LH.GATracker.trackShareEvent('Twitter', 'Shared', url);
+      LH.GATracker.trackSocial('Twitter', 'Tweet', url);
+    });
+  });
+  
+  function getShareUrl(event) {
+    var url = LH.Common.getLocationUrl() + $(event.target).parent().data('url');
+    if(Cookies.get('share_url')) {
+      url = Cookies.get('share_url');
+    }
+    return url
+  }
+</script>
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="f1rtK+JTlnxp44ufZVaOMb/uPe9Lz1URQH9/yZ4aNcLWMk/Aq0m+QQ97uk3HScBqT5AFkcTv4D1MaRMRHpFh4g==" />
+</head>
+<body class='content-articles-show' data-no-turbolink>
+
+
+<div id='fb-root'></div>
+<script>
+  // called after SidebarWidgets loaded, See /assets/javascripts/lh/other/sidebar_widgets.js.coffee
+  function loadAPI() {
+    //console.log('load facebook sdk');
+    var js = document.createElement('script');
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=733354756748659&version=v2.0";
+    document.body.appendChild(js);
+  }
+</script>
+
+<div class='email-share-popup no-show'>
+<div id='overlay'></div>
+<div class='email-share'>
+<div class='share-header'>
+Share with your friends
+</div>
+<form class="email-form validate-form" id="email-share-form" novalidate="novalidate" action="javascript:void(0);" accept-charset="UTF-8" data-remote="true" method="get"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="referring_page" id="referring_page" value="https://www.livinghealthy.com/articles/measles-vaccination-rates-in-african-countries-surpass-north-america" />
+<div class='input-group clearfix'>
+<label for="share__share_to">To: </label>
+<input placeholder="Separate multiple addresses with commas" class="form-input" type="email" name="[email]" id="share__email" />
+</div>
+<div class='input-group clearfix'>
+<label for="share__share_message_label">Message: </label>
+<textarea cols="20" rows="4" class="form-input" name="[share_message]" id="share__share_message">
+</textarea>
+</div>
+<div class='input-group clearfix'>
+<div class='share-content clearfix'>
+<img class="beshared-image" src="" />
+<p class='beshared_title'>''</p>
+</div>
+</div>
+<div class='input-group clearfix'>
+<button name="button" type="button" class="btn email-share-btn">Send</button>
+</div>
+</form>
+<a class='close-reveal-modal'></a>
+</div>
+</div>
+
+<!--[if lte IE 9]> <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+<div class='row' id='site-container'>
+<div id='messages'>
+</div>
+<header>
+<div class='small-2 columns hide-for-large-up'>
+<a class="menu-toggle active" href="#"><span class='menu-icon'></span>
+</a></div>
+<a class="logo small-6 medium-4 columns" href="https://www.livinghealthy.com/"><img src="https://d2zjb685spa8zx.cloudfront.net/assets/logo-f2290b0307f80268d4620fcc068274f169c10d2265cb87efa189460bcdc2cc2c.svg" alt="Logo" />
+</a><div class='right-content small-2 medium-2 large-8 columns'>
+<div class='search'>
+<form class="clearfix" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+<div class='search-field'>
+<span class='icn-search'></span>
+<input type="text" name="q" id="q" class="fields" placeholder="Search your healthy here" />
+</div>
+<input type="submit" name="commit" value="Search" class="btn button radius find" />
+<input type="submit" name="commit" value="go" class="go" />
+</form>
+
+</div>
+
+<div class='social-links right show-for-large-up'>
+<a class="icn-facebook" target="_blank" href="http://www.facebook.com/LivingHealthyUS"></a>
+<a class="icn-twitter" target="_blank" href="http://www.twitter.com/LivingHealthyUs"></a>
+<a class="icn-pinterest" target="_blank" href="http://www.pinterest.com/imlivinghealthy/"></a>
+<a class="icn-youtube" target="_blank" href="https://www.youtube.com/c/livinghealthytv"></a>
+<a class="icn-instagram" target="_blank" href="https://instagram.com/livinghealthyus"></a>
+</div>
+</div>
+<div class='header-main-links'>
+<div class='main-menu-wrapper'>
+<div class='main-menu'>
+<a class="sidebar-logo hide-for-large-up" href="https://www.livinghealthy.com/"><img src="https://d2zjb685spa8zx.cloudfront.net/assets/logo-f2290b0307f80268d4620fcc068274f169c10d2265cb87efa189460bcdc2cc2c.svg" alt="Logo" />
+</a><a class="icn-close close-sidebar hide-for-large-up" href="#"></a>
+<a class="goals-motivation first-lvl" href="/site/empower-the-body"><span class='category-name'>Health Goals</span>
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-goals-motivation'>
+<a href="/site/our-approach">OUR APPROACH</a>
+<a class="start-here" href="/site/empower-the-body">EMPOWER THE BODY</a>
+<a href="/site/aspirational-goals">ASPIRATIONAL GOALS</a>
+<a href="/site/prevention-goals">PREVENTION GOALS</a>
+<a href="/site/symptom-solving">SYMPTOM SOLVING</a>
+<a href="/categories/goals-motivation/eating-healthy">EATING HEALTHY</a>
+<a href="/categories/goals-motivation/getting-in-shape">GETTING IN SHAPE</a>
+<a href="/categories/goals-motivation/setting-goals">SETTING GOALS</a>
+<a href="/articles/livinghealthy-iq-test">WELLNESS IQ TEST</a>
+</div>
+<a class="diet-food first-lvl" href="/categories/diet-food"><span class='category-name'>Diet &amp; Food</span>
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-diet-food'>
+<a href="/categories/diet-food/gi-health-cleanses">GI Health &amp; Cleanses</a>
+<a href="/categories/diet-food/weight-loss">Weight Loss</a>
+<a href="/categories/diet-food/vitamins-supplements">Vitamins &amp; Supplements</a>
+<a href="/categories/diet-food/diet-trends">Diet Trends</a>
+<a href="/categories/diet-food/nutrition-science">Nutrition Science</a>
+<a href="/categories/diet-food/eating-food">Eating &amp; Food</a>
+<a href="/categories/diet-food">View All +</a>
+</div>
+<a class="wellness first-lvl" href="/categories/wellness"><span class='category-name'>Wellness</span>
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-wellness'>
+<a href="/categories/wellness/energy-vitality">Energy &amp; Vitality</a>
+<a href="/categories/wellness/sleep-rems">Sleep &amp; REMs</a>
+<a href="/categories/wellness/aging-longevity">Aging &amp; Longevity</a>
+<a href="/categories/wellness/hormones">Hormones</a>
+<a href="/categories/wellness/immunity">Immunity</a>
+<a href="/categories/wellness/mental-fitness">Mental Fitness</a>
+<a href="/categories/wellness/relaxation-meditation">Relaxation &amp; Meditation</a>
+<a href="/categories/wellness/sex-sexy">Sex &amp; Sexy</a>
+<a href="/categories/wellness/body-science">Body Science</a>
+<a href="/categories/wellness">View All +</a>
+</div>
+<a class="fitness first-lvl" href="/categories/fitness"><span class='category-name'>Fitness</span>
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-fitness'>
+<a href="/categories/fitness/workouts">Workouts</a>
+<a href="/categories/fitness/exercise-trends">Exercise Trends</a>
+<a href="/categories/fitness/exercise-science">Exercise Science</a>
+<a href="/categories/fitness/yoga">Yoga</a>
+<a href="/categories/fitness">View All +</a>
+</div>
+<a class="beauty-grooming first-lvl" href="/categories/beauty-grooming"><span class='category-name'>Beauty &amp; Grooming</span>
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-beauty-grooming'>
+<a href="/categories/beauty-grooming/skin-care">Skin Care</a>
+<a href="/categories/beauty-grooming/beauty-science">Beauty Science</a>
+<a href="/categories/beauty-grooming/body-care">Body Care</a>
+<a href="/categories/beauty-grooming/cosmetic-treatments">Cosmetic Treatments</a>
+<a href="/categories/beauty-grooming/hair-grooming">Hair &amp; Grooming</a>
+<a href="/categories/beauty-grooming">View All +</a>
+</div>
+<a class="experts" href="/experts/">experts</a>
+
+<a class="company first-lvl hide-for-large-up" href="#">company info
+<span class='icn-arrow-down'></span>
+<span class='icn-arrow-up'></span>
+</a><div class='sub-category' id='sub-category-company'>
+<a href="/site/terms-and-conditions-of-use">Terms &amp; Conditions of Use</a>
+<a href="/site/privacy-policy">Privacy Policy</a>
+<a href="/site/contact-us">Contact Us</a>
+</div>
+</div>
+</div>
+<div class='user-functions'>
+<div class='mobile-search-button'>
+<span class='icn-search'></span>
+</div>
+<div class='user-data' style='display: none;'></div>
+<div class='no-user-options'></div>
+</div>
+<div class='user-login-template' style='display: none;'>
+<a class="register-link" href="/users/sign_in">Log In</a>
+/
+<a class="register-link" href="/users/sign_up">Sign Up</a>
+</div>
+<div class='user-status-logged-in-template' style='display: none;'>
+<a class='avatar' data-dropdown='drop1' data-options='align:left' style="background-image: url('https://d2zjb685spa8zx.cloudfront.net/assets/noavatar-267a3c7aa89c2d5a47de60a03985fad741ee2e99603f3c9acef63f006f35e9f9.svg')"></a>
+<ul aria-hidden='true' class='small f-dropdown' data-dropdown-content='' id='drop1' tabindex='-1'>
+<li><a href="/users/edit">My Account</a></li>
+<li class='logout'><a data-method="get" href="/users/sign_out">Log Out</a></li>
+</ul>
+</div>
+<div class='user-status-logged-out-template' style='display: none;'>
+<a class='avatar' data-dropdown='drop1' data-options='align:left' style="background-image: url('https://d2zjb685spa8zx.cloudfront.net/assets/noavatar-267a3c7aa89c2d5a47de60a03985fad741ee2e99603f3c9acef63f006f35e9f9.svg')"></a>
+<ul aria-hidden='true' class='small f-dropdown' data-dropdown-content='' id='drop1' tabindex='-1'>
+<li class='register'><a href="/users/sign_up">Sign Up</a></li>
+<li><a href="/users/sign_in">Log In</a></li>
+</ul>
+</div>
+</div>
+</header>
+
+
+<div class='time_tracking_dom' data-group-name='contentGroup1' data-page-name='page-article' data-path='/articles/measles-vaccination-rates-in-african-countries-surpass-north-america' data-timing-category='Article Default' data-timing-label='loadTime' data-timing-var='Page Loading' style='display:none;'></div>
+<section class='licensed' data-category='Wellness' data-id='397' data-name='Measles Vaccination Rates in African Countries Surpass North America' id='article'>
+<div class='contain-to-grid share-bar sticky wellness'>
+<div class='article-share-bar-wrapper'>
+<div class='article-share-bar'>
+<div class='article-title'>
+<p>Measles Vaccination Rates in African Countries Surpass North America</p>
+</div>
+<div class='article-share toggle-topbar'>
+<a href='#' id='article_toggle_share'>
+<span>Share on</span>
+</a>
+</div>
+</div>
+<div class='hide-article-share article-header-share'><div class="social-links" data-title="Measles Vaccination Rates in African Countries Surpass North America" data-img="https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/thumbnail_image/397/thumb_measles-vaccine-266x267.jpg" data-url="/articles/measles-vaccination-rates-in-african-countries-surpass-north-america" data-desc="null" data-popup="true" data-via="null"><a rel="nofollow " data-site="email" class="social-share-button icn-email" onclick="return SocialShareButton.share(this);" title="email" href="javascript:void(0);"></a><a rel="nofollow " data-site="twitter-hidden" class="social-share-button icn-twitter-hidden no-show" onclick="javascript:void(0);" title="twitter-hidden" href="javascript:void(0);"></a><a rel="nofollow " data-site="twitter" class="social-share-button icn-twitter" onclick="return SocialShareButton.share(this);" title="twitter" href="javascript:void(0);"></a><a rel="nofollow " data-site="pinterest" class="social-share-button icn-pinterest" onclick="return SocialShareButton.share(this);" title="pinterest" href="javascript:void(0);"></a><a rel="nofollow " data-site="facebook" class="social-share-button icn-facebook" onclick="return SocialShareButton.share(this);" title="facebook" href="javascript:void(0);"></a></div></div>
+</div>
+</div>
+
+<section class='content left-content small-12 medium-8 large-9 columns'>
+<div class='header'>
+<img class='sizeLazy' data-large='https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/hero_image/397/header_measles-vaccine-846x480.jpg' src='https://dfgh5erbttm3r.cloudfront.net/uploads/newscred_article/hero_image/397/thumb_measles-vaccine-846x480.jpg'>
+<hgroup>
+<h2>Measles Vaccination Rates in African Countries Surpass North America</h2>
+</hgroup>
+</div>
+<div class='wrapper small-12 large-10 columns large-centered'>
+<div class='authors-and-expert'>
+<div class='authors'>
+<div class='author-item'>
+<div class='avatar' style='background-image: url(https://dfgh5erbttm3r.cloudfront.net/uploads/author/avatar/130/161fe3e.jpg)'></div>
+<hgroup>
+<h4>
+By
+<span>Valaer Murray</span>
+</h4>
+<div class='social-links'>
+
+<a class="icn-twitter" href="https://twitter.com/valaerm"></a>
+
+<a class="icn-instagram" href="http://instagram.com/eatcoast"></a>
+
+</div>
+</hgroup>
+</div>
+
+</div>
+</div>
+
+<span class='date'>February 10, 2015</span>
+<div class='article-body'>
+You may have heard words like "anti-vaxxer" and "herd immunity" being thrown around a lot lately, especially since the Disneyland measles outbreak in January. A lot of the "anti-vax" community believes that some vaccines, especially the MMR (measles, mumps and rubella) vaccine, can cause autism, despite the medical community at large disputing this. Then there are those who believe in "herd immunity", the idea that everyone should be vaccinated in order to stamp out occurrences of that disease entirely. Both groups want to essentially protect themselves and their communities, but there doesn't seem to be a strong anti-vax contingent in the the 16 African countries have nearly a 100 percent vaccination rate. Meanwhile both the U.S. and Canada have under the 95 percent measles vaccination rate that qualifies for herd immunity. Yet since there is currently insufficient data for autism prevalence rates in those African countries, it's impossible to see if there's a statistical correlation between the MMR vaccine and autism rates in countries like Egypt, Tanzania and Libya.    
+</div>
+<div class='article-tags'>
+<h5>Related Topics</h5>
+<span class='label secondary radius'>
+<a href="/topics/measles">Measles</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/vaccine">Vaccine</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/autism">Autism</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/north-america">North America</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/vaccination">Vaccination</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/toronto">Toronto</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/vaccines">Vaccines</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/immunity">Immunity</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/united-nations">United Nations</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/the-americas">The Americas</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/united-states">United States</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/infectious-diseases">Infectious Diseases</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/canada">Canada</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/anti-vaxxer">Anti-Vaxxer</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/anti-vax">Anti-Vax</a>
+</span>
+<span class='label secondary radius'>
+<a href="/topics/herd-immunity">Herd Immunity</a>
+</span>
+</div>
+
+<div class='related-articles'>
+<div class='related-wrapper'>
+<h5>Recommended for you</h5>
+<div id="sailthru-scout">
+  <div class="loading">
+    Loading, please wait...
+  </div>
+</div>
+<script>
+  // load the SailthruScout Javascript SDK asynchronously
+  // called after SidebarWidgets loaded, See /assets/javascripts/lh/other/sidebar_widgets.js.coffee
+  function loadSailthruRecommended() {
+    // console.log('load recommended article');
+    var d = document;
+    var s = d.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.onload = function(e) {
+      var regex = new RegExp("https?://[^/]+/");
+      SailthruScout.setup({
+        domain: 'horizon.livinghealthy.com',
+        numVisible: 4,
+        includeConsumed: false,
+        renderItem: function(item, pos) {
+          if (typeof(item.image) == 'undefined') item.image = {};
+          var html = '';
+          html += '<div class="content-item small-6 medium-6 large-3">';
+          html += '<div class="article-wrapper">';
+          html += '<a href="'+item.url+'?utm_medium=recommended_footer" class="article-small">';
+          html += '<img src="' +  (item.image.thumb || "https://d2zjb685spa8zx.cloudfront.net/assets/default-avatar-2fd01e7046f0559494f815db7e5e71406fd4552ed72b6eafc3645f6d4b2a12f8.jpg" ).replace(regex, '//dfgh5erbttm3r.cloudfront.net/') + '">';
+          html += '<h5>'+item.title;
+          html += '</h5></a></div></div>';
+          return html;
+        }
+      });
+    };
+    s.src = window.location.protocol + '//ak.sail-horizon.com/scout/v1.js';
+    var x = d.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+</script>
+</div>
+</div>
+
+
+<div class='fb-comments' data-colorscheme='light' data-href='https://www.livinghealthy.com/articles/measles-vaccination-rates-in-african-countries-surpass-north-america' data-numposts='3' data-width='100%'></div>
+
+<div class='article-footer'>
+<div class='clearfix'>
+<div class='article-data small-12 medium-7 columns'>
+<p>
+<span class='posted'>
+Posted on
+ 4:15 am
+</span>
+<span class='edited'>
+PST February 10 2015
+by
+<span class='name'>Valaer Murray</span>
+</span>
+</p>
+</div>
+<div class='article-category small-12 medium-5 columns'>
+<p>
+<span class='sub-category'>Featured Stories /</span>
+<a class="category wellness" href="/categories/wellness">Wellness</a>
+</p>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<section class='sidebar small-12 medium-4 large-3 columns' data-id='measles-vaccination-rates-in-african-countries-surpass-north-america' data-type='article'></section>
+<div aria-hidden='true' aria-labelledby='modalTitle' class='productPreviewModal reveal-modal' data-reveal='' id='productPreviewModal' role='dialog'></div>
+
+</section>
+
+<footer class='small-12 columns'>
+<hr>
+<div class='clearfix'>
+<div class='lh-desc small-12 medium-8 columns'>
+<div class='lh-desc footer-logo'>
+<img src="https://d2zjb685spa8zx.cloudfront.net/assets/logo-f2290b0307f80268d4620fcc068274f169c10d2265cb87efa189460bcdc2cc2c.svg" alt="Logo" />
+</div>
+<h5>HEALTH ADVICE DISCLAIMER</h5>
+<p>While efforts have been made to provide balanced and credibly-sourced information from experts, this content is not a substitute for professional medical advice, diagnosis and treatment.</p>
+<p>© 2014-2016 Living Healthy, LLC All Rights Reserved.</p>
+</div>
+<div class='links-block small-12 medium-4 columns'>
+<h5>Company Information</h5>
+<div id='static-pages'>
+<ul class="static-pages-items clearfix"></li><li><a href="/site/terms-and-conditions-of-use">Terms &amp; Conditions of Use</a><a href="/site/privacy-policy">Privacy Policy</a><a href="/site/contact-us">Contact Us</a></ul>
+</div>
+<div class='social-links'>
+<a class="icn-facebook" target="_blank" href="http://wwww.facebook.com/LivingHealthyUS"></a>
+<a class="icn-twitter" target="_blank" href="http://www.twitter.com/LivingHealthyUs"></a>
+<a class="icn-pinterest" target="_blank" href="http://www.pinterest.com/imlivinghealthy/"></a>
+<a class="icn-instagram" target="_blank" href="https://instagram.com/livinghealthyus"></a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+
+<script>
+  // load the Sailthru Javascript SDK asynchronously
+  // called after SidebarWidgets loaded, See /assets/javascripts/lh/other/sidebar_widgets.js.coffee
+  function loadSailthruSDK() {
+    // console.log('load Sailthru SDK');
+    var d = document;
+    var s = d.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.onload = function(e) {
+      Sailthru.setup({
+          domain:     "horizon.livinghealthy.com",
+          spider:     !!(true && ($('meta[name="sailthru.spider"]').attr('content') === 'true'))
+      });
+    };
+    s.src = window.location.protocol + '//ak.sail-horizon.com/horizon/v1.js';
+    var x = d.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+</script>
+
+<script>
+   setTimeout(function(){var a=document.createElement("script");
+   var b=document.getElementsByTagName("script")[0];
+   a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0011/7810.js?"+Math.floor(new Date().getTime()/3600000);
+   a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><!doctype html><html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" name="viewport"/>
+<meta name="keywords" content="data visualization software, data presentation software, data visualization tools, data mapping software" />
+
+<meta name="description" content="This report is powered by InstantAtlas™ Data Visualization &amp; Presentation Software" />
+<!--
+					Copyright (C) 2012 Geowise Ltd
+					All Rights Reserved. The following is Source Code and is subject to all
+					restrictions on such code as contained in the End User License Agreement
+					accompanying this product.
+				--><title>WHO | World Health Organization</title>
+<link href="advanced.css" rel="stylesheet"> </link>
+<link href="default.css" rel="stylesheet"> </link>
+<style>
+					html, body
+					{
+						height:100%;
+						margin: 0;
+						padding:0;
+					}
+					#ia-report-container
+					{				 
+						width:100%;
+						height:100%;
+						margin-left:auto;
+						margin-right:auto;
+					}
+					#ia-noscript-container
+					{
+						font-family:Arial;
+						font-weight:bold;
+						font-size:15px;
+						color:#888888;
+						text-align:center;	
+						padding:20px;
+					}
+				</style>
+</head>
+<body>
+<div id="ia-report-container">
+<noscript>
+<div id="ia-noscript-container">
+							This report requires JavaScript. Please enable JavaScript to view this page properly.
+						</div>
+</noscript>
+
+</div>
+<script src="ia-min.js"> </script>
+<script src="custom.js"> </script>
+
+
+<script>
+if ('ontouchstart' in window) window.location = "http://gamapserver.who.int/gho/interactive_charts/health_workforce/PhysiciansDensity_Total/tablet/atlas.html";
+</script>
+
+<script>
+						if (typeof jQuery == 'undefined') window.location = "http://gamapserver.who.int/gho/interactive_charts/health_workforce/PhysiciansDensity_Total/flash/atlas.html";
+						else
+						{
+							var $j = jQuery.noConflict();
+							$j(document).ready(function()
+							{
+								if (ia.supportsCanvas()) ia.init("ia-report-container",onIAReportComplete);
+								else window.location = "http://gamapserver.who.int/gho/interactive_charts/health_workforce/PhysiciansDensity_Total/flash/atlas.html";
+							});
+						}
+						
+						
+						
+                    </script>
+
+
+</body>
+</html>
