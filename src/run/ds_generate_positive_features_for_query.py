@@ -20,14 +20,7 @@ def contains_entity(text, entity):
     return True
 
 
-if __name__ == "__main__":
-    world = sys.argv[1]
-
-    block = None
-    if len(sys.argv) == 3:
-        block = int(sys.argv[2])-1
-
-
+def precompute_features(world,block = None):
 
 
     base = "data/distant_supervision/features/"
@@ -42,7 +35,7 @@ if __name__ == "__main__":
         num_qs = len(lines)
 
         if block is not None:
-            lines = lines[block*100:min((block+1)*100,num_qs-1)]
+            lines = lines[block]
 
         num_qs = len(lines)
         done = 0
@@ -113,6 +106,12 @@ if __name__ == "__main__":
                                 print(sys.exc_info()[0])
                                 raise
 
+
+
+if __name__ == "__main__":
+    world = sys.argv[1]
+    block = int(sys.argv[2])-1
+    precompute_features(world,block)
 
 
 
