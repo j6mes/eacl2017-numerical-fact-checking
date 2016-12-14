@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from distant_supervision.query_generation import normalise, normalise_keep_nos
+from distant_supervision.normalisation import normalise, normalise_keep_nos
 from tabular.table_collection import TableCollection
 from tabular.table_filtering.filter_nes import FilterTableNEs
 from tabular.table_filtering.filter_nes_memoized import FilterTableNEsMemoized
