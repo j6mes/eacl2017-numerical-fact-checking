@@ -1,0 +1,20 @@
+group 'uk.ac.sheffield.nlp'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group:'org.apache.commons', name: 'commons-math3', version:'3.6.1'
+    compile group:'edu.stanford.nlp', name: 'stanford-corenlp', version:'3.6.0'
+    runtime group:'edu.stanford.nlp', name: 'stanford-corenlp', version:'3.6.0', classifier:'models'
+}
+
+task writeClasspath << {
+    buildDir.mkdirs()
+    new File(buildDir, "classpath.txt").text = configurations.runtime.asPath + "\n"
+}
+
